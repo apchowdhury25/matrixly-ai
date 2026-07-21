@@ -130,6 +130,12 @@ jobs:
       FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
       FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Required so the deploy action can push the deploy branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Download dist artifact
         uses: actions/download-artifact@v4
         with:
@@ -148,6 +154,7 @@ jobs:
           branch: deploy
           clean: true
           single-commit: true
+          token: ${{ secrets.GITHUB_TOKEN }}
           git-config-name: github-actions[bot]
           git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
           commit-message: "deploy: matrixly.ai ${{ github.sha }}"
