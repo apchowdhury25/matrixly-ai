@@ -2,9 +2,6 @@
 node_modules/
 .pnp
 .pnp.js
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # Environment & secrets (keep *.example)
 .env
@@ -31,8 +28,6 @@ __pycache__/
 *$py.class
 *.egg-info/
 .eggs/
-dist/
-build/
 *.egg
 .pytest_cache/
 .mypy_cache/
@@ -58,7 +53,9 @@ hostinger/
 deploy.env
 *.publishsettings
 
-# Build / framework output
+# Build / framework / CI publish output
+dist/
+build/
 .next/
 out/
 .nuxt/

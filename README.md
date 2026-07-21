@@ -63,12 +63,19 @@ python -m src.cli demo
 
 Other agents follow the same pattern under `agents/*/`. Copy each agent’s `.env.example` to `.env` for live credentials (never commit `.env`).
 
-## Deployment note (Hostinger)
+## Deployment (Hostinger)
 
-1. Build is **static** — upload the site root HTML/assets (or connect Git deploy if enabled).
-2. Do **not** upload `.env`, `.venv/`, or local `data/output/` folders.
-3. Point the domain document root at this project’s public HTML files.
-4. Agent CLIs typically run on an operator machine or a secured VPS, not inside static web hosting.
+CI/CD publishes a clean `dist/` tree to the **`deploy`** branch (and optionally FTP).
+
+```bash
+npm run lint
+npm run build
+# GitHub Actions on main → deploy branch → Hostinger Git auto-deploy
+```
+
+Full guide: **[DEPLOYMENT.md](DEPLOYMENT.md)** (secrets, hPanel steps, manual deploy).
+
+Agent CLIs run on an operator machine or secured VPS — not on static Hostinger hosting.
 
 ## Project layout
 

@@ -1,0 +1,14 @@
+{
+  "name": "matrixly-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Matrixly.ai — static marketing site (HTML + Tailwind CDN) with CI tooling",
+  "scripts": {
+    "lint": "node scripts/ci-lint.mjs",
+    "build": "node scripts/ci-build.mjs",
+    "start": "npx --yes serve dist -l 8080"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
