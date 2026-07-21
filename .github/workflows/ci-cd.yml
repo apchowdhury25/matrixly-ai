@@ -123,6 +123,12 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: write
+    # Map secrets to env so optional FTP can branch without secrets.* in `if:`
+    # (GitHub rejects secrets context inside if expressions.)
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
     steps:
       - name: Download dist artifact
         uses: actions/download-artifact@v4
@@ -147,13 +153,13 @@ jobs:
           commit-message: "deploy: matrixly.ai ${{ github.sha }}"
 
       - name: Deploy via FTP (optional)
-        if: ${{ secrets.FTP_SERVER != '' }}
+        if: env.FTP_SERVER != ''
         continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ env.FTP_SERVER }}
+          username: ${{ env.FTP_USERNAME }}
+          password: ${{ env.FTP_PASSWORD }}
           port: 21
           protocol: ftps
           local-dir: ./dist/
