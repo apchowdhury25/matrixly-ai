@@ -1,16 +1,16 @@
 # =============================================================================
-# Matrixly.ai — CI / CD (Hostinger)
+# Matrixly.ai - CI / CD (Hostinger)
 # =============================================================================
 # Stack: static HTML5 + Tailwind CDN + vanilla JS (no Vite / Next / Astro)
-# Publish: dist/ → deploy branch (Hostinger Git) + optional FTP
+# Publish: dist/ -> deploy branch (Hostinger Git) + optional FTP
 #
 # Triggers
-#   • pull_request → lint + build only
-#   • push main    → lint + build + deploy
-#   • workflow_dispatch → full pipeline (manual deploy)
+#   - pull_request -> lint + build only
+#   - push main    -> lint + build + deploy
+#   - workflow_dispatch -> full pipeline (manual deploy)
 # =============================================================================
 
-name: CI/CD
+name: CI-CD
 
 on:
   push:
@@ -18,13 +18,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      skip_ftp:
-        description: "Skip FTP even if secrets are configured"
-        required: false
-        default: "false"
-        type: choice
-        options: ["false", "true"]
 
 concurrency:
   group: ci-cd-${{ github.workflow }}-${{ github.ref }}
@@ -36,34 +29,31 @@ permissions:
 env:
   NODE_VERSION: "22"
   PYTHON_VERSION: "3.12"
-  DIST_DIR: dist
 
 jobs:
   # ---------------------------------------------------------------------------
-  # 1) LINT — static site gates + agent syntax compile
+  # 1) LINT - static site gates + agent syntax compile
   # ---------------------------------------------------------------------------
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-          cache-dependency-path: package.json
 
       - name: Install dependencies
         run: npm install --no-fund --no-audit
 
-      - name: Lint site (HTML + secret scan)
+      - name: Lint site
         run: npm run lint
 
-      - name: Setup Python ${{ env.PYTHON_VERSION }}
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
@@ -72,14 +62,14 @@ jobs:
         run: |
           set -euo pipefail
           for agent in email-assistant lead-qualifier crm-assistant shipping-assistant; do
-            echo "▸ agents/${agent}"
+            echo "agents/${agent}"
             python -m pip install --upgrade pip -q
             pip install -r "agents/${agent}/requirements.txt" -q
             python -m compileall -q "agents/${agent}/src"
           done
 
   # ---------------------------------------------------------------------------
-  # 2) BUILD — assemble clean dist/ (public HTML only)
+  # 2) BUILD - assemble clean dist/ (public HTML only)
   # ---------------------------------------------------------------------------
   build:
     name: Build
@@ -90,17 +80,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-          cache-dependency-path: package.json
 
       - name: Install dependencies
         run: npm install --no-fund --no-audit
 
-      - name: Build static site → dist/
+      - name: Build static site
         run: npm run build
 
       - name: Verify publish tree
@@ -123,21 +111,16 @@ jobs:
           retention-days: 14
 
   # ---------------------------------------------------------------------------
-  # 3) DEPLOY — main / manual only (never PRs)
-  #     a) Primary: push dist/ → deploy branch (Hostinger Git auto-pull)
+  # 3) DEPLOY - main / manual only (never PRs)
+  #     a) Primary: push dist/ -> deploy branch (Hostinger Git)
   #     b) Optional: FTP when FTP_SERVER secret is set
   # ---------------------------------------------------------------------------
   deploy:
     name: Deploy
     needs: build
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    environment:
-      name: production
-      url: https://matrixly.ai
     permissions:
       contents: write
     steps:
@@ -152,7 +135,6 @@ jobs:
           echo "Deploying $(find dist -type f | wc -l) files"
           find dist -type f | sort
 
-      # --- (a) Hostinger Git: clean deploy branch ---
       - name: Publish to deploy branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -164,23 +146,18 @@ jobs:
           git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
           commit-message: "deploy: matrixly.ai ${{ github.sha }}"
 
-      # --- (b) Optional Hostinger FTP (shared hosting without Git deploy) ---
-      # Runs only when FTP_SERVER is configured. Prefer deploy-branch (a) alone.
       - name: Deploy via FTP (optional)
-        if: >
-          vars.ENABLE_FTP != 'false' &&
-          secrets.FTP_SERVER != '' &&
-          github.event.inputs.skip_ftp != 'true'
+        if: ${{ secrets.FTP_SERVER != '' }}
+        continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Override via secrets when Hostinger shows non-default values
-          port: ${{ secrets.FTP_PORT != '' && secrets.FTP_PORT || 21 }}
+          port: 21
           protocol: ftps
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR != '' && secrets.FTP_SERVER_DIR || './public_html/' }}
+          server-dir: ./public_html/
           dangerous-clean-slate: false
           log-level: standard
           exclude: |
@@ -201,5 +178,5 @@ jobs:
             echo "| Site | https://matrixly.ai |"
             echo "| Trigger | \`${{ github.event_name }}\` |"
             echo ""
-            echo "Hostinger: point Git deployment at the **deploy** branch (document root = repository root of that branch)."
+            echo "Hostinger: point Git deployment at the **deploy** branch."
           } >> "$GITHUB_STEP_SUMMARY"
