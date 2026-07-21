@@ -1,0 +1,8 @@
+.env
+data/output/
+data/crm_store.json
+data/pending_writes/
+__pycache__/
+*.pyc
+.venv/
+venv/

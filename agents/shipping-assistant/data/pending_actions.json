@@ -1,0 +1,12 @@
+{
+  "shp_b5bd5a6543": {
+    "action": "cancel_order",
+    "payload": {
+      "order_number": "MB-10418"
+    },
+    "id": "shp_b5bd5a6543",
+    "reason": "Cancel request for MB-10418",
+    "status": "pending",
+    "created_at": "2026-07-20T23:11:37.478496+00:00"
+  }
+}

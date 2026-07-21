@@ -1,0 +1,133 @@
+# Matrixly.AI — Lead Qualifier Agent (MVP pilot)
+# Marketplace tile: LEAD · Sales domain · Salesforce · Gmail
+
+agent:
+  name: Lead Qualifier
+  id: lead-qualifier
+  version: "1.0.0"
+  marketplace_tile: LEAD
+  domain: sales
+  status: mvp_pilot
+
+operator:
+  company: Matrix Bazaar LLC / Matrixly.AI
+  email: anwar.chowdhury@matrixbazaar.com
+  market: Houston SMEs
+  value_props:
+    - AI agent marketplace for SMBs
+    - Ready-to-deploy sales, ops, and logistics agents
+    - Hermes runtime + Grok intelligence
+
+# ICP for scoring (adjust per pilot customer)
+icp:
+  target_industries:
+    - import-export
+    - logistics
+    - distribution
+    - wholesale
+    - manufacturing
+    - construction
+    - home services
+    - hvac
+    - professional services
+    - saas
+    - ecommerce
+  target_roles:
+    - owner
+    - founder
+    - ceo
+    - president
+    - vp sales
+    - head of sales
+    - director of sales
+    - revenue
+    - growth
+    - operations manager
+    - general manager
+  employee_bands:
+    ideal: [5, 200]
+    acceptable: [1, 500]
+  geographies:
+    - houston
+    - texas
+    - united states
+    - us
+  disqualifiers:
+    - student
+    - job seeker
+    - recruiting agency spam
+    - free email only with no company
+
+scoring:
+  weights:
+    fit: 0.35
+    intent: 0.30
+    seniority: 0.20
+    data_quality: 0.15
+  thresholds:
+    hot: 0.75
+    warm: 0.50
+    cold: 0.30
+  # Free-mail domains score lower on company signal
+  free_email_domains:
+    - gmail.com
+    - yahoo.com
+    - hotmail.com
+    - outlook.com
+    - aol.com
+    - icloud.com
+    - proton.me
+    - protonmail.com
+
+enrichment:
+  # MVP: local heuristics + optional Grok. No paid data vendors required.
+  use_llm: true
+  infer_company_from_domain: true
+  store_path: data/leads/enriched
+
+outreach:
+  sequence_days: [0, 2, 5, 9]
+  touches: 4
+  channels:
+    - email
+  tone: professional_warm
+  cta: book a 15-minute pilot walkthrough
+  max_words_per_email: 140
+
+salesforce:
+  # MVP: write Salesforce-ready Lead JSON + CSV (no live SF required)
+  mode: export  # export | api
+  object: Lead
+  default_source: Matrixly Lead Qualifier
+  default_status: Open - Not Contacted
+  export_dir: data/output/salesforce
+  # Future API (set in .env when ready)
+  # instance_url / client credentials via env
+
+gmail:
+  # Optional: pull inbound lead-like messages from Gmail (reuses Email Assistant env)
+  enabled: true
+  profile: gmail
+  # Path to email-assistant .env for credentials
+  email_assistant_env: ../email-assistant/.env
+  lead_subject_keywords:
+    - demo
+    - pricing
+    - quote
+    - pilot
+    - interested
+    - partnership
+    - inquiry
+    - enquiry
+    - contact
+    - sales
+    - agent
+  max_messages: 30
+
+xai:
+  model: grok-4-1-fast-reasoning
+  base_url: https://api.x.ai/v1
+  enabled: true
+
+hermes:
+  skill_name: lead-qualifier

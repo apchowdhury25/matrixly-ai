@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly.AI Email Assistant — triage Gmail, draft replies, flag urgent items, and get a daily email brief for usmatrixbazaar.com." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Email Assistant — Matrixly.AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.04);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #2A3340;
+      --bg: #0B0F14;
+      --bg-alt: #121820;
+      --bg-muted: #1A222D;
+      --card: #151C26;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.08);
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .grid-bg {
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .btn-primary {
+      background: var(--brand-blue);
+      color: #fff;
+      font-weight: 700;
+      transition: background .15s ease;
+    }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-weight: 600;
+      background: var(--card);
+    }
+    .btn-secondary:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+    }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#117ACA] text-white text-xs font-extrabold">M</span>
+        Matrixly.AI
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
+      </nav>
+      <a href="agents.html" class="btn-secondary text-sm px-4 py-2 rounded-lg">← Marketplace</a>
+    </div>
+  </header>
+
+  <main class="grid-bg">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// MAIL · LIVE · HERMES + GROK</p>
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div class="max-w-2xl">
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">
+            Email Assistant
+          </h1>
+          <p class="text-matrix-soft text-lg leading-relaxed">
+            Triage <strong class="text-matrix-cream">anwar.chowdhury@matrixbazaar.com</strong> over
+            Hostinger IMAP (same stack as Thunderbird), draft replies, flag urgent items, and get a daily executive brief.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Hostinger IMAP</span>
+          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Draft-only sends</span>
+          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Daily cron</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">1. Triage</h2>
+          <p class="text-sm text-matrix-soft">Score unread mail and apply <code class="text-xs">Matrixly/*</code> labels (Urgent, Needs Reply, FYI…).</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">2. Flag urgent</h2>
+          <p class="text-sm text-matrix-soft">Keyword + VIP + Grok ranking for payments, deadlines, legal, and shipping exceptions.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">3. Draft replies</h2>
+          <p class="text-sm text-matrix-soft">Creates <strong>Gmail drafts only</strong> — human approval before anything leaves the mailbox.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">4. Daily brief</h2>
+          <p class="text-sm text-matrix-soft">Executive summary of the last 24h, saved as markdown and emailed to you.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Agent code lives at <code class="text-xs">agents/email-assistant</code>.
+          Hermes skill: <code class="text-xs">email-assistant</code>.
+          Primary mailbox default: <code class="text-xs">anwar.chowdhury@matrixbazaar.com</code>.
+        </p>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Step A — Python env</h3>
+        <pre class="cmd mb-6">cd C:\Users\anwar\projects\matrix-six\agents\email-assistant
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Step B — Mailbox password (Thunderbird / Hostinger)</h3>
+        <p class="text-sm text-matrix-soft mb-3">
+          IMAP <code class="text-xs">imap.hostinger.com:993</code> · SMTP <code class="text-xs">smtp.hostinger.com:465</code> ·
+          user <code class="text-xs">anwar.chowdhury@matrixbazaar.com</code>
+        </p>
+        <ol class="text-sm text-matrix-soft space-y-2 mb-4 list-decimal list-inside">
+          <li>Copy <code class="text-xs">.env.example</code> → <code class="text-xs">.env</code></li>
+          <li>Set <code class="text-xs">EMAIL_IMAP_PASSWORD</code> to the same password Thunderbird uses</li>
+          <li>Do not paste the password into chat — keep it only in local <code class="text-xs">.env</code></li>
+          <li>Connect:</li>
+        </ol>
+        <pre class="cmd mb-6">python -m src.cli auth
+python -m src.cli profile</pre>
+        <p class="text-sm text-matrix-soft mb-6">Optional Gmail API path: <code class="text-xs">agents/email-assistant/scripts/setup_oauth.md</code></p>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Step C — Run the agent</h3>
+        <pre class="cmd mb-6">python -m src.cli triage
+python -m src.cli urgent
+python -m src.cli draft --message-id &lt;id&gt;
+python -m src.cli summary
+python -m src.cli summary --no-send</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Step D — Hermes skill + daily cron</h3>
+        <pre class="cmd mb-6">hermes -s email-assistant -z "Triage my unread Gmail and list anything urgent"
+
+hermes cron create "0 8 * * *" --name "email-daily-brief" --skill email-assistant --workdir "C:\Users\anwar\projects\matrix-six\agents\email-assistant" "Run daily email brief: python scripts/run_daily_summary.py"
+
+hermes cron create "0 7 * * 1-5" --name "email-morning-triage" --skill email-assistant --workdir "C:\Users\anwar\projects\matrix-six\agents\email-assistant" "Morning triage: python scripts/run_triage.py"</pre>
+
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+          <strong class="text-matrix-cream">Safety:</strong> Replies are draft-only by default.
+          The daily brief emails <em>you</em> only (<code class="text-xs">summary.deliver_to</code>).
+          Never commit <code class="text-xs">data/credentials.json</code> or <code class="text-xs">data/token.json</code>.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span>Matrixly.AI · Email Assistant v1.0</span>
+      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+    </div>
+  </footer>
+</body>
+</html>

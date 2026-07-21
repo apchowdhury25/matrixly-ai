@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Featured AI Agents from the Matrixly.AI marketplace — Lead Qualifier, Email Assistant, CRM, Shipping, and more. Powered by Hermes + Grok." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Agents — Matrixly.AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    
+    /* ========== LIGHT / DARK THEME TOKENS ========== */
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --brand-blue-light: #DCEBFB;
+      --brand-blue-soft: #E8F4FC;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --shadow-sm: 0 1px 3px rgba(33, 30, 30, 0.06);
+      --shadow-md: 0 8px 24px rgba(17, 122, 202, 0.12);
+      --input-bg: #FFFFFF;
+      --toggle-bg: #F0F4F8;
+      --toggle-border: #D0D7DE;
+      --grid-line: rgba(17, 122, 202, 0.04);
+      --matrix-green: #117ACA;
+      --matrix-green-text: #117ACA;
+      --matrix-neon: #117ACA;
+      --matrix-neon-text: #117ACA;
+      --matrix-forest: #0B5CAB;
+      --matrix-forest-text: #0B5CAB;
+      color-scheme: light;
+    }
+
+    html.dark {
+      --brand-blue: #3B9FE0;
+      --brand-blue-dark: #117ACA;
+      --brand-blue-hover: #5BB0E8;
+      --brand-blue-light: #1A3A52;
+      --brand-blue-soft: #152536;
+      --ink: #F0F4F8;
+      --soft: #9AA4B2;
+      --border: #2A3544;
+      --bg: #0B1220;
+      --bg-alt: #111827;
+      --bg-muted: #151C28;
+      --card: #151C28;
+      --nav-bg: rgba(11, 18, 32, 0.94);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 28px rgba(17, 122, 202, 0.18);
+      --input-bg: #111827;
+      --toggle-bg: #1A2332;
+      --toggle-border: #2A3544;
+      --grid-line: rgba(59, 159, 224, 0.07);
+      --matrix-green: #3B9FE0;
+      --matrix-green-text: #3B9FE0;
+      --matrix-neon: #3B9FE0;
+      --matrix-neon-text: #3B9FE0;
+      --matrix-forest: #117ACA;
+      --matrix-forest-text: #117ACA;
+      color-scheme: dark;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-forest { color: var(--brand-blue-dark) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .hover\:text-matrix-cream:hover { color: var(--ink) !important; }
+
+    .bg-matrix-black { background-color: var(--bg) !important; }
+    .bg-matrix-void { background-color: var(--bg-alt) !important; }
+    .bg-matrix-muted { background-color: var(--bg-muted) !important; }
+    .bg-matrix-card { background-color: var(--card) !important; }
+    .bg-black { background-color: var(--bg-alt) !important; }
+
+    .border-matrix-border { border-color: var(--border) !important; }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-height: 40px;
+      border-radius: 0.5rem;
+      background: var(--toggle-bg);
+      border: 1.5px solid var(--toggle-border);
+      color: var(--brand-blue);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue-soft);
+      transform: translateY(-1px);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+    .theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      display: block;
+    }
+    html.dark .theme-icon-sun { display: none; }
+    html:not(.dark) .theme-icon-moon { display: none; }
+    html.dark .theme-icon-moon { display: block; }
+    html:not(.dark) .theme-icon-sun { display: block; }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: #FFFFFF !important;
+    }
+    .btn-primary:active {
+      background: var(--brand-blue-dark) !important;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--brand-blue);
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .neon-tile,
+    .text-tile {
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+    }
+    .neon-tile span,
+    .text-tile-base span,
+    .text-tile > span {
+      color: var(--brand-blue);
+    }
+
+    .badge-popular {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue);
+    }
+
+    .terminal-window {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .terminal-header {
+      background: var(--brand-blue-soft);
+      border-bottom: 1px solid var(--border);
+    }
+    .cursor-blink::after { color: var(--brand-blue); }
+
+    .chart-bar-fill {
+      background: linear-gradient(180deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    }
+    .flow-step-line {
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--brand-blue) 15%, transparent),
+        color-mix(in srgb, var(--brand-blue) 45%, transparent),
+        color-mix(in srgb, var(--brand-blue) 15%, transparent));
+    }
+
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
+
+    .section-alt { background: var(--bg-alt); }
+
+    .search-input {
+      background: var(--input-bg);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-blue) 15%, transparent);
+    }
+    .filter-chip {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--soft);
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+
+    #signup-form input {
+      background: var(--input-bg);
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+/* theme tokens defined in LIGHT / DARK THEME TOKENS */
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .grid-bg {
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .btn-primary {
+      background: var(--brand-blue) !important; color: #FFFFFF !important; font-weight: 700;
+      border: 1.5px solid var(--brand-blue) !important; border-radius: 0.5rem !important;
+      min-height: 44px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 2px rgba(17, 122, 202, 0.2);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important; border-color: var(--brand-blue-hover) !important; color: #FFFFFF !important;
+      transform: translateY(-1px); box-shadow: 0 4px 12px rgba(17, 122, 202, 0.28);
+    }
+    .btn-secondary {
+      background: var(--card) !important; color: var(--brand-blue) !important; font-weight: 600;
+      border: 1.5px solid var(--brand-blue) !important; border-radius: 0.5rem !important;
+      min-height: 44px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important; border-color: var(--brand-blue-hover) !important; color: var(--brand-blue-dark) !important;
+      transform: translateY(-1px);
+    }
+    .card-matrix {
+      background: var(--card); border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17, 122, 202, 0.12);
+    }
+    .nav-scrolled {
+      background: var(--nav-bg); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(33,30,30,0.06);
+    }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .mobile-menu.open { max-height: min(80vh, 520px); overflow-y: auto; }
+    .h1-fluid { font-size: clamp(1.85rem, 4.5vw + 0.5rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; }
+    .h2-fluid { font-size: clamp(1.5rem, 3vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; }
+    .neon-tile {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 2.75rem; height: 2.75rem; padding: 0 0.5rem; border-radius: 0.5rem;
+      background: var(--brand-blue-soft); border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent); flex-shrink: 0;
+    }
+    .neon-tile span {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem; font-weight: 700; color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-beta { color: #B45309; background: rgba(180,83,9,0.1); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 4px; }
+    @media (max-width: 767px) {
+      .card-matrix:hover, .btn-primary:hover, .btn-secondary:hover { transform: none; }
+    }
+
+    /* Top nav alignment grid */
+    #navbar .nav-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 1rem;
+      min-height: 4rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-row { min-height: 5rem; }
+    }
+    #navbar .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      text-decoration: none;
+    }
+    #navbar .nav-links {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem 1.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-actions {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-links,
+      #navbar .nav-actions { display: inline-flex; }
+    }
+    #navbar .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 0.15rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--soft);
+      transition: color 0.15s ease;
+    }
+    #navbar .nav-link:hover,
+    #navbar .nav-link[aria-current="page"] {
+      color: var(--brand-blue);
+    }
+    #navbar .nav-actions .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 1.25rem;
+      line-height: 1;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    #navbar .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-mobile { display: none; }
+    }
+    #navbar .nav-mobile #mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="bg-matrix-black antialiased">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="nav-row">
+        <a href="index.html" class="nav-brand group" aria-label="Matrixly.AI Home">
+          <div class="w-9 h-9 rounded-lg bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center group-hover:bg-matrix-green/20 transition-colors">
+            <svg class="w-5 h-5 text-matrix-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
+            <span class="text-matrix-cream">Matrixly</span><span class="text-matrix-green">.AI</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#how-it-works" class="nav-link">How it Works</a>
+          <a href="agents.html" class="nav-link" aria-current="page">Agents</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="integrations.html" class="nav-link">Integrations</a>
+          <a href="index.html#pricing" class="nav-link">Pricing</a>
+        </div>
+        <div class="nav-end">
+          <div class="nav-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <a href="index.html#final-cta" class="btn-primary rounded-lg">Get Started</a>
+          </div>
+          <div class="nav-mobile">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
+              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="py-4 space-y-1 border-t border-matrix-border">
+          <a href="agents.html" class="block px-3 py-3 font-bold text-matrix-green" aria-current="page">Agents</a>
+          <a href="products.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Products</a>
+          <a href="integrations.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
+          <a href="index.html#pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
+          <a href="index.html#final-cta" class="btn-primary block text-center mt-3 px-5 py-3">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  
+  <main class="relative z-10 pt-20 md:pt-24">
+    <section class="py-14 sm:py-20 grid-bg border-b border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// MARKETPLACE · NOTION SYNCED</p>
+        <h1 class="h1-fluid font-extrabold text-matrix-cream mb-4 max-w-3xl leading-tight">
+          Featured <span class="text-matrix-green">AI Agents</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8">
+          Catalog from the Matrixly Agent Marketplace (Notion) — powered by Hermes runtime + Grok intelligence.
+          Deploy ready agents for sales, ops, logistics, and finance.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="products.html" class="btn-secondary px-6 py-3 text-sm rounded-lg">View product suite →</a>
+          <a href="integrations.html" class="btn-secondary px-6 py-3 text-sm rounded-lg">View integrations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. FEATURED AGENTS (Notion Agent Marketplace + Hermes catalog) ========== -->
+    <section id="catalog" class="relative py-20 sm:py-28 grid-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
+          <div class="max-w-xl">
+            <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// MARKETPLACE · NOTION SYNCED</p>
+            <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+              Agent <span class="text-matrix-green">catalog</span>
+            </h2>
+            <p class="text-matrix-soft text-lg">Deploy live agents or join beta. Each card links to setup docs or waitlist.</p>
+          </div>
+          <a href="products.html#marketplace" class="btn-secondary px-6 py-3 rounded-lg text-sm self-start md:self-auto">View product suite →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>LEAD</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">Lead Qualifier</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Scores inbound leads, enriches contact data, and suggests personalized outreach sequences.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Salesforce · Gmail</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Sales domain · MVP pilot agent</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="lead-qualifier.html" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>MAIL</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">Email Assistant</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Triage inbox, draft replies, and flag urgent items so operators stop living in email.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Gmail / Outlook workflows</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Hermes skills + memory context</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="email-assistant.html" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>CRM</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">CRM Assistant</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Update contacts, log activities, and keep pipeline hygiene automated across your sales stack.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> CRM sync task type</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Multi-agent orchestration ready</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="crm-assistant.html" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>SHIP</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">Shipping Assistant</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Track shipments, notify stakeholders, and handle exceptions for logistics and distribution SMEs.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> ShipStation · UPS · FedEx · USPS</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Full order-to-delivery flow</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50 space-y-2">
+              <a href="shipping-assistant.html" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+              <a href="shipping-assistant-guide.html" class="block text-center text-xs font-semibold text-matrix-green hover:underline">User guide</a>
+              <a href="index.html#logistics" class="block text-center text-xs font-semibold text-matrix-soft hover:text-matrix-green hover:underline">See full logistics flow →</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>MEET</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-cream/5 text-amber-700">Beta</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">Meeting Summarizer</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Transcribe and summarize Zoom, Google Meet, or Teams; extract action items automatically.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Calendar · Gmail · Notion</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Action items to your KB</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="index.html#final-cta" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Join Beta</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>POST</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-cream/5 text-amber-700">Beta</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">Content Calendar Manager</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Generate social and blog ideas, schedule content, and track performance with SEO intelligence.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Notion · Calendar</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Local SEO for Houston SMBs</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="index.html#final-cta" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Join Beta</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>INV</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-cream/5 text-matrix-soft">Soon</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">Invoice Processor</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Extract invoice data from PDFs/email, match POs, and flag discrepancies before payment.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Gmail → accounting tools</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Finance domain · coming soon</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="index.html#final-cta" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Notify Me</a>
+            </div>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal border-matrix-green/30">
+            <div class="flex items-start justify-between mb-4 gap-3">
+              <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>ETF</span></div></div>
+              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-cream/5 text-amber-700">Beta</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-matrix-cream mb-2">ETF Portfolio Analyzer</h3>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Live market data, yield projections, NAV risk, and tax-aware strategies — Notion-backed analysis.</p>
+            <ul class="text-xs text-matrix-soft space-y-1.5 mb-5">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Notion knowledge layer</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Finance productivity agent</li>
+            </ul>
+            <div class="pt-4 border-t border-matrix-border/50">
+              <a href="index.html#final-cta" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Join Beta</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-16 sm:py-20 bg-matrix-muted border-t border-matrix-border/40">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="h2-fluid font-bold text-matrix-cream mb-4">Ready to deploy?</h2>
+        <p class="text-matrix-soft mb-8">Start with Lead Qualifier, Email Assistant, CRM, or Shipping — free to explore.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="index.html#final-cta" class="btn-primary px-8 py-3.5 rounded-xl text-sm">Get Started Free</a>
+          <a href="index.html#logistics" class="btn-secondary px-8 py-3.5 rounded-xl text-sm">See logistics flow</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border/50 bg-matrix-void pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="font-mono font-bold text-lg mb-3 inline-block">
+            <span class="text-matrix-cream">Matrixly</span><span class="text-matrix-green">.AI</span>
+          </a>
+          <p class="text-sm text-matrix-soft">Matrix Bazaar LLC · Houston, TX</p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Product</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="agents.html" class="hover:text-matrix-green">Agents</a></li>
+            <li><a href="products.html" class="hover:text-matrix-green">Products</a></li>
+            <li><a href="integrations.html" class="hover:text-matrix-green">Integrations</a></li>
+            <li><a href="index.html#pricing" class="hover:text-matrix-green">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Agents</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="lead-qualifier.html" class="hover:text-matrix-green">Lead Qualifier</a></li>
+            <li><a href="email-assistant.html" class="hover:text-matrix-green">Email Assistant</a></li>
+            <li><a href="crm-assistant.html" class="hover:text-matrix-green">CRM Assistant</a></li>
+            <li><a href="shipping-assistant.html" class="hover:text-matrix-green">Shipping Assistant</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="mailto:anwar.chowdhury@matrixbazaar.com" class="hover:text-matrix-green">Email</a></li>
+            <li><a href="https://matrixbazaar.com" class="hover:text-matrix-green" target="_blank" rel="noopener">matrixbazaar.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-matrix-soft font-mono border-t border-matrix-border/40 pt-6">© <span id="year"></span> Matrixly.AI / Matrix Bazaar LLC</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      const nav = document.getElementById('navbar');
+      const onScroll = () => nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+    (function () {
+      const toggle = document.getElementById('mobile-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      if (!toggle) return;
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        iconMenu.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+      });
+    })();
+    (function initThemeToggle() {
+      var KEY = 'matrixly-theme';
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+      function applyTheme(theme) {
+        var dark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0B1220' : '#117ACA');
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+          btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+          btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        });
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTheme(isDark() ? 'light' : 'dark');
+        });
+      });
+      applyTheme(isDark() ? 'dark' : 'light');
+    })();
+  </script>
+</body>
+</html>

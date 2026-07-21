@@ -1,0 +1,61 @@
+{
+  "contacts": [
+    {
+      "email": "maria.soto@gulfcoastdistribution.com",
+      "first_name": "Maria",
+      "last_name": "Soto",
+      "title": "VP Sales",
+      "company_name": "Gulf Coast Distribution",
+      "owner": "anwar.chowdhury@matrixbazaar.com",
+      "source": "Lead Qualifier"
+    },
+    {
+      "email": "ops@transocean-freight.com",
+      "first_name": "Priya",
+      "last_name": "Shah",
+      "title": "Operations Manager",
+      "company_name": "TransOcean Freight",
+      "owner": "",
+      "source": "Inbound"
+    },
+    {
+      "email": "jake@quickhvac.biz",
+      "first_name": "Jake",
+      "last_name": "Nguyen",
+      "title": "Owner",
+      "company_name": "Quick HVAC",
+      "owner": "anwar.chowdhury@matrixbazaar.com"
+    }
+  ],
+  "deals": [
+    {
+      "name": "Gulf Coast — Matrixly Growth pilot",
+      "stage": "Proposal",
+      "amount": 799,
+      "contact_email": "maria.soto@gulfcoastdistribution.com",
+      "company_name": "Gulf Coast Distribution",
+      "owner": "anwar.chowdhury@matrixbazaar.com",
+      "next_step": "Send pilot SOW",
+      "last_activity_at": "2026-07-18T15:00:00+00:00"
+    },
+    {
+      "name": "TransOcean — Email + CRM agents",
+      "stage": "Qualification",
+      "amount": 1999,
+      "contact_email": "ops@transocean-freight.com",
+      "company_name": "TransOcean Freight",
+      "owner": "",
+      "next_step": "",
+      "last_activity_at": "2026-06-01T12:00:00+00:00"
+    }
+  ],
+  "activities": [
+    {
+      "type": "email",
+      "subject": "Introduced Matrixly pilot options",
+      "body": "Sent Growth tier overview to Maria.",
+      "contact_email": "maria.soto@gulfcoastdistribution.com",
+      "source": "seed"
+    }
+  ]
+}

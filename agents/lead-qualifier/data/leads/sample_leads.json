@@ -1,0 +1,62 @@
+{
+  "leads": [
+    {
+      "email": "maria.soto@gulfcoastdistribution.com",
+      "first_name": "Maria",
+      "last_name": "Soto",
+      "title": "VP Sales",
+      "company": "Gulf Coast Distribution",
+      "industry": "distribution",
+      "employee_count": 85,
+      "city": "Houston",
+      "state": "TX",
+      "country": "US",
+      "source": "Inbound website form",
+      "notes": "Interested in a pilot for lead qualification and email triage. Budget discussion this month."
+    },
+    {
+      "email": "jake@quickhvac.biz",
+      "first_name": "Jake",
+      "last_name": "Nguyen",
+      "title": "Owner",
+      "company": "Quick HVAC",
+      "industry": "hvac",
+      "employee_count": 18,
+      "city": "Katy",
+      "state": "TX",
+      "source": "Referral",
+      "notes": "Wants pricing for AI agents that book more jobs from inbound calls and web forms."
+    },
+    {
+      "email": "student.learner@gmail.com",
+      "first_name": "Alex",
+      "last_name": "Lee",
+      "title": "Student",
+      "company": "",
+      "source": "Content download",
+      "notes": "Just exploring AI for a class project"
+    },
+    {
+      "email": "ops@transocean-freight.com",
+      "first_name": "Priya",
+      "last_name": "Shah",
+      "title": "Operations Manager",
+      "company": "TransOcean Freight",
+      "industry": "logistics",
+      "employee_count": 140,
+      "city": "Houston",
+      "state": "TX",
+      "source": "Inbound demo request",
+      "notes": "Looking at automating shipment exception emails and CRM updates. Timeline ASAP."
+    },
+    {
+      "email": "info@randomblog.net",
+      "first_name": "Sam",
+      "last_name": "Bloggs",
+      "title": "Editor",
+      "company": "Random Blog",
+      "source": "Cold form",
+      "notes": "Please add me to your newsletter"
+    }
+  ]
+}

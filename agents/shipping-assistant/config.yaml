@@ -1,0 +1,90 @@
+# Matrixly.AI — Shipping Assistant (ShipStation-first MVP)
+# Marketplace tile: SHIP · Logistics · HITL on destructive ops
+
+agent:
+  name: Shipping Assistant
+  id: shipping-assistant
+  version: "1.0.0"
+  marketplace_tile: SHIP
+  domain: logistics
+  status: mvp_pilot
+  design: shipstation_hub_wismo_hitl
+
+operator:
+  company: Matrix Bazaar LLC / Matrixly.AI
+  email: anwar.chowdhury@matrixbazaar.com
+  notify_email: anwar.chowdhury@matrixbazaar.com
+
+shipstation:
+  # API: https://ssapi.shipstation.com — Basic auth APIKey:APISecret
+  base_url: https://ssapi.shipstation.com
+  # Credentials from env only
+  mode: auto  # auto | live | demo
+  page_size: 50
+
+carriers:
+  # Display labels — rates/labels via ShipStation
+  supported:
+    - ups
+    - fedex
+    - usps
+    - dhl_express
+
+exceptions:
+  # Days past ship/estimated delivery without deliver event
+  late_after_days: 3
+  # Statuses treated as exceptions (normalized)
+  exception_statuses:
+    - exception
+    - undeliverable
+    - delivery_attempt
+    - returned
+    - held
+    - address_issue
+  # Keywords in status detail
+  exception_keywords:
+    - exception
+    - undeliverable
+    - address
+    - failed
+    - return
+    - held
+    - weather
+    - delay
+
+notifications:
+  # Never auto-email customers in MVP — drafts only
+  auto_send_customer: false
+  auto_send_internal: false
+  stakeholder_roles:
+    - ops
+    - support
+    - customer
+
+wismo:
+  # Support answer pack
+  include_tracking_url: true
+  tone: professional_friendly
+
+hitl:
+  require_approval_for:
+    - cancel_order
+    - update_address
+    - create_label
+    - void_label
+  auto_allow:
+    - list_orders
+    - track
+    - exception_scan
+    - wismo_reply_draft
+
+xai:
+  model: grok-4-1-fast-reasoning
+  base_url: https://api.x.ai/v1
+  enabled: true
+
+hermes:
+  skill_name: shipping-assistant
+  related:
+    - email-assistant
+    - crm-assistant

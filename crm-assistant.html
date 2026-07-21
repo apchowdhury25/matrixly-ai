@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') { document.documentElement.classList.add('dark'); document.documentElement.setAttribute('data-theme', 'dark'); }
+        else { document.documentElement.classList.remove('dark'); document.documentElement.setAttribute('data-theme', 'light'); }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matrixly.AI CRM Assistant — update contacts, log activities, pipeline hygiene. Salesforce export. Human-in-the-loop writes." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>CRM Assistant — Matrixly.AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { matrix: {
+      green: 'var(--brand-blue)', border: 'var(--border)', soft: 'var(--soft)', cream: 'var(--ink)', card: 'var(--card)'
+    }}}}};
+  </script>
+  <style>
+    :root { --brand-blue:#117ACA; --brand-blue-dark:#0B5CAB; --ink:#211E1E; --soft:#5C6670; --border:#D0D7DE; --bg:#FFF; --card:#FFF; --bg-muted:#F0F4F8; --nav-bg:rgba(255,255,255,.92); --grid-line:rgba(17,122,202,.04); }
+    html.dark { --ink:#F0F2F5; --soft:#A8B0B8; --border:#2A3340; --bg:#0B0F14; --card:#151C26; --bg-muted:#1A222D; --nav-bg:rgba(11,15,20,.92); }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .grid-bg { background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 48px 48px; }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); }
+    pre.cmd { background: var(--bg-muted); border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; font-size: .8rem; overflow-x: auto; font-family: ui-monospace, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background:var(--nav-bg);backdrop-filter:blur(10px)">
+    <div class="max-w-5xl mx-auto px-4 py-3.5 flex justify-between items-center">
+      <a href="index.html" class="font-bold flex items-center gap-2"><span class="h-8 w-8 rounded-lg bg-[#117ACA] text-white text-xs font-extrabold inline-flex items-center justify-center">M</span> Matrixly.AI</a>
+      <a href="agents.html" class="btn-secondary text-sm px-4 py-2 rounded-lg">← Marketplace</a>
+    </div>
+  </header>
+  <main class="grid-bg">
+    <section class="max-w-5xl mx-auto px-4 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3">// CRM · LIVE · HITL WRITES</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">CRM Assistant</h1>
+      <p class="text-matrix-soft text-lg max-w-2xl leading-relaxed">
+        Update contacts, log activities, and keep pipeline hygiene automated — with
+        <strong class="text-matrix-cream">human approval</strong> before CRM writes.
+        Built for Salesforce-shaped exports and multi-agent sales workflows.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Contacts</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Activities</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Hygiene</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Salesforce export</span>
+      </div>
+    </section>
+    <section class="max-w-5xl mx-auto px-4 pb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">1. Extract</h2><p class="text-sm text-matrix-soft">Meeting/email notes → contact, company, deal, activity proposals.</p></article>
+      <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">2. Approve</h2><p class="text-sm text-matrix-soft">HITL queue — review diffs before applying to CRM store.</p></article>
+      <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">3. Hygiene</h2><p class="text-sm text-matrix-soft">Stale deals, missing owners, missing next steps.</p></article>
+      <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">4. Export</h2><p class="text-sm text-matrix-soft">Salesforce-shaped Contact / Task / Opportunity JSON + CSV.</p></article>
+    </section>
+    <section class="max-w-5xl mx-auto px-4 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold mb-2">Deploy</h2>
+        <p class="text-sm text-matrix-soft mb-4">Code: <code class="text-xs">agents/crm-assistant</code> · Skill: <code class="text-xs">crm-assistant</code> · Design: <code class="text-xs">DESIGN.md</code></p>
+        <pre class="cmd mb-4">cd C:\Users\anwar\projects\matrix-six\agents\crm-assistant
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m src.cli demo --no-llm
+python -m src.cli pending
+python -m src.cli approve-all
+python -m src.cli hygiene
+python -m src.cli export</pre>
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+          <strong class="text-matrix-cream">Safety:</strong> CRM field updates are queued for approval —
+          automation without blind trust. Humans approve before records change.
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 text-sm text-matrix-soft flex justify-between">
+      <span>Matrixly.AI · CRM Assistant v1.0</span>
+      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+    </div>
+  </footer>
+</body>
+</html>

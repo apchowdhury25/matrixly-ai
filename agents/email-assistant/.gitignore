@@ -1,0 +1,13 @@
+.env
+data/credentials.json
+data/token.json
+data/token.pickle
+data/summaries/
+data/*.json
+!data/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/

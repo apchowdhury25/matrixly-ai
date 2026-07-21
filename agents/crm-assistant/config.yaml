@@ -1,0 +1,73 @@
+# Matrixly.AI — CRM Assistant Agent (MVP pilot)
+# Marketplace tile: CRM · Sales · multi-agent ready
+
+agent:
+  name: CRM Assistant
+  id: crm-assistant
+  version: "1.0.0"
+  marketplace_tile: CRM
+  domain: sales
+  status: mvp_pilot
+  design: hitl_hygiene_export
+
+operator:
+  company: Matrix Bazaar LLC / Matrixly.AI
+  email: anwar.chowdhury@matrixbazaar.com
+
+# Write policy — Matrixly differentiator
+writes:
+  mode: export_and_queue  # export_and_queue | auto_local | api
+  require_approval: true
+  auto_apply_local: false
+
+crm:
+  # Local system of record for pilot (JSON store)
+  store_path: data/crm_store.json
+  # Primary external target for exports
+  primary_target: salesforce  # salesforce | hubspot | generic
+  export_dir: data/output
+
+hygiene:
+  stale_deal_days: 14
+  require_owner: true
+  require_next_step: true
+  require_email_on_contact: true
+  max_open_deals_without_activity_days: 7
+
+activity_types:
+  - email
+  - call
+  - meeting
+  - note
+  - task
+
+extraction:
+  use_llm: true
+  # Fields we never invent if missing
+  never_invent:
+    - phone
+    - annual_revenue
+    - linkedin_url
+
+salesforce:
+  object_contact: Contact
+  object_lead: Lead
+  object_task: Task
+  object_opportunity: Opportunity
+  default_task_status: Completed
+  export_dir: data/output/salesforce
+
+hubspot:
+  # Shape-compatible export for future
+  export_dir: data/output/hubspot
+
+xai:
+  model: grok-4-1-fast-reasoning
+  base_url: https://api.x.ai/v1
+  enabled: true
+
+hermes:
+  skill_name: crm-assistant
+  related:
+    - lead-qualifier
+    - email-assistant

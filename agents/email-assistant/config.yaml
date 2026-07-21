@@ -1,0 +1,112 @@
+# Matrixly.AI — Email Assistant Agent
+# Active mailbox is selected by EMAIL_PROFILE in .env (gmail | hostinger)
+
+agent:
+  name: Email Assistant
+  id: email-assistant
+  version: "1.2.0"
+  marketplace_tile: MAIL
+  # Default profile when EMAIL_PROFILE is unset — gmail for this session
+  profile: gmail
+  # imap = IMAP/SMTP (Hostinger or Gmail App Password) | gmail = Gmail API OAuth
+  backend: imap
+
+account:
+  # Overridden by active profile / .env
+  primary_email: usmatrixbazaar@gmail.com
+  domains:
+    - gmail.com
+    - matrixbazaar.com
+    - usmatrixbazaar.com
+    - matrixly.ai
+
+# IMAP/SMTP filled from profile + .env at runtime (see src/config.py PROFILES)
+imap:
+  max_results: 40
+
+smtp: {}
+
+# Optional pure Gmail API OAuth backend (EMAIL_BACKEND=gmail + credentials.json)
+gmail:
+  credentials_file: data/credentials.json
+  token_file: data/token.json
+  scopes:
+    - https://www.googleapis.com/auth/gmail.modify
+    - https://www.googleapis.com/auth/gmail.compose
+    - https://www.googleapis.com/auth/gmail.labels
+  user_id: me
+  max_results: 40
+
+triage:
+  labels:
+    urgent: Matrixly/Urgent
+    needs_reply: Matrixly/Needs Reply
+    fyi: Matrixly/FYI
+    waiting: Matrixly/Waiting
+    newsletter: Matrixly/Newsletter
+    automated: Matrixly/Automated
+  unread_only: true
+
+urgency:
+  keywords:
+    - urgent
+    - asap
+    - "time sensitive"
+    - "time-sensitive"
+    - "action required"
+    - "action needed"
+    - deadline
+    - "eod"
+    - "end of day"
+    - "by tomorrow"
+    - "by today"
+    - "wire transfer"
+    - invoice overdue
+    - "past due"
+    - legal
+    - lawsuit
+    - escalation
+    - outage
+    - "system down"
+    - "site down"
+    - "is down"
+    - blocked
+    - "cannot ship"
+    - "cannot deliver"
+    - "payment failed"
+  vip_domains: []
+  vip_addresses: []
+  urgent_threshold: 0.55
+
+draft:
+  auto_send: false
+  tone: professional
+  signature: |
+    —
+    Anwar Pasha Chowdhury
+    CEO, Matrix Bazaar LLC / Matrixly.AI
+    Houston, TX
+    usmatrixbazaar@gmail.com
+  max_words: 180
+
+summary:
+  lookback_hours: 24
+  deliver_to: usmatrixbazaar@gmail.com
+  subject_prefix: "[Matrixly Email Brief]"
+  include_sections:
+    - urgent
+    - needs_reply
+    - key_threads
+    - stats
+  write_markdown: true
+
+xai:
+  model: grok-4-1-fast-reasoning
+  base_url: https://api.x.ai/v1
+  enabled: true
+
+hermes:
+  skill_name: email-assistant
+  cron:
+    daily_summary: "0 8 * * *"
+    morning_triage: "0 7 * * 1-5"
