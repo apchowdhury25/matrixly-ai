@@ -1,6 +1,6 @@
-# Matrixly.ai – Agentic AI Automation Agency
+# Matrixly – Agentic AI Automation Agency
 
-**Matrixly.AI** is the agentic AI marketplace for SMBs — ready-to-deploy agents that market, sell, ship, and run operations with human-in-the-loop controls.
+**Matrixly** is the agentic AI marketplace for SMBs — ready-to-deploy agents that market, sell, ship, and run operations with human-in-the-loop controls. Matrixly is an assumed name (DBA) of **Matrix Bazaar LLC**.
 
 This repository contains the public marketing site, agent catalog, integration directory, and Python pilot agents (Email, Lead Qualifier, CRM, Shipping).
 
