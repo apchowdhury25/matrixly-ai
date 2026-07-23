@@ -148,91 +148,62 @@
 
   <main class="grid-bg">
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// MAIL · LIVE · HERMES + GROK</p>
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-        <div class="max-w-2xl">
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">
-            Email Assistant
-          </h1>
-          <p class="text-matrix-soft text-lg leading-relaxed">
-            Triage your business inbox, draft replies for review, flag urgent items, and get a daily executive brief —
-            so nothing important slips while you stay in control of every send.
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Inbox triage</span>
-          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Draft-only sends</span>
-          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Daily brief</span>
-        </div>
-      </div>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// MAIL · TRIAGE · DRAFTS</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">
+        Email Assistant
+      </h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+        Triage your business inbox, draft replies for review, flag urgent items, and get a daily executive brief —
+        so nothing important slips while you stay in control of every send.
+      </p>
     </section>
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">1. Triage</h2>
-          <p class="text-sm text-matrix-soft">Score unread mail and apply <code class="text-xs">Matrixly/*</code> labels (Urgent, Needs Reply, FYI…).</p>
+          <p class="text-sm text-matrix-soft">Score unread mail and sort it into clear buckets — urgent, needs a reply, FYI, and more.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">2. Flag urgent</h2>
-          <p class="text-sm text-matrix-soft">Keyword + VIP + Grok ranking for payments, deadlines, legal, and shipping exceptions.</p>
+          <p class="text-sm text-matrix-soft">Surface payments, deadlines, legal issues, VIP senders, and operational exceptions first.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">3. Draft replies</h2>
-          <p class="text-sm text-matrix-soft">Creates <strong>drafts only</strong> — human approval before anything leaves the mailbox.</p>
+          <p class="text-sm text-matrix-soft">Prepare reply drafts for your review. Nothing is sent until you approve.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">4. Daily brief</h2>
-          <p class="text-sm text-matrix-soft">Executive summary of the last 24h, saved as markdown and emailed to you.</p>
+          <p class="text-sm text-matrix-soft">Get a short executive summary of the last 24 hours so you can start the day focused.</p>
         </article>
       </div>
     </section>
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">What you get</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">How it works</h2>
         <p class="text-sm text-matrix-soft mb-6">
-          Connect the agent to your business mailbox (IMAP or Gmail). It scores unread mail, labels what needs attention,
-          prepares reply drafts, and delivers a daily brief — without sending mail on its own.
+          Connect the agent to your business mailbox. It reviews unread messages, highlights what needs attention,
+          drafts replies you can edit, and delivers a daily brief — without sending mail on its own.
         </p>
 
-        <h3 class="font-bold text-matrix-cream mb-2">Core capabilities</h3>
-        <ul class="text-sm text-matrix-soft space-y-2 mb-6 list-disc list-inside">
-          <li><strong class="text-matrix-cream">Triage</strong> — score and label unread messages (Urgent, Needs Reply, FYI, and more)</li>
-          <li><strong class="text-matrix-cream">Urgent flags</strong> — surface payments, deadlines, legal, and operational exceptions</li>
-          <li><strong class="text-matrix-cream">Draft replies</strong> — write responses for your review; nothing sends until you approve</li>
-          <li><strong class="text-matrix-cream">Daily brief</strong> — executive summary of the last 24 hours, delivered to you</li>
+        <h3 class="font-bold text-matrix-cream mb-3">Best for</h3>
+        <ul class="text-sm text-matrix-soft space-y-2 mb-8 list-disc list-inside">
+          <li>Owners and ops leads who live in a busy shared or personal business inbox</li>
+          <li>Teams that want faster responses without auto-sending customer email</li>
+          <li>Anyone who wants a morning summary instead of digging through unread mail</li>
         </ul>
 
-        <h3 class="font-bold text-matrix-cream mb-2">Operator CLI (local install)</h3>
-        <pre class="cmd mb-6">cd agents/email-assistant
-python -m venv .venv
-# Windows: .\.venv\Scripts\Activate.ps1
-# macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env   # set mailbox credentials locally — never commit .env
+        <h3 class="font-bold text-matrix-cream mb-3">Built-in guardrails</h3>
+        <ul class="text-sm text-matrix-soft space-y-2 mb-8 list-disc list-inside">
+          <li>Draft-only by default — you approve before anything leaves the mailbox</li>
+          <li>Daily briefs go only to addresses you configure</li>
+          <li>Mailbox credentials stay in your environment; they are never part of the public site</li>
+        </ul>
 
-python -m src.cli auth
-python -m src.cli profile
-python -m src.cli triage
-python -m src.cli urgent
-python -m src.cli draft --message-id &lt;id&gt;
-python -m src.cli summary</pre>
-
-        <h3 class="font-bold text-matrix-cream mb-2">Optional automation</h3>
-        <p class="text-sm text-matrix-soft mb-3">
-          Schedule morning triage and a daily brief with your preferred runner (e.g. Hermes cron or system scheduler).
-          Point the workdir at your local <code class="text-xs">agents/email-assistant</code> checkout.
-        </p>
-        <pre class="cmd mb-6"># Example prompts / jobs
-# "Triage my unread mail and list anything urgent"
-# Daily: python scripts/run_daily_summary.py
-# Weekday morning: python scripts/run_triage.py</pre>
-
-        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
-          <strong class="text-matrix-cream">Safety:</strong> Replies are draft-only by default.
-          The daily brief goes only to addresses you configure.
-          Never commit mailbox passwords, <code class="text-xs">.env</code>, or OAuth token files.
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="agents.html" class="btn-primary text-sm px-6 py-3 rounded-lg text-center">Back to marketplace</a>
+          <a href="index.html#final-cta" class="btn-secondary text-sm px-6 py-3 rounded-lg text-center">Get started</a>
         </div>
       </div>
     </section>
