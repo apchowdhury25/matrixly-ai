@@ -95,7 +95,8 @@
       --brand-blue-soft: #152536;
       --ink: #F0F4F8;
       --soft: #9AA4B2;
-      --border: #2A3544;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
       --bg: #0B1220;
       --bg-alt: #111827;
       --bg-muted: #151C28;
@@ -105,7 +106,7 @@
       --shadow-md: 0 8px 28px rgba(17, 122, 202, 0.18);
       --input-bg: #111827;
       --toggle-bg: #1A2332;
-      --toggle-border: #2A3544;
+      --toggle-border: #1E2A3A;
       --grid-line: rgba(59, 159, 224, 0.07);
       --matrix-green: #3B9FE0;
       --matrix-green-text: #3B9FE0;
@@ -114,6 +115,24 @@
       --matrix-forest: #117ACA;
       --matrix-forest-text: #117ACA;
       color-scheme: dark;
+    }
+
+    html.dark section.border-y,
+    html.dark section.border-t,
+    html.dark section.border-b,
+    html.dark footer.border-t,
+    html.dark header.border-b {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-t.border-matrix-border,
+    html.dark .border-b.border-matrix-border,
+    html.dark .border-y.border-matrix-border {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .nav-scrolled {
+      border-bottom-color: var(--section-divider);
     }
 
     body {

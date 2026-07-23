@@ -72,13 +72,22 @@
     html.dark {
       --ink: #F0F2F5;
       --soft: #A8B0B8;
-      --border: #2A3340;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
       --bg: #0B0F14;
       --bg-alt: #121820;
       --bg-muted: #1A222D;
       --card: #151C26;
       --nav-bg: rgba(11, 15, 20, 0.92);
       --grid-line: rgba(17, 122, 202, 0.08);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
     }
     body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
     .grid-bg {
