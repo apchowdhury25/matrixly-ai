@@ -679,19 +679,16 @@
   </script>
 </head>
 <body class="bg-matrix-black antialiased">
-  <!-- ========== NAVIGATION ========== -->
+  <!-- ========== NAVIGATION (aligned with agents / products / integrations) ========== -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="nav-row">
-        <!-- Logo -->
-        <a href="#hero" class="nav-brand group" aria-label="Matrixly Home">
+        <a href="index.html" class="nav-brand group" aria-label="Matrixly Home">
           <img src="assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
           <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
             <span class="text-matrix-cream">Matrixly</span>
           </span>
         </a>
-
-        <!-- Desktop Nav links (center column, same vertical center as actions) -->
         <div class="nav-links">
           <a href="#how-it-works" class="nav-link">How it Works</a>
           <a href="agents.html" class="nav-link">Agents</a>
@@ -699,10 +696,8 @@
           <a href="integrations.html" class="nav-link">Integrations</a>
           <a href="#pricing" class="nav-link">Pricing</a>
         </div>
-
         <div class="nav-end">
           <div class="nav-actions">
-            <a href="#final-cta" class="nav-link">Sign in</a>
             <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
               <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="4"/>
@@ -712,7 +707,7 @@
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
               </svg>
             </button>
-            <a href="agents.html" class="btn-primary rounded-lg">Browse Agents</a>
+            <a href="#final-cta" class="btn-primary rounded-lg">Get Started</a>
           </div>
           <div class="nav-mobile">
             <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
@@ -725,18 +720,12 @@
               </svg>
             </button>
             <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
-              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
-              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
+              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
           </div>
         </div>
       </div>
-
-      <!-- Mobile menu -->
       <div id="mobile-menu" class="mobile-menu md:hidden">
         <div class="py-4 space-y-1 border-t border-matrix-border">
           <a href="#how-it-works" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">How it Works</a>
@@ -744,7 +733,7 @@
           <a href="products.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Products</a>
           <a href="integrations.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
           <a href="#pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
-          <a href="agents.html" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg">Browse Agents</a>
+          <a href="#final-cta" class="btn-primary block text-center mt-3 px-5 py-3">Get Started</a>
         </div>
       </div>
     </nav>
