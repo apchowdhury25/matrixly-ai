@@ -17,7 +17,7 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly Email Assistant — triage Gmail, draft replies, flag urgent items, and get a daily email brief for usmatrixbazaar.com." />
+  <meta name="description" content="Matrixly Email Assistant — triage your inbox, draft replies, flag urgent items, and get a daily executive email brief. Human approval before anything is sent." />
   <meta name="theme-color" content="#117ACA" />
   <title>Email Assistant — Matrixly</title>
   <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
@@ -155,14 +155,14 @@
             Email Assistant
           </h1>
           <p class="text-matrix-soft text-lg leading-relaxed">
-            Triage <strong class="text-matrix-cream">anwar.chowdhury@matrixbazaar.com</strong> over
-            Hostinger IMAP (same stack as Thunderbird), draft replies, flag urgent items, and get a daily executive brief.
+            Triage your business inbox, draft replies for review, flag urgent items, and get a daily executive brief —
+            so nothing important slips while you stay in control of every send.
           </p>
         </div>
         <div class="flex flex-wrap gap-3">
-          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Hostinger IMAP</span>
+          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Inbox triage</span>
           <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Draft-only sends</span>
-          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Daily cron</span>
+          <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Daily brief</span>
         </div>
       </div>
     </section>
@@ -179,7 +179,7 @@
         </article>
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">3. Draft replies</h2>
-          <p class="text-sm text-matrix-soft">Creates <strong>Gmail drafts only</strong> — human approval before anything leaves the mailbox.</p>
+          <p class="text-sm text-matrix-soft">Creates <strong>drafts only</strong> — human approval before anything leaves the mailbox.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">4. Daily brief</h2>
@@ -190,53 +190,49 @@
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">What you get</h2>
         <p class="text-sm text-matrix-soft mb-6">
-          Agent code lives at <code class="text-xs">agents/email-assistant</code>.
-          Hermes skill: <code class="text-xs">email-assistant</code>.
-          Primary mailbox default: <code class="text-xs">anwar.chowdhury@matrixbazaar.com</code>.
+          Connect the agent to your business mailbox (IMAP or Gmail). It scores unread mail, labels what needs attention,
+          prepares reply drafts, and delivers a daily brief — without sending mail on its own.
         </p>
 
-        <h3 class="font-bold text-matrix-cream mb-2">Step A — Python env</h3>
-        <pre class="cmd mb-6">cd C:\Users\anwar\projects\matrix-six\agents\email-assistant
+        <h3 class="font-bold text-matrix-cream mb-2">Core capabilities</h3>
+        <ul class="text-sm text-matrix-soft space-y-2 mb-6 list-disc list-inside">
+          <li><strong class="text-matrix-cream">Triage</strong> — score and label unread messages (Urgent, Needs Reply, FYI, and more)</li>
+          <li><strong class="text-matrix-cream">Urgent flags</strong> — surface payments, deadlines, legal, and operational exceptions</li>
+          <li><strong class="text-matrix-cream">Draft replies</strong> — write responses for your review; nothing sends until you approve</li>
+          <li><strong class="text-matrix-cream">Daily brief</strong> — executive summary of the last 24 hours, delivered to you</li>
+        </ul>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Operator CLI (local install)</h3>
+        <pre class="cmd mb-6">cd agents/email-assistant
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+# Windows: .\.venv\Scripts\Activate.ps1
+# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
-copy .env.example .env</pre>
+cp .env.example .env   # set mailbox credentials locally — never commit .env
 
-        <h3 class="font-bold text-matrix-cream mb-2">Step B — Mailbox password (Thunderbird / Hostinger)</h3>
-        <p class="text-sm text-matrix-soft mb-3">
-          IMAP <code class="text-xs">imap.hostinger.com:993</code> · SMTP <code class="text-xs">smtp.hostinger.com:465</code> ·
-          user <code class="text-xs">anwar.chowdhury@matrixbazaar.com</code>
-        </p>
-        <ol class="text-sm text-matrix-soft space-y-2 mb-4 list-decimal list-inside">
-          <li>Copy <code class="text-xs">.env.example</code> → <code class="text-xs">.env</code></li>
-          <li>Set <code class="text-xs">EMAIL_IMAP_PASSWORD</code> to the same password Thunderbird uses</li>
-          <li>Do not paste the password into chat — keep it only in local <code class="text-xs">.env</code></li>
-          <li>Connect:</li>
-        </ol>
-        <pre class="cmd mb-6">python -m src.cli auth
-python -m src.cli profile</pre>
-        <p class="text-sm text-matrix-soft mb-6">Optional Gmail API path: <code class="text-xs">agents/email-assistant/scripts/setup_oauth.md</code></p>
-
-        <h3 class="font-bold text-matrix-cream mb-2">Step C — Run the agent</h3>
-        <pre class="cmd mb-6">python -m src.cli triage
+python -m src.cli auth
+python -m src.cli profile
+python -m src.cli triage
 python -m src.cli urgent
 python -m src.cli draft --message-id &lt;id&gt;
-python -m src.cli summary
-python -m src.cli summary --no-send</pre>
+python -m src.cli summary</pre>
 
-        <h3 class="font-bold text-matrix-cream mb-2">Step D — Hermes skill + daily cron</h3>
-        <pre class="cmd mb-6">hermes -s email-assistant -z "Triage my unread Gmail and list anything urgent"
-
-hermes cron create "0 8 * * *" --name "email-daily-brief" --skill email-assistant --workdir "C:\Users\anwar\projects\matrix-six\agents\email-assistant" "Run daily email brief: python scripts/run_daily_summary.py"
-
-hermes cron create "0 7 * * 1-5" --name "email-morning-triage" --skill email-assistant --workdir "C:\Users\anwar\projects\matrix-six\agents\email-assistant" "Morning triage: python scripts/run_triage.py"</pre>
+        <h3 class="font-bold text-matrix-cream mb-2">Optional automation</h3>
+        <p class="text-sm text-matrix-soft mb-3">
+          Schedule morning triage and a daily brief with your preferred runner (e.g. Hermes cron or system scheduler).
+          Point the workdir at your local <code class="text-xs">agents/email-assistant</code> checkout.
+        </p>
+        <pre class="cmd mb-6"># Example prompts / jobs
+# "Triage my unread mail and list anything urgent"
+# Daily: python scripts/run_daily_summary.py
+# Weekday morning: python scripts/run_triage.py</pre>
 
         <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
           <strong class="text-matrix-cream">Safety:</strong> Replies are draft-only by default.
-          The daily brief emails <em>you</em> only (<code class="text-xs">summary.deliver_to</code>).
-          Never commit <code class="text-xs">data/credentials.json</code> or <code class="text-xs">data/token.json</code>.
+          The daily brief goes only to addresses you configure.
+          Never commit mailbox passwords, <code class="text-xs">.env</code>, or OAuth token files.
         </div>
       </div>
     </section>
