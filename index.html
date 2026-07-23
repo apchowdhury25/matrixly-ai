@@ -37,6 +37,8 @@
 
   <title>Matrixly.AI — The Agentic AI Marketplace for SMBs</title>
 
+  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -520,6 +522,12 @@
       min-height: 2.5rem;
       text-decoration: none;
     }
+    #navbar .nav-brand img {
+      filter: drop-shadow(0 1px 2px rgba(17, 122, 202, 0.18));
+    }
+    html.dark #navbar .nav-brand img {
+      filter: drop-shadow(0 0 8px rgba(59, 159, 224, 0.35));
+    }
     #navbar .nav-links {
       display: none;
       align-items: center;
@@ -651,13 +659,7 @@
       <div class="nav-row">
         <!-- Logo -->
         <a href="#hero" class="nav-brand group" aria-label="Matrixly.AI Home">
-          <div class="w-9 h-9 rounded-lg bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center group-hover:bg-matrix-green/20 transition-colors">
-            <svg class="w-5 h-5 text-matrix-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
+          <img src="assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
           <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
             <span class="text-matrix-cream">Matrixly</span><span class="text-matrix-green">.AI</span>
           </span>
@@ -1721,11 +1723,7 @@
         <!-- Brand -->
         <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
           <a href="#hero" class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center ">
-              <svg class="w-4 h-4 text-matrix-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-              </svg>
-            </div>
+            <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="w-8 h-8 object-contain rounded-md flex-shrink-0" />
             <span class="font-mono font-bold text-lg">
               <span class="text-matrix-cream">Matrixly</span><span class="text-matrix-green">.AI</span>
             </span>
