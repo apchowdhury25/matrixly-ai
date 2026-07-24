@@ -16,6 +16,7 @@ A production-facing static website plus local agent runtimes for:
 | **Shipping Assistant** | ShipStation hub — track, exceptions, WISMO drafts |
 | **SupportForge** | Embeddable AI support — chat widget, KB answers, HITL, tickets |
 | **BookWise** | Embeddable AI booking — availability, confirmations, reminders, calendar sync |
+| **InvoiceForge** | Invoice processing & AR — vision extract, validate, post, reminders, reports |
 
 ## Tech stack
 
@@ -92,7 +93,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── crm-assistant/
 │   ├── shipping-assistant/
 │   ├── support-forge/         # FastAPI embeddable support agent + widget
-│   └── book-wise/             # FastAPI embeddable booking agent + widget
+│   ├── book-wise/             # FastAPI embeddable booking agent + widget
+│   └── invoice-forge/         # FastAPI invoice processing & AR agent + dashboard
 └── docs/                      # Optional internal notes (session archives gitignored)
 ```
 
@@ -122,6 +124,19 @@ python -m src.cli serve
 ```
 
 Product page: [book-wise.html](book-wise.html). Full setup & embed: [agents/book-wise/README.md](agents/book-wise/README.md).
+
+### InvoiceForge (invoice processing & AR)
+
+```bash
+cd agents/invoice-forge
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [invoice-forge.html](invoice-forge.html). Full setup: [agents/invoice-forge/README.md](agents/invoice-forge/README.md).
 
 
 ## License

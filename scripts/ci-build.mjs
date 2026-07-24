@@ -32,6 +32,7 @@ const HTML_ALLOW = new Set([
   "shipping-assistant-guide.html",
   "support-forge.html",
   "book-wise.html",
+  "invoice-forge.html",
 ]);
 
 const ASSET_EXTS = new Set([

@@ -1,0 +1,17 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/invoices/*.json
+data/uploads/*
+!data/uploads/.gitkeep
+data/exports/*
+!data/exports/.gitkeep
+data/audit/*.jsonl
+data/usage/*.jsonl
+data/hitl/*.json
+data/reminders/*.json
+data/sessions/*.json
+!data/**/.gitkeep

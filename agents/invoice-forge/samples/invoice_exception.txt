@@ -1,0 +1,12 @@
+INVOICE — RUSH / DISPUTED
+
+Vendor: Mega Legal Services
+Invoice #: RUSH-999
+Date: 2026-07-10
+Due: Immediate
+
+Description: Emergency legal retainer — wire fraud review
+Total: $32000.00 USD
+
+NO PO ON FILE
+Notes: Customer disputed prior invoice; process with caution.
