@@ -152,6 +152,11 @@ pytest -v --site-url=http://127.0.0.1:8080
 
 See [qa/README.md](qa/README.md) for the default Admin passphrase and suite details.
 
+## Troubleshooting
+
+Common site, signup, agent, and deploy issues: **[docs/troubleshooting.md](docs/troubleshooting.md)**  
+(structure similar to agent-platform help centers such as Relevance AI’s troubleshooting guides).
+
 ## License
 
 MIT License — see [LICENSE](LICENSE).
