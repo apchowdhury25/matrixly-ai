@@ -28,6 +28,7 @@ const REQUIRED_PAGES = [
   "meet-wise/index.html",
   "social-forge/index.html",
   "pipeline-forge/index.html",
+  "doc-forge/index.html",
   "admin/index.html",
   ".htaccess",
   "README.md",

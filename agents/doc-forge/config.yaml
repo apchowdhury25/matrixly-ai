@@ -1,0 +1,95 @@
+# Matrixly DocForge — business documents with templates + HITL
+
+business:
+  name: "Matrixly Demo Co"
+  support_email: "docs@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  industry: "B2B SaaS / SMB automation"
+  legal_entity: "Matrixly Demo Co, LLC"
+  address: "100 Agent Way, Austin, TX 78701"
+
+brand:
+  voice_file: brand/guidelines.md
+  primary_color: "#117ACA"
+  accent: "#0B5CAB"
+  footer_line: "Confidential — prepared by Matrixly Demo Co"
+
+pricing:
+  currency: USD
+  default_discount_max_pct: 15
+  tax_rate_pct: 0
+  payment_terms_days: 30
+  catalog:
+    - sku: AGENT-STARTER
+      name: "Agent Starter pack"
+      unit_price: 49
+      unit: month
+    - sku: AGENT-PRO
+      name: "Agent Pro pack"
+      unit_price: 149
+      unit: month
+    - sku: PILOT-30
+      name: "30-day pilot implementation"
+      unit_price: 2500
+      unit: project
+    - sku: SUPPORT-STD
+      name: "Standard support"
+      unit_price: 0
+      unit: included
+
+documents:
+  types:
+    - proposal
+    - quote
+    - contract
+    - report
+  require_hitl_before_send: true
+  default_validity_days: 30
+  templates_dir: templates
+  export_formats:
+    - md
+    - html
+    - pdf
+    - txt
+
+legal:
+  governing_law: "State of Texas, USA"
+  confidentiality: true
+  include_liability_cap: true
+  liability_cap_months: 12
+
+hitl:
+  mode: external_only  # always | external_only | off
+  review_documents: true
+
+crm:
+  backend: local  # local | hubspot | salesforce
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8796"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  draft_per_minute: 20
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8796
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.35
+
+channels:
+  workspace:
+    welcome: "DocForge — draft proposals, quotes, contracts, and reports with brand templates and approval."

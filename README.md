@@ -21,6 +21,7 @@ A production-facing static website plus local agent runtimes for:
 | **MeetWise** | Meeting outcomes — summaries, actions, CRM, recap emails |
 | **SocialForge** | Social content & engagement — posts, schedule, inbox, insights |
 | **PipelineForge** | Pipeline scoring & prioritization — fit, risk, CRM, health |
+| **DocForge** | Business documents — proposals, quotes, contracts, reports |
 
 ## Tech stack
 
@@ -105,6 +106,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── meet-wise/index.html
 ├── social-forge/index.html
 ├── pipeline-forge/index.html
+├── doc-forge/index.html
 ├── admin/index.html           # /admin (QA console)
 ├── assets/
 ├── agents/                    # Python agent backends (not published to Hostinger)
@@ -118,7 +120,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── content-forge/
 │   ├── meet-wise/
 │   ├── social-forge/
-│   └── pipeline-forge/
+│   ├── pipeline-forge/
+│   └── doc-forge/
 └── docs/
 ```
 
@@ -213,6 +216,19 @@ python -m src.cli serve
 ```
 
 Product page: [/pipeline-forge](pipeline-forge/). Full setup: [agents/pipeline-forge/README.md](agents/pipeline-forge/README.md).
+
+### DocForge (business documents)
+
+```bash
+cd agents/doc-forge
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [/doc-forge](doc-forge/). Full setup: [agents/doc-forge/README.md](agents/doc-forge/README.md).
 
 ## UI QA (developers)
 

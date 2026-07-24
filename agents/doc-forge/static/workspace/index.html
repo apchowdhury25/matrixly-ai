@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocForge Workspace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0b0f14;--card:#151c26;--border:#1e2a3a;--ink:#f0f2f5;--soft:#a8b0b8;--blue:#117aca;--ok:#3dd68c;--warn:#f5a524;--bad:#ff7b7b}
+    *{box-sizing:border-box}body{margin:0;font-family:'Open Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+    header{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.25rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,15,20,.92);backdrop-filter:blur(8px);z-index:5}
+    h1{margin:0;font-size:1.05rem}h1 span{color:var(--blue)}
+    main{max-width:1100px;margin:0 auto;padding:1.25rem}
+    .keys{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+    input,select,textarea{background:#0f141c;border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:.55rem .7rem;font:inherit;width:100%}
+    textarea{min-height:90px;resize:vertical}
+    label{display:block;font-size:.75rem;color:var(--soft);font-weight:600;margin:0 0 .3rem}
+    .btn{border:0;border-radius:8px;padding:.55rem .9rem;font-weight:700;cursor:pointer;font-size:.85rem}
+    .btn-primary{background:var(--blue);color:#fff}.btn-ghost{background:transparent;color:var(--soft);border:1px solid var(--border)}
+    .btn-ok{background:#163528;color:var(--ok);border:1px solid #245c42}.btn-bad{background:#3a1a1a;color:var(--bad);border:1px solid #5c2a2a}
+    .grid{display:grid;gap:1rem}@media(min-width:900px){.grid-2{grid-template-columns:1fr 1.2fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem}
+    .muted{color:var(--soft);font-size:.85rem}
+    .pill{display:inline-block;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:999px;background:rgba(17,122,202,.15);color:var(--blue)}
+    .pill.warn{background:rgba(245,165,36,.15);color:var(--warn)}.pill.ok{background:rgba(61,214,140,.12);color:var(--ok)}
+    .row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-top:.65rem}
+    pre.body{white-space:pre-wrap;font-size:.82rem;line-height:1.45;max-height:480px;overflow:auto;background:#0f141c;border:1px solid var(--border);border-radius:8px;padding:.75rem}
+    .item{border-bottom:1px solid var(--border);padding:.65rem 0}.item:last-child{border-bottom:0}
+    #toast{position:fixed;bottom:1rem;right:1rem;background:#1a2433;border:1px solid var(--border);padding:.65rem .9rem;border-radius:8px;display:none;max-width:320px;font-size:.85rem}
+    #toast.show{display:block}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DocForge <span>Workspace</span></h1>
+    <div class="row" style="margin:0">
+      <button class="btn btn-primary" id="btnDemo">Demo proposal</button>
+      <button class="btn btn-ghost" id="btnRefresh">Refresh list</button>
+    </div>
+  </header>
+  <main>
+    <div class="keys">
+      <input id="apiKey" placeholder="Admin API key" style="max-width:220px" />
+      <input id="widgetKey" placeholder="Widget key" style="max-width:220px" />
+      <span class="muted" id="health">…</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h2 style="margin:0 0 .75rem;font-size:1rem">Draft document</h2>
+        <label>Type</label>
+        <select id="docType">
+          <option value="proposal">Proposal</option>
+          <option value="quote">Quote</option>
+          <option value="contract">Contract</option>
+          <option value="report">Report</option>
+        </select>
+        <label style="margin-top:.65rem">Client company</label>
+        <input id="company" placeholder="Acme Logistics" />
+        <label style="margin-top:.65rem">Project title</label>
+        <input id="title" placeholder="Agent pilot" />
+        <label style="margin-top:.65rem">Brief / scope</label>
+        <textarea id="summary" placeholder="What should this document cover?"></textarea>
+        <div class="row">
+          <button class="btn btn-primary" id="btnDraft">Generate draft</button>
+          <button class="btn btn-ghost" id="btnTemplates">List templates</button>
+        </div>
+        <p class="muted" style="margin-top:.75rem">Templates live in <code>templates/*.md</code>. Uploads via API. HITL required before send.</p>
+      </div>
+      <div class="card">
+        <h2 style="margin:0 0 .75rem;font-size:1rem">Preview</h2>
+        <div id="preview"><p class="muted">Draft appears here.</p></div>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:1rem">
+      <div class="card">
+        <h2 style="margin:0 0 .75rem;font-size:1rem">Documents</h2>
+        <div id="listOut" class="muted">—</div>
+      </div>
+      <div class="card">
+        <h2 style="margin:0 0 .75rem;font-size:1rem">Approvals (HITL)</h2>
+        <div id="hitlOut" class="muted">—</div>
+      </div>
+    </div>
+  </main>
+  <div id="toast"></div>
+  <script>
+    const API = (new URLSearchParams(location.search).get('api')) || (location.origin.includes('8796') ? location.origin : 'http://127.0.0.1:8796');
+    const $ = (id) => document.getElementById(id);
+    const toast = (m) => { const t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2800); };
+    const esc = (s) => String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    function headers(admin=false){
+      const h={'Content-Type':'application/json'};
+      const api=$('apiKey').value||localStorage.getItem('df_api')||'change-me-admin-key';
+      const widget=$('widgetKey').value||localStorage.getItem('df_widget')||'pk_live_change-me';
+      if(admin) h['X-API-Key']=api; else h['X-Widget-Key']=widget;
+      localStorage.setItem('df_api',api); localStorage.setItem('df_widget',widget);
+      return h;
+    }
+
+    async function health(){
+      try{
+        const r=await fetch(API+'/v1/health');
+        const j=await r.json();
+        $('health').textContent=j.ok?`online · ${j.documents||0} docs · ${j.pending_approval||0} approval · ${j.templates||0} templates`:'offline';
+      }catch{$('health').textContent='API offline — start on :8796';}
+    }
+
+    function renderDoc(doc){
+      if(!doc) return;
+      const flags=(doc.flags||[]).map(f=>`<span class="pill warn" style="margin-right:.25rem">${esc(f)}</span>`).join(' ');
+      $('preview').innerHTML=`
+        <span class="pill ${doc.status==='pending_approval'?'warn':'ok'}">${esc(doc.status)}</span>
+        <span class="pill">v${doc.version}</span>
+        <span class="pill">${esc(doc.doc_type)}</span>
+        <h3 style="margin:.6rem 0 .35rem">${esc(doc.title)}</h3>
+        <p class="muted">${esc(doc.summary)}</p>
+        <p class="muted">Quality ${doc.quality_score||0} · Total ${(doc.pricing_totals||{}).currency||''} ${(doc.pricing_totals||{}).total??'—'}</p>
+        <div style="margin:.4rem 0">${flags}</div>
+        <pre class="body">${esc(doc.body_markdown||'')}</pre>
+        <p class="muted" style="margin-top:.5rem">Exports: ${(doc.export_paths||[]).length} files</p>
+        <div class="row">
+          <button class="btn btn-ghost" data-export="${doc.id}">Re-export</button>
+          <button class="btn btn-primary" data-send="${doc.id}">Mark sent (local log)</button>
+        </div>`;
+      $('preview').querySelectorAll('[data-export]').forEach(b=>b.onclick=()=>exportDoc(b.dataset.export));
+      $('preview').querySelectorAll('[data-send]').forEach(b=>b.onclick=()=>sendDoc(b.dataset.send));
+    }
+
+    async function exportDoc(id){
+      try{
+        const r=await fetch(API+`/v1/documents/${id}/export`,{method:'POST',headers:headers(true),body:'{}'});
+        if(!r.ok) throw new Error(await r.text());
+        renderDoc(await r.json()); toast('Exported');
+      }catch(e){toast(String(e.message||e));}
+    }
+    async function sendDoc(id){
+      try{
+        const r=await fetch(API+`/v1/documents/${id}/send`,{method:'POST',headers:headers(true),body:JSON.stringify({document_id:id,recipients:['client@example.com']})});
+        if(!r.ok) throw new Error(await r.text());
+        renderDoc(await r.json()); toast('Send logged'); health();
+      }catch(e){toast(String(e.message||e));}
+    }
+
+    $('btnDraft').onclick=async()=>{
+      const body={
+        doc_type:$('docType').value,
+        client:{company:$('company').value||'Client Co',name:$('company').value||'Client'},
+        project:{title:$('title').value||'Engagement',summary:$('summary').value||'Professional services engagement.'},
+        line_items:[{sku:'PILOT-30',qty:1},{sku:'AGENT-PRO',qty:1}],
+        source:'manual'
+      };
+      try{
+        const r=await fetch(API+'/v1/draft',{method:'POST',headers:headers(false),body:JSON.stringify(body)});
+        if(!r.ok) throw new Error(await r.text());
+        renderDoc(await r.json()); toast('Draft ready'); loadList(); loadHitl(); health();
+      }catch(e){toast(String(e.message||e));}
+    };
+
+    $('btnDemo').onclick=async()=>{
+      try{
+        const r=await fetch(API+'/v1/demo',{method:'POST',headers:headers(false)});
+        if(!r.ok) throw new Error(await r.text());
+        renderDoc(await r.json()); toast('Demo proposal ready'); loadList(); loadHitl(); health();
+      }catch(e){toast(String(e.message||e));}
+    };
+
+    $('btnTemplates').onclick=async()=>{
+      try{
+        const r=await fetch(API+'/v1/templates',{headers:headers(true)});
+        const j=await r.json();
+        toast((j.items||[]).map(t=>t.id).join(', ')||'no templates');
+      }catch(e){toast(String(e.message||e));}
+    };
+
+    async function loadList(){
+      try{
+        const r=await fetch(API+'/v1/documents',{headers:headers(true)});
+        const j=await r.json();
+        const items=j.items||[];
+        if(!items.length){$('listOut').innerHTML='<p class="muted">No documents yet.</p>';return;}
+        $('listOut').innerHTML=items.map(d=>`
+          <div class="item">
+            <span class="pill">${esc(d.doc_type)}</span>
+            <span class="pill ${d.status==='pending_approval'?'warn':'ok'}">${esc(d.status)}</span>
+            <strong style="margin-left:.35rem">${esc(d.title||d.id)}</strong>
+            <p class="muted" style="margin:.3rem 0 0">${esc(d.id)} · v${d.version}</p>
+            <button class="btn btn-ghost" style="margin-top:.4rem" data-open="${d.id}">Open</button>
+          </div>`).join('');
+        $('listOut').querySelectorAll('[data-open]').forEach(b=>b.onclick=async()=>{
+          const r=await fetch(API+`/v1/documents/${b.dataset.open}`,{headers:headers(true)});
+          renderDoc(await r.json());
+        });
+      }catch{$('listOut').innerHTML='<p class="muted">Need admin API key.</p>';}
+    }
+
+    async function loadHitl(){
+      try{
+        const r=await fetch(API+'/v1/admin/hitl',{headers:headers(true)});
+        const j=await r.json();
+        const items=j.items||[];
+        if(!items.length){$('hitlOut').innerHTML='<p class="muted">No pending approvals.</p>';return;}
+        $('hitlOut').innerHTML=items.map(a=>`
+          <div class="item">
+            <span class="pill warn">${esc(a.kind)}</span>
+            <code style="margin-left:.35rem;font-size:.8rem">${a.id}</code>
+            <pre class="muted" style="white-space:pre-wrap;margin:.4rem 0">${esc(JSON.stringify(a.payload,null,2))}</pre>
+            <div class="row">
+              <button class="btn btn-ok" data-ok="${a.id}">Approve</button>
+              <button class="btn btn-bad" data-no="${a.id}">Reject</button>
+            </div>
+          </div>`).join('');
+        $('hitlOut').querySelectorAll('[data-ok]').forEach(b=>b.onclick=()=>decide(b.dataset.ok,true));
+        $('hitlOut').querySelectorAll('[data-no]').forEach(b=>b.onclick=()=>decide(b.dataset.no,false));
+      }catch{$('hitlOut').innerHTML='<p class="muted">Need admin API key.</p>';}
+    }
+
+    async function decide(id,ok){
+      try{
+        const path=ok?'approve':'reject';
+        const r=await fetch(API+`/v1/admin/hitl/${id}/${path}`,{method:'POST',headers:headers(true),body:'{}'});
+        if(!r.ok) throw new Error(await r.text());
+        renderDoc(await r.json()); toast(ok?'Approved':'Rejected'); loadHitl(); loadList(); health();
+      }catch(e){toast(String(e.message||e));}
+    }
+
+    $('btnRefresh').onclick=()=>{loadList();loadHitl();health();};
+    $('apiKey').value=localStorage.getItem('df_api')||'change-me-admin-key';
+    $('widgetKey').value=localStorage.getItem('df_widget')||'pk_live_change-me';
+    health(); loadList(); loadHitl();
+  </script>
+</body>
+</html>

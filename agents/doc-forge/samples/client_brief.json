@@ -1,0 +1,31 @@
+{
+  "doc_type": "proposal",
+  "client": {
+    "name": "Jordan Lee",
+    "contact": "Jordan Lee",
+    "email": "jordan@acmelogistics.example",
+    "company": "Acme Logistics",
+    "industry": "logistics"
+  },
+  "project": {
+    "title": "Matrixly Agent Pilot — Support + Shipping",
+    "summary": "Acme wants to reduce WISMO tickets and improve first-response time with SupportForge and Shipping Assistant agents, with human approval on external actions.",
+    "goals": [
+      "Cut repetitive WISMO replies by 40%",
+      "Deploy SupportForge widget on help center",
+      "Integrate ShipStation status into agent answers"
+    ],
+    "timeline": "4-week pilot starting on contract signature",
+    "constraints": [
+      "Must keep human approval before customer-facing refunds",
+      "Brand voice must match Acme help center tone"
+    ]
+  },
+  "line_items": [
+    { "sku": "PILOT-30", "name": "30-day pilot implementation", "qty": 1, "unit_price": 2500, "unit": "project" },
+    { "sku": "AGENT-PRO", "name": "Agent Pro pack", "qty": 1, "unit_price": 149, "unit": "month" },
+    { "sku": "SUPPORT-STD", "name": "Standard support", "qty": 1, "unit_price": 0, "unit": "included" }
+  ],
+  "discount_pct": 0,
+  "notes": "Include mutual success criteria and weekly review call."
+}
