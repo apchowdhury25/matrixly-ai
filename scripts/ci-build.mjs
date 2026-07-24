@@ -39,6 +39,7 @@ const SITE_PAGES = [
   "content-forge/index.html",
   "meet-wise/index.html",
   "social-forge/index.html",
+  "pipeline-forge/index.html",
   "admin/index.html",
 ];
 

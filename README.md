@@ -20,6 +20,7 @@ A production-facing static website plus local agent runtimes for:
 | **ContentForge** | Content creation & repurposing — SEO blogs, social, newsletters, ads |
 | **MeetWise** | Meeting outcomes — summaries, actions, CRM, recap emails |
 | **SocialForge** | Social content & engagement — posts, schedule, inbox, insights |
+| **PipelineForge** | Pipeline scoring & prioritization — fit, risk, CRM, health |
 
 ## Tech stack
 
@@ -103,6 +104,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── content-forge/index.html
 ├── meet-wise/index.html
 ├── social-forge/index.html
+├── pipeline-forge/index.html
 ├── admin/index.html           # /admin (QA console)
 ├── assets/
 ├── agents/                    # Python agent backends (not published to Hostinger)
@@ -115,7 +117,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── invoice-forge/
 │   ├── content-forge/
 │   ├── meet-wise/
-│   └── social-forge/
+│   ├── social-forge/
+│   └── pipeline-forge/
 └── docs/
 ```
 
@@ -197,6 +200,19 @@ python -m src.cli serve
 ```
 
 Product page: [/social-forge](social-forge/). Full setup: [agents/social-forge/README.md](agents/social-forge/README.md).
+
+### PipelineForge (pipeline scoring & prioritization)
+
+```bash
+cd agents/pipeline-forge
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [/pipeline-forge](pipeline-forge/). Full setup: [agents/pipeline-forge/README.md](agents/pipeline-forge/README.md).
 
 ## UI QA (developers)
 

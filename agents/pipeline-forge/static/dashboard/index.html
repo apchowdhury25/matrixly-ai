@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PipelineForge Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#0b0f14; --card:#151c26; --border:#1e2a3a; --ink:#f0f2f5; --soft:#a8b0b8;
+      --blue:#117aca; --blue2:#0b5cab; --ok:#3dd68c; --warn:#f5a524; --bad:#ff7b7b;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Open Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+    header{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.25rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,15,20,.92);backdrop-filter:blur(8px);z-index:5}
+    h1{margin:0;font-size:1.05rem} h1 span{color:var(--blue)}
+    main{max-width:1100px;margin:0 auto;padding:1.25rem}
+    .keys{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+    .keys input{background:#0f141c;border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:.5rem .7rem;font-size:.8rem;min-width:180px}
+    .row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+    .btn{border:0;border-radius:8px;padding:.55rem .9rem;font-weight:700;cursor:pointer;font-size:.85rem}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-ghost{background:transparent;color:var(--soft);border:1px solid var(--border)}
+    .btn-ok{background:#163528;color:var(--ok);border:1px solid #245c42}
+    .btn-bad{background:#3a1a1a;color:var(--bad);border:1px solid #5c2a2a}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:900px){.grid-3{grid-template-columns:1.2fr 1fr 1fr}.grid-2{grid-template-columns:1fr 1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem}
+    .muted{color:var(--soft);font-size:.85rem}
+    .pill{display:inline-block;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:999px;background:rgba(17,122,202,.15);color:var(--blue)}
+    .pill.hot{background:rgba(61,214,140,.12);color:var(--ok)}
+    .pill.warm{background:rgba(245,165,36,.15);color:var(--warn)}
+    .pill.cold{background:rgba(168,176,184,.12);color:var(--soft)}
+    .pill.risk{background:rgba(255,123,123,.12);color:var(--bad)}
+    .item{border-bottom:1px solid var(--border);padding:.7rem 0}
+    .item:last-child{border-bottom:0}
+    .metric{font-size:1.6rem;font-weight:800}
+    #toast{position:fixed;bottom:1rem;right:1rem;background:#1a2433;border:1px solid var(--border);padding:.65rem .9rem;border-radius:8px;display:none;max-width:320px;font-size:.85rem}
+    #toast.show{display:block}
+    table{width:100%;border-collapse:collapse;font-size:.85rem}
+    th,td{text-align:left;padding:.45rem .3rem;border-bottom:1px solid var(--border)}
+    th{color:var(--soft);font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PipelineForge <span>Dashboard</span></h1>
+    <div class="row">
+      <button class="btn btn-primary" id="btnDemo">Run demo analyze</button>
+      <button class="btn btn-ghost" id="btnRefresh">Refresh</button>
+    </div>
+  </header>
+  <main>
+    <div class="keys">
+      <input id="apiKey" placeholder="Admin API key" />
+      <input id="widgetKey" placeholder="Widget key" />
+      <span class="muted" id="health">…</span>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:1rem">
+      <div class="card"><div class="muted">Pipeline health</div><div class="metric" id="mHealth">—</div></div>
+      <div class="card"><div class="muted">Hot / Warm / Cold</div><div class="metric" id="mTiers" style="font-size:1.2rem">—</div></div>
+      <div class="card"><div class="muted">Pending HITL</div><div class="metric" id="mHitl">—</div></div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h2 style="margin:0 0 .75rem;font-size:1rem">Priority list</h2>
+        <div id="priorityOut" class="muted">Run analyze to populate.</div>
+      </div>
+      <div class="card">
+        <h2 style="margin:0 0 .75rem;font-size:1rem">At-risk deals</h2>
+        <div id="riskOut" class="muted">—</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h2 style="margin:0 0 .75rem;font-size:1rem">Scores</h2>
+      <div id="scoreOut" class="muted">—</div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h2 style="margin:0 0 .75rem;font-size:1rem">HITL · CRM updates</h2>
+      <div id="hitlOut" class="muted">—</div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h2 style="margin:0 0 .75rem;font-size:1rem">Insights</h2>
+      <div id="insOut" class="muted">—</div>
+    </div>
+  </main>
+  <div id="toast"></div>
+  <script>
+    const API = (new URLSearchParams(location.search).get('api')) || (location.origin.includes('8795') ? location.origin : 'http://127.0.0.1:8795');
+    const $ = (id) => document.getElementById(id);
+    const toast = (m) => { const t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2800); };
+    const esc = (s) => String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    function headers(admin=false){
+      const h={'Content-Type':'application/json'};
+      const api=$('apiKey').value||localStorage.getItem('pf_api')||'change-me-admin-key';
+      const widget=$('widgetKey').value||localStorage.getItem('pf_widget')||'pk_live_change-me';
+      if(admin) h['X-API-Key']=api; else h['X-Widget-Key']=widget;
+      localStorage.setItem('pf_api',api); localStorage.setItem('pf_widget',widget);
+      return h;
+    }
+
+    async function health(){
+      try{
+        const r=await fetch(API+'/v1/health');
+        const j=await r.json();
+        $('health').textContent=j.ok?`online · ${j.runs||0} runs · health ${j.latest_health??'—'}`:'offline';
+      }catch{ $('health').textContent='API offline — start on :8795'; }
+    }
+
+    function renderRun(run){
+      if(!run) return;
+      const cov=(run.insights||{}).coverage||{};
+      $('mHealth').textContent=(run.insights||{}).health_score??'—';
+      $('mTiers').textContent=`${cov.hot||0} / ${cov.warm||0} / ${cov.cold||0}`;
+      $('priorityOut').innerHTML=(run.priority_list||[]).map(p=>`
+        <div class="item">
+          <span class="pill">#${p.rank}</span>
+          <strong style="margin-left:.4rem">${esc(p.name)}</strong>
+          <span class="pill" style="margin-left:.35rem">${p.score}</span>
+          <p class="muted" style="margin:.35rem 0 0">${esc(p.next_action)} · ${esc(p.due)} · ${esc(p.rep)}</p>
+          <p class="muted" style="margin:.25rem 0 0">${esc(p.why)}</p>
+        </div>`).join('')||'<p class="muted">Empty</p>';
+
+      $('riskOut').innerHTML=(run.risks||[]).map(r=>`
+        <div class="item">
+          <span class="pill risk">${esc(r.risk_level)}</span>
+          <strong style="margin-left:.35rem">${esc(r.name)}</strong>
+          <p class="muted" style="margin:.35rem 0 0">${(r.reasons||[]).map(esc).join(' · ')}</p>
+          <p class="muted">${(r.suggested_actions||[]).map(esc).join(' · ')}</p>
+        </div>`).join('')||'<p class="muted">No risks flagged</p>';
+
+      $('scoreOut').innerHTML=`<table><thead><tr><th>Deal</th><th>Score</th><th>Tier</th><th>Fit</th><th>Eng</th><th>Beh</th><th>Urg</th></tr></thead><tbody>
+        ${(run.scores||[]).map(s=>{
+          const name=(run.opportunities||[]).find(o=>o.id===s.opportunity_id)?.name||s.opportunity_id;
+          return `<tr><td>${esc(name)}</td><td>${s.score}</td><td><span class="pill ${s.tier}">${s.tier}</span>${s.at_risk?' <span class="pill risk">risk</span>':''}</td>
+            <td>${s.fit}</td><td>${s.engagement}</td><td>${s.behavior}</td><td>${s.urgency}</td></tr>`;
+        }).join('')}
+      </tbody></table>`;
+
+      const ins=run.insights||{};
+      $('insOut').innerHTML=`
+        <ul class="muted">${(ins.highlights||[]).map(h=>`<li>${esc(h)}</li>`).join('')}</ul>
+        <p class="muted"><strong>Recs:</strong> ${(ins.recommendations||[]).map(esc).join(' · ')}</p>
+        <p class="muted">${esc(ins.forecast_note||'')}</p>
+        <p class="muted">Status: <span class="pill">${esc(run.status)}</span> ${run.hitl_id?('HITL '+run.hitl_id):''}</p>`;
+    }
+
+    async function loadHitl(){
+      try{
+        const r=await fetch(API+'/v1/admin/hitl',{headers:headers(true)});
+        const j=await r.json();
+        const items=j.items||[];
+        $('mHitl').textContent=items.length;
+        if(!items.length){$('hitlOut').innerHTML='<p class="muted">No pending reviews.</p>';return;}
+        $('hitlOut').innerHTML=items.map(a=>`
+          <div class="item">
+            <span class="pill risk">${esc(a.kind)}</span>
+            <code style="margin-left:.4rem;font-size:.8rem">${a.id}</code>
+            <pre class="muted" style="white-space:pre-wrap">${esc(JSON.stringify(a.payload,null,2))}</pre>
+            <div class="row">
+              <button class="btn btn-ok" data-ok="${a.id}">Approve CRM writes</button>
+              <button class="btn btn-bad" data-no="${a.id}">Reject</button>
+            </div>
+          </div>`).join('');
+        $('hitlOut').querySelectorAll('[data-ok]').forEach(b=>b.onclick=()=>decide(b.dataset.ok,true));
+        $('hitlOut').querySelectorAll('[data-no]').forEach(b=>b.onclick=()=>decide(b.dataset.no,false));
+      }catch{$('hitlOut').innerHTML='<p class="muted">Need admin API key.</p>';}
+    }
+
+    async function decide(id,ok){
+      try{
+        const path=ok?'approve':'reject';
+        const r=await fetch(API+`/v1/admin/hitl/${id}/${path}`,{method:'POST',headers:headers(true),body:'{}'});
+        if(!r.ok) throw new Error(await r.text());
+        const run=await r.json();
+        renderRun(run);
+        toast(ok?'CRM writes applied':'Rejected');
+        loadHitl(); health();
+      }catch(e){toast(String(e.message||e));}
+    }
+
+    $('btnDemo').onclick=async()=>{
+      try{
+        const r=await fetch(API+'/v1/demo',{method:'POST',headers:headers(false)});
+        if(!r.ok) throw new Error(await r.text());
+        const run=await r.json();
+        renderRun(run);
+        toast('Demo analyze complete');
+        loadHitl(); health();
+      }catch(e){toast(String(e.message||e));}
+    };
+
+    $('btnRefresh').onclick=async()=>{
+      try{
+        const r=await fetch(API+'/v1/runs',{headers:headers(true)});
+        const j=await r.json();
+        const run=(j.items||[])[0];
+        if(run) renderRun(run);
+        loadHitl(); health();
+      }catch(e){toast('Need admin key to refresh runs');}
+    };
+
+    $('apiKey').value=localStorage.getItem('pf_api')||'change-me-admin-key';
+    $('widgetKey').value=localStorage.getItem('pf_widget')||'pk_live_change-me';
+    health(); loadHitl();
+  </script>
+</body>
+</html>

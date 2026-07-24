@@ -1,0 +1,105 @@
+# Matrixly PipelineForge — pipeline scoring & prioritization
+
+business:
+  name: "Matrixly Demo Co"
+  support_email: "sales@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  industry: "B2B SaaS / SMB automation"
+
+# Scoring weights (must sum ~1.0)
+scoring:
+  weights:
+    fit: 0.35
+    engagement: 0.30
+    behavior: 0.25
+    urgency: 0.10
+  # Thresholds 0–100
+  hot_min: 75
+  warm_min: 50
+  at_risk_score_max: 45
+  stale_days: 14
+  high_value_amount: 10000
+  fit_signals:
+    industries:
+      - saas
+      - software
+      - ecommerce
+      - retail
+      - professional services
+      - logistics
+    titles:
+      - ceo
+      - founder
+      - owner
+      - vp sales
+      - head of growth
+      - revenue
+      - marketing director
+    employee_bands:
+      - "1-10"
+      - "11-50"
+      - "51-200"
+  engagement_boosts:
+    demo_requested: 25
+    email_open: 5
+    email_click: 10
+    meeting_booked: 30
+    content_download: 12
+    reply: 15
+  behavior_penalties:
+    no_activity_days_7: -8
+    no_activity_days_14: -18
+    competitor_mentioned: -5
+    budget_unknown: -6
+  stage_order:
+    - lead
+    - qualified
+    - discovery
+    - proposal
+    - negotiation
+    - closed_won
+    - closed_lost
+
+pipeline:
+  list_size: 15
+  cadence: daily  # daily | weekly
+  require_hitl_before_crm_write: true
+  default_currency: USD
+
+hitl:
+  mode: external_only  # always | external_only | off
+  review_stage_updates: true
+  review_risk_actions: true
+
+crm:
+  backend: local  # local | hubspot | salesforce
+  opportunity_default_stage: "Qualification"
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8795"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  analyze_per_minute: 30
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8795
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.3
+
+channels:
+  dashboard:
+    welcome: "PipelineForge — score opportunities, prioritize rep work, flag risk, update CRM with oversight."
