@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialForge — Calendar & Inbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f14; --card: #151c26; --border: #1e2a3a; --ink: #f0f2f5;
+      --soft: #a8b0b8; --blue: #117aca; --blue2: #0b5cab; --ok: #3dd68c; --warn: #f5a524;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: 'Open Sans', system-ui, sans-serif;
+      background: var(--bg); color: var(--ink); min-height: 100vh;
+    }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; background: rgba(11,15,20,0.92); backdrop-filter: blur(8px); z-index: 10;
+    }
+    h1 { font-size: 1.05rem; margin: 0; }
+    h1 span { color: var(--blue); }
+    .tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .tab {
+      border: 1px solid var(--border); background: transparent; color: var(--soft);
+      padding: 0.4rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+    }
+    .tab.active { color: #fff; background: var(--blue); border-color: var(--blue); }
+    main { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 860px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+    }
+    label { display: block; font-size: 0.75rem; color: var(--soft); margin-bottom: 0.35rem; font-weight: 600; }
+    textarea, input, select {
+      width: 100%; background: #0f141c; border: 1px solid var(--border); color: var(--ink);
+      border-radius: 8px; padding: 0.65rem 0.75rem; font: inherit;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .btn {
+      border: 0; border-radius: 8px; padding: 0.55rem 0.9rem; font-weight: 700; cursor: pointer; font-size: 0.85rem;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue2); }
+    .btn-ghost { background: transparent; color: var(--soft); border: 1px solid var(--border); }
+    .btn-ok { background: #163528; color: var(--ok); border: 1px solid #245c42; }
+    .btn-bad { background: #3a1a1a; color: #ff8f8f; border: 1px solid #5c2a2a; }
+    .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; }
+    .muted { color: var(--soft); font-size: 0.85rem; }
+    .pill {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem;
+      border-radius: 999px; background: rgba(17,122,202,0.15); color: var(--blue);
+    }
+    .pill.warn { background: rgba(245,165,36,0.15); color: var(--warn); }
+    .pill.ok { background: rgba(61,214,140,0.12); color: var(--ok); }
+    .post { border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 0.75rem; }
+    .post h3 { margin: 0 0 0.35rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--blue); }
+    .post p { margin: 0; white-space: pre-wrap; font-size: 0.9rem; line-height: 1.5; }
+    .item { border-bottom: 1px solid var(--border); padding: 0.75rem 0; }
+    .item:last-child { border-bottom: 0; }
+    .keys { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .keys input { max-width: 220px; font-size: 0.8rem; }
+    #toast {
+      position: fixed; bottom: 1rem; right: 1rem; background: #1a2433; border: 1px solid var(--border);
+      padding: 0.65rem 0.9rem; border-radius: 8px; display: none; max-width: 320px; font-size: 0.85rem;
+    }
+    #toast.show { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SocialForge <span>Calendar</span></h1>
+    <div class="tabs">
+      <button class="tab active" data-tab="compose">Compose</button>
+      <button class="tab" data-tab="calendar">Calendar</button>
+      <button class="tab" data-tab="inbox">Inbox</button>
+      <button class="tab" data-tab="insights">Insights</button>
+      <button class="tab" data-tab="review">Review</button>
+    </div>
+  </header>
+  <main>
+    <div class="keys">
+      <input id="apiKey" placeholder="Admin API key" />
+      <input id="widgetKey" placeholder="Widget key (compose)" />
+      <span class="muted" id="health">…</span>
+    </div>
+
+    <section id="compose" class="panel active">
+      <div class="grid grid-2">
+        <div class="card">
+          <label for="idea">Content idea or brief</label>
+          <textarea id="idea" placeholder="What should we post this week?"></textarea>
+          <label for="platforms" style="margin-top:0.75rem">Platforms</label>
+          <input id="platforms" value="linkedin,x,instagram" />
+          <div class="row">
+            <button class="btn btn-primary" id="btnCompose">Compose + schedule</button>
+            <button class="btn btn-ghost" id="btnDemo">Run demo</button>
+          </div>
+          <p class="muted" style="margin-top:0.75rem">Brand voice from <code>brand/voice.md</code>. Posts require HITL approval before publish.</p>
+        </div>
+        <div class="card" id="composeOut">
+          <p class="muted">Campaign preview appears here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar" class="panel">
+      <div class="card" id="calOut"><p class="muted">Loading calendar…</p></div>
+    </section>
+
+    <section id="inbox" class="panel">
+      <div class="row" style="margin-top:0">
+        <button class="btn btn-primary" id="btnMonitor">Pull / classify inbox</button>
+        <button class="btn btn-ghost" id="btnReplies">Draft replies</button>
+      </div>
+      <div class="card" style="margin-top:1rem" id="inboxOut"><p class="muted">Inbox empty — run monitor.</p></div>
+    </section>
+
+    <section id="insights" class="panel">
+      <div class="row" style="margin-top:0">
+        <button class="btn btn-primary" id="btnInsights">Refresh insights</button>
+      </div>
+      <div class="card" style="margin-top:1rem" id="insOut"><p class="muted">Insights appear here.</p></div>
+    </section>
+
+    <section id="review" class="panel">
+      <div class="card" id="hitlOut"><p class="muted">Pending approvals…</p></div>
+    </section>
+  </main>
+  <div id="toast"></div>
+  <script>
+    const API = (new URLSearchParams(location.search).get('api')) || (location.origin.includes('8794') ? location.origin : 'http://127.0.0.1:8794');
+    const $ = (id) => document.getElementById(id);
+    const toast = (m) => { const t = $('toast'); t.textContent = m; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2800); };
+
+    function headers(admin = false) {
+      const h = { 'Content-Type': 'application/json' };
+      const api = $('apiKey').value || localStorage.getItem('sf_api') || 'change-me-admin-key';
+      const widget = $('widgetKey').value || localStorage.getItem('sf_widget') || 'pk_live_change-me';
+      if (admin) h['X-API-Key'] = api; else h['X-Widget-Key'] = widget;
+      localStorage.setItem('sf_api', api);
+      localStorage.setItem('sf_widget', widget);
+      return h;
+    }
+
+    document.querySelectorAll('.tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach((p) => p.classList.remove('active'));
+        btn.classList.add('active');
+        $(btn.dataset.tab).classList.add('active');
+        if (btn.dataset.tab === 'calendar') loadCalendar();
+        if (btn.dataset.tab === 'inbox') loadInbox();
+        if (btn.dataset.tab === 'review') loadHitl();
+        if (btn.dataset.tab === 'insights') loadInsights();
+      });
+    });
+
+    async function health() {
+      try {
+        const r = await fetch(API + '/v1/health');
+        const j = await r.json();
+        $('health').textContent = j.ok ? `online · ${j.campaigns || 0} campaigns · ${j.pending_review || 0} review` : 'offline';
+      } catch {
+        $('health').textContent = 'API offline — start on :8794';
+      }
+    }
+
+    function renderCampaign(c) {
+      if (!c) return;
+      let html = `<div class="pill ${c.status === 'pending_review' ? 'warn' : 'ok'}">${c.status}</div>
+        <p style="margin:0.5rem 0 0;font-weight:700">${c.theme || c.id}</p>
+        <p class="muted">${c.id}</p>`;
+      Object.entries(c.posts || {}).forEach(([p, post]) => {
+        html += `<div class="post"><h3>${p}</h3><p>${escapeHtml(post.text || '')}</p>
+          <p class="muted" style="margin-top:0.4rem">${post.scheduled_at ? '⏱ ' + post.scheduled_at : ''} ${post.schedule_reason || ''}</p></div>`;
+      });
+      if (c.hitl_id) html += `<p class="muted" style="margin-top:0.75rem">HITL: ${c.hitl_id}</p>`;
+      $('composeOut').innerHTML = html;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    $('btnCompose').onclick = async () => {
+      const idea = $('idea').value.trim();
+      if (!idea) return toast('Enter an idea');
+      const platforms = $('platforms').value.split(',').map((s) => s.trim()).filter(Boolean);
+      try {
+        const r = await fetch(API + '/v1/compose', {
+          method: 'POST', headers: headers(false),
+          body: JSON.stringify({ idea, platforms }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        const c = await r.json();
+        renderCampaign(c);
+        toast('Campaign composed');
+        health();
+      } catch (e) { toast('Compose failed: ' + e.message); }
+    };
+
+    $('btnDemo').onclick = async () => {
+      try {
+        const r = await fetch(API + '/v1/demo', { method: 'POST', headers: headers(false) });
+        if (!r.ok) throw new Error(await r.text());
+        renderCampaign(await r.json());
+        toast('Demo campaign ready');
+        health();
+      } catch (e) { toast(String(e.message || e)); }
+    };
+
+    async function loadCalendar() {
+      try {
+        const r = await fetch(API + '/v1/calendar', { headers: headers(true) });
+        const j = await r.json();
+        const items = j.items || [];
+        if (!items.length) { $('calOut').innerHTML = '<p class="muted">No scheduled slots yet.</p>'; return; }
+        $('calOut').innerHTML = items.map((s) => `
+          <div class="item">
+            <span class="pill">${s.platform || '?'}</span>
+            <strong style="margin-left:0.4rem">${s.suggested_at || ''}</strong>
+            <p class="muted" style="margin:0.35rem 0 0">${escapeHtml(s.reason || '')} · ${s.campaign_id || ''}</p>
+          </div>`).join('');
+      } catch (e) { $('calOut').innerHTML = '<p class="muted">Need admin API key.</p>'; }
+    }
+
+    async function loadInbox() {
+      try {
+        const r = await fetch(API + '/v1/inbox', { headers: headers(true) });
+        const j = await r.json();
+        renderInbox(j.items || []);
+      } catch { $('inboxOut').innerHTML = '<p class="muted">Need admin API key.</p>'; }
+    }
+
+    function renderInbox(items) {
+      if (!items.length) { $('inboxOut').innerHTML = '<p class="muted">Empty.</p>'; return; }
+      $('inboxOut').innerHTML = items.map((i) => `
+        <div class="item">
+          <span class="pill">${i.platform}</span>
+          <span class="pill ${i.priority === 'high' ? 'warn' : ''}">${i.sentiment} · ${i.priority}</span>
+          <strong style="margin-left:0.35rem">${escapeHtml(i.author)}</strong>
+          <p style="margin:0.4rem 0">${escapeHtml(i.text)}</p>
+          ${i.draft_reply ? `<p class="muted"><strong>Draft:</strong> ${escapeHtml(i.draft_reply)}</p>` : ''}
+          <p class="muted">${i.status}${i.hitl_id ? ' · ' + i.hitl_id : ''}</p>
+        </div>`).join('');
+    }
+
+    $('btnMonitor').onclick = async () => {
+      try {
+        const r = await fetch(API + '/v1/monitor', { method: 'POST', headers: headers(true), body: '{}' });
+        const j = await r.json();
+        renderInbox(j.items || []);
+        toast(j.summary || 'Monitored');
+      } catch (e) { toast(String(e.message || e)); }
+    };
+
+    $('btnReplies').onclick = async () => {
+      try {
+        const r = await fetch(API + '/v1/replies', { method: 'POST', headers: headers(true), body: '{}' });
+        const j = await r.json();
+        renderInbox(j.items || []);
+        toast('Replies drafted');
+        loadHitl();
+      } catch (e) { toast(String(e.message || e)); }
+    };
+
+    async function loadInsights() {
+      try {
+        const r = await fetch(API + '/v1/insights', { headers: headers(true) });
+        const j = await r.json();
+        renderInsights(j);
+      } catch { $('insOut').innerHTML = '<p class="muted">Need admin API key.</p>'; }
+    }
+
+    function renderInsights(j) {
+      const sug = (j.suggestions || []).map((s) => `<li><strong>${escapeHtml(s.title || '')}</strong> (${s.platform}) — ${escapeHtml(s.angle || '')}</li>`).join('');
+      $('insOut').innerHTML = `
+        <p class="pill ok">metrics</p>
+        <pre class="muted" style="white-space:pre-wrap">${escapeHtml(JSON.stringify(j.metrics_snapshot || {}, null, 2))}</pre>
+        <h3 style="margin:0.75rem 0 0.35rem;font-size:0.95rem">Highlights</h3>
+        <ul class="muted">${(j.highlights||[]).map((h)=>`<li>${escapeHtml(h)}</li>`).join('')}</ul>
+        <h3 style="margin:0.75rem 0 0.35rem;font-size:0.95rem">Suggestions</h3>
+        <ul class="muted">${sug || '<li>None</li>'}</ul>
+        <p class="muted">Next: ${(j.next_week_themes||[]).join(' · ')}</p>`;
+    }
+
+    $('btnInsights').onclick = async () => {
+      try {
+        const r = await fetch(API + '/v1/insights/refresh', { method: 'POST', headers: headers(true) });
+        renderInsights(await r.json());
+        toast('Insights refreshed');
+      } catch (e) { toast(String(e.message || e)); }
+    };
+
+    async function loadHitl() {
+      try {
+        const r = await fetch(API + '/v1/admin/hitl', { headers: headers(true) });
+        const j = await r.json();
+        const items = j.items || [];
+        if (!items.length) { $('hitlOut').innerHTML = '<p class="muted">No pending reviews.</p>'; return; }
+        $('hitlOut').innerHTML = items.map((a) => `
+          <div class="item">
+            <span class="pill warn">${a.kind}</span>
+            <code style="margin-left:0.4rem;font-size:0.8rem">${a.id}</code>
+            <pre class="muted" style="white-space:pre-wrap;margin:0.5rem 0">${escapeHtml(JSON.stringify(a.payload, null, 2))}</pre>
+            <div class="row">
+              <button class="btn btn-ok" data-approve="${a.id}">Approve</button>
+              <button class="btn btn-bad" data-reject="${a.id}">Reject</button>
+              ${a.campaign_id ? `<button class="btn btn-primary" data-publish="${a.campaign_id}">Publish (local)</button>` : ''}
+            </div>
+          </div>`).join('');
+        $('hitlOut').querySelectorAll('[data-approve]').forEach((b) => b.onclick = () => decide(b.dataset.approve, true));
+        $('hitlOut').querySelectorAll('[data-reject]').forEach((b) => b.onclick = () => decide(b.dataset.reject, false));
+        $('hitlOut').querySelectorAll('[data-publish]').forEach((b) => b.onclick = () => publish(b.dataset.publish));
+      } catch { $('hitlOut').innerHTML = '<p class="muted">Need admin API key.</p>'; }
+    }
+
+    async function decide(id, ok) {
+      const path = ok ? 'approve' : 'reject';
+      try {
+        const r = await fetch(API + `/v1/admin/hitl/${id}/${path}`, { method: 'POST', headers: headers(true), body: '{}' });
+        if (!r.ok) throw new Error(await r.text());
+        toast(ok ? 'Approved' : 'Rejected');
+        loadHitl(); health();
+      } catch (e) { toast(String(e.message || e)); }
+    }
+
+    async function publish(id) {
+      try {
+        const r = await fetch(API + '/v1/publish', {
+          method: 'POST', headers: headers(true),
+          body: JSON.stringify({ campaign_id: id, backend: 'local' }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        toast('Published (local log)');
+        health();
+      } catch (e) { toast(String(e.message || e)); }
+    }
+
+    $('apiKey').value = localStorage.getItem('sf_api') || 'change-me-admin-key';
+    $('widgetKey').value = localStorage.getItem('sf_widget') || 'pk_live_change-me';
+    health();
+  </script>
+</body>
+</html>

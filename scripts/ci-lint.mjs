@@ -26,6 +26,7 @@ const REQUIRED_PAGES = [
   "invoice-forge/index.html",
   "content-forge/index.html",
   "meet-wise/index.html",
+  "social-forge/index.html",
   "admin/index.html",
   ".htaccess",
   "README.md",

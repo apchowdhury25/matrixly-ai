@@ -19,6 +19,7 @@ A production-facing static website plus local agent runtimes for:
 | **InvoiceForge** | Invoice processing & AR — vision extract, validate, post, reminders, reports |
 | **ContentForge** | Content creation & repurposing — SEO blogs, social, newsletters, ads |
 | **MeetWise** | Meeting outcomes — summaries, actions, CRM, recap emails |
+| **SocialForge** | Social content & engagement — posts, schedule, inbox, insights |
 
 ## Tech stack
 
@@ -101,6 +102,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── invoice-forge/index.html
 ├── content-forge/index.html
 ├── meet-wise/index.html
+├── social-forge/index.html
 ├── admin/index.html           # /admin (QA console)
 ├── assets/
 ├── agents/                    # Python agent backends (not published to Hostinger)
@@ -112,7 +114,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── book-wise/
 │   ├── invoice-forge/
 │   ├── content-forge/
-│   └── meet-wise/
+│   ├── meet-wise/
+│   └── social-forge/
 └── docs/
 ```
 
@@ -181,6 +184,19 @@ python -m src.cli serve
 ```
 
 Product page: [/meet-wise](meet-wise/). Full setup: [agents/meet-wise/README.md](agents/meet-wise/README.md).
+
+### SocialForge (social content & engagement)
+
+```bash
+cd agents/social-forge
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [/social-forge](social-forge/). Full setup: [agents/social-forge/README.md](agents/social-forge/README.md).
 
 ## UI QA (developers)
 

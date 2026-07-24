@@ -1,0 +1,97 @@
+# Matrixly SocialForge — social content, calendar, inbox, HITL
+
+business:
+  name: "Matrixly Demo Brand"
+  support_email: "social@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  industry: "B2B SaaS / SMB automation"
+
+brand:
+  voice_file: brand/voice.md
+  tone:
+    - professional
+    - clear
+    - helpful
+    - human
+  avoid:
+    - aggressive sales spam
+    - competitor bashing
+    - over-hyped claims
+  hashtags_default:
+    - "#SMB"
+    - "#AIAgents"
+    - "#Automation"
+
+platforms:
+  - id: linkedin
+    name: LinkedIn
+    max_chars: 3000
+    enabled: true
+  - id: x
+    name: X / Twitter
+    max_chars: 280
+    enabled: true
+  - id: instagram
+    name: Instagram
+    max_chars: 2200
+    enabled: true
+  - id: facebook
+    name: Facebook
+    max_chars: 5000
+    enabled: true
+  - id: threads
+    name: Threads
+    max_chars: 500
+    enabled: true
+
+social:
+  max_idea_chars: 20000
+  default_platforms:
+    - linkedin
+    - x
+    - instagram
+  require_hitl_before_post: true
+  optimal_windows:
+    # Local-time hour ranges (weekday-ish defaults for SMBs)
+    linkedin: ["08:00", "12:00", "17:00"]
+    x: ["09:00", "12:00", "18:00"]
+    instagram: ["11:00", "15:00", "19:00"]
+    facebook: ["09:00", "13:00", "20:00"]
+    threads: ["10:00", "14:00", "19:00"]
+
+hitl:
+  mode: external_only  # always | external_only | off
+  review_posts: true
+  review_replies: true
+
+publish:
+  backend: local  # local | buffer | meta | linkedin
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8794"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  generate_per_minute: 30
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8794
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.45
+
+channels:
+  calendar:
+    welcome: "SocialForge — compose multi-platform posts, schedule, approve, and manage inbox replies."

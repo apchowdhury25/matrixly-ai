@@ -1,0 +1,11 @@
+Idea: Announce that Matrixly SMBs can deploy ready-made AI agents (Lead Qualifier, SupportForge, SocialForge)
+without building from scratch — with human approval before anything goes external.
+
+Key points:
+- Marketplace of specialized agents
+- Brand voice + HITL safety
+- Free to explore
+- Integrations with tools SMBs already use
+
+CTA: Browse agents free on matrixly.world or start a pilot.
+Audience: SMB founders, marketing leads, ops managers.
