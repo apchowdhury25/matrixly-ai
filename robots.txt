@@ -1,7 +1,3 @@
 # Matrixly marketing site
 User-agent: *
 Allow: /
-
-# Developer QA console — do not index
-Disallow: /Admin.html
-Disallow: /admin.html

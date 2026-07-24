@@ -39,11 +39,10 @@ def min_buttons(context, count, label):
     assert len(matched) >= count, f"found {len(matched)} buttons labeled {label}"
 
 
-@then("the public navigation should not link to Admin.html")
-def no_admin_nav(context, site_base_url):
+@then("the site should link to Admin.html")
+def admin_nav_present(context, site_base_url):
     page = AgentsPage(context["driver"], site_base_url)
-    # page already open
-    assert not page.public_nav_links_admin()
+    assert page.public_nav_links_admin()
 
 
 @then(parsers.parse('the "{card}" card should show a "{link}" link'))

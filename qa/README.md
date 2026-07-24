@@ -1,10 +1,10 @@
 # Matrixly UI QA Framework
 
-Developer-only quality assurance for the **Matrixly static marketing UI**.
+UI quality assurance for the **Matrixly static marketing site**.
 
 | Piece | Path |
 |-------|------|
-| Hidden QA console | [`../Admin.html`](../Admin.html) |
+| QA Admin console (authorized) | [`../Admin.html`](../Admin.html) |
 | Python automation | this folder (`qa/`) |
 | CI workflow | [`.github/workflows/ui-qa.yml`](../.github/workflows/ui-qa.yml) |
 
@@ -22,14 +22,14 @@ Developer-only quality assurance for the **Matrixly static marketing UI**.
 
 ---
 
-## Hidden Admin.html (developer only)
+## Admin.html (authorized access)
 
 - **URL (local):** `http://127.0.0.1:8080/Admin.html`
-- **Not linked** from public nav/footer
-- `noindex` meta + `robots.txt` disallow
-- Passphrase gate (SHA-256 hashed in page JS)
+- Linked from site footer as **QA Admin** (home, agents, products)
+- **Passphrase gate** before tools unlock (SHA-256 hashed in page JS)
+- Session unlock stored in `sessionStorage` until Sign out
 
-**Default developer passphrase** (change hash in `Admin.html` for production deploys):
+**Default authorization passphrase** (change hash in `Admin.html` for production):
 
 ```text
 matrixly-qa-dev
@@ -48,7 +48,7 @@ The Admin console provides:
 3. Copy-paste commands for Selenium / Playwright / BDD  
 4. In-browser link probe (same-origin)
 
-This is **obscurity + access control for honest developers**, not a substitute for server auth on sensitive systems.
+Static sites cannot fully protect secrets in the browser. Treat this as **operator authorization**, not enterprise IAM—use a strong passphrase and rotate it for production.
 
 ---
 
@@ -153,8 +153,9 @@ Scenario: Home loads
 
 - Do not put production secrets in `Admin.html`  
 - Prefer running UI QA against local `dist/` or staging  
-- Rotate the Admin passphrase if the URL is shared  
-- `Admin.html` is published to the deploy branch (so you can QA production), but stays unlinked + noindex  
+- Rotate the Admin passphrase for production  
+- `Admin.html` is linked from the site footer; tools stay locked until authorized  
+
 
 ---
 

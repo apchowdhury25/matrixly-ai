@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow, noarchive" />
-  <meta name="googlebot" content="noindex, nofollow" />
-  <meta name="description" content="Matrixly developer QA console — restricted access" />
-  <title>QA Admin — Matrixly (dev only)</title>
+  <meta name="description" content="Matrixly QA Admin — authorized access required for UI quality assurance tools" />
+  <title>QA Admin — Matrixly</title>
   <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -150,28 +148,30 @@
   </style>
 </head>
 <body>
-  <!-- Developer-only QA console. Not linked from public navigation. -->
+  <!-- QA Admin console — authorized users only (passphrase gate). -->
   <div id="gate" class="gate">
     <h1>Matrixly <span>QA Admin</span></h1>
     <p class="sub">
-      Restricted developer console for <strong>UI quality assurance</strong> only.
-      Not linked from the public site. Unauthorized access is prohibited.
+      Sign in to access the <strong>UI quality assurance</strong> console:
+      page checklists, link probes, and automated test runner commands.
     </p>
-    <label class="sub" for="pass">Developer passphrase</label>
-    <input id="pass" type="password" autocomplete="current-password" placeholder="Passphrase" />
-    <button class="btn" id="unlockBtn" type="button">Unlock</button>
+    <label class="sub" for="pass">Authorization passphrase</label>
+    <input id="pass" type="password" autocomplete="current-password" placeholder="Enter passphrase" />
+    <button class="btn" id="unlockBtn" type="button">Sign in</button>
     <p class="err" id="gateErr"></p>
-    <p class="tip">Hint for repo owners: see <code>qa/README.md</code> (local passphrase).</p>
+    <p class="tip">Authorized operators: see <code>qa/README.md</code> for credentials setup.</p>
+    <p class="tip" style="margin-top:0.5rem"><a href="index.html">← Back to Matrixly</a></p>
   </div>
 
   <div id="app" class="app hidden">
     <header class="bar">
       <div>
-        <h1>UI QA Console <span class="badge">dev only · noindex</span></h1>
+        <h1>UI QA Console <span class="badge">authorized</span></h1>
         <p class="sub" style="margin:0.35rem 0 0">Manual checklist + automated Selenium / Playwright / BDD runners</p>
       </div>
       <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-        <button class="btn ghost" id="lockBtn" type="button">Lock</button>
+        <a class="btn ghost" href="agents.html" style="display:inline-flex;align-items:center;text-decoration:none">Agents</a>
+        <button class="btn ghost" id="lockBtn" type="button">Sign out</button>
       </div>
     </header>
 
@@ -210,16 +210,16 @@ pip install -r requirements.txt
 playwright install chromium
 
 # Selenium UI suite
-pytest tests/selenium -v --base-url=http://127.0.0.1:8080
+pytest tests/selenium -v --site-url=http://127.0.0.1:8080
 
 # Playwright UI suite
-pytest tests/playwright -v --base-url=http://127.0.0.1:8080
+pytest tests/playwright -v --site-url=http://127.0.0.1:8080
 
 # BDD / Cucumber-style features
-pytest tests/bdd -v --base-url=http://127.0.0.1:8080
+pytest tests/bdd -v --site-url=http://127.0.0.1:8080
 
 # All + HTML report
-pytest -v --base-url=http://127.0.0.1:8080 --html=reports/report.html --self-contained-html</pre>
+pytest -v --site-url=http://127.0.0.1:8080 --html=reports/report.html --self-contained-html</pre>
           <p class="tip">Start the site first: <code>npm run build &amp;&amp; npm start</code> (serves <code>dist/</code> on port 8080). CI job: <code>.github/workflows/ui-qa.yml</code>.</p>
         </div>
       </section>
@@ -270,7 +270,7 @@ pytest -v --base-url=http://127.0.0.1:8080 --html=reports/report.html --self-con
         "Footer year is current year",
         "Mobile width (~375px): no horizontal overflow on home + agents",
         "Primary CTAs reachable without console errors",
-        "Admin.html remains unlinked from public nav"
+        "Admin page requires passphrase before showing QA tools"
       ];
 
       function $(id) { return document.getElementById(id); }

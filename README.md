@@ -141,7 +141,7 @@ Product page: [invoice-forge.html](invoice-forge.html). Full setup: [agents/invo
 
 ## UI QA (developers)
 
-Hidden console: **[Admin.html](Admin.html)** (passphrase gated, not in public nav).  
+**QA Admin:** [Admin.html](Admin.html) — passphrase-authorized console (linked in footer).  
 Automation: **[qa/](qa/)** — Python **Selenium**, **Playwright**, **pytest-bdd** (Cucumber-style), GitHub Actions [`.github/workflows/ui-qa.yml`](.github/workflows/ui-qa.yml).
 
 ```bash

@@ -8,7 +8,7 @@ Feature: Agents catalog UI
     Given I open the "agents.html" page
     Then the page title should contain "Agents"
     And I should see at least 4 "Deploy Now" buttons
-    And the public navigation should not link to Admin.html
+    And the site should link to Admin.html
 
   Scenario: Shipping Assistant card structure
     Given I open the "agents.html" page

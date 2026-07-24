@@ -37,10 +37,10 @@ class TestPublicPagesSelenium:
             "Shipping Deploy Now should be the last CTA in the card footer"
         )
 
-    def test_admin_not_in_public_nav(self, selenium_driver, site_base_url):
+    def test_admin_linked_from_footer(self, selenium_driver, site_base_url):
         page = AgentsPage(selenium_driver, site_base_url).open()
         page.wait_ready()
-        assert not page.public_nav_links_admin()
+        assert page.public_nav_links_admin(), "QA Admin should be linked from site footer"
 
     def test_theme_toggle_present_on_agents(self, selenium_driver, site_base_url):
         page = AgentsPage(selenium_driver, site_base_url).open()

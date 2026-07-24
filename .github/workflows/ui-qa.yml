@@ -104,5 +104,5 @@ jobs:
             echo ""
             echo "- Base URL: \`${{ env.BASE_URL }}\`"
             echo "- Suites: Playwright, Selenium, pytest-bdd"
-            echo "- Hidden console: \`Admin.html\` (passphrase gated)"
+            echo "- QA Admin: \`Admin.html\` (passphrase authorized)"
           } >> "$GITHUB_STEP_SUMMARY"

@@ -32,7 +32,7 @@ class AgentsPage(BasePage):
         return False
 
     def public_nav_links_admin(self) -> bool:
-        """Admin.html must not appear in public nav."""
+        """True if Admin.html is linked from header/nav/footer (authorized entry point)."""
         for a in self.find_all_css("header a, nav a, footer a"):
             href = (a.get_attribute("href") or "").lower()
             if "admin.html" in href:
