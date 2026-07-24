@@ -4,7 +4,7 @@ UI quality assurance for the **Matrixly static marketing site**.
 
 | Piece | Path |
 |-------|------|
-| QA Admin console (authorized) | [`../Admin.html`](../Admin.html) |
+| QA Admin console (authorized) | [`../admin/`](../admin/) → `/admin` |
 | Python automation | this folder (`qa/`) |
 | CI workflow | [`.github/workflows/ui-qa.yml`](../.github/workflows/ui-qa.yml) |
 
@@ -22,20 +22,20 @@ UI quality assurance for the **Matrixly static marketing site**.
 
 ---
 
-## Admin.html (authorized access)
+## Admin console (authorized access)
 
-- **URL (local):** `http://127.0.0.1:8080/Admin.html`
+- **URL (local):** `http://127.0.0.1:8080/admin`
 - Linked from site footer as **QA Admin** (home, agents, products)
 - **Passphrase gate** before tools unlock (SHA-256 hashed in page JS)
 - Session unlock stored in `sessionStorage` until Sign out
 
-**Default authorization passphrase** (change hash in `Admin.html` for production):
+**Default authorization passphrase** (change hash in `admin/index.html` for production):
 
 ```text
 matrixly-qa-dev
 ```
 
-To rotate: compute SHA-256 hex of your new passphrase and replace `PASS_HASH` in `Admin.html`.
+To rotate: compute SHA-256 hex of your new passphrase and replace `PASS_HASH` in `admin/index.html`.
 
 ```powershell
 python -c "import hashlib; print(hashlib.sha256(b'YOUR_NEW_PASS').hexdigest())"
@@ -135,7 +135,7 @@ Main site deploy remains in `.github/workflows/ci-cd.yml`.
 @pytest.mark.selenium
 class TestCheckout:
     def test_cta(self, open_page):
-        driver = open_page("index.html")
+        driver = open_page("")  # home /
         assert "Matrixly" in driver.title
 ```
 
@@ -143,7 +143,7 @@ class TestCheckout:
 
 ```gherkin
 Scenario: Home loads
-  Given I open the "index.html" page
+  Given I open the "agents" page
   Then the page title should contain "Matrixly"
 ```
 
@@ -151,10 +151,11 @@ Scenario: Home loads
 
 ## Security notes
 
-- Do not put production secrets in `Admin.html`  
+- Do not put production secrets in `admin/index.html`  
 - Prefer running UI QA against local `dist/` or staging  
 - Rotate the Admin passphrase for production  
-- `Admin.html` is linked from the site footer; tools stay locked until authorized  
+- `/admin` is linked from the site footer; tools stay locked until authorized  
+
 
 
 ---

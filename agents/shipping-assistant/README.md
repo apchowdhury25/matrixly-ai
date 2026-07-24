@@ -16,8 +16,8 @@ See **[DESIGN.md](DESIGN.md)**.
 
 ## Website
 
-- Deploy page: `shipping-assistant.html`
-- **User guide (HTML):** `shipping-assistant-guide.html` — full operator guide from the landing page
+- Deploy page: `/shipping-assistant`
+- **User guide:** `/shipping-assistant-guide` — full operator guide from the landing page
 - **User guide (MD):** [USER_GUIDE.md](USER_GUIDE.md)
 - Marketplace card: **Deploy Now** · **User guide** · **See full logistics flow**
 

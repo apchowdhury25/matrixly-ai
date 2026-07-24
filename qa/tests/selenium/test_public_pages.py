@@ -18,12 +18,12 @@ class TestPublicPagesSelenium:
 
     def test_http_ok_all_public_pages(self, site_base_url):
         for page in PUBLIC_PAGES:
-            url = f"{site_base_url}/{page}"
+            url = f"{site_base_url}/{page}" if page else f"{site_base_url}/"
             res = requests.get(url, timeout=20)
             assert res.status_code == 200, f"{url} -> {res.status_code}"
 
     def test_home_loads_brand(self, selenium_driver, site_base_url):
-        page = BasePage(selenium_driver, site_base_url, "index.html").open()
+        page = BasePage(selenium_driver, site_base_url, "").open()
         page.wait_ready()
         assert "Matrixly" in page.title() or page.logo_visible()
         assert page.has_css("header") or page.has_css("nav")
@@ -58,7 +58,7 @@ class TestPublicPagesSelenium:
 @pytest.mark.smoke
 class TestAdminGateSelenium:
     def test_admin_page_reachable_and_gated(self, selenium_driver, site_base_url):
-        selenium_driver.get(f"{site_base_url}/Admin.html")
+        selenium_driver.get(f"{site_base_url}/admin")
         assert "QA" in selenium_driver.title or "Admin" in selenium_driver.title
         # Gate visible before unlock
         gate = selenium_driver.find_elements(By.ID, "gate")

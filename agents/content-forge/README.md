@@ -185,7 +185,7 @@ agents/content-forge/
     └── api/
 ```
 
-Product page: **`content-forge.html`** (repo root).
+Product page: **`/content-forge`** (`content-forge/index.html`).
 
 ---
 

@@ -21,8 +21,16 @@ def context():
 
 @given(parsers.parse('I open the "{page}" page'))
 def open_named_page(selenium_driver, site_base_url, page, context):
-    path = page if page.endswith(".html") else f"{page}.html"
-    selenium_driver.get(f"{site_base_url}/{path}")
+    # Clean URLs: "agents" → /agents ; empty / "index" / "home" → /
+    raw = (page or "").strip().lstrip("/")
+    if raw.endswith(".html"):
+        raw = raw[: -len(".html")]
+    if raw.lower() in {"", "index", "home"}:
+        path = ""
+    else:
+        path = raw
+    url = f"{site_base_url}/{path}" if path else f"{site_base_url}/"
+    selenium_driver.get(url)
     context["driver"] = selenium_driver
     context["path"] = path
 
@@ -39,7 +47,7 @@ def min_buttons(context, count, label):
     assert len(matched) >= count, f"found {len(matched)} buttons labeled {label}"
 
 
-@then("the site should link to Admin.html")
+@then("the site should link to Admin")
 def admin_nav_present(context, site_base_url):
     page = AgentsPage(context["driver"], site_base_url)
     assert page.public_nav_links_admin()

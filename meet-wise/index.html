@@ -17,11 +17,11 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly BookWise — embeddable AI appointment booking for SMBs. Availability, confirmations, reminders, Google Calendar, HITL." />
+  <meta name="description" content="Matrixly MeetWise — meeting summaries, action items, CRM updates, recap emails. Zoom, Teams, Google Meet transcripts." />
   <meta name="theme-color" content="#117ACA" />
-  <title>BookWise — Matrixly</title>
-  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
-  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <title>MeetWise — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -93,13 +93,13 @@
 <body class="min-h-screen antialiased">
   <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
-        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
-        <a href="agents.html" class="nav-link">Agents</a>
-        <a href="integrations.html" class="nav-link">Integrations</a>
+        <a href="/agents" class="nav-link">Agents</a>
+        <a href="/integrations" class="nav-link">Integrations</a>
         <a href="#embed" class="nav-link">Embed</a>
       </nav>
       <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
@@ -108,42 +108,38 @@
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// BOOK · LIVE · EMBEDDABLE SCHEDULING</p>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">BookWise</h1>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// MEET · LIVE · MEETING OUTCOMES</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">MeetWise</h1>
       <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
-        Fully manage appointments for SMBs — check real-time availability, propose optimal slots with buffers and timezones,
-        book with confirmations, send smart reminders, and handle reschedules/cancellations with human-in-the-loop for edge cases.
+        Capture and action meeting outcomes for SMBs — process Zoom, Teams, or Google Meet transcripts,
+        generate summaries and action items, update CRM, and send professional recaps with human review.
       </p>
       <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Chat · email · form channels</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Local calendar, Google Calendar, or Calendly-style API</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Reminders · intake · CRM-lite · audit · usage billing</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Summaries · decisions · discussion points</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Action items with owners &amp; deadlines</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> CRM tasks/notes · recap email · follow-up flags</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
         <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Buffers + TZ</span>
         <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">No-show reduction</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">CRM map</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Transcript upload</span>
       </div>
     </section>
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">1. Intent</h2>
-          <p class="text-sm text-matrix-soft">Classify book, availability, reschedule, cancel, or status from natural language.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">1. Ingest</h2>
+          <p class="text-sm text-matrix-soft">Upload transcript or paste Zoom / Teams / Meet export text.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">2. Availability</h2>
-          <p class="text-sm text-matrix-soft">Business hours, buffers, min notice, and timezone-aware optimal slots.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">2. Extract</h2>
+          <p class="text-sm text-matrix-soft">Summary, decisions, action items, owners, deadlines, follow-ups.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">3. Book</h2>
-          <p class="text-sm text-matrix-soft">Intake form fields, confirmations, calendar write, CRM contact upsert.</p>
-        </article>
-        <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">4. Remind</h2>
-          <p class="text-sm text-matrix-soft">24h + 2h reminders; admin view of upcoming bookings and HITL queue.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">3. Action</h2>
+          <p class="text-sm text-matrix-soft">CRM-shaped updates + recap email after human approval.</p>
         </article>
       </div>
     </section>
@@ -152,44 +148,31 @@
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
         <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
         <p class="text-sm text-matrix-soft mb-6">
-          Code: <code class="text-xs">agents/book-wise</code> ·
-          Guide: <code class="text-xs">agents/book-wise/README.md</code>
+          Code: <code class="text-xs">agents/meet-wise</code> ·
+          Guide: <code class="text-xs">agents/meet-wise/README.md</code>
         </p>
-        <pre class="cmd mb-6">cd agents/book-wise
+        <pre class="cmd mb-6">cd agents/meet-wise
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env
 python scripts/smoke_test.py
 python -m src.cli serve</pre>
-        <h3 class="font-bold text-matrix-cream mb-2">Business hours (config.yaml)</h3>
-        <pre class="cmd mb-4">business_hours:
-  monday: { start: "09:00", end: "17:00" }
-booking:
-  buffer_before_minutes: 10
-  buffer_after_minutes: 10
-  min_notice_hours: 2</pre>
-        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
-          <strong class="text-matrix-cream">Safety:</strong> VIP, legal, after-hours, and group requests queue for human approval before calendar confirm.
-        </div>
+        <p class="text-sm text-matrix-soft mb-2">Map speakers to CRM owners in <code class="text-xs">config.yaml</code> → <code class="text-xs">crm.owner_map</code>.</p>
       </div>
     </section>
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Exact embed code — matrixly.world</h2>
-        <p class="text-sm text-matrix-soft mb-4">Place before <code class="text-xs">&lt;/body&gt;</code>. Replace the host with your BookWise VPS URL.</p>
-        <pre class="cmd mb-6">&lt;!-- Matrixly BookWise on matrixly.world --&gt;
-&lt;script
-  src="https://YOUR_BOOKWISE_HOST/static/widget/embed.js"
-  data-api="https://YOUR_BOOKWISE_HOST"
-  data-key="pk_live_your-site-key"
-  data-title="Book with us"
-  async&gt;
-&lt;/script&gt;</pre>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed code — matrixly.world</h2>
+        <pre class="cmd mb-6">&lt;iframe
+  src="https://YOUR_MEETWISE_HOST/static/dashboard/index.html"
+  title="MeetWise"
+  style="width:100%;min-height:800px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
+&lt;/iframe&gt;</pre>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="agents.html" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="support-forge.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See SupportForge</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+          <a href="/content-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See ContentForge</a>
         </div>
       </div>
     </section>
@@ -197,8 +180,8 @@ booking:
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · BookWise v1.0 · Embeddable booking</span>
-      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span>Matrixly · MeetWise v1.0 · Meeting outcomes</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
     </div>
   </footer>
 </body>

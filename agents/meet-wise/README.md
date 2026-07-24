@@ -180,7 +180,7 @@ agents/meet-wise/
     └── api/
 ```
 
-Product page: **`meet-wise.html`** (repo root).
+Product page: **`/meet-wise`** (`meet-wise/index.html`).
 
 ---
 

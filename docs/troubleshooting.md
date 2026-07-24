@@ -78,7 +78,7 @@ Rules out browser-specific bugs and captive Wi‑Fi / corporate proxies.
 | Theme stuck light/dark | `localStorage` corruption | Clear site data for the domain; toggle theme again |
 | Nav links 404 | Old Hostinger deploy / wrong branch | Confirm **deploy** branch latest; see [§5](#5-deploy-hostinger-and-cicd) |
 | Images missing | Missing `assets/` in publish tree | Rebuild with `npm run build`; ensure `dist/assets` ships |
-| Layout broken on agents cards | Cached old HTML | Hard refresh; verify Shipping “Deploy Now” alignment in latest `agents.html` |
+| Layout broken on agents cards | Cached old HTML | Hard refresh; verify Shipping “Deploy Now” alignment on `/agents` |
 
 ---
 
@@ -254,7 +254,7 @@ npm run lint
 npm run build
 ```
 
-- Missing page in `scripts/ci-build.mjs` `HTML_ALLOW` → add it.  
+- Missing page in `scripts/ci-build.mjs` `SITE_PAGES` → add `folder/index.html`.  
 - Agent compile failures in CI → fix Python syntax under `agents/*/src`.
 
 ### UI QA workflow fails
@@ -277,11 +277,11 @@ Never put production passwords or API keys in HTML, commits, or public issues. U
 
 ## 6. UI QA Admin console
 
-**URL:** `/Admin.html` (also linked as **QA Admin** in site footer).
+**URL:** `/admin` (also linked as **QA Admin** in site footer).
 
 | Issue | Fix |
 |-------|-----|
-| Can’t unlock | Use the authorization passphrase (default for local: see `qa/README.md`); hash is in `Admin.html` |
+| Can’t unlock | Use the authorization passphrase (default for local: see `qa/README.md`); hash is in `admin/index.html` |
 | Tools empty after login | Sign-in only unlocks the console; run automated suites from your machine or CI |
 | Link probe fails cross-origin | Run against same-origin `dist/` via `npm start` |
 
@@ -307,7 +307,7 @@ If you’ve worked through the relevant section and the issue remains, contact M
 | **Email** | `anwar@matrixly.world` — product interest, pilots, account help |
 | **Get Started Free** | Account signup / login chooser on the website |
 | **GitHub** | Open an issue on [matrixly-ai](https://github.com/apchowdhury25/matrixly-ai) for repo/docs bugs |
-| **QA Admin** | Internal UI checklist and runner docs (`/Admin.html`) |
+| **QA Admin** | Internal UI checklist and runner docs (`/admin`) |
 
 ### Related docs in this repo
 

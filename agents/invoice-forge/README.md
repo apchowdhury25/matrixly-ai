@@ -244,7 +244,7 @@ agents/invoice-forge/
     └── api/
 ```
 
-Product page: **`invoice-forge.html`** (repo root).
+Product page: **`/invoice-forge`** (`invoice-forge/index.html`).
 
 ---
 

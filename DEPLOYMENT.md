@@ -116,7 +116,7 @@ Not configured. Shared Hostinger plans usually favor **Git** or **FTP**. If you 
 4. Set **install / document root** so the branch root maps to the domain public root (the `deploy` branch root *is* the site — no `dist/` subfolder on that branch).
 5. Enable **auto-deploy on push** if available.
 6. Trigger a first deploy (push to `main` or **Actions → CI/CD → Run workflow**).
-7. Confirm https://matrixly.ai loads `index.html` and https://matrixly.ai/agents.html works.
+7. Confirm https://matrixly.world/ loads and clean URLs work (e.g. https://matrixly.world/agents, https://matrixly.world/pricing). Old `*.html` paths should 301 to clean folders via `.htaccess`.
 
 ### Option B — FTP only
 

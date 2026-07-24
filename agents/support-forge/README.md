@@ -356,7 +356,7 @@ agents/support-forge/
 
 ## Product page
 
-Marketing / deploy docs on the Matrixly site: **`support-forge.html`** (repo root). Catalog card on **`agents.html`**.
+Marketing / deploy docs on the Matrixly site: **`/support-forge`**. Catalog card on **`/agents`**.
 
 ---
 

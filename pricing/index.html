@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly product suite — Hermes agent runtime, Notion knowledge layer, Grok intelligence, MCP integrations, and the agent marketplace for SMBs." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Pricing — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    
+    /* ========== LIGHT / DARK THEME TOKENS ========== */
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --brand-blue-light: #DCEBFB;
+      --brand-blue-soft: #E8F4FC;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --shadow-sm: 0 1px 3px rgba(33, 30, 30, 0.06);
+      --shadow-md: 0 8px 24px rgba(17, 122, 202, 0.12);
+      --input-bg: #FFFFFF;
+      --toggle-bg: #F0F4F8;
+      --toggle-border: #D0D7DE;
+      --grid-line: rgba(17, 122, 202, 0.04);
+      --matrix-green: #117ACA;
+      --matrix-green-text: #117ACA;
+      --matrix-neon: #117ACA;
+      --matrix-neon-text: #117ACA;
+      --matrix-forest: #0B5CAB;
+      --matrix-forest-text: #0B5CAB;
+      color-scheme: light;
+    }
+
+    html.dark {
+      --brand-blue: #3B9FE0;
+      --brand-blue-dark: #117ACA;
+      --brand-blue-hover: #5BB0E8;
+      --brand-blue-light: #1A3A52;
+      --brand-blue-soft: #152536;
+      --ink: #F0F4F8;
+      --soft: #9AA4B2;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B1220;
+      --bg-alt: #111827;
+      --bg-muted: #151C28;
+      --card: #151C28;
+      --nav-bg: rgba(11, 18, 32, 0.94);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 28px rgba(17, 122, 202, 0.18);
+      --input-bg: #111827;
+      --toggle-bg: #1A2332;
+      --toggle-border: #1E2A3A;
+      --grid-line: rgba(59, 159, 224, 0.07);
+      --matrix-green: #3B9FE0;
+      --matrix-green-text: #3B9FE0;
+      --matrix-neon: #3B9FE0;
+      --matrix-neon-text: #3B9FE0;
+      --matrix-forest: #117ACA;
+      --matrix-forest-text: #117ACA;
+      color-scheme: dark;
+    }
+
+    html.dark section.border-y,
+    html.dark section.border-t,
+    html.dark section.border-b,
+    html.dark footer.border-t,
+    html.dark header.border-b {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-t.border-matrix-border,
+    html.dark .border-b.border-matrix-border,
+    html.dark .border-y.border-matrix-border {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .nav-scrolled {
+      border-bottom-color: var(--section-divider);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-forest { color: var(--brand-blue-dark) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .hover\:text-matrix-cream:hover { color: var(--ink) !important; }
+
+    .bg-matrix-black { background-color: var(--bg) !important; }
+    .bg-matrix-void { background-color: var(--bg-alt) !important; }
+    .bg-matrix-muted { background-color: var(--bg-muted) !important; }
+    .bg-matrix-card { background-color: var(--card) !important; }
+    .bg-black { background-color: var(--bg-alt) !important; }
+
+    .border-matrix-border { border-color: var(--border) !important; }
+
+    .grid-bg {
+      background-image: none;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-height: 40px;
+      border-radius: 0.5rem;
+      background: var(--toggle-bg);
+      border: 1.5px solid var(--toggle-border);
+      color: var(--brand-blue);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue-soft);
+      transform: translateY(-1px);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+    .theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      display: block;
+    }
+    html.dark .theme-icon-sun { display: none; }
+    html:not(.dark) .theme-icon-moon { display: none; }
+    html.dark .theme-icon-moon { display: block; }
+    html:not(.dark) .theme-icon-sun { display: block; }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: #FFFFFF !important;
+    }
+    .btn-primary:active {
+      background: var(--brand-blue-dark) !important;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--brand-blue);
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .neon-tile,
+    .text-tile {
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+    }
+    .neon-tile span,
+    .text-tile-base span,
+    .text-tile > span {
+      color: var(--brand-blue);
+    }
+
+    .badge-popular {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue);
+    }
+
+    .terminal-window {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .terminal-header {
+      background: var(--brand-blue-soft);
+      border-bottom: 1px solid var(--border);
+    }
+    .cursor-blink::after { color: var(--brand-blue); }
+
+    .chart-bar-fill {
+      background: linear-gradient(180deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    }
+    .flow-step-line {
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--brand-blue) 15%, transparent),
+        color-mix(in srgb, var(--brand-blue) 45%, transparent),
+        color-mix(in srgb, var(--brand-blue) 15%, transparent));
+    }
+
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
+
+    .section-alt { background: var(--bg-alt); }
+
+    .search-input {
+      background: var(--input-bg);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-blue) 15%, transparent);
+    }
+    .filter-chip {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--soft);
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+
+    #signup-form input {
+      background: var(--input-bg);
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+/* theme tokens defined in LIGHT / DARK THEME TOKENS */
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .grid-bg {
+      background-image: none;
+    }
+    .btn-primary {
+      background: var(--brand-blue) !important; color: #FFFFFF !important; font-weight: 700;
+      border: 1.5px solid var(--brand-blue) !important; border-radius: 0.5rem !important;
+      min-height: 44px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 2px rgba(17, 122, 202, 0.2);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important; border-color: var(--brand-blue-hover) !important; color: #FFFFFF !important;
+      transform: translateY(-1px); box-shadow: 0 4px 12px rgba(17, 122, 202, 0.28);
+    }
+    .btn-secondary {
+      background: var(--card) !important; color: var(--brand-blue) !important; font-weight: 600;
+      border: 1.5px solid var(--brand-blue) !important; border-radius: 0.5rem !important;
+      min-height: 44px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important; border-color: var(--brand-blue-hover) !important; color: var(--brand-blue-dark) !important;
+      transform: translateY(-1px);
+    }
+    .card-matrix {
+      background: var(--card); border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17, 122, 202, 0.12);
+    }
+    .nav-scrolled {
+      background: var(--nav-bg); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(33,30,30,0.06);
+    }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .mobile-menu.open { max-height: min(80vh, 520px); overflow-y: auto; }
+    .h1-fluid { font-size: clamp(1.85rem, 4.5vw + 0.5rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; }
+    .h2-fluid { font-size: clamp(1.5rem, 3vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; }
+    .neon-tile {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 2.75rem; height: 2.75rem; padding: 0 0.5rem; border-radius: 0.5rem;
+      background: var(--brand-blue-soft); border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent); flex-shrink: 0;
+    }
+    .neon-tile span {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem; font-weight: 700; color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-beta { color: #B45309; background: rgba(180,83,9,0.1); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 4px; }
+    @media (max-width: 767px) {
+      .card-matrix:hover, .btn-primary:hover, .btn-secondary:hover { transform: none; }
+    }
+
+    /* Top nav alignment grid */
+    #navbar .nav-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 1rem;
+      min-height: 4rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-row { min-height: 5rem; }
+    }
+    #navbar .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      text-decoration: none;
+    }
+    #navbar .nav-brand img {
+      filter: drop-shadow(0 1px 2px rgba(17, 122, 202, 0.18));
+    }
+    html.dark #navbar .nav-brand img {
+      filter: drop-shadow(0 0 8px rgba(59, 159, 224, 0.35));
+    }
+    #navbar .nav-links {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem 1.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-actions {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-links,
+      #navbar .nav-actions { display: inline-flex; }
+    }
+    #navbar .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 0.15rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--soft);
+      transition: color 0.15s ease;
+    }
+    #navbar .nav-link:hover,
+    #navbar .nav-link[aria-current="page"] {
+      color: var(--brand-blue);
+    }
+    #navbar .nav-actions .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 1.25rem;
+      line-height: 1;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    #navbar .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-mobile { display: none; }
+    }
+    #navbar .nav-mobile #mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="bg-matrix-black antialiased">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="nav-row">
+        <a href="/" class="nav-brand group" aria-label="Matrixly Home">
+          <img src="/assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
+          <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
+            <span class="text-matrix-cream">Matrixly</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="/#how-it-works" class="nav-link">How it Works</a>
+          <a href="/agents" class="nav-link">Agents</a>
+          <a href="/products" class="nav-link" >Products</a>
+          <a href="/integrations" class="nav-link">Integrations</a>
+          <a href="/pricing" class="nav-link" aria-current="page">Pricing</a>
+        </div>
+        <div class="nav-end">
+          <div class="nav-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <a href="/#final-cta" class="btn-primary rounded-lg">Get Started</a>
+          </div>
+          <div class="nav-mobile">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
+              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="py-4 space-y-1 border-t border-matrix-border">
+          <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Agents</a>
+          <a href="/products" class="block px-3 py-3 font-bold text-matrix-green" >Products</a>
+          <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
+          <a href="/pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
+          <a href="/#final-cta" class="btn-primary block text-center mt-3 px-5 py-3">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-20 md:pt-24">
+    <section class="pt-28 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// PRICING</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight">Plans built for agentic scale</h1>
+      </div>
+    </section>
+    <section id="pricing" class="relative py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// PRICING</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+            Simple plans. <span class="text-matrix-green">Serious leverage.</span>
+          </h2>
+          <p class="text-matrix-soft text-lg">Start free. Scale agents as ROI compounds. Monthly pricing.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4">
+          <!-- Free / Marketplace -->
+          <div class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
+            <p class="font-mono text-xs text-matrix-soft uppercase tracking-wider mb-2">Marketplace</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-1">Explore</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-extrabold text-matrix-cream">$0</span>
+              <span class="text-matrix-soft text-sm">/mo</span>
+            </div>
+            <p class="text-sm text-matrix-soft mb-6">Browse agents, preview demos, and launch your first workflow.</p>
+            <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Marketplace access</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 1 agent sandbox</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Community support</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Basic analytics</li>
+            </ul>
+            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Get Started Free</button>
+          </div>
+
+          <!-- Starter -->
+          <div class="card-matrix rounded-2xl p-6 flex flex-col reveal">
+            <p class="font-mono text-xs text-matrix-soft uppercase tracking-wider mb-2">Starter</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-1">Grow</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-extrabold text-matrix-cream">$49</span>
+              <span class="text-matrix-soft text-sm">/mo</span>
+            </div>
+            <p class="text-sm text-matrix-soft mb-6">Perfect for solo operators and small teams ready to automate.</p>
+            <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 3 active agents</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Core integrations</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> SEO intelligence</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Email support</li>
+            </ul>
+            <a href="/#final-cta" class="btn-secondary w-full text-center py-3 rounded-lg text-sm">Start Starter</a>
+          </div>
+
+          <!-- Pro (featured) -->
+          <div class="card-matrix pricing-featured rounded-2xl p-6 flex flex-col reveal relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full badge-popular text-xs font-bold font-mono whitespace-nowrap">MOST POPULAR</div>
+            <p class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-2">Pro</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-1">Scale</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-extrabold text-matrix-green"><main class="relative z-10 pt-20 md:pt-24">49</span>
+              <span class="text-matrix-soft text-sm">/mo</span>
+            </div>
+            <p class="text-sm text-matrix-soft mb-6">Full agent stacks for growing SMBs serious about domination.</p>
+            <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 15 active agents</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> All integrations</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> No-code builder</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Priority support</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Advanced ROI dashboard</li>
+            </ul>
+            <a href="/#final-cta" class="btn-primary w-full text-center py-3 rounded-lg text-sm">Start Pro</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="card-matrix rounded-2xl p-6 flex flex-col reveal">
+            <p class="font-mono text-xs text-matrix-soft uppercase tracking-wider mb-2">Enterprise</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-1">Dominate</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-extrabold text-matrix-cream">Custom</span>
+            </div>
+            <p class="text-sm text-matrix-soft mb-6">Multi-location, SSO, SLA, and dedicated agent architecture.</p>
+            <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Unlimited agents</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> SSO &amp; SAML</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Custom integrations</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Dedicated CSM</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> SLA &amp; audit logs</li>
+            </ul>
+            <a href="/#final-cta" class="btn-secondary w-full text-center py-3 rounded-lg text-sm">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pb-20">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <a href="/#final-cta" class="btn-primary px-8 py-3.5 rounded-xl text-sm">Get started free</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border/50 bg-matrix-void pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="/" class="font-mono font-bold text-lg mb-3 inline-flex items-center gap-2">
+            <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="w-8 h-8 object-contain rounded-md flex-shrink-0" />
+            <span><span class="text-matrix-cream">Matrixly</span></span>
+          </a>
+          <p class="text-sm text-matrix-soft">The Agentic AI Marketplace for SMBs.</p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Product</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="/products" class="hover:text-matrix-green">Products</a></li>
+            <li><a href="/agents" class="hover:text-matrix-green">Agents</a></li>
+            <li><a href="/integrations" class="hover:text-matrix-green">Integrations</a></li>
+            <li><a href="/pricing" class="hover:text-matrix-green">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Stack</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="#hermes" class="hover:text-matrix-green">Hermes</a></li>
+            <li><a href="#notion" class="hover:text-matrix-green">Notion</a></li>
+            <li><a href="#grok" class="hover:text-matrix-green">Grok</a></li>
+            <li><a href="#mcp" class="hover:text-matrix-green">MCP Hub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="/#final-cta" class="hover:text-matrix-green">Get started</a></li>
+            <li><a href="/#final-cta" class="hover:text-matrix-green">Talk to sales</a></li>
+            <li><a href="/admin" class="hover:text-matrix-green">QA Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-matrix-soft font-mono border-t border-matrix-border/40 pt-6">© <span id="year"></span> Matrixly · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      const nav = document.getElementById('navbar');
+      const onScroll = () => nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+    (function () {
+      const toggle = document.getElementById('mobile-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      if (!toggle) return;
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        iconMenu.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+      });
+    })();
+  
+    // ---- Theme toggle (light / dark) ----
+    (function initThemeToggle() {
+      var KEY = 'matrixly-theme';
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+      function applyTheme(theme) {
+        var dark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0B1220' : '#117ACA');
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+          btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+          btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        });
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTheme(isDark() ? 'light' : 'dark');
+        });
+      });
+      // Sync labels on load
+      applyTheme(isDark() ? 'dark' : 'light');
+    })();
+
+  </script>
+</body>
+</html>

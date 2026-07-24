@@ -20,8 +20,8 @@
   <meta name="description" content="User guide for the Matrixly Shipping Assistant — ShipStation hub, track shipments, exceptions, WISMO drafts, and HITL approvals for SMB logistics." />
   <meta name="theme-color" content="#117ACA" />
   <title>Shipping Assistant User Guide — Matrixly</title>
-  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
-  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -136,16 +136,16 @@
 <body class="min-h-screen antialiased">
   <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
-        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
-        <a href="agents.html" class="nav-link">Agents</a>
-        <a href="shipping-assistant.html" class="nav-link">Deploy</a>
-        <a href="integrations.html" class="nav-link">Integrations</a>
+        <a href="/agents" class="nav-link">Agents</a>
+        <a href="/shipping-assistant" class="nav-link">Deploy</a>
+        <a href="/integrations" class="nav-link">Integrations</a>
       </nav>
-      <a href="shipping-assistant.html" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy Shipping Agent</a>
+      <a href="/shipping-assistant" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy Shipping Agent</a>
     </div>
   </header>
 
@@ -159,8 +159,8 @@
         How to use the Matrixly Shipping Assistant from the marketplace — track shipments, handle exceptions, draft WISMO replies, and run a full order-to-delivery workflow with ShipStation.
       </p>
       <p class="text-sm text-matrix-soft mb-8">
-        Marketplace: <a href="agents.html" class="text-[#117ACA] font-semibold hover:underline">Featured AI Agents</a>
-        · Deploy: <a href="shipping-assistant.html" class="text-[#117ACA] font-semibold hover:underline">shipping-assistant.html</a>
+        Marketplace: <a href="/agents" class="text-[#117ACA] font-semibold hover:underline">Featured AI Agents</a>
+        · Deploy: <a href="/shipping-assistant" class="text-[#117ACA] font-semibold hover:underline">/shipping-assistant</a>
       </p>
 
       <div class="grid lg:grid-cols-[220px_1fr] gap-10">
@@ -216,7 +216,7 @@
             <ol class="steps text-sm text-matrix-soft">
               <li>
                 <p class="font-bold text-matrix-cream">Open the marketplace</p>
-                <p class="mt-1">Open <a href="agents.html" class="text-[#117ACA] font-semibold hover:underline">agents.html</a> (nav: <strong>Agents</strong> or <strong>Browse Agents</strong>).</p>
+                <p class="mt-1">Open <a href="/agents" class="text-[#117ACA] font-semibold hover:underline">/agents</a> (nav: <strong>Agents</strong> or <strong>Browse Agents</strong>).</p>
               </li>
               <li>
                 <p class="font-bold text-matrix-cream">Find the SHIP card</p>
@@ -225,14 +225,14 @@
               <li>
                 <p class="font-bold text-matrix-cream">Choose an action</p>
                 <ul class="mt-2 space-y-1 list-disc list-inside">
-                  <li><strong class="text-matrix-cream">Deploy Now</strong> → opens the deploy page (<code class="text-xs">shipping-assistant.html</code>)</li>
+                  <li><strong class="text-matrix-cream">Deploy Now</strong> → opens the deploy page (<code class="text-xs">/shipping-assistant</code>)</li>
                   <li><strong class="text-matrix-cream">See full logistics flow</strong> → homepage multi-agent logistics section</li>
                   <li><strong class="text-matrix-cream">This User Guide</strong> → step-by-step usage (you are here)</li>
                 </ul>
               </li>
               <li>
                 <p class="font-bold text-matrix-cream">Optional: Integrations</p>
-                <p class="mt-1">On <a href="integrations.html" class="text-[#117ACA] font-semibold hover:underline">integrations.html</a>, search <code class="text-xs">ship</code> or filter <strong>Logistics</strong>. ShipStation is marked popular and links to the Shipping Agent.</p>
+                <p class="mt-1">On <a href="/integrations" class="text-[#117ACA] font-semibold hover:underline">/integrations</a>, search <code class="text-xs">ship</code> or filter <strong>Logistics</strong>. ShipStation is marked popular and links to the Shipping Agent.</p>
               </li>
             </ol>
           </section>
@@ -423,7 +423,7 @@ python -m src.cli reject --id shp_xxxxxxxx</pre>
               <li><strong class="text-matrix-cream">Delivery &amp; WISMO</strong> — confirm delivered; draft customer updates when delayed or excepted.</li>
             </ol>
             <p class="text-sm mt-4">
-              <a href="index.html#logistics" class="text-[#117ACA] font-semibold hover:underline">Open multi-agent logistics flow on the homepage →</a>
+              <a href="/#logistics" class="text-[#117ACA] font-semibold hover:underline">Open multi-agent logistics flow on the homepage →</a>
             </p>
           </section>
 
@@ -454,7 +454,7 @@ python -m src.cli reject --id shp_xxxxxxxx</pre>
                   </tr>
                   <tr>
                     <td>Deploy Now 404</td>
-                    <td>Open site from the <code>matrix-six</code> folder; file is <code>shipping-assistant.html</code></td>
+                    <td>Open site from the <code>matrix-six</code> folder; file is <code>/shipping-assistant</code></td>
                   </tr>
                 </tbody>
               </table>
@@ -485,9 +485,9 @@ python -m src.cli reject --id shp_xxxxxxxx</pre>
           </section>
 
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="shipping-assistant.html" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Deploy page</a>
-            <a href="agents.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-            <a href="integrations.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Logistics integrations</a>
+            <a href="/shipping-assistant" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Deploy page</a>
+            <a href="/agents" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+            <a href="/integrations" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Logistics integrations</a>
           </div>
         </article>
       </div>
@@ -497,7 +497,7 @@ python -m src.cli reject --id shp_xxxxxxxx</pre>
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
       <span>Matrixly · Shipping Assistant User Guide v1.0</span>
-      <a href="agents.html" class="text-[#117ACA] hover:underline">Featured agents</a>
+      <a href="/agents" class="text-[#117ACA] hover:underline">Featured agents</a>
     </div>
   </footer>
 </body>

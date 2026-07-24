@@ -10,25 +10,28 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).resolve().parent
 load_dotenv(ROOT / ".env")
 
-# Public marketing pages (must exist after npm run build)
+# Public marketing pages (clean folder paths after npm run build)
 PUBLIC_PAGES = [
-    "index.html",
-    "agents.html",
-    "products.html",
-    "integrations.html",
-    "lead-qualifier.html",
-    "email-assistant.html",
-    "crm-assistant.html",
-    "shipping-assistant.html",
-    "shipping-assistant-guide.html",
-    "support-forge.html",
-    "book-wise.html",
-    "invoice-forge.html",
+    "",  # home → /
+    "agents",
+    "products",
+    "integrations",
+    "pricing",
+    "lead-qualifier",
+    "email-assistant",
+    "crm-assistant",
+    "shipping-assistant",
+    "shipping-assistant-guide",
+    "support-forge",
+    "book-wise",
+    "invoice-forge",
+    "content-forge",
+    "meet-wise",
 ]
 
-# Hidden developer page (password gated; no public nav link)
+# Authorized developer page (passphrase gated; linked from footer)
 DEV_PAGES = [
-    "Admin.html",
+    "admin",
 ]
 
 
@@ -38,6 +41,8 @@ def base_url() -> str:
 
 def url_for(page: str) -> str:
     page = page.lstrip("/")
+    if not page:
+        return base_url() + "/"
     return f"{base_url()}/{page}"
 
 

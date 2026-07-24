@@ -241,7 +241,7 @@ agents/book-wise/
     └── api/
 ```
 
-Product page: **`book-wise.html`** (repo root).
+Product page: **`/book-wise`** (`book-wise/index.html`).
 
 ---
 

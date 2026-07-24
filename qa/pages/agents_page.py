@@ -9,7 +9,7 @@ from .base_page import BasePage
 
 class AgentsPage(BasePage):
     def __init__(self, driver, base_url: str) -> None:
-        super().__init__(driver, base_url, "agents.html")
+        super().__init__(driver, base_url, "agents")
 
     def deploy_buttons(self):
         return self.find_all_css("a.btn-primary")
@@ -32,9 +32,9 @@ class AgentsPage(BasePage):
         return False
 
     def public_nav_links_admin(self) -> bool:
-        """True if Admin.html is linked from header/nav/footer (authorized entry point)."""
+        """True if /admin is linked from header/nav/footer (authorized entry point)."""
         for a in self.find_all_css("header a, nav a, footer a"):
             href = (a.get_attribute("href") or "").lower()
-            if "admin.html" in href:
+            if href.rstrip("/").endswith("/admin") or "/admin" in href:
                 return True
         return False

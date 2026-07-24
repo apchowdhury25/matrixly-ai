@@ -17,11 +17,11 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly InvoiceForge — invoice processing & AR agent. OCR/vision extract, validate, QuickBooks/Xero/CSV, exceptions, reminders, reports." />
+  <meta name="description" content="Matrixly BookWise — embeddable AI appointment booking for SMBs. Availability, confirmations, reminders, Google Calendar, HITL." />
   <meta name="theme-color" content="#117ACA" />
-  <title>InvoiceForge — Matrixly</title>
-  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
-  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <title>BookWise — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -93,14 +93,13 @@
 <body class="min-h-screen antialiased">
   <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
-        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
-        <a href="agents.html" class="nav-link">Agents</a>
-        <a href="integrations.html" class="nav-link">Integrations</a>
-        <a href="#workflow" class="nav-link">Workflow</a>
+        <a href="/agents" class="nav-link">Agents</a>
+        <a href="/integrations" class="nav-link">Integrations</a>
         <a href="#embed" class="nav-link">Embed</a>
       </nav>
       <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
@@ -109,50 +108,42 @@
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// INVC · LIVE · AP + AR AUTOMATION</p>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">InvoiceForge</h1>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// BOOK · LIVE · EMBEDDABLE SCHEDULING</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">BookWise</h1>
       <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
-        Invoice processing &amp; accounts receivable for SMBs — watch inbox and uploads, extract with vision-capable models,
-        validate, post to QuickBooks/Xero or CSV, flag exceptions, send payment reminders, and generate AR reports.
+        Fully manage appointments for SMBs — check real-time availability, propose optimal slots with buffers and timezones,
+        book with confirmations, send smart reminders, and handle reschedules/cancellations with human-in-the-loop for edge cases.
       </p>
       <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> OCR / vision extract + confidence scoring</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> HITL exceptions · duplicate detection · PO rules</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Embeddable dark dashboard · usage &amp; audit tracking</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Chat · email · form channels</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Local calendar, Google Calendar, or Calendly-style API</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Reminders · intake · CRM-lite · audit · usage billing</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
         <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Grok vision</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">QBO / Xero / CSV</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">AR aging</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Buffers + TZ</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">No-show reduction</span>
       </div>
     </section>
 
-    <section id="workflow" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">1. Watch</h2>
-          <p class="text-sm text-matrix-soft">Inbox, folder uploads, API paste, or email webhooks feed the pipeline.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">1. Intent</h2>
+          <p class="text-sm text-matrix-soft">Classify book, availability, reschedule, cancel, or status from natural language.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">2. Extract</h2>
-          <p class="text-sm text-matrix-soft">Vision model or text parser pulls vendor, number, dates, lines, totals.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">2. Availability</h2>
+          <p class="text-sm text-matrix-soft">Business hours, buffers, min notice, and timezone-aware optimal slots.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">3. Validate</h2>
-          <p class="text-sm text-matrix-soft">Confidence, duplicates, missing PO, high amount, fraud keywords.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">3. Book</h2>
+          <p class="text-sm text-matrix-soft">Intake form fields, confirmations, calendar write, CRM contact upsert.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">4. Post</h2>
-          <p class="text-sm text-matrix-soft">QuickBooks, Xero, or reliable CSV export for the books.</p>
-        </article>
-        <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">5. Remind</h2>
-          <p class="text-sm text-matrix-soft">AR follow-ups after due date to reduce late payments.</p>
-        </article>
-        <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">6. Report</h2>
-          <p class="text-sm text-matrix-soft">Status breakdown and aging buckets on the review dashboard.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">4. Remind</h2>
+          <p class="text-sm text-matrix-soft">24h + 2h reminders; admin view of upcoming bookings and HITL queue.</p>
         </article>
       </div>
     </section>
@@ -161,34 +152,44 @@
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
         <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
         <p class="text-sm text-matrix-soft mb-6">
-          Code: <code class="text-xs">agents/invoice-forge</code> ·
-          Guide: <code class="text-xs">agents/invoice-forge/README.md</code>
+          Code: <code class="text-xs">agents/book-wise</code> ·
+          Guide: <code class="text-xs">agents/book-wise/README.md</code>
         </p>
-        <pre class="cmd mb-6">cd agents/invoice-forge
+        <pre class="cmd mb-6">cd agents/book-wise
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env
 python scripts/smoke_test.py
-python -m src.cli demo
 python -m src.cli serve</pre>
+        <h3 class="font-bold text-matrix-cream mb-2">Business hours (config.yaml)</h3>
+        <pre class="cmd mb-4">business_hours:
+  monday: { start: "09:00", end: "17:00" }
+booking:
+  buffer_before_minutes: 10
+  buffer_after_minutes: 10
+  min_notice_hours: 2</pre>
         <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
-          <strong class="text-matrix-cream">Safety:</strong> Low confidence, high amount, missing PO, and keyword hits queue for human approval before posting.
+          <strong class="text-matrix-cream">Safety:</strong> VIP, legal, after-hours, and group requests queue for human approval before calendar confirm.
         </div>
       </div>
     </section>
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed review dashboard — matrixly.world</h2>
-        <pre class="cmd mb-6">&lt;iframe
-  src="https://YOUR_INVOICEFORGE_HOST/static/dashboard/index.html"
-  title="InvoiceForge"
-  style="width:100%;min-height:720px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
-&lt;/iframe&gt;</pre>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Exact embed code — matrixly.world</h2>
+        <p class="text-sm text-matrix-soft mb-4">Place before <code class="text-xs">&lt;/body&gt;</code>. Replace the host with your BookWise VPS URL.</p>
+        <pre class="cmd mb-6">&lt;!-- Matrixly BookWise on matrixly.world --&gt;
+&lt;script
+  src="https://YOUR_BOOKWISE_HOST/static/widget/embed.js"
+  data-api="https://YOUR_BOOKWISE_HOST"
+  data-key="pk_live_your-site-key"
+  data-title="Book with us"
+  async&gt;
+&lt;/script&gt;</pre>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="agents.html" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="book-wise.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See BookWise</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+          <a href="/support-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See SupportForge</a>
         </div>
       </div>
     </section>
@@ -196,8 +197,8 @@ python -m src.cli serve</pre>
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · InvoiceForge v1.0 · Invoice processing &amp; AR</span>
-      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span>Matrixly · BookWise v1.0 · Embeddable booking</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
     </div>
   </footer>
 </body>

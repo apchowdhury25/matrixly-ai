@@ -17,11 +17,11 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly ContentForge — create and repurpose marketing content. SEO blogs, social, newsletters, ads. Brand voice + HITL." />
+  <meta name="description" content="Matrixly InvoiceForge — invoice processing & AR agent. OCR/vision extract, validate, QuickBooks/Xero/CSV, exceptions, reminders, reports." />
   <meta name="theme-color" content="#117ACA" />
-  <title>ContentForge — Matrixly</title>
-  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
-  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <title>InvoiceForge — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -93,13 +93,14 @@
 <body class="min-h-screen antialiased">
   <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
-        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
-        <a href="agents.html" class="nav-link">Agents</a>
-        <a href="integrations.html" class="nav-link">Integrations</a>
+        <a href="/agents" class="nav-link">Agents</a>
+        <a href="/integrations" class="nav-link">Integrations</a>
+        <a href="#workflow" class="nav-link">Workflow</a>
         <a href="#embed" class="nav-link">Embed</a>
       </nav>
       <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
@@ -108,42 +109,50 @@
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// CONT · LIVE · CONTENT STUDIO</p>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">ContentForge</h1>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// INVC · LIVE · AP + AR AUTOMATION</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">InvoiceForge</h1>
       <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
-        Create and repurpose marketing content for SMBs — turn blogs, transcripts, and product notes into SEO posts,
-        social copy, newsletters, and ads while keeping brand voice and human review.
+        Invoice processing &amp; accounts receivable for SMBs — watch inbox and uploads, extract with vision-capable models,
+        validate, post to QuickBooks/Xero or CSV, flag exceptions, send payment reminders, and generate AR reports.
       </p>
       <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Crew: Researcher · Writer · Editor · Repurposer</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Brand voice memory + HITL before publish</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Export / schedule · Buffer · Hootsuite · WordPress</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> OCR / vision extract + confidence scoring</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> HITL exceptions · duplicate detection · PO rules</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Embeddable dark dashboard · usage &amp; audit tracking</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
         <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">SEO</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Multi-channel</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Usage tracking</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Grok vision</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">QBO / Xero / CSV</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">AR aging</span>
       </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <section id="workflow" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">1. Research</h2>
-          <p class="text-sm text-matrix-soft">Angles, keywords, audience, and CTAs from your source material.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">1. Watch</h2>
+          <p class="text-sm text-matrix-soft">Inbox, folder uploads, API paste, or email webhooks feed the pipeline.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">2. Write</h2>
-          <p class="text-sm text-matrix-soft">SEO blog with title, meta description, slug, and structured body.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">2. Extract</h2>
+          <p class="text-sm text-matrix-soft">Vision model or text parser pulls vendor, number, dates, lines, totals.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">3. Edit</h2>
-          <p class="text-sm text-matrix-soft">Brand voice pass and quality score before anything goes live.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">3. Validate</h2>
+          <p class="text-sm text-matrix-soft">Confidence, duplicates, missing PO, high amount, fraud keywords.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">4. Repurpose</h2>
-          <p class="text-sm text-matrix-soft">LinkedIn, X, Instagram, newsletter, ads, and next-topic ideas.</p>
+          <h2 class="font-bold text-matrix-cream mb-2">4. Post</h2>
+          <p class="text-sm text-matrix-soft">QuickBooks, Xero, or reliable CSV export for the books.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">5. Remind</h2>
+          <p class="text-sm text-matrix-soft">AR follow-ups after due date to reduce late payments.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">6. Report</h2>
+          <p class="text-sm text-matrix-soft">Status breakdown and aging buckets on the review dashboard.</p>
         </article>
       </div>
     </section>
@@ -152,40 +161,34 @@
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
         <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
         <p class="text-sm text-matrix-soft mb-6">
-          Code: <code class="text-xs">agents/content-forge</code> ·
-          Guide: <code class="text-xs">agents/content-forge/README.md</code>
+          Code: <code class="text-xs">agents/invoice-forge</code> ·
+          Guide: <code class="text-xs">agents/invoice-forge/README.md</code>
         </p>
-        <pre class="cmd mb-6">cd agents/content-forge
+        <pre class="cmd mb-6">cd agents/invoice-forge
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env
 python scripts/smoke_test.py
+python -m src.cli demo
 python -m src.cli serve</pre>
-        <p class="text-sm text-matrix-soft mb-2">Brand voice: edit <code class="text-xs">brand/voice.md</code> then restart.</p>
         <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
-          <strong class="text-matrix-cream">Safety:</strong> Publishing requires human approval by default (HITL queue in the workspace).
+          <strong class="text-matrix-cream">Safety:</strong> Low confidence, high amount, missing PO, and keyword hits queue for human approval before posting.
         </div>
       </div>
     </section>
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed code — matrixly.world</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed review dashboard — matrixly.world</h2>
         <pre class="cmd mb-6">&lt;iframe
-  src="https://YOUR_CONTENTFORGE_HOST/static/workspace/index.html"
-  title="ContentForge"
-  style="width:100%;min-height:800px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
-&lt;/iframe&gt;
-
-&lt;script
-  src="https://YOUR_CONTENTFORGE_HOST/static/widget/embed.js"
-  data-api="https://YOUR_CONTENTFORGE_HOST"
-  async&gt;
-&lt;/script&gt;</pre>
+  src="https://YOUR_INVOICEFORGE_HOST/static/dashboard/index.html"
+  title="InvoiceForge"
+  style="width:100%;min-height:720px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
+&lt;/iframe&gt;</pre>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="agents.html" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="invoice-forge.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See InvoiceForge</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+          <a href="/book-wise" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See BookWise</a>
         </div>
       </div>
     </section>
@@ -193,8 +196,8 @@ python -m src.cli serve</pre>
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · ContentForge v1.0 · Content creation &amp; repurposing</span>
-      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span>Matrixly · InvoiceForge v1.0 · Invoice processing &amp; AR</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
     </div>
   </footer>
 </body>

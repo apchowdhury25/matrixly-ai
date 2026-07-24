@@ -42,11 +42,13 @@ python -m http.server 8080
 npx serve .
 ```
 
-Open:
+Open (clean URLs — no `.html` in the path):
 
-- Landing: http://localhost:8080/index.html  
-- Agents catalog: http://localhost:8080/agents.html  
-- Integrations: http://localhost:8080/integrations.html  
+- Landing: http://localhost:8080/  
+- Agents catalog: http://localhost:8080/agents  
+- Integrations: http://localhost:8080/integrations  
+- Pricing: http://localhost:8080/pricing  
+
 
 ### Shipping Assistant (example pilot agent)
 
@@ -80,26 +82,38 @@ Full guide: **[DEPLOYMENT.md](DEPLOYMENT.md)** (secrets, hPanel steps, manual de
 
 Agent CLIs run on an operator machine or secured VPS — not on static Hostinger hosting.
 
-## Project layout
+## Project layout (clean folder URLs)
 
 ```
-├── index.html                 # Landing page
-├── agents.html                # Featured AI Agents catalog
-├── products.html              # Product suite
-├── integrations.html          # Integration directory
-├── *-assistant.html           # Per-agent deploy pages
-├── shipping-assistant-guide.html
-├── agents/
+├── index.html                 # https://matrixly.world/
+├── .htaccess                  # HTTPS + old .html → clean 301s
+├── agents/index.html          # /agents  (marketplace; coexists with Python packages below)
+├── products/index.html        # /products
+├── integrations/index.html    # /integrations
+├── pricing/index.html         # /pricing
+├── lead-qualifier/index.html  # /lead-qualifier
+├── email-assistant/index.html
+├── crm-assistant/index.html
+├── shipping-assistant/index.html
+├── shipping-assistant-guide/index.html
+├── support-forge/index.html
+├── book-wise/index.html
+├── invoice-forge/index.html
+├── content-forge/index.html
+├── meet-wise/index.html
+├── admin/index.html           # /admin (QA console)
+├── assets/
+├── agents/                    # Python agent backends (not published to Hostinger)
 │   ├── email-assistant/
 │   ├── lead-qualifier/
 │   ├── crm-assistant/
 │   ├── shipping-assistant/
-│   ├── support-forge/         # FastAPI embeddable support agent + widget
-│   ├── book-wise/             # FastAPI embeddable booking agent + widget
-│   ├── invoice-forge/         # FastAPI invoice processing & AR agent + dashboard
-│   ├── content-forge/         # FastAPI content creation & repurposing agent
-│   └── meet-wise/             # FastAPI meeting capture & CRM/recap agent
-└── docs/                      # Optional internal notes (session archives gitignored)
+│   ├── support-forge/
+│   ├── book-wise/
+│   ├── invoice-forge/
+│   ├── content-forge/
+│   └── meet-wise/
+└── docs/
 ```
 
 ### SupportForge (embeddable support)
@@ -114,7 +128,7 @@ python -m src.cli seed
 python -m src.cli serve
 ```
 
-Product page: [support-forge.html](support-forge.html). Full setup & embed: [agents/support-forge/README.md](agents/support-forge/README.md).
+Product page: [/support-forge](support-forge/). Full setup & embed: [agents/support-forge/README.md](agents/support-forge/README.md).
 
 ### BookWise (embeddable booking)
 
@@ -127,7 +141,7 @@ python scripts/smoke_test.py
 python -m src.cli serve
 ```
 
-Product page: [book-wise.html](book-wise.html). Full setup & embed: [agents/book-wise/README.md](agents/book-wise/README.md).
+Product page: [/book-wise](book-wise/). Full setup & embed: [agents/book-wise/README.md](agents/book-wise/README.md).
 
 ### InvoiceForge (invoice processing & AR)
 
@@ -140,7 +154,7 @@ python scripts/smoke_test.py
 python -m src.cli serve
 ```
 
-Product page: [invoice-forge.html](invoice-forge.html). Full setup: [agents/invoice-forge/README.md](agents/invoice-forge/README.md).
+Product page: [/invoice-forge](invoice-forge/). Full setup: [agents/invoice-forge/README.md](agents/invoice-forge/README.md).
 
 ### ContentForge (content creation & repurposing)
 
@@ -153,7 +167,7 @@ python scripts/smoke_test.py
 python -m src.cli serve
 ```
 
-Product page: [content-forge.html](content-forge.html). Full setup: [agents/content-forge/README.md](agents/content-forge/README.md).
+Product page: [/content-forge](content-forge/). Full setup: [agents/content-forge/README.md](agents/content-forge/README.md).
 
 ### MeetWise (meeting outcomes)
 
@@ -166,11 +180,11 @@ python scripts/smoke_test.py
 python -m src.cli serve
 ```
 
-Product page: [meet-wise.html](meet-wise.html). Full setup: [agents/meet-wise/README.md](agents/meet-wise/README.md).
+Product page: [/meet-wise](meet-wise/). Full setup: [agents/meet-wise/README.md](agents/meet-wise/README.md).
 
 ## UI QA (developers)
 
-**QA Admin:** [Admin.html](Admin.html) — passphrase-authorized console (linked in footer).  
+**QA Admin:** [/admin](admin/) — passphrase-authorized console (linked in footer).  
 Automation: **[qa/](qa/)** — Python **Selenium**, **Playwright**, **pytest-bdd** (Cucumber-style), GitHub Actions [`.github/workflows/ui-qa.yml`](.github/workflows/ui-qa.yml).
 
 ```bash

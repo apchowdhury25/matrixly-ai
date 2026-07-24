@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
  * Matrixly.ai CI lint — static site quality gates (no heavy toolchain).
- * Validates required pages, HTML basics, and secret-leak patterns.
+ * Validates required pages, HTML basics, clean URLs, and secret-leak patterns.
  */
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
-import { join, extname } from "node:path";
+import { join, extname, relative } from "node:path";
 
 const ROOT = process.cwd();
 const errors = [];
@@ -12,14 +12,22 @@ const warnings = [];
 
 const REQUIRED_PAGES = [
   "index.html",
-  "agents.html",
-  "products.html",
-  "integrations.html",
-  "email-assistant.html",
-  "lead-qualifier.html",
-  "crm-assistant.html",
-  "shipping-assistant.html",
-  "shipping-assistant-guide.html",
+  "agents/index.html",
+  "products/index.html",
+  "integrations/index.html",
+  "pricing/index.html",
+  "email-assistant/index.html",
+  "lead-qualifier/index.html",
+  "crm-assistant/index.html",
+  "shipping-assistant/index.html",
+  "shipping-assistant-guide/index.html",
+  "support-forge/index.html",
+  "book-wise/index.html",
+  "invoice-forge/index.html",
+  "content-forge/index.html",
+  "meet-wise/index.html",
+  "admin/index.html",
+  ".htaccess",
   "README.md",
   "LICENSE",
 ];
@@ -28,7 +36,7 @@ const SECRET_PATTERNS = [
   { name: "AWS key", re: /AKIA[0-9A-Z]{16}/ },
   { name: "Private key block", re: /-----BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY-----/ },
   { name: "GitHub PAT", re: /gh[pousr]_[A-Za-z0-9_]{20,}/ },
-  { name: "Generic API key assignment", re: /(?:api[_-]?key|secret|password|token)\s*[:=]\s*['"][^'"]{12,}['"]/i },
+  { name: "Generic API key assignment", re: /(?:api[_-]?key|secret|password|token)\s*[:=]\s*['"][^'']{12,}['"]/i },
 ];
 
 function fail(msg) {
@@ -39,19 +47,43 @@ function warn(msg) {
   warnings.push(msg);
 }
 
-function walkHtmlFiles(dir, out = []) {
+/** Walk site HTML only (not agent package dashboards under agents static folders). */
+function walkSiteHtml(dir, out = [], depth = 0) {
   for (const name of readdirSync(dir)) {
-    if (name === "node_modules" || name === ".git" || name === "dist" || name === ".venv") continue;
-    if (name === "agents" || name === "docs") continue; // product code / internal notes
+    if (
+      name === "node_modules" ||
+      name === ".git" ||
+      name === "dist" ||
+      name === ".venv" ||
+      name === "docs" ||
+      name === "qa" ||
+      name === "scripts"
+    ) {
+      continue;
+    }
     const full = join(dir, name);
     const st = statSync(full);
-    if (st.isDirectory()) walkHtmlFiles(full, out);
-    else if (extname(name).toLowerCase() === ".html") out.push(full);
+    if (st.isDirectory()) {
+      // Skip Python agent package trees except the marketplace agents/index.html parent
+      if (name === "agents") {
+        const market = join(full, "index.html");
+        if (existsSync(market)) out.push(market);
+        continue;
+      }
+      // Site page folders only (shallow product pages)
+      if (existsSync(join(full, "index.html")) && depth === 0) {
+        out.push(join(full, "index.html"));
+        continue;
+      }
+      walkSiteHtml(full, out, depth + 1);
+    } else if (extname(name).toLowerCase() === ".html" && depth === 0) {
+      out.push(full);
+    }
   }
   return out;
 }
 
-console.log("▸ Lint: Matrixly.ai static site\n");
+console.log("▸ Lint: Matrixly.ai static site (clean URLs)\n");
 
 // --- Required pages ---
 for (const file of REQUIRED_PAGES) {
@@ -60,12 +92,19 @@ for (const file of REQUIRED_PAGES) {
   else console.log(`  ✓ ${file}`);
 }
 
+// --- No root HTML except index.html ---
+for (const name of readdirSync(ROOT)) {
+  if (name.endsWith(".html") && name !== "index.html") {
+    fail(`Root must not contain ${name} — use folder/index.html`);
+  }
+}
+
 // --- HTML sanity ---
-const htmlFiles = walkHtmlFiles(ROOT);
-if (htmlFiles.length === 0) fail("No HTML files found at site root");
+const htmlFiles = walkSiteHtml(ROOT);
+if (htmlFiles.length === 0) fail("No site HTML files found");
 
 for (const file of htmlFiles) {
-  const rel = file.slice(ROOT.length + 1).replaceAll("\\", "/");
+  const rel = relative(ROOT, file).replaceAll("\\", "/");
   const raw = readFileSync(file, "utf8");
   const lower = raw.slice(0, 500).toLowerCase();
 
@@ -81,8 +120,20 @@ for (const file of htmlFiles) {
   if (!/<title>[^<]+<\/title>/i.test(raw)) {
     fail(`${rel}: missing <title>`);
   }
-  if (!/cdn\.tailwindcss\.com/i.test(raw) && rel.endsWith(".html")) {
+  if (!/cdn\.tailwindcss\.com/i.test(raw) && rel.endsWith(".html") && !rel.startsWith("admin/")) {
     warn(`${rel}: Tailwind CDN not detected (expected for this stack)`);
+  }
+
+  // No internal .html hrefs
+  const hits = raw.match(/href=["'][^"']*\.html[^"']*["']/gi) || [];
+  const internal = hits.filter((h) => !/https?:/i.test(h));
+  if (internal.length) {
+    fail(`${rel}: internal .html href(s): ${internal.slice(0, 3).join(", ")}`);
+  }
+
+  // Assets should be root-absolute when page is nested
+  if (rel.includes("/") && /(?:src|href)=["']assets\//i.test(raw)) {
+    fail(`${rel}: relative assets/ path will break — use /assets/`);
   }
 
   for (const { name, re } of SECRET_PATTERNS) {

@@ -43,7 +43,8 @@ class BasePage:
     def logo_visible(self) -> bool:
         # Brand logo / home link patterns used across Matrixly pages
         selectors = [
-            'a[href="index.html"] img[src*="matrixly-logo"]',
+            'a[href="/"] img[src*="matrixly-logo"]',
+            'a.nav-brand img[src*="matrixly-logo"]',
             'img[alt="Matrixly"]',
             "a.nav-brand img",
             'header img[src*="matrixly-logo"]',
