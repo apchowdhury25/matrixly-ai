@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookWise Admin — Matrixly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0b1220; --card:#151c28; --border:#1e2a3a; --neon:#3b9fe0; --text:#f0f4f8; --muted:#9aa4b2; --ok:#34d399; --warn:#fbbf24; --bad:#f87171; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Open Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid var(--border); background:linear-gradient(180deg,#152536,#0f1724); position:sticky; top:0; z-index:10; }
+    h1 { font-size:1.1rem; margin:0; } h1 span { color:var(--neon); }
+    .sub { color:var(--muted); font-size:.8rem; margin-top:.15rem; }
+    .btn { background:linear-gradient(145deg,#117aca,#3b9fe0); color:#fff; border:none; border-radius:8px; padding:.5rem .85rem; font-weight:700; font-size:.8rem; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid var(--border); color:var(--muted); }
+    .btn.ok { background:#059669; } .btn.bad { background:#b91c1c; }
+    main { max-width:1200px; margin:0 auto; padding:1.25rem; display:grid; gap:1rem; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.75rem; }
+    .stat { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem; }
+    .stat .label { color:var(--muted); font-size:.75rem; font-weight:600; }
+    .stat .value { font-size:1.35rem; font-weight:800; margin-top:.25rem; color:var(--neon); }
+    .panel { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .panel h2 { margin:0; padding:.85rem 1rem; font-size:.95rem; border-bottom:1px solid var(--border); }
+    table { width:100%; border-collapse:collapse; font-size:.85rem; }
+    th,td { text-align:left; padding:.65rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+    th { color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; }
+    .tag { display:inline-block; padding:.15rem .45rem; border-radius:999px; font-size:.7rem; font-weight:700; border:1px solid var(--border); color:var(--neon); background:rgba(59,159,224,.08); }
+    .muted { color:var(--muted); }
+    .actions { display:flex; gap:.4rem; flex-wrap:wrap; }
+    #login { max-width:420px; margin:15vh auto; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.5rem; }
+    #login input { width:100%; margin:.75rem 0 1rem; padding:.7rem .8rem; border-radius:8px; border:1px solid var(--border); background:#0b1220; color:var(--text); }
+    #login p { color:var(--muted); font-size:.85rem; line-height:1.45; }
+    .hidden { display:none !important; }
+    .tip { font-size:.8rem; color:var(--muted); padding:.75rem 1rem; border-top:1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h1>BookWise <span>Admin</span></h1>
+    <p>Enter <code>BOOKWISE_API_KEY</code>. Stored only in sessionStorage.</p>
+    <input id="apiKey" type="password" placeholder="API key" autocomplete="off" />
+    <button class="btn" id="loginBtn">Unlock dashboard</button>
+    <p id="loginErr" class="muted"></p>
+  </div>
+  <div id="app" class="hidden">
+    <header>
+      <div>
+        <h1>Matrixly <span>BookWise</span></h1>
+        <div class="sub">Upcoming bookings · HITL · reminders · usage</div>
+      </div>
+      <div class="actions">
+        <button class="btn ghost" id="refreshBtn">Refresh</button>
+        <button class="btn ghost" id="logoutBtn">Log out</button>
+      </div>
+    </header>
+    <main>
+      <section class="stats" id="stats"></section>
+      <section class="panel">
+        <h2>Upcoming bookings</h2>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>ID</th><th>When</th><th>Service</th><th>Customer</th><th>Status</th></tr></thead>
+            <tbody id="bookBody"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Pending human review (HITL)</h2>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>ID</th><th>Kind</th><th>Booking</th><th>Detail</th><th>Actions</th></tr></thead>
+            <tbody id="hitlBody"></tbody>
+          </table>
+        </div>
+        <div class="tip">Edge cases (VIP, legal, after-hours, group) wait here before calendar confirm.</div>
+      </section>
+      <section class="panel">
+        <h2>Recent audit</h2>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>Time</th><th>Event</th><th>Detail</th></tr></thead>
+            <tbody id="auditBody"></tbody>
+          </table>
+        </div>
+        <div class="tip">Edit <code>config.yaml</code> for business hours, buffers, services, and reminder windows.</div>
+      </section>
+    </main>
+  </div>
+  <script>
+    const API = location.origin;
+    const $ = (id) => document.getElementById(id);
+    function key() { return sessionStorage.getItem("bw_api_key") || ""; }
+    async function api(path, opts = {}) {
+      const headers = Object.assign({ "X-API-Key": key(), "Content-Type": "application/json" }, opts.headers || {});
+      const res = await fetch(API + path, Object.assign({}, opts, { headers }));
+      if (res.status === 401) throw new Error("Unauthorized");
+      if (!res.ok) { const j = await res.json().catch(() => ({})); throw new Error(j.detail || res.statusText); }
+      return res.json();
+    }
+    function showApp() { $("login").classList.add("hidden"); $("app").classList.remove("hidden"); refresh(); }
+    $("loginBtn").onclick = async () => {
+      const k = $("apiKey").value.trim(); if (!k) return;
+      sessionStorage.setItem("bw_api_key", k);
+      try { await api("/v1/admin/status"); $("loginErr").textContent = ""; showApp(); }
+      catch (e) { sessionStorage.removeItem("bw_api_key"); $("loginErr").textContent = e.message; }
+    };
+    $("logoutBtn").onclick = () => { sessionStorage.removeItem("bw_api_key"); location.reload(); };
+    $("refreshBtn").onclick = refresh;
+    function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+    async function refresh() {
+      const [status, books, hitl, audit, usage] = await Promise.all([
+        api("/v1/admin/status"),
+        api("/v1/admin/bookings/upcoming"),
+        api("/v1/admin/hitl"),
+        api("/v1/admin/audit?limit=40"),
+        api("/v1/admin/usage?days=30"),
+      ]);
+      $("stats").innerHTML = `
+        <div class="stat"><div class="label">Upcoming</div><div class="value">${status.upcoming_bookings ?? 0}</div></div>
+        <div class="stat"><div class="label">Pending HITL</div><div class="value">${status.pending_hitl ?? 0}</div></div>
+        <div class="stat"><div class="label">Calendar</div><div class="value" style="font-size:1rem">${status.calendar_backend || "local"}</div></div>
+        <div class="stat"><div class="label">Msgs (30d)</div><div class="value">${usage.messages ?? 0}</div></div>
+        <div class="stat"><div class="label">Est. cost</div><div class="value">$${(usage.estimated_cost_usd ?? 0).toFixed(2)}</div></div>
+        <div class="stat"><div class="label">Grok</div><div class="value" style="font-size:1rem">${status.grok ? "ON" : "demo"}</div></div>`;
+      $("bookBody").innerHTML = (books.items || []).map(b => `<tr>
+        <td><code>${b.id}</code></td>
+        <td>${esc((b.start_iso || "").replace("T"," ").slice(0,16))}</td>
+        <td>${esc(b.service_name || "")}</td>
+        <td>${esc(b.customer?.email || b.customer?.name || "—")}</td>
+        <td><span class="tag">${b.status}</span></td>
+      </tr>`).join("") || `<tr><td colspan="5" class="muted">No upcoming bookings</td></tr>`;
+      $("hitlBody").innerHTML = (hitl.items || []).map(a => `<tr>
+        <td><code>${a.id}</code></td>
+        <td><span class="tag">${a.kind}</span></td>
+        <td>${a.booking_id || "—"}</td>
+        <td class="muted">${esc(JSON.stringify(a.payload || {}).slice(0,120))}</td>
+        <td class="actions">
+          <button class="btn ok" data-approve="${a.id}">Approve</button>
+          <button class="btn bad" data-reject="${a.id}">Reject</button>
+        </td>
+      </tr>`).join("") || `<tr><td colspan="5" class="muted">No pending actions</td></tr>`;
+      $("auditBody").innerHTML = (audit.items || []).map(e => {
+        const { event, ts, ...rest } = e;
+        return `<tr><td class="muted">${(ts||"").replace("T"," ").slice(0,19)}</td><td><span class="tag">${event}</span></td><td class="muted">${esc(JSON.stringify(rest).slice(0,180))}</td></tr>`;
+      }).join("") || `<tr><td colspan="3" class="muted">No events</td></tr>`;
+      document.querySelectorAll("[data-approve]").forEach(btn => {
+        btn.onclick = async () => { await api(`/v1/admin/hitl/${btn.dataset.approve}/approve`, { method: "POST", body: "{}" }); refresh(); };
+      });
+      document.querySelectorAll("[data-reject]").forEach(btn => {
+        btn.onclick = async () => { await api(`/v1/admin/hitl/${btn.dataset.reject}/reject`, { method: "POST", body: "{}" }); refresh(); };
+      });
+    }
+    if (key()) api("/v1/admin/status").then(showApp).catch(() => sessionStorage.removeItem("bw_api_key"));
+  </script>
+</body>
+</html>

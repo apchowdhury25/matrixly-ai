@@ -1,0 +1,17 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/bookings/*.json
+data/sessions/*.json
+data/audit/*.jsonl
+data/usage/*.jsonl
+data/hitl/*.json
+data/reminders/*.json
+data/crm/*
+data/calendar/*
+!data/**/.gitkeep
+token.json
+credentials.json

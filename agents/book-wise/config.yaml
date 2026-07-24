@@ -1,0 +1,115 @@
+# Matrixly BookWise — business hours, buffers, services
+
+business:
+  name: "Matrixly Demo Clinic"
+  support_email: "bookings@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  location: "Virtual / video call"
+
+# Weekly availability (local business timezone)
+business_hours:
+  monday: { start: "09:00", end: "17:00" }
+  tuesday: { start: "09:00", end: "17:00" }
+  wednesday: { start: "09:00", end: "17:00" }
+  thursday: { start: "09:00", end: "17:00" }
+  friday: { start: "09:00", end: "16:00" }
+  saturday: null
+  sunday: null
+
+# Slot generation
+booking:
+  default_duration_minutes: 30
+  buffer_before_minutes: 10
+  buffer_after_minutes: 10
+  slot_step_minutes: 30
+  max_days_ahead: 14
+  min_notice_hours: 2
+  max_proposals: 5
+
+services:
+  - id: consult
+    name: "Consultation"
+    duration_minutes: 30
+    description: "General consultation or discovery call"
+  - id: demo
+    name: "Product demo"
+    duration_minutes: 45
+    description: "Live product walkthrough"
+  - id: support
+    name: "Support session"
+    duration_minutes: 30
+    description: "1:1 support appointment"
+
+# Intake fields collected before confirm
+intake_fields:
+  - key: name
+    label: "Full name"
+    required: true
+  - key: email
+    label: "Email"
+    required: true
+  - key: phone
+    label: "Phone"
+    required: false
+  - key: notes
+    label: "What would you like to discuss?"
+    required: false
+
+# No-show reduction
+reminders:
+  enabled: true
+  hours_before:
+    - 24
+    - 2
+  channels:
+    - email
+    - chat
+
+hitl:
+  mode: external_only  # always | external_only | off
+  # Edge cases requiring human: double-book conflict, VIP, custom duration
+  edge_keywords:
+    - vip
+    - legal
+    - emergency
+    - after hours
+    - group booking
+
+calendar:
+  backend: local  # local | google | calendly
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8790"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+  - "https://matrixbazaar.com"
+  - "https://www.matrixbazaar.com"
+
+rate_limit:
+  chat_per_minute: 40
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8790
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.2
+
+channels:
+  chat:
+    enabled: true
+    welcome: "Hi! I'm BookWise — Matrixly's AI booking assistant. I can check availability, book, reschedule, or cancel appointments. How can I help?"
+  email:
+    enabled: true
+  form:
+    enabled: true

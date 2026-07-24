@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrixly BookWise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>html,body{margin:0;height:100%;background:#0b1220}</style>
+</head>
+<body>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var api = params.get("api") || location.origin;
+      var key = params.get("key") || "";
+      var s = document.createElement("script");
+      s.src = api.replace(/\/$/, "") + "/static/widget/embed.js";
+      s.setAttribute("data-api", api.replace(/\/$/, ""));
+      s.setAttribute("data-key", key);
+      s.setAttribute("data-title", params.get("title") || "Book with us");
+      s.async = true;
+      document.body.appendChild(s);
+      s.onload = function () {
+        setTimeout(function () {
+          var btn = document.querySelector(".bw-launcher");
+          if (btn) btn.click();
+        }, 300);
+      };
+    })();
+  </script>
+</body>
+</html>

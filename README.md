@@ -15,6 +15,7 @@ A production-facing static website plus local agent runtimes for:
 | **CRM Assistant** | Contact updates, activities, pipeline hygiene (approve-to-write) |
 | **Shipping Assistant** | ShipStation hub — track, exceptions, WISMO drafts |
 | **SupportForge** | Embeddable AI support — chat widget, KB answers, HITL, tickets |
+| **BookWise** | Embeddable AI booking — availability, confirmations, reminders, calendar sync |
 
 ## Tech stack
 
@@ -90,7 +91,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── lead-qualifier/
 │   ├── crm-assistant/
 │   ├── shipping-assistant/
-│   └── support-forge/         # FastAPI embeddable support agent + widget
+│   ├── support-forge/         # FastAPI embeddable support agent + widget
+│   └── book-wise/             # FastAPI embeddable booking agent + widget
 └── docs/                      # Optional internal notes (session archives gitignored)
 ```
 
@@ -107,6 +109,19 @@ python -m src.cli serve
 ```
 
 Product page: [support-forge.html](support-forge.html). Full setup & embed: [agents/support-forge/README.md](agents/support-forge/README.md).
+
+### BookWise (embeddable booking)
+
+```bash
+cd agents/book-wise
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [book-wise.html](book-wise.html). Full setup & embed: [agents/book-wise/README.md](agents/book-wise/README.md).
 
 
 ## License
