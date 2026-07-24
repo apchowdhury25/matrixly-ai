@@ -20,7 +20,7 @@ When something isn’t working as expected, start with the section that matches 
 
 ## 1. Browser and site issues
 
-The Matrixly marketing site is a **static** site (HTML + Tailwind CDN + vanilla JS). Most “site broken” reports are browser, cache, or network related—similar to how Relevance AI structures [browser troubleshooting](https://relevanceai.com/docs/get-started/troubleshooting/troubleshooting-browser-issues).
+The Matrixly marketing site is a **static** site (HTML + Tailwind CDN + vanilla JS). Most “site broken” reports are browser, cache, or network related—similar.
 
 ### Supported browsers
 
@@ -84,7 +84,7 @@ Rules out browser-specific bugs and captive Wi‑Fi / corporate proxies.
 
 ## 2. Get Started Free / signup & login
 
-Matrixly’s **Get Started Free** flow (comparable to Lindy’s **Try for free** signup chooser) opens an **auth modal** with:
+Matrixly’s **Get Started Free** flow opens an **auth modal** with:
 
 - Continue with **Google**  
 - Continue with **Microsoft**  
@@ -131,7 +131,7 @@ Opens the **Log in** panel in the same modal. If you meant to create an account,
 
 ## 3. Agents not working
 
-Modeled after common agent-platform troubleshooting (e.g. Relevance AI’s [agents not working](https://relevanceai.com/docs/get-started/troubleshooting/troubleshooting-agents-not-working) guide): credits/API, tools, configuration, integrations.
+Modeled after common agent-platform troubleshooting guide): credits/API, tools, configuration, integrations.
 
 ### 3.1 Missing API keys or “rule-only” mode
 
@@ -324,4 +324,4 @@ If you’ve worked through the relevant section and the issue remains, contact M
 
 ---
 
-*Last updated: 2026-07-24 · Matrixly troubleshooting (structure inspired by common agent-platform help centers such as [Relevance AI Troubleshooting](https://relevanceai.com/docs/get-started/troubleshooting/troubleshooting-browser-issues)).*
+*Last updated: 2026-07-24 · Matrixly troubleshooting guide.*
