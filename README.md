@@ -139,6 +139,19 @@ python -m src.cli serve
 Product page: [invoice-forge.html](invoice-forge.html). Full setup: [agents/invoice-forge/README.md](agents/invoice-forge/README.md).
 
 
+## UI QA (developers)
+
+Hidden console: **[Admin.html](Admin.html)** (passphrase gated, not in public nav).  
+Automation: **[qa/](qa/)** — Python **Selenium**, **Playwright**, **pytest-bdd** (Cucumber-style), GitHub Actions [`.github/workflows/ui-qa.yml`](.github/workflows/ui-qa.yml).
+
+```bash
+npm run build && npm start
+cd qa && pip install -r requirements.txt && playwright install chromium
+pytest -v --site-url=http://127.0.0.1:8080
+```
+
+See [qa/README.md](qa/README.md) for the default Admin passphrase and suite details.
+
 ## License
 
 MIT License — see [LICENSE](LICENSE).

@@ -33,6 +33,7 @@ const HTML_ALLOW = new Set([
   "support-forge.html",
   "book-wise.html",
   "invoice-forge.html",
+  "Admin.html",
 ]);
 
 const ASSET_EXTS = new Set([

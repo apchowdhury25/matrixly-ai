@@ -1,0 +1,108 @@
+# Matrixly UI QA — Selenium / Playwright / BDD (Python)
+# Runs against built dist/ for marketing site visual & structural smoke.
+
+name: UI QA
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ui-qa-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "22"
+  PYTHON_VERSION: "3.12"
+  BASE_URL: http://127.0.0.1:8080
+  SELENIUM_HEADLESS: "true"
+  PLAYWRIGHT_HEADLESS: "true"
+
+jobs:
+  ui-smoke:
+    name: UI smoke (Playwright + Selenium + BDD)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Build static site
+        run: |
+          npm install --no-fund --no-audit
+          npm run build
+          test -f dist/index.html
+          test -f dist/Admin.html
+          test -f dist/agents.html
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: qa/requirements.txt
+
+      - name: Install QA dependencies
+        working-directory: qa
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Start static server
+        run: |
+          npx --yes serve dist -l 8080 &
+          sleep 3
+          curl -sf "${BASE_URL}/index.html" >/dev/null
+          curl -sf "${BASE_URL}/Admin.html" >/dev/null
+
+      - name: Playwright smoke
+        working-directory: qa
+        run: pytest tests/playwright -v --site-url=${{ env.BASE_URL }} --tb=short
+
+      - name: Selenium smoke
+        working-directory: qa
+        run: pytest tests/selenium -v --site-url=${{ env.BASE_URL }} --tb=short
+
+      - name: BDD (pytest-bdd / Cucumber-style)
+        working-directory: qa
+        run: pytest tests/bdd -v --site-url=${{ env.BASE_URL }} --tb=short
+
+      - name: HTML report (all)
+        if: always()
+        working-directory: qa
+        run: |
+          pytest -v --site-url=${{ env.BASE_URL }} \
+            --html=reports/ci-report.html --self-contained-html \
+            --tb=line || true
+
+      - name: Upload QA report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ui-qa-report
+          path: qa/reports/
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## UI QA"
+            echo ""
+            echo "- Base URL: \`${{ env.BASE_URL }}\`"
+            echo "- Suites: Playwright, Selenium, pytest-bdd"
+            echo "- Hidden console: \`Admin.html\` (passphrase gated)"
+          } >> "$GITHUB_STEP_SUMMARY"

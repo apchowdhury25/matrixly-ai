@@ -6,7 +6,10 @@
   "scripts": {
     "lint": "node scripts/ci-lint.mjs",
     "build": "node scripts/ci-build.mjs",
-    "start": "npx --yes serve dist -l 8080"
+    "start": "npx --yes serve dist -l 8080",
+    "qa:serve": "npx --yes serve dist -l 8080",
+    "qa:install": "cd qa && python -m pip install -r requirements.txt && python -m playwright install chromium",
+    "qa:test": "cd qa && python -m pytest -v --site-url=http://127.0.0.1:8080"
   },
   "engines": {
     "node": ">=22"
