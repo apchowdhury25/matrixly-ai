@@ -94,3 +94,4 @@ docs/_agents_*
 tmp/
 temp/
 .temp/
+.gstack/

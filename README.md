@@ -14,6 +14,7 @@ A production-facing static website plus local agent runtimes for:
 | **Email Assistant** | Inbox triage, drafts, urgent flags, daily brief |
 | **CRM Assistant** | Contact updates, activities, pipeline hygiene (approve-to-write) |
 | **Shipping Assistant** | ShipStation hub — track, exceptions, WISMO drafts |
+| **SupportForge** | Embeddable AI support — chat widget, KB answers, HITL, tickets |
 
 ## Tech stack
 
@@ -88,9 +89,25 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── email-assistant/
 │   ├── lead-qualifier/
 │   ├── crm-assistant/
-│   └── shipping-assistant/
+│   ├── shipping-assistant/
+│   └── support-forge/         # FastAPI embeddable support agent + widget
 └── docs/                      # Optional internal notes (session archives gitignored)
 ```
+
+### SupportForge (embeddable support)
+
+```bash
+cd agents/support-forge
+python -m venv .venv
+# Windows: .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+python -m src.cli seed
+python -m src.cli serve
+```
+
+Product page: [support-forge.html](support-forge.html). Full setup & embed: [agents/support-forge/README.md](agents/support-forge/README.md).
+
 
 ## License
 

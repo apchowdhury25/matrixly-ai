@@ -1,0 +1,82 @@
+# Matrixly SupportForge — business-facing configuration
+# Prefer secrets in .env; this file holds product knobs.
+
+business:
+  name: "Matrixly Demo Store"
+  support_email: "support@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixbazaar.com"
+
+# When confidence is high enough and topic is allowed, auto-reply in chat.
+thresholds:
+  auto_resolve: 0.70
+  draft_for_approval: 0.45
+  # Below draft_for_approval → escalate
+
+# Topics allowed for automatic resolution (chat channel)
+auto_reply_topics:
+  - pricing
+  - hours
+  - order
+  - policy
+  - troubleshoot
+
+# Always escalate these keyword patterns (case-insensitive)
+escalate_keywords:
+  - lawsuit
+  - attorney
+  - legal action
+  - chargeback
+  - fraud
+  - threat
+  - suicide
+  - discrimination
+
+hitl:
+  # always | external_only | off
+  mode: external_only
+  # email send, ticket close, CRM write require approval unless off
+  external_actions:
+    - send_email
+    - close_ticket
+    - crm_update
+    - refund
+
+channels:
+  chat:
+    enabled: true
+    welcome: "Hi! I'm SupportForge — Matrixly's AI support agent. How can I help?"
+  email:
+    enabled: true
+  form:
+    enabled: true
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8787"
+  - "https://matrixbazaar.com"
+  - "https://www.matrixbazaar.com"
+
+rate_limit:
+  chat_per_minute: 30
+  admin_per_minute: 120
+
+knowledge:
+  dir: knowledge
+  chunk_size: 600
+  chunk_overlap: 80
+  top_k: 4
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8787
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.2
