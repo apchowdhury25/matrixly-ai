@@ -17,6 +17,7 @@ A production-facing static website plus local agent runtimes for:
 | **SupportForge** | Embeddable AI support — chat widget, KB answers, HITL, tickets |
 | **BookWise** | Embeddable AI booking — availability, confirmations, reminders, calendar sync |
 | **InvoiceForge** | Invoice processing & AR — vision extract, validate, post, reminders, reports |
+| **ContentForge** | Content creation & repurposing — SEO blogs, social, newsletters, ads |
 
 ## Tech stack
 
@@ -94,7 +95,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── shipping-assistant/
 │   ├── support-forge/         # FastAPI embeddable support agent + widget
 │   ├── book-wise/             # FastAPI embeddable booking agent + widget
-│   └── invoice-forge/         # FastAPI invoice processing & AR agent + dashboard
+│   ├── invoice-forge/         # FastAPI invoice processing & AR agent + dashboard
+│   └── content-forge/         # FastAPI content creation & repurposing agent
 └── docs/                      # Optional internal notes (session archives gitignored)
 ```
 
@@ -138,6 +140,18 @@ python -m src.cli serve
 
 Product page: [invoice-forge.html](invoice-forge.html). Full setup: [agents/invoice-forge/README.md](agents/invoice-forge/README.md).
 
+### ContentForge (content creation & repurposing)
+
+```bash
+cd agents/content-forge
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [content-forge.html](content-forge.html). Full setup: [agents/content-forge/README.md](agents/content-forge/README.md).
 
 ## UI QA (developers)
 

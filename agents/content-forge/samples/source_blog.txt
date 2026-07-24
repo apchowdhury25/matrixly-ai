@@ -1,0 +1,21 @@
+# Why SMBs Need Agentic AI (Not Another Dashboard)
+
+Small businesses already juggle CRMs, email, ads, shipping, and support tools.
+Adding another dashboard rarely fixes the problem — it adds login fatigue.
+
+Agentic AI is different. Instead of forcing operators to click through every system,
+agents watch inboxes, qualify leads, draft replies, track shipments, and escalate
+only when a human decision is required.
+
+Matrixly packages these agents in a marketplace so SMBs can pilot without a six-month
+implementation. Start with one agent (email, shipping, support, or booking), prove value,
+then expand.
+
+Key outcomes customers report:
+- Fewer context switches during the workday
+- Faster first responses to customers
+- Consistent brand voice in drafts
+- Human approval before external actions
+
+If your team is buried in operational work, agentic automation is the next lever after
+basic SaaS. Explore the Matrixly agent catalog and deploy a free pilot this week.

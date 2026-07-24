@@ -1,0 +1,88 @@
+# Matrixly ContentForge — brand voice, formats, publishing
+
+business:
+  name: "Matrixly Demo Brand"
+  support_email: "content@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  industry: "B2B SaaS / SMB automation"
+
+brand:
+  # Loaded from brand/voice.md + overrides below
+  voice_file: brand/voice.md
+  tone:
+    - professional
+    - clear
+    - optimistic
+    - practical
+  avoid:
+    - jargon without explanation
+    - hype-only claims
+    - competitor bashing
+  keywords:
+    - AI agents
+    - SMB automation
+    - human-in-the-loop
+    - marketplace
+
+# Output formats to generate by default
+formats:
+  - id: blog
+    name: "SEO blog post"
+    enabled: true
+  - id: linkedin
+    name: "LinkedIn post"
+    enabled: true
+  - id: twitter
+    name: "X / Twitter thread"
+    enabled: true
+  - id: instagram
+    name: "Instagram caption"
+    enabled: true
+  - id: newsletter
+    name: "Email newsletter"
+    enabled: true
+  - id: ads
+    name: "Ad copy variants"
+    enabled: true
+
+content:
+  default_blog_words: 900
+  max_source_chars: 40000
+  seo_title_max: 60
+  meta_description_max: 160
+  require_hitl_before_publish: true
+
+hitl:
+  mode: external_only  # always | external_only | off
+
+publish:
+  backend: local  # local | buffer | hootsuite | wordpress
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8792"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  generate_per_minute: 20
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8792
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.4
+
+channels:
+  workspace:
+    welcome: "ContentForge — paste long-form content, generate multi-channel drafts, review, export or schedule."

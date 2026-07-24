@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContentForge Workspace — Matrixly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0b1220; --card:#151c28; --border:#1e2a3a; --neon:#3b9fe0; --text:#f0f4f8; --muted:#9aa4b2; --ok:#34d399; --warn:#fbbf24; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Open Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid var(--border); background:linear-gradient(180deg,#152536,#0f1724); position:sticky; top:0; z-index:5; }
+    h1 { font-size:1.1rem; margin:0; } h1 span { color:var(--neon); }
+    .sub { color:var(--muted); font-size:.8rem; margin-top:.2rem; }
+    .btn { background:linear-gradient(145deg,#117aca,#3b9fe0); color:#fff; border:none; border-radius:8px; padding:.55rem .9rem; font-weight:700; font-size:.8rem; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid var(--border); color:var(--muted); }
+    .btn.ok { background:#059669; } .btn.bad { background:#b91c1c; }
+    main { max-width:1200px; margin:0 auto; padding:1.25rem; display:grid; gap:1rem; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    @media (max-width:900px) { .grid2 { grid-template-columns:1fr; } }
+    .panel { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .panel h2 { margin:0; padding:.85rem 1rem; font-size:.95rem; border-bottom:1px solid var(--border); }
+    .body { padding:1rem; }
+    textarea, input { width:100%; background:#0b1220; border:1px solid var(--border); color:var(--text); border-radius:8px; padding:.7rem .8rem; font-family:inherit; font-size:.85rem; }
+    textarea { min-height:180px; resize:vertical; }
+    label { display:block; font-size:.75rem; color:var(--muted); font-weight:700; margin:.5rem 0 .25rem; }
+    pre.out { white-space:pre-wrap; font-size:.8rem; color:var(--muted); max-height:320px; overflow:auto; margin:0; background:#0b1220; border:1px solid var(--border); border-radius:8px; padding:.75rem; }
+    .tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.75rem; }
+    .tab { border:1px solid var(--border); background:transparent; color:var(--muted); border-radius:999px; padding:.3rem .7rem; font-size:.75rem; font-weight:700; cursor:pointer; }
+    .tab.active { color:var(--neon); border-color:rgba(59,159,224,.45); background:rgba(59,159,224,.1); }
+    .stats { display:flex; flex-wrap:wrap; gap:.6rem; }
+    .stat { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.65rem .85rem; min-width:110px; }
+    .stat .l { font-size:.7rem; color:var(--muted); font-weight:600; }
+    .stat .v { color:var(--neon); font-weight:800; font-size:1.1rem; margin-top:.15rem; }
+    .muted { color:var(--muted); font-size:.8rem; }
+    .hidden { display:none !important; }
+    #login { max-width:420px; margin:12vh auto; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.5rem; }
+    table { width:100%; border-collapse:collapse; font-size:.8rem; }
+    th,td { text-align:left; padding:.5rem .4rem; border-bottom:1px solid var(--border); vertical-align:top; }
+    th { color:var(--muted); font-size:.7rem; text-transform:uppercase; }
+    .tag { display:inline-block; padding:.12rem .4rem; border-radius:999px; border:1px solid var(--border); color:var(--neon); font-size:.7rem; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h1>ContentForge <span>Workspace</span></h1>
+    <p class="muted">Enter <code>CONTENTFORGE_API_KEY</code> or widget key to generate content.</p>
+    <label for="apiKey">API / widget key</label>
+    <input id="apiKey" type="password" placeholder="Key" autocomplete="off" />
+    <div style="margin-top:1rem;display:flex;gap:.5rem">
+      <button class="btn" id="loginBtn">Unlock</button>
+    </div>
+    <p id="loginErr" class="muted"></p>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <div>
+        <h1>Matrixly <span>ContentForge</span></h1>
+        <div class="sub">Research · Write · Edit · Repurpose · Review</div>
+      </div>
+      <div style="display:flex;gap:.5rem">
+        <button class="btn ghost" id="refreshBtn">Refresh</button>
+        <button class="btn ghost" id="logoutBtn">Log out</button>
+      </div>
+    </header>
+    <main>
+      <div class="stats" id="stats"></div>
+      <section class="panel">
+        <h2>1. Source content</h2>
+        <div class="body">
+          <label>Title (optional)</label>
+          <input id="srcTitle" placeholder="Source title" />
+          <label>Goal</label>
+          <input id="goal" value="Educate SMBs and drive Matrixly marketplace engagement" />
+          <label>Long-form source (blog, transcript, product notes)</label>
+          <textarea id="source" placeholder="Paste content…"></textarea>
+          <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.5rem">
+            <button class="btn" id="genBtn">Generate multi-channel pack</button>
+            <button class="btn ghost" id="sampleBtn">Load sample</button>
+            <button class="btn ghost" id="ideasBtn">Suggest ideas</button>
+          </div>
+          <p id="statusMsg" class="muted" style="margin-top:.6rem"></p>
+        </div>
+      </section>
+
+      <div class="grid2">
+        <section class="panel">
+          <h2>2. Outputs</h2>
+          <div class="body">
+            <div class="tabs" id="tabs"></div>
+            <pre class="out" id="out">—</pre>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>3. HITL review queue</h2>
+          <div class="body">
+            <table>
+              <thead><tr><th>ID</th><th>Job</th><th>Detail</th><th></th></tr></thead>
+              <tbody id="hitlBody"></tbody>
+            </table>
+            <p class="muted" style="margin-top:.75rem">Approve to mark content publish-ready. Then use Publish.</p>
+            <label>Job ID to publish</label>
+            <input id="publishJob" placeholder="job_…" />
+            <div style="margin-top:.5rem;display:flex;gap:.5rem;flex-wrap:wrap">
+              <button class="btn ok" id="publishBtn">Publish (local/export)</button>
+            </div>
+            <p id="publishMsg" class="muted"></p>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <h2>Recent jobs</h2>
+        <div class="body" style="overflow-x:auto">
+          <table>
+            <thead><tr><th>ID</th><th>Title</th><th>Status</th><th>Quality</th><th>Cost</th></tr></thead>
+            <tbody id="jobsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const API = location.origin;
+    const $ = (id) => document.getElementById(id);
+    let currentJob = null;
+    let currentTab = "blog";
+
+    function key() { return sessionStorage.getItem("cf_key") || ""; }
+    function keyHeader() {
+      const k = key();
+      // Prefer widget-style header for generate; API key works for both
+      return { "Content-Type": "application/json", "X-API-Key": k, "X-Widget-Key": k };
+    }
+
+    async function api(path, opts = {}) {
+      const headers = Object.assign(keyHeader(), opts.headers || {});
+      const res = await fetch(API + path, Object.assign({}, opts, { headers }));
+      if (res.status === 401) throw new Error("Unauthorized");
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.detail || res.statusText);
+      }
+      return res.json();
+    }
+
+    function showApp() {
+      $("login").classList.add("hidden");
+      $("app").classList.remove("hidden");
+      refresh();
+    }
+
+    $("loginBtn").onclick = async () => {
+      const k = $("apiKey").value.trim();
+      if (!k) return;
+      sessionStorage.setItem("cf_key", k);
+      try {
+        await api("/v1/admin/status");
+        $("loginErr").textContent = "";
+        showApp();
+      } catch (e) {
+        // Widget key can generate but not hit admin — try generate health
+        try {
+          await fetch(API + "/v1/health").then(r => r.json());
+          showApp();
+        } catch (e2) {
+          sessionStorage.removeItem("cf_key");
+          $("loginErr").textContent = e.message || "Login failed";
+        }
+      }
+    };
+    $("logoutBtn").onclick = () => { sessionStorage.removeItem("cf_key"); location.reload(); };
+    $("refreshBtn").onclick = refresh;
+
+    $("sampleBtn").onclick = async () => {
+      $("srcTitle").value = "Why SMBs Need Agentic AI";
+      $("source").value = "Small businesses juggle CRMs, email, ads, shipping, and support. Another dashboard rarely helps.\n\nAgentic AI watches inboxes, qualifies leads, drafts replies, and escalates only when needed. Matrixly packages marketplace agents so SMBs pilot in days.\n\nOutcomes: fewer context switches, faster responses, brand-safe drafts, human approval before external actions.";
+    };
+
+    $("genBtn").onclick = async () => {
+      $("statusMsg").textContent = "Running Researcher → Writer → Editor → Repurposer…";
+      try {
+        const job = await api("/v1/generate", {
+          method: "POST",
+          body: JSON.stringify({
+            source_text: $("source").value,
+            source_title: $("srcTitle").value,
+            goal: $("goal").value,
+          }),
+        });
+        currentJob = job;
+        $("publishJob").value = job.id;
+        $("statusMsg").textContent = `Done · ${job.id} · ${job.status} · quality ${job.quality_score}`;
+        renderJob(job);
+        refresh();
+      } catch (e) {
+        $("statusMsg").textContent = e.message;
+      }
+    };
+
+    $("ideasBtn").onclick = async () => {
+      try {
+        const data = await api("/v1/ideas", {
+          method: "POST",
+          body: JSON.stringify({ business_input: $("source").value || $("goal").value, count: 5 }),
+        });
+        currentTab = "ideas";
+        renderTabs();
+        $("out").textContent = JSON.stringify(data.ideas || data, null, 2);
+      } catch (e) {
+        $("statusMsg").textContent = e.message;
+      }
+    };
+
+    $("publishBtn").onclick = async () => {
+      try {
+        const r = await api("/v1/publish", {
+          method: "POST",
+          body: JSON.stringify({ job_id: $("publishJob").value.trim(), targets: ["local"] }),
+        });
+        $("publishMsg").textContent = JSON.stringify(r);
+        refresh();
+      } catch (e) {
+        $("publishMsg").textContent = e.message;
+      }
+    };
+
+    function renderTabs() {
+      const tabs = ["blog", "linkedin", "twitter", "instagram", "newsletter", "ads", "ideas", "seo"];
+      $("tabs").innerHTML = tabs.map(t =>
+        `<button class="tab ${t===currentTab?"active":""}" data-t="${t}">${t}</button>`
+      ).join("");
+      $("tabs").querySelectorAll(".tab").forEach(btn => {
+        btn.onclick = () => { currentTab = btn.dataset.t; renderTabs(); renderOut(); };
+      });
+    }
+
+    function renderJob(job) {
+      currentJob = job;
+      renderTabs();
+      renderOut();
+    }
+
+    function renderOut() {
+      if (!currentJob) { $("out").textContent = "—"; return; }
+      const e = currentJob.edited || currentJob.draft || {};
+      const a = currentJob.assets || {};
+      let text = "—";
+      if (currentTab === "blog") text = `# ${e.title||""}\n\n${e.body_markdown||""}`;
+      else if (currentTab === "linkedin") text = a.linkedin || "—";
+      else if (currentTab === "twitter") text = (a.twitter_thread||[]).map((t,i)=>`${i+1}/ ${t}`).join("\n\n") || "—";
+      else if (currentTab === "instagram") text = a.instagram || "—";
+      else if (currentTab === "newsletter") text = JSON.stringify(a.newsletter||{}, null, 2);
+      else if (currentTab === "ads") text = JSON.stringify(a.ads||[], null, 2);
+      else if (currentTab === "ideas") text = (a.ideas||[]).map(i=>`• ${i}`).join("\n") || "—";
+      else if (currentTab === "seo") text = JSON.stringify({ title:e.title, meta:e.meta_description, slug:e.slug, quality:currentJob.quality_score }, null, 2);
+      $("out").textContent = text;
+    }
+
+    async function refresh() {
+      try {
+        const [status, hitl, jobs, usage] = await Promise.all([
+          api("/v1/admin/status"),
+          api("/v1/admin/hitl"),
+          api("/v1/jobs"),
+          api("/v1/admin/usage?days=30"),
+        ]);
+        $("stats").innerHTML = `
+          <div class="stat"><div class="l">Jobs</div><div class="v">${status.jobs??0}</div></div>
+          <div class="stat"><div class="l">Pending review</div><div class="v">${status.pending_review??0}</div></div>
+          <div class="stat"><div class="l">Grok</div><div class="v" style="font-size:.95rem">${status.grok?"ON":"rules"}</div></div>
+          <div class="stat"><div class="l">Est. cost 30d</div><div class="v">$${(usage.estimated_cost_usd??0).toFixed(2)}</div></div>
+          <div class="stat"><div class="l">Publish</div><div class="v" style="font-size:.9rem">${status.publish_backend||"local"}</div></div>`;
+        $("hitlBody").innerHTML = (hitl.items||[]).map(a => `<tr>
+          <td><code>${a.id}</code></td>
+          <td>${a.job_id||"—"}</td>
+          <td class="muted">${JSON.stringify(a.payload||{}).slice(0,80)}</td>
+          <td>
+            <button class="btn ok" data-a="${a.id}">Approve</button>
+            <button class="btn bad" data-r="${a.id}">Reject</button>
+          </td>
+        </tr>`).join("") || `<tr><td colspan="4" class="muted">No pending reviews</td></tr>`;
+        document.querySelectorAll("[data-a]").forEach(b => b.onclick = async () => {
+          await api(`/v1/admin/hitl/${b.dataset.a}/approve`, { method:"POST", body:"{}" });
+          refresh();
+        });
+        document.querySelectorAll("[data-r]").forEach(b => b.onclick = async () => {
+          await api(`/v1/admin/hitl/${b.dataset.r}/reject`, { method:"POST", body:"{}" });
+          refresh();
+        });
+        $("jobsBody").innerHTML = (jobs.items||[]).map(j => {
+          const title = (j.edited||j.draft||{}).title || "—";
+          return `<tr>
+            <td><code>${j.id}</code></td>
+            <td>${title}</td>
+            <td><span class="tag">${j.status}</span></td>
+            <td>${Math.round((j.quality_score||0)*100)}%</td>
+            <td>$${(j.estimated_cost_usd||0).toFixed(4)}</td>
+          </tr>`;
+        }).join("") || `<tr><td colspan="5" class="muted">No jobs yet</td></tr>`;
+      } catch (e) {
+        // Widget-only key: skip admin panels
+        $("stats").innerHTML = `<div class="stat"><div class="l">Mode</div><div class="v" style="font-size:.9rem">generate</div></div>`;
+      }
+    }
+
+    if (key()) {
+      api("/v1/health").then(() => showApp()).catch(() => sessionStorage.removeItem("cf_key"));
+    }
+    renderTabs();
+  </script>
+</body>
+</html>
