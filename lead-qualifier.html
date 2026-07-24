@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly Lead Qualifier — score inbound leads, enrich contacts, suggest outreach sequences. Salesforce · Gmail. Sales MVP pilot." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Lead Qualifier — Matrixly</title>
+  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)', void: 'var(--bg-alt)', green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)', forest: 'var(--brand-blue-dark)', dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)', muted: 'var(--bg-muted)', card: 'var(--card)',
+              soft: 'var(--soft)', cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA; --brand-blue-dark: #0B5CAB; --brand-blue-hover: #0D6BB0;
+      --ink: #211E1E; --soft: #5C6670; --border: #D0D7DE; --bg: #FFFFFF; --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8; --card: #FFFFFF; --nav-bg: rgba(255,255,255,.92);
+      --grid-line: rgba(17,122,202,.04);
+    }
+    html.dark {
+      --ink: #F0F2F5; --soft: #A8B0B8; --border: #1E2A3A; --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14; --bg-alt: #121820;
+      --bg-muted: #1A222D; --card: #151C26; --nav-bg: rgba(11,15,20,.92);
+      --grid-line: rgba(17,122,202,.08);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .grid-bg {
+      background-image: none;
+    }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); color: var(--ink); font-weight: 600; background: var(--card); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33,30,30,.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: .9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted); border: 1px solid var(--border); border-radius: .75rem;
+      padding: 1rem 1.1rem; overflow-x: auto; font-size: .8rem; line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="email-assistant.html" class="nav-link">Email Assistant</a>
+      </nav>
+      <a href="agents.html" class="btn-secondary text-sm px-4 py-2 rounded-lg">← Marketplace</a>
+    </div>
+  </header>
+
+  <main class="grid-bg">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// LEAD · LIVE · SALES MVP PILOT</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">Lead Qualifier</h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+        Scores inbound leads, enriches contact data, and suggests personalized outreach sequences —
+        ready for <strong class="text-matrix-cream">Salesforce</strong> and <strong class="text-matrix-cream">Gmail</strong>.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-5">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Salesforce export</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Gmail ingest</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Hot / Warm / Cold</span>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">1. Score</h2>
+          <p class="text-sm text-matrix-soft">Fit · intent · seniority · data quality → hot / warm / cold / DQ.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">2. Enrich</h2>
+          <p class="text-sm text-matrix-soft">Company, industry, website, location signals from email domain + optional Grok.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">3. Outreach</h2>
+          <p class="text-sm text-matrix-soft">4-touch personalized email sequence (drafts only — human sends).</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">4. Salesforce</h2>
+          <p class="text-sm text-matrix-soft">Lead JSON + CSV for Data Loader / API import.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Code: <code class="text-xs">agents/lead-qualifier</code> ·
+          Hermes skill: <code class="text-xs">lead-qualifier</code> ·
+          Pair with Email Assistant for Gmail credentials.
+        </p>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Install &amp; demo</h3>
+        <pre class="cmd mb-6">cd C:\Users\anwar\projects\matrix-six\agents\lead-qualifier
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m src.cli sample --no-llm</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Qualify your file · Gmail · single lead</h3>
+        <pre class="cmd mb-6">python -m src.cli qualify -f data\leads\sample_leads.json
+python -m src.cli gmail --no-llm
+python -m src.cli score-one --email ops@acme.com --name "Priya Shah" --title "VP Sales" --company "Acme" --notes "Pilot this month"</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Hermes</h3>
+        <pre class="cmd mb-6">hermes -s lead-qualifier -z "Qualify sample leads and list hot prospects with first outreach touch"</pre>
+
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+          <strong class="text-matrix-cream">MVP pilot:</strong> Salesforce is export-first (JSON/CSV).
+          Live SF API is optional later. Outreach sequences are never auto-sent.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span>Matrixly · Lead Qualifier v1.0 · Sales MVP</span>
+      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+    </div>
+  </footer>
+</body>
+</html>

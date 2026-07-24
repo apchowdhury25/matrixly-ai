@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="User guide for the Matrixly Shipping Assistant — ShipStation hub, track shipments, exceptions, WISMO drafts, and HITL approvals for SMB logistics." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Shipping Assistant User Guide — Matrixly</title>
+  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              green: 'var(--brand-blue)',
+              border: 'var(--border)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+              card: 'var(--card)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --bg-muted: #F0F4F8;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.04);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --card: #151C26;
+      --bg-muted: #1A222D;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.08);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .grid-bg {
+      background-image: none;
+    }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); color: var(--ink); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    .toc a { color: var(--soft); }
+    .toc a:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .guide h2 { scroll-margin-top: 5rem; }
+    .guide h3 { scroll-margin-top: 5rem; }
+    .guide ol.steps { list-style: none; counter-reset: step; padding: 0; }
+    .guide ol.steps > li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .guide ol.steps > li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 0.5rem;
+      background: color-mix(in srgb, var(--brand-blue) 12%, transparent);
+      color: var(--brand-blue);
+      font-weight: 800;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: ui-monospace, monospace;
+    }
+    table.guide-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    table.guide-table th, table.guide-table td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.guide-table th { background: var(--bg-muted); font-weight: 700; }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="shipping-assistant.html" class="nav-link">Deploy</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
+      </nav>
+      <a href="shipping-assistant.html" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy Shipping Agent</a>
+    </div>
+  </header>
+
+  <main class="grid-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-20">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// USER GUIDE · SHIP</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-3">
+        Shipping Assistant
+      </h1>
+      <p class="text-lg text-matrix-soft max-w-2xl leading-relaxed mb-2">
+        How to use the Matrixly Shipping Assistant from the marketplace — track shipments, handle exceptions, draft WISMO replies, and run a full order-to-delivery workflow with ShipStation.
+      </p>
+      <p class="text-sm text-matrix-soft mb-8">
+        Marketplace: <a href="agents.html" class="text-[#117ACA] font-semibold hover:underline">Featured AI Agents</a>
+        · Deploy: <a href="shipping-assistant.html" class="text-[#117ACA] font-semibold hover:underline">shipping-assistant.html</a>
+      </p>
+
+      <div class="grid lg:grid-cols-[220px_1fr] gap-10">
+        <!-- TOC -->
+        <aside class="toc hidden lg:block">
+          <div class="sticky top-24 card-matrix rounded-2xl p-5 text-sm space-y-2">
+            <p class="font-bold text-matrix-cream mb-3">On this page</p>
+            <a href="#what-it-does" class="block">1. What it does</a>
+            <a href="#from-landing" class="block">2. From the landing page</a>
+            <a href="#install" class="block">3. Install &amp; demo</a>
+            <a href="#shipstation" class="block">4. Connect ShipStation</a>
+            <a href="#daily" class="block">5. Daily ops workflow</a>
+            <a href="#commands" class="block">6. Command reference</a>
+            <a href="#wismo" class="block">7. WISMO &amp; notifications</a>
+            <a href="#hitl" class="block">8. Approvals (HITL)</a>
+            <a href="#hermes" class="block">9. Hermes skill</a>
+            <a href="#flow" class="block">10. Order-to-delivery</a>
+            <a href="#troubleshoot" class="block">11. Troubleshooting</a>
+            <a href="#faq" class="block">12. FAQ</a>
+          </div>
+        </aside>
+
+        <article class="guide space-y-12 min-w-0">
+          <!-- 1 -->
+          <section id="what-it-does" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">1. What the Shipping Assistant does</h2>
+            <p class="text-sm text-matrix-soft mb-4 leading-relaxed">
+              The <strong class="text-matrix-cream">SHIP</strong> marketplace agent helps logistics and distribution SMEs run fulfillment with less manual tracking and fewer “Where is my order?” tickets.
+            </p>
+            <ul class="text-sm text-matrix-soft space-y-2 mb-4">
+              <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> <strong class="text-matrix-cream">ShipStation · UPS · FedEx · USPS</strong> — ShipStation is the hub; carriers flow through it</li>
+              <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> <strong class="text-matrix-cream">Full order-to-delivery flow</strong> — from awaiting shipment to delivered / exception</li>
+            </ul>
+            <div class="overflow-x-auto">
+              <table class="guide-table">
+                <thead>
+                  <tr><th>Capability</th><th>What you get</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Track</td><td>List orders/shipments; look up by order # or tracking #</td></tr>
+                  <tr><td>Exceptions</td><td>Scan for late, undeliverable, address, and carrier exception statuses</td></tr>
+                  <tr><td>Notify</td><td>Draft internal + customer messages (you review and send)</td></tr>
+                  <tr><td>WISMO</td><td>Ready-to-send customer update draft for one order</td></tr>
+                  <tr><td>HITL</td><td>Cancel / label / address changes require your approval</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 2 -->
+          <section id="from-landing" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">2. Starting from the Matrixly landing page</h2>
+            <ol class="steps text-sm text-matrix-soft">
+              <li>
+                <p class="font-bold text-matrix-cream">Open the marketplace</p>
+                <p class="mt-1">Open <a href="agents.html" class="text-[#117ACA] font-semibold hover:underline">agents.html</a> (nav: <strong>Agents</strong> or <strong>Browse Agents</strong>).</p>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Find the SHIP card</p>
+                <p class="mt-1"><strong>Shipping Assistant</strong> — Live · ShipStation · UPS · FedEx · USPS · Full order-to-delivery flow.</p>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Choose an action</p>
+                <ul class="mt-2 space-y-1 list-disc list-inside">
+                  <li><strong class="text-matrix-cream">Deploy Now</strong> → opens the deploy page (<code class="text-xs">shipping-assistant.html</code>)</li>
+                  <li><strong class="text-matrix-cream">See full logistics flow</strong> → homepage multi-agent logistics section</li>
+                  <li><strong class="text-matrix-cream">This User Guide</strong> → step-by-step usage (you are here)</li>
+                </ul>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Optional: Integrations</p>
+                <p class="mt-1">On <a href="integrations.html" class="text-[#117ACA] font-semibold hover:underline">integrations.html</a>, search <code class="text-xs">ship</code> or filter <strong>Logistics</strong>. ShipStation is marked popular and links to the Shipping Agent.</p>
+              </li>
+            </ol>
+          </section>
+
+          <!-- 3 -->
+          <section id="install" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">3. Install and run the demo (no API keys)</h2>
+            <p class="text-sm text-matrix-soft mb-4">
+              You can try the full agent flow immediately with sample data. No ShipStation account required.
+            </p>
+            <p class="text-xs font-mono text-matrix-soft mb-2">Windows PowerShell</p>
+            <pre class="cmd mb-4">cd C:\Users\anwar\projects\matrix-six\agents\shipping-assistant
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m src.cli demo</pre>
+            <p class="text-sm text-matrix-soft mb-3">What <code class="text-xs">demo</code> shows:</p>
+            <ul class="text-sm text-matrix-soft space-y-1 list-disc list-inside mb-4">
+              <li>Sample shipments (UPS, FedEx, USPS)</li>
+              <li>Exception scan (e.g. delivery exception, delayed in transit)</li>
+            </ul>
+            <p class="text-sm text-matrix-soft">
+              Confirm mode with <code class="text-xs">python -m src.cli status</code> — you should see <strong class="text-matrix-cream">Mode: demo</strong> until API keys are set.
+            </p>
+          </section>
+
+          <!-- 4 -->
+          <section id="shipstation" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">4. Connect live ShipStation</h2>
+            <ol class="steps text-sm text-matrix-soft">
+              <li>
+                <p class="font-bold text-matrix-cream">Create API credentials</p>
+                <p class="mt-1">In ShipStation: <strong>Settings → Account → API Settings</strong> → generate API Key and API Secret.
+                  Docs: <a href="https://www.shipstation.com/" class="text-[#117ACA] hover:underline" target="_blank" rel="noopener">shipstation.com</a></p>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Create local env file</p>
+                <pre class="cmd mt-2">cd C:\Users\anwar\projects\matrix-six\agents\shipping-assistant
+copy .env.example .env</pre>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Add secrets (never commit or paste into chat)</p>
+                <pre class="cmd mt-2">SHIPSTATION_API_KEY=your_key_here
+SHIPSTATION_API_SECRET=your_secret_here</pre>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Verify live mode</p>
+                <pre class="cmd mt-2">python -m src.cli status
+python -m src.cli list</pre>
+                <p class="mt-2">Status should show <strong class="text-matrix-cream">Mode: live</strong> and list real orders/shipments.</p>
+              </li>
+            </ol>
+            <div class="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+              <strong class="text-matrix-cream">Security:</strong> Keep <code class="text-xs">.env</code> gitignored. Rotate keys if they are ever exposed.
+            </div>
+          </section>
+
+          <!-- 5 -->
+          <section id="daily" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">5. Recommended daily ops workflow</h2>
+            <ol class="steps text-sm text-matrix-soft">
+              <li>
+                <p class="font-bold text-matrix-cream">Morning exception scan</p>
+                <pre class="cmd mt-2">python -m src.cli exceptions</pre>
+                <p class="mt-2">Review high-severity items first (exceptions, past ETA).</p>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Draft stakeholder + customer updates</p>
+                <pre class="cmd mt-2">python -m src.cli notify-drafts</pre>
+                <p class="mt-2">Internal draft → your ops email. Customer draft → review, then send from Gmail/Thunderbird (or Email Assistant).</p>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Answer a specific WISMO</p>
+                <pre class="cmd mt-2">python -m src.cli wismo --order YOUR-ORDER-NUMBER</pre>
+                <p class="mt-2">Copy the draft into your mail client. Agent does <strong>not</strong> auto-email the customer.</p>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Track one package</p>
+                <pre class="cmd mt-2">python -m src.cli track --order MB-10421
+python -m src.cli track --tracking 1Z999AA10123456784</pre>
+              </li>
+              <li>
+                <p class="font-bold text-matrix-cream">Export a snapshot for audit / sharing</p>
+                <pre class="cmd mt-2">python -m src.cli export</pre>
+                <p class="mt-2">Writes JSON under <code class="text-xs">agents/shipping-assistant/data/output/</code>.</p>
+              </li>
+            </ol>
+          </section>
+
+          <!-- 6 -->
+          <section id="commands" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">6. Command reference</h2>
+            <div class="overflow-x-auto">
+              <table class="guide-table">
+                <thead>
+                  <tr><th>Command</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>status</code></td><td>Demo vs live mode; pending HITL count</td></tr>
+                  <tr><td><code>list</code> / <code>demo</code></td><td>List shipments; demo also prints exceptions</td></tr>
+                  <tr><td><code>track --order …</code></td><td>Lookup by order number</td></tr>
+                  <tr><td><code>track --tracking …</code></td><td>Lookup by tracking number</td></tr>
+                  <tr><td><code>exceptions</code></td><td>Exception / late scan report</td></tr>
+                  <tr><td><code>wismo --order …</code></td><td>Customer WISMO reply draft</td></tr>
+                  <tr><td><code>notify-drafts</code></td><td>Internal + customer drafts for all exceptions</td></tr>
+                  <tr><td><code>propose-cancel --order …</code></td><td>Queue a cancel action (HITL)</td></tr>
+                  <tr><td><code>pending</code></td><td>List actions waiting for approval</td></tr>
+                  <tr><td><code>approve --id …</code></td><td>Approve a pending action</td></tr>
+                  <tr><td><code>reject --id …</code></td><td>Reject a pending action</td></tr>
+                  <tr><td><code>export</code></td><td>Write shipping-snapshot.json</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-sm text-matrix-soft mt-4">Add <code class="text-xs">--json</code> to most commands for machine-readable output.</p>
+          </section>
+
+          <!-- 7 -->
+          <section id="wismo" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">7. WISMO and stakeholder notifications</h2>
+            <p class="text-sm text-matrix-soft mb-3 leading-relaxed">
+              <strong class="text-matrix-cream">WISMO</strong> = “Where Is My Order?” The agent drafts a clear status email with tracking and ETA when available.
+            </p>
+            <pre class="cmd mb-4"># Demo sample exception order
+python -m src.cli wismo --order MB-10418</pre>
+            <p class="text-sm text-matrix-soft mb-3">
+              Pair with the <strong class="text-matrix-cream">Email Assistant</strong> to triage inbound WISMO mail, then paste the draft reply (still human-approved to send).
+            </p>
+            <p class="text-sm text-matrix-soft">
+              <code class="text-xs">notify-drafts</code> prepares:
+            </p>
+            <ul class="text-sm text-matrix-soft mt-2 space-y-1 list-disc list-inside">
+              <li><strong>Internal</strong> — ops alert for your notify address</li>
+              <li><strong>Customer</strong> — polite status update (draft only)</li>
+            </ul>
+          </section>
+
+          <!-- 8 -->
+          <section id="hitl" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">8. Human-in-the-loop (HITL) approvals</h2>
+            <p class="text-sm text-matrix-soft mb-4">
+              Safe by default: tracking and drafts never need approval. Destructive shipping ops do.
+            </p>
+            <div class="overflow-x-auto mb-4">
+              <table class="guide-table">
+                <thead>
+                  <tr><th>Auto-allowed</th><th>Requires approve</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>list, track, exceptions, WISMO drafts, notify drafts</td>
+                    <td>cancel order, update address, create/void label</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <pre class="cmd">python -m src.cli propose-cancel --order MB-10418
+python -m src.cli pending
+python -m src.cli approve --id shp_xxxxxxxx
+# or
+python -m src.cli reject --id shp_xxxxxxxx</pre>
+            <p class="text-sm text-matrix-soft mt-4">
+              Live ShipStation mutations run only after approval and when API credentials + action handlers are enabled.
+            </p>
+          </section>
+
+          <!-- 9 -->
+          <section id="hermes" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">9. Using Hermes</h2>
+            <p class="text-sm text-matrix-soft mb-3">
+              The agent is registered as Hermes skill <code class="text-xs">shipping-assistant</code>.
+            </p>
+            <pre class="cmd mb-4">hermes -s shipping-assistant -z "Scan shipping exceptions and draft WISMO for the worst order"</pre>
+            <p class="text-sm text-matrix-soft">
+              Hermes can run CLI tools under <code class="text-xs">agents/shipping-assistant</code>. Prefer explicit commands for production ops; use natural language for exploration.
+            </p>
+          </section>
+
+          <!-- 10 -->
+          <section id="flow" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">10. Full order-to-delivery flow</h2>
+            <p class="text-sm text-matrix-soft mb-4">
+              How the SHIP agent maps to Matrixly’s logistics story on the homepage:
+            </p>
+            <ol class="steps text-sm text-matrix-soft">
+              <li><strong class="text-matrix-cream">Order capture</strong> — orders land in ShipStation from your stores/channels.</li>
+              <li><strong class="text-matrix-cream">Rate &amp; label</strong> — carriers UPS / FedEx / USPS via ShipStation; label actions need HITL.</li>
+              <li><strong class="text-matrix-cream">In transit</strong> — <code class="text-xs">list</code> / <code class="text-xs">track</code> / <code class="text-xs">exceptions</code>.</li>
+              <li><strong class="text-matrix-cream">Delivery &amp; WISMO</strong> — confirm delivered; draft customer updates when delayed or excepted.</li>
+            </ol>
+            <p class="text-sm mt-4">
+              <a href="index.html#logistics" class="text-[#117ACA] font-semibold hover:underline">Open multi-agent logistics flow on the homepage →</a>
+            </p>
+          </section>
+
+          <!-- 11 -->
+          <section id="troubleshoot" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">11. Troubleshooting</h2>
+            <div class="overflow-x-auto">
+              <table class="guide-table">
+                <thead>
+                  <tr><th>Symptom</th><th>What to try</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Always “demo” mode</td>
+                    <td>Check <code>.env</code> keys; restart shell; run <code>status</code></td>
+                  </tr>
+                  <tr>
+                    <td>API auth error</td>
+                    <td>Regenerate ShipStation key/secret; no extra spaces in <code>.env</code></td>
+                  </tr>
+                  <tr>
+                    <td>Order not found</td>
+                    <td>Exact order number; try <code>list</code> first; demo orders use MB-10xxx</td>
+                  </tr>
+                  <tr>
+                    <td>Module not found</td>
+                    <td>Activate <code>.venv</code>; <code>pip install -r requirements.txt</code></td>
+                  </tr>
+                  <tr>
+                    <td>Deploy Now 404</td>
+                    <td>Open site from the <code>matrix-six</code> folder; file is <code>shipping-assistant.html</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 12 -->
+          <section id="faq" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-matrix-cream mb-3">12. FAQ</h2>
+            <div class="space-y-4 text-sm text-matrix-soft">
+              <div>
+                <p class="font-bold text-matrix-cream">Does the agent send email to customers by itself?</p>
+                <p class="mt-1">No. WISMO and notify outputs are <strong>drafts</strong>. You (or Email Assistant with your approval) send them.</p>
+              </div>
+              <div>
+                <p class="font-bold text-matrix-cream">Why ShipStation instead of only UPS/FedEx APIs?</p>
+                <p class="mt-1">ShipStation is the SMB multi-channel hub. Carriers are used through ShipStation for one integration surface.</p>
+              </div>
+              <div>
+                <p class="font-bold text-matrix-cream">Can I use it without a live ShipStation account?</p>
+                <p class="mt-1">Yes — demo mode ships sample data for demos and training.</p>
+              </div>
+              <div>
+                <p class="font-bold text-matrix-cream">Where is the agent code?</p>
+                <p class="mt-1"><code class="text-xs">C:\Users\anwar\projects\matrix-six\agents\shipping-assistant</code></p>
+              </div>
+            </div>
+          </section>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="shipping-assistant.html" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Deploy page</a>
+            <a href="agents.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+            <a href="integrations.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Logistics integrations</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span>Matrixly · Shipping Assistant User Guide v1.0</span>
+      <a href="agents.html" class="text-[#117ACA] hover:underline">Featured agents</a>
+    </div>
+  </footer>
+</body>
+</html>

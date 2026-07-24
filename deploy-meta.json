@@ -1,0 +1,18 @@
+{
+  "site": "matrixly.ai",
+  "builtAt": "2026-07-24T04:20:15.923Z",
+  "pages": [
+    "index.html",
+    "agents.html",
+    "products.html",
+    "integrations.html",
+    "email-assistant.html",
+    "lead-qualifier.html",
+    "crm-assistant.html",
+    "shipping-assistant.html",
+    "shipping-assistant-guide.html",
+    "support-forge.html",
+    "book-wise.html"
+  ],
+  "node": "v22.23.1"
+}

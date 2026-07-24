@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly SupportForge — embeddable AI customer support for SMBs. Triage, knowledge answers, HITL, tickets, chat widget." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>SupportForge — Matrixly</title>
+  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              green: 'var(--brand-blue)',
+              border: 'var(--border)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+              card: 'var(--card)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --bg-muted: #F0F4F8;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.04);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --card: #151C26;
+      --bg-muted: #1A222D;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.08);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .grid-bg { background-image: none; }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); color: var(--ink); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
+        <a href="#embed" class="nav-link">Embed</a>
+      </nav>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
+    </div>
+  </header>
+
+  <main class="grid-bg">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// SUPP · LIVE · EMBEDDABLE SUPPORT</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">
+        SupportForge
+      </h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+        End-to-end AI customer support for SMBs — monitor chat, email, and forms; answer from your knowledge base;
+        escalate with full context; approve external actions with human-in-the-loop.
+      </p>
+      <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Dark neon chat widget · drop-in script for any site</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Triage · Knowledge · Responder · Escalation agents</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Confidence scoring · audit log · usage &amp; cost tracking</li>
+      </ul>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Grok optional</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Tickets + CRM-lite</span>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">1. Triage</h2>
+          <p class="text-sm text-matrix-soft">Urgency, sentiment, topic, and sensitive-issue flags on every inbound message.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">2. Knowledge</h2>
+          <p class="text-sm text-matrix-soft">Retrieve answers from your FAQs, policies, Notion export, or uploaded docs.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">3. Respond</h2>
+          <p class="text-sm text-matrix-soft">Auto-resolve high-confidence FAQs or draft replies for human approval.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">4. Escalate</h2>
+          <p class="text-sm text-matrix-soft">Open tickets with full context; admin dashboard for HITL and follow-ups.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Architecture</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Channels → FastAPI → multi-agent orchestrator → tickets / HITL / audit / usage.
+        </p>
+        <ol class="grid sm:grid-cols-2 gap-4 text-sm text-matrix-soft list-none">
+          <li class="card-matrix rounded-xl p-4 border border-matrix-border">
+            <span class="font-mono text-xs text-[#117ACA]">01</span>
+            <p class="font-bold text-matrix-cream mt-1">Ingest</p>
+            <p class="mt-1">Widget chat, website form webhook, email webhook or IMAP.</p>
+          </li>
+          <li class="card-matrix rounded-xl p-4 border border-matrix-border">
+            <span class="font-mono text-xs text-[#117ACA]">02</span>
+            <p class="font-bold text-matrix-cream mt-1">Classify &amp; retrieve</p>
+            <p class="mt-1">Triage + local knowledge index with confidence scores.</p>
+          </li>
+          <li class="card-matrix rounded-xl p-4 border border-matrix-border">
+            <span class="font-mono text-xs text-[#117ACA]">03</span>
+            <p class="font-bold text-matrix-cream mt-1">Act safely</p>
+            <p class="mt-1">Auto-reply, draft-for-approval, or escalate — external writes need HITL.</p>
+          </li>
+          <li class="card-matrix rounded-xl p-4 border border-matrix-border">
+            <span class="font-mono text-xs text-[#117ACA]">04</span>
+            <p class="font-bold text-matrix-cream mt-1">Operate</p>
+            <p class="mt-1">Admin UI, audit trail, usage/cost for SaaS billing prep.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Code: <code class="text-xs">agents/support-forge</code> ·
+          Full guide: <code class="text-xs">agents/support-forge/README.md</code>
+        </p>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Demo (no API keys required)</h3>
+        <pre class="cmd mb-6">cd agents/support-forge
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+python -m src.cli seed
+python -m src.cli demo
+python scripts/smoke_test.py
+python -m src.cli serve</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Production keys</h3>
+        <pre class="cmd mb-6">SUPPORTFORGE_API_KEY=your-admin-secret
+SUPPORTFORGE_WIDGET_KEY=pk_live_your-site-key
+XAI_API_KEY=optional-for-smarter-replies
+CORS_ORIGINS=https://matrixbazaar.com,https://www.matrixbazaar.com</pre>
+
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft mb-2">
+          <strong class="text-matrix-cream">Safety:</strong> External actions (email send, CRM writes) queue for human approval.
+          Low-confidence or legal/fraud keywords escalate with full conversation context.
+        </div>
+      </div>
+    </section>
+
+    <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Exact embed code — matrixbazaar.com</h2>
+        <p class="text-sm text-matrix-soft mb-4">
+          Place before <code class="text-xs">&lt;/body&gt;</code>. Replace the host with your SupportForge VPS URL.
+        </p>
+        <pre class="cmd mb-6">&lt;!-- Matrixly SupportForge on matrixbazaar.com --&gt;
+&lt;script
+  src="https://YOUR_SUPPORTFORGE_HOST/static/widget/embed.js"
+  data-api="https://YOUR_SUPPORTFORGE_HOST"
+  data-key="pk_live_your-site-key"
+  data-title="Support"
+  async&gt;
+&lt;/script&gt;</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Iframe option</h3>
+        <pre class="cmd mb-6">&lt;iframe
+  src="https://YOUR_SUPPORTFORGE_HOST/static/widget/chat-panel.html?api=https://YOUR_SUPPORTFORGE_HOST&amp;key=pk_live_your-site-key"
+  title="Support chat"
+  style="position:fixed;right:16px;bottom:16px;width:400px;height:560px;border:0;z-index:9999;"&gt;
+&lt;/iframe&gt;</pre>
+
+        <h3 class="font-bold text-matrix-cream mb-2">Connect knowledge (non-technical)</h3>
+        <ol class="text-sm text-matrix-soft space-y-2 mb-6 list-decimal list-inside">
+          <li>Drop FAQ / policy files into <code class="text-xs">agents/support-forge/knowledge/</code></li>
+          <li>Run <code class="text-xs">python -m src.cli seed</code></li>
+          <li>Optional: Notion sync via <code class="text-xs">NOTION_API_KEY</code> + admin reindex</li>
+        </ol>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="agents.html" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+          <a href="integrations.html" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Integrations</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span>Matrixly · SupportForge v1.0 · Embeddable AI support</span>
+      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+    </div>
+  </footer>
+</body>
+</html>

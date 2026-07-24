@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly Email Assistant — triage your inbox, draft replies, flag urgent items, and get a daily executive email brief. Human approval before anything is sent." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Email Assistant — Matrixly</title>
+  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.04);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --bg-alt: #121820;
+      --bg-muted: #1A222D;
+      --card: #151C26;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+      --grid-line: rgba(17, 122, 202, 0.08);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .grid-bg {
+      background-image: none;
+    }
+    .btn-primary {
+      background: var(--brand-blue);
+      color: #fff;
+      font-weight: 700;
+      transition: background .15s ease;
+    }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-weight: 600;
+      background: var(--card);
+    }
+    .btn-secondary:hover { border-color: var(--brand-blue); color: var(--brand-blue); }
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+    }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="agents.html" class="nav-link">Agents</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="integrations.html" class="nav-link">Integrations</a>
+      </nav>
+      <a href="agents.html" class="btn-secondary text-sm px-4 py-2 rounded-lg">← Marketplace</a>
+    </div>
+  </header>
+
+  <main class="grid-bg">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">// MAIL · TRIAGE · DRAFTS</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">
+        Email Assistant
+      </h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+        Triage your business inbox, draft replies for review, flag urgent items, and get a daily executive brief —
+        so nothing important slips while you stay in control of every send.
+      </p>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">1. Triage</h2>
+          <p class="text-sm text-matrix-soft">Score unread mail and sort it into clear buckets — urgent, needs a reply, FYI, and more.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">2. Flag urgent</h2>
+          <p class="text-sm text-matrix-soft">Surface payments, deadlines, legal issues, VIP senders, and operational exceptions first.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">3. Draft replies</h2>
+          <p class="text-sm text-matrix-soft">Prepare reply drafts for your review. Nothing is sent until you approve.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2">4. Daily brief</h2>
+          <p class="text-sm text-matrix-soft">Get a short executive summary of the last 24 hours so you can start the day focused.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">How it works</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Connect the agent to your business mailbox. It reviews unread messages, highlights what needs attention,
+          drafts replies you can edit, and delivers a daily brief — without sending mail on its own.
+        </p>
+
+        <h3 class="font-bold text-matrix-cream mb-3">Best for</h3>
+        <ul class="text-sm text-matrix-soft space-y-2 mb-8 list-disc list-inside">
+          <li>Owners and ops leads who live in a busy shared or personal business inbox</li>
+          <li>Teams that want faster responses without auto-sending customer email</li>
+          <li>Anyone who wants a morning summary instead of digging through unread mail</li>
+        </ul>
+
+        <h3 class="font-bold text-matrix-cream mb-3">Built-in guardrails</h3>
+        <ul class="text-sm text-matrix-soft space-y-2 mb-8 list-disc list-inside">
+          <li>Draft-only by default — you approve before anything leaves the mailbox</li>
+          <li>Daily briefs go only to addresses you configure</li>
+          <li>Mailbox credentials stay in your environment; they are never part of the public site</li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="agents.html" class="btn-primary text-sm px-6 py-3 rounded-lg text-center">Back to marketplace</a>
+          <a href="index.html#final-cta" class="btn-secondary text-sm px-6 py-3 rounded-lg text-center">Get started</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span>Matrixly · Email Assistant v1.0</span>
+      <a href="agents.html" class="text-[#117ACA] hover:underline">Back to agents</a>
+    </div>
+  </footer>
+</body>
+</html>

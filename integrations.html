@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Explore Matrixly integrations. Connect hundreds of apps — Gmail, Slack, Shopify, HubSpot, Salesforce, and more — to your AI agents." />
+  <meta name="theme-color" content="#117ACA" />
+  <meta property="og:title" content="Integrations — Matrixly" />
+  <meta property="og:description" content="With hundreds of integrations, Matrixly connects to all your favorite apps." />
+  <title>Integrations — Matrixly</title>
+
+  <link rel="icon" type="image/png" href="assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    
+    /* ========== LIGHT / DARK THEME TOKENS ========== */
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --brand-blue-light: #DCEBFB;
+      --brand-blue-soft: #E8F4FC;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --shadow-sm: 0 1px 3px rgba(33, 30, 30, 0.06);
+      --shadow-md: 0 8px 24px rgba(17, 122, 202, 0.12);
+      --input-bg: #FFFFFF;
+      --toggle-bg: #F0F4F8;
+      --toggle-border: #D0D7DE;
+      --grid-line: rgba(17, 122, 202, 0.04);
+      --matrix-green: #117ACA;
+      --matrix-green-text: #117ACA;
+      --matrix-neon: #117ACA;
+      --matrix-neon-text: #117ACA;
+      --matrix-forest: #0B5CAB;
+      --matrix-forest-text: #0B5CAB;
+      color-scheme: light;
+    }
+
+    html.dark {
+      --brand-blue: #3B9FE0;
+      --brand-blue-dark: #117ACA;
+      --brand-blue-hover: #5BB0E8;
+      --brand-blue-light: #1A3A52;
+      --brand-blue-soft: #152536;
+      --ink: #F0F4F8;
+      --soft: #9AA4B2;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B1220;
+      --bg-alt: #111827;
+      --bg-muted: #151C28;
+      --card: #151C28;
+      --nav-bg: rgba(11, 18, 32, 0.94);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 28px rgba(17, 122, 202, 0.18);
+      --input-bg: #111827;
+      --toggle-bg: #1A2332;
+      --toggle-border: #1E2A3A;
+      --grid-line: rgba(59, 159, 224, 0.07);
+      --matrix-green: #3B9FE0;
+      --matrix-green-text: #3B9FE0;
+      --matrix-neon: #3B9FE0;
+      --matrix-neon-text: #3B9FE0;
+      --matrix-forest: #117ACA;
+      --matrix-forest-text: #117ACA;
+      color-scheme: dark;
+    }
+
+    html.dark section.border-y,
+    html.dark section.border-t,
+    html.dark section.border-b,
+    html.dark footer.border-t,
+    html.dark header.border-b {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-t.border-matrix-border,
+    html.dark .border-b.border-matrix-border,
+    html.dark .border-y.border-matrix-border {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .nav-scrolled {
+      border-bottom-color: var(--section-divider);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-forest { color: var(--brand-blue-dark) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .hover\:text-matrix-cream:hover { color: var(--ink) !important; }
+
+    .bg-matrix-black { background-color: var(--bg) !important; }
+    .bg-matrix-void { background-color: var(--bg-alt) !important; }
+    .bg-matrix-muted { background-color: var(--bg-muted) !important; }
+    .bg-matrix-card { background-color: var(--card) !important; }
+    .bg-black { background-color: var(--bg-alt) !important; }
+
+    .border-matrix-border { border-color: var(--border) !important; }
+
+    .grid-bg {
+      background-image: none;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-height: 40px;
+      border-radius: 0.5rem;
+      background: var(--toggle-bg);
+      border: 1.5px solid var(--toggle-border);
+      color: var(--brand-blue);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue-soft);
+      transform: translateY(-1px);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+    .theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      display: block;
+    }
+    html.dark .theme-icon-sun { display: none; }
+    html:not(.dark) .theme-icon-moon { display: none; }
+    html.dark .theme-icon-moon { display: block; }
+    html:not(.dark) .theme-icon-sun { display: block; }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: #FFFFFF !important;
+    }
+    .btn-primary:active {
+      background: var(--brand-blue-dark) !important;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--brand-blue);
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .neon-tile,
+    .text-tile {
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+    }
+    .neon-tile span,
+    .text-tile-base span,
+    .text-tile > span {
+      color: var(--brand-blue);
+    }
+
+    .badge-popular {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue);
+    }
+
+    .terminal-window {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .terminal-header {
+      background: var(--brand-blue-soft);
+      border-bottom: 1px solid var(--border);
+    }
+    .cursor-blink::after { color: var(--brand-blue); }
+
+    .chart-bar-fill {
+      background: linear-gradient(180deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    }
+    .flow-step-line {
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--brand-blue) 15%, transparent),
+        color-mix(in srgb, var(--brand-blue) 45%, transparent),
+        color-mix(in srgb, var(--brand-blue) 15%, transparent));
+    }
+
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
+
+    .section-alt { background: var(--bg-alt); }
+
+    .search-input {
+      background: var(--input-bg);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-blue) 15%, transparent);
+    }
+    .filter-chip {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--soft);
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+
+    #signup-form input {
+      background: var(--input-bg);
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+/* theme tokens defined in LIGHT / DARK THEME TOKENS */
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+
+    .grid-bg {
+      background-image: none;
+    }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      font-weight: 700;
+      border: 1.5px solid var(--brand-blue) !important;
+      border-radius: 0.5rem !important;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 1px 2px rgba(17, 122, 202, 0.2) !important;
+      text-shadow: none !important;
+      min-height: 44px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      transform: translateY(-1px);
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(17, 122, 202, 0.28) !important;
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+      border-radius: 0.5rem !important;
+      font-weight: 600;
+      min-height: 44px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      transform: translateY(-1px);
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17, 122, 202, 0.12);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(33, 30, 30, 0.06);
+    }
+
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .mobile-menu.open {
+      max-height: min(80vh, 520px);
+      overflow-y: auto;
+    }
+
+    .h1-fluid { font-size: clamp(1.85rem, 4.5vw + 0.5rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; }
+    .h2-fluid { font-size: clamp(1.5rem, 3vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; }
+
+    .filter-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--soft);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8125rem;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+
+    .integration-card.hidden-card { display: none; }
+
+    .search-input {
+      background: var(--card);
+      border: 1.5px solid #D0D7DE;
+      border-radius: 0.5rem;
+      color: var(--ink);
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.75rem;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .search-input::placeholder { color: var(--soft); }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px rgba(17, 122, 202, 0.15);
+    }
+
+    .neon-tile {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.5rem;
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+      flex-shrink: 0;
+    }
+    .neon-tile span {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      letter-spacing: 0.02em;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 4px; }
+
+    @media (max-width: 767px) {
+      .card-matrix:hover { transform: none; }
+      .btn-primary:hover, .btn-secondary:hover { transform: none; }
+    }
+
+    /* Top nav alignment grid */
+    #navbar .nav-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 1rem;
+      min-height: 4rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-row { min-height: 5rem; }
+    }
+    #navbar .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      text-decoration: none;
+    }
+    #navbar .nav-brand img {
+      filter: drop-shadow(0 1px 2px rgba(17, 122, 202, 0.18));
+    }
+    html.dark #navbar .nav-brand img {
+      filter: drop-shadow(0 0 8px rgba(59, 159, 224, 0.35));
+    }
+    #navbar .nav-links {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem 1.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-actions {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-links,
+      #navbar .nav-actions { display: inline-flex; }
+    }
+    #navbar .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 0.15rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--soft);
+      transition: color 0.15s ease;
+    }
+    #navbar .nav-link:hover,
+    #navbar .nav-link[aria-current="page"] {
+      color: var(--brand-blue);
+    }
+    #navbar .nav-actions .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 1.25rem;
+      line-height: 1;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    #navbar .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-mobile { display: none; }
+    }
+    #navbar .nav-mobile #mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="bg-matrix-black antialiased">
+  <!-- NAV -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="nav-row">
+        <a href="index.html" class="nav-brand group" aria-label="Matrixly Home">
+          <img src="assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
+          <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
+            <span class="text-matrix-cream">Matrixly</span>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html#how-it-works" class="nav-link">How it Works</a>
+          <a href="agents.html" class="nav-link">Agents</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="integrations.html" class="nav-link" aria-current="page">Integrations</a>
+          <a href="index.html#pricing" class="nav-link">Pricing</a>
+        </div>
+
+        <div class="nav-end">
+          <div class="nav-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <a href="index.html#final-cta" class="btn-primary rounded-lg">Get Started</a>
+          </div>
+          <div class="nav-mobile">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
+              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="py-4 space-y-1 border-t border-matrix-border">
+          <a href="index.html#how-it-works" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">How it Works</a>
+          <a href="agents.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Agents</a>
+          <a href="products.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Products</a>
+          <a href="integrations.html" class="block px-3 py-3 font-bold text-matrix-green" aria-current="page">Integrations</a>
+          <a href="index.html#pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
+          <a href="index.html#final-cta" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-20 md:pt-24">
+    <!-- HERO -->
+    <section class="relative py-14 sm:py-20 grid-bg border-b border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// INTEGRATIONS</p>
+        <h1 class="h1-fluid font-extrabold text-matrix-cream mb-4 max-w-3xl leading-tight">
+          Explore all <span class="text-matrix-green">integrations</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8">
+          With hundreds of integrations, Matrixly connects to all your favorite apps — so agents can market, sell, ship, and support inside the tools you already use.
+        </p>
+
+        <!-- Search -->
+        <div class="relative max-w-xl mb-6">
+          <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-matrix-soft pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <label for="integration-search" class="sr-only">Search integrations</label>
+          <input
+            id="integration-search"
+            type="search"
+            class="search-input"
+            placeholder="Search integrations (ShipStation, Gmail, Slack…)"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Category filters -->
+        <div id="category-filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Integration categories">
+          <button type="button" class="filter-chip active" data-category="all">All</button>
+          <button type="button" class="filter-chip" data-category="popular">Most Popular</button>
+          <button type="button" class="filter-chip" data-category="sales">Sales</button>
+          <button type="button" class="filter-chip" data-category="marketing">Marketing</button>
+          <button type="button" class="filter-chip" data-category="operations">Operations</button>
+          <button type="button" class="filter-chip" data-category="support">Support</button>
+          <button type="button" class="filter-chip" data-category="ecommerce">E-commerce</button>
+          <button type="button" class="filter-chip" data-category="logistics">Logistics</button>
+          <button type="button" class="filter-chip" data-category="productivity">Productivity</button>
+          <button type="button" class="filter-chip" data-category="assistant">Personal Assistant</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIRECTORY -->
+    <section class="py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-matrix-cream" id="directory-heading">All integrations</h2>
+            <p class="text-sm text-matrix-soft mt-1">
+              <span id="result-count">0</span> apps · Connect any tool to Matrixly agent workflows
+            </p>
+          </div>
+          <a href="index.html#final-cta" class="btn-secondary text-sm px-5 py-2.5 rounded-lg self-start sm:self-auto">Try Matrixly free</a>
+        </div>
+
+        <div id="integrations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <!-- Cards injected by JS for maintainability; noscript fallback below -->
+        </div>
+
+        <p id="no-results" class="hidden text-center text-matrix-soft py-16 font-mono text-sm">
+          No integrations match your search. Try another keyword or clear filters.
+        </p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-16 sm:py-24 bg-matrix-void border-y border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// HOW IT WORKS</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Easy as one, two, three</h2>
+          <p class="text-matrix-soft">Trigger → connect → let Matrixly agents execute. All in natural language.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="card-matrix rounded-2xl p-6">
+            <div class="neon-tile mb-5"><span>01</span></div>
+            <p class="font-mono text-xs text-matrix-green mb-2">When this happens…</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Select a trigger</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">
+              A trigger is an event that kicks off your AI agent — like a new email in Gmail, a Shopify order, or a Slack message.
+            </p>
+          </div>
+          <div class="card-matrix rounded-2xl p-6">
+            <div class="neon-tile mb-5"><span>02</span></div>
+            <p class="font-mono text-xs text-matrix-green mb-2">Do this</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Connect your apps</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">
+              Hundreds of integrations available. Plug Matrixly into CRM, email, ecommerce, logistics, ads, and productivity tools.
+            </p>
+          </div>
+          <div class="card-matrix rounded-2xl p-6">
+            <div class="neon-tile mb-5"><span>03</span></div>
+            <p class="font-mono text-xs text-matrix-green mb-2">Autonomous</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Let AI do the work</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">
+              Give custom instructions to your agent in plain language. Agents plan, act, and report — so you focus on growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST + CTA -->
+    <section class="py-16 sm:py-24 grid-bg">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono text-xs text-matrix-green mb-4 tracking-wide">TRUSTED BY FORWARD-THINKING SMBs</p>
+        <h2 class="h2-fluid font-extrabold text-matrix-cream mb-4">
+          The AI marketplace that actually <span class="text-matrix-green">connects</span>
+        </h2>
+        <p class="text-matrix-soft text-lg mb-8">
+          Matrixly agents save hours every week by running SEO, sales, support, and logistics across the stack you already pay for.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="index.html#final-cta" class="btn-primary px-8 py-3.5 rounded-xl text-sm">Get started free</a>
+          <a href="index.html#pricing" class="btn-secondary px-8 py-3.5 rounded-xl text-sm">View pricing</a>
+        </div>
+        <p class="text-xs text-matrix-soft mt-6 font-mono">No credit card required · Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-matrix-border/50 bg-matrix-void pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 mb-4">
+            <img src="assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="w-8 h-8 object-contain rounded-md flex-shrink-0" />
+            <span class="font-mono font-bold text-lg">
+              <span class="text-matrix-cream">Matrixly</span>
+            </span>
+          </a>
+          <p class="text-sm text-matrix-soft">The Agentic AI Marketplace for SMBs powered by SEO Intelligence.</p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Product</h4>
+          <ul class="space-y-2.5 text-sm text-matrix-soft">
+            <li><a href="agents.html" class="hover:text-matrix-green transition-colors">Agents</a></li>
+            <li><a href="products.html" class="hover:text-matrix-green transition-colors">Products</a></li>
+            <li><a href="integrations.html" class="hover:text-matrix-green transition-colors">Integrations</a></li>
+            <li><a href="index.html#pricing" class="hover:text-matrix-green transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Resources</h4>
+          <ul class="space-y-2.5 text-sm text-matrix-soft">
+            <li><a href="#" class="hover:text-matrix-green transition-colors">Docs</a></li>
+            <li><a href="integrations.html" class="hover:text-matrix-green transition-colors">Integrations</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors">API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Legal</h4>
+          <ul class="space-y-2.5 text-sm text-matrix-soft">
+            <li><a href="#" class="hover:text-matrix-green transition-colors">Privacy</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors">Terms</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-matrix-border/40 flex flex-col sm:flex-row justify-between gap-3">
+        <p class="text-xs text-matrix-soft font-mono">© <span id="year"></span> Matrixly · All rights reserved</p>
+        <p class="text-xs text-matrix-soft font-mono"><span class="text-matrix-green">█</span> Connect everything. Automate anything.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav scroll
+    (function () {
+      const nav = document.getElementById('navbar');
+      const onScroll = () => {
+        if (window.scrollY > 40) nav.classList.add('nav-scrolled');
+        else nav.classList.remove('nav-scrolled');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Mobile menu
+    (function () {
+      const toggle = document.getElementById('mobile-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      if (!toggle) return;
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        iconMenu.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+      });
+    })();
+
+    /**
+     * Integration directory for Matrixly agent workflows.
+     * Categories: popular, sales, marketing, operations, support,
+     * ecommerce, logistics, productivity, assistant
+     */
+    const INTEGRATIONS = [
+      // Most popular
+      { name: 'Google Sheets', category: 'productivity', popular: true, abbr: 'SHEET' },
+      { name: 'Gmail', category: 'marketing', popular: true, abbr: 'GMAIL' },
+      { name: 'Slack', category: 'assistant', popular: true, abbr: 'SLACK' },
+      { name: 'Google Drive', category: 'productivity', popular: true, abbr: 'DRIVE' },
+      { name: 'HubSpot', category: 'sales', popular: true, abbr: 'HUB' },
+      { name: 'Calendly', category: 'sales', popular: true, abbr: 'CAL' },
+      { name: 'Airtable', category: 'productivity', popular: true, abbr: 'AIR' },
+      { name: 'Salesforce', category: 'sales', popular: true, abbr: 'SFDC' },
+      { name: 'Shopify', category: 'ecommerce', popular: true, abbr: 'SHOP' },
+      { name: 'WordPress', category: 'marketing', popular: true, abbr: 'WP' },
+      { name: 'Stripe', category: 'sales', popular: true, abbr: 'STRP' },
+      { name: 'Zapier', category: 'operations', popular: true, abbr: 'ZAP' },
+
+      // Sales
+      { name: 'Apollo.io', category: 'sales', abbr: 'APOL' },
+      { name: 'Pipedrive', category: 'sales', abbr: 'PIPE' },
+      { name: 'Close', category: 'sales', abbr: 'CLOS' },
+      { name: 'LinkedIn', category: 'sales', abbr: 'LI' },
+      { name: 'Outreach', category: 'sales', abbr: 'OUT' },
+      { name: 'Copper', category: 'sales', abbr: 'COP' },
+      { name: 'Intercom', category: 'sales', abbr: 'INT' },
+      { name: 'Acuity Scheduling', category: 'sales', abbr: 'ACU' },
+      { name: 'Typeform', category: 'sales', abbr: 'TYPE' },
+      { name: 'Zoom', category: 'sales', abbr: 'ZOOM' },
+      { name: 'Microsoft Teams', category: 'sales', abbr: 'TEAMS' },
+
+      // Marketing
+      { name: 'Google Search Console', category: 'marketing', abbr: 'GSC' },
+      { name: 'Google Analytics', category: 'marketing', abbr: 'GA4' },
+      { name: 'Mailchimp', category: 'marketing', abbr: 'MAIL' },
+      { name: 'Klaviyo', category: 'marketing', abbr: 'KLAV' },
+      { name: 'Meta Ads', category: 'marketing', abbr: 'META' },
+      { name: 'Google Ads', category: 'marketing', abbr: 'GADS' },
+      { name: 'Buffer', category: 'marketing', abbr: 'BUFF' },
+      { name: 'Hootsuite', category: 'marketing', abbr: 'HOOT' },
+      { name: 'Beehiiv', category: 'marketing', abbr: 'BEE' },
+      { name: 'AWeber', category: 'marketing', abbr: 'AWEB' },
+      { name: 'Webflow', category: 'marketing', abbr: 'WEB' },
+      { name: 'Notion', category: 'productivity', popular: true, abbr: 'NOTN' },
+      { name: 'Hermes Agent', category: 'assistant', popular: true, abbr: 'HERM' },
+      { name: 'Grok (xAI)', category: 'assistant', popular: true, abbr: 'GROK' },
+      { name: 'GitHub', category: 'operations', popular: true, abbr: 'GH' },
+      { name: 'YouTube', category: 'marketing', abbr: 'YT' },
+      { name: 'Instagram', category: 'marketing', abbr: 'IG' },
+      { name: 'X (Twitter)', category: 'marketing', abbr: 'X' },
+
+      // Operations
+      { name: 'Asana', category: 'operations', abbr: 'ASA' },
+      { name: 'ClickUp', category: 'operations', abbr: 'CLK' },
+      { name: 'Monday.com', category: 'operations', abbr: 'MON' },
+      { name: 'Jira', category: 'operations', abbr: 'JIRA' },
+      { name: 'Trello', category: 'operations', abbr: 'TREL' },
+      { name: 'Basecamp', category: 'operations', abbr: 'BASE' },
+      { name: 'AWS', category: 'operations', abbr: 'AWS' },
+      { name: 'Azure DevOps', category: 'operations', abbr: 'AZDO' },
+      { name: 'Make', category: 'operations', abbr: 'MAKE' },
+      { name: 'n8n', category: 'operations', abbr: 'N8N' },
+
+      // Support
+      { name: 'Zendesk', category: 'support', abbr: 'ZEN' },
+      { name: 'Freshdesk', category: 'support', abbr: 'FRSH' },
+      { name: 'Help Scout', category: 'support', abbr: 'HELP' },
+      { name: 'Front', category: 'support', abbr: 'FRNT' },
+      { name: 'Twilio', category: 'support', abbr: 'TWIL' },
+      { name: 'Crisp', category: 'support', abbr: 'CRSP' },
+      { name: 'Discord', category: 'support', abbr: 'DISC' },
+
+      // E-commerce
+      { name: 'WooCommerce', category: 'ecommerce', abbr: 'WOO' },
+      { name: 'BigCommerce', category: 'ecommerce', abbr: 'BIG' },
+      { name: 'Amazon', category: 'ecommerce', abbr: 'AMZ' },
+      { name: 'Etsy', category: 'ecommerce', abbr: 'ETSY' },
+      { name: 'Square', category: 'ecommerce', abbr: 'SQR' },
+      { name: 'PayPal', category: 'ecommerce', abbr: 'PP' },
+      { name: 'ReCharge', category: 'ecommerce', abbr: 'RECH' },
+
+      // Logistics — Shipping Assistant hub + multi-carrier / fulfillment stack for SMBs
+      { name: 'ShipStation', category: 'logistics', popular: true, abbr: 'SS', blurb: 'Primary hub for Matrixly Shipping Assistant — multi-carrier labels, tracking, and exceptions (UPS · FedEx · USPS).', href: 'shipping-assistant.html', cta: 'Deploy Shipping Agent' },
+      { name: 'ShipEngine', category: 'logistics', abbr: 'SENG', blurb: 'Label rates and multi-carrier shipping API — pairs with ShipStation-class fulfillment agents.' },
+      { name: 'ShipHero', category: 'logistics', abbr: 'SHRO', blurb: 'Warehouse & 3PL fulfillment — integrate inventory and outbound with logistics agents.' },
+      { name: 'Shipday', category: 'logistics', abbr: 'SDAY', blurb: 'Local delivery dispatch — route last-mile jobs from your Matrixly shipping workflows.' },
+      { name: 'Shipcloud', category: 'logistics', abbr: 'SCLD', blurb: 'Multi-carrier shipping platform — connect labels and tracking to agent orchestration.' },
+      { name: 'ShipBob', category: 'logistics', abbr: 'SBOB', blurb: 'Fulfillment network for ecommerce SMBs — sync orders and tracking status.' },
+      { name: 'AfterShip', category: 'logistics', abbr: 'AFTR', blurb: 'Post-purchase tracking & WISMO notifications — reduce “where is my order?” tickets.' },
+      { name: 'Starshipit', category: 'logistics', abbr: 'STAR', blurb: 'Multi-carrier shipping for APAC & global merchants — labels, rates, tracking.' },
+      { name: 'Deftship', category: 'logistics', abbr: 'DEFT', blurb: 'Discounted multi-carrier shipping — connect rates and labels to agent workflows.' },
+      { name: 'EasyPost', category: 'logistics', abbr: 'EASY', blurb: 'Developer shipping API — rates, labels, and tracking across major carriers.' },
+      { name: 'Shippo', category: 'logistics', abbr: 'SHPO', blurb: 'Multi-carrier shipping for growing stores — labels and tracking webhooks.' },
+      { name: 'UPS', category: 'logistics', abbr: 'UPS', blurb: 'Carrier network via ShipStation or direct API — track, exceptions, delivery events.' },
+      { name: 'FedEx', category: 'logistics', abbr: 'FDX', blurb: 'Carrier network via ShipStation or direct API — express and ground tracking.' },
+      { name: 'USPS', category: 'logistics', abbr: 'USPS', blurb: 'Domestic parcel network via ShipStation — Priority, Ground Advantage, tracking.' },
+      { name: 'DHL Express', category: 'logistics', abbr: 'DHL', blurb: 'International express — connect through multi-carrier hubs for global SMBs.' },
+
+      // Productivity
+      { name: 'Google Calendar', category: 'productivity', abbr: 'GCAL' },
+      { name: 'Microsoft Outlook', category: 'productivity', abbr: 'OUTL' },
+      { name: 'Dropbox', category: 'productivity', abbr: 'DROP' },
+      { name: 'Todoist', category: 'productivity', abbr: 'TODO' },
+      { name: 'Evernote', category: 'productivity', abbr: 'EVER' },
+      { name: 'Coda', category: 'productivity', abbr: 'CODA' },
+      { name: 'Microsoft 365', category: 'productivity', abbr: 'M365' },
+
+      // Personal Assistant
+      { name: 'Slack Bot', category: 'assistant', abbr: 'SBOT' },
+      { name: 'Google Meet', category: 'assistant', abbr: 'MEET' },
+      { name: 'Otter.ai', category: 'assistant', abbr: 'OTTR' },
+      { name: 'Fireflies', category: 'assistant', abbr: 'FIRE' },
+      { name: 'Amazon Alexa', category: 'assistant', abbr: 'ALEX' },
+    ];
+
+    const categoryLabels = {
+      all: 'All integrations',
+      popular: 'Most popular',
+      sales: 'Sales',
+      marketing: 'Marketing',
+      operations: 'Operations',
+      support: 'Support',
+      ecommerce: 'E-commerce',
+      logistics: 'Logistics',
+      productivity: 'Productivity',
+      assistant: 'Personal Assistant',
+    };
+
+    const grid = document.getElementById('integrations-grid');
+    const searchInput = document.getElementById('integration-search');
+    const resultCount = document.getElementById('result-count');
+    const noResults = document.getElementById('no-results');
+    const directoryHeading = document.getElementById('directory-heading');
+    let activeCategory = 'all';
+
+    function initials(name, abbr) {
+      if (abbr) return abbr.slice(0, 4);
+      return name.replace(/[^A-Za-z0-9]/g, '').slice(0, 4).toUpperCase() || 'APP';
+    }
+
+    function cardHTML(item) {
+      const cats = [item.category];
+      if (item.popular) cats.push('popular');
+      const dataCats = cats.join(' ');
+      const blurb = item.blurb || `Integrate ${item.name} with your Matrixly agent workflows.`;
+      const href = item.href || 'index.html#final-cta';
+      const cta = item.cta || `Connect ${item.name}`;
+      // Include aliases in search (e.g. "ship" matches ShipStation)
+      const searchBlob = [item.name, item.category, item.abbr || '', blurb].join(' ').toLowerCase();
+      return `
+        <article
+          class="integration-card card-matrix rounded-2xl p-5 flex flex-col"
+          data-name="${item.name.toLowerCase()}"
+          data-search="${searchBlob.replace(/"/g, '&quot;')}"
+          data-categories="${dataCats}"
+        >
+          <div class="flex items-start gap-3 mb-4">
+            <div class="neon-tile" aria-hidden="true"><span>${initials(item.name, item.abbr)}</span></div>
+            <div class="min-w-0">
+              <h3 class="text-base font-bold text-matrix-cream truncate">${item.name}</h3>
+              <p class="font-mono text-[11px] text-matrix-green capitalize mt-0.5">${item.category.replace('ecommerce', 'e-commerce').replace('assistant', 'assistant')}</p>
+            </div>
+          </div>
+          <p class="text-sm text-matrix-soft flex-grow mb-4">
+            ${blurb}
+          </p>
+          <a href="${href}" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center">
+            ${cta}
+          </a>
+        </article>
+      `;
+    }
+
+    function render() {
+      // Sort: popular first within full list, then alpha
+      const sorted = [...INTEGRATIONS].sort((a, b) => {
+        if (a.popular && !b.popular) return -1;
+        if (!a.popular && b.popular) return 1;
+        return a.name.localeCompare(b.name);
+      });
+      grid.innerHTML = sorted.map(cardHTML).join('');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const q = (searchInput.value || '').trim().toLowerCase();
+      const cards = grid.querySelectorAll('.integration-card');
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const name = card.getAttribute('data-name') || '';
+        const search = card.getAttribute('data-search') || name;
+        const cats = (card.getAttribute('data-categories') || '').split(/\s+/);
+        const matchCat = activeCategory === 'all' || cats.includes(activeCategory);
+        const matchSearch = !q || name.includes(q) || search.includes(q);
+        const show = matchCat && matchSearch;
+        card.classList.toggle('hidden-card', !show);
+        if (show) visible++;
+      });
+
+      resultCount.textContent = String(visible);
+      noResults.classList.toggle('hidden', visible > 0);
+      directoryHeading.textContent = categoryLabels[activeCategory] || 'All integrations';
+    }
+
+    // Category chips
+    document.querySelectorAll('.filter-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCategory = chip.getAttribute('data-category') || 'all';
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+
+    render();
+  
+    // ---- Theme toggle (light / dark) ----
+    (function initThemeToggle() {
+      var KEY = 'matrixly-theme';
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+      function applyTheme(theme) {
+        var dark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0B1220' : '#117ACA');
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+          btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+          btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        });
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTheme(isDark() ? 'light' : 'dark');
+        });
+      });
+      // Sync labels on load
+      applyTheme(isDark() ? 'dark' : 'light');
+    })();
+
+  </script>
+</body>
+</html>
