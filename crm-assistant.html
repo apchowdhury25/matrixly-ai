@@ -29,7 +29,9 @@
     html.dark { --ink:#F0F2F5; --soft:#A8B0B8; --border:#1E2A3A; --section-divider:rgba(148,163,184,.08); --bg:#0B0F14; --card:#151C26; --bg-muted:#1A222D; --nav-bg:rgba(11,15,20,.92); }
     html.dark header.border-b, html.dark footer.border-t, html.dark .border-matrix-border, html.dark .border-matrix-border\/40, html.dark .border-matrix-border\/50, html.dark .border-matrix-border\/80 { border-color: var(--section-divider) !important; }
     body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
-    .grid-bg { background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 48px 48px; }
+    .grid-bg {
+      background-image: none;
+    }
     .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
     .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); }
     .card-matrix { background: var(--card); border: 1px solid var(--border); }
