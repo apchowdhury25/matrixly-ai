@@ -34,6 +34,7 @@ const HTML_ALLOW = new Set([
   "book-wise.html",
   "invoice-forge.html",
   "content-forge.html",
+  "meet-wise.html",
   "Admin.html",
 ]);
 

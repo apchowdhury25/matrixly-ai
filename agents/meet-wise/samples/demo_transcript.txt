@@ -1,0 +1,20 @@
+Meeting: Matrixly Pilot Kickoff
+Platform: Zoom
+Date: 2026-07-20
+Participants: Alex Rivera (Matrixly), Jordan Lee (Acme Retail), Sam Patel (Acme Ops)
+
+Alex: Thanks everyone for joining. Goal today is to align on the pilot scope for Email Assistant and Shipping Assistant.
+
+Jordan: We need fewer WISMO tickets. Support is buried. If we can auto-draft status replies, that helps.
+
+Sam: ShipStation is our source of truth. Exceptions spike on Mondays. We also need CRM notes when a big shipper complains.
+
+Alex: Proposal — week 1 email triage + WISMO drafts with human approval. Week 2 exception scan. Pricing stays at Growth pilot terms we discussed; Jordan will confirm budget with finance by Friday.
+
+Jordan: Agreed. Decision: we start the two-week pilot next Monday. Owner for internal kickoff is Sam. Deadline July 28 for access credentials to ShipStation and shared inbox.
+
+Sam: I'll create the Salesforce opportunity "Matrixly Pilot - Q3" and add tasks for credential handoff.
+
+Alex: I'll send a recap and schedule the mid-pilot check-in for August 4. Follow-up: Jordan to introduce us to warehouse lead next week.
+
+Jordan: Sounds good. No legal blockers. Let's move.

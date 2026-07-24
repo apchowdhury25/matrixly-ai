@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeetWise Dashboard — Matrixly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0b1220; --card:#151c28; --border:#1e2a3a; --neon:#3b9fe0; --text:#f0f4f8; --muted:#9aa4b2; --ok:#34d399; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Open Sans",system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.25rem; border-bottom:1px solid var(--border); background:linear-gradient(180deg,#152536,#0f1724); position:sticky; top:0; z-index:5; }
+    h1 { font-size:1.1rem; margin:0; } h1 span { color:var(--neon); }
+    .sub { color:var(--muted); font-size:.8rem; margin-top:.2rem; }
+    .btn { background:linear-gradient(145deg,#117aca,#3b9fe0); color:#fff; border:none; border-radius:8px; padding:.55rem .9rem; font-weight:700; font-size:.8rem; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid var(--border); color:var(--muted); }
+    .btn.ok { background:#059669; } .btn.bad { background:#b91c1c; }
+    main { max-width:1200px; margin:0 auto; padding:1.25rem; display:grid; gap:1rem; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    @media (max-width:900px) { .grid2 { grid-template-columns:1fr; } }
+    .panel { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .panel h2 { margin:0; padding:.85rem 1rem; font-size:.95rem; border-bottom:1px solid var(--border); }
+    .body { padding:1rem; }
+    textarea, input { width:100%; background:#0b1220; border:1px solid var(--border); color:var(--text); border-radius:8px; padding:.7rem .8rem; font-family:inherit; font-size:.85rem; }
+    textarea { min-height:160px; resize:vertical; }
+    label { display:block; font-size:.75rem; color:var(--muted); font-weight:700; margin:.5rem 0 .25rem; }
+    pre.out { white-space:pre-wrap; font-size:.8rem; color:var(--muted); max-height:280px; overflow:auto; margin:0; background:#0b1220; border:1px solid var(--border); border-radius:8px; padding:.75rem; }
+    .stats { display:flex; flex-wrap:wrap; gap:.6rem; }
+    .stat { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.65rem .85rem; min-width:110px; }
+    .stat .l { font-size:.7rem; color:var(--muted); font-weight:600; }
+    .stat .v { color:var(--neon); font-weight:800; font-size:1.1rem; margin-top:.15rem; }
+    .muted { color:var(--muted); font-size:.8rem; }
+    .hidden { display:none !important; }
+    #login { max-width:420px; margin:12vh auto; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.5rem; }
+    table { width:100%; border-collapse:collapse; font-size:.8rem; }
+    th,td { text-align:left; padding:.5rem .4rem; border-bottom:1px solid var(--border); vertical-align:top; }
+    th { color:var(--muted); font-size:.7rem; text-transform:uppercase; }
+    .tag { display:inline-block; padding:.12rem .4rem; border-radius:999px; border:1px solid var(--border); color:var(--neon); font-size:.7rem; font-weight:700; }
+    .tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.75rem; }
+    .tab { border:1px solid var(--border); background:transparent; color:var(--muted); border-radius:999px; padding:.3rem .7rem; font-size:.75rem; font-weight:700; cursor:pointer; }
+    .tab.active { color:var(--neon); border-color:rgba(59,159,224,.45); background:rgba(59,159,224,.1); }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h1>MeetWise <span>Dashboard</span></h1>
+    <p class="muted">Enter <code>MEETWISE_API_KEY</code> (or widget key) to process meetings.</p>
+    <label for="apiKey">API key</label>
+    <input id="apiKey" type="password" placeholder="Key" autocomplete="off" />
+    <div style="margin-top:1rem"><button class="btn" id="loginBtn">Unlock</button></div>
+    <p id="loginErr" class="muted"></p>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <div>
+        <h1>Matrixly <span>MeetWise</span></h1>
+        <div class="sub">Summarize · actions · CRM · recap · HITL</div>
+      </div>
+      <div style="display:flex;gap:.5rem">
+        <button class="btn ghost" id="refreshBtn">Refresh</button>
+        <button class="btn ghost" id="logoutBtn">Log out</button>
+      </div>
+    </header>
+    <main>
+      <div class="stats" id="stats"></div>
+      <section class="panel">
+        <h2>1. Transcript input</h2>
+        <div class="body">
+          <label>Title (optional)</label>
+          <input id="title" placeholder="Pilot kickoff" />
+          <label>Platform</label>
+          <input id="platform" value="zoom" placeholder="zoom | teams | google | upload" />
+          <label>Transcript (Zoom / Teams / Meet export or paste)</label>
+          <textarea id="transcript" placeholder="Paste transcript…"></textarea>
+          <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.5rem">
+            <button class="btn" id="processBtn">Process meeting</button>
+            <button class="btn ghost" id="sampleBtn">Load sample</button>
+            <label class="btn ghost" style="display:inline-flex;align-items:center;cursor:pointer">
+              Upload file
+              <input type="file" id="fileInput" class="hidden" accept=".txt,.md,.vtt,.srt" />
+            </label>
+          </div>
+          <p id="statusMsg" class="muted" style="margin-top:.6rem"></p>
+        </div>
+      </section>
+
+      <div class="grid2">
+        <section class="panel">
+          <h2>2. Results</h2>
+          <div class="body">
+            <div class="tabs" id="tabs"></div>
+            <pre class="out" id="out">—</pre>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>3. HITL — CRM &amp; recap</h2>
+          <div class="body">
+            <table>
+              <thead><tr><th>ID</th><th>Meeting</th><th>Detail</th><th></th></tr></thead>
+              <tbody id="hitlBody"></tbody>
+            </table>
+            <p class="muted" style="margin-top:.75rem">Approve applies CRM JSON/CSV + logs recap email. Reject discards external writes.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <h2>Recent meetings</h2>
+        <div class="body" style="overflow-x:auto">
+          <table>
+            <thead><tr><th>ID</th><th>Title</th><th>Status</th><th>Actions</th><th>Flags</th></tr></thead>
+            <tbody id="mtgBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const API = location.origin;
+    const $ = (id) => document.getElementById(id);
+    let current = null;
+    let tab = "summary";
+
+    function key() { return sessionStorage.getItem("mw_key") || ""; }
+    function headers() {
+      const k = key();
+      return { "Content-Type": "application/json", "X-API-Key": k, "X-Widget-Key": k };
+    }
+    async function api(path, opts = {}) {
+      const res = await fetch(API + path, Object.assign({}, opts, { headers: Object.assign(headers(), opts.headers || {}) }));
+      if (res.status === 401) throw new Error("Unauthorized");
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.detail || res.statusText);
+      }
+      return res.json();
+    }
+    function showApp() { $("login").classList.add("hidden"); $("app").classList.remove("hidden"); refresh(); }
+
+    $("loginBtn").onclick = async () => {
+      const k = $("apiKey").value.trim();
+      if (!k) return;
+      sessionStorage.setItem("mw_key", k);
+      try { await api("/v1/admin/status"); $("loginErr").textContent = ""; showApp(); }
+      catch (e) {
+        try { await fetch(API + "/v1/health"); showApp(); }
+        catch { sessionStorage.removeItem("mw_key"); $("loginErr").textContent = e.message; }
+      }
+    };
+    $("logoutBtn").onclick = () => { sessionStorage.removeItem("mw_key"); location.reload(); };
+    $("refreshBtn").onclick = refresh;
+
+    $("sampleBtn").onclick = () => {
+      $("title").value = "Matrixly Pilot Kickoff";
+      $("platform").value = "zoom";
+      $("transcript").value = `Meeting: Matrixly Pilot Kickoff\nPlatform: Zoom\nAlex: We start a two-week pilot next Monday.\nJordan: Agreed. Decision confirmed.\nSam: I'll create Salesforce opportunity and tasks. Deadline July 28 for credentials.\nAlex: I'll send a recap and schedule mid-pilot check-in.`;
+    };
+
+    $("processBtn").onclick = async () => {
+      $("statusMsg").textContent = "Summarizing → actions → CRM → recap…";
+      try {
+        const m = await api("/v1/process", {
+          method: "POST",
+          body: JSON.stringify({
+            transcript: $("transcript").value,
+            title: $("title").value,
+            platform: $("platform").value || "upload",
+          }),
+        });
+        current = m;
+        $("statusMsg").textContent = `${m.id} · ${m.status} · ${m.action_items?.length||0} actions`;
+        renderTabs(); renderOut(); refresh();
+      } catch (e) { $("statusMsg").textContent = e.message; }
+    };
+
+    $("fileInput").onchange = async (ev) => {
+      const f = ev.target.files?.[0];
+      if (!f) return;
+      const fd = new FormData();
+      fd.append("file", f);
+      fd.append("title", $("title").value || f.name);
+      $("statusMsg").textContent = "Uploading…";
+      try {
+        const res = await fetch(API + "/v1/upload", { method: "POST", headers: { "X-API-Key": key(), "X-Widget-Key": key() }, body: fd });
+        const m = await res.json();
+        if (!res.ok) throw new Error(m.detail || res.statusText);
+        current = m;
+        $("transcript").value = m.transcript || "";
+        $("statusMsg").textContent = `${m.id} · ${m.status}`;
+        renderTabs(); renderOut(); refresh();
+      } catch (e) { $("statusMsg").textContent = e.message; }
+    };
+
+    function renderTabs() {
+      const tabs = ["summary", "actions", "crm", "recap", "flags"];
+      $("tabs").innerHTML = tabs.map(t => `<button class="tab ${t===tab?"active":""}" data-t="${t}">${t}</button>`).join("");
+      $("tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => { tab = b.dataset.t; renderTabs(); renderOut(); });
+    }
+    function renderOut() {
+      if (!current) { $("out").textContent = "—"; return; }
+      if (tab === "summary") {
+        $("out").textContent = `# ${current.title||""}\n\n${current.summary||""}\n\n## Decisions\n${(current.decisions||[]).map(d=>"- "+d).join("\n")}\n\n## Discussion\n${(current.discussion_points||[]).map(d=>"- "+d).join("\n")}`;
+      } else if (tab === "actions") {
+        $("out").textContent = (current.action_items||[]).map(a =>
+          `• ${a.description}\n  owner=${a.owner||"TBD"} due=${a.deadline||"TBD"} priority=${a.priority}${a.flagged?" ⚠":""}`
+        ).join("\n\n") || "—";
+      } else if (tab === "crm") {
+        $("out").textContent = JSON.stringify(current.crm_payload||{}, null, 2);
+      } else if (tab === "recap") {
+        $("out").textContent = `Subject: ${current.recap_subject||""}\n\n${current.recap_body||""}`;
+      } else {
+        $("out").textContent = (current.follow_ups||[]).map(f=>"• "+f).join("\n") || "No flags";
+      }
+    }
+
+    async function refresh() {
+      try {
+        const [status, hitl, meetings, usage] = await Promise.all([
+          api("/v1/admin/status"),
+          api("/v1/admin/hitl"),
+          api("/v1/meetings"),
+          api("/v1/admin/usage?days=30"),
+        ]);
+        $("stats").innerHTML = `
+          <div class="stat"><div class="l">Meetings</div><div class="v">${status.meetings??0}</div></div>
+          <div class="stat"><div class="l">Pending review</div><div class="v">${status.pending_review??0}</div></div>
+          <div class="stat"><div class="l">Grok</div><div class="v" style="font-size:.95rem">${status.grok?"ON":"rules"}</div></div>
+          <div class="stat"><div class="l">Est. cost 30d</div><div class="v">$${(usage.estimated_cost_usd??0).toFixed(2)}</div></div>`;
+        $("hitlBody").innerHTML = (hitl.items||[]).map(a => `<tr>
+          <td><code>${a.id}</code></td>
+          <td>${a.meeting_id||"—"}</td>
+          <td class="muted">${JSON.stringify(a.payload||{}).slice(0,90)}</td>
+          <td>
+            <button class="btn ok" data-a="${a.id}">Approve</button>
+            <button class="btn bad" data-r="${a.id}">Reject</button>
+          </td>
+        </tr>`).join("") || `<tr><td colspan="4" class="muted">No pending reviews</td></tr>`;
+        document.querySelectorAll("[data-a]").forEach(b => b.onclick = async () => { await api(`/v1/admin/hitl/${b.dataset.a}/approve`, { method:"POST", body:"{}" }); refresh(); });
+        document.querySelectorAll("[data-r]").forEach(b => b.onclick = async () => { await api(`/v1/admin/hitl/${b.dataset.r}/reject`, { method:"POST", body:"{}" }); refresh(); });
+        $("mtgBody").innerHTML = (meetings.items||[]).map(m => `<tr>
+          <td><code>${m.id}</code></td>
+          <td>${m.title||"—"}</td>
+          <td><span class="tag">${m.status}</span></td>
+          <td>${(m.action_items||[]).length}</td>
+          <td>${(m.follow_ups||[]).length}</td>
+        </tr>`).join("") || `<tr><td colspan="5" class="muted">No meetings yet</td></tr>`;
+      } catch (e) {
+        $("stats").innerHTML = `<div class="stat"><div class="l">Mode</div><div class="v" style="font-size:.9rem">process</div></div>`;
+      }
+    }
+
+    if (key()) fetch(API + "/v1/health").then(() => showApp()).catch(() => sessionStorage.removeItem("mw_key"));
+    renderTabs();
+  </script>
+</body>
+</html>

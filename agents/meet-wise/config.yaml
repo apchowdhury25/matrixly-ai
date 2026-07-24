@@ -1,0 +1,77 @@
+# Matrixly MeetWise — meeting capture & CRM mapping
+
+business:
+  name: "Matrixly Demo Co"
+  support_email: "meetings@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+
+meeting:
+  backend: upload  # upload | zoom | teams | google
+  default_duration_minutes: 30
+  max_transcript_chars: 80000
+
+# CRM field mapping (Salesforce-shaped local JSON/CSV)
+crm:
+  backend: local
+  opportunity_default_stage: "Qualification"
+  task_status: "Not Started"
+  task_priority: "Normal"
+  # Map speaker names / roles → CRM owner email
+  owner_map:
+    Alex: "alex@example.com"
+    Jordan: "jordan@example.com"
+    Sam: "sam@example.com"
+  # Keywords that map discussion to opportunity updates
+  opportunity_keywords:
+    - deal
+    - proposal
+    - contract
+    - pipeline
+    - close
+    - pricing
+
+summary:
+  include_decisions: true
+  include_discussion: true
+  include_risks: true
+  max_discussion_points: 8
+
+actions:
+  default_due_days: 3
+  require_owner: true
+  flag_missing_deadline: true
+
+hitl:
+  mode: external_only  # always | external_only | off
+  # CRM writes and outbound recap emails need approval when external_only
+  review_crm_writes: true
+  review_recap_email: true
+
+email:
+  backend: log  # log | smtp
+  subject_prefix: "[Meeting recap]"
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8793"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  process_per_minute: 20
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8793
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.2

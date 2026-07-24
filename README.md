@@ -18,6 +18,7 @@ A production-facing static website plus local agent runtimes for:
 | **BookWise** | Embeddable AI booking — availability, confirmations, reminders, calendar sync |
 | **InvoiceForge** | Invoice processing & AR — vision extract, validate, post, reminders, reports |
 | **ContentForge** | Content creation & repurposing — SEO blogs, social, newsletters, ads |
+| **MeetWise** | Meeting outcomes — summaries, actions, CRM, recap emails |
 
 ## Tech stack
 
@@ -96,7 +97,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── support-forge/         # FastAPI embeddable support agent + widget
 │   ├── book-wise/             # FastAPI embeddable booking agent + widget
 │   ├── invoice-forge/         # FastAPI invoice processing & AR agent + dashboard
-│   └── content-forge/         # FastAPI content creation & repurposing agent
+│   ├── content-forge/         # FastAPI content creation & repurposing agent
+│   └── meet-wise/             # FastAPI meeting capture & CRM/recap agent
 └── docs/                      # Optional internal notes (session archives gitignored)
 ```
 
@@ -152,6 +154,19 @@ python -m src.cli serve
 ```
 
 Product page: [content-forge.html](content-forge.html). Full setup: [agents/content-forge/README.md](agents/content-forge/README.md).
+
+### MeetWise (meeting outcomes)
+
+```bash
+cd agents/meet-wise
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [meet-wise.html](meet-wise.html). Full setup: [agents/meet-wise/README.md](agents/meet-wise/README.md).
 
 ## UI QA (developers)
 
