@@ -650,6 +650,166 @@
     @media (max-width: 767px) {
       .card-matrix:hover, .btn-primary:hover, .btn-secondary:hover { transform: none; }
     }
+
+    /* ========== Auth modal (Get Started Free) ========== */
+    .auth-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .auth-modal.hidden,
+    .auth-modal[hidden] { display: none !important; }
+    .auth-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 18, 32, 0.72);
+      backdrop-filter: blur(6px);
+    }
+    .auth-modal-panel {
+      position: relative;
+      width: min(420px, 100%);
+      max-height: min(90vh, 720px);
+      overflow-y: auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+    }
+    .auth-modal-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.85rem;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      background: transparent;
+      color: var(--soft);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
+    .auth-modal-close:hover { color: var(--ink); background: var(--bg-muted); }
+    .auth-logo {
+      width: 3.25rem;
+      height: 3.25rem;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      font-size: 1.5rem;
+      color: var(--brand-blue);
+    }
+    .auth-logo img { width: 2rem; height: 2rem; object-fit: contain; border-radius: 0.35rem; }
+    .auth-title {
+      text-align: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 0.4rem;
+    }
+    .auth-sub {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--soft);
+      line-height: 1.45;
+      margin: 0 0 1.25rem;
+    }
+    .auth-stack { display: flex; flex-direction: column; gap: 0.65rem; }
+    .auth-provider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 0.85rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .auth-provider:hover {
+      border-color: var(--brand-blue);
+      background: var(--bg-muted);
+    }
+    .auth-provider-icon {
+      display: inline-flex;
+      width: 1.25rem;
+      height: 1.25rem;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .auth-footer-line {
+      text-align: center;
+      margin: 1.25rem 0 0;
+      font-size: 0.875rem;
+      color: var(--soft);
+    }
+    .auth-link {
+      background: none;
+      border: none;
+      color: var(--brand-blue);
+      font-weight: 700;
+      cursor: pointer;
+      font-size: inherit;
+      padding: 0;
+      text-decoration: none;
+    }
+    .auth-link:hover { text-decoration: underline; }
+    .auth-back {
+      background: none;
+      border: none;
+      color: var(--soft);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      margin: 0 0 0.75rem;
+    }
+    .auth-back:hover { color: var(--brand-blue); }
+    .auth-form { display: flex; flex-direction: column; gap: 0.35rem; text-align: left; }
+    .auth-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--soft);
+      margin-top: 0.5rem;
+    }
+    .auth-input {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+    .auth-input:focus {
+      outline: none;
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-blue) 18%, transparent);
+    }
+    .auth-tip {
+      margin-top: 0.85rem;
+      font-size: 0.75rem;
+      color: var(--soft);
+      text-align: center;
+      line-height: 1.4;
+    }
+    .auth-view.hidden { display: none !important; }
+    body.auth-open { overflow: hidden; }
   </style>
 
   <!-- JSON-LD Schema -->
@@ -704,7 +864,7 @@
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
               </svg>
             </button>
-            <a href="#final-cta" class="btn-primary rounded-lg">Get Started</a>
+            <button type="button" class="btn-primary rounded-lg" data-open-auth="signup">Get Started</button>
           </div>
           <div class="nav-mobile">
             <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
@@ -730,7 +890,7 @@
           <a href="products.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Products</a>
           <a href="integrations.html" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
           <a href="#pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
-          <a href="#final-cta" class="btn-primary block text-center mt-3 px-5 py-3">Get Started</a>
+          <button type="button" class="btn-primary block w-full text-center mt-3 px-5 py-3" data-open-auth="signup">Get Started</button>
         </div>
       </div>
     </nav>
@@ -1534,7 +1694,7 @@
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Community support</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Basic analytics</li>
             </ul>
-            <a href="#final-cta" class="btn-secondary w-full text-center py-3 rounded-lg text-sm">Get Started Free</a>
+            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Get Started Free</button>
           </div>
 
           <!-- Starter -->
@@ -1705,29 +1865,125 @@
           Join forward-thinking SMBs automating marketing, sales, and ops with SEO-powered agentic AI. Free to explore. No credit card required.
         </p>
 
-        <!-- Email signup → mailto Matrixly interest -->
-        <form id="signup-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-6" action="#" method="get">
-          <label for="email" class="sr-only">Work email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="you@company.com"
-            autocomplete="email"
-            class="flex-1 px-5 py-3.5 rounded-xl bg-matrix-card border border-matrix-border text-matrix-cream placeholder:text-matrix-soft/60 focus:outline-none focus:border-matrix-green focus: transition-all text-sm"
-          />
-          <button type="submit" class="btn-primary px-8 py-3.5 rounded-xl text-sm whitespace-nowrap">
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+          <button type="button" class="btn-primary px-10 py-3.5 rounded-xl text-sm whitespace-nowrap" data-open-auth="signup">
             Get Started Free
           </button>
-        </form>
-        <p id="form-message" class="text-sm text-matrix-green hidden mb-4 font-mono" role="status"></p>
+        </div>
         <p class="text-xs text-matrix-soft">
           Or <a href="agents.html" class="text-matrix-green hover:underline">browse agents</a> first — no commitment.
         </p>
       </div>
     </section>
   </main>
+
+  <!-- ========== Auth modal (Lindy-style Get started) ========== -->
+  <div id="auth-modal" class="auth-modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" hidden>
+    <div class="auth-modal-backdrop" data-auth-close></div>
+    <div class="auth-modal-panel" role="document">
+      <button type="button" class="auth-modal-close" data-auth-close aria-label="Close">&times;</button>
+
+      <!-- Panel: choose method -->
+      <div class="auth-view" data-auth-view="chooser" id="auth-view-chooser">
+        <div class="auth-logo" aria-hidden="true">
+          <img src="assets/matrixly-logo.png" alt="" width="48" height="48" />
+        </div>
+        <h2 id="auth-modal-title" class="auth-title">Get started with Matrixly</h2>
+        <p class="auth-sub">Create a free account to deploy agents for marketing, sales, and ops.</p>
+        <div class="auth-stack">
+          <button type="button" class="auth-provider" data-auth-provider="google">
+            <span class="auth-provider-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.5-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.3l-6.3-5.3C29.3 35.1 26.8 36 24 36c-5.3 0-9.7-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.1 5.4l.1.1 6.3 5.3C39 37.3 44 33 44 24c0-1.3-.1-2.5-.4-3.5z"/></svg>
+            </span>
+            Continue with Google
+          </button>
+          <button type="button" class="auth-provider" data-auth-provider="microsoft">
+            <span class="auth-provider-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 23 23"><path fill="#f35325" d="M1 1h10v10H1z"/><path fill="#81bc06" d="M12 1h10v10H12z"/><path fill="#05a6f0" d="M1 12h10v10H1z"/><path fill="#ffba08" d="M12 12h10v10H12z"/></svg>
+            </span>
+            Continue with Microsoft
+          </button>
+          <button type="button" class="auth-provider" data-auth-provider="sso">
+            <span class="auth-provider-icon" aria-hidden="true">🔗</span>
+            Continue with SSO
+          </button>
+          <button type="button" class="auth-provider" data-auth-provider="email">
+            <span class="auth-provider-icon" aria-hidden="true">✉</span>
+            Continue with email
+          </button>
+        </div>
+        <p class="auth-footer-line">
+          Already have an account?
+          <button type="button" class="auth-link" data-auth-provider="login">Log in</button>
+        </p>
+      </div>
+
+      <!-- Panel: email signup -->
+      <div class="auth-view hidden" data-auth-view="email" id="auth-view-email">
+        <button type="button" class="auth-back" data-auth-back>&larr; Back</button>
+        <h2 class="auth-title">Continue with email</h2>
+        <p class="auth-sub">We’ll create your free Matrixly workspace.</p>
+        <form id="auth-email-form" class="auth-form">
+          <label class="auth-label" for="auth-email">Work email</label>
+          <input class="auth-input" type="email" id="auth-email" name="email" required placeholder="you@company.com" autocomplete="email" />
+          <label class="auth-label" for="auth-name">Full name</label>
+          <input class="auth-input" type="text" id="auth-name" name="name" required placeholder="Your name" autocomplete="name" />
+          <label class="auth-label" for="auth-password">Password</label>
+          <input class="auth-input" type="password" id="auth-password" name="password" required minlength="8" placeholder="Min. 8 characters" autocomplete="new-password" />
+          <button type="submit" class="btn-primary w-full py-3 rounded-xl text-sm mt-2">Create free account</button>
+        </form>
+        <p class="auth-footer-line">Already have an account? <button type="button" class="auth-link" data-auth-provider="login">Log in</button></p>
+      </div>
+
+      <!-- Panel: login -->
+      <div class="auth-view hidden" data-auth-view="login" id="auth-view-login">
+        <button type="button" class="auth-back" data-auth-back>&larr; Back</button>
+        <h2 class="auth-title">Log in to Matrixly</h2>
+        <p class="auth-sub">Welcome back. Continue where you left off.</p>
+        <form id="auth-login-form" class="auth-form">
+          <label class="auth-label" for="login-email">Email</label>
+          <input class="auth-input" type="email" id="login-email" name="email" required placeholder="you@company.com" autocomplete="email" />
+          <label class="auth-label" for="login-password">Password</label>
+          <input class="auth-input" type="password" id="login-password" name="password" required placeholder="Your password" autocomplete="current-password" />
+          <button type="submit" class="btn-primary w-full py-3 rounded-xl text-sm mt-2">Log in</button>
+        </form>
+        <p class="auth-footer-line">New here? <button type="button" class="auth-link" data-auth-provider="signup">Get started free</button></p>
+      </div>
+
+      <!-- Panel: SSO -->
+      <div class="auth-view hidden" data-auth-view="sso" id="auth-view-sso">
+        <button type="button" class="auth-back" data-auth-back>&larr; Back</button>
+        <h2 class="auth-title">Continue with SSO</h2>
+        <p class="auth-sub">Enter your work email to use your company’s single sign-on.</p>
+        <form id="auth-sso-form" class="auth-form">
+          <label class="auth-label" for="sso-email">Work email</label>
+          <input class="auth-input" type="email" id="sso-email" name="email" required placeholder="you@company.com" autocomplete="email" />
+          <button type="submit" class="btn-primary w-full py-3 rounded-xl text-sm mt-2">Continue with SSO</button>
+        </form>
+      </div>
+
+      <!-- Panel: OAuth placeholder (Google / Microsoft) -->
+      <div class="auth-view hidden" data-auth-view="oauth" id="auth-view-oauth">
+        <button type="button" class="auth-back" data-auth-back>&larr; Back</button>
+        <div class="auth-logo" aria-hidden="true">
+          <img src="assets/matrixly-logo.png" alt="" width="48" height="48" />
+        </div>
+        <h2 class="auth-title" id="oauth-title">Continue with Google</h2>
+        <p class="auth-sub" id="oauth-sub">You’ll be redirected to complete secure sign-in, then return to your Matrixly workspace.</p>
+        <button type="button" class="btn-primary w-full py-3 rounded-xl text-sm" id="oauth-continue">Continue</button>
+        <p class="auth-tip" id="oauth-tip">Demo mode: OAuth providers will be connected on your Matrixly backend.</p>
+      </div>
+
+      <!-- Panel: success -->
+      <div class="auth-view hidden" data-auth-view="success" id="auth-view-success">
+        <div class="auth-logo" aria-hidden="true">✓</div>
+        <h2 class="auth-title">You’re in</h2>
+        <p class="auth-sub" id="auth-success-msg">Welcome to Matrixly. Explore agents and deploy your first workflow.</p>
+        <a href="agents.html" class="btn-primary w-full py-3 rounded-xl text-sm inline-flex items-center justify-center">Browse agents</a>
+        <button type="button" class="auth-link mt-4" data-auth-close>Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== 10. FOOTER ========== -->
   <footer class="relative z-10 border-t border-matrix-border/50 bg-matrix-void pt-16 pb-8 grid-bg">
@@ -1858,43 +2114,168 @@
       els.forEach(el => io.observe(el));
     })();
 
-    // ---- Signup form → mailto anwar@matrixly.world ----
-    (function initForm() {
-      const form = document.getElementById('signup-form');
-      const msg = document.getElementById('form-message');
-      if (!form) return;
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = form.email.value.trim();
-        if (!email) return;
+    // ---- Auth modal (Get Started Free — Lindy-style chooser) ----
+    (function initAuthModal() {
+      var modal = document.getElementById('auth-modal');
+      if (!modal) return;
 
-        const to = 'anwar@matrixly.world';
-        const subject = 'New client interest in Matrixly';
-        const body = [
-          'A prospective client is interested in Matrixly.',
-          '',
-          'Client email: ' + email,
-          '',
-          'Please follow up about getting started with Matrixly agentic AI.',
-          '',
-          '— Sent from matrixly.world Get Started Free'
-        ].join('\n');
+      var views = modal.querySelectorAll('[data-auth-view]');
+      var oauthProvider = 'google';
 
-        const href =
-          'mailto:' + to +
-          '?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent(body);
+      function showView(name) {
+        views.forEach(function (v) {
+          var match = v.getAttribute('data-auth-view') === name;
+          v.classList.toggle('hidden', !match);
+        });
+      }
 
-        window.location.href = href;
+      function openModal(mode) {
+        modal.classList.remove('hidden');
+        modal.removeAttribute('hidden');
+        document.body.classList.add('auth-open');
+        if (mode === 'login') showView('login');
+        else showView('chooser');
+        // focus first control
+        setTimeout(function () {
+          var focusEl = modal.querySelector('[data-auth-view]:not(.hidden) button, [data-auth-view]:not(.hidden) input');
+          if (focusEl) focusEl.focus();
+        }, 50);
+      }
 
-        if (msg) {
-          msg.textContent = '✓ Opening your email app to contact Matrixly…';
-          msg.classList.remove('hidden');
-          setTimeout(function () { msg.classList.add('hidden'); }, 6000);
-        }
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.setAttribute('hidden', '');
+        document.body.classList.remove('auth-open');
+        showView('chooser');
+      }
+
+      document.querySelectorAll('[data-open-auth]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var mode = btn.getAttribute('data-open-auth') || 'signup';
+          openModal(mode === 'login' ? 'login' : 'signup');
+        });
       });
+
+      modal.querySelectorAll('[data-auth-close]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+
+      modal.querySelectorAll('[data-auth-back]').forEach(function (el) {
+        el.addEventListener('click', function () { showView('chooser'); });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+
+      modal.querySelectorAll('[data-auth-provider]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var p = btn.getAttribute('data-auth-provider');
+          if (p === 'google' || p === 'microsoft') {
+            oauthProvider = p;
+            var title = document.getElementById('oauth-title');
+            var sub = document.getElementById('oauth-sub');
+            if (title) title.textContent = p === 'google' ? 'Continue with Google' : 'Continue with Microsoft';
+            if (sub) {
+              sub.textContent = p === 'google'
+                ? 'Use your Google account to create or access your Matrixly workspace.'
+                : 'Use your Microsoft work or school account to continue.';
+            }
+            showView('oauth');
+          } else if (p === 'email') {
+            showView('email');
+          } else if (p === 'sso') {
+            showView('sso');
+          } else if (p === 'login') {
+            showView('login');
+          } else if (p === 'signup') {
+            showView('chooser');
+          }
+        });
+      });
+
+      var oauthBtn = document.getElementById('oauth-continue');
+      if (oauthBtn) {
+        oauthBtn.addEventListener('click', function () {
+          // Demo: no live OAuth yet — show success and store intent
+          try {
+            localStorage.setItem('matrixly-auth-intent', JSON.stringify({
+              provider: oauthProvider,
+              at: new Date().toISOString()
+            }));
+          } catch (err) {}
+          var msg = document.getElementById('auth-success-msg');
+          if (msg) {
+            msg.textContent = oauthProvider === 'microsoft'
+              ? 'Microsoft sign-in is ready to connect on the Matrixly backend. Explore agents while we finish setup.'
+              : 'Google sign-in is ready to connect on the Matrixly backend. Explore agents while we finish setup.';
+          }
+          showView('success');
+        });
+      }
+
+      function finishEmailAuth(kind, email) {
+        try {
+          localStorage.setItem('matrixly-auth-intent', JSON.stringify({
+            provider: kind,
+            email: email,
+            at: new Date().toISOString()
+          }));
+        } catch (err) {}
+        var msg = document.getElementById('auth-success-msg');
+        if (msg) {
+          msg.textContent = kind === 'login'
+            ? 'Welcome back' + (email ? ', ' + email : '') + '. Browse agents to continue.'
+            : 'Account started for ' + email + '. Browse agents to deploy your first workflow.';
+        }
+        showView('success');
+      }
+
+      var emailForm = document.getElementById('auth-email-form');
+      if (emailForm) {
+        emailForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = (document.getElementById('auth-email') || {}).value || '';
+          email = email.trim();
+          if (!email) return;
+          finishEmailAuth('email', email);
+        });
+      }
+
+      var loginForm = document.getElementById('auth-login-form');
+      if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = (document.getElementById('login-email') || {}).value || '';
+          email = email.trim();
+          if (!email) return;
+          finishEmailAuth('login', email);
+        });
+      }
+
+      var ssoForm = document.getElementById('auth-sso-form');
+      if (ssoForm) {
+        ssoForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = (document.getElementById('sso-email') || {}).value || '';
+          email = email.trim();
+          if (!email) return;
+          finishEmailAuth('sso', email);
+        });
+      }
+
+      // Deep-link support: #final-cta or #get-started opens signup chooser
+      function maybeOpenFromHash() {
+        var h = (location.hash || '').toLowerCase();
+        if (h === '#final-cta' || h === '#get-started' || h === '#signup') {
+          openModal('signup');
+        }
+        if (h === '#login') openModal('login');
+      }
+      window.addEventListener('hashchange', maybeOpenFromHash);
+      // If user lands on final-cta, don't auto-open — only explicit auth buttons.
     })();
-  
+
     // ---- Theme toggle (light / dark) ----
     (function initThemeToggle() {
       var KEY = 'matrixly-theme';
