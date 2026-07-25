@@ -61,11 +61,13 @@ jobs:
       - name: Compile agent sources
         run: |
           set -euo pipefail
-          for agent in email-assistant lead-qualifier crm-assistant shipping-assistant; do
-            echo "agents/${agent}"
-            python -m pip install --upgrade pip -q
-            pip install -r "agents/${agent}/requirements.txt" -q
-            python -m compileall -q "agents/${agent}/src"
+          python -m pip install --upgrade pip -q
+          for agent in email-assistant lead-qualifier crm-assistant shipping-assistant support-forge book-wise invoice-forge content-forge meet-wise social-forge pipeline-forge doc-forge starter-pack etf-analyzer; do
+            if [ -d "agents/${agent}/src" ]; then
+              echo "agents/${agent}"
+              pip install -r "agents/${agent}/requirements.txt" -q
+              python -m compileall -q "agents/${agent}/src"
+            fi
           done
 
   # ---------------------------------------------------------------------------
@@ -94,11 +96,20 @@ jobs:
       - name: Verify publish tree
         run: |
           set -euo pipefail
+          # Clean URL architecture: folder/index.html only (except root index.html)
           test -f dist/index.html
-          test -f dist/agents.html
+          test -f dist/agents/index.html
+          test -f dist/products/index.html
           test -f dist/.htaccess
-          test ! -d dist/agents
+          test -f dist/starter-pack/index.html
+          test -f dist/etf-analyzer/index.html
+          # Must not ship flat legacy pages or secrets
+          test ! -f dist/agents.html
+          test ! -f dist/Admin.html
           test ! -f dist/.env
+          # Must not ship Python agent packages (only marketing agents/index.html)
+          test ! -d dist/agents/support-forge
+          test ! -d dist/agents/book-wise
           echo "Publish tree:"
           find dist -type f | sort
 
@@ -188,8 +199,8 @@ jobs:
             echo "|-------|-------|"
             echo "| Commit | \`${{ github.sha }}\` |"
             echo "| Branch published | \`deploy\` |"
-            echo "| Site | https://matrixly.ai |"
+            echo "| Site | https://matrixly.world |"
             echo "| Trigger | \`${{ github.event_name }}\` |"
             echo ""
-            echo "Hostinger: point Git deployment at the **deploy** branch."
+            echo "Hostinger: point Git deployment at the **deploy** branch (clean folder URLs)."
           } >> "$GITHUB_STEP_SUMMARY"
