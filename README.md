@@ -22,6 +22,7 @@ A production-facing static website plus local agent runtimes for:
 | **SocialForge** | Social content & engagement — posts, schedule, inbox, insights |
 | **PipelineForge** | Pipeline scoring & prioritization — fit, risk, CRM, health |
 | **DocForge** | Business documents — proposals, quotes, contracts, reports |
+| **Starter Pack** | SupportForge + BookWise + InvoiceForge + unified dashboard |
 
 ## Tech stack
 
@@ -107,6 +108,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── social-forge/index.html
 ├── pipeline-forge/index.html
 ├── doc-forge/index.html
+├── starter-pack/index.html
 ├── admin/index.html           # /admin (QA console)
 ├── assets/
 ├── agents/                    # Python agent backends (not published to Hostinger)
@@ -121,7 +123,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── meet-wise/
 │   ├── social-forge/
 │   ├── pipeline-forge/
-│   └── doc-forge/
+│   ├── doc-forge/
+│   └── starter-pack/          # Unified gateway + dashboard (port 8800)
 └── docs/
 ```
 
@@ -229,6 +232,21 @@ python -m src.cli serve
 ```
 
 Product page: [/doc-forge](doc-forge/). Full setup: [agents/doc-forge/README.md](agents/doc-forge/README.md).
+
+### Starter Pack (Support + Book + Invoice + dashboard)
+
+```bash
+cd agents/starter-pack
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+# Also run support-forge :8787, book-wise :8790, invoice-forge :8791
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [/starter-pack](starter-pack/). Full setup: [agents/starter-pack/README.md](agents/starter-pack/README.md).  
+Docker: `cd agents/starter-pack && docker compose up --build`.
 
 ## UI QA (developers)
 

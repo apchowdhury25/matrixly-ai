@@ -41,6 +41,7 @@ const SITE_PAGES = [
   "social-forge/index.html",
   "pipeline-forge/index.html",
   "doc-forge/index.html",
+  "starter-pack/index.html",
   "admin/index.html",
 ];
 

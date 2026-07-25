@@ -1,0 +1,63 @@
+# Matrixly Starter Pack — SupportForge + BookWise + InvoiceForge + Dashboard
+# From agents/starter-pack:
+#   docker compose up --build
+#
+# Dashboard: http://localhost:8800
+# Support:   http://localhost:8787
+# BookWise:  http://localhost:8790
+# Invoice:   http://localhost:8791
+
+services:
+  support-forge:
+    build:
+      context: ../support-forge
+    ports:
+      - "8787:8787"
+    env_file:
+      - ../support-forge/.env
+    volumes:
+      - ../support-forge/data:/app/data
+      - ../support-forge/knowledge:/app/knowledge
+    restart: unless-stopped
+
+  book-wise:
+    build:
+      context: ../book-wise
+    ports:
+      - "8790:8790"
+    env_file:
+      - ../book-wise/.env
+    volumes:
+      - ../book-wise/data:/app/data
+    restart: unless-stopped
+
+  invoice-forge:
+    build:
+      context: ../invoice-forge
+    ports:
+      - "8791:8791"
+    env_file:
+      - ../invoice-forge/.env
+    volumes:
+      - ../invoice-forge/data:/app/data
+    restart: unless-stopped
+
+  starter-pack:
+    build:
+      context: .
+    ports:
+      - "8800:8800"
+    env_file:
+      - .env
+    environment:
+      SUPPORTFORGE_URL: http://support-forge:8787
+      BOOKWISE_URL: http://book-wise:8790
+      INVOICEFORGE_URL: http://invoice-forge:8791
+      LOCAL_DATA_FALLBACK: "false"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - support-forge
+      - book-wise
+      - invoice-forge
+    restart: unless-stopped

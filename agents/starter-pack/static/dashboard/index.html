@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrixly Starter Pack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f14; --card: #151c26; --border: #1e2a3a; --ink: #f0f2f5; --soft: #a8b0b8;
+      --blue: #117aca; --blue2: #0b5cab; --ok: #3dd68c; --warn: #f5a524; --bad: #ff7b7b; --muted: #1a222d;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Open Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+    header {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between;
+      padding: .9rem 1.25rem; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 20; background: rgba(11,15,20,.94); backdrop-filter: blur(10px);
+    }
+    .brand { display: flex; align-items: center; gap: .65rem; }
+    .brand h1 { margin: 0; font-size: 1.05rem; font-weight: 800; }
+    .brand h1 span { color: var(--blue); }
+    .badge { font-size: .7rem; font-weight: 700; padding: .2rem .55rem; border-radius: 999px; background: rgba(17,122,202,.15); color: var(--blue); }
+    .tabs { display: flex; gap: .35rem; flex-wrap: wrap; }
+    .tab {
+      border: 1px solid var(--border); background: transparent; color: var(--soft);
+      padding: .4rem .75rem; border-radius: 999px; font-size: .8rem; font-weight: 700; cursor: pointer;
+    }
+    .tab.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+    main { max-width: 1180px; margin: 0 auto; padding: 1.25rem; }
+    .keys { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center; }
+    .keys input {
+      background: #0f141c; border: 1px solid var(--border); color: var(--ink);
+      border-radius: 8px; padding: .5rem .7rem; font-size: .8rem; min-width: 200px;
+    }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 900px) {
+      .g3 { grid-template-columns: repeat(3, 1fr); }
+      .g4 { grid-template-columns: repeat(4, 1fr); }
+      .g2 { grid-template-columns: 1.2fr 1fr; }
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem;
+    }
+    .metric { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
+    .muted { color: var(--soft); font-size: .85rem; }
+    .pill {
+      display: inline-block; font-size: .68rem; font-weight: 700; padding: .15rem .5rem;
+      border-radius: 999px; background: rgba(17,122,202,.15); color: var(--blue);
+    }
+    .pill.ok { background: rgba(61,214,140,.12); color: var(--ok); }
+    .pill.warn { background: rgba(245,165,36,.15); color: var(--warn); }
+    .pill.bad { background: rgba(255,123,123,.12); color: var(--bad); }
+    .pill.off { background: rgba(168,176,184,.12); color: var(--soft); }
+    .btn {
+      border: 0; border-radius: 8px; padding: .5rem .85rem; font-weight: 700; cursor: pointer; font-size: .82rem;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue2); }
+    .btn-ghost { background: transparent; color: var(--soft); border: 1px solid var(--border); }
+    .row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+    .agent-head { display: flex; justify-content: space-between; gap: .75rem; align-items: flex-start; margin-bottom: .65rem; }
+    .tile {
+      width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; font-weight: 800; background: rgba(17,122,202,.12); color: var(--blue); letter-spacing: .04em;
+    }
+    .item { border-bottom: 1px solid var(--border); padding: .65rem 0; }
+    .item:last-child { border-bottom: 0; }
+    label { display: block; font-size: .72rem; color: var(--soft); font-weight: 700; margin: 0 0 .3rem; }
+    input, select, textarea {
+      width: 100%; background: #0f141c; border: 1px solid var(--border); color: var(--ink);
+      border-radius: 8px; padding: .55rem .7rem; font: inherit;
+    }
+    textarea { min-height: 70px; resize: vertical; }
+    pre.snip {
+      white-space: pre-wrap; font-size: .75rem; line-height: 1.45; background: #0f141c;
+      border: 1px solid var(--border); border-radius: 8px; padding: .75rem; overflow: auto;
+    }
+    #toast {
+      position: fixed; bottom: 1rem; right: 1rem; background: #1a2433; border: 1px solid var(--border);
+      padding: .65rem .9rem; border-radius: 8px; display: none; max-width: 340px; font-size: .85rem; z-index: 50;
+    }
+    #toast.show { display: block; }
+    h2 { margin: 0 0 .75rem; font-size: 1rem; }
+    a.link { color: var(--blue); text-decoration: none; font-weight: 600; font-size: .82rem; }
+    a.link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="tile">PACK</div>
+      <div>
+        <h1>Matrixly <span>Starter Pack</span></h1>
+        <div class="muted" style="font-size:.75rem">Support · Bookings · Invoices</div>
+      </div>
+      <span class="badge" id="packVer">v1.0</span>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="agents">Agents</button>
+      <button class="tab" data-tab="activity">Activity</button>
+      <button class="tab" data-tab="analytics">Analytics</button>
+      <button class="tab" data-tab="config">Connections</button>
+      <button class="tab" data-tab="embed">Embed</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="keys">
+      <input id="apiKey" placeholder="Pack admin API key" />
+      <button class="btn btn-primary" id="btnRefresh">Refresh</button>
+      <span class="muted" id="health">…</span>
+    </div>
+
+    <section id="overview" class="panel active">
+      <div class="grid g4" style="margin-bottom:1rem" id="kpiRow"></div>
+      <div class="grid g3" id="agentCards"></div>
+    </section>
+
+    <section id="agents" class="panel">
+      <div class="grid g3" id="agentPanels"></div>
+    </section>
+
+    <section id="activity" class="panel">
+      <div class="card" id="activityOut"><p class="muted">Loading activity…</p></div>
+    </section>
+
+    <section id="analytics" class="panel">
+      <div class="grid g2">
+        <div class="card" id="analyticsOut"></div>
+        <div class="card">
+          <h2>What this week means</h2>
+          <p class="muted">Counts come from live agent APIs when online, or from each agent’s local data folder (audit, tickets, bookings, invoices) for offline demos.</p>
+          <ul class="muted" style="line-height:1.7">
+            <li><strong>Tickets</strong> — SupportForge tickets / sessions</li>
+            <li><strong>Appointments</strong> — BookWise bookings</li>
+            <li><strong>Invoices</strong> — InvoiceForge processed files</li>
+            <li><strong>HITL</strong> — pending human approvals across pack</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="config" class="panel">
+      <div class="grid g2">
+        <div class="card">
+          <h2>Business tool connections</h2>
+          <p class="muted" style="margin-top:0">Store connection labels for your team. Secrets should live in each agent’s <code>.env</code> on the server — never paste production passwords into the browser.</p>
+          <div style="margin-top:.85rem">
+            <label>Gmail / IMAP notes</label>
+            <textarea id="connGmail" placeholder="support@company.com · IMAP host · app password in SUPPORTFORGE .env"></textarea>
+          </div>
+          <div style="margin-top:.65rem">
+            <label>Calendar (Google / Outlook)</label>
+            <textarea id="connCal" placeholder="BOOKWISE calendar backend + credentials path"></textarea>
+          </div>
+          <div style="margin-top:.65rem">
+            <label>QuickBooks / Xero / CSV</label>
+            <textarea id="connAcct" placeholder="INVOICEFORGE accounting backend"></textarea>
+          </div>
+          <div style="margin-top:.65rem">
+            <label>Knowledge base</label>
+            <textarea id="connKb" placeholder="support-forge/knowledge or Notion DB id"></textarea>
+          </div>
+          <div class="row" style="margin-top:.85rem">
+            <button class="btn btn-primary" id="btnSaveConn">Save connection notes</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Security & privacy</h2>
+          <ul class="muted" style="line-height:1.75;padding-left:1.1rem">
+            <li>Pack API key protects this dashboard (header <code>X-API-Key</code>).</li>
+            <li>Each agent has its own API/widget keys — rotate for production.</li>
+            <li>HITL gates block external sends, calendar writes, and accounting posts by default.</li>
+            <li>Audit logs are append-only JSONL per agent + pack-level events.</li>
+            <li>Prefer TLS reverse proxy (Caddy/nginx) and private network between containers.</li>
+          </ul>
+          <p class="muted" style="margin-top:1rem">Runtime URLs are set in <code>agents/starter-pack/.env</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="embed" class="panel">
+      <div class="grid g2" id="embedOut"></div>
+    </section>
+  </main>
+  <div id="toast"></div>
+
+  <script>
+    const API = (new URLSearchParams(location.search).get('api')) || (location.origin.includes('8800') ? location.origin : 'http://127.0.0.1:8800');
+    const $ = (id) => document.getElementById(id);
+    const toast = (m) => { const t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2800); };
+    const esc = (s) => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    function headers() {
+      const h = { 'Content-Type': 'application/json', 'X-API-Key': $('apiKey').value || localStorage.getItem('sp_api') || 'change-me-admin-key' };
+      localStorage.setItem('sp_api', h['X-API-Key']);
+      return h;
+    }
+
+    document.querySelectorAll('.tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach((p) => p.classList.remove('active'));
+        btn.classList.add('active');
+        $(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    async function load() {
+      try {
+        const [ov, emb, set] = await Promise.all([
+          fetch(API + '/v1/overview', { headers: headers() }).then((r) => r.json()),
+          fetch(API + '/v1/embed-snippets', { headers: headers() }).then((r) => r.json()),
+          fetch(API + '/v1/settings', { headers: headers() }).then((r) => r.json()),
+        ]);
+        renderOverview(ov);
+        renderAgents(ov);
+        renderActivity(ov.activity || []);
+        renderAnalytics(ov.analytics || {});
+        renderEmbed(emb || {});
+        fillConnections(set || {});
+        $('packVer').textContent = 'v' + (ov.version || '1.0');
+        $('health').textContent = `online · ${ov.analytics?.agents_online || 0}/${ov.analytics?.agents_enabled || 0} agents · HITL ${ov.pending_hitl || 0}`;
+      } catch (e) {
+        $('health').textContent = 'API offline — start pack on :8800';
+        toast(String(e.message || e));
+      }
+    }
+
+    function statePill(a) {
+      if (!a.enabled) return '<span class="pill off">disabled</span>';
+      if (a.online) return '<span class="pill ok">online</span>';
+      return '<span class="pill warn">offline / local data</span>';
+    }
+
+    function renderOverview(ov) {
+      const an = ov.analytics || {};
+      $('kpiRow').innerHTML = [
+        ['Agents online', `${an.agents_online || 0} / ${an.agents_enabled || 0}`],
+        ['Tickets handled', an.tickets_handled || 0],
+        ['Appointments', an.appointments_booked || 0],
+        ['Invoices', an.invoices_processed || 0],
+      ].map(([l,v]) => `<div class="card"><div class="muted">${esc(l)}</div><div class="metric">${esc(v)}</div></div>`).join('');
+
+      $('agentCards').innerHTML = (ov.agents || []).map((a) => `
+        <div class="card">
+          <div class="agent-head">
+            <div class="row">
+              <div class="tile">${esc(a.tile || a.id.slice(0,4).toUpperCase())}</div>
+              <div>
+                <strong>${esc(a.name)}</strong>
+                <div class="muted" style="font-size:.78rem">${esc(a.category)}</div>
+              </div>
+            </div>
+            ${statePill(a)}
+          </div>
+          <p class="muted" style="min-height:2.6rem">${esc(a.description)}</p>
+          <div class="muted" style="margin:.5rem 0">HITL pending: <strong>${a.metrics?.pending_hitl ?? 0}</strong></div>
+          <div class="row">
+            <button class="btn btn-ghost" data-toggle="${a.id}" data-on="${a.enabled ? '0' : '1'}">${a.enabled ? 'Disable' : 'Enable'}</button>
+            ${a.panel_url ? `<a class="link" href="${esc(a.panel_url)}" target="_blank" rel="noopener">Open panel →</a>` : ''}
+          </div>
+        </div>`).join('');
+
+      $('agentCards').querySelectorAll('[data-toggle]').forEach((b) => {
+        b.onclick = () => toggleAgent(b.dataset.toggle, b.dataset.on === '1');
+      });
+    }
+
+    function renderAgents(ov) {
+      $('agentPanels').innerHTML = (ov.agents || []).map((a) => {
+        const m = a.metrics || {};
+        return `<div class="card">
+          <div class="agent-head">
+            <strong>${esc(a.name)}</strong>
+            ${statePill(a)}
+          </div>
+          <p class="muted">${esc(a.description)}</p>
+          <pre class="snip" style="max-height:160px">${esc(JSON.stringify(m, null, 2))}</pre>
+          <div class="row" style="margin-top:.65rem">
+            <button class="btn btn-primary" data-detail="${a.id}">Refresh detail</button>
+            ${a.widget_url ? `<a class="link" href="${esc(a.widget_url)}" target="_blank" rel="noopener">Widget</a>` : ''}
+            ${a.url ? `<a class="link" href="${esc(a.url)}/docs" target="_blank" rel="noopener">API docs</a>` : ''}
+          </div>
+          <div id="detail-${a.id}" class="muted" style="margin-top:.75rem"></div>
+        </div>`;
+      }).join('');
+      $('agentPanels').querySelectorAll('[data-detail]').forEach((b) => {
+        b.onclick = () => loadDetail(b.dataset.detail);
+      });
+    }
+
+    async function loadDetail(id) {
+      try {
+        const r = await fetch(API + `/v1/agents/${id}`, { headers: headers() });
+        if (!r.ok) throw new Error(await r.text());
+        const j = await r.json();
+        const el = document.getElementById('detail-' + id);
+        if (!el) return;
+        el.innerHTML = `
+          <div class="pill">${esc(j.online ? 'online' : 'offline')}</div>
+          <div style="margin-top:.4rem">HITL: ${(j.hitl||[]).length} · Audit rows: ${(j.audit||[]).length}</div>
+          <pre class="snip" style="margin-top:.5rem;max-height:200px">${esc(JSON.stringify({ health: j.health, usage: j.usage }, null, 2))}</pre>`;
+      } catch (e) { toast(String(e.message || e)); }
+    }
+
+    function renderActivity(items) {
+      if (!items.length) {
+        $('activityOut').innerHTML = '<p class="muted">No recent activity yet. Run the three agents (or use local data) then refresh.</p>';
+        return;
+      }
+      $('activityOut').innerHTML = items.map((a) => `
+        <div class="item">
+          <span class="pill">${esc(a.agent_name || a.agent_id)}</span>
+          <strong style="margin-left:.4rem">${esc(a.event)}</strong>
+          <span class="muted" style="margin-left:.4rem">${esc((a.ts || '').slice(0,19))}</span>
+        </div>`).join('');
+    }
+
+    function renderAnalytics(an) {
+      $('analyticsOut').innerHTML = `
+        <h2>Pack analytics</h2>
+        <div class="grid" style="gap:.65rem">
+          <div><span class="muted">Tickets handled</span><div class="metric" style="font-size:1.4rem">${an.tickets_handled||0}</div></div>
+          <div><span class="muted">Appointments booked</span><div class="metric" style="font-size:1.4rem">${an.appointments_booked||0}</div></div>
+          <div><span class="muted">Invoices processed</span><div class="metric" style="font-size:1.4rem">${an.invoices_processed||0}</div></div>
+          <div><span class="muted">Pending human reviews</span><div class="metric" style="font-size:1.4rem">${an.pending_hitl||0}</div></div>
+        </div>`;
+    }
+
+    function renderEmbed(emb) {
+      const blocks = [];
+      if (emb.supportforge) {
+        blocks.push(`<div class="card"><h2>SupportForge chat widget</h2><pre class="snip">${esc(emb.supportforge.script)}</pre>
+          <p class="muted">Or iframe panel:</p><pre class="snip">${esc(emb.supportforge.iframe)}</pre></div>`);
+      }
+      if (emb.bookwise) {
+        blocks.push(`<div class="card"><h2>BookWise booking widget</h2><pre class="snip">${esc(emb.bookwise.script)}</pre>
+          <p class="muted">Or iframe panel:</p><pre class="snip">${esc(emb.bookwise.iframe)}</pre></div>`);
+      }
+      if (emb.invoiceforge) {
+        blocks.push(`<div class="card"><h2>InvoiceForge dashboard</h2><pre class="snip">${esc(emb.invoiceforge.iframe)}</pre></div>`);
+      }
+      blocks.push(`<div class="card"><h2>This Starter dashboard</h2><pre class="snip">&lt;iframe src="${esc(API)}/static/dashboard/index.html" title="Matrixly Starter Pack" style="width:100%;min-height:800px;border:1px solid #1e2a3a;border-radius:12px;"&gt;&lt;/iframe&gt;</pre></div>`);
+      $('embedOut').innerHTML = blocks.join('');
+    }
+
+    function fillConnections(set) {
+      const c = set.connections || {};
+      $('connGmail').value = (c.gmail && (c.gmail.notes || JSON.stringify(c.gmail))) || '';
+      $('connCal').value = (c.calendar && (c.calendar.notes || JSON.stringify(c.calendar))) || '';
+      $('connAcct').value = (c.quickbooks && (c.quickbooks.notes || JSON.stringify(c.quickbooks))) || '';
+      $('connKb').value = (c.knowledge && (c.knowledge.notes || JSON.stringify(c.knowledge))) || '';
+    }
+
+    async function toggleAgent(id, enabled) {
+      try {
+        const r = await fetch(API + `/v1/agents/${id}/toggle`, {
+          method: 'POST', headers: headers(), body: JSON.stringify({ enabled }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        toast(`${id} ${enabled ? 'enabled' : 'disabled'}`);
+        load();
+      } catch (e) { toast(String(e.message || e)); }
+    }
+
+    $('btnSaveConn').onclick = async () => {
+      try {
+        const connections = {
+          gmail: { notes: $('connGmail').value },
+          calendar: { notes: $('connCal').value },
+          quickbooks: { notes: $('connAcct').value },
+          knowledge: { notes: $('connKb').value },
+        };
+        const r = await fetch(API + '/v1/settings/connections', {
+          method: 'POST', headers: headers(), body: JSON.stringify({ connections }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        toast('Connection notes saved');
+      } catch (e) { toast(String(e.message || e)); }
+    };
+
+    $('btnRefresh').onclick = load;
+    $('apiKey').value = localStorage.getItem('sp_api') || 'change-me-admin-key';
+    load();
+  </script>
+</body>
+</html>

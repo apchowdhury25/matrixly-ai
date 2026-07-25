@@ -1,0 +1,13 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/pack/*
+!data/pack/.gitkeep
+data/settings/*
+!data/settings/.gitkeep
+data/audit/*.jsonl
+data/usage/*.jsonl
+!data/**/.gitkeep

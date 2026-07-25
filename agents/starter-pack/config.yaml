@@ -1,0 +1,87 @@
+# Matrixly Starter Pack — unified ops for Support + Booking + Invoices
+
+business:
+  name: "Matrixly Demo Co"
+  support_email: "hello@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+
+pack:
+  name: "Matrixly Starter Pack"
+  version: "1.0.0"
+  tagline: "Support, bookings, and invoices — three agents, one dashboard."
+
+agents:
+  supportforge:
+    id: supportforge
+    name: "SupportForge"
+    description: "Customer support triage, KB answers, HITL escalation"
+    tile: SUP
+    default_port: 8787
+    health_path: /v1/health
+    admin_status_path: /v1/admin/status
+    audit_path: /v1/admin/audit
+    usage_path: /v1/admin/usage
+    hitl_path: /v1/admin/hitl
+    widget_path: /static/widget/embed.js
+    panel_path: /static/admin/index.html
+    local_data: ../support-forge/data
+    category: support
+  bookwise:
+    id: bookwise
+    name: "BookWise"
+    description: "Appointment scheduling, calendar sync, reminders"
+    tile: BOOK
+    default_port: 8790
+    health_path: /v1/health
+    admin_status_path: /v1/admin/status
+    audit_path: /v1/admin/audit
+    usage_path: /v1/admin/usage
+    hitl_path: /v1/admin/hitl
+    widget_path: /static/widget/embed.js
+    panel_path: /static/admin/index.html
+    local_data: ../book-wise/data
+    category: booking
+  invoiceforge:
+    id: invoiceforge
+    name: "InvoiceForge"
+    description: "Invoice OCR, AR posting, exceptions, reminders"
+    tile: INV
+    default_port: 8791
+    health_path: /v1/health
+    admin_status_path: /v1/admin/status
+    audit_path: /v1/admin/audit
+    usage_path: /v1/admin/usage
+    hitl_path: /v1/admin/hitl
+    widget_path: /static/widget/embed.js
+    panel_path: /static/dashboard/index.html
+    local_data: ../invoice-forge/data
+    category: finance
+
+connections:
+  gmail:
+    label: "Gmail / IMAP"
+    fields: [email_user, email_app_password, imap_host]
+  calendar:
+    label: "Google Calendar / Outlook"
+    fields: [calendar_backend, google_credentials_path, outlook_tenant]
+  quickbooks:
+    label: "QuickBooks / Xero / CSV"
+    fields: [accounting_backend, qb_client_id, xero_tenant]
+  knowledge:
+    label: "Knowledge base"
+    fields: [kb_path, notion_token, notion_database_id]
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8800"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+server:
+  host: "0.0.0.0"
+  port: 8800
+
+rate_limit:
+  admin_per_minute: 180
