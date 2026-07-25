@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETF Portfolio Analyzer — Matrixly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0b0f14;--card:#151c26;--border:#1e2a3a;--ink:#f0f2f5;--soft:#a8b0b8;--blue:#117aca;--ok:#3dd68c;--warn:#f5a524}
+    *{box-sizing:border-box}body{margin:0;font-family:'Open Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+    header{padding:.9rem 1.25rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;position:sticky;top:0;background:rgba(11,15,20,.94);backdrop-filter:blur(8px);z-index:10}
+    h1{margin:0;font-size:1.05rem;font-weight:800}h1 span{color:var(--blue)}
+    main{max-width:920px;margin:0 auto;padding:1.25rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;margin-bottom:1rem}
+    .row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+    input{flex:1;min-width:140px;background:#0f141c;border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:.6rem .75rem;font:inherit}
+    .btn{border:0;border-radius:8px;padding:.55rem .9rem;font-weight:700;cursor:pointer;font-size:.85rem}
+    .btn-primary{background:var(--blue);color:#fff}.btn-ghost{background:transparent;color:var(--soft);border:1px solid var(--border)}
+    .muted{color:var(--soft);font-size:.85rem}
+    .pill{display:inline-block;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:999px;background:rgba(17,122,202,.15);color:var(--blue)}
+    .pill.ok{background:rgba(61,214,140,.12);color:var(--ok)}.pill.warn{background:rgba(245,165,36,.15);color:var(--warn)}
+    pre.out{white-space:pre-wrap;font-size:.88rem;line-height:1.55;margin:0;font-family:ui-monospace,Menlo,Consolas,monospace}
+    #toast{position:fixed;bottom:1rem;right:1rem;background:#1a2433;border:1px solid var(--border);padding:.65rem .9rem;border-radius:8px;display:none;max-width:320px;font-size:.85rem}
+    #toast.show{display:block}
+    .chat{display:flex;flex-direction:column;gap:.65rem;max-height:52vh;overflow:auto;margin-bottom:.75rem}
+    .bubble{padding:.7rem .85rem;border-radius:12px;border:1px solid var(--border);background:#0f141c;white-space:pre-wrap;font-size:.88rem;line-height:1.5}
+    .bubble.user{border-color:rgba(17,122,202,.4);align-self:flex-end;max-width:90%}
+    .bubble.bot{align-self:flex-start;max-width:100%}
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>ETF Portfolio <span>Analyzer</span></h1>
+      <div class="muted" style="font-size:.75rem">Matrixly Finance · free Yahoo data · default QQQI</div>
+    </div>
+    <span class="pill" id="health">…</span>
+  </header>
+  <main>
+    <div class="card">
+      <div class="row" style="margin-bottom:.65rem">
+        <input id="apiKey" placeholder="API / widget key" style="max-width:220px" />
+        <span class="muted" id="meta"></span>
+      </div>
+      <div class="row">
+        <input id="ticker" placeholder="Ticker (blank = QQQI)" />
+        <button class="btn btn-primary" id="btnAnalyze">Analyze</button>
+        <button class="btn btn-ghost" id="btnDefault">Default QQQI</button>
+        <button class="btn btn-ghost" id="btnNotion">Save to Notion</button>
+      </div>
+      <p class="muted" style="margin:.65rem 0 0">Educational only — not investment advice. No paid API keys required.</p>
+    </div>
+
+    <div class="card">
+      <div class="row" style="justify-content:space-between;margin-bottom:.5rem">
+        <strong>Chat</strong>
+        <span class="muted" id="sessionLab"></span>
+      </div>
+      <div class="chat" id="chat"></div>
+      <div class="row">
+        <input id="msg" placeholder="e.g. analyze JEPI · save to Notion · hello" />
+        <button class="btn btn-primary" id="btnSend">Send</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row" style="justify-content:space-between;margin-bottom:.5rem">
+        <strong>Latest report</strong>
+        <span class="pill" id="quality">—</span>
+      </div>
+      <pre class="out" id="out">ETF Portfolio Analyzer ready. Defaulting to QQQI on first analyze.</pre>
+    </div>
+  </main>
+  <div id="toast"></div>
+  <script>
+    const API = (new URLSearchParams(location.search).get('api')) || (location.origin.includes('8797') ? location.origin : 'http://127.0.0.1:8797');
+    const $ = (id) => document.getElementById(id);
+    const toast = (m) => { const t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600); };
+    let sessionId = localStorage.getItem('etf_ses') || '';
+    let lastReportId = '';
+
+    function headers() {
+      const k = $('apiKey').value || localStorage.getItem('etf_key') || 'pk_live_change-me';
+      localStorage.setItem('etf_key', k);
+      return { 'Content-Type': 'application/json', 'X-Widget-Key': k, 'X-API-Key': k };
+    }
+
+    function addBubble(text, who) {
+      const d = document.createElement('div');
+      d.className = 'bubble ' + who;
+      d.textContent = text;
+      $('chat').appendChild(d);
+      $('chat').scrollTop = $('chat').scrollHeight;
+    }
+
+    async function health() {
+      try {
+        const r = await fetch(API + '/v1/health');
+        const j = await r.json();
+        $('health').textContent = j.ok ? `online · default ${j.default_ticker}` : 'offline';
+        $('health').className = 'pill ' + (j.ok ? 'ok' : 'warn');
+        $('meta').textContent = `reports ${j.reports || 0} · notion ${j.notion_enabled ? 'on' : 'local'}`;
+      } catch {
+        $('health').textContent = 'offline';
+        $('health').className = 'pill warn';
+      }
+    }
+
+    async function analyze(ticker, save) {
+      try {
+        const r = await fetch(API + '/v1/analyze', {
+          method: 'POST', headers: headers(),
+          body: JSON.stringify({ ticker: ticker || '', save_to_notion: !!save }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        const j = await r.json();
+        lastReportId = j.id;
+        $('out').textContent = j.markdown || JSON.stringify(j, null, 2);
+        $('quality').textContent = j.snapshot?.data_quality || '—';
+        $('quality').className = 'pill ' + (j.snapshot?.data_quality === 'live' ? 'ok' : 'warn');
+        toast('Analysis complete · ' + j.ticker);
+        health();
+        return j;
+      } catch (e) { toast(String(e.message || e)); }
+    }
+
+    async function chat(message, save) {
+      try {
+        const r = await fetch(API + '/v1/chat', {
+          method: 'POST', headers: headers(),
+          body: JSON.stringify({ message, session_id: sessionId, save_to_notion: !!save }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        const j = await r.json();
+        sessionId = j.session_id;
+        localStorage.setItem('etf_ses', sessionId);
+        $('sessionLab').textContent = sessionId;
+        addBubble(message || '(start)', 'user');
+        addBubble(j.reply, 'bot');
+        if (j.report) {
+          lastReportId = j.report.id;
+          $('out').textContent = j.report.markdown || j.reply;
+          $('quality').textContent = j.report.snapshot?.data_quality || '—';
+        }
+        health();
+      } catch (e) { toast(String(e.message || e)); }
+    }
+
+    $('btnAnalyze').onclick = () => analyze($('ticker').value.trim(), false);
+    $('btnDefault').onclick = () => { $('ticker').value = ''; analyze('', false); };
+    $('btnNotion').onclick = async () => {
+      if (lastReportId) {
+        try {
+          const r = await fetch(API + `/v1/reports/${lastReportId}/notion`, { method: 'POST', headers: headers() });
+          const j = await r.json();
+          toast(j.notion?.note || j.notion?.url || j.notion?.local_path || 'Saved');
+          if (j.report?.markdown) $('out').textContent = j.report.markdown;
+        } catch (e) { toast(String(e.message || e)); }
+      } else {
+        analyze($('ticker').value.trim(), true);
+      }
+    };
+    $('btnSend').onclick = () => {
+      const m = $('msg').value.trim();
+      if (!m) return;
+      $('msg').value = '';
+      chat(m, /notion|save/i.test(m));
+    };
+    $('msg').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('btnSend').click(); });
+
+    $('apiKey').value = localStorage.getItem('etf_key') || 'pk_live_change-me';
+    $('sessionLab').textContent = sessionId || 'new session';
+    health();
+    // Auto-run default QQQI on first load (agent default behavior)
+    chat('hello');
+  </script>
+</body>
+</html>

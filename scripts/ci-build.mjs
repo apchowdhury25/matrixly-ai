@@ -42,6 +42,7 @@ const SITE_PAGES = [
   "pipeline-forge/index.html",
   "doc-forge/index.html",
   "starter-pack/index.html",
+  "etf-analyzer/index.html",
   "admin/index.html",
 ];
 

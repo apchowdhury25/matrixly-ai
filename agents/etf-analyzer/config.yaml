@@ -1,0 +1,48 @@
+# Matrixly ETF Portfolio Analyzer
+
+business:
+  name: "Matrixly Demo Co"
+  timezone: "America/Chicago"
+
+etf:
+  default_ticker: QQQI
+  default_name: "NEOS Nasdaq-100 High Income ETF"
+  disclaimer: >
+    Educational information only — not personalized investment, tax, or legal advice.
+    Verify figures with official fund documents and a qualified advisor.
+
+data:
+  primary: yahoo
+  # Free public endpoints only — no paid keys required
+  yahoo_quote_url: "https://query1.finance.yahoo.com/v7/finance/quote"
+  yahoo_chart_url: "https://query1.finance.yahoo.com/v8/finance/chart"
+  yahoo_summary_url: "https://query2.finance.yahoo.com/v10/finance/quoteSummary"
+  user_agent: "MatrixlyETFAnalyzer/1.0 (educational; +https://matrixly.world)"
+  timeout_sec: 20
+
+notion:
+  enabled: false  # set true when NOTION_API_KEY + parent page configured
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8797"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+server:
+  host: "0.0.0.0"
+  port: 8797
+
+rate_limit:
+  analyze_per_minute: 30
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.2

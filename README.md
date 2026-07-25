@@ -23,6 +23,7 @@ A production-facing static website plus local agent runtimes for:
 | **PipelineForge** | Pipeline scoring & prioritization — fit, risk, CRM, health |
 | **DocForge** | Business documents — proposals, quotes, contracts, reports |
 | **Starter Pack** | SupportForge + BookWise + InvoiceForge + unified dashboard |
+| **ETF Analyzer** | Live free-market ETF analysis — yield, NAV, tax, Notion |
 
 ## Tech stack
 
@@ -109,6 +110,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── pipeline-forge/index.html
 ├── doc-forge/index.html
 ├── starter-pack/index.html
+├── etf-analyzer/index.html
 ├── admin/index.html           # /admin (QA console)
 ├── assets/
 ├── agents/                    # Python agent backends (not published to Hostinger)
@@ -124,7 +126,8 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── social-forge/
 │   ├── pipeline-forge/
 │   ├── doc-forge/
-│   └── starter-pack/          # Unified gateway + dashboard (port 8800)
+│   ├── starter-pack/          # Unified gateway + dashboard (port 8800)
+│   └── etf-analyzer/          # ETF Portfolio Analyzer (port 8797)
 └── docs/
 ```
 
@@ -247,6 +250,19 @@ python -m src.cli serve
 
 Product page: [/starter-pack](starter-pack/). Full setup: [agents/starter-pack/README.md](agents/starter-pack/README.md).  
 Docker: `cd agents/starter-pack && docker compose up --build`.
+
+### ETF Portfolio Analyzer
+
+```bash
+cd agents/etf-analyzer
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [/etf-analyzer](etf-analyzer/). Full setup: [agents/etf-analyzer/README.md](agents/etf-analyzer/README.md).
 
 ## UI QA (developers)
 

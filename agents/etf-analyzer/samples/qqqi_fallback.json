@@ -1,0 +1,26 @@
+{
+  "ticker": "QQQI",
+  "name": "NEOS Nasdaq-100 High Income ETF",
+  "currency": "USD",
+  "price": 52.15,
+  "change": 0.12,
+  "change_pct": 0.23,
+  "volume": 1250000,
+  "fifty_two_week_low": 44.2,
+  "fifty_two_week_high": 56.8,
+  "market_cap": null,
+  "total_assets": 2800000000,
+  "expense_ratio": 0.0068,
+  "nav": 52.08,
+  "yield_ttm": 0.138,
+  "dividend_rate": 7.2,
+  "dividend_yield": 0.138,
+  "ex_dividend_date": null,
+  "trailing_annual_dividend_rate": 7.2,
+  "category": "Derivative Income",
+  "data_quality": "fallback_sample",
+  "notes": [
+    "Live Yahoo data unavailable — using educational sample snapshot.",
+    "Replace with live fetch when network allows."
+  ]
+}
