@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly product suite — Hermes agent runtime, Notion knowledge layer, Grok intelligence, MCP integrations, and the agent marketplace for SMBs." />
+  <meta name="description" content="Matrixly product suite — Hermes, Notion, Grok, MCP, and a live agent catalog: Starter Pack, SupportForge, BookWise, InvoiceForge, ContentForge, MeetWise, SocialForge, PipelineForge, DocForge, ETF Analyzer, and more." />
   <meta name="theme-color" content="#117ACA" />
   <title>Products — Matrixly</title>
   <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
@@ -659,9 +659,9 @@
               CRMs, and 100+ apps — the same stack behind our integrations directory.
             </p>
             <ul class="space-y-2 text-sm text-matrix-soft mb-6">
-              <li class="flex gap-2"><span class="text-matrix-green">▸</span> GitHub · Notion (live)</li>
-              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Roadmap: Gmail, Stripe, Slack, QuickBooks</li>
-              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Secure credential vault pattern</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> GitHub · Notion (live MCP)</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Agent adapters: Gmail/IMAP, calendars, ShipStation, HubSpot, QB/Xero</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Secure credential vault pattern (.env / secrets)</li>
               <li class="flex gap-2"><span class="text-matrix-green">▸</span> Composable multi-app workflows</li>
             </ul>
             <a href="/integrations" class="btn-secondary text-xs px-4 py-2.5 w-full">Browse integrations →</a>
@@ -677,125 +677,190 @@
             </div>
             <h3 class="text-xl font-bold text-matrix-cream mb-2">Matrixly Mobile</h3>
             <p class="text-sm text-matrix-soft mb-5 leading-relaxed">
-              Expo / React Native client dashboard for SME owners — monitor agent runs, approve
-              exceptions, and get logistics or lead alerts on the go.
+              Expo / React Native owner dashboard — monitor agent runs, approve HITL exceptions,
+              and get logistics or lead alerts on the go.
             </p>
             <ul class="space-y-2 text-sm text-matrix-soft">
               <li class="flex gap-2"><span class="text-matrix-green">▸</span> Agent run history &amp; alerts</li>
               <li class="flex gap-2"><span class="text-matrix-green">▸</span> Approve handoffs &amp; exceptions</li>
-              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Owner mobile dashboard (phase 3)</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Owner mobile dashboard (roadmap)</li>
             </ul>
           </article>
 
           <article id="orchestrator" class="card-matrix rounded-2xl p-6 sm:p-8">
             <div class="flex items-start justify-between gap-4 mb-5">
               <div class="neon-tile"><span>GRAPH</span></div>
-              <span class="font-mono text-xs px-2 py-1 rounded status-beta">Platform</span>
+              <span class="font-mono text-xs px-2 py-1 rounded status-live">Live</span>
             </div>
-            <h3 class="text-xl font-bold text-matrix-cream mb-2">LangGraph Orchestrator</h3>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2">FastAPI Agent Runtime + Crews</h3>
             <p class="text-sm text-matrix-soft mb-5 leading-relaxed">
-              Supervisor routes tasks to specialized agents via FastAPI — email, shipping, CRM,
-              meetings, leads, invoices, and content — with Docker-ready deploy.
+              Each marketplace agent is a modular FastAPI service (CrewAI/LangGraph-style crews) with HITL,
+              audit logs, usage tracking, and Docker — plus the Starter Pack control plane for Support · Book · Invoice.
             </p>
             <div class="font-mono text-xs text-matrix-soft bg-matrix-cream/[0.03] border border-matrix-border/40 rounded-xl p-4 leading-relaxed">
-              Client / Trigger<br />
-              → FastAPI <span class="text-matrix-green">/run-task</span><br />
-              → LangGraph Supervisor<br />
-              → Specialized Agent<br />
-              → APIs · Notion · Notifications
+              Website / Widget / Form<br />
+              → Agent FastAPI <span class="text-matrix-green">/v1/*</span><br />
+              → Crew pipeline (HITL gates)<br />
+              → CRM · Calendar · Accounting · Email<br />
+              → Starter Pack dashboard (optional)
             </div>
+            <a href="/starter-pack" class="btn-secondary text-xs px-4 py-2.5 w-full mt-5 inline-flex items-center justify-center">Open Starter Pack →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- AGENT MARKETPLACE (from Notion) -->
+    <!-- AGENT MARKETPLACE -->
     <section id="marketplace" class="py-16 sm:py-24 bg-matrix-void border-y border-matrix-border/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div class="max-w-xl">
+          <div class="max-w-2xl">
             <p class="font-mono text-sm text-matrix-green mb-3">// AGENT MARKETPLACE</p>
-            <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Catalog synced from Notion</h2>
+            <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Live agents you can deploy today</h2>
             <p class="text-matrix-soft">
-              Live entries from the Matrixly Agent Marketplace database — deploy for SMBs worldwide across sales, email, CRM, logistics, finance, and meetings.
+              Production FastAPI agents with dashboards, embed widgets, and human-in-the-loop controls —
+              sales, support, logistics, finance, content, meetings, social, and more.
             </p>
           </div>
-          <a href="/agents" class="btn-secondary text-sm px-5 py-2.5 self-start">Browse agents catalog →</a>
+          <a href="/agents" class="btn-secondary text-sm px-5 py-2.5 self-start">Browse full catalog →</a>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+          <a href="/starter-pack" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors border-matrix-green/30">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>PACK</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Starter Pack</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">SupportForge + BookWise + InvoiceForge with one unified dashboard, analytics, and embeds.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Bundle · Port 8800</p>
+          </a>
+          <a href="/lead-qualifier" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
               <div class="neon-tile"><span>LEAD</span></div>
               <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
             <h3 class="font-bold text-matrix-cream mb-1">Lead Qualifier</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Scores inbound leads, enriches contacts, suggests outreach. Salesforce · Gmail.</p>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Score inbound leads, enrich contacts, draft outreach. Salesforce · Gmail.</p>
             <p class="font-mono text-[10px] text-matrix-green">Sales</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+          </a>
+          <a href="/email-assistant" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
               <div class="neon-tile"><span>MAIL</span></div>
               <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
             <h3 class="font-bold text-matrix-cream mb-1">Email Assistant</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Triage inbox, draft replies, flag urgent items for SMBs drowning in email.</p>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Triage inbox, draft replies, flag urgent items, daily brief.</p>
             <p class="font-mono text-[10px] text-matrix-green">Email</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+          </a>
+          <a href="/crm-assistant" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
               <div class="neon-tile"><span>CRM</span></div>
               <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
             <h3 class="font-bold text-matrix-cream mb-1">CRM Assistant</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Update contacts, log activities, keep pipelines clean across sales tools.</p>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Update contacts, log activities, pipeline hygiene with approve-to-write.</p>
             <p class="font-mono text-[10px] text-matrix-green">CRM</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+          </a>
+          <a href="/shipping-assistant" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
               <div class="neon-tile"><span>SHIP</span></div>
               <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
             <h3 class="font-bold text-matrix-cream mb-1">Shipping Assistant</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Track shipments, notify stakeholders, handle exceptions for logistics SMEs.</p>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">ShipStation hub — track, exceptions, WISMO drafts. UPS · FedEx · USPS.</p>
             <p class="font-mono text-[10px] text-matrix-green">Logistics</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+          </a>
+          <a href="/support-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>SUPP</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">SupportForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Embeddable support: triage, KB answers, tickets, HITL escalation, chat widget.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Support · 8787</p>
+          </a>
+          <a href="/book-wise" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>BOOK</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">BookWise</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">AI booking: availability, confirmations, reminders, reschedule, calendar sync.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Scheduling · 8790</p>
+          </a>
+          <a href="/invoice-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>INVC</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">InvoiceForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Invoice OCR/extract, validate, post to QB/Xero/CSV, exceptions, AR reminders.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Finance · 8791</p>
+          </a>
+          <a href="/content-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>CONT</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">ContentForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">SEO blogs, social, newsletters, ads — brand voice + HITL before publish.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Marketing · 8792</p>
+          </a>
+          <a href="/meet-wise" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
               <div class="neon-tile"><span>MEET</span></div>
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-beta">Beta</span>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
-            <h3 class="font-bold text-matrix-cream mb-1">Meeting Summarizer</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Transcribe &amp; summarize Zoom / Meet / Teams; extract actions. Calendar · Gmail · Notion.</p>
-            <p class="font-mono text-[10px] text-matrix-green">Meetings</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+            <h3 class="font-bold text-matrix-cream mb-1">MeetWise</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Meeting outcomes: summaries, actions, CRM notes, recap emails from transcripts.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Meetings · 8793</p>
+          </a>
+          <a href="/social-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
-              <div class="neon-tile"><span>POST</span></div>
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-beta">Beta</span>
+              <div class="neon-tile"><span>SOCIAL</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
-            <h3 class="font-bold text-matrix-cream mb-1">Content Calendar Manager</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Ideas, schedules, performance tracking. Notion · Calendar.</p>
-            <p class="font-mono text-[10px] text-matrix-green">Marketing</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+            <h3 class="font-bold text-matrix-cream mb-1">SocialForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Multi-platform posts, schedule, inbox replies, insights — brand voice + HITL.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Social · 8794</p>
+          </a>
+          <a href="/pipeline-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
-              <div class="neon-tile"><span>INV</span></div>
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-soon">Soon</span>
+              <div class="neon-tile"><span>PIPE</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
-            <h3 class="font-bold text-matrix-cream mb-1">Invoice Processor</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Extract invoice data, match POs, flag discrepancies. Gmail → accounting.</p>
-            <p class="font-mono text-[10px] text-matrix-green">Finance</p>
-          </article>
-          <article class="card-matrix rounded-2xl p-5 flex flex-col">
+            <h3 class="font-bold text-matrix-cream mb-1">PipelineForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Score &amp; prioritize deals: fit/engagement, at-risk flags, CRM stage suggestions.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Sales · 8795</p>
+          </a>
+          <a href="/doc-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>DOC</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">DocForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Proposals, quotes, contracts, reports from templates — HITL, PDF/MD/HTML export.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Documents · 8796</p>
+          </a>
+          <a href="/etf-analyzer" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
             <div class="flex justify-between items-start mb-3">
               <div class="neon-tile"><span>ETF</span></div>
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-beta">Beta</span>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live">Live</span>
             </div>
             <h3 class="font-bold text-matrix-cream mb-1">ETF Portfolio Analyzer</h3>
-            <p class="text-xs text-matrix-soft mb-3 flex-grow">Live market data, yield projections, tax-aware strategies. Notion-backed.</p>
-            <p class="font-mono text-[10px] text-matrix-green">Finance</p>
-          </article>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Free Yahoo data: yield, NAV risk, tax-aware notes. Default QQQI · optional Notion.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Finance · 8797</p>
+          </a>
+          <div class="card-matrix rounded-2xl p-5 flex flex-col opacity-90">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>MOB</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-soon">Soon</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Matrixly Mobile</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow">Owner app for run history, HITL approvals, and alerts — roadmap.</p>
+            <p class="font-mono text-[10px] text-matrix-green">Platform</p>
+          </div>
         </div>
       </div>
     </section>
@@ -809,16 +874,19 @@
             <h2 class="h2-fluid font-bold text-matrix-cream mb-4">Built for SMEs — not enterprise theater</h2>
             <p class="text-matrix-soft mb-6 leading-relaxed">
               Matrixly combines a practical stack for SMBs:
-              Hermes for runtime, Notion for knowledge, Grok for brains, MCP for tools.
-              Deploy agents for sales, support, invoicing, logistics, and operations without hiring an AI team.
+              Hermes for runtime, Notion for knowledge, Grok for brains, MCP for tools,
+              and FastAPI agents with HITL, audit logs, and embeddable UIs.
             </p>
             <ul class="space-y-3 text-sm text-matrix-soft mb-8">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 24/7 agent operations</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> SEO intelligence baked into marketing agents</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Logistics-first flows for distribution SMEs</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Pilot-friendly onboarding for any region</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 14+ live agents + Starter Pack control plane</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Human approval on external side effects</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Logistics, support, AR, and marketing workflows</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Pilot-friendly local + Docker deploy</li>
             </ul>
-            <a href="/#final-cta" class="btn-primary px-6 py-3 text-sm">Start a pilot</a>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="/#final-cta" class="btn-primary px-6 py-3 text-sm text-center">Start a pilot</a>
+              <a href="/agents" class="btn-secondary px-6 py-3 text-sm text-center">Browse agents</a>
+            </div>
           </div>
           <div class="card-matrix rounded-2xl p-6 sm:p-8 font-mono text-xs sm:text-sm leading-relaxed space-y-2">
             <p class="text-matrix-soft"><span class="text-matrix-green">$</span> matrixly stack status</p>
@@ -826,9 +894,10 @@
             <p class="text-matrix-green">✓ Notion MCP · connected</p>
             <p class="text-matrix-green">✓ Grok intelligence · ready</p>
             <p class="text-matrix-green">✓ GitHub MCP · connected</p>
-            <p class="text-matrix-soft">→ Agents live: Lead · Email · CRM · Shipping</p>
-            <p class="text-matrix-soft">→ Beta: Meeting · Content · ETF</p>
-            <p class="text-matrix-soft">→ Soon: Invoice Processor · Mobile</p>
+            <p class="text-matrix-soft">→ Live: Lead · Email · CRM · Shipping</p>
+            <p class="text-matrix-soft">→ Live: Support · Book · Invoice · Starter Pack</p>
+            <p class="text-matrix-soft">→ Live: Content · Meet · Social · Pipeline · Doc · ETF</p>
+            <p class="text-matrix-soft">→ Soon: Mobile owner app</p>
             <p class="text-matrix-green mt-3">stack healthy</p>
           </div>
         </div>
@@ -839,10 +908,10 @@
     <section class="py-16 sm:py-20 grid-bg border-t border-matrix-border/40">
       <div class="max-w-3xl mx-auto px-4 text-center">
         <h2 class="h2-fluid font-extrabold text-matrix-cream mb-4">Deploy the full product suite</h2>
-        <p class="text-matrix-soft mb-8">Get Hermes + Notion + Grok-powered agents running on your SMB stack.</p>
+        <p class="text-matrix-soft mb-8">Start with the Starter Pack or any single agent — Hermes + Notion + Grok-powered workflows for SMBs.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/#final-cta" class="btn-primary px-8 py-3.5 text-sm">Get started free</a>
-          <a href="/#final-cta" class="btn-secondary px-8 py-3.5 text-sm">Talk to sales</a>
+          <a href="/starter-pack" class="btn-primary px-8 py-3.5 text-sm">Deploy Starter Pack</a>
+          <a href="/agents" class="btn-secondary px-8 py-3.5 text-sm">Browse agents</a>
         </div>
       </div>
     </section>
@@ -868,11 +937,11 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Stack</h4>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Stack &amp; packs</h4>
           <ul class="space-y-2 text-sm text-matrix-soft">
             <li><a href="#hermes" class="hover:text-matrix-green">Hermes</a></li>
-            <li><a href="#notion" class="hover:text-matrix-green">Notion</a></li>
-            <li><a href="#grok" class="hover:text-matrix-green">Grok</a></li>
+            <li><a href="#marketplace" class="hover:text-matrix-green">Agent marketplace</a></li>
+            <li><a href="/starter-pack" class="hover:text-matrix-green">Starter Pack</a></li>
             <li><a href="#mcp" class="hover:text-matrix-green">MCP Hub</a></li>
           </ul>
         </div>
