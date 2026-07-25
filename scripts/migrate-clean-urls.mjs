@@ -170,7 +170,7 @@ function buildPricingPage(indexHtml, productsHtml) {
   );
   page = page.replace(
     /content="[^"]*Products[^"]*"/i,
-    'content="Matrixly pricing — Explore free, Starter, Pro, and Enterprise agent plans."'
+    'content="Matrixly pricing for SMBs, small teams, and contractors — Explore free, Starter $49, Pro $149."'
   );
 
   // Replace main content between header and footer if possible
