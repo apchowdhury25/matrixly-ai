@@ -492,7 +492,7 @@ tailwind.config = {
 | Canonical tokens + components | Root `index.html` `<style>` + Tailwind config |
 | Catalog | `agents/index.html` (mirrored tokens) |
 | Per-agent marketing | `*/index.html` (shared subset of tokens + btn/card) |
-| Logo asset | `assets/matrixly-transparent-logo.png` |
+| Logo asset | `assets/matrixly-logo.png` |
 
 **Recommendation for future app work:** extract CSS variables + component classes into `packages/ui` or `styles/matrixly.css` and import everywhere so agent pages and the app shell cannot drift.
 
