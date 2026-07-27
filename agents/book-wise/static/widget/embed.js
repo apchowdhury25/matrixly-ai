@@ -76,7 +76,7 @@
     var err = el("div", "bw-error");
     footer.appendChild(err);
     var powered = el("div", "bw-powered");
-    powered.innerHTML = 'Powered by <a href="https://matrixly.world" target="_blank" rel="noopener">Matrixly</a>';
+    powered.innerHTML = 'Powered by Matrixly';
     footer.appendChild(powered);
     panel.appendChild(footer);
     root.appendChild(panel);

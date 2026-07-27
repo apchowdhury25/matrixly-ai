@@ -87,7 +87,7 @@
     var err = el("div", "sf-error");
     footer.appendChild(err);
     var powered = el("div", "sf-powered");
-    powered.innerHTML = 'Powered by <a href="https://matrixbazaar.com" target="_blank" rel="noopener">Matrixly</a>';
+    powered.innerHTML = 'Powered by Matrixly';
     footer.appendChild(powered);
     panel.appendChild(footer);
     root.appendChild(panel);

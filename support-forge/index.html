@@ -20,8 +20,8 @@
   <meta name="description" content="Matrixly SupportForge — embeddable AI customer support for SMBs. Triage, knowledge answers, HITL, tickets, chat widget." />
   <meta name="theme-color" content="#117ACA" />
   <title>SupportForge — Matrixly</title>
-  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
-  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="icon" type="image/png" href="/assets/matrixly-transparent-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-transparent-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -99,7 +99,7 @@
   <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
       <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
-        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        <img src="/assets/matrixly-transparent-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
@@ -209,7 +209,7 @@ python -m src.cli serve</pre>
         <pre class="cmd mb-6">SUPPORTFORGE_API_KEY=your-admin-secret
 SUPPORTFORGE_WIDGET_KEY=pk_live_your-site-key
 XAI_API_KEY=optional-for-smarter-replies
-CORS_ORIGINS=https://matrixbazaar.com,https://www.matrixbazaar.com</pre>
+CORS_ORIGINS=https://your-site.example</pre>
 
         <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft mb-2">
           <strong class="text-matrix-cream">Safety:</strong> External actions (email send, CRM writes) queue for human approval.
@@ -220,11 +220,11 @@ CORS_ORIGINS=https://matrixbazaar.com,https://www.matrixbazaar.com</pre>
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Exact embed code — matrixbazaar.com</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed code</h2>
         <p class="text-sm text-matrix-soft mb-4">
           Place before <code class="text-xs">&lt;/body&gt;</code>. Replace the host with your SupportForge VPS URL.
         </p>
-        <pre class="cmd mb-6">&lt;!-- Matrixly SupportForge on matrixbazaar.com --&gt;
+        <pre class="cmd mb-6">&lt;!-- Matrixly SupportForge widget --&gt;
 &lt;script
   src="https://YOUR_SUPPORTFORGE_HOST/static/widget/embed.js"
   data-api="https://YOUR_SUPPORTFORGE_HOST"
