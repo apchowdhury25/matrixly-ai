@@ -18,24 +18,24 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly — The Agentic AI Marketplace for SMBs powered by SEO Intelligence. Deploy ready-to-run AI agents that market, sell, and scale your business automatically." />
-  <meta name="keywords" content="AI agents, agentic AI, SMB automation, SEO intelligence, AI marketplace, no-code AI, lead generation AI" />
+  <meta name="description" content="Matrixly helps US small businesses reclaim 20+ hours a week. Ready-to-run AI agents handle leads, email, support, shipping, and local SEO — no tech team required." />
+  <meta name="keywords" content="AI agents for small business, SMB automation, AI email assistant, lead generation AI, shipping automation, local SEO AI, no-code AI agents" />
   <meta name="author" content="Matrixly" />
   <meta name="theme-color" content="#117ACA" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Matrixly — Agentic AI Marketplace for SMBs" />
-  <meta property="og:description" content="Unlock AI agents that market, sell & scale your SMB automatically. SEO-powered. Ready to deploy." />
+  <meta property="og:title" content="Matrixly — AI Agents That Run Your Small Business Busywork" />
+  <meta property="og:description" content="Reclaim 20+ hours a week. Deploy ready AI agents for leads, email, support, shipping & SEO. Built for US SMBs. Free to explore." />
   <meta property="og:site_name" content="Matrixly" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Matrixly — Agentic AI Marketplace for SMBs" />
-  <meta name="twitter:description" content="The marketplace for ready-to-deploy SEO-powered AI agents. Build once. Automate everything." />
+  <meta name="twitter:title" content="Matrixly — AI Agents for Small Business" />
+  <meta name="twitter:description" content="Reclaim 20+ hours a week. Ready AI agents for marketing, sales, and ops — no engineers required." />
 
-  <title>Matrixly — The Agentic AI Marketplace for SMBs</title>
+  <title>Matrixly — AI Agents That Work While You Run Your Business</title>
 
   <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
   <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
@@ -427,32 +427,81 @@
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
 
-    .terminal-window {
-      background: var(--bg-alt);
+    /* Outcome demo panel (replaces developer terminal aesthetic) */
+    .demo-panel {
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(33, 30, 30, 0.06);
+      box-shadow: var(--shadow-md);
     }
-    .terminal-header {
+    .demo-panel-header {
       background: var(--brand-blue-soft);
       border-bottom: 1px solid var(--border);
-      padding: 10px 14px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: space-between;
+      gap: 8px;
     }
-    .terminal-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
+    .demo-activity {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
     }
-
-    .cursor-blink::after {
-      content: '▋';
-      animation: blink 1s step-end infinite;
+    .demo-activity:last-child { border-bottom: none; }
+    .demo-activity-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--brand-blue) 12%, transparent);
       color: var(--brand-blue);
-      margin-left: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .vertical-tab {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--soft);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .vertical-tab:hover,
+    .vertical-tab.is-active {
+      border-color: color-mix(in srgb, var(--brand-blue) 45%, transparent);
+      background: color-mix(in srgb, var(--brand-blue) 10%, transparent);
+      color: var(--brand-blue);
+    }
+    .section-eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      margin-bottom: 0.75rem;
+    }
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink);
     }
 
     .chart-bar {
@@ -828,11 +877,11 @@
     "name": "Matrixly",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "The Agentic AI Marketplace for SMBs powered by SEO Intelligence. Deploy ready-to-run AI agents that market, sell, and scale your business.",
+    "description": "AI agent marketplace for US small businesses. Ready-to-run agents for leads, email, support, shipping, and SEO — deploy in minutes without a tech team.",
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "0",
-      "highPrice": "499",
+      "highPrice": "149",
       "priceCurrency": "USD"
     },
     "publisher": {
@@ -913,83 +962,118 @@
           <div class="text-center lg:text-left">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6">
               <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse"></span>
-              <span class="font-mono text-xs text-matrix-green tracking-wide">AGENTIC AI MARKETPLACE · SEO INTELLIGENCE</span>
+              <span class="text-xs font-semibold text-matrix-green tracking-wide">Built for US small businesses · No tech team needed</span>
             </div>
 
             <h1 class="h1-fluid font-extrabold leading-[1.12] tracking-tight mb-6">
-              <span class="text-matrix-cream">Unlock Agentic AI Agents That </span>
-              <span class="text-matrix-green ">Market, Sell &amp; Scale</span>
-              <span class="text-matrix-cream"> Your SMB Automatically</span>
+              <span class="text-matrix-cream">Reclaim </span>
+              <span class="text-matrix-green">20+ hours a week</span>
+              <span class="text-matrix-cream"> — without hiring more staff</span>
             </h1>
 
             <p class="text-base sm:text-lg md:text-xl text-matrix-soft max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              The marketplace for ready-to-deploy SEO-powered AI agents.
-              <span class="text-matrix-cream font-medium"> Build once. Automate everything. Dominate search and operations.</span>
+              Matrixly is the marketplace of ready-to-run AI agents that handle leads, email, support, shipping, and local SEO for you.
+              <span class="text-matrix-cream font-medium"> Pick an agent. Connect your tools. Get time and revenue back.</span>
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-10 w-full sm:w-auto">
-              <a href="/agents" class="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                Browse Agents
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 w-full sm:w-auto">
+              <button type="button" class="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto" data-open-auth="signup">
+                Start free — no card needed
                 <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-              </a>
-              <a href="#how-it-works" class="btn-secondary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                Build Your Agent
+              </button>
+              <a href="#use-cases" class="btn-secondary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                See it for my business
               </a>
             </div>
+            <p class="text-sm text-matrix-soft mb-10 text-center lg:text-left">
+              Or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse ready agents</a> · Deploy in minutes
+            </p>
 
             <!-- Mini trust -->
             <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-sm text-matrix-soft">
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                No credit card required
+                Free to explore
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Deploy in minutes
+                Works with Shopify, Gmail &amp; more
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                100+ integrations
+                Your data never trains our models
               </div>
             </div>
           </div>
 
-          <!-- Visual: Terminal + floating text badges (no logo art) -->
+          <!-- Visual: outcome activity panel (SMB-friendly, no CLI) -->
           <div class="relative w-full max-w-xl mx-auto lg:max-w-none mt-4 lg:mt-0">
-            <div class="terminal-window animate-float">
-              <div class="terminal-header">
-                <span class="terminal-dot bg-red-500/80"></span>
-                <span class="terminal-dot bg-yellow-500/80"></span>
-                <span class="terminal-dot bg-matrix-green/80"></span>
-                <span class="ml-3 font-mono text-[10px] sm:text-xs text-matrix-soft truncate">agent://seo-content-v2 — matrixly</span>
+            <div class="demo-panel animate-float" aria-label="Example of agents working for a small business this week">
+              <div class="demo-panel-header">
+                <div>
+                  <p class="text-sm font-bold text-matrix-cream">Your agents this week</p>
+                  <p class="text-xs text-matrix-soft">CoolAir HVAC · Austin, TX</p>
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">
+                  <span class="w-1.5 h-1.5 rounded-full bg-matrix-green animate-pulse"></span>
+                  Live
+                </span>
               </div>
-              <div class="p-4 sm:p-5 md:p-6 font-mono text-xs sm:text-sm leading-relaxed space-y-1.5 sm:space-y-2 min-h-[240px] sm:min-h-[300px] overflow-x-auto">
-                <p class="text-matrix-soft"><span class="text-matrix-forest">$</span> matrixly deploy --agent seo-content</p>
-                <p class="text-matrix-green">✓ Agent initialized</p>
-                <p class="text-matrix-green">✓ SEO intelligence graph loaded</p>
-                <p class="text-matrix-green">✓ Connected: Shopify · GSC · WordPress</p>
-                <p class="text-matrix-cream mt-2 sm:mt-3">→ Analyzing top 50 competitors...</p>
-                <p class="text-matrix-soft">→ Keyword cluster: <span class="text-matrix-green">"local HVAC near me"</span></p>
-                <p class="text-matrix-soft hidden xs:block sm:block">→ Generating 12 content briefs...</p>
-                <p class="text-matrix-soft">→ Scheduling publish queue...</p>
-                <p class="text-matrix-green mt-2 sm:mt-3 cursor-blink">Agent online. Ranking velocity +47%</p>
-                <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-matrix-border/50 flex gap-2 sm:gap-3 flex-wrap">
-                  <span class="px-2 py-1 rounded bg-matrix-green/10 text-matrix-green text-[10px] sm:text-xs">SEO</span>
-                  <span class="px-2 py-1 rounded bg-matrix-green/10 text-matrix-green text-[10px] sm:text-xs">CONTENT</span>
-                  <span class="px-2 py-1 rounded bg-matrix-green/10 text-matrix-green text-[10px] sm:text-xs">AUTONOMOUS</span>
+              <div class="p-4 sm:p-5 md:p-6">
+                <div class="flex items-center justify-between mb-4 p-3 rounded-xl bg-matrix-green/5 border border-matrix-green/20">
+                  <div>
+                    <p class="text-xs text-matrix-soft font-medium">Hours reclaimed</p>
+                    <p class="text-2xl font-extrabold text-matrix-green">22 hrs</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-xs text-matrix-soft font-medium">New jobs booked</p>
+                    <p class="text-2xl font-extrabold text-matrix-cream">+8</p>
+                  </div>
+                </div>
+
+                <div class="demo-activity">
+                  <div class="demo-activity-icon" aria-hidden="true">MAIL</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-matrix-cream">Email Assistant</p>
+                    <p class="text-xs text-matrix-soft mt-0.5">Triaged 47 messages · drafted 12 replies in your voice</p>
+                  </div>
+                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
+                </div>
+                <div class="demo-activity">
+                  <div class="demo-activity-icon" aria-hidden="true">LEAD</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-matrix-cream">Lead Qualifier</p>
+                    <p class="text-xs text-matrix-soft mt-0.5">Scored 19 web leads · booked 3 estimate appointments</p>
+                  </div>
+                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
+                </div>
+                <div class="demo-activity">
+                  <div class="demo-activity-icon" aria-hidden="true">SEO</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-matrix-cream">Local SEO Agent</p>
+                    <p class="text-xs text-matrix-soft mt-0.5">Published 2 service pages · “HVAC near me” ranking ↑</p>
+                  </div>
+                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
+                </div>
+                <div class="demo-activity">
+                  <div class="demo-activity-icon" aria-hidden="true">SHIP</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-matrix-cream">Shipping Assistant</p>
+                    <p class="text-xs text-matrix-soft mt-0.5">Rate-shopped 14 orders · proactive delay texts sent</p>
+                  </div>
+                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
                 </div>
               </div>
             </div>
 
-            <!-- Floating badges: section text only (no icons/logos) -->
-            <div class="hidden md:block absolute -left-2 lg:-left-4 top-8 px-3 py-2 rounded-lg card-matrix text-xs font-mono text-matrix-green  animate-float float-delay-1">
-              Lead Gen Agent
+            <div class="hidden md:block absolute -left-2 lg:-left-4 top-10 px-3 py-2 rounded-lg card-matrix text-xs font-semibold text-matrix-green animate-float float-delay-1">
+              No engineers needed
             </div>
-            <div class="hidden md:block absolute -right-1 lg:-right-2 bottom-24 px-3 py-2 rounded-lg card-matrix text-xs font-mono text-matrix-green  animate-float float-delay-2">
-              Rankings +300%
+            <div class="hidden md:block absolute -right-1 lg:-right-2 bottom-28 px-3 py-2 rounded-lg card-matrix text-xs font-semibold text-matrix-green animate-float float-delay-2">
+              Payback &lt; 30 days
             </div>
-            <div class="hidden md:block absolute right-4 lg:right-8 -bottom-2 px-3 py-2 rounded-lg card-matrix text-xs font-mono text-matrix-green  animate-float float-delay-3">
-              20+ hrs saved/wk
+            <div class="hidden md:block absolute right-4 lg:right-8 -bottom-2 px-3 py-2 rounded-lg card-matrix text-xs font-semibold text-matrix-green animate-float float-delay-3">
+              From $0 to explore
             </div>
           </div>
         </div>
@@ -999,36 +1083,35 @@
     <!-- ========== 2. TRUST SIGNALS ========== -->
     <section id="trust" class="relative py-16 border-y border-matrix-border/50 bg-matrix-void" aria-label="Trust signals">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center font-mono text-xs tracking-widest text-matrix-soft uppercase mb-10">
-          Trusted by forward-thinking SMBs
+        <p class="text-center text-xs tracking-widest text-matrix-soft uppercase font-semibold mb-10">
+          Connects to the tools US small businesses already use
         </p>
 
-        <!-- Logo strip (placeholders) -->
-        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-16 mb-14 opacity-70">
-          <div class="font-mono text-lg sm:text-xl font-semibold text-matrix-cream/50 hover:text-matrix-green transition-colors">Shopify</div>
-          <div class="font-mono text-lg sm:text-xl font-semibold text-matrix-cream/50 hover:text-matrix-green transition-colors">WordPress</div>
-          <div class="font-mono text-lg sm:text-xl font-semibold text-matrix-cream/50 hover:text-matrix-green transition-colors">HubSpot</div>
-          <div class="font-mono text-lg sm:text-xl font-semibold text-matrix-cream/50 hover:text-matrix-green transition-colors">Stripe</div>
-          <div class="font-mono text-lg sm:text-xl font-semibold text-matrix-cream/50 hover:text-matrix-green transition-colors">Klaviyo</div>
-          <div class="font-mono text-lg sm:text-xl font-semibold text-matrix-cream/50 hover:text-matrix-green transition-colors">Slack</div>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 mb-14 opacity-80">
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">Shopify</div>
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">Gmail</div>
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">QuickBooks</div>
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">HubSpot</div>
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">ShipStation</div>
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">Slack</div>
+          <div class="text-base sm:text-lg font-semibold text-matrix-cream/55 hover:text-matrix-green transition-colors">Square</div>
         </div>
 
-        <!-- Stats -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 reveal">
           <div class="card-matrix rounded-2xl p-6 sm:p-8 text-center">
-            <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green  mb-2">10x</div>
-            <p class="text-matrix-cream font-semibold mb-1">Faster automation</p>
-            <p class="text-sm text-matrix-soft">vs. manual workflows &amp; scattered tools</p>
+            <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green mb-2">20+</div>
+            <p class="text-matrix-cream font-semibold mb-1">Hours back every week</p>
+            <p class="text-sm text-matrix-soft">Less busywork. More time for customers and growth.</p>
           </div>
           <div class="card-matrix rounded-2xl p-6 sm:p-8 text-center">
-            <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green  mb-2">20+</div>
-            <p class="text-matrix-cream font-semibold mb-1">Hours saved / week</p>
-            <p class="text-sm text-matrix-soft">Average across active SMB workspaces</p>
+            <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green mb-2">&lt;30d</div>
+            <p class="text-matrix-cream font-semibold mb-1">Typical payback</p>
+            <p class="text-sm text-matrix-soft">Cheaper than a part-time hire — works 24/7</p>
           </div>
           <div class="card-matrix rounded-2xl p-6 sm:p-8 text-center">
-            <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green  mb-2">300%</div>
-            <p class="text-matrix-cream font-semibold mb-1">SEO ranking lifts</p>
-            <p class="text-sm text-matrix-soft">Reported by users in competitive niches</p>
+            <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green mb-2">Minutes</div>
+            <p class="text-matrix-cream font-semibold mb-1">To first agent live</p>
+            <p class="text-sm text-matrix-soft">No developers. No long setup project.</p>
           </div>
         </div>
       </div>
@@ -1038,42 +1121,95 @@
     <section id="how-it-works" class="relative py-20 sm:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// HOW IT WORKS</p>
+          <p class="section-eyebrow">How it works</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            From marketplace to <span class="text-matrix-green ">autonomy</span> in four steps
+            Up and running in <span class="text-matrix-green">four simple steps</span>
           </h2>
-          <p class="text-matrix-soft text-lg">No heavy lift. No engineering team. Just agents that work while you sleep.</p>
+          <p class="text-matrix-soft text-lg">No heavy lift. No engineering team. Agents that work while you sleep.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-5">
-          <!-- Step 1 — neon tile uses section text (not icon), per sample style -->
           <div class="card-matrix rounded-2xl p-5 sm:p-6 reveal relative">
-            <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>BROWSE</span></div>
-            <span class="font-mono text-xs text-matrix-green mb-2 block">01</span>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Browse or Create</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Pick a ready agent from the marketplace or spin up a custom one with our no-code builder.</p>
+            <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>PICK</span></div>
+            <span class="text-xs font-semibold text-matrix-green mb-2 block">Step 1</span>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Choose an agent</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Browse ready agents for email, leads, support, shipping, or SEO — or describe what you need and we match you.</p>
           </div>
-          <!-- Step 2 -->
           <div class="card-matrix rounded-2xl p-5 sm:p-6 reveal relative">
-            <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>DEPLOY</span></div>
-            <span class="font-mono text-xs text-matrix-green mb-2 block">02</span>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">One-Click Deploy</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Connect Shopify, Google, CRM, email — agents plug into your stack in minutes, not months.</p>
+            <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>CONNECT</span></div>
+            <span class="text-xs font-semibold text-matrix-green mb-2 block">Step 2</span>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Connect your tools</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Link Gmail, Shopify, QuickBooks, CRM, or carriers in a few clicks. Your keys stay encrypted and private.</p>
           </div>
-          <!-- Step 3 -->
           <div class="card-matrix rounded-2xl p-5 sm:p-6 reveal relative">
             <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>RUN</span></div>
-            <span class="font-mono text-xs text-matrix-green mb-2 block">03</span>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Agents Execute</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">SEO, content, lead gen, support, ops — multi-step reasoning and actions, fully autonomous.</p>
+            <span class="text-xs font-semibold text-matrix-green mb-2 block">Step 3</span>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Let agents work</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">They draft replies, qualify leads, ship smarter, and grow local search — you review only what needs a human.</p>
           </div>
-          <!-- Step 4 -->
           <div class="card-matrix rounded-2xl p-5 sm:p-6 reveal relative">
-            <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>TRACK</span></div>
-            <span class="font-mono text-xs text-matrix-green mb-2 block">04</span>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Monitor &amp; Optimize</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Real-time dashboard, ROI metrics, and agent self-improvement loops. Stay in control.</p>
+            <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>GROW</span></div>
+            <span class="text-xs font-semibold text-matrix-green mb-2 block">Step 4</span>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">See the impact</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Clear dashboard: hours saved, leads booked, tickets closed, and revenue tied to each agent.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3b. USE CASES BY VERTICAL ========== -->
+    <section id="use-cases" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="Built for your industry">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <p class="section-eyebrow">Built for real US businesses</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+            See how owners like you <span class="text-matrix-green">get time back</span>
+          </h2>
+          <p class="text-matrix-soft text-lg">Home services, e-commerce, and professional firms — same idea: agents handle the busywork so you can run the business.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">Home services · HVAC</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-3">More booked jobs from local search</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
+              Agents answer after-hours inquiries, qualify web leads, and publish service pages that rank for “near me” searches — so your phone rings with the right jobs.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Lead Qualifier + Email Assistant</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Local SEO &amp; Google Business support</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: +40% organic leads in 90 days</li>
+            </ul>
+            <a href="/lead-qualifier" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore HVAC stack →</a>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col border-matrix-green/30">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">E-commerce · Shopify</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-3">Ship faster, sell more, answer less</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
+              Rate-shop carriers, update customers before they ask “where’s my order?”, and optimize product copy — without adding warehouse staff.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Shipping Assistant + Support</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Shopify, ShipStation, Stripe, Klaviyo</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: −60% “where’s my order?” tickets</li>
+            </ul>
+            <a href="/shipping-assistant" class="btn-primary text-center py-2.5 rounded-lg text-sm">Explore e-com stack →</a>
+          </article>
+
+          <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">Professional services</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-3">Inbox calm. Pipeline full.</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
+              Legal, dental, consulting, and local agencies use agents to triage email, prep meetings, keep CRM clean, and follow up leads before they go cold.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Email + CRM + Meeting agents</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> HubSpot, Gmail, Slack, calendar</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: reply time from hours → minutes</li>
+            </ul>
+            <a href="/email-assistant" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore services stack →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -1082,11 +1218,11 @@
     <section id="impact" class="relative py-20 sm:py-28 bg-matrix-muted" aria-label="SMB ROI and productivity impact">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// IMPACT DATA</p>
+          <p class="section-eyebrow">Results that matter</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            Measurable <span class="text-matrix-green ">ROI &amp; productivity</span> for SMBs
+            Real <span class="text-matrix-green">ROI &amp; time back</span> for small teams
           </h2>
-          <p class="text-matrix-soft text-lg">Composite trends from Matrixly workspaces — marketing, ops, and logistics agents over a 6-month window.</p>
+          <p class="text-matrix-soft text-lg">Illustrative trends from Matrixly workspaces — marketing, sales, support, and shipping over six months. Results vary by niche and execution.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6 mb-6">
@@ -1141,7 +1277,7 @@
                 </defs>
               </svg>
             </div>
-            <p class="text-xs text-matrix-soft font-mono mt-2">Illustrative composite · payback typically &lt; 30 days</p>
+            <p class="text-xs text-matrix-soft mt-2">Illustrative composite · payback typically &lt; 30 days</p>
           </div>
 
           <!-- Productivity bar chart -->
@@ -1219,7 +1355,7 @@
                 <div class="h-2 bg-matrix-cream/5 rounded-full overflow-hidden"><div class="h-full rounded-full bg-matrix-green/70" style="width: 44%"></div></div>
               </div>
             </div>
-            <p class="text-xs text-matrix-soft mt-4 font-mono">90-day window · mid-market SMB sample</p>
+            <p class="text-xs text-matrix-soft mt-4">90-day window · mid-market SMB sample</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-6 reveal flex flex-col">
@@ -1267,11 +1403,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
           <div class="max-w-xl">
-            <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// MARKETPLACE · NOTION SYNCED</p>
+            <p class="section-eyebrow">Ready agents</p>
             <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-              Featured <span class="text-matrix-green">AI Agents</span>
+              Hire digital teammates in <span class="text-matrix-green">minutes</span>
             </h2>
-            <p class="text-matrix-soft text-lg">Ready-to-deploy agents for sales, ops, and logistics — powered by Hermes runtime + Grok intelligence.</p>
+            <p class="text-matrix-soft text-lg">Proven agents for sales, ops, and logistics — start with one, stack more as you grow.</p>
           </div>
           <a href="/agents" class="btn-primary px-6 py-3 rounded-lg text-sm self-start md:self-auto inline-flex items-center justify-center">Browse all agents →</a>
         </div>
@@ -1280,74 +1416,74 @@
           <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
             <div class="flex items-start justify-between mb-4 gap-3">
               <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>LEAD</span></div></div>
-              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+              <span class="text-xs font-semibold px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Lead Qualifier</h3>
-            <p class="text-sm text-matrix-soft mb-4 flex-grow">Scores inbound leads, enriches contact data, and suggests personalized outreach sequences.</p>
-            <a href="/lead-qualifier" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Scores every inbound lead, fills in missing contact details, and suggests the next best outreach — so you only talk to buyers ready to buy.</p>
+            <a href="/lead-qualifier" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Try Lead Qualifier</a>
           </article>
           <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
             <div class="flex items-start justify-between mb-4 gap-3">
               <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>MAIL</span></div></div>
-              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+              <span class="text-xs font-semibold px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Email Assistant</h3>
-            <p class="text-sm text-matrix-soft mb-4 flex-grow">Triage inbox, draft replies, and flag urgent items so operators stop living in email.</p>
-            <a href="/email-assistant" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Sorts your inbox, drafts replies in your voice, and flags what actually needs you — so you stop living in email.</p>
+            <a href="/email-assistant" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Try Email Assistant</a>
           </article>
           <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
             <div class="flex items-start justify-between mb-4 gap-3">
               <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>SHIP</span></div></div>
-              <span class="font-mono text-xs px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
+              <span class="text-xs font-semibold px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Shipping Assistant</h3>
-            <p class="text-sm text-matrix-soft mb-4 flex-grow">Track shipments, notify stakeholders, and handle exceptions for logistics SMEs.</p>
-            <a href="/shipping-assistant" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Deploy Now</a>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Picks smarter rates, tracks packages, and messages customers before they open a “where’s my order?” ticket.</p>
+            <a href="/shipping-assistant" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Try Shipping Assistant</a>
           </article>
         </div>
 
         <p class="text-center text-sm text-matrix-soft reveal">
           Also live: <a href="/crm-assistant" class="text-matrix-green font-semibold hover:underline">CRM Assistant</a>
-          · Beta: Meeting Summarizer, Content Calendar, ETF Analyzer
+          · Support, content, meetings &amp; more
           · <a href="/agents" class="text-matrix-green font-semibold hover:underline">See full catalog →</a>
         </p>
       </div>
     </section>
 
-    <!-- ========== PRODUCTS TEASER (Hermes · Notion · Grok · MCP) ========== -->
+    <!-- ========== PRODUCTS TEASER (business-friendly framing) ========== -->
     <section id="products" class="relative py-16 sm:py-24 bg-matrix-muted border-y border-matrix-border/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// PRODUCTS</p>
+          <p class="section-eyebrow">Why Matrixly works</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-3">
-            Hermes + Notion + <span class="text-matrix-green">Grok</span> + MCP
+            Reliable agents. <span class="text-matrix-green">Your business knowledge.</span> Real actions.
           </h2>
-          <p class="text-matrix-soft text-lg">The Matrixly product suite — agent runtime, knowledge layer, intelligence, and integrations.</p>
+          <p class="text-matrix-soft text-lg">Everything under the hood so agents remember your SOPs, reason carefully, and act in the apps you already use.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
           <a href="/products#hermes" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
-            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>HERMES</span></div>
-            <h3 class="font-bold text-matrix-cream mb-1">Hermes Runtime</h3>
-            <p class="text-xs text-matrix-soft">Local agent runtime with skills, memory, and MCP tool use.</p>
+            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>RUN</span></div>
+            <h3 class="font-bold text-matrix-cream mb-1">Always-on agent engine</h3>
+            <p class="text-xs text-matrix-soft">Agents remember context, follow your rules, and keep working after you close the laptop.</p>
           </a>
           <a href="/products#notion" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
-            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>NOTION</span></div>
-            <h3 class="font-bold text-matrix-cream mb-1">Notion Knowledge</h3>
-            <p class="text-xs text-matrix-soft">Marketplace DB, client SOPs, and agent-writable knowledge via MCP.</p>
+            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>KNOW</span></div>
+            <h3 class="font-bold text-matrix-cream mb-1">Your playbooks &amp; SOPs</h3>
+            <p class="text-xs text-matrix-soft">Teach agents how your business works — pricing, policies, brand voice — once.</p>
           </a>
           <a href="/products#grok" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
-            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>GROK</span></div>
-            <h3 class="font-bold text-matrix-cream mb-1">Grok Intelligence</h3>
-            <p class="text-xs text-matrix-soft">xAI reasoning for multi-step plans across sales, ops, and logistics.</p>
+            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>THINK</span></div>
+            <h3 class="font-bold text-matrix-cream mb-1">Smart decision-making</h3>
+            <p class="text-xs text-matrix-soft">Powered by advanced AI reasoning for multi-step sales, ops, and logistics tasks.</p>
           </a>
           <a href="/products#mcp" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
-            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>MCP</span></div>
-            <h3 class="font-bold text-matrix-cream mb-1">MCP Hub</h3>
-            <p class="text-xs text-matrix-soft">GitHub, Notion, and 100+ app connectors for real tool actions.</p>
+            <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>LINK</span></div>
+            <h3 class="font-bold text-matrix-cream mb-1">100+ app connections</h3>
+            <p class="text-xs text-matrix-soft">Gmail, Shopify, QuickBooks, carriers, CRM, Slack — agents take action, not just chat.</p>
           </a>
         </div>
         <div class="text-center mt-10 reveal">
-          <a href="/products" class="btn-primary inline-flex px-8 py-3.5 text-sm rounded-xl">Explore full product suite</a>
+          <a href="/products" class="btn-primary inline-flex px-8 py-3.5 text-sm rounded-xl">Explore the full platform</a>
         </div>
       </div>
     </section>
@@ -1356,150 +1492,154 @@
     <section id="logistics" class="relative py-20 sm:py-28 bg-matrix-void" aria-label="Shipping logistics automation business flow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-14 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// BUSINESS FLOW · LOGISTICS</p>
+          <p class="section-eyebrow">Example flow · shipping</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            Shipping logistics, <span class="text-matrix-green ">agent-orchestrated</span>
+            From order to doorstep — <span class="text-matrix-green">without the chaos</span>
           </h2>
           <p class="text-matrix-soft text-lg">
-            From order capture to delivery confirmation — Matrixly agents run the full fulfillment loop so SMBs ship faster, cheaper, and with fewer WISMO tickets.
+            Matrixly agents run fulfillment end to end so you ship faster, spend less on carriers, and answer fewer “where’s my order?” messages.
           </p>
         </div>
 
-        <!-- End-to-end flow steps -->
         <div class="relative mb-16 reveal">
           <div class="hidden lg:block absolute top-[2.25rem] left-[8%] right-[8%] h-px flow-step-line flow-step-line-h" aria-hidden="true"></div>
           <ol class="grid sm:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-3 list-none p-0 m-0">
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
-              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center font-mono text-sm text-matrix-green">1</div>
-              <h3 class="text-sm font-bold text-matrix-cream mb-1">Order Ingest</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">Shopify / Woo / POS orders land in the Logistics Agent queue.</p>
+              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">1</div>
+              <h3 class="text-sm font-bold text-matrix-cream mb-1">Order comes in</h3>
+              <p class="text-xs text-matrix-soft leading-relaxed">Shopify, WooCommerce, or POS orders enter the queue automatically.</p>
             </li>
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
-              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center font-mono text-sm text-matrix-green">2</div>
-              <h3 class="text-sm font-bold text-matrix-cream mb-1">Inventory Check</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">Validates SKUs, splits multi-warehouse, flags backorders early.</p>
+              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">2</div>
+              <h3 class="text-sm font-bold text-matrix-cream mb-1">Stock check</h3>
+              <p class="text-xs text-matrix-soft leading-relaxed">Confirms inventory, splits warehouses, and flags backorders early.</p>
             </li>
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
-              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center font-mono text-sm text-matrix-green">3</div>
-              <h3 class="text-sm font-bold text-matrix-cream mb-1">Rate &amp; Carrier</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">Shops UPS, FedEx, USPS, regional — optimizes cost vs. SLA.</p>
+              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">3</div>
+              <h3 class="text-sm font-bold text-matrix-cream mb-1">Best rate</h3>
+              <p class="text-xs text-matrix-soft leading-relaxed">Compares UPS, FedEx, USPS, and regional options for cost vs. speed.</p>
             </li>
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
-              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center font-mono text-sm text-matrix-green">4</div>
-              <h3 class="text-sm font-bold text-matrix-cream mb-1">Label &amp; Pack</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">Generates labels, pack slips, and warehouse pick lists.</p>
+              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">4</div>
+              <h3 class="text-sm font-bold text-matrix-cream mb-1">Label &amp; pack</h3>
+              <p class="text-xs text-matrix-soft leading-relaxed">Prints labels, pack slips, and pick lists for the warehouse team.</p>
             </li>
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
-              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center font-mono text-sm text-matrix-green">5</div>
-              <h3 class="text-sm font-bold text-matrix-cream mb-1">Track &amp; Notify</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">Proactive SMS/email on ship, delay, and out-for-delivery.</p>
+              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">5</div>
+              <h3 class="text-sm font-bold text-matrix-cream mb-1">Keep customers informed</h3>
+              <p class="text-xs text-matrix-soft leading-relaxed">SMS and email on ship, delay, and out-for-delivery — before they ask.</p>
             </li>
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
-              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center font-mono text-sm text-matrix-green">6</div>
-              <h3 class="text-sm font-bold text-matrix-cream mb-1">Exceptions</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">Retries failed scans, opens claims, escalates only when needed.</p>
+              <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">6</div>
+              <h3 class="text-sm font-bold text-matrix-cream mb-1">Fix problems</h3>
+              <p class="text-xs text-matrix-soft leading-relaxed">Retries failed scans, opens claims, and only escalates when a human is needed.</p>
             </li>
           </ol>
         </div>
 
-        <!-- Detailed agent swimlanes -->
         <div class="grid lg:grid-cols-2 gap-6 mb-10">
           <div class="card-matrix rounded-2xl p-6 sm:p-8 reveal">
-            <p class="font-mono text-xs text-matrix-green mb-3">// AGENTS IN THE LOOP</p>
-            <h3 class="text-xl font-bold text-matrix-cream mb-6">Multi-agent shipping system</h3>
+            <p class="section-eyebrow mb-3">Your shipping team of agents</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-6">Specialists that work together</h3>
             <div class="space-y-4">
               <div class="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-matrix-cream/[0.02] border border-matrix-border/40">
-                <div class="text-tile" aria-hidden="true">
-                  <div class="text-tile-base"><span>ORCH</span></div>
-                </div>
+                <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>LEAD</span></div></div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold text-matrix-cream">Logistics Orchestrator</p>
-                  <p class="text-xs text-matrix-soft mt-1">Owns the order state machine, routes tasks to specialist agents, and writes audit logs.</p>
+                  <p class="text-sm font-semibold text-matrix-cream">Order coordinator</p>
+                  <p class="text-xs text-matrix-soft mt-1">Keeps every order on track and assigns the right specialist agent at each step.</p>
                 </div>
               </div>
               <div class="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-matrix-cream/[0.02] border border-matrix-border/40">
-                <div class="text-tile" aria-hidden="true">
-                  <div class="text-tile-base"><span>RATE</span></div>
-                </div>
+                <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>RATE</span></div></div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold text-matrix-cream">Rate Shopper Agent</p>
-                  <p class="text-xs text-matrix-soft mt-1">Compares live carrier rates, dimensional weight, and promised delivery windows before booking.</p>
+                  <p class="text-sm font-semibold text-matrix-cream">Rate shopper</p>
+                  <p class="text-xs text-matrix-soft mt-1">Finds the best live carrier rate for weight, size, and promised delivery date.</p>
                 </div>
               </div>
               <div class="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-matrix-cream/[0.02] border border-matrix-border/40">
-                <div class="text-tile" aria-hidden="true">
-                  <div class="text-tile-base"><span>TRACK</span></div>
-                </div>
+                <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>TRACK</span></div></div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold text-matrix-cream">Tracking &amp; Comms Agent</p>
-                  <p class="text-xs text-matrix-soft mt-1">Polls carrier APIs, detects delays, and messages customers before they open a support ticket.</p>
+                  <p class="text-sm font-semibold text-matrix-cream">Tracking &amp; messaging</p>
+                  <p class="text-xs text-matrix-soft mt-1">Watches carrier updates and messages customers before they open a support ticket.</p>
                 </div>
               </div>
               <div class="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-matrix-cream/[0.02] border border-matrix-border/40">
-                <div class="text-tile" aria-hidden="true">
-                  <div class="text-tile-base"><span>FIX</span></div>
-                </div>
+                <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>FIX</span></div></div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold text-matrix-cream">Exception Recovery Agent</p>
-                  <p class="text-xs text-matrix-soft mt-1">Handles address fixes, re-ships, claims, and human handoff with full context packs.</p>
+                  <p class="text-sm font-semibold text-matrix-cream">Exception recovery</p>
+                  <p class="text-xs text-matrix-soft mt-1">Handles address fixes, re-ships, and claims — with a clean handoff when you need to step in.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="card-matrix rounded-2xl p-6 sm:p-8 reveal">
-            <p class="font-mono text-xs text-matrix-green mb-3">// SAMPLE RUN</p>
-            <h3 class="text-xl font-bold text-matrix-cream mb-4">Live logistics terminal</h3>
-            <div class="terminal-window">
-              <div class="terminal-header">
-                <span class="terminal-dot bg-red-500/80"></span>
-                <span class="terminal-dot bg-yellow-500/80"></span>
-                <span class="terminal-dot bg-matrix-green/80"></span>
-                <span class="ml-3 font-mono text-xs text-matrix-soft">agent://logistics-orchestrator</span>
+            <p class="section-eyebrow mb-3">What it looks like</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-4">One order, fully handled</h3>
+            <div class="demo-panel">
+              <div class="demo-panel-header">
+                <div>
+                  <p class="text-sm font-bold text-matrix-cream">Order #48291</p>
+                  <p class="text-xs text-matrix-soft">Shopify · UrbanThread Co.</p>
+                </div>
+                <span class="text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">Delivered</span>
               </div>
-              <div class="p-4 sm:p-5 font-mono text-xs sm:text-sm leading-relaxed space-y-1.5 min-h-[280px]">
-                <p class="text-matrix-soft"><span class="text-matrix-forest">$</span> order.received #48291 · Shopify</p>
-                <p class="text-matrix-green">✓ Inventory OK · WH-East · 2 units</p>
-                <p class="text-matrix-soft">→ Rate shop: UPS Ground $8.40 · FedEx $9.10 · USPS $7.95</p>
-                <p class="text-matrix-green">✓ Selected USPS Priority · ETA Thu · saved $1.15</p>
-                <p class="text-matrix-green">✓ Label printed · pack slip → pick wave #14</p>
-                <p class="text-matrix-soft">→ Tracking 9400… scanned DEPARTURE</p>
-                <p class="text-matrix-soft">→ Customer notified: “On its way” SMS</p>
-                <p class="text-matrix-cream/70 mt-2">⚠ Delay detected · hub congestion DAL</p>
-                <p class="text-matrix-green">✓ Proactive delay email sent · no ticket opened</p>
-                <p class="text-matrix-green cursor-blink mt-2">Order #48291 delivered · loop closed</p>
+              <div class="p-4 sm:p-5 space-y-3 text-sm">
+                <div class="flex gap-3 items-start">
+                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Stock confirmed</span> — East warehouse, 2 units ready</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Best rate chosen</span> — USPS Priority, saved $1.15 vs. next option</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Label printed</span> — pack slip sent to pick wave</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Customer texted</span> — “Your order is on its way”</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                  <span class="text-amber-500 font-bold mt-0.5">!</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Hub delay spotted</span> — proactive delay email sent; no ticket opened</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Delivered on time</span> — loop closed automatically</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Logistics outcomes -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
           <div class="card-matrix rounded-xl p-5 text-center">
-            <p class="font-mono text-2xl font-bold text-matrix-green  mb-1">−35%</p>
-            <p class="text-sm text-matrix-cream font-medium">Shipping cost / order</p>
-            <p class="text-xs text-matrix-soft mt-1">Smart rate shopping at scale</p>
+            <p class="text-2xl font-bold text-matrix-green mb-1">−35%</p>
+            <p class="text-sm text-matrix-cream font-medium">Shipping cost per order</p>
+            <p class="text-xs text-matrix-soft mt-1">Smarter rate shopping</p>
           </div>
           <div class="card-matrix rounded-xl p-5 text-center">
-            <p class="font-mono text-2xl font-bold text-matrix-green  mb-1">−60%</p>
-            <p class="text-sm text-matrix-cream font-medium">WISMO tickets</p>
+            <p class="text-2xl font-bold text-matrix-green mb-1">−60%</p>
+            <p class="text-sm text-matrix-cream font-medium">“Where’s my order?” tickets</p>
             <p class="text-xs text-matrix-soft mt-1">Proactive tracking updates</p>
           </div>
           <div class="card-matrix rounded-xl p-5 text-center">
-            <p class="font-mono text-2xl font-bold text-matrix-green  mb-1">12 min</p>
-            <p class="text-sm text-matrix-cream font-medium">Order → label</p>
-            <p class="text-xs text-matrix-soft mt-1">Median agent cycle time</p>
+            <p class="text-2xl font-bold text-matrix-green mb-1">12 min</p>
+            <p class="text-sm text-matrix-cream font-medium">Order to label</p>
+            <p class="text-xs text-matrix-soft mt-1">Typical agent cycle time</p>
           </div>
           <div class="card-matrix rounded-xl p-5 text-center">
-            <p class="font-mono text-2xl font-bold text-matrix-green  mb-1">98.1%</p>
+            <p class="text-2xl font-bold text-matrix-green mb-1">98.1%</p>
             <p class="text-sm text-matrix-cream font-medium">On-time delivery</p>
-            <p class="text-xs text-matrix-soft mt-1">With exception auto-recovery</p>
+            <p class="text-xs text-matrix-soft mt-1">With auto exception recovery</p>
           </div>
         </div>
 
         <div class="mt-10 text-center reveal">
-          <a href="#final-cta" class="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm">
-            Deploy Logistics Agents
+          <a href="/shipping-assistant" class="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm">
+            Try Shipping Assistant
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
         </div>
@@ -1510,11 +1650,11 @@
     <section id="features" class="relative py-20 sm:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// CAPABILITIES</p>
+          <p class="section-eyebrow">Why owners choose Matrixly</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            Built for SMBs that want <span class="text-matrix-green ">unfair advantages</span>
+            Built for SMBs that want <span class="text-matrix-green">real leverage</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Agentic power built for SMBs and contractors — without big-company complexity or price tags.</p>
+          <p class="text-matrix-soft text-lg">Enterprise-grade capability without enterprise complexity, headcount, or price tags.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1522,65 +1662,64 @@
             <div class="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">SEO Intelligence Baked In</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Every agent understands search intent, SERP dynamics, and content gaps — not generic LLM fluff.</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Local SEO that drives jobs</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Agents understand search intent and “near me” demand — so content and pages attract real customers, not empty traffic.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
             <div class="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">True Agentic Autonomy</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Multi-step reasoning, tool use, and goal completion. Agents plan, act, verify, and iterate.</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Agents that finish the job</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Not another chatbot. Agents plan, act in your apps, check their work, and only escalate when you should decide.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
             <div class="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">100+ Integrations</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Google, Shopify, WordPress, email, CRM, ads, analytics — connect your stack once, agents do the rest.</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Works with your stack</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Square, Slack, Meta ads — connect once; agents do the rest.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
             <div class="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Business-Grade Security</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">SOC 2-ready controls, encrypted credentials, role-based access, and privacy-first data handling.</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">Security you can explain</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">SOC 2–ready controls, encrypted credentials, role-based access, audit trails. Your data is never used to train models.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
             <div class="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">No-Code + Marketplace</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Deploy proven agents instantly or build custom ones with a visual builder — no engineers required.</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">No developers required</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Launch proven agents from the marketplace or customize with a simple builder — set up in minutes, not months.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
             <div class="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Real ROI for SMBs</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Clear dashboards: hours saved, leads closed, rankings gained, revenue attributed to each agent.</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2">ROI you can show</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed">Clear dashboards: hours saved, leads booked, tickets closed, and revenue tied to each agent.</p>
           </div>
         </div>
 
-        <!-- ROI callout -->
         <div class="mt-12 card-matrix rounded-2xl p-8 sm:p-10 reveal border-matrix-green/20">
           <div class="grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2">
-              <h3 class="text-2xl font-bold text-matrix-cream mb-3">What SMBs actually unlock</h3>
-              <p class="text-matrix-soft mb-4">An HVAC company deployed SEO + Lead Gen agents and reclaimed 25 hours/week while booking 40% more jobs from organic search in 90 days.</p>
-              <p class="font-mono text-sm text-matrix-green">ROI example · results vary by niche &amp; execution</p>
+              <h3 class="text-2xl font-bold text-matrix-cream mb-3">What owners actually unlock</h3>
+              <p class="text-matrix-soft mb-4">A Texas HVAC company deployed SEO + Lead Qualifier agents and reclaimed 25 hours/week while booking 40% more jobs from organic search in 90 days.</p>
+              <p class="text-sm text-matrix-green font-semibold">Example outcome · results vary by niche &amp; execution</p>
             </div>
             <div class="flex flex-col gap-3">
-              <div class="flex justify-between text-sm"><span class="text-matrix-soft">Time saved</span><span class="text-matrix-green font-mono font-semibold">25 hrs/wk</span></div>
+              <div class="flex justify-between text-sm"><span class="text-matrix-soft">Time saved</span><span class="text-matrix-green font-semibold">25 hrs/wk</span></div>
               <div class="h-1.5 bg-matrix-cream/5 rounded-full overflow-hidden"><div class="h-full w-4/5 bg-matrix-green rounded-full"></div></div>
-              <div class="flex justify-between text-sm"><span class="text-matrix-soft">Organic leads</span><span class="text-matrix-green font-mono font-semibold">+40%</span></div>
+              <div class="flex justify-between text-sm"><span class="text-matrix-soft">Organic leads</span><span class="text-matrix-green font-semibold">+40%</span></div>
               <div class="h-1.5 bg-matrix-cream/5 rounded-full overflow-hidden"><div class="h-full w-2/5 bg-matrix-green rounded-full"></div></div>
-              <div class="flex justify-between text-sm"><span class="text-matrix-soft">Payback period</span><span class="text-matrix-green font-mono font-semibold">&lt; 30 days</span></div>
+              <div class="flex justify-between text-sm"><span class="text-matrix-soft">Payback period</span><span class="text-matrix-green font-semibold">&lt; 30 days</span></div>
               <div class="h-1.5 bg-matrix-cream/5 rounded-full overflow-hidden"><div class="h-full w-full bg-matrix-green rounded-full"></div></div>
             </div>
           </div>
@@ -1592,82 +1731,82 @@
     <section id="testimonials" class="relative py-20 sm:py-28 bg-matrix-muted">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// WALL OF LOVE</p>
+          <p class="section-eyebrow">From operators like you</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            SMBs already <span class="text-matrix-green ">running on agents</span>
+            Small businesses already <span class="text-matrix-green">getting time back</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Real operators. Real outcomes. Matrix green energy included.</p>
+          <p class="text-matrix-soft text-lg">Illustrative composite quotes based on early operator feedback — industry and outcomes aligned to real SMB workflows.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <blockquote class="card-matrix rounded-2xl p-6 reveal">
             <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"We replaced three freelancers with the SEO Content Agent. Rankings jumped, content never misses a week, and my marketing budget actually makes sense now."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"We replaced three freelancers with the content agent. Rankings jumped, content never misses a week, and my marketing budget actually makes sense now."</p>
             <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center font-mono text-matrix-green text-sm font-bold">MR</div>
+              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">MR</div>
               <div>
                 <cite class="not-italic text-sm font-semibold text-matrix-cream">Marcus Rivera</cite>
-                <p class="text-xs text-matrix-soft">Owner, CoolAir HVAC</p>
+                <p class="text-xs text-matrix-soft">Owner · CoolAir HVAC · Austin, TX</p>
               </div>
             </footer>
           </blockquote>
 
           <blockquote class="card-matrix rounded-2xl p-6 reveal">
             <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Lead Gen Agent booked more qualified demos in two weeks than our SDR did in two months. It feels like having a tireless growth hire."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Lead Qualifier booked more qualified consults in two weeks than our part-time SDR did in two months. It feels like a tireless growth hire."</p>
             <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center font-mono text-matrix-green text-sm font-bold">AK</div>
+              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">AK</div>
               <div>
                 <cite class="not-italic text-sm font-semibold text-matrix-cream">Aisha Khan</cite>
-                <p class="text-xs text-matrix-soft">Founder, Peak Legal Services</p>
+                <p class="text-xs text-matrix-soft">Founder · Peak Legal · Chicago, IL</p>
               </div>
             </footer>
           </blockquote>
 
           <blockquote class="card-matrix rounded-2xl p-6 reveal">
             <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"E-commerce Optimizer rewrote our PDP copy and recovery emails. Conversion rate up 22%. Matrixly paid for itself in the first invoice cycle."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Product copy and recovery emails improved overnight. Conversion up 22%. Matrixly paid for itself in the first invoice cycle."</p>
             <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center font-mono text-matrix-green text-sm font-bold">JL</div>
+              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">JL</div>
               <div>
                 <cite class="not-italic text-sm font-semibold text-matrix-cream">Jordan Lee</cite>
-                <p class="text-xs text-matrix-soft">CEO, UrbanThread Co. (Shopify)</p>
+                <p class="text-xs text-matrix-soft">CEO · UrbanThread (Shopify) · Portland, OR</p>
               </div>
             </footer>
           </blockquote>
 
           <blockquote class="card-matrix rounded-2xl p-6 reveal">
             <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Support Agent handles 70% of tickets overnight. Customers get answers at 2am; my team focuses on complex work. Game changer for a small shop."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Support handles most overnight tickets. Patients get answers at 2am; my team focuses on complex work. Game changer for a small practice."</p>
             <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center font-mono text-matrix-green text-sm font-bold">SP</div>
+              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">SP</div>
               <div>
                 <cite class="not-italic text-sm font-semibold text-matrix-cream">Sofia Patel</cite>
-                <p class="text-xs text-matrix-soft">Ops Lead, BrightPath Dental</p>
+                <p class="text-xs text-matrix-soft">Ops Lead · BrightPath Dental · Denver, CO</p>
               </div>
             </footer>
           </blockquote>
 
           <blockquote class="card-matrix rounded-2xl p-6 reveal">
             <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"I built a custom ops agent in an afternoon — no code. It reconciles inventory and pings Slack when SKUs run low. Pure Matrix magic."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"I set up an inventory agent in an afternoon — no code. It pings Slack when SKUs run low. Pure time back for a small shop."</p>
             <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center font-mono text-matrix-green text-sm font-bold">DT</div>
+              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">DT</div>
               <div>
                 <cite class="not-italic text-sm font-semibold text-matrix-cream">Derek Torres</cite>
-                <p class="text-xs text-matrix-soft">Owner, Gulf Coast Outfitters</p>
+                <p class="text-xs text-matrix-soft">Owner · Gulf Coast Outfitters · Tampa, FL</p>
               </div>
             </footer>
           </blockquote>
 
           <blockquote class="card-matrix rounded-2xl p-6 reveal">
             <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Finally an AI platform that gets SMBs. Not enterprise theater — practical agents with SEO brains. Our local search visibility is a different sport now."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Finally an AI product that gets small businesses. Practical agents, clear ROI. Our local search visibility is a different game now."</p>
             <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center font-mono text-matrix-green text-sm font-bold">NW</div>
+              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">NW</div>
               <div>
                 <cite class="not-italic text-sm font-semibold text-matrix-cream">Nina Walsh</cite>
-                <p class="text-xs text-matrix-soft">Marketing Dir., Metro Home Pros</p>
+                <p class="text-xs text-matrix-soft">Marketing · Metro Home Pros · Phoenix, AZ</p>
               </div>
             </footer>
           </blockquote>
@@ -1679,70 +1818,76 @@
     <section id="pricing" class="relative py-20 sm:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// PRICING</p>
+          <p class="section-eyebrow">Pricing</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            Simple plans. <span class="text-matrix-green">Serious leverage.</span>
+            Less than a part-time hire. <span class="text-matrix-green">Works around the clock.</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Built for SMBs, small teams, and individual contractors. Start free. Scale as ROI compounds.</p>
+          <p class="text-matrix-soft text-lg">Built for owners, contractors, and small teams. Start free. Upgrade when the ROI is obvious.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
-          <!-- Free / Marketplace -->
           <div class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
-            <p class="font-mono text-xs text-matrix-soft uppercase tracking-wider mb-2">Marketplace</p>
+            <p class="text-xs font-semibold text-matrix-soft uppercase tracking-wider mb-2">Free</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-1">Explore</h3>
             <div class="mb-4">
               <span class="text-4xl font-extrabold text-matrix-cream">$0</span>
               <span class="text-matrix-soft text-sm">/mo</span>
             </div>
-            <p class="text-sm text-matrix-soft mb-6">Browse agents, preview demos, and launch your first workflow.</p>
+            <p class="text-sm text-matrix-soft mb-6">Browse agents and try the workflow risk-free.</p>
+            <p class="text-xs font-semibold text-matrix-cream mb-3">What you get</p>
             <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Marketplace access</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Full marketplace access</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> 1 agent sandbox</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Community support</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Basic analytics</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Basic activity view</li>
             </ul>
-            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Get Started Free</button>
+            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start free — no card</button>
           </div>
 
-          <!-- Starter -->
           <div class="card-matrix rounded-2xl p-6 flex flex-col reveal">
-            <p class="font-mono text-xs text-matrix-soft uppercase tracking-wider mb-2">Starter</p>
+            <p class="text-xs font-semibold text-matrix-soft uppercase tracking-wider mb-2">Starter</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-1">Grow</h3>
-            <div class="mb-4">
+            <div class="mb-1">
               <span class="text-4xl font-extrabold text-matrix-cream">$49</span>
               <span class="text-matrix-soft text-sm">/mo</span>
             </div>
-            <p class="text-sm text-matrix-soft mb-6">Perfect for solo operators, contractors, and small teams ready to automate.</p>
+            <p class="text-xs text-matrix-soft mb-4">About $1.60/day · less than a coffee</p>
+            <p class="text-sm text-matrix-soft mb-6">Ideal for solo operators and small teams ready to automate core work.</p>
+            <p class="text-xs font-semibold text-matrix-cream mb-3">What you can achieve</p>
             <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 3 active agents</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Core integrations</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> SEO intelligence</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 3 active agents (e.g. email + leads + SEO)</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Core tools: Gmail, Shopify, CRM basics</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Local SEO intelligence</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Email support</li>
             </ul>
-            <a href="#final-cta" class="btn-secondary w-full text-center py-3 rounded-lg text-sm">Start Starter</a>
+            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start Grow</button>
           </div>
 
-          <!-- Pro (featured) -->
           <div class="card-matrix pricing-featured rounded-2xl p-6 flex flex-col reveal relative sm:col-span-2 lg:col-span-1">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full badge-popular text-xs font-bold font-mono whitespace-nowrap">MOST POPULAR</div>
-            <p class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-2">Pro</p>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full badge-popular text-xs font-bold whitespace-nowrap">MOST POPULAR</div>
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wider mb-2">Pro</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-1">Scale</h3>
-            <div class="mb-4">
+            <div class="mb-1">
               <span class="text-4xl font-extrabold text-matrix-green">$149</span>
               <span class="text-matrix-soft text-sm">/mo</span>
             </div>
-            <p class="text-sm text-matrix-soft mb-6">Full agent stacks for growing SMBs and multi-agent workflows.</p>
+            <p class="text-xs text-matrix-soft mb-4">A fraction of one VA · multi-agent coverage</p>
+            <p class="text-sm text-matrix-soft mb-6">Full agent stacks for growing shops and multi-step workflows.</p>
+            <p class="text-xs font-semibold text-matrix-cream mb-3">What you can achieve</p>
             <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 15 active agents</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> All integrations</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> No-code builder</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 15 active agents across sales &amp; ops</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> All integrations (carriers, ads, finance)</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Simple agent builder</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Priority support</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Advanced ROI dashboard</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Full ROI dashboard</li>
             </ul>
-            <a href="#final-cta" class="btn-primary w-full text-center py-3 rounded-lg text-sm">Start Pro</a>
+            <button type="button" class="btn-primary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start Scale</button>
           </div>
         </div>
+        <p class="text-center text-sm text-matrix-soft mt-8 reveal">
+          Need a walkthrough? <a href="#final-cta" class="text-matrix-green font-semibold hover:underline">Start free</a> or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse agents first</a>.
+          Cancel anytime · No long-term contract.
+        </p>
       </div>
     </section>
 
@@ -1751,14 +1896,20 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-14 items-center">
           <div class="reveal">
-            <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// INTEGRATIONS &amp; SECURITY</p>
+            <p class="section-eyebrow">Integrations &amp; security</p>
             <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-              Plugs into your stack.<br />
-              <span class="text-matrix-green ">Protects your data.</span>
+              Plugs into your tools.<br />
+              <span class="text-matrix-green">Protects your business.</span>
             </h2>
-            <p class="text-matrix-soft text-lg mb-8 leading-relaxed">
-              Matrixly agents connect to the tools you already run — and treat credentials, customer data, and content with privacy-first design.
+            <p class="text-matrix-soft text-lg mb-6 leading-relaxed">
+              Connect the apps you already use. Credentials stay encrypted, actions are logged, and customer data is never used to train AI models.
             </p>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="security-badge">SOC 2 ready</span>
+              <span class="security-badge">GDPR &amp; US privacy</span>
+              <span class="security-badge">Encrypted keys</span>
+              <span class="security-badge">No training on your data</span>
+            </div>
             <ul class="space-y-4">
               <li class="flex gap-3">
                 <span class="mt-0.5 w-6 h-6 rounded-md bg-matrix-green/15 flex items-center justify-center flex-shrink-0">
@@ -1775,7 +1926,7 @@
                 </span>
                 <div>
                   <p class="text-matrix-cream font-semibold text-sm">Role-based access &amp; audit trails</p>
-                  <p class="text-xs text-matrix-soft">Know exactly which agent did what, when</p>
+                  <p class="text-xs text-matrix-soft">Know exactly which agent did what, and when</p>
                 </div>
               </li>
               <li class="flex gap-3">
@@ -1783,53 +1934,52 @@
                   <svg class="w-3.5 h-3.5 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                 </span>
                 <div>
-                  <p class="text-matrix-cream font-semibold text-sm">GDPR-friendly data residency options</p>
-                  <p class="text-xs text-matrix-soft">Your customer data stays under your control</p>
+                  <p class="text-matrix-cream font-semibold text-sm">Your data stays yours</p>
+                  <p class="text-xs text-matrix-soft">US privacy–friendly controls · optional data residency</p>
                 </div>
               </li>
             </ul>
           </div>
 
-          <!-- Integration grid -->
           <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 reveal">
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">Google</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Gmail</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">Shopify</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Shopify</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">ShipStation</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">QuickBooks</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">UPS</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">ShipStation</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">FedEx</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Square</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">USPS</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">HubSpot</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">HubSpot</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">UPS / FedEx</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">Slack</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Slack</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">Stripe</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Stripe</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">Klaviyo</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Meta Ads</p>
             </div>
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
-              <p class="font-mono text-xs sm:text-sm text-matrix-cream">Zapier</p>
+              <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Google Biz</p>
             </div>
             <a href="/integrations" class="card-matrix rounded-xl p-4 text-center flex items-center justify-center border-matrix-green/30 hover:border-matrix-green/50 transition-colors">
-              <p class="font-mono text-xs text-matrix-green">Browse all →</p>
+              <p class="text-xs font-semibold text-matrix-green">Browse all →</p>
             </a>
           </div>
-          <div class="mt-8 text-center lg:text-left reveal">
+          <div class="mt-8 text-center lg:text-left reveal lg:col-span-2">
             <a href="/integrations" class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm">
               Explore all integrations
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -1845,23 +1995,26 @@
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative reveal">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6">
           <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse"></span>
-          <span class="font-mono text-xs text-matrix-green">SYSTEMS ONLINE · READY TO DEPLOY</span>
+          <span class="text-xs font-semibold text-matrix-green">Free to explore · No credit card</span>
         </div>
         <h2 class="h2-fluid font-extrabold text-matrix-cream mb-5 leading-tight">
-          Stop juggling tools.<br />
-          <span class="text-matrix-green ">Start deploying agents.</span>
+          Wake up tomorrow<br />
+          <span class="text-matrix-green">already ahead.</span>
         </h2>
         <p class="text-lg text-matrix-soft mb-10 max-w-xl mx-auto">
-          Join forward-thinking SMBs automating marketing, sales, and ops with SEO-powered agentic AI. Free to explore. No credit card required.
+          Join US small businesses reclaiming 20+ hours a week with ready AI agents for marketing, sales, and ops. Set up in minutes. Cancel anytime.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
           <button type="button" class="btn-primary px-10 py-3.5 rounded-xl text-sm whitespace-nowrap" data-open-auth="signup">
-            Get Started Free
+            Start free — no card needed
           </button>
+          <a href="#use-cases" class="btn-secondary px-8 py-3.5 rounded-xl text-sm whitespace-nowrap">
+            See industry examples
+          </a>
         </div>
         <p class="text-xs text-matrix-soft">
-          Or <a href="/agents" class="text-matrix-green hover:underline">browse agents</a> first — no commitment.
+          Or <a href="/agents" class="text-matrix-green hover:underline font-semibold">browse agents</a> first — no commitment.
         </p>
       </div>
     </section>
@@ -1988,7 +2141,7 @@
             </span>
           </a>
           <p class="text-sm text-matrix-soft leading-relaxed max-w-xs">
-            The Agentic AI Marketplace for SMBs powered by SEO Intelligence.
+            AI agents that reclaim time for US small businesses — leads, email, shipping, support, and local SEO.
           </p>
         </div>
 
@@ -2034,11 +2187,11 @@
       </div>
 
       <div class="pt-8 border-t border-matrix-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-matrix-soft font-mono">
+        <p class="text-xs text-matrix-soft">
           © <span id="year"></span> Matrixly · All rights reserved
         </p>
-        <p class="text-xs text-matrix-soft font-mono">
-          <span class="text-matrix-green">█</span> Follow the white rabbit · Build agents that work
+        <p class="text-xs text-matrix-soft">
+          AI agents for US small businesses · Built for owners, not engineers
         </p>
       </div>
     </div>

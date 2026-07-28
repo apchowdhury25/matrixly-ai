@@ -669,12 +669,12 @@
     <!-- HERO -->
     <section class="relative py-14 sm:py-20 grid-bg border-b border-matrix-border/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// INTEGRATIONS</p>
+        <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase">Integrations</p>
         <h1 class="h1-fluid font-extrabold text-matrix-cream mb-4 max-w-3xl leading-tight">
-          Explore all <span class="text-matrix-green">integrations</span>
+          Works with the tools you <span class="text-matrix-green">already use</span>
         </h1>
         <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8">
-          With hundreds of integrations, Matrixly connects to all your favorite apps — so agents can market, sell, ship, and support inside the tools you already use.
+          Connect Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Slack, carriers, and more — so agents can market, sell, ship, and support without you switching tabs.
         </p>
 
         <!-- Search -->
@@ -735,9 +735,9 @@
     <section class="py-16 sm:py-24 bg-matrix-void border-y border-matrix-border/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
-          <p class="font-mono text-sm text-matrix-green mb-3 tracking-wide">// HOW IT WORKS</p>
+          <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase">How it works</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Easy as one, two, three</h2>
-          <p class="text-matrix-soft">Trigger → connect → let Matrixly agents execute. All in natural language.</p>
+          <p class="text-matrix-soft">Something happens in your tools → agents step in → work gets done. Plain language, real actions.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-5">
@@ -799,7 +799,7 @@
               <span class="text-matrix-cream">Matrixly</span>
             </span>
           </a>
-          <p class="text-sm text-matrix-soft">The Agentic AI Marketplace for SMBs powered by SEO Intelligence.</p>
+          <p class="text-sm text-matrix-soft">AI agents that work while you run your business.</p>
         </div>
         <div>
           <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Product</h4>
@@ -881,6 +881,7 @@
       { name: 'Shopify', category: 'ecommerce', popular: true, abbr: 'SHOP' },
       { name: 'WordPress', category: 'marketing', popular: true, abbr: 'WP' },
       { name: 'Stripe', category: 'sales', popular: true, abbr: 'STRP' },
+      { name: 'QuickBooks', category: 'operations', popular: true, abbr: 'QB' },
       { name: 'Zapier', category: 'operations', popular: true, abbr: 'ZAP' },
 
       // Sales
@@ -909,7 +910,7 @@
       { name: 'AWeber', category: 'marketing', abbr: 'AWEB' },
       { name: 'Webflow', category: 'marketing', abbr: 'WEB' },
       { name: 'Notion', category: 'productivity', popular: true, abbr: 'NOTN' },
-      { name: 'Hermes Agent', category: 'assistant', popular: true, abbr: 'HERM' },
+      { name: 'Google Business Profile', category: 'marketing', popular: true, abbr: 'GBP' },
       { name: 'Grok (xAI)', category: 'assistant', popular: true, abbr: 'GROK' },
       { name: 'GitHub', category: 'operations', popular: true, abbr: 'GH' },
       { name: 'YouTube', category: 'marketing', abbr: 'YT' },
@@ -917,6 +918,7 @@
       { name: 'X (Twitter)', category: 'marketing', abbr: 'X' },
 
       // Operations
+      { name: 'Xero', category: 'operations', abbr: 'XERO' },
       { name: 'Asana', category: 'operations', abbr: 'ASA' },
       { name: 'ClickUp', category: 'operations', abbr: 'CLK' },
       { name: 'Monday.com', category: 'operations', abbr: 'MON' },
@@ -947,7 +949,7 @@
       { name: 'ReCharge', category: 'ecommerce', abbr: 'RECH' },
 
       // Logistics — Shipping Assistant hub + multi-carrier / fulfillment stack for SMBs
-      { name: 'ShipStation', category: 'logistics', popular: true, abbr: 'SS', blurb: 'Primary hub for Matrixly Shipping Assistant — multi-carrier labels, tracking, and exceptions (UPS · FedEx · USPS).', href: 'shipping-assistant.html', cta: 'Deploy Shipping Agent' },
+      { name: 'ShipStation', category: 'logistics', popular: true, abbr: 'SS', blurb: 'Primary hub for Matrixly Shipping Assistant — multi-carrier labels, tracking, and exceptions (UPS · FedEx · USPS).', href: '/shipping-assistant', cta: 'Try Shipping Assistant' },
       { name: 'ShipEngine', category: 'logistics', abbr: 'SENG', blurb: 'Label rates and multi-carrier shipping API — pairs with ShipStation-class fulfillment agents.' },
       { name: 'ShipHero', category: 'logistics', abbr: 'SHRO', blurb: 'Warehouse & 3PL fulfillment — integrate inventory and outbound with logistics agents.' },
       { name: 'Shipday', category: 'logistics', abbr: 'SDAY', blurb: 'Local delivery dispatch — route last-mile jobs from your Matrixly shipping workflows.' },
