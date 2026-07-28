@@ -427,7 +427,156 @@
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
 
-    /* Outcome demo panel (replaces developer terminal aesthetic) */
+    /* Hero agent carousel */
+    .agent-carousel {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .agent-carousel-header {
+      background: linear-gradient(135deg, var(--brand-blue-soft) 0%, color-mix(in srgb, var(--brand-blue) 8%, var(--card)) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .agent-carousel-viewport {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+    .agent-carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .agent-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      min-width: 100%;
+      padding: 1.25rem 1.35rem 1rem;
+      box-sizing: border-box;
+    }
+    .agent-slide-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--brand-blue) 12%, transparent);
+      border: 1px solid color-mix(in srgb, var(--brand-blue) 22%, transparent);
+      color: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .agent-slide-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--soft);
+      line-height: 1.4;
+    }
+    .agent-slide-benefit::before {
+      content: '✓';
+      color: var(--brand-blue);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .agent-carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px 16px;
+      border-top: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg-alt) 55%, var(--card));
+    }
+    .agent-carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      flex-shrink: 0;
+    }
+    .agent-carousel-btn:hover {
+      border-color: color-mix(in srgb, var(--brand-blue) 45%, transparent);
+      color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 8%, var(--card));
+      box-shadow: var(--shadow-sm);
+    }
+    .agent-carousel-btn:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+    .agent-carousel-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      max-width: min(100%, 220px);
+    }
+    .agent-carousel-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      border: none;
+      padding: 0;
+      background: color-mix(in srgb, var(--soft) 35%, transparent);
+      cursor: pointer;
+      transition: width 0.25s ease, background 0.25s ease;
+    }
+    .agent-carousel-dot[aria-current="true"] {
+      width: 18px;
+      background: var(--brand-blue);
+    }
+    .agent-carousel-dot:hover {
+      background: color-mix(in srgb, var(--brand-blue) 55%, transparent);
+    }
+    .agent-carousel-progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      background: color-mix(in srgb, var(--border) 70%, transparent);
+      overflow: hidden;
+    }
+    .agent-carousel-progress > span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--brand-blue);
+      transform-origin: left center;
+    }
+    .agent-carousel.is-playing .agent-carousel-progress > span {
+      animation: carouselProgress var(--carousel-ms, 4500ms) linear forwards;
+    }
+    @keyframes carouselProgress {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .agent-carousel-track { transition: none; }
+      .agent-carousel.is-playing .agent-carousel-progress > span { animation: none; width: 100%; }
+    }
+    /* Shared panel styles used elsewhere on page */
     .demo-panel {
       background: var(--card);
       border: 1px solid var(--border);
@@ -443,28 +592,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-    }
-    .demo-activity {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .demo-activity:last-child { border-bottom: none; }
-    .demo-activity-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: color-mix(in srgb, var(--brand-blue) 12%, transparent);
-      color: var(--brand-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
     }
     .vertical-tab {
       padding: 10px 16px;
@@ -1006,63 +1133,223 @@
             </div>
           </div>
 
-          <!-- Visual: outcome activity panel (SMB-friendly, no CLI) -->
+          <!-- Visual: auto agent carousel (15 marketplace agents) -->
           <div class="relative w-full max-w-xl mx-auto lg:max-w-none mt-4 lg:mt-0">
-            <div class="demo-panel animate-float" aria-label="Example of agents working for a small business this week">
-              <div class="demo-panel-header">
-                <div>
-                  <p class="text-sm font-bold text-matrix-cream">Your agents this week</p>
-                  <p class="text-xs text-matrix-soft">CoolAir HVAC · Austin, TX</p>
+            <div
+              id="agent-carousel"
+              class="agent-carousel animate-float is-playing"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Matrixly AI agents"
+              style="--carousel-ms: 4800ms"
+            >
+              <div class="agent-carousel-header">
+                <div class="min-w-0">
+                  <p class="text-sm font-bold text-matrix-cream">Meet your AI team</p>
+                  <p class="text-xs text-matrix-soft">15 ready agents · pick one and go</p>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">
-                  <span class="w-1.5 h-1.5 rounded-full bg-matrix-green animate-pulse"></span>
-                  Live
-                </span>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                  <span id="agent-carousel-counter" class="text-xs font-semibold text-matrix-soft tabular-nums" aria-live="polite">1 / 15</span>
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-matrix-green animate-pulse"></span>
+                    Live
+                  </span>
+                </div>
               </div>
-              <div class="p-4 sm:p-5 md:p-6">
-                <div class="flex items-center justify-between mb-4 p-3 rounded-xl bg-matrix-green/5 border border-matrix-green/20">
-                  <div>
-                    <p class="text-xs text-matrix-soft font-medium">Hours reclaimed</p>
-                    <p class="text-2xl font-extrabold text-matrix-green">22 hrs</p>
-                  </div>
-                  <div class="text-right">
-                    <p class="text-xs text-matrix-soft font-medium">New jobs booked</p>
-                    <p class="text-2xl font-extrabold text-matrix-cream">+8</p>
-                  </div>
-                </div>
 
-                <div class="demo-activity">
-                  <div class="demo-activity-icon" aria-hidden="true">MAIL</div>
-                  <div class="min-w-0">
-                    <p class="text-sm font-semibold text-matrix-cream">Email Assistant</p>
-                    <p class="text-xs text-matrix-soft mt-0.5">Triaged 47 messages · drafted 12 replies in your voice</p>
-                  </div>
-                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
+              <div class="agent-carousel-viewport">
+                <div id="agent-carousel-track" class="agent-carousel-track">
+                  <article class="agent-slide" data-agent-slide aria-hidden="false">
+                    <div class="agent-slide-icon" aria-hidden="true">LEAD</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">Lead Qualifier</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Scores inbound leads, fills missing contact details, and suggests the next best outreach so you only talk to buyers ready to buy.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Works with Salesforce &amp; Gmail</p>
+                      <p class="agent-slide-benefit">Hot / Warm / Cold scoring</p>
+                    </div>
+                    <a href="/lead-qualifier" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Lead Qualifier</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">MAIL</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Email</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">Email Assistant</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Sorts your inbox, drafts replies in your voice, and flags what actually needs you — so you stop living in email.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Gmail &amp; Outlook workflows</p>
+                      <p class="agent-slide-benefit">Learns your voice &amp; priorities</p>
+                    </div>
+                    <a href="/email-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Email Assistant</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">CRM</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">CRM Assistant</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Updates contacts, logs activities, and keeps pipeline hygiene automated across your sales stack — with approval when it matters.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Contact &amp; activity sync</p>
+                      <p class="agent-slide-benefit">Approve before CRM writes</p>
+                    </div>
+                    <a href="/crm-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try CRM Assistant</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">SHIP</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Logistics</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">Shipping Assistant</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Picks smarter rates, tracks packages, and messages customers before they open a “where’s my order?” ticket.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">ShipStation · UPS · FedEx · USPS</p>
+                      <p class="agent-slide-benefit">Proactive delay notifications</p>
+                    </div>
+                    <a href="/shipping-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Shipping Assistant</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">PACK</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Bundle</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">Starter Pack</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Support, booking, and invoices in one dashboard — the fastest way for a small shop to get three agents working together.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">SupportForge + BookWise + InvoiceForge</p>
+                      <p class="agent-slide-benefit">One control plane · embed widgets</p>
+                    </div>
+                    <a href="/starter-pack" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Starter Pack</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">SUPP</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Support</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">SupportForge</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Answers customers from your knowledge base, triages chat and email, and escalates only when a human should step in.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Embeddable chat widget</p>
+                      <p class="agent-slide-benefit">Tickets · knowledge base · escalation</p>
+                    </div>
+                    <a href="/support-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SupportForge</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">BOOK</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Scheduling</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">BookWise</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Books appointments with real-time availability, confirmations, reminders, and calendar sync — less back-and-forth for you.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Google Calendar ready</p>
+                      <p class="agent-slide-benefit">Reminders · reschedule · time zones</p>
+                    </div>
+                    <a href="/book-wise" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try BookWise</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">INVC</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">InvoiceForge</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Extracts invoice data, validates it, posts to QuickBooks or Xero, and helps chase payments so AP/AR stop eating your week.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">OCR extract · QuickBooks / Xero</p>
+                      <p class="agent-slide-benefit">Exceptions &amp; AR reminders</p>
+                    </div>
+                    <a href="/invoice-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try InvoiceForge</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">CONT</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Marketing</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">ContentForge</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Creates SEO blogs, social posts, newsletters, and ads in your brand voice — with a human review step before anything publishes.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">SEO blogs · social · newsletters</p>
+                      <p class="agent-slide-benefit">Brand voice + review before publish</p>
+                    </div>
+                    <a href="/content-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try ContentForge</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">MEET</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Meetings</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">MeetWise</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Turns meeting transcripts into summaries, action items, CRM notes, and recap emails so nothing falls through the cracks.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Zoom · Teams · Meet transcripts</p>
+                      <p class="agent-slide-benefit">Actions · CRM notes · recaps</p>
+                    </div>
+                    <a href="/meet-wise" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try MeetWise</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">SOCIAL</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Social</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">SocialForge</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Plans multi-platform posts, suggests the best times to publish, and helps reply in your brand voice so social stays consistent.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Compose · schedule · inbox</p>
+                      <p class="agent-slide-benefit">Meta · LinkedIn · Buffer-ready</p>
+                    </div>
+                    <a href="/social-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SocialForge</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">PIPE</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">PipelineForge</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Scores deals by fit and engagement, builds daily focus lists, and flags at-risk opportunities before they stall.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">HubSpot &amp; Salesforce friendly</p>
+                      <p class="agent-slide-benefit">At-risk flags · rep priority lists</p>
+                    </div>
+                    <a href="/pipeline-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try PipelineForge</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">DOC</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Documents</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">DocForge</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Drafts proposals, quotes, contracts, and reports from your templates — brand rules and approval before anything goes out.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Proposals · quotes · contracts</p>
+                      <p class="agent-slide-benefit">HITL approval · PDF export</p>
+                    </div>
+                    <a href="/doc-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try DocForge</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">INV</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance · Soon</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">Invoice Processor</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Extracts invoice data from PDFs and email, matches POs, and flags discrepancies before you pay — coming soon for AP teams.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">PDF &amp; email extract</p>
+                      <p class="agent-slide-benefit">PO match · exception flags</p>
+                    </div>
+                    <a href="/#final-cta" class="btn-secondary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Notify me</a>
+                  </article>
+
+                  <article class="agent-slide" data-agent-slide aria-hidden="true">
+                    <div class="agent-slide-icon" aria-hidden="true">ETF</div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance</p>
+                    <h3 class="text-xl font-bold text-matrix-cream mb-2">ETF Portfolio Analyzer</h3>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Live market snapshots, yield projections, NAV risk, and tax-aware notes — free data, ready to explore without paid API keys.</p>
+                    <div class="space-y-2 mb-5">
+                      <p class="agent-slide-benefit">Yield · NAV risk · tax notes</p>
+                      <p class="agent-slide-benefit">Free market data · optional Notion save</p>
+                    </div>
+                    <a href="/etf-analyzer" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try ETF Analyzer</a>
+                  </article>
                 </div>
-                <div class="demo-activity">
-                  <div class="demo-activity-icon" aria-hidden="true">LEAD</div>
-                  <div class="min-w-0">
-                    <p class="text-sm font-semibold text-matrix-cream">Lead Qualifier</p>
-                    <p class="text-xs text-matrix-soft mt-0.5">Scored 19 web leads · booked 3 estimate appointments</p>
-                  </div>
-                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
-                </div>
-                <div class="demo-activity">
-                  <div class="demo-activity-icon" aria-hidden="true">SEO</div>
-                  <div class="min-w-0">
-                    <p class="text-sm font-semibold text-matrix-cream">Local SEO Agent</p>
-                    <p class="text-xs text-matrix-soft mt-0.5">Published 2 service pages · “HVAC near me” ranking ↑</p>
-                  </div>
-                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
-                </div>
-                <div class="demo-activity">
-                  <div class="demo-activity-icon" aria-hidden="true">SHIP</div>
-                  <div class="min-w-0">
-                    <p class="text-sm font-semibold text-matrix-cream">Shipping Assistant</p>
-                    <p class="text-xs text-matrix-soft mt-0.5">Rate-shopped 14 orders · proactive delay texts sent</p>
-                  </div>
-                  <span class="text-xs font-semibold text-matrix-green whitespace-nowrap">Done</span>
-                </div>
+                <div class="agent-carousel-progress" aria-hidden="true"><span id="agent-carousel-progress-bar"></span></div>
+              </div>
+
+              <div class="agent-carousel-nav">
+                <button type="button" class="agent-carousel-btn" id="agent-carousel-prev" aria-label="Previous agent">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <div id="agent-carousel-dots" class="agent-carousel-dots" role="tablist" aria-label="Choose agent slide"></div>
+                <button type="button" class="agent-carousel-btn" id="agent-carousel-next" aria-label="Next agent">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
               </div>
             </div>
 
@@ -2201,6 +2488,144 @@
   <script>
     // ---- Year ----
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---- Hero agent carousel (auto + manual arrows/dots) ----
+    (function initAgentCarousel() {
+      var root = document.getElementById('agent-carousel');
+      if (!root) return;
+
+      var track = document.getElementById('agent-carousel-track');
+      var slides = Array.prototype.slice.call(root.querySelectorAll('[data-agent-slide]'));
+      var prevBtn = document.getElementById('agent-carousel-prev');
+      var nextBtn = document.getElementById('agent-carousel-next');
+      var dotsWrap = document.getElementById('agent-carousel-dots');
+      var counter = document.getElementById('agent-carousel-counter');
+      var progressBar = document.getElementById('agent-carousel-progress-bar');
+      var total = slides.length;
+      if (!track || !total) return;
+
+      var index = 0;
+      var timer = null;
+      var INTERVAL = 4800;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Build dots
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'agent-carousel-dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Show agent ' + (i + 1) + ' of ' + total);
+        dot.addEventListener('click', function () {
+          goTo(i, true);
+        });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.agent-carousel-dot'));
+
+      function restartProgress() {
+        if (!progressBar) return;
+        root.classList.remove('is-playing');
+        // Force reflow so animation restarts
+        void progressBar.offsetWidth;
+        if (!reduceMotion) root.classList.add('is-playing');
+      }
+
+      function goTo(i, userAction) {
+        index = ((i % total) + total) % total;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        slides.forEach(function (slide, s) {
+          var active = s === index;
+          slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+          slide.querySelectorAll('a, button').forEach(function (el) {
+            if (active) el.removeAttribute('tabindex');
+            else el.setAttribute('tabindex', '-1');
+          });
+        });
+        dots.forEach(function (dot, d) {
+          if (d === index) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+        if (counter) counter.textContent = (index + 1) + ' / ' + total;
+        restartProgress();
+        if (userAction) restartAuto();
+      }
+
+      function next() { goTo(index + 1, false); }
+      function prev() { goTo(index - 1, false); }
+
+      function stopAuto() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+        root.classList.remove('is-playing');
+      }
+
+      function startAuto() {
+        stopAuto();
+        if (reduceMotion) return;
+        root.classList.add('is-playing');
+        timer = setInterval(next, INTERVAL);
+      }
+
+      function restartAuto() {
+        stopAuto();
+        startAuto();
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          goTo(index - 1, true);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          goTo(index + 1, true);
+        });
+      }
+
+      // Pause on hover / focus so SMBs can read a slide
+      root.addEventListener('mouseenter', stopAuto);
+      root.addEventListener('mouseleave', startAuto);
+      root.addEventListener('focusin', stopAuto);
+      root.addEventListener('focusout', function (e) {
+        if (!root.contains(e.relatedTarget)) startAuto();
+      });
+
+      // Keyboard when carousel focused
+      root.setAttribute('tabindex', '0');
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goTo(index - 1, true);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goTo(index + 1, true);
+        }
+      });
+
+      // Touch swipe
+      var touchStartX = null;
+      root.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAuto();
+      }, { passive: true });
+      root.addEventListener('touchend', function (e) {
+        if (touchStartX == null) return;
+        var dx = e.changedTouches[0].screenX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0) goTo(index + 1, true);
+          else goTo(index - 1, true);
+        } else {
+          startAuto();
+        }
+      }, { passive: true });
+
+      goTo(0, false);
+      startAuto();
+    })();
 
     // ---- Navbar scroll state ----
     (function initNav() {
