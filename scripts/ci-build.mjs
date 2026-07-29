@@ -44,6 +44,17 @@ const SITE_PAGES = [
   "starter-pack/index.html",
   "etf-analyzer/index.html",
   "admin/index.html",
+  "for/hvac/index.html",
+  "for/shopify/index.html",
+  "for/professional-services/index.html",
+  "for/contractors/index.html",
+  "for/local-retail/index.html",
+  "resources/index.html",
+  "resources/7-day-setup/index.html",
+  "resources/email-voice/index.html",
+  "resources/local-seo-playbook/index.html",
+  "resources/shipping-exceptions/index.html",
+  "resources/lead-follow-up/index.html",
 ];
 
 const ASSET_EXTS = new Set([

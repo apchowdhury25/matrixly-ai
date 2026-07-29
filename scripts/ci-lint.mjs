@@ -32,6 +32,17 @@ const REQUIRED_PAGES = [
   "starter-pack/index.html",
   "etf-analyzer/index.html",
   "admin/index.html",
+  "for/hvac/index.html",
+  "for/shopify/index.html",
+  "for/professional-services/index.html",
+  "for/contractors/index.html",
+  "for/local-retail/index.html",
+  "resources/index.html",
+  "resources/7-day-setup/index.html",
+  "resources/email-voice/index.html",
+  "resources/local-seo-playbook/index.html",
+  "resources/shipping-exceptions/index.html",
+  "resources/lead-follow-up/index.html",
   ".htaccess",
   "README.md",
   "LICENSE",
@@ -75,9 +86,17 @@ function walkSiteHtml(dir, out = [], depth = 0) {
         if (existsSync(market)) out.push(market);
         continue;
       }
-      // Site page folders only (shallow product pages)
+      // Site page folders: top-level product pages + nested for/* and resources/*
       if (existsSync(join(full, "index.html")) && depth === 0) {
         out.push(join(full, "index.html"));
+        if (name === "for" || name === "resources") {
+          walkSiteHtml(full, out, depth + 1);
+        }
+        continue;
+      }
+      if (existsSync(join(full, "index.html")) && depth >= 1 && depth <= 2) {
+        out.push(join(full, "index.html"));
+        if (depth < 2) walkSiteHtml(full, out, depth + 1);
         continue;
       }
       walkSiteHtml(full, out, depth + 1);

@@ -994,6 +994,96 @@
     }
     .auth-view.hidden { display: none !important; }
     body.auth-open { overflow: hidden; }
+
+    /* ========== SMB conversion widgets ========== */
+    .quiz-choice, .quiz-tool-chip, .demo-chip {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+      cursor: pointer;
+      width: 100%;
+    }
+    .quiz-choice:hover, .quiz-tool-chip:hover, .demo-chip:hover {
+      border-color: color-mix(in srgb, var(--brand-blue) 45%, var(--border));
+    }
+    .quiz-choice.is-selected, .quiz-tool-chip.is-selected, .demo-chip.is-selected {
+      border-color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 10%, var(--card));
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--brand-blue) 35%, transparent);
+    }
+    .quiz-tool-chip { width: auto; display: inline-flex; padding: 0.45rem 0.85rem; font-size: 0.8rem; }
+    .quiz-progress-track {
+      height: 6px; border-radius: 999px; background: var(--bg-muted); overflow: hidden;
+    }
+    .quiz-progress-bar {
+      height: 100%; width: 0%; background: var(--brand-blue); border-radius: 999px; transition: width 0.3s ease;
+    }
+    .roi-range {
+      width: 100%; accent-color: var(--brand-blue);
+    }
+    .video-ph {
+      position: relative; border-radius: 0.85rem; overflow: hidden;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--brand-blue) 18%, var(--bg-muted)), var(--bg-muted));
+      border: 1px solid var(--border); aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+    .video-ph-play {
+      width: 3.25rem; height: 3.25rem; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-blue) 92%, #000);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(17, 122, 202, 0.35);
+    }
+    .video-ph-badge {
+      position: absolute; top: 0.65rem; right: 0.65rem;
+      font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 999px;
+      background: rgba(0,0,0,0.45); color: #fff;
+    }
+    .live-demo-panel {
+      border: 1px solid var(--border); border-radius: 1rem; background: var(--card);
+      box-shadow: var(--shadow-sm); overflow: hidden;
+    }
+    .live-demo-thread {
+      height: 320px; overflow-y: auto; padding: 1rem; background: var(--bg-alt);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .live-demo-bubble { max-width: 92%; }
+    .live-demo-bubble--user { align-self: flex-end; }
+    .live-demo-bubble--agent { align-self: flex-start; }
+    .live-demo-who { font-size: 0.7rem; font-weight: 700; color: var(--soft); margin-bottom: 0.2rem; }
+    .live-demo-bubble--user .live-demo-who { text-align: right; }
+    .live-demo-body {
+      font-size: 0.875rem; line-height: 1.5; padding: 0.7rem 0.9rem; border-radius: 0.85rem;
+      border: 1px solid var(--border); background: var(--card); color: var(--ink);
+    }
+    .live-demo-bubble--user .live-demo-body {
+      background: color-mix(in srgb, var(--brand-blue) 12%, var(--card));
+      border-color: color-mix(in srgb, var(--brand-blue) 30%, var(--border));
+    }
+    .compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .compare-table { min-width: 720px; width: 100%; border-collapse: separate; border-spacing: 0; }
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--border); padding: 0.75rem 0.9rem; text-align: left;
+      font-size: 0.85rem; vertical-align: top; background: var(--card);
+    }
+    .compare-table th { font-weight: 700; color: var(--ink); background: var(--bg-muted); }
+    .compare-table th.hl, .compare-table td.hl {
+      background: color-mix(in srgb, var(--brand-blue) 8%, var(--card));
+      border-color: color-mix(in srgb, var(--brand-blue) 35%, var(--border));
+    }
+    .sp-feed-fade { opacity: 0; transition: opacity 0.28s ease; }
+    #sp-feed { transition: opacity 0.28s ease; }
+    .owner-metric {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.75rem; font-weight: 700; color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 10%, transparent);
+      border-radius: 999px; padding: 0.2rem 0.55rem;
+    }
   </style>
 
   <!-- JSON-LD Schema -->
@@ -1033,7 +1123,7 @@
         <div class="nav-links">
           <a href="#how-it-works" class="nav-link">How it Works</a>
           <a href="/agents" class="nav-link">Agents</a>
-          <a href="/products" class="nav-link">Products</a>
+          <a href="/resources" class="nav-link">Resources</a>
           <a href="/integrations" class="nav-link">Integrations</a>
           <a href="#pricing" class="nav-link">Pricing</a>
         </div>
@@ -1071,7 +1161,7 @@
         <div class="py-4 space-y-1 border-t border-matrix-border">
           <a href="#how-it-works" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">How it Works</a>
           <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Agents</a>
-          <a href="/products" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Products</a>
+          <a href="/resources" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Resources</a>
           <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
           <a href="#pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
           <button type="button" class="btn-primary block w-full text-center mt-3 px-5 py-3" data-open-auth="signup">Get Started</button>
@@ -1108,19 +1198,37 @@
                 Start free — no card needed
                 <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
               </button>
-              <a href="#use-cases" class="btn-secondary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+              <a href="#agent-quiz" class="btn-secondary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                 See it for my business
               </a>
             </div>
-            <p class="text-sm text-matrix-soft mb-10 text-center lg:text-left">
-              Or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse ready agents</a> · Deploy in minutes
+            <p class="text-sm text-matrix-soft mb-6 text-center lg:text-left">
+              Or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse ready agents</a> · <a href="#live-demo" class="text-matrix-green font-semibold hover:underline">watch an agent work</a>
             </p>
+
+            <!-- Social proof counters -->
+            <div class="card-matrix rounded-2xl p-4 sm:p-5 mb-6 text-left max-w-xl mx-auto lg:mx-0" aria-label="Recent peer activity">
+              <div class="grid grid-cols-2 gap-4 mb-3">
+                <div>
+                  <p class="stat-number text-2xl sm:text-3xl font-extrabold text-matrix-green tabular-nums" id="sp-agents-week">—</p>
+                  <p class="text-xs text-matrix-soft mt-0.5">Agents deployed this week by US SMBs</p>
+                </div>
+                <div>
+                  <p class="stat-number text-2xl sm:text-3xl font-extrabold text-matrix-green tabular-nums" id="sp-hours-month">—</p>
+                  <p class="text-xs text-matrix-soft mt-0.5">Hours reclaimed last month</p>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-matrix-soft flex items-start gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-matrix-green mt-1.5 flex-shrink-0 animate-pulse" aria-hidden="true"></span>
+                <span id="sp-feed" aria-live="polite">US small businesses are deploying Matrixly agents right now</span>
+              </p>
+            </div>
 
             <!-- Mini trust -->
             <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-sm text-matrix-soft">
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Free to explore
+                Free to explore · Cancel anytime
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -1435,19 +1543,71 @@
       </div>
     </section>
 
+    <!-- ========== LIVE AGENT DEMO ========== -->
+    <section id="live-demo" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="See an agent in action">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+          <div class="reveal">
+            <p class="section-eyebrow">See it work</p>
+            <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+              Watch an agent <span class="text-matrix-green">handle real work</span>
+            </h2>
+            <p class="text-matrix-soft text-lg mb-6 leading-relaxed">
+              Type a request or tap a preset. This is a lightweight simulation — no signup required — so you can feel the product in seconds.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <button type="button" class="demo-chip" data-demo-script="qualify">Qualify this lead</button>
+              <button type="button" class="demo-chip" data-demo-script="shipping">Draft a shipping delay reply</button>
+              <button type="button" class="demo-chip" data-demo-script="inbox">Triage my inbox</button>
+            </div>
+            <form id="live-demo-form" class="flex flex-col sm:flex-row gap-2 mb-4">
+              <label class="sr-only" for="live-demo-input">Ask the demo agent</label>
+              <input id="live-demo-input" type="text" class="auth-input flex-grow rounded-xl px-4 py-3 border border-matrix-border bg-matrix-card text-matrix-cream" placeholder="e.g. Qualify this lead or draft a delay reply…" autocomplete="off" />
+              <button type="submit" class="btn-primary px-5 py-3 rounded-xl text-sm whitespace-nowrap">Run demo</button>
+            </form>
+            <p class="text-xs text-matrix-soft mb-6">Simulation only · nothing is sent to customers or connected tools</p>
+            <a id="live-demo-cta" href="/lead-qualifier" class="btn-secondary inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm">Start free with this agent</a>
+          </div>
+          <div class="reveal live-demo-panel">
+            <div class="flex items-center justify-between gap-3 px-4 py-3 border-b border-matrix-border/60 bg-matrix-card">
+              <div>
+                <p class="text-sm font-bold text-matrix-cream">Agent preview</p>
+                <p class="text-xs text-matrix-soft"><span id="live-demo-agent">Lead Qualifier</span> · live simulation</p>
+              </div>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-matrix-green animate-pulse"></span>
+                Demo
+              </span>
+            </div>
+            <div id="live-demo-thread" class="live-demo-thread" aria-live="polite"></div>
+            <p id="live-demo-status" class="px-4 py-2 text-xs text-matrix-soft border-t border-matrix-border/60" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== 3b. USE CASES BY VERTICAL ========== -->
-    <section id="use-cases" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="Built for your industry">
+    <section id="use-cases" class="relative py-20 sm:py-28" aria-label="Built for your industry">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <p class="section-eyebrow">Built for real US businesses</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
             See how owners like you <span class="text-matrix-green">get time back</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Home services, e-commerce, and professional firms — same idea: agents handle the busywork so you can run the business.</p>
+          <p class="text-matrix-soft text-lg">Home services, e-commerce, professional firms, contractors, and retail — agents handle the busywork so you can run the business.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
           <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col">
+            <div class="video-ph mb-5" role="img" aria-label="HVAC demo video placeholder, 75 seconds">
+              <span class="video-ph-badge">0:75</span>
+              <div>
+                <div class="video-ph-play mx-auto mb-2" aria-hidden="true">
+                  <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-matrix-cream px-4">Watch how an HVAC owner gets more booked jobs</p>
+              </div>
+            </div>
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">Home services · HVAC</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-3">More booked jobs from local search</h3>
             <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
@@ -1458,10 +1618,19 @@
               <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Local SEO &amp; Google Business support</li>
               <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: +40% organic leads in 90 days</li>
             </ul>
-            <a href="/lead-qualifier" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore HVAC stack →</a>
+            <a href="/for/hvac" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore HVAC stack →</a>
           </article>
 
           <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col border-matrix-green/30">
+            <div class="video-ph mb-5" role="img" aria-label="Shopify demo video placeholder, 80 seconds">
+              <span class="video-ph-badge">1:20</span>
+              <div>
+                <div class="video-ph-play mx-auto mb-2" aria-hidden="true">
+                  <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-matrix-cream px-4">See a Shopify store cut WISMO tickets</p>
+              </div>
+            </div>
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">E-commerce · Shopify</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-3">Ship faster, sell more, answer less</h3>
             <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
@@ -1472,10 +1641,19 @@
               <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Shopify, ShipStation, Stripe, Klaviyo</li>
               <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: −60% “where’s my order?” tickets</li>
             </ul>
-            <a href="/shipping-assistant" class="btn-primary text-center py-2.5 rounded-lg text-sm">Explore e-com stack →</a>
+            <a href="/for/shopify" class="btn-primary text-center py-2.5 rounded-lg text-sm">Explore e-com stack →</a>
           </article>
 
           <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col">
+            <div class="video-ph mb-5" role="img" aria-label="Professional services demo video placeholder, 70 seconds">
+              <span class="video-ph-badge">1:10</span>
+              <div>
+                <div class="video-ph-play mx-auto mb-2" aria-hidden="true">
+                  <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-matrix-cream px-4">Inbox calm for professional services</p>
+              </div>
+            </div>
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">Professional services</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-3">Inbox calm. Pipeline full.</h3>
             <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
@@ -1486,8 +1664,174 @@
               <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> HubSpot, Gmail, Slack, calendar</li>
               <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: reply time from hours → minutes</li>
             </ul>
-            <a href="/email-assistant" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore services stack →</a>
+            <a href="/for/professional-services" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore services stack →</a>
           </article>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-3 reveal">
+          <a href="/for/contractors" class="btn-secondary px-4 py-2 rounded-lg text-sm">Contractors →</a>
+          <a href="/for/local-retail" class="btn-secondary px-4 py-2 rounded-lg text-sm">Local retail →</a>
+          <a href="#agent-quiz" class="btn-primary px-4 py-2 rounded-lg text-sm">Not sure? Take the 60-second quiz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AGENT QUIZ ========== -->
+    <section id="agent-quiz" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="Which agents for my business quiz">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 reveal">
+          <p class="section-eyebrow">Guided setup</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+            Which agents for <span class="text-matrix-green">my business?</span>
+          </h2>
+          <p class="text-matrix-soft text-lg">Four quick questions. Get a starter stack of 2–3 agents — no catalog browsing required.</p>
+        </div>
+        <div class="card-matrix rounded-2xl p-6 sm:p-8 reveal">
+          <div class="quiz-progress-track mb-6" aria-hidden="true">
+            <div id="quiz-progress" class="quiz-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+          </div>
+
+          <div data-quiz-step="1">
+            <h3 class="text-lg font-bold text-matrix-cream mb-1">What kind of business do you run?</h3>
+            <p class="text-sm text-matrix-soft mb-5">We’ll match agents to your industry.</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <button type="button" class="quiz-choice" data-quiz-field="industry" data-quiz-choice="hvac">Home services / HVAC</button>
+              <button type="button" class="quiz-choice" data-quiz-field="industry" data-quiz-choice="shopify">E-commerce / Shopify</button>
+              <button type="button" class="quiz-choice" data-quiz-field="industry" data-quiz-choice="professional">Professional services</button>
+              <button type="button" class="quiz-choice" data-quiz-field="industry" data-quiz-choice="contractors">Contractors / trades</button>
+              <button type="button" class="quiz-choice sm:col-span-2" data-quiz-field="industry" data-quiz-choice="retail">Local retail</button>
+            </div>
+          </div>
+
+          <div data-quiz-step="2" class="hidden">
+            <h3 class="text-lg font-bold text-matrix-cream mb-1">What’s your biggest time drain?</h3>
+            <p class="text-sm text-matrix-soft mb-5">Pick the one that eats the most hours each week.</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <button type="button" class="quiz-choice" data-quiz-field="drain" data-quiz-choice="email">Email overload</button>
+              <button type="button" class="quiz-choice" data-quiz-field="drain" data-quiz-choice="leads">Lead follow-up</button>
+              <button type="button" class="quiz-choice" data-quiz-field="drain" data-quiz-choice="shipping">Shipping &amp; order issues</button>
+              <button type="button" class="quiz-choice" data-quiz-field="drain" data-quiz-choice="support">Customer support</button>
+              <button type="button" class="quiz-choice sm:col-span-2" data-quiz-field="drain" data-quiz-choice="content">Content &amp; marketing</button>
+            </div>
+            <button type="button" class="text-sm font-semibold text-matrix-green mt-5" data-quiz-back="1">← Back</button>
+          </div>
+
+          <div data-quiz-step="3" class="hidden">
+            <h3 class="text-lg font-bold text-matrix-cream mb-1">Which tools do you already use?</h3>
+            <p class="text-sm text-matrix-soft mb-5">Select all that apply (optional).</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="Gmail">Gmail</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="Shopify">Shopify</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="QuickBooks">QuickBooks</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="ShipStation">ShipStation</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="HubSpot">HubSpot</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="Slack">Slack</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="Square">Square</button>
+              <button type="button" class="quiz-tool-chip" data-quiz-tool="Google Business">Google Business</button>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <button type="button" class="text-sm font-semibold text-matrix-green" data-quiz-back="2">← Back</button>
+              <button type="button" id="quiz-tools-next" class="btn-primary px-5 py-2.5 rounded-xl text-sm">Continue</button>
+            </div>
+          </div>
+
+          <div data-quiz-step="4" class="hidden">
+            <h3 class="text-lg font-bold text-matrix-cream mb-1">How big is your team?</h3>
+            <p class="text-sm text-matrix-soft mb-5">Helps us size the starter pack (you can change agents anytime).</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="solo">Just me</button>
+              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="2-5">2–5 people</button>
+              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="6-20">6–20 people</button>
+              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="20+">20+ people</button>
+            </div>
+            <button type="button" class="text-sm font-semibold text-matrix-green mt-5" data-quiz-back="3">← Back</button>
+          </div>
+
+          <div data-quiz-step="5" id="quiz-result" class="hidden">
+            <h3 id="quiz-result-title" class="text-lg font-bold text-matrix-cream mb-2">Your starter stack</h3>
+            <p id="quiz-result-sub" class="text-sm text-matrix-soft mb-6"></p>
+            <div id="quiz-result-agents" class="space-y-3 mb-8"></div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button type="button" id="quiz-start-pack" class="btn-primary px-6 py-3 rounded-xl text-sm" data-open-auth="signup">Start free with this pack</button>
+              <button type="button" id="quiz-restart" class="btn-secondary px-6 py-3 rounded-xl text-sm">Retake quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ROI CALCULATOR ========== -->
+    <section id="roi-calculator" class="relative py-20 sm:py-28" aria-label="Time and money savings calculator">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <p class="section-eyebrow">Your numbers</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+            Time &amp; money <span class="text-matrix-green">savings calculator</span>
+          </h2>
+          <p class="text-matrix-soft text-lg">Estimate hours reclaimed and dollar value using average US small-business labor rates. Adjust anything — results update live.</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 reveal">
+          <div class="card-matrix rounded-2xl p-6 sm:p-8 space-y-6">
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <label for="roi-email" class="font-semibold text-matrix-cream">Hours/week on email</label>
+                <span class="tabular-nums text-matrix-green font-bold"><span id="roi-email-val">8</span> hrs</span>
+              </div>
+              <input id="roi-email" class="roi-range" type="range" min="0" max="40" step="1" value="8" />
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <label for="roi-leads" class="font-semibold text-matrix-cream">Hours/week on lead follow-up</label>
+                <span class="tabular-nums text-matrix-green font-bold"><span id="roi-leads-val">6</span> hrs</span>
+              </div>
+              <input id="roi-leads" class="roi-range" type="range" min="0" max="40" step="1" value="6" />
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <label for="roi-shipping" class="font-semibold text-matrix-cream">Hours/week on shipping exceptions</label>
+                <span class="tabular-nums text-matrix-green font-bold"><span id="roi-shipping-val">4</span> hrs</span>
+              </div>
+              <input id="roi-shipping" class="roi-range" type="range" min="0" max="40" step="1" value="4" />
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <label for="roi-content" class="font-semibold text-matrix-cream">Hours/week on content / support</label>
+                <span class="tabular-nums text-matrix-green font-bold"><span id="roi-content-val">5</span> hrs</span>
+              </div>
+              <input id="roi-content" class="roi-range" type="range" min="0" max="40" step="1" value="5" />
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <label for="roi-hourly" class="font-semibold text-matrix-cream">Your fully-loaded hourly rate (USD)</label>
+                <span class="tabular-nums text-matrix-green font-bold">$<span id="roi-hourly-val">40</span></span>
+              </div>
+              <input id="roi-hourly" class="roi-range" type="range" min="15" max="150" step="1" value="40" />
+              <p class="text-xs text-matrix-soft mt-2">Default $40/hr blends typical US SMB wages + overhead for owner/operator time. See assumptions in docs.</p>
+            </div>
+          </div>
+          <div class="card-matrix rounded-2xl p-6 sm:p-8 border-matrix-green/25 flex flex-col">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-4">Estimated impact</p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <p class="stat-number text-3xl sm:text-4xl font-extrabold text-matrix-green tabular-nums"><span id="roi-hours-week">0.0</span></p>
+                <p class="text-sm text-matrix-soft">Hours reclaimed / week</p>
+              </div>
+              <div>
+                <p class="stat-number text-3xl sm:text-4xl font-extrabold text-matrix-green tabular-nums"><span id="roi-dollars-week">$0</span></p>
+                <p class="text-sm text-matrix-soft">Value / week</p>
+              </div>
+              <div>
+                <p class="stat-number text-2xl font-extrabold text-matrix-cream tabular-nums"><span id="roi-hours-month">0.0</span></p>
+                <p class="text-sm text-matrix-soft">Hours / ~30 days</p>
+              </div>
+              <div>
+                <p class="stat-number text-2xl font-extrabold text-matrix-cream tabular-nums"><span id="roi-dollars-month">$0</span></p>
+                <p class="text-sm text-matrix-soft">Value / ~30 days</p>
+              </div>
+            </div>
+            <div id="roi-breakdown" class="border-t border-matrix-border/50 pt-4 mb-6 flex-grow"></div>
+            <button type="button" id="roi-cta" class="btn-primary w-full py-3 rounded-xl text-sm" data-open-auth="signup">See my projected ROI in 30 days</button>
+            <p class="text-xs text-matrix-soft mt-3 text-center">Illustrative model · results vary by niche and execution</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2005,89 +2349,212 @@
       </div>
     </section>
 
-    <!-- ========== 6. TESTIMONIALS ========== -->
-    <section id="testimonials" class="relative py-20 sm:py-28 bg-matrix-muted">
+    <!-- ========== COMPARE VS ALTERNATIVES ========== -->
+    <section id="compare" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="Matrixly versus alternatives">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <p class="section-eyebrow">Why Matrixly</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
+            Matrixly vs. <span class="text-matrix-green">the alternatives</span>
+          </h2>
+          <p class="text-matrix-soft text-lg">Cheaper than hiring people. More autonomous than DIY automation. Faster than traditional agencies.</p>
+        </div>
+        <div class="compare-scroll reveal rounded-2xl border border-matrix-border overflow-hidden">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col">Dimension</th>
+                <th scope="col" class="hl">Matrixly</th>
+                <th scope="col">Part-time VA</th>
+                <th scope="col">Zapier + ChatGPT</th>
+                <th scope="col">Traditional agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Monthly cost</th>
+                <td class="hl"><strong>$0–$149+</strong><br /><span class="text-matrix-soft text-xs">Plans that scale with you</span></td>
+                <td>$800–$2,000+</td>
+                <td>$50–$200 + your time</td>
+                <td>$2,000–$10,000+</td>
+              </tr>
+              <tr>
+                <th scope="row">Setup time</th>
+                <td class="hl"><strong>Minutes</strong></td>
+                <td>Days to weeks (hire + train)</td>
+                <td>Hours–days of DIY wiring</td>
+                <td>Weeks of onboarding</td>
+              </tr>
+              <tr>
+                <th scope="row">Ongoing maintenance</th>
+                <td class="hl">Low — managed agents + HITL</td>
+                <td>You manage the person</td>
+                <td>You fix broken zaps &amp; prompts</td>
+                <td>Included (expensive)</td>
+              </tr>
+              <tr>
+                <th scope="row">What gets done</th>
+                <td class="hl">Leads, email, shipping, support, SEO — done work with review gates</td>
+                <td>Variable quality &amp; coverage</td>
+                <td>Drafts + glue scripts</td>
+                <td>Campaigns &amp; retainers</td>
+              </tr>
+              <tr>
+                <th scope="row">Autonomy</th>
+                <td class="hl">High within guardrails</td>
+                <td>Human only</td>
+                <td>Low without engineering</td>
+                <td>High but slow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center mt-8 reveal">
+          <button type="button" class="btn-primary px-6 py-3 rounded-xl text-sm" data-open-auth="signup">Start free — compare for yourself</button>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== 6. OWNER STORIES ========== -->
+    <section id="testimonials" class="relative py-20 sm:py-28" aria-label="Owner stories">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <p class="section-eyebrow">From operators like you</p>
+          <p class="section-eyebrow">Owner stories</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            Small businesses already <span class="text-matrix-green">getting time back</span>
+            Named operators. <span class="text-matrix-green">Clear before / after.</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Illustrative composite quotes based on early operator feedback — industry and outcomes aligned to real SMB workflows.</p>
+          <p class="text-matrix-soft text-lg">Illustrative composite profiles based on early operator feedback — structured for real customer swap-in with permissioned photos and clips.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <blockquote class="card-matrix rounded-2xl p-6 reveal">
-            <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"We replaced three freelancers with the content agent. Rankings jumped, content never misses a week, and my marketing budget actually makes sense now."</p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">MR</div>
+          <article class="card-matrix rounded-2xl p-6 reveal flex flex-col">
+            <div class="video-ph mb-4" style="aspect-ratio:16/10" role="img" aria-label="30 second owner clip placeholder">
+              <span class="video-ph-badge">0:28</span>
+              <div class="video-ph-play" aria-hidden="true">
+                <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="owner-metric">25 hrs/wk saved</span>
+              <span class="owner-metric">+40% organic leads</span>
+            </div>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"We replaced three freelancers with the content and lead agents. Rankings jumped, content never misses a week, and my marketing budget actually makes sense now."</p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">MR</div>
               <div>
-                <cite class="not-italic text-sm font-semibold text-matrix-cream">Marcus Rivera</cite>
-                <p class="text-xs text-matrix-soft">Owner · CoolAir HVAC · Austin, TX</p>
+                <p class="text-sm font-semibold text-matrix-cream">Marcus Rivera</p>
+                <p class="text-xs text-matrix-soft">HVAC owner · Austin, TX · CoolAir HVAC</p>
               </div>
             </footer>
-          </blockquote>
+          </article>
 
-          <blockquote class="card-matrix rounded-2xl p-6 reveal">
-            <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Lead Qualifier booked more qualified consults in two weeks than our part-time SDR did in two months. It feels like a tireless growth hire."</p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">AK</div>
+          <article class="card-matrix rounded-2xl p-6 reveal flex flex-col">
+            <div class="video-ph mb-4" style="aspect-ratio:16/10" role="img" aria-label="30 second owner clip placeholder">
+              <span class="video-ph-badge">0:24</span>
+              <div class="video-ph-play" aria-hidden="true">
+                <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="owner-metric">−60% WISMO</span>
+              <span class="owner-metric">Paid back &lt;30d</span>
+            </div>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Shipping Assistant + SupportForge cut ‘where’s my order?’ tickets dramatically. Conversion and recovery emails improved overnight. Matrixly paid for itself in the first invoice cycle."</p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">JL</div>
               <div>
-                <cite class="not-italic text-sm font-semibold text-matrix-cream">Aisha Khan</cite>
-                <p class="text-xs text-matrix-soft">Founder · Peak Legal · Chicago, IL</p>
+                <p class="text-sm font-semibold text-matrix-cream">Jordan Lee</p>
+                <p class="text-xs text-matrix-soft">Shopify CEO · Portland, OR · UrbanThread</p>
               </div>
             </footer>
-          </blockquote>
+          </article>
 
-          <blockquote class="card-matrix rounded-2xl p-6 reveal">
-            <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Product copy and recovery emails improved overnight. Conversion up 22%. Matrixly paid for itself in the first invoice cycle."</p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">JL</div>
+          <article class="card-matrix rounded-2xl p-6 reveal flex flex-col">
+            <div class="video-ph mb-4" style="aspect-ratio:16/10" role="img" aria-label="30 second owner clip placeholder">
+              <span class="video-ph-badge">0:31</span>
+              <div class="video-ph-play" aria-hidden="true">
+                <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="owner-metric">Reply: hours → minutes</span>
+              <span class="owner-metric">2× consults</span>
+            </div>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Lead Qualifier booked more qualified consults in two weeks than our part-time SDR did in two months. Email Assistant keeps the inbox calm so we focus on clients."</p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">AK</div>
               <div>
-                <cite class="not-italic text-sm font-semibold text-matrix-cream">Jordan Lee</cite>
-                <p class="text-xs text-matrix-soft">CEO · UrbanThread (Shopify) · Portland, OR</p>
+                <p class="text-sm font-semibold text-matrix-cream">Aisha Khan</p>
+                <p class="text-xs text-matrix-soft">Founder · Chicago, IL · Peak Legal</p>
               </div>
             </footer>
-          </blockquote>
+          </article>
 
-          <blockquote class="card-matrix rounded-2xl p-6 reveal">
-            <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Support handles most overnight tickets. Patients get answers at 2am; my team focuses on complex work. Game changer for a small practice."</p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">SP</div>
+          <article class="card-matrix rounded-2xl p-6 reveal flex flex-col sm:col-span-2 lg:col-span-1">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="owner-metric">Overnight coverage</span>
+              <span class="owner-metric">Team focus↑</span>
+            </div>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Support handles most overnight tickets. Patients get answers at 2am; my team focuses on complex work. Game changer for a small practice."</p>
+            <footer class="flex items-center gap-3 mt-auto">
+              <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">SP</div>
               <div>
-                <cite class="not-italic text-sm font-semibold text-matrix-cream">Sofia Patel</cite>
-                <p class="text-xs text-matrix-soft">Ops Lead · BrightPath Dental · Denver, CO</p>
+                <p class="text-sm font-semibold text-matrix-cream">Sofia Patel</p>
+                <p class="text-xs text-matrix-soft">Ops Lead · Denver, CO · BrightPath Dental</p>
               </div>
             </footer>
-          </blockquote>
+          </article>
 
-          <blockquote class="card-matrix rounded-2xl p-6 reveal">
-            <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"I set up an inventory agent in an afternoon — no code. It pings Slack when SKUs run low. Pure time back for a small shop."</p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">DT</div>
+          <article class="card-matrix rounded-2xl p-6 reveal flex flex-col sm:col-span-2 lg:col-span-2">
+            <div class="grid sm:grid-cols-2 gap-6 items-center">
               <div>
-                <cite class="not-italic text-sm font-semibold text-matrix-cream">Derek Torres</cite>
-                <p class="text-xs text-matrix-soft">Owner · Gulf Coast Outfitters · Tampa, FL</p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="owner-metric">18 hrs/wk saved</span>
+                  <span class="owner-metric">Local SEO lift</span>
+                </div>
+                <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5">"Finally an AI product that gets small businesses. Practical agents, clear ROI. Our local search visibility is a different game now — and I didn’t need an engineer."</p>
+                <footer class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">NW</div>
+                  <div>
+                    <p class="text-sm font-semibold text-matrix-cream">Nina Walsh</p>
+                    <p class="text-xs text-matrix-soft">Marketing · Phoenix, AZ · Metro Home Pros</p>
+                  </div>
+                </footer>
               </div>
-            </footer>
-          </blockquote>
+              <div class="video-ph" role="img" aria-label="Owner story clip placeholder">
+                <span class="video-ph-badge">0:30</span>
+                <div>
+                  <div class="video-ph-play mx-auto mb-2" aria-hidden="true">
+                    <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.34-5.89a1.5 1.5 0 000-2.54L6.3 2.84z"/></svg>
+                  </div>
+                  <p class="text-xs font-semibold text-matrix-cream px-3">Nina on local SEO agents</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <blockquote class="card-matrix rounded-2xl p-6 reveal">
-            <div class="flex gap-1 mb-4 text-matrix-green" aria-label="5 stars">★★★★★</div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-6">"Finally an AI product that gets small businesses. Practical agents, clear ROI. Our local search visibility is a different game now."</p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold">NW</div>
-              <div>
-                <cite class="not-italic text-sm font-semibold text-matrix-cream">Nina Walsh</cite>
-                <p class="text-xs text-matrix-soft">Marketing · Metro Home Pros · Phoenix, AZ</p>
-              </div>
-            </footer>
-          </blockquote>
+    <!-- ========== GUARANTEE ========== -->
+    <section id="guarantee" class="relative py-16 sm:py-20 bg-matrix-muted border-y border-matrix-border/40" aria-label="Risk reversal guarantee">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card-matrix rounded-2xl p-8 sm:p-10 reveal border-matrix-green/30 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-matrix-green/15 text-matrix-green mx-auto mb-5 flex items-center justify-center" aria-hidden="true">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <p class="section-eyebrow justify-center">Risk reversal</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-matrix-cream mb-4">
+            Try free for 14 days. Save 10 hours — or get a refund.
+          </h2>
+          <p class="text-matrix-soft text-base sm:text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
+            If you don’t save at least <strong class="text-matrix-cream">10 hours in the first month</strong> on a paid plan, we’ll refund that plan — <strong class="text-matrix-cream">no questions asked</strong>.
+          </p>
+          <p class="text-sm font-semibold text-matrix-green mb-2">Cancel anytime · No long-term contract · No card to explore free</p>
+          <p class="text-xs text-matrix-soft">Terms apply · US paid plans</p>
+          <div class="mt-6">
+            <button type="button" class="btn-primary px-8 py-3 rounded-xl text-sm" data-open-auth="signup">Start free — zero risk</button>
+          </div>
         </div>
       </div>
     </section>
@@ -2166,6 +2633,41 @@
           Need a walkthrough? <a href="#final-cta" class="text-matrix-green font-semibold hover:underline">Start free</a> or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse agents first</a>.
           Cancel anytime · No long-term contract.
         </p>
+        <p class="text-center text-sm text-matrix-soft mt-3 reveal">
+          <a href="#guarantee" class="text-matrix-green font-semibold hover:underline">10-hour month guarantee</a>
+          · <a href="#compare" class="text-matrix-green font-semibold hover:underline">Compare vs VA / Zapier / agencies</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== RESOURCES TEASER ========== -->
+    <section id="resources-teaser" class="relative py-16 sm:py-20" aria-label="Owner resources">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 reveal">
+          <div class="max-w-2xl">
+            <p class="section-eyebrow">Owner resources</p>
+            <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Playbooks for busy owners</h2>
+            <p class="text-matrix-soft text-lg">Short guides and checklists — setup your first agent, teach your voice, run local SEO, and more.</p>
+          </div>
+          <a href="/resources" class="btn-secondary inline-flex self-start px-5 py-3 rounded-xl text-sm">Browse all resources →</a>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="/resources/7-day-setup" class="card-matrix rounded-2xl p-6 reveal hover:border-matrix-green/40 transition-colors block">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-2">Checklist</p>
+            <h3 class="font-bold text-matrix-cream mb-2">7-day setup for your first agent</h3>
+            <p class="text-sm text-matrix-soft">Day-by-day plan from account → first live workflow.</p>
+          </a>
+          <a href="/resources/email-voice" class="card-matrix rounded-2xl p-6 reveal hover:border-matrix-green/40 transition-colors block">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-2">Email</p>
+            <h3 class="font-bold text-matrix-cream mb-2">Teach Email Assistant your voice</h3>
+            <p class="text-sm text-matrix-soft">Tone samples, do/don’t rules, and review habits.</p>
+          </a>
+          <a href="/resources/local-seo-playbook" class="card-matrix rounded-2xl p-6 reveal hover:border-matrix-green/40 transition-colors block">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-2">Local SEO</p>
+            <h3 class="font-bold text-matrix-cream mb-2">Local SEO agent playbook</h3>
+            <p class="text-sm text-matrix-soft">Service pages, Google Business, and near-me intent.</p>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -2279,20 +2781,21 @@
           Wake up tomorrow<br />
           <span class="text-matrix-green">already ahead.</span>
         </h2>
-        <p class="text-lg text-matrix-soft mb-10 max-w-xl mx-auto">
+        <p class="text-lg text-matrix-soft mb-6 max-w-xl mx-auto">
           Join US small businesses reclaiming 20+ hours a week with ready AI agents for marketing, sales, and ops. Set up in minutes. Cancel anytime.
         </p>
+        <p class="text-sm text-matrix-green font-semibold mb-10">14-day free trial · 10-hour month guarantee on paid plans · No long-term contract</p>
 
         <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
           <button type="button" class="btn-primary px-10 py-3.5 rounded-xl text-sm whitespace-nowrap" data-open-auth="signup">
             Start free — no card needed
           </button>
-          <a href="#use-cases" class="btn-secondary px-8 py-3.5 rounded-xl text-sm whitespace-nowrap">
-            See industry examples
+          <a href="#agent-quiz" class="btn-secondary px-8 py-3.5 rounded-xl text-sm whitespace-nowrap">
+            Get my agent pack
           </a>
         </div>
         <p class="text-xs text-matrix-soft">
-          Or <a href="/agents" class="text-matrix-green hover:underline font-semibold">browse agents</a> first — no commitment.
+          Or <a href="/agents" class="text-matrix-green hover:underline font-semibold">browse agents</a> · <a href="#roi-calculator" class="text-matrix-green hover:underline font-semibold">calculate your ROI</a>
         </p>
       </div>
     </section>
@@ -2446,10 +2949,10 @@
         <div>
           <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Resources</h4>
           <ul class="space-y-2.5 text-sm text-matrix-soft">
-            <li><a href="#" class="hover:text-matrix-green transition-colors">Docs</a></li>
-            <li><a href="/integrations" class="hover:text-matrix-green transition-colors">Integrations</a></li>
-            <li><a href="/admin" class="hover:text-matrix-green transition-colors">QA Admin</a></li>
-            <li><a href="#" class="hover:text-matrix-green transition-colors">Status</a></li>
+            <li><a href="/resources" class="hover:text-matrix-green transition-colors">Owner playbooks</a></li>
+            <li><a href="/#agent-quiz" class="hover:text-matrix-green transition-colors">Agent quiz</a></li>
+            <li><a href="/for/hvac" class="hover:text-matrix-green transition-colors">For HVAC</a></li>
+            <li><a href="/for/shopify" class="hover:text-matrix-green transition-colors">For Shopify</a></li>
           </ul>
         </div>
 
@@ -2863,5 +3366,9 @@
     })();
 
   </script>
+  <script src="/js/social-proof.js" defer></script>
+  <script src="/js/smb-quiz.js" defer></script>
+  <script src="/js/roi-calculator.js" defer></script>
+  <script src="/js/live-agent-demo.js" defer></script>
 </body>
 </html>

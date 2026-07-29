@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Book more jobs, answer leads faster, and reclaim admin hours. Built for US contractors and trade businesses." />
+  <meta name="theme-color" content="#117ACA" />
+  <meta property="og:title" content="AI Agents for Contractors & Trades — Matrixly" />
+  <meta property="og:description" content="Book more jobs, answer leads faster, and reclaim admin hours. Built for US contractors and trade businesses." />
+  <title>AI Agents for Contractors & Trades — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)', void: 'var(--bg-alt)', green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)', forest: 'var(--brand-blue-dark)', dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)', muted: 'var(--bg-muted)', card: 'var(--card)',
+              soft: 'var(--soft)', cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA; --brand-blue-dark: #0B5CAB; --brand-blue-hover: #0D6BB0;
+      --ink: #211E1E; --soft: #5C6670; --border: #D0D7DE; --bg: #FFFFFF; --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8; --card: #FFFFFF; --nav-bg: rgba(255,255,255,.92);
+    }
+    html.dark {
+      --brand-blue: #3B9FE0; --brand-blue-dark: #117ACA; --brand-blue-hover: #5BB0E8;
+      --ink: #F0F4F8; --soft: #9AA4B2; --border: #1E2A3A; --section-divider: rgba(148,163,184,.08);
+      --bg: #0B1220; --bg-alt: #111827; --bg-muted: #151C28; --card: #151C28; --nav-bg: rgba(11,18,32,.94);
+    }
+    html.dark header.border-b, html.dark footer.border-t,
+    html.dark .border-matrix-border, html.dark .border-matrix-border\/40, html.dark .border-matrix-border\/50 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); color: var(--ink); font-weight: 600; background: var(--card); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33,30,30,.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: .9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    .nav-scrolled { background: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .theme-toggle { width: 2.5rem; height: 2.5rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-muted); display: inline-flex; align-items: center; justify-content: center; color: var(--brand-blue); }
+    html.dark .theme-icon-sun { display: none; }
+    html:not(.dark) .theme-icon-moon { display: none; }
+    .video-ph {
+      position: relative; border-radius: .85rem; overflow: hidden; aspect-ratio: 16/9;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--brand-blue) 18%, var(--bg-muted)), var(--bg-muted));
+      border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+    .video-ph-play {
+      width: 3.25rem; height: 3.25rem; border-radius: 999px; background: color-mix(in srgb, var(--brand-blue) 92%, #000);
+      color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto .5rem;
+    }
+    .video-ph-badge { position: absolute; top: .65rem; right: .65rem; font-size: .7rem; font-weight: 700; padding: .2rem .5rem; border-radius: 999px; background: rgba(0,0,0,.45); color: #fff; }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="bg-matrix-black antialiased">
+
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between min-h-[4rem]">
+      <a href="/" class="inline-flex items-center gap-2" aria-label="Matrixly Home">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md" />
+        <span class="font-bold text-lg tracking-tight text-matrix-cream">Matrixly</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="/#how-it-works" class="nav-link">How it Works</a>
+        <a href="/agents" class="nav-link">Agents</a>
+        <a href="/resources" class="nav-link">Resources</a>
+        <a href="/pricing" class="nav-link">Pricing</a>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="theme-icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="/#final-cta" class="btn-primary px-4 py-2 rounded-lg text-sm">Get Started</a>
+      </div>
+      <div class="md:hidden flex items-center gap-2">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="theme-icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button id="mobile-toggle" class="text-matrix-green p-2" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu border-t border-matrix-border py-3">
+      <a href="/agents" class="block py-2 font-semibold text-matrix-soft">Agents</a>
+      <a href="/resources" class="block py-2 font-semibold text-matrix-soft">Resources</a>
+      <a href="/pricing" class="block py-2 font-semibold text-matrix-soft">Pricing</a>
+      <a href="/#final-cta" class="btn-primary block text-center mt-2 py-2 rounded-lg">Get Started</a>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-24 pb-16">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm font-semibold text-matrix-green uppercase tracking-wide mb-3">Contractors · Trades</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-matrix-cream tracking-tight mb-4">Win the job. Skip the admin spiral.</h1>
+        <p class="text-lg text-matrix-soft mb-6 leading-relaxed">Qualify leads, book site visits, keep invoices moving, and stay visible locally — while you’re on the tools.</p>
+        <div class="flex flex-col sm:flex-row gap-3 mb-4">
+          <a href="/#final-cta" class="btn-primary px-6 py-3 rounded-xl text-sm text-center">Start free with contractor stack</a>
+          <a href="/?industry=contractors#agent-quiz" class="btn-secondary px-6 py-3 rounded-xl text-sm text-center">Take the agent quiz</a>
+        </div>
+        <p class="text-sm text-matrix-soft">Cancel anytime · 14-day free explore · <a href="/#guarantee" class="text-matrix-green font-semibold hover:underline">10-hour guarantee</a></p>
+      </div>
+      <div class="video-ph" role="img" aria-label="Demo video placeholder">
+        <span class="video-ph-badge">1:15</span>
+        <div>
+          <div class="video-ph-play" aria-hidden="true">▶</div>
+          <p class="text-sm font-semibold text-matrix-cream px-4">How contractors reclaim admin hours with agents</p>
+          <p class="text-xs text-matrix-soft mt-1">Video placeholder · embed when ready</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-matrix-muted border-y border-matrix-border/40 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-matrix-cream mb-2">Starter agent stack</h2>
+      <p class="text-matrix-soft mb-8">Deploy 2–3 agents first. Expand when ROI is obvious.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+      <article class="card-matrix rounded-2xl p-5">
+        <h3 class="font-bold text-matrix-cream mb-1"><a href="/lead-qualifier" class="hover:text-matrix-green">Lead Qualifier</a></h3>
+        <p class="text-sm text-matrix-soft">Hot job requests don’t sit until Sunday night.</p>
+      </article>
+      <article class="card-matrix rounded-2xl p-5">
+        <h3 class="font-bold text-matrix-cream mb-1"><a href="/book-wise" class="hover:text-matrix-green">BookWise</a></h3>
+        <p class="text-sm text-matrix-soft">Estimates and site visits on the calendar automatically.</p>
+      </article>
+      <article class="card-matrix rounded-2xl p-5">
+        <h3 class="font-bold text-matrix-cream mb-1"><a href="/email-assistant" class="hover:text-matrix-green">Email Assistant</a></h3>
+        <p class="text-sm text-matrix-soft">Customer and supplier threads triaged daily.</p>
+      </article>
+      <article class="card-matrix rounded-2xl p-5">
+        <h3 class="font-bold text-matrix-cream mb-1"><a href="/invoice-forge" class="hover:text-matrix-green">InvoiceForge</a></h3>
+        <p class="text-sm text-matrix-soft">Extract and chase paperwork without drowning in PDFs.</p>
+      </article></div>
+    </div>
+  </section>
+
+  <section class="py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-2xl font-bold text-matrix-cream mb-4">Industry ROI examples</h2>
+        <ul class="space-y-3 text-matrix-soft"><li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span><span>Faster quote response</span></li><li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span><span>Fewer missed appointments</span></li><li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span><span>Admin hours back to billable work</span></li></ul>
+        <p class="text-xs text-matrix-soft mt-4">Illustrative · results vary by niche and execution</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-matrix-cream mb-4">Integrations that matter</h2>
+        <div class="flex flex-wrap gap-2"><span class="card-matrix rounded-lg px-3 py-2 text-sm font-semibold text-matrix-cream">Gmail</span><span class="card-matrix rounded-lg px-3 py-2 text-sm font-semibold text-matrix-cream">Google Business</span><span class="card-matrix rounded-lg px-3 py-2 text-sm font-semibold text-matrix-cream">QuickBooks</span><span class="card-matrix rounded-lg px-3 py-2 text-sm font-semibold text-matrix-cream">Calendar</span><span class="card-matrix rounded-lg px-3 py-2 text-sm font-semibold text-matrix-cream">Square</span></div>
+        <a href="/integrations" class="inline-block mt-6 text-sm font-semibold text-matrix-green hover:underline">Browse all integrations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-8">
+    <div class="max-w-3xl mx-auto px-4 text-center card-matrix rounded-2xl p-8 border-matrix-green/25">
+      <h2 class="text-xl font-bold text-matrix-cream mb-2">Ready when you are</h2>
+      <p class="text-matrix-soft mb-6">Start free. Connect tools in minutes. Cancel anytime — no contract.</p>
+      <a href="/#final-cta" class="btn-primary px-8 py-3 rounded-xl text-sm inline-block">Start free with contractor stack</a>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-matrix-border/50 bg-matrix-void pt-14 pb-8 mt-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="font-bold text-lg mb-3 inline-flex items-center gap-2">
+          <img src="/assets/matrixly-logo.png" alt="" width="32" height="32" class="w-8 h-8 rounded-md" />
+          <span class="text-matrix-cream">Matrixly</span>
+        </a>
+        <p class="text-sm text-matrix-soft">AI agents that work while you run your business.</p>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Product</h4>
+        <ul class="space-y-2 text-sm text-matrix-soft">
+          <li><a href="/agents" class="hover:text-matrix-green">Agents</a></li>
+          <li><a href="/pricing" class="hover:text-matrix-green">Pricing</a></li>
+          <li><a href="/resources" class="hover:text-matrix-green">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Industries</h4>
+        <ul class="space-y-2 text-sm text-matrix-soft">
+          <li><a href="/for/hvac" class="hover:text-matrix-green">HVAC</a></li>
+          <li><a href="/for/shopify" class="hover:text-matrix-green">Shopify</a></li>
+          <li><a href="/for/professional-services" class="hover:text-matrix-green">Pro services</a></li>
+          <li><a href="/for/contractors" class="hover:text-matrix-green">Contractors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Get started</h4>
+        <ul class="space-y-2 text-sm text-matrix-soft">
+          <li><a href="/#agent-quiz" class="hover:text-matrix-green">Agent quiz</a></li>
+          <li><a href="/#roi-calculator" class="hover:text-matrix-green">ROI calculator</a></li>
+          <li><a href="/#final-cta" class="hover:text-matrix-green">Start free</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-xs text-matrix-soft border-t border-matrix-border/40 pt-6">© <span id="year"></span> Matrixly · All rights reserved</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var nav = document.getElementById('navbar');
+    var onScroll = function () { nav.classList.toggle('nav-scrolled', window.scrollY > 40); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  (function () {
+    var toggle = document.getElementById('mobile-toggle');
+    var menu = document.getElementById('mobile-menu');
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  })();
+  (function () {
+    var KEY = 'matrixly-theme';
+    function isDark() { return document.documentElement.classList.contains('dark'); }
+    function apply(theme) {
+      var dark = theme === 'dark';
+      document.documentElement.classList.toggle('dark', dark);
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    }
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () { apply(isDark() ? 'light' : 'dark'); });
+    });
+  })();
+</script>
+</body>
+</html>
