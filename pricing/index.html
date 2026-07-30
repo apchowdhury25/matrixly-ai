@@ -369,10 +369,43 @@
       background: var(--nav-bg); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(33,30,30,0.06);
     }
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .mobile-menu.open { max-height: min(80vh, 520px); overflow-y: auto; }
-    .h1-fluid { font-size: clamp(1.85rem, 4.5vw + 0.5rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; }
-    .h2-fluid { font-size: clamp(1.5rem, 3vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: var(--bg);
+    }
+    .mobile-menu.open {
+      max-height: min(80vh, 560px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    }
+    .mobile-menu a:not(.btn-primary) {
+      color: var(--ink);
+      border-radius: 0.5rem;
+    }
+    .mobile-menu a:not(.btn-primary):hover {
+      color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 8%, transparent);
+    }
+    body.menu-open { overflow: hidden; touch-action: none; }
+    @media (max-width: 767px) {
+      #navbar {
+        background: var(--nav-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+      }
+      #navbar.menu-open {
+        background: var(--bg);
+        border-bottom-color: var(--border);
+        box-shadow: 0 1px 8px rgba(33,30,30,0.06);
+      }
+    }
+    .h1-fluid { font-size: clamp(1.6rem, 4.2vw + 0.65rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; word-wrap: break-word; overflow-wrap: anywhere; max-width: 100%; }
+    .h2-fluid { font-size: clamp(1.4rem, 3.2vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; word-wrap: break-word; overflow-wrap: anywhere; max-width: 100%; }
     .neon-tile {
       display: inline-flex; align-items: center; justify-content: center;
       min-width: 2.75rem; height: 2.75rem; padding: 0 0.5rem; border-radius: 0.5rem;
@@ -759,18 +792,32 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
-    (function () {
+        (function () {
       const toggle = document.getElementById('mobile-toggle');
       const menu = document.getElementById('mobile-menu');
       const iconMenu = document.getElementById('icon-menu');
       const iconClose = document.getElementById('icon-close');
-      if (!toggle) return;
-      toggle.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open);
-        iconMenu.classList.toggle('hidden', open);
-        iconClose.classList.toggle('hidden', !open);
+      const nav = document.getElementById('navbar');
+      if (!toggle || !menu) return;
+      function setMenuOpen(open) {
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (iconMenu) iconMenu.classList.toggle('hidden', open);
+        if (iconClose) iconClose.classList.toggle('hidden', !open);
+        if (nav) nav.classList.toggle('menu-open', open);
+        document.body.classList.toggle('menu-open', open);
+      }
+      toggle.addEventListener('click', () => setMenuOpen(!menu.classList.contains('open')));
+      menu.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => setMenuOpen(false));
       });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) setMenuOpen(false);
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && menu.classList.contains('open')) setMenuOpen(false);
+      }, { passive: true });
     })();
   
     // ---- Theme toggle (light / dark) ----

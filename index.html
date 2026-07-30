@@ -427,7 +427,7 @@
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
 
-    /* Hero agent carousel */
+    /* Hero agent carousel — keep slides within the mobile viewport */
     .agent-carousel {
       position: relative;
       background: var(--card);
@@ -435,6 +435,9 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--shadow-md);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
     }
     .agent-carousel-header {
       background: linear-gradient(135deg, var(--brand-blue-soft) 0%, color-mix(in srgb, var(--brand-blue) 8%, var(--card)) 100%);
@@ -444,23 +447,36 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      min-width: 0;
     }
     .agent-carousel-viewport {
       position: relative;
       overflow: hidden;
       min-height: 320px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
     }
     .agent-carousel-track {
       display: flex;
+      width: 100%;
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform;
     }
     .agent-slide {
       flex: 0 0 100%;
       width: 100%;
-      min-width: 100%;
+      max-width: 100%;
+      /* use basis (not min-width %) so intrinsic min-content cannot blow out the hero */
+      min-width: 0;
       padding: 1.25rem 1.35rem 1rem;
       box-sizing: border-box;
+    }
+    /* Prevent CSS grid/flex min-content from expanding past the phone width */
+    #hero .grid > *,
+    #hero .min-w-0 {
+      min-width: 0;
+      max-width: 100%;
     }
     .agent-slide-icon {
       width: 52px;
@@ -675,31 +691,80 @@
       }
     }
 
+    /* Match Tailwind nav horizontal padding so the mobile panel can full-bleed */
+    #navbar .nav-inner { --nav-pad-x: 1rem; }
+    @media (min-width: 640px) { #navbar .nav-inner { --nav-pad-x: 1.5rem; } }
+    @media (min-width: 1024px) { #navbar .nav-inner { --nav-pad-x: 2rem; } }
+
+    /*
+     * Mobile menu: opaque panel so links never ghost over page content.
+     * (Transparent max-height drawer was causing garbled/misaligned text on mobile.)
+     */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.35s ease;
+      background: var(--bg);
+      /* bleed to viewport edges inside padded nav */
+      margin-left: calc(-1 * var(--nav-pad-x, 1rem));
+      margin-right: calc(-1 * var(--nav-pad-x, 1rem));
+      padding-left: var(--nav-pad-x, 1rem);
+      padding-right: var(--nav-pad-x, 1rem);
     }
     .mobile-menu.open {
-      max-height: min(80vh, 520px);
+      max-height: min(80vh, 560px);
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    }
+    .mobile-menu a:not(.btn-primary) {
+      color: var(--ink);
+      border-radius: 0.5rem;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .mobile-menu a:not(.btn-primary):hover,
+    .mobile-menu a:not(.btn-primary):focus-visible {
+      color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 8%, transparent);
+      outline: none;
+    }
+    body.menu-open {
+      overflow: hidden;
+      touch-action: none;
+    }
+    /* Solid nav chrome on small screens so open drawer never shows hero through it */
+    @media (max-width: 767px) {
+      #navbar {
+        background: var(--nav-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+      }
+      #navbar.menu-open {
+        background: var(--bg);
+        border-bottom-color: var(--border);
+        box-shadow: var(--shadow-sm);
+      }
     }
 
     .stat-number { font-variant-numeric: tabular-nums; }
 
     .h1-fluid {
-      font-size: clamp(1.75rem, 5vw + 0.5rem, 3.75rem);
+      font-size: clamp(1.6rem, 4.2vw + 0.65rem, 3.75rem);
       word-wrap: break-word;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
       letter-spacing: -0.02em;
       font-weight: 700;
+      max-width: 100%;
     }
     .h2-fluid {
-      font-size: clamp(1.5rem, 3.5vw + 0.4rem, 3rem);
+      font-size: clamp(1.4rem, 3.2vw + 0.4rem, 3rem);
       word-wrap: break-word;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
       letter-spacing: -0.015em;
       font-weight: 700;
+      max-width: 100%;
     }
 
     /* Top nav: one row grid so logo, links, and actions share the same vertical center */
@@ -1112,7 +1177,7 @@
 <body class="bg-matrix-black antialiased">
   <!-- ========== NAVIGATION (aligned with agents / products / integrations) ========== -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 nav-inner">
       <div class="nav-row">
         <a href="/" class="nav-brand group" aria-label="Matrixly Home">
           <img src="/assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
@@ -1150,20 +1215,20 @@
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
               </svg>
             </button>
-            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
+            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
               <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
               <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="mobile-menu md:hidden">
-        <div class="py-4 space-y-1 border-t border-matrix-border">
-          <a href="#how-it-works" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">How it Works</a>
-          <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Agents</a>
-          <a href="/resources" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Resources</a>
-          <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
-          <a href="#pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
+      <div id="mobile-menu" class="mobile-menu md:hidden" aria-hidden="true">
+        <div class="py-3 space-y-1 border-t border-matrix-border">
+          <a href="#how-it-works" class="block px-3 py-3 font-bold">How it Works</a>
+          <a href="/agents" class="block px-3 py-3 font-bold">Agents</a>
+          <a href="/resources" class="block px-3 py-3 font-bold">Resources</a>
+          <a href="/integrations" class="block px-3 py-3 font-bold">Integrations</a>
+          <a href="#pricing" class="block px-3 py-3 font-bold">Pricing</a>
           <button type="button" class="btn-primary block w-full text-center mt-3 px-5 py-3" data-open-auth="signup">Get Started</button>
         </div>
       </div>
@@ -1172,23 +1237,23 @@
 
   <main class="relative z-10">
     <!-- ========== 1. HERO ========== -->
-    <section id="hero" class="relative min-h-[100svh] flex items-center grid-bg pt-20 sm:pt-24 pb-12 sm:pb-16 overflow-hidden">
+    <section id="hero" class="relative min-h-[100svh] flex items-center grid-bg pt-20 sm:pt-24 pb-12 sm:pb-16 overflow-x-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
         <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <!-- Copy -->
-          <div class="text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6">
-              <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse"></span>
-              <span class="text-xs font-semibold text-matrix-green tracking-wide">Built for US small businesses · No tech team needed</span>
+          <div class="text-center lg:text-left min-w-0 max-w-full">
+            <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6 max-w-full">
+              <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse flex-shrink-0"></span>
+              <span class="text-xs font-semibold text-matrix-green tracking-wide text-left">Built for US small businesses · No tech team needed</span>
             </div>
 
-            <h1 class="h1-fluid font-extrabold leading-[1.12] tracking-tight mb-6">
+            <h1 class="h1-fluid font-extrabold leading-[1.15] tracking-tight mb-6">
               <span class="text-matrix-cream">Reclaim </span>
               <span class="text-matrix-green">20+ hours a week</span>
               <span class="text-matrix-cream"> — without hiring more staff</span>
             </h1>
 
-            <p class="text-base sm:text-lg md:text-xl text-matrix-soft max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl text-matrix-soft max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed break-words">
               Matrixly is the marketplace of ready-to-run AI agents that handle leads, email, support, shipping, and local SEO for you.
               <span class="text-matrix-cream font-medium"> Pick an agent. Connect your tools. Get time and revenue back.</span>
             </p>
@@ -2733,7 +2798,7 @@
             </ul>
           </div>
 
-          <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 reveal">
+          <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-3 reveal">
             <div class="card-matrix rounded-xl p-4 text-center integration-logo">
               <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Gmail</p>
             </div>
@@ -2798,11 +2863,11 @@
         </p>
         <p class="text-sm text-matrix-green font-semibold mb-10">14-day free trial · 10-hour month guarantee on paid plans · No long-term contract</p>
 
-        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
-          <button type="button" class="btn-primary px-10 py-3.5 rounded-xl text-sm whitespace-nowrap" data-open-auth="signup">
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center mb-6 w-full max-w-lg mx-auto">
+          <button type="button" class="btn-primary px-6 sm:px-10 py-3.5 rounded-xl text-sm w-full sm:w-auto" data-open-auth="signup">
             Start free — no card needed
           </button>
-          <a href="#agent-quiz" class="btn-secondary px-8 py-3.5 rounded-xl text-sm whitespace-nowrap">
+          <a href="#agent-quiz" class="btn-secondary px-6 sm:px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto">
             Get my agent pack
           </a>
         </div>
@@ -3150,23 +3215,34 @@
       const menu = document.getElementById('mobile-menu');
       const iconMenu = document.getElementById('icon-menu');
       const iconClose = document.getElementById('icon-close');
+      const nav = document.getElementById('navbar');
       if (!toggle || !menu) return;
 
+      function setMenuOpen(open) {
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (iconMenu) iconMenu.classList.toggle('hidden', open);
+        if (iconClose) iconClose.classList.toggle('hidden', !open);
+        if (nav) nav.classList.toggle('menu-open', open);
+        document.body.classList.toggle('menu-open', open);
+      }
+
       toggle.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open);
-        iconMenu.classList.toggle('hidden', open);
-        iconClose.classList.toggle('hidden', !open);
+        setMenuOpen(!menu.classList.contains('open'));
       });
 
-      menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-          iconMenu.classList.remove('hidden');
-          iconClose.classList.add('hidden');
-        });
+      menu.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => setMenuOpen(false));
       });
+
+      // Close on escape / resize to desktop
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) setMenuOpen(false);
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && menu.classList.contains('open')) setMenuOpen(false);
+      }, { passive: true });
     })();
 
     // ---- Scroll reveal ----

@@ -84,8 +84,38 @@
       color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto .5rem;
     }
     .video-ph-badge { position: absolute; top: .65rem; right: .65rem; font-size: .7rem; font-weight: 700; padding: .2rem .5rem; border-radius: 999px; background: rgba(0,0,0,.45); color: #fff; }
-    .mobile-menu { display: none; }
+        .mobile-menu {
+      display: none;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    @media (min-width: 640px) {
+      .mobile-menu { margin-left: -1.5rem; margin-right: -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .mobile-menu { margin-left: -2rem; margin-right: -2rem; padding-left: 2rem; padding-right: 2rem; }
+    }
     .mobile-menu.open { display: block; }
+    .mobile-menu a:not(.btn-primary) { color: var(--ink); border-radius: 0.5rem; }
+    .mobile-menu a:not(.btn-primary):hover { color: var(--brand-blue); }
+    body.menu-open { overflow: hidden; touch-action: none; }
+    @media (max-width: 767px) {
+      #navbar {
+        background: var(--nav-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+      }
+      #navbar.menu-open {
+        background: var(--bg);
+        border-bottom-color: var(--border);
+      }
+    }
   </style>
 </head>
 <body class="bg-matrix-black antialiased">
@@ -248,11 +278,26 @@
   (function () {
     var toggle = document.getElementById('mobile-toggle');
     var menu = document.getElementById('mobile-menu');
-    if (!toggle) return;
+    var nav = document.getElementById('navbar');
+    if (!toggle || !menu) return;
+    function setMenuOpen(open) {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (nav) nav.classList.toggle('menu-open', open);
+      document.body.classList.toggle('menu-open', open);
+    }
     toggle.addEventListener('click', function () {
-      var open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
+      setMenuOpen(!menu.classList.contains('open'));
     });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenuOpen(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) setMenuOpen(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768 && menu.classList.contains('open')) setMenuOpen(false);
+    }, { passive: true });
   })();
   (function () {
     var KEY = 'matrixly-theme';
