@@ -225,6 +225,7 @@ const verticals = [
     agents: [
       { name: "Lead Qualifier", href: "/lead-qualifier", why: "Score inbound quote requests and draft same-day outreach." },
       { name: "Email Assistant", href: "/email-assistant", why: "Triage after-hours inbox noise; surface jobs that need you." },
+      { name: "SEOForge", href: "/seo-forge", why: "Local SEO, “near me” content, GBP, and keyword ROI without an agency." },
       { name: "ContentForge", href: "/content-forge", why: "Service pages that rank for “near me” and seasonal demand." },
       { name: "BookWise", href: "/book-wise", why: "Confirm installs and reduce scheduling ping-pong." },
     ],

@@ -1,0 +1,80 @@
+# Matrixly SEOForge — SEO & brand marketing for US SMBs
+
+business:
+  name: "Matrixly Demo Brand"
+  support_email: "seo@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  industry: "B2B SaaS / SMB automation"
+  service_areas: []
+  primary_goal: "organic_leads"
+
+brand:
+  voice_file: brand/voice.md
+  tone:
+    - professional
+    - clear
+    - trustworthy
+    - practical
+  avoid:
+    - invented statistics
+    - guarantee claims
+    - competitor bashing
+    - jargon without explanation
+  keywords:
+    - local SEO
+    - near me
+    - organic leads
+    - Google Business Profile
+
+seo:
+  max_source_chars: 40000
+  seo_title_max: 60
+  meta_description_max: 160
+  default_blog_words: 1000
+  require_hitl_before_publish: true
+  target_markets:
+    - US SMB
+  content_types:
+    - service_page
+    - blog
+    - location_page
+    - faq
+    - gbp_post
+    - social
+    - newsletter
+
+hitl:
+  mode: external_only  # always | external_only | off
+
+publish:
+  backend: local  # local | buffer | hootsuite | wordpress | gbp
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8798"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  generate_per_minute: 30
+  chat_per_minute: 40
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8798
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.4
+
+channels:
+  dashboard:
+    welcome: "SEOForge — research, brand-voice content, local SEO, approvals, and ROI for US SMBs."

@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEOForge — Matrixly Dashboard</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1220; --card: #151c28; --border: #1e2a3a; --neon: #3b9fe0;
+      --text: #f0f4f8; --muted: #9aa4b2; --ok: #34d399; --warn: #fbbf24; --bad: #f87171;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Open Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    header {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #152536, #0f1724); position: sticky; top: 0; z-index: 10;
+    }
+    h1 { font-size: 1.05rem; margin: 0; display: flex; align-items: center; gap: 0.5rem; }
+    h1 span { color: var(--neon); }
+    .sub { color: var(--muted); font-size: 0.78rem; margin-top: 0.15rem; }
+    .tabs { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+    .tab {
+      border: 1px solid var(--border); background: transparent; color: var(--muted);
+      padding: 0.4rem 0.75rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; cursor: pointer;
+    }
+    .tab.active { color: #fff; background: var(--neon); border-color: var(--neon); }
+    main { max-width: 1200px; margin: 0 auto; padding: 1.1rem 1.25rem 2rem; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-chat { grid-template-columns: 1.15fr 0.85fr; }
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+    }
+    .card h2 { margin: 0 0 0.75rem; font-size: 0.95rem; }
+    label { display: block; font-size: 0.72rem; color: var(--muted); margin: 0.55rem 0 0.3rem; font-weight: 700; }
+    textarea, input, select {
+      width: 100%; background: #0b1220; border: 1px solid var(--border); color: var(--text);
+      border-radius: 8px; padding: 0.65rem 0.75rem; font: inherit; font-size: 0.85rem;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .btn {
+      border: 0; border-radius: 8px; padding: 0.55rem 0.9rem; font-weight: 700; cursor: pointer; font-size: 0.82rem;
+    }
+    .btn-primary { background: linear-gradient(145deg, #117aca, #3b9fe0); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .btn-ok { background: #065f46; color: var(--ok); border: 1px solid #047857; }
+    .btn-bad { background: #7f1d1d; color: #fecaca; border: 1px solid #991b1b; }
+    .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; }
+    .muted { color: var(--muted); font-size: 0.82rem; }
+    .pill {
+      display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem;
+      border-radius: 999px; background: rgba(59, 159, 224, 0.15); color: var(--neon);
+    }
+    .pill.warn { background: rgba(251, 191, 36, 0.15); color: var(--warn); }
+    .pill.ok { background: rgba(52, 211, 153, 0.12); color: var(--ok); }
+    .stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+    .stat {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.7rem 0.9rem; min-width: 120px; flex: 1;
+    }
+    .stat .l { font-size: 0.68rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+    .stat .v { color: var(--neon); font-weight: 800; font-size: 1.2rem; margin-top: 0.2rem; }
+    .chat-log {
+      height: 380px; overflow: auto; background: #0b1220; border: 1px solid var(--border);
+      border-radius: 10px; padding: 0.85rem; display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .bubble {
+      max-width: 92%; padding: 0.65rem 0.8rem; border-radius: 10px; font-size: 0.86rem; line-height: 1.5;
+      white-space: pre-wrap;
+    }
+    .bubble.user { align-self: flex-end; background: rgba(17, 122, 202, 0.25); border: 1px solid rgba(59, 159, 224, 0.35); }
+    .bubble.assistant { align-self: flex-start; background: #121a26; border: 1px solid var(--border); }
+    pre.out {
+      white-space: pre-wrap; font-size: 0.78rem; color: var(--muted); max-height: 360px; overflow: auto;
+      margin: 0; background: #0b1220; border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    th, td { text-align: left; padding: 0.5rem 0.35rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; }
+    .keys { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .keys input { max-width: 200px; font-size: 0.78rem; }
+    #toast {
+      position: fixed; bottom: 1rem; right: 1rem; background: #1a2433; border: 1px solid var(--border);
+      padding: 0.65rem 0.9rem; border-radius: 8px; display: none; max-width: 340px; font-size: 0.85rem; z-index: 50;
+    }
+    #toast.show { display: block; }
+    .hidden { display: none !important; }
+    #login {
+      max-width: 420px; margin: 12vh auto; background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h1><span>Matrixly</span>&nbsp;SEOForge</h1>
+    <p class="muted">Enter admin or widget key to unlock the dashboard.</p>
+    <label for="loginKey">API / widget key</label>
+    <input id="loginKey" type="password" placeholder="change-me-admin-key" autocomplete="off" />
+    <div class="row">
+      <button class="btn btn-primary" id="loginBtn">Unlock dashboard</button>
+    </div>
+    <p id="loginErr" class="muted"></p>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <div>
+        <h1>Matrixly <span>SEOForge</span></h1>
+        <div class="sub">SEO · Local · Brand voice · HITL · ROI · US SMBs</div>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="chat">Chat</button>
+        <button class="tab" data-tab="content">Content</button>
+        <button class="tab" data-tab="queue">Approval queue</button>
+        <button class="tab" data-tab="keywords">Keywords</button>
+        <button class="tab" data-tab="brand">Brand voice</button>
+        <button class="tab" data-tab="roi">ROI</button>
+      </div>
+      <div class="keys">
+        <span class="muted" id="health">…</span>
+        <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="stats" id="stats"></div>
+
+      <section id="chat" class="panel active">
+        <div class="grid grid-chat">
+          <div class="card">
+            <h2>Agent chat</h2>
+            <div class="chat-log" id="chatLog"></div>
+            <label for="chatInput">Message</label>
+            <textarea id="chatInput" placeholder="e.g. Create a 30-day plan for HVAC leads in Austin"></textarea>
+            <div class="row">
+              <button class="btn btn-primary" id="chatSend">Send</button>
+              <button class="btn btn-ghost" id="chatClear">New session</button>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Onboard / profile</h2>
+            <label>Business name</label>
+            <input id="bizName" placeholder="Apex Comfort HVAC" />
+            <label>Business type</label>
+            <input id="bizType" placeholder="Residential HVAC" />
+            <label>Service areas (comma-separated)</label>
+            <input id="bizAreas" placeholder="Austin, TX, Round Rock, TX" />
+            <label>Website</label>
+            <input id="bizWeb" placeholder="https://…" />
+            <label>Google Business Profile status</label>
+            <input id="bizGbp" placeholder="Active, ~4.7 stars" />
+            <label>Primary growth goal</label>
+            <select id="bizGoal">
+              <option value="organic_leads">More organic leads</option>
+              <option value="near_me_leads">More “near me” / local leads</option>
+              <option value="brand_consistency">Brand consistency</option>
+              <option value="content_velocity">Content velocity</option>
+            </select>
+            <div class="row">
+              <button class="btn btn-primary" id="saveProfile">Save profile</button>
+              <button class="btn btn-ghost" id="runPlan">Create 30-day plan</button>
+            </div>
+            <p class="muted" style="margin-top:0.75rem">SEOForge confirms type, areas, site/GBP, and goal — then proposes a plan for your approval.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="content" class="panel">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Generate SEO content</h2>
+            <label>Content type</label>
+            <select id="contentType">
+              <option value="service_page">Service page</option>
+              <option value="blog">Blog post</option>
+              <option value="location_page">Location page</option>
+              <option value="faq">FAQ</option>
+              <option value="gbp_post">GBP post pack</option>
+            </select>
+            <label>Primary keyword</label>
+            <input id="primaryKw" placeholder="AC repair Austin" />
+            <label>Brief</label>
+            <textarea id="brief" placeholder="Describe the service, city, offers, and any compliance notes…"></textarea>
+            <div class="row">
+              <button class="btn btn-primary" id="genContent">Generate package</button>
+              <button class="btn btn-ghost" id="runDemo">Load demo</button>
+              <button class="btn btn-ghost" id="runLocal">Local SEO package</button>
+              <button class="btn btn-ghost" id="runAudit">Audit page text</button>
+            </div>
+            <p class="muted" style="margin-top:0.6rem">Packages include title, meta, outline, draft, social variants, checklist. HITL required before publish.</p>
+          </div>
+          <div class="card">
+            <h2>Latest package</h2>
+            <pre class="out" id="contentOut">—</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="queue" class="panel">
+        <div class="card">
+          <h2>Content approval queue (HITL)</h2>
+          <p class="muted">Nothing goes public until you approve. Then publish to local export / WordPress draft / Buffer.</p>
+          <div class="row" style="margin-top:0">
+            <button class="btn btn-ghost" id="refreshQueue">Refresh</button>
+          </div>
+          <table>
+            <thead><tr><th>HITL</th><th>Job</th><th>Detail</th><th>Actions</th></tr></thead>
+            <tbody id="hitlBody"></tbody>
+          </table>
+          <label style="margin-top:1rem">Approved job ID to publish</label>
+          <input id="publishJob" placeholder="job_…" />
+          <div class="row">
+            <button class="btn btn-ok" id="publishBtn">Publish (local/export)</button>
+            <button class="btn btn-ghost" id="publishWp">Publish WordPress draft</button>
+          </div>
+          <p id="publishMsg" class="muted"></p>
+        </div>
+      </section>
+
+      <section id="keywords" class="panel">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Add / update keyword</h2>
+            <label>Keyword</label>
+            <input id="kwText" placeholder="plumber near me" />
+            <label>City</label>
+            <input id="kwCity" placeholder="Austin, TX" />
+            <label>Intent</label>
+            <select id="kwIntent">
+              <option value="local">local</option>
+              <option value="commercial">commercial</option>
+              <option value="transactional">transactional</option>
+              <option value="informational">informational</option>
+            </select>
+            <label>Priority</label>
+            <select id="kwPriority">
+              <option value="high">high</option>
+              <option value="medium">medium</option>
+              <option value="low">low</option>
+            </select>
+            <label>Current rank (optional)</label>
+            <input id="kwRank" type="number" min="1" max="100" placeholder="e.g. 14" />
+            <div class="row">
+              <button class="btn btn-primary" id="kwSave">Save keyword</button>
+              <button class="btn btn-ghost" id="kwRefresh">Refresh</button>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Tracker</h2>
+            <table>
+              <thead><tr><th>Keyword</th><th>City</th><th>Pri</th><th>Rank</th><th>Δ</th></tr></thead>
+              <tbody id="kwBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="brand" class="panel">
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>Brand-voice training</h2>
+            <label>Voice guide (markdown)</label>
+            <textarea id="voiceMd" style="min-height:280px" placeholder="Tone, vocabulary, claims, compliance…"></textarea>
+            <label>Tone (comma-separated)</label>
+            <input id="voiceTone" placeholder="friendly, clear, trustworthy" />
+            <label>Avoid (comma-separated)</label>
+            <input id="voiceAvoid" placeholder="guarantees, invented stats" />
+            <div class="row">
+              <button class="btn btn-primary" id="saveVoice">Save brand voice</button>
+              <button class="btn btn-ghost" id="loadVoice">Reload</button>
+            </div>
+          </div>
+          <div class="card">
+            <h2>How training is used</h2>
+            <p class="muted">
+              SEOForge injects this voice into research, writing, local SEO, and chat.
+              Approved claims and compliance rules stay in memory across sessions.
+              Never invent reviews, credentials, or guarantees — even if asked.
+            </p>
+            <pre class="out" id="brandMeta">—</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="roi" class="panel">
+        <div class="grid grid-3" id="roiCards"></div>
+        <div class="grid grid-2" style="margin-top:1rem">
+          <div class="card">
+            <h2>Log ROI event</h2>
+            <label>Hours saved</label>
+            <input id="roiHours" type="number" step="0.25" value="1" />
+            <label>Leads attributed</label>
+            <input id="roiLeads" type="number" value="0" />
+            <label>Revenue (USD)</label>
+            <input id="roiRev" type="number" step="0.01" value="0" />
+            <label>Note</label>
+            <input id="roiNote" placeholder="Closed job from organic blog" />
+            <div class="row">
+              <button class="btn btn-primary" id="roiSave">Log to Matrixly ROI</button>
+              <button class="btn btn-ghost" id="roiRefresh">Refresh</button>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Recent ROI events</h2>
+            <pre class="out" id="roiEvents">—</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+
+  <script>
+    const API = location.origin.includes('8798') || location.pathname.includes('/static/')
+      ? location.origin
+      : (new URLSearchParams(location.search).get('api') || 'http://127.0.0.1:8798');
+    const $ = (id) => document.getElementById(id);
+    let sessionId = sessionStorage.getItem('sf_session') || null;
+    let lastJobId = null;
+
+    function key() { return sessionStorage.getItem('seoforge_key') || ''; }
+    function headers(admin = false) {
+      const k = key();
+      const h = { 'Content-Type': 'application/json' };
+      if (admin) h['X-API-Key'] = k; else { h['X-API-Key'] = k; h['X-Widget-Key'] = k; }
+      return h;
+    }
+    function toast(m) {
+      const t = $('toast'); t.textContent = m; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2800);
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    async function api(path, opts = {}, admin = false) {
+      const res = await fetch(API + path, Object.assign({}, opts, {
+        headers: Object.assign(headers(admin), (opts.headers || {})),
+      }));
+      if (res.status === 401) throw new Error('Unauthorized — check API key');
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.detail || res.statusText);
+      }
+      return res.json();
+    }
+
+    function showApp() {
+      $('login').classList.add('hidden');
+      $('app').classList.remove('hidden');
+      refreshAll();
+    }
+
+    $('loginBtn').onclick = async () => {
+      const k = $('loginKey').value.trim() || 'change-me-admin-key';
+      sessionStorage.setItem('seoforge_key', k);
+      try {
+        await api('/v1/health');
+        // health is open; verify key via brand
+        await api('/v1/brand');
+        showApp();
+      } catch (e) {
+        $('loginErr').textContent = e.message || 'Login failed';
+      }
+    };
+    if (key()) {
+      api('/v1/brand').then(showApp).catch(() => {});
+    }
+
+    $('logoutBtn').onclick = () => {
+      sessionStorage.removeItem('seoforge_key');
+      location.reload();
+    };
+
+    document.querySelectorAll('.tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach((p) => p.classList.remove('active'));
+        btn.classList.add('active');
+        $(btn.dataset.tab).classList.add('active');
+        if (btn.dataset.tab === 'queue') loadHitl();
+        if (btn.dataset.tab === 'keywords') loadKeywords();
+        if (btn.dataset.tab === 'brand') loadBrand();
+        if (btn.dataset.tab === 'roi') loadRoi();
+      });
+    });
+
+    function profilePayload() {
+      const areas = $('bizAreas').value.split(',').map((s) => s.trim()).filter(Boolean);
+      return {
+        business_name: $('bizName').value.trim(),
+        business_type: $('bizType').value.trim(),
+        service_areas: areas,
+        website: $('bizWeb').value.trim(),
+        gbp_status: $('bizGbp').value.trim(),
+        primary_goal: $('bizGoal').value,
+      };
+    }
+
+    async function refreshAll() {
+      try {
+        const h = await fetch(API + '/v1/health').then((r) => r.json());
+        $('health').textContent = h.ok
+          ? `online · ${h.jobs || 0} jobs · ${h.pending_review || 0} review`
+          : 'offline';
+        const st = await api('/v1/admin/status', {}, true).catch(() => null);
+        const roi = (st && st.roi) || h.roi || {};
+        const kw = (st && st.keywords) || h.keywords || {};
+        $('stats').innerHTML = `
+          <div class="stat"><div class="l">Hours saved</div><div class="v">${roi.hours_saved ?? 0}</div></div>
+          <div class="stat"><div class="l">Leads attributed</div><div class="v">${roi.leads_attributed ?? 0}</div></div>
+          <div class="stat"><div class="l">Keywords tracked</div><div class="v">${kw.total ?? 0}</div></div>
+          <div class="stat"><div class="l">Pending approval</div><div class="v">${h.pending_review ?? 0}</div></div>`;
+        if (st && st.profile) {
+          const p = st.profile;
+          if (p.business_name) $('bizName').value = p.business_name;
+          if (p.business_type) $('bizType').value = p.business_type;
+          if (p.service_areas) $('bizAreas').value = (p.service_areas || []).join(', ');
+          if (p.website) $('bizWeb').value = p.website;
+          if (p.gbp_status) $('bizGbp').value = p.gbp_status;
+          if (p.primary_goal) $('bizGoal').value = p.primary_goal;
+        }
+      } catch {
+        $('health').textContent = 'API offline — start on :8798';
+      }
+    }
+
+    function appendChat(role, text) {
+      const div = document.createElement('div');
+      div.className = 'bubble ' + role;
+      div.textContent = text;
+      $('chatLog').appendChild(div);
+      $('chatLog').scrollTop = $('chatLog').scrollHeight;
+    }
+
+    $('chatSend').onclick = async () => {
+      const message = $('chatInput').value.trim();
+      if (!message) return;
+      appendChat('user', message);
+      $('chatInput').value = '';
+      try {
+        const res = await api('/v1/chat', {
+          method: 'POST',
+          body: JSON.stringify({ message, session_id: sessionId, profile: profilePayload() }),
+        });
+        sessionId = res.session_id;
+        sessionStorage.setItem('sf_session', sessionId);
+        appendChat('assistant', res.reply || '(empty)');
+      } catch (e) {
+        appendChat('assistant', 'Error: ' + e.message);
+      }
+    };
+
+    $('chatClear').onclick = () => {
+      sessionId = null;
+      sessionStorage.removeItem('sf_session');
+      $('chatLog').innerHTML = '';
+      toast('New session');
+    };
+
+    $('saveProfile').onclick = async () => {
+      try {
+        await api('/v1/onboard', { method: 'POST', body: JSON.stringify(profilePayload()) });
+        toast('Profile saved');
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    };
+
+    $('runPlan').onclick = async () => {
+      try {
+        await api('/v1/onboard', { method: 'POST', body: JSON.stringify(profilePayload()) });
+        const p = profilePayload();
+        const input = [
+          `Business: ${p.business_name}`,
+          `Type: ${p.business_type}`,
+          `Areas: ${(p.service_areas || []).join(', ')}`,
+          `Website: ${p.website}`,
+          `GBP: ${p.gbp_status}`,
+          `Goal: ${p.primary_goal}`,
+        ].join('\n');
+        const job = await api('/v1/plan', {
+          method: 'POST',
+          body: JSON.stringify({
+            business_input: input,
+            primary_goal: p.primary_goal,
+            service_areas: p.service_areas,
+            business_type: p.business_type,
+          }),
+        });
+        lastJobId = job.id;
+        $('contentOut').textContent = JSON.stringify({ plan: job.plan, research: job.research, roi: job.roi_snapshot }, null, 2);
+        appendChat('assistant', '30-day plan ready (' + job.id + '). Open Content tab for details, or ask me about Week 1.');
+        document.querySelector('[data-tab="content"]').click();
+        toast('Plan created');
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    };
+
+    function renderJob(job) {
+      lastJobId = job.id;
+      if (job.status === 'pending_review' || job.hitl_id) {
+        $('publishJob').value = job.id;
+      }
+      const view = {
+        id: job.id,
+        status: job.status,
+        hitl_id: job.hitl_id,
+        draft: job.draft,
+        plan: job.plan,
+        local: job.local,
+        audit: job.audit,
+        roi_snapshot: job.roi_snapshot,
+        quality_score: job.quality_score,
+        confidence: job.confidence,
+      };
+      $('contentOut').textContent = JSON.stringify(view, null, 2);
+    }
+
+    $('genContent').onclick = async () => {
+      try {
+        const job = await api('/v1/generate', {
+          method: 'POST',
+          body: JSON.stringify({
+            brief: $('brief').value.trim(),
+            content_type: $('contentType').value,
+            primary_keyword: $('primaryKw').value.trim(),
+            service_areas: profilePayload().service_areas,
+            goal: profilePayload().primary_goal,
+          }),
+        });
+        renderJob(job);
+        toast('Content package ready · ' + job.status);
+        refreshAll();
+        loadHitl();
+      } catch (e) { toast(e.message); }
+    };
+
+    $('runDemo').onclick = async () => {
+      try {
+        const job = await api('/v1/admin/demo', { method: 'POST' }, true);
+        renderJob(job);
+        toast('Demo content generated');
+        refreshAll();
+        loadHitl();
+      } catch (e) { toast(e.message); }
+    };
+
+    $('runLocal').onclick = async () => {
+      try {
+        const brief = $('brief').value.trim() || [
+          profilePayload().business_name,
+          profilePayload().business_type,
+          (profilePayload().service_areas || []).join(', '),
+          profilePayload().gbp_status,
+        ].filter(Boolean).join(' · ');
+        const job = await api('/v1/local', {
+          method: 'POST',
+          body: JSON.stringify({
+            business_input: brief,
+            service_areas: profilePayload().service_areas,
+            gbp_notes: profilePayload().gbp_status,
+          }),
+        });
+        renderJob(job);
+        toast('Local SEO package ready');
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    };
+
+    $('runAudit').onclick = async () => {
+      try {
+        const job = await api('/v1/audit', {
+          method: 'POST',
+          body: JSON.stringify({
+            page_text: $('brief').value.trim(),
+            url_or_title: $('primaryKw').value.trim() || 'Page audit',
+            primary_keyword: $('primaryKw').value.trim(),
+          }),
+        });
+        renderJob(job);
+        toast('Audit complete · score ' + ((job.audit || {}).score || '—'));
+      } catch (e) { toast(e.message); }
+    };
+
+    async function loadHitl() {
+      try {
+        const data = await api('/v1/admin/hitl', {}, true);
+        const items = data.items || [];
+        $('hitlBody').innerHTML = items.length ? items.map((a) => `
+          <tr>
+            <td><code>${escapeHtml(a.id)}</code></td>
+            <td><code>${escapeHtml(a.job_id || '')}</code></td>
+            <td><span class="pill warn">${escapeHtml(a.kind)}</span><br/><span class="muted">${escapeHtml(JSON.stringify(a.payload || {}).slice(0, 120))}</span></td>
+            <td>
+              <button class="btn btn-ok" data-approve="${escapeHtml(a.id)}" data-job="${escapeHtml(a.job_id || '')}">Approve</button>
+              <button class="btn btn-bad" data-reject="${escapeHtml(a.id)}">Reject</button>
+            </td>
+          </tr>`).join('') : '<tr><td colspan="4" class="muted">No pending items</td></tr>';
+        $('hitlBody').querySelectorAll('[data-approve]').forEach((btn) => {
+          btn.onclick = async () => {
+            try {
+              await api('/v1/admin/hitl/' + btn.dataset.approve + '/approve', { method: 'POST', body: '{}' }, true);
+              if (btn.dataset.job) $('publishJob').value = btn.dataset.job;
+              toast('Approved');
+              loadHitl();
+              refreshAll();
+            } catch (e) { toast(e.message); }
+          };
+        });
+        $('hitlBody').querySelectorAll('[data-reject]').forEach((btn) => {
+          btn.onclick = async () => {
+            try {
+              await api('/v1/admin/hitl/' + btn.dataset.reject + '/reject', { method: 'POST', body: '{}' }, true);
+              toast('Rejected');
+              loadHitl();
+              refreshAll();
+            } catch (e) { toast(e.message); }
+          };
+        });
+      } catch (e) {
+        $('hitlBody').innerHTML = '<tr><td colspan="4" class="muted">' + escapeHtml(e.message) + '</td></tr>';
+      }
+    }
+    $('refreshQueue').onclick = loadHitl;
+
+    async function doPublish(targets) {
+      const jobId = $('publishJob').value.trim();
+      if (!jobId) return toast('Enter job id');
+      try {
+        const res = await api('/v1/publish', {
+          method: 'POST',
+          body: JSON.stringify({ job_id: jobId, targets }),
+        }, true);
+        $('publishMsg').textContent = JSON.stringify(res);
+        toast(res.ok ? 'Published' : (res.reason || 'Publish failed'));
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    }
+    $('publishBtn').onclick = () => doPublish(['local']);
+    $('publishWp').onclick = () => doPublish(['wordpress']);
+
+    async function loadKeywords() {
+      try {
+        const data = await api('/v1/keywords');
+        const items = data.items || [];
+        $('kwBody').innerHTML = items.length ? items.map((k) => {
+          const cur = k.current_rank;
+          const prev = k.previous_rank;
+          let delta = '—';
+          if (typeof cur === 'number' && typeof prev === 'number') {
+            const d = prev - cur;
+            delta = d > 0 ? '↑' + d : (d < 0 ? '↓' + Math.abs(d) : '·');
+          }
+          return `<tr>
+            <td>${escapeHtml(k.keyword || '')}</td>
+            <td>${escapeHtml(k.city || '')}</td>
+            <td><span class="pill">${escapeHtml(k.priority || '')}</span></td>
+            <td>${cur != null ? cur : '—'}</td>
+            <td>${delta}</td>
+          </tr>`;
+        }).join('') : '<tr><td colspan="5" class="muted">No keywords yet — create a plan or add one</td></tr>';
+      } catch (e) {
+        $('kwBody').innerHTML = '<tr><td colspan="5" class="muted">' + escapeHtml(e.message) + '</td></tr>';
+      }
+    }
+    $('kwRefresh').onclick = loadKeywords;
+    $('kwSave').onclick = async () => {
+      const keyword = $('kwText').value.trim();
+      if (!keyword) return toast('Keyword required');
+      const rank = $('kwRank').value ? parseInt($('kwRank').value, 10) : null;
+      try {
+        await api('/v1/keywords', {
+          method: 'POST',
+          body: JSON.stringify({
+            keywords: [{
+              keyword,
+              city: $('kwCity').value.trim(),
+              intent: $('kwIntent').value,
+              priority: $('kwPriority').value,
+              current_rank: rank,
+              status: 'tracking',
+            }],
+          }),
+        }, true);
+        toast('Keyword saved');
+        $('kwText').value = '';
+        loadKeywords();
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    };
+
+    async function loadBrand() {
+      try {
+        const data = await api('/v1/brand');
+        $('voiceMd').value = data.voice || '';
+        const cfg = data.config || {};
+        $('voiceTone').value = (cfg.tone || []).join(', ');
+        $('voiceAvoid').value = (cfg.avoid || []).join(', ');
+        $('brandMeta').textContent = JSON.stringify({ profile: data.profile, config: cfg }, null, 2);
+      } catch (e) {
+        $('brandMeta').textContent = e.message;
+      }
+    }
+    $('loadVoice').onclick = loadBrand;
+    $('saveVoice').onclick = async () => {
+      try {
+        const tone = $('voiceTone').value.split(',').map((s) => s.trim()).filter(Boolean);
+        const avoid = $('voiceAvoid').value.split(',').map((s) => s.trim()).filter(Boolean);
+        await api('/v1/brand', {
+          method: 'PUT',
+          body: JSON.stringify({
+            voice_markdown: $('voiceMd').value,
+            tone,
+            avoid,
+          }),
+        }, true);
+        toast('Brand voice saved');
+        loadBrand();
+      } catch (e) { toast(e.message); }
+    };
+
+    async function loadRoi() {
+      try {
+        const data = await api('/v1/roi');
+        const s = data.summary || {};
+        const kw = data.keywords || {};
+        $('roiCards').innerHTML = `
+          <div class="stat"><div class="l">Hours saved</div><div class="v">${s.hours_saved ?? 0}</div></div>
+          <div class="stat"><div class="l">Leads booked</div><div class="v">${s.leads_attributed ?? 0}</div></div>
+          <div class="stat"><div class="l">Revenue tied</div><div class="v">$${s.revenue_usd ?? 0}</div></div>
+          <div class="stat"><div class="l">Keywords improved</div><div class="v">${kw.improved ?? 0}</div></div>`;
+        $('roiEvents').textContent = JSON.stringify(data.events || [], null, 2);
+      } catch (e) {
+        $('roiEvents').textContent = e.message;
+      }
+    }
+    $('roiRefresh').onclick = loadRoi;
+    $('roiSave').onclick = async () => {
+      try {
+        await api('/v1/roi', {
+          method: 'POST',
+          body: JSON.stringify({
+            hours_saved: parseFloat($('roiHours').value || '0'),
+            leads_attributed: parseInt($('roiLeads').value || '0', 10),
+            revenue_usd: parseFloat($('roiRev').value || '0'),
+            note: $('roiNote').value.trim(),
+            job_id: lastJobId,
+          }),
+        }, true);
+        toast('ROI logged');
+        loadRoi();
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    };
+
+    // Welcome bubble
+    appendChat('assistant', "Hi — I'm SEOForge. Confirm your business type, service areas, website/GBP status, and growth goal. Then I'll propose a 30-day plan for your approval.");
+  </script>
+</body>
+</html>

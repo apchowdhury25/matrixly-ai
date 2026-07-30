@@ -25,6 +25,7 @@ const REQUIRED_PAGES = [
   "book-wise/index.html",
   "invoice-forge/index.html",
   "content-forge/index.html",
+  "seo-forge/index.html",
   "meet-wise/index.html",
   "social-forge/index.html",
   "pipeline-forge/index.html",

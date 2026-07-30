@@ -18,6 +18,7 @@ A production-facing static website plus local agent runtimes for:
 | **BookWise** | Embeddable AI booking — availability, confirmations, reminders, calendar sync |
 | **InvoiceForge** | Invoice processing & AR — vision extract, validate, post, reminders, reports |
 | **ContentForge** | Content creation & repurposing — SEO blogs, social, newsletters, ads |
+| **SEOForge** | SEO & brand marketing for US SMBs — local SEO, content, keywords, ROI + HITL |
 | **MeetWise** | Meeting outcomes — summaries, actions, CRM, recap emails |
 | **SocialForge** | Social content & engagement — posts, schedule, inbox, insights |
 | **PipelineForge** | Pipeline scoring & prioritization — fit, risk, CRM, health |
@@ -105,6 +106,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── book-wise/index.html
 ├── invoice-forge/index.html
 ├── content-forge/index.html
+├── seo-forge/index.html
 ├── meet-wise/index.html
 ├── social-forge/index.html
 ├── pipeline-forge/index.html
@@ -122,6 +124,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── book-wise/
 │   ├── invoice-forge/
 │   ├── content-forge/
+│   ├── seo-forge/             # SEOForge (port 8798)
 │   ├── meet-wise/
 │   ├── social-forge/
 │   ├── pipeline-forge/
@@ -183,6 +186,19 @@ python -m src.cli serve
 ```
 
 Product page: [/content-forge](content-forge/). Full setup: [agents/content-forge/README.md](agents/content-forge/README.md).
+
+### SEOForge (SEO & brand marketing for US SMBs)
+
+```bash
+cd agents/seo-forge
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Product page: [/seo-forge](seo-forge/). Full setup: [agents/seo-forge/README.md](agents/seo-forge/README.md).
 
 ### MeetWise (meeting outcomes)
 

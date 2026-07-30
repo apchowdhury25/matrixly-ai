@@ -32,6 +32,7 @@ const PAGE_MAP = {
   "book-wise": "book-wise",
   "invoice-forge": "invoice-forge",
   "content-forge": "content-forge",
+  "seo-forge": "seo-forge",
   "meet-wise": "meet-wise",
   Admin: "admin",
   admin: "admin",
