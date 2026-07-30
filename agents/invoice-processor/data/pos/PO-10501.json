@@ -1,0 +1,31 @@
+{
+  "po_number": "PO-10501",
+  "vendor_name": "BrightField HVAC Parts",
+  "vendor_id": null,
+  "status": "open",
+  "currency": "USD",
+  "order_date": "2026-06-15",
+  "total": 4820.5,
+  "remaining_amount": 4820.5,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Condenser fan motor 1/4 HP",
+      "quantity": 4.0,
+      "unit_price": 285.0,
+      "amount": 1140.0,
+      "sku": "CFM-025",
+      "received_qty": 4.0
+    },
+    {
+      "line_number": 2,
+      "description": "R-410A refrigerant cylinder",
+      "quantity": 6.0,
+      "unit_price": 613.4167,
+      "amount": 3680.5,
+      "sku": "R410A-CYL",
+      "received_qty": 6.0
+    }
+  ],
+  "metadata": {}
+}

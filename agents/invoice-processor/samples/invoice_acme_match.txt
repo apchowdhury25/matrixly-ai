@@ -1,0 +1,23 @@
+INVOICE
+
+Vendor: Acme Office Supplies
+Invoice Number: INV-2026-4412
+Invoice Date: 2026-07-10
+Due Date: 2026-08-09
+PO Number: PO-10482
+Currency: USD
+
+Bill To: Matrixly Demo Co
+123 Market Street
+Chicago, IL 60601
+
+Line items:
+1. A4 Copy Paper Case (10 reams) x 10 @ $45.00 = $450.00
+2. Black Toner Cartridge HP 26A x 5 @ $160.00 = $800.00
+
+Subtotal: $1250.00
+Tax: $0.00
+Invoice Total: $1250.00
+
+Payment Terms: Net 30
+Notes: Thank you for your business.

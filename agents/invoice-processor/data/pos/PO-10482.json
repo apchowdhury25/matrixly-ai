@@ -1,0 +1,31 @@
+{
+  "po_number": "PO-10482",
+  "vendor_name": "Acme Office Supplies",
+  "vendor_id": null,
+  "status": "open",
+  "currency": "USD",
+  "order_date": "2026-06-01",
+  "total": 1250.0,
+  "remaining_amount": 1250.0,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "A4 Copy Paper Case (10 reams)",
+      "quantity": 10.0,
+      "unit_price": 45.0,
+      "amount": 450.0,
+      "sku": "PAPER-A4-10",
+      "received_qty": 10.0
+    },
+    {
+      "line_number": 2,
+      "description": "Black Toner Cartridge HP 26A",
+      "quantity": 5.0,
+      "unit_price": 160.0,
+      "amount": 800.0,
+      "sku": "TONER-26A",
+      "received_qty": 5.0
+    }
+  ],
+  "metadata": {}
+}

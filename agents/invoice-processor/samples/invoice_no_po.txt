@@ -1,0 +1,11 @@
+INVOICE
+
+From: Unknown Parts LLC
+Invoice Number: INV-UP-99
+Date: 2026-07-20
+Currency: USD
+
+Description: Assorted repair parts
+Total: $420.00
+
+No purchase order referenced.

@@ -1,0 +1,35 @@
+# Matrixly Invoice Processor — multi-agent AP rules
+
+business:
+  name: "Matrixly Demo Co"
+  timezone: "America/Chicago"
+  default_currency: "USD"
+
+model:
+  preferred: "xai:grok-4.5"
+  fallback: "xai:grok-4-1-fast-reasoning"
+
+matching:
+  # Fuzzy vendor / PO number thresholds (0–1)
+  vendor_similarity_min: 0.72
+  po_number_exact: true
+  amount_tolerance_pct: 2.0
+  amount_tolerance_abs: 1.0
+  qty_tolerance: 0.0
+
+review:
+  # Amounts at or above this force HITL even if match is clean
+  amount_review_threshold: 10000
+  # Confidence below this → Needs Review
+  min_extract_confidence: 0.75
+  min_match_confidence: 0.70
+  auto_approve_when_clean: true
+  require_hitl_on_high_severity: true
+
+accounting:
+  # stub | quickbooks | netsuite | csv
+  backend: stub
+
+server:
+  host: "0.0.0.0"
+  port: 8799

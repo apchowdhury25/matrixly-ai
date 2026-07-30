@@ -17,6 +17,7 @@ A production-facing static website plus local agent runtimes for:
 | **SupportForge** | Embeddable AI support — chat widget, KB answers, HITL, tickets |
 | **BookWise** | Embeddable AI booking — availability, confirmations, reminders, calendar sync |
 | **InvoiceForge** | Invoice processing & AR — vision extract, validate, post, reminders, reports |
+| **Invoice Processor** | Pydantic AI multi-agent AP — extract, PO match, discrepancies, HITL |
 | **ContentForge** | Content creation & repurposing — SEO blogs, social, newsletters, ads |
 | **SEOForge** | SEO & brand marketing for US SMBs — local SEO, content, keywords, ROI + HITL |
 | **MeetWise** | Meeting outcomes — summaries, actions, CRM, recap emails |
@@ -105,6 +106,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 ├── support-forge/index.html
 ├── book-wise/index.html
 ├── invoice-forge/index.html
+├── invoice-processor/index.html
 ├── content-forge/index.html
 ├── seo-forge/index.html
 ├── meet-wise/index.html
@@ -123,6 +125,7 @@ Agent CLIs run on an operator machine or secured VPS — not on static Hostinger
 │   ├── support-forge/
 │   ├── book-wise/
 │   ├── invoice-forge/
+│   ├── invoice-processor/     # Pydantic AI multi-agent AP (port 8799)
 │   ├── content-forge/
 │   ├── seo-forge/             # SEOForge (port 8798)
 │   ├── meet-wise/
@@ -173,6 +176,20 @@ python -m src.cli serve
 ```
 
 Product page: [/invoice-forge](invoice-forge/). Full setup: [agents/invoice-forge/README.md](agents/invoice-forge/README.md).
+
+### Invoice Processor (Pydantic AI multi-agent AP)
+
+```bash
+cd agents/invoice-processor
+python -m venv .venv
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python scripts/run_example.py
+python -m src.cli serve
+```
+
+Product page: [/invoice-processor](invoice-processor/). Full setup: [agents/invoice-processor/README.md](agents/invoice-processor/README.md).
 
 ### ContentForge (content creation & repurposing)
 

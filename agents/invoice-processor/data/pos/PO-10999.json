@@ -1,0 +1,22 @@
+{
+  "po_number": "PO-10999",
+  "vendor_name": "Northwind Logistics",
+  "vendor_id": null,
+  "status": "open",
+  "currency": "USD",
+  "order_date": "2026-07-01",
+  "total": 890.0,
+  "remaining_amount": 890.0,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Same-day courier service block",
+      "quantity": 1.0,
+      "unit_price": 890.0,
+      "amount": 890.0,
+      "sku": "COURIER-BLK",
+      "received_qty": 1.0
+    }
+  ],
+  "metadata": {}
+}

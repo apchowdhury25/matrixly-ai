@@ -36,6 +36,7 @@ const SITE_PAGES = [
   "support-forge/index.html",
   "book-wise/index.html",
   "invoice-forge/index.html",
+  "invoice-processor/index.html",
   "content-forge/index.html",
   "seo-forge/index.html",
   "meet-wise/index.html",

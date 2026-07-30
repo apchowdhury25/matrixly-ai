@@ -1,0 +1,18 @@
+INVOICE
+
+Vendor: BrightField HVAC Parts
+Invoice Number: INV-BF-7781
+Invoice Date: 2026-07-18
+Due Date: 2026-08-17
+PO Number: PO-10501
+Currency: USD
+
+Line items:
+1. Condenser fan motor 1/4 HP x 4 @ $285.00 = $1140.00
+2. R-410A refrigerant cylinder x 6 @ $700.00 = $4200.00
+
+Subtotal: $5340.00
+Tax: $0.00
+Invoice Total: $5340.00
+
+Notes: Price adjustment applied by vendor (should flag vs PO).
