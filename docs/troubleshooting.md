@@ -262,6 +262,15 @@ See `agents/email-assistant/README.md`.
 | Port in use | Default **8799** — stop conflicting process or change `config.yaml` |
 | No XAI key | Offline rule extraction still works for samples; set `XAI_API_KEY` for LLM path |
 
+### ConnectForge (Twilio)
+
+| Issue | Fix |
+|-------|-----|
+| Cannot send SMS | Set `TWILIO_*` env vars; in Test Mode destination must be in `TWILIO_VERIFIED_NUMBERS` |
+| Trial / unverified error | Verify handset in Twilio Console; keep `CONNECTFORGE_TEST_MODE=true` |
+| Inbound not firing | Webhook POST → `/v1/webhooks/sms`; tunnel with ngrok; set `PUBLIC_BASE_URL` |
+| Stuck pending | Approve HITL in dashboard or `python -m src.cli approve --id hitl_...` |
+
 ### Voice Receptionist
 
 | Issue | Fix |
@@ -286,6 +295,7 @@ See `agents/email-assistant/README.md`.
 | 8799 | Invoice Processor |
 | 8800 | Starter Pack |
 | 8801 | SEO-Bespoke |
+| 8802 | ConnectForge (Twilio) |
 
 ---
 
@@ -380,6 +390,7 @@ If you’ve worked through the relevant section and the issue remains, contact M
 | DocForge | [agents/doc-forge/README.md](../agents/doc-forge/README.md) |
 | Starter Pack | [agents/starter-pack/README.md](../agents/starter-pack/README.md) |
 | ETF Analyzer | [agents/etf-analyzer/README.md](../agents/etf-analyzer/README.md) |
+| ConnectForge | [agents/connect-forge/README.md](../agents/connect-forge/README.md) |
 | Voice Receptionist | [agents/voice-receptionist/README.md](../agents/voice-receptionist/README.md) |
 | Email Assistant | [agents/email-assistant/README.md](../agents/email-assistant/README.md) |
 | Shipping Assistant | [agents/shipping-assistant/README.md](../agents/shipping-assistant/README.md) |

@@ -19,4 +19,4 @@ Featured agents include:
 - **Finance:** InvoiceForge, Invoice Processor  
 - **Marketing & content:** ContentForge, SocialForge, SEOForge, SEO-Bespoke  
 - **Documents & analysis:** DocForge, ETF Analyzer  
-- **Voice (pilot):** Voice Receptionist (Grok Voice smoke test)
+- **Comms:** ConnectForge (Twilio SMS & voice), Voice Receptionist (Grok Voice pilot)

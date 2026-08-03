@@ -1,0 +1,73 @@
+# Matrixly ConnectForge — Twilio SMS & Voice for Houston SMBs
+
+business:
+  name: "Matrixly Connect Demo"
+  support_email: "connect@example.com"
+  timezone: "America/Chicago"
+  market: "Houston, TX"
+  service_areas:
+    - "Houston"
+    - "Katy"
+    - "Energy Corridor"
+    - "Sugar Land"
+    - "The Woodlands"
+  industries:
+    - "HVAC"
+    - "Home services"
+    - "Contractors"
+    - "Real estate"
+    - "Local retail"
+
+brand:
+  voice_file: brand/voice.md
+  tone:
+    - professional
+    - friendly
+    - clear
+    - bilingual-ready
+  avoid:
+    - invented guarantees
+    - medical or legal advice
+    - pressure tactics
+
+twilio:
+  # Credentials loaded from env (never commit secrets)
+  test_mode: true  # only send to verified_numbers when true
+  trial_aware: true
+  verified_numbers: []  # filled via TWILIO_VERIFIED_NUMBERS or dashboard
+  conversations_enabled: true
+  default_language: "en"  # en | es | auto
+
+hitl:
+  mode: external_only  # always | external_only | off
+  require_approval_outbound: true
+
+voice:
+  enabled: true
+  # Conversation Relay / Media Streams expansion later
+  say_message: "Hello from Matrixly ConnectForge. This is a short test call for your Houston business. Goodbye."
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8802"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  sms_per_minute: 20
+  webhook_per_minute: 120
+  admin_per_minute: 120
+
+server:
+  host: "0.0.0.0"
+  port: 8802
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.4
+
+channels:
+  dashboard:
+    welcome: "ConnectForge — SMS and simple voice for Houston SMBs via Twilio."

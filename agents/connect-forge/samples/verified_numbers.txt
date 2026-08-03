@@ -1,0 +1,2 @@
+# Example E.164 numbers for Test Mode (one per line)
+# +17135550123

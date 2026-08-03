@@ -2,7 +2,7 @@
 
 **Matrixly** is the agentic AI marketplace for SMBs — ready-to-deploy agents that market, sell, ship, and run operations with human-in-the-loop controls.
 
-This repository contains the public marketing site, agent catalog, integration directory, and **18 Python agent packages** under `agents/`.
+This repository contains the public marketing site, agent catalog, integration directory, and **19 Python agent packages** under `agents/`.
 
 ## Short description
 
@@ -27,6 +27,7 @@ A production-facing static website plus local agent runtimes for:
 | **Invoice Processor** | Pydantic AI multi-agent AP — extract, PO match, discrepancies, HITL | **8799** |
 | **Starter Pack** | SupportForge + BookWise + InvoiceForge + unified dashboard | **8800** |
 | **SEO-Bespoke** | Higher-tier SEO: business quiz → SEO profile → **custom agent code** (parallel graph) | **8801** |
+| **ConnectForge** | Twilio SMS & simple voice for Houston SMBs — HITL outbound, Test Mode, Conversations | **8802** |
 | **Voice Receptionist** | Grok Voice (xAI Realtime) smoke harness; telephony next | CLI / smoke |
 
 ## Tech stack
@@ -120,6 +121,7 @@ Agent CLIs and FastAPI dashboards run on an operator machine or secured VPS — 
 ├── content-forge/index.html
 ├── seo-forge/index.html
 ├── seo-bespoke/index.html     # SEO-Bespoke product page
+├── connect-forge/index.html   # ConnectForge (Twilio) product page
 ├── meet-wise/index.html
 ├── social-forge/index.html
 ├── pipeline-forge/index.html
@@ -146,6 +148,7 @@ Agent CLIs and FastAPI dashboards run on an operator machine or secured VPS — 
 │   ├── invoice-processor/     # Pydantic AI AP :8799
 │   ├── starter-pack/          # Unified gateway :8800
 │   ├── seo-bespoke/           # SEO-Bespoke factory :8801
+│   ├── connect-forge/         # Twilio SMS & voice :8802
 │   └── voice-receptionist/    # Grok Voice smoke test
 └── docs/
 ```
@@ -330,6 +333,20 @@ python -m src.cli serve
 ```
 
 Product page: [/etf-analyzer](etf-analyzer/). Full setup: [agents/etf-analyzer/README.md](agents/etf-analyzer/README.md).
+
+### ConnectForge (Twilio SMS & Voice)
+
+```bash
+cd agents/connect-forge
+python -m venv .venv && .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+# TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, TWILIO_VERIFIED_NUMBERS
+python scripts/smoke_test.py
+python -m src.cli serve
+```
+
+Default port **8802**. Product page: [/connect-forge](connect-forge/). Full setup: [agents/connect-forge/README.md](agents/connect-forge/README.md).
 
 ### Voice Receptionist (Grok Voice smoke test)
 

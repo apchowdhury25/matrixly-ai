@@ -40,6 +40,7 @@ const SITE_PAGES = [
   "content-forge/index.html",
   "seo-forge/index.html",
   "seo-bespoke/index.html",
+  "connect-forge/index.html",
   "meet-wise/index.html",
   "social-forge/index.html",
   "pipeline-forge/index.html",

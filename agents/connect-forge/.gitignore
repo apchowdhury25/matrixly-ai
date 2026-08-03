@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.pytest_cache/
+.mypy_cache/
+data/messages/*
+data/conversations/*
+data/hitl/*
+data/audit/*
+data/calls/*
+!data/**/.gitkeep
+*.egg-info/

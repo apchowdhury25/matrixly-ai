@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConnectForge — Twilio SMS & Voice · Matrixly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1220; --card: #151c28; --border: #1e2a3a; --neon: #3b9fe0;
+      --text: #f0f4f8; --muted: #9aa4b2; --ok: #34d399; --warn: #fbbf24; --bad: #f87171;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Open Sans", system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    header {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #152536, #0f1724); position: sticky; top: 0; z-index: 10;
+    }
+    h1 { font-size: 1.05rem; margin: 0; }
+    h1 span { color: var(--neon); }
+    .badge {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+      background: rgba(59,159,224,0.15); color: var(--neon); padding: 0.2rem 0.5rem; border-radius: 999px;
+    }
+    .sub { color: var(--muted); font-size: 0.78rem; margin-top: 0.15rem; }
+    main { max-width: 1100px; margin: 0 auto; padding: 1.1rem 1.25rem 2.5rem; }
+    .stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+    .stat {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.7rem 0.9rem; min-width: 120px; flex: 1;
+    }
+    .stat .l { font-size: 0.68rem; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+    .stat .v { color: var(--neon); font-weight: 800; font-size: 1.1rem; margin-top: 0.2rem; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+    }
+    .card h2 { margin: 0 0 0.75rem; font-size: 0.95rem; }
+    label { display: block; font-size: 0.72rem; color: var(--muted); margin: 0.55rem 0 0.3rem; font-weight: 700; }
+    input, textarea, select {
+      width: 100%; background: #0b1220; border: 1px solid var(--border); color: var(--text);
+      border-radius: 8px; padding: 0.65rem 0.75rem; font: inherit; font-size: 0.85rem;
+    }
+    textarea { min-height: 88px; resize: vertical; }
+    .btn {
+      border: 0; border-radius: 8px; padding: 0.55rem 0.9rem; font-weight: 700; cursor: pointer; font-size: 0.82rem;
+    }
+    .btn-primary { background: linear-gradient(145deg, #117aca, #3b9fe0); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .btn-ok { background: #065f46; color: var(--ok); border: 1px solid #047857; }
+    .btn-bad { background: #7f1d1d; color: #fecaca; border: 1px solid #991b1b; }
+    .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; }
+    .muted { color: var(--muted); font-size: 0.82rem; }
+    .pill {
+      display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem;
+      border-radius: 999px; background: rgba(59,159,224,0.15); color: var(--neon);
+    }
+    .pill.ok { background: rgba(52,211,153,0.12); color: var(--ok); }
+    .pill.warn { background: rgba(251,191,36,0.15); color: var(--warn); }
+    .pill.bad { background: rgba(248,113,113,0.12); color: var(--bad); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+    th, td { text-align: left; padding: 0.45rem 0.3rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-size: 0.65rem; text-transform: uppercase; }
+    pre.out {
+      white-space: pre-wrap; font-size: 0.75rem; color: var(--muted); max-height: 200px; overflow: auto;
+      margin: 0.5rem 0 0; background: #0b1220; border: 1px solid var(--border); border-radius: 8px; padding: 0.65rem;
+    }
+    .toggle { display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; font-size: 0.85rem; }
+    .toggle input { width: auto; }
+    .keys input { max-width: 200px; font-size: 0.78rem; }
+    #toast {
+      position: fixed; bottom: 1rem; right: 1rem; background: #1a2433; border: 1px solid var(--border);
+      padding: 0.65rem 0.9rem; border-radius: 8px; display: none; max-width: 340px; font-size: 0.85rem; z-index: 50;
+    }
+    #toast.show { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1><span>ConnectForge</span> <span class="badge">TWIL</span></h1>
+      <div class="sub">Twilio SMS &amp; simple voice for Houston SMBs · Test Mode + HITL outbound</div>
+    </div>
+    <div class="keys row" style="margin:0">
+      <input id="apiKey" placeholder="Admin API key" value="change-me-admin-key" />
+      <button class="btn btn-ghost" id="btnRefresh">Refresh</button>
+      <button class="btn btn-primary" id="btnDemo">Run demo</button>
+    </div>
+  </header>
+  <main>
+    <div class="stats" id="stats"></div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Connection status</h2>
+        <div id="connBox" class="muted">Loading…</div>
+        <div class="toggle">
+          <input type="checkbox" id="testMode" checked />
+          <label for="testMode" style="margin:0">Test Mode (only verified numbers)</label>
+        </div>
+        <div class="toggle">
+          <input type="checkbox" id="hitlOut" checked />
+          <label for="hitlOut" style="margin:0">HITL approval for outbound SMS</label>
+        </div>
+        <p class="muted" style="margin-top:0.75rem">Credentials stay in server <code>.env</code> — never paste Auth Tokens here.</p>
+      </div>
+
+      <div class="card">
+        <h2>Send test SMS</h2>
+        <label>To (E.164, e.g. +17135550123)</label>
+        <input id="smsTo" placeholder="+17135550123" />
+        <label>Message</label>
+        <textarea id="smsBody" placeholder="Hi from ConnectForge — confirming your Houston appointment…"></textarea>
+        <div class="row">
+          <button class="btn btn-primary" id="btnSend">Send SMS</button>
+          <button class="btn btn-ghost" id="btnConv">Start conversation</button>
+        </div>
+        <pre class="out" id="smsOut">Ready.</pre>
+      </div>
+
+      <div class="card">
+        <h2>Start test call (basic Say)</h2>
+        <label>To (verified on trial)</label>
+        <input id="callTo" placeholder="+17135550123" />
+        <label>Spoken text (optional)</label>
+        <input id="callSay" placeholder="Hello from Matrixly ConnectForge…" />
+        <div class="row">
+          <button class="btn btn-primary" id="btnCall">Place call</button>
+        </div>
+        <pre class="out" id="callOut">Voice uses TwiML Say. Conversation Relay can expand later.</pre>
+      </div>
+
+      <div class="card">
+        <h2>Approval queue (HITL)</h2>
+        <div id="hitlList" class="muted">No pending items.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h2>Recent messages</h2>
+      <table>
+        <thead>
+          <tr><th>When</th><th>Dir</th><th>From / To</th><th>Body</th><th>Status</th><th>SID / Conv</th></tr>
+        </thead>
+        <tbody id="msgBody"></tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h2>Conversations</h2>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Participant</th><th>Conversation SID</th><th>Last</th></tr>
+        </thead>
+        <tbody id="convBody"></tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h2>Webhook setup (inbound SMS)</h2>
+      <p class="muted">In Twilio Console → Phone Numbers → your number → Messaging webhook (HTTP POST):</p>
+      <pre class="out" id="webhookUrl">http://YOUR_PUBLIC_HOST/v1/webhooks/sms</pre>
+      <p class="muted">Use ngrok or Cloudflare Tunnel for local testing. Set <code>PUBLIC_BASE_URL</code> in <code>.env</code>.</p>
+    </div>
+  </main>
+  <div id="toast"></div>
+  <script>
+    const API = "";
+    function headers() {
+      const h = { "Content-Type": "application/json" };
+      const k = document.getElementById("apiKey").value.trim();
+      if (k) h["X-API-Key"] = k;
+      return h;
+    }
+    function toast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      setTimeout(() => el.classList.remove("show"), 3000);
+    }
+    async function api(path, opts = {}) {
+      const res = await fetch(API + path, { ...opts, headers: { ...headers(), ...(opts.headers || {}) } });
+      if (!res.ok) throw new Error(await res.text() || res.statusText);
+      return res.json();
+    }
+    function pill(status) {
+      const s = (status || "").toLowerCase();
+      let cls = "pill";
+      if (["live", "sent", "delivered", "ok", "mocked"].includes(s)) cls += " ok";
+      else if (["trial", "pending_approval", "queued", "test"].includes(s)) cls += " warn";
+      else if (["failed", "disconnected", "bad"].includes(s)) cls += " bad";
+      return `<span class="${cls}">${status || "—"}</span>`;
+    }
+    async function refreshStatus() {
+      const st = await api("/v1/status");
+      const c = st.connection || {};
+      stats.innerHTML = [
+        ["Status", c.label || c.status],
+        ["Messages", st.messages],
+        ["Pending HITL", st.pending_hitl],
+        ["LLM", st.llm],
+        ["Market", st.market],
+      ].map(([l, v]) => `<div class="stat"><div class="l">${l}</div><div class="v">${v}</div></div>`).join("");
+      connBox.innerHTML = `
+        ${pill(c.status)} <strong>${c.label || ""}</strong><br/>
+        <span class="muted">From: ${c.from_number || "—"} · Verified: ${c.verified_count ?? 0}</span><br/>
+        <span class="muted">${c.note || ""}</span>`;
+      testMode.checked = !!c.test_mode;
+      hitlOut.checked = !!st.hitl_outbound_required;
+      const pub = location.origin;
+      webhookUrl.textContent = pub + "/v1/webhooks/sms";
+    }
+    async function refreshMessages() {
+      const data = await api("/v1/messages?limit=40");
+      const items = data.items || [];
+      msgBody.innerHTML = items.length ? items.map(m => `
+        <tr>
+          <td>${(m.created_at || "").slice(0, 19)}</td>
+          <td>${m.direction}</td>
+          <td>${m.direction === "inbound" ? m.from_number : m.to_number}</td>
+          <td>${(m.body || "").slice(0, 80)}</td>
+          <td>${pill(m.status)}</td>
+          <td class="muted">${m.twilio_sid || "—"}<br/>${m.conversation_sid || ""}</td>
+        </tr>`).join("") : `<tr><td colspan="6" class="muted">No messages yet — send a test or run demo.</td></tr>`;
+    }
+    async function refreshConversations() {
+      const data = await api("/v1/conversations?limit=30");
+      const items = data.items || [];
+      convBody.innerHTML = items.length ? items.map(c => `
+        <tr>
+          <td>${c.id}</td>
+          <td>${c.participant_number}</td>
+          <td class="muted">${c.conversation_sid || "—"}</td>
+          <td>${(c.last_body || "").slice(0, 60)}</td>
+        </tr>`).join("") : `<tr><td colspan="4" class="muted">No conversations yet.</td></tr>`;
+    }
+    async function refreshHitl() {
+      const data = await api("/v1/hitl/pending");
+      const items = data.items || [];
+      hitlList.innerHTML = items.length ? items.map(a => `
+        <div style="border-bottom:1px solid var(--border);padding:0.5rem 0">
+          <div>${pill("pending")} <strong>${a.kind}</strong> · ${a.id}</div>
+          <div class="muted">To: ${(a.payload || {}).to}</div>
+          <div>${((a.payload || {}).body || "").slice(0, 120)}</div>
+          <div class="row">
+            <button class="btn btn-ok" data-approve="${a.id}">Approve & send</button>
+            <button class="btn btn-bad" data-reject="${a.id}">Reject</button>
+          </div>
+        </div>`).join("") : `<p class="muted">Queue empty.</p>`;
+      hitlList.querySelectorAll("[data-approve]").forEach(b => {
+        b.onclick = async () => {
+          await api(`/v1/hitl/${b.dataset.approve}/decide`, {
+            method: "POST",
+            body: JSON.stringify({ action: "approve", decided_by: "dashboard" }),
+          });
+          toast("Approved & sent");
+          refreshAll();
+        };
+      });
+      hitlList.querySelectorAll("[data-reject]").forEach(b => {
+        b.onclick = async () => {
+          await api(`/v1/hitl/${b.dataset.reject}/decide`, {
+            method: "POST",
+            body: JSON.stringify({ action: "reject", decided_by: "dashboard" }),
+          });
+          toast("Rejected");
+          refreshAll();
+        };
+      });
+    }
+    async function refreshAll() {
+      try {
+        await Promise.all([refreshStatus(), refreshMessages(), refreshConversations(), refreshHitl()]);
+      } catch (e) {
+        toast("Refresh failed: " + e.message);
+      }
+    }
+    btnRefresh.onclick = refreshAll;
+    btnDemo.onclick = async () => {
+      try {
+        const out = await api("/v1/demo", { method: "POST", body: "{}" });
+        smsOut.textContent = JSON.stringify(out, null, 2);
+        toast("Demo complete");
+        refreshAll();
+      } catch (e) { toast(e.message); }
+    };
+    btnSend.onclick = async () => {
+      try {
+        const out = await api("/v1/sms/send", {
+          method: "POST",
+          body: JSON.stringify({ to: smsTo.value.trim(), body: smsBody.value.trim() }),
+        });
+        smsOut.textContent = JSON.stringify(out, null, 2);
+        toast(out.pending_approval ? "Queued for HITL" : (out.ok ? "Sent" : "Failed"));
+        refreshAll();
+      } catch (e) { smsOut.textContent = e.message; }
+    };
+    btnConv.onclick = async () => {
+      try {
+        const out = await api("/v1/conversations/start", {
+          method: "POST",
+          body: JSON.stringify({
+            to: smsTo.value.trim(),
+            body: smsBody.value.trim() || "Hi! Thanks for contacting us. How can we help today?",
+          }),
+        });
+        smsOut.textContent = JSON.stringify(out, null, 2);
+        toast("Conversation started");
+        refreshAll();
+      } catch (e) { smsOut.textContent = e.message; }
+    };
+    btnCall.onclick = async () => {
+      try {
+        const out = await api("/v1/voice/call", {
+          method: "POST",
+          body: JSON.stringify({ to: callTo.value.trim(), say: callSay.value.trim() || null }),
+        });
+        callOut.textContent = JSON.stringify(out, null, 2);
+        toast(out.ok ? "Call initiated" : "Call failed");
+        refreshAll();
+      } catch (e) { callOut.textContent = e.message; }
+    };
+    testMode.onchange = async () => {
+      try {
+        await api("/v1/settings/test-mode?enabled=" + testMode.checked, { method: "POST", body: "{}" });
+        toast("Test Mode " + (testMode.checked ? "on" : "off"));
+        refreshStatus();
+      } catch (e) { toast(e.message); }
+    };
+    hitlOut.onchange = async () => {
+      try {
+        await api("/v1/settings/hitl-outbound?required=" + hitlOut.checked, { method: "POST", body: "{}" });
+        toast("HITL outbound " + (hitlOut.checked ? "required" : "off"));
+        refreshStatus();
+      } catch (e) { toast(e.message); }
+    };
+    refreshAll();
+  </script>
+</body>
+</html>
