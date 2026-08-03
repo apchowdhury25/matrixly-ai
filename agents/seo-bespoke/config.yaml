@@ -1,0 +1,83 @@
+# Matrixly SEO-Bespoke — custom SEO agent factory for US SMBs
+# Higher-tier companion to SEOForge: interactive quiz → business profile → generated custom agent.
+
+business:
+  name: "Matrixly Demo Brand"
+  support_email: "seo-bespoke@example.com"
+  timezone: "America/Chicago"
+  website: "https://matrixly.world"
+  industry: "B2B SaaS / SMB automation"
+  service_areas: []
+  primary_goal: "organic_leads"
+
+brand:
+  voice_file: brand/voice.md
+  tone:
+    - professional
+    - clear
+    - trustworthy
+    - practical
+    - bespoke
+  avoid:
+    - invented statistics
+    - invented reviews or rankings
+    - guarantee claims
+    - competitor bashing
+    - jargon without explanation
+
+seo:
+  max_source_chars: 40000
+  seo_title_max: 60
+  meta_description_max: 160
+  require_hitl_before_publish: true
+  require_hitl_before_package_deploy: true
+  never_invent:
+    - statistics
+    - reviews
+    - rankings
+    - credentials
+    - guarantees
+  target_markets:
+    - US SMB
+
+graph:
+  max_nodes: 20
+  parallel_quiz_collectors: 6
+  parallel_code_generators: 6
+  isolation: pure_function  # each node receives only declared inputs
+  verifier_isolation: true  # verifiers get clean context, no chat history
+
+hitl:
+  mode: external_only  # always | external_only | off
+
+publish:
+  backend: local  # local only for generated packages by default
+
+cors_origins:
+  - "http://localhost:8080"
+  - "http://127.0.0.1:8080"
+  - "http://localhost:8799"
+  - "https://matrixly.world"
+  - "https://www.matrixly.world"
+
+rate_limit:
+  generate_per_minute: 20
+  quiz_per_minute: 40
+  admin_per_minute: 120
+
+cost:
+  input_per_1m_usd: 5.0
+  output_per_1m_usd: 15.0
+
+server:
+  host: "0.0.0.0"
+  port: 8799
+
+xai:
+  model: "grok-4-1-fast-reasoning"
+  base_url: "https://api.x.ai/v1"
+  temperature: 0.35
+
+channels:
+  dashboard:
+    welcome: "SEO-Bespoke — quiz your business, get a custom SEO agent built only for you."

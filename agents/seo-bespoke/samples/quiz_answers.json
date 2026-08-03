@@ -1,0 +1,79 @@
+{
+  "domain": {
+    "domain": "apexcomfort.example",
+    "website_url": "https://apexcomfort.example",
+    "has_blog": true,
+    "has_gbp": true,
+    "cms": "wordpress",
+    "notes": "Main site + blog for seasonal tips"
+  },
+  "industry": {
+    "industry": "Home services",
+    "niche": "Residential HVAC",
+    "sub_niches": ["AC repair", "AC install", "Furnace repair", "Maintenance plans"],
+    "competitors_mentioned": [],
+    "notes": "Focus on residential, not commercial large systems"
+  },
+  "business": {
+    "business_name": "Apex Comfort HVAC",
+    "description": "Family-owned HVAC company serving Greater Austin with same-week repairs and transparent pricing.",
+    "unique_value": "Licensed technicians, upfront pricing before work starts, and real humans answer the phone.",
+    "products_services": [
+      "AC repair",
+      "AC installation",
+      "Furnace repair",
+      "Furnace installation",
+      "Maintenance plans"
+    ],
+    "years_in_business": 12,
+    "differentiators": [
+      "Upfront pricing",
+      "Same-week availability",
+      "Maintenance membership with priority scheduling"
+    ],
+    "notes": ""
+  },
+  "customers": {
+    "primary_persona": "Homeowners 30–60 in single-family homes who need reliable cooling/heating",
+    "secondary_personas": ["Busy dual-income families", "Retirees on fixed schedules"],
+    "pain_points": [
+      "AC fails during summer heat",
+      "Unclear repair costs",
+      "Hard to get a tech quickly"
+    ],
+    "buying_triggers": [
+      "System breakdown",
+      "High energy bills",
+      "Home sale inspection findings"
+    ],
+    "decision_makers": "Homeowner or spouse jointly",
+    "notes": ""
+  },
+  "location": {
+    "primary_city": "Austin",
+    "primary_region": "TX",
+    "country": "US",
+    "service_areas": [
+      "Austin, TX",
+      "Round Rock, TX",
+      "Cedar Park, TX",
+      "Pflugerville, TX"
+    ],
+    "service_radius_miles": 40,
+    "serves_nationally": false,
+    "notes": ""
+  },
+  "goals": {
+    "maturity": "basic",
+    "primary_goal": "near_me_leads",
+    "secondary_goals": ["organic_leads", "brand_authority"],
+    "monthly_content_capacity": "2-4 pieces",
+    "budget_band": "growth",
+    "success_metric": "more booked service calls from organic/local search",
+    "timeline_days": 90,
+    "notes": "Want to reduce dependence on paid ads"
+  },
+  "owner_name": "Jordan Lee",
+  "owner_email": "owner@apexcomfort.example",
+  "raw_notes": "Prefer plain English; no agency jargon."
+}
