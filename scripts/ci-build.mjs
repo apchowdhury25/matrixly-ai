@@ -39,6 +39,7 @@ const SITE_PAGES = [
   "invoice-processor/index.html",
   "content-forge/index.html",
   "seo-forge/index.html",
+  "seo-bespoke/index.html",
   "meet-wise/index.html",
   "social-forge/index.html",
   "pipeline-forge/index.html",

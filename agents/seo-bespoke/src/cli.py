@@ -14,7 +14,18 @@ from .config import load_config
 from .models import QuizAnswers
 from .orchestrator import SEOBespoke
 
-console = Console()
+# Prefer UTF-8 on Windows consoles; fall back to safe ASCII-friendly output.
+try:
+    import sys
+
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
+console = Console(legacy_windows=False)
 
 
 def _interactive_quiz() -> QuizAnswers:
@@ -38,7 +49,7 @@ def _interactive_quiz() -> QuizAnswers:
 
     console.print("\n[bold]3/6 Business[/bold]")
     bname = Prompt.ask("Business name")
-    desc = Prompt.ask("What do you do? (1–3 sentences)")
+    desc = Prompt.ask("What do you do? (1-3 sentences)")
     uv = Prompt.ask("What makes you different?")
     services = Prompt.ask("Main services/products (comma-separated)", default="")
 
@@ -158,7 +169,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.command == "demo":
-        console.print("[cyan]Running demo pipeline (Apex Comfort HVAC)…[/cyan]")
+        console.print("[cyan]Running demo pipeline (Apex Comfort HVAC)...[/cyan]")
         run = agent.demo()
         console.print(
             f"[green]run={run.id} status={run.status.value} "
@@ -173,7 +184,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "quiz":
         answers = _interactive_quiz()
-        console.print("[cyan]Running parallel graph (20 nodes)…[/cyan]")
+        console.print("[cyan]Running parallel graph (20 nodes)...[/cyan]")
         run = agent.run_full_pipeline(answers)
         console.print(
             f"[green]Done. run={run.id} status={run.status.value}\n"
@@ -249,7 +260,7 @@ def main(argv: list[str] | None = None) -> int:
 
         host = args.host or (cfg.get("server") or {}).get("host") or "0.0.0.0"
         port = args.port or int((cfg.get("server") or {}).get("port") or 8799)
-        console.print(f"[green]SEO-Bespoke dashboard → http://127.0.0.1:{port}/[/green]")
+        console.print(f"[green]SEO-Bespoke dashboard -> http://127.0.0.1:{port}/[/green]")
         uvicorn.run("src.main:app", host=host, port=port, reload=False)
         return 0
 

@@ -74,6 +74,9 @@ python -m src.cli serve
 
 Default port: **8799**.
 
+Product page (marketing site): **`/seo-bespoke`** (`seo-bespoke/index.html`).  
+Marketplace card: **`/agents`** — the static Agents page only *links* here; you still run the Python server below for the live quiz.
+
 ### `.env`
 
 ```env
