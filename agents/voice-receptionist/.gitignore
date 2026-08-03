@@ -1,0 +1,8 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+data/smoke/*.pcm
+data/smoke/*.txt
+!data/smoke/.gitkeep
