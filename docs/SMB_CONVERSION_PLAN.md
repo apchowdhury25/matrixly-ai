@@ -146,6 +146,8 @@ Build copies the `js/` directory via `ASSET_DIRS` in `scripts/ci-build.mjs`.
 - [x] Resources library + 5 guides
 - [x] Pricing guarantee + compare echo
 - [x] Agent video placeholders (Lead Qualifier, Shipping, Email)
+- [x] SEO-Bespoke marketplace card + product page (`/seo-bespoke`, agent port 8801)
+- [x] Voice Receptionist pilot package (`agents/voice-receptionist`)
 - [x] `SITE_PAGES` updated in `scripts/ci-build.mjs`
 - [x] Lint clean (`npm run lint` + `npm run build` passed)
 - [x] No git commit / push

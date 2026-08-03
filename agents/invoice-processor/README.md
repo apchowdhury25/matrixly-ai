@@ -60,7 +60,12 @@ python -m src.cli serve
 | http://localhost:8799/docs | OpenAPI |
 | POST /v1/process | Run pipeline |
 
-Default port: **8799**.
+Default port: **8799** (do not confuse with **SEO-Bespoke** on **8801** or **SEOForge** on **8798**).
+
+### Related agents
+
+- **[InvoiceForge](../invoice-forge/)** — AR inbox watch, dashboard, posting (port **8791**)
+- **SEO-Bespoke** is a separate SEO product on **8801** — not related to AP processing
 
 ### `.env`
 

@@ -56,7 +56,7 @@ publish:
 cors_origins:
   - "http://localhost:8080"
   - "http://127.0.0.1:8080"
-  - "http://localhost:8799"
+  - "http://localhost:8801"
   - "https://matrixly.world"
   - "https://www.matrixly.world"
 
@@ -71,7 +71,7 @@ cost:
 
 server:
   host: "0.0.0.0"
-  port: 8799
+  port: 8801
 
 xai:
   model: "grok-4-1-fast-reasoning"

@@ -1,8 +1,9 @@
 # Matrixly — Modernization Stack, Audit, QA & Migration Plan
 
-**Context:** Live production = static HTML + Tailwind CDN + vanilla JS marketing site; many Python pilot agents with HITL; agents run separately from the static host.  
+**Context:** Live production = static HTML + Tailwind CDN + vanilla JS marketing site; **18 Python agent packages** under `agents/` with HITL; agents run separately from the static host.  
 **Goal:** Evolve into a multi-tenant agent marketplace + runtime (modern no-code agent platforms as *architectural* inspiration) while **preserving all agents** and the **exact Matrixly design system** (`docs/DESIGN_SYSTEM.md`).  
-**Brand:** Matrixly only. No third-party product branding. No domain names in this document.
+**Brand:** Matrixly only. No third-party product branding. No domain names in this document.  
+**Agent inventory (2026-08):** Lead Qualifier, Email Assistant, CRM Assistant, Shipping Assistant, SupportForge, BookWise, InvoiceForge, Invoice Processor, ContentForge, SEOForge, SEO-Bespoke, MeetWise, SocialForge, PipelineForge, DocForge, ETF Analyzer, Starter Pack, Voice Receptionist.
 
 ---
 
@@ -20,7 +21,7 @@
 | **Agent runtime** | **Keep Python pilots as first-class workers/skills**; thin **TypeScript orchestrator** for deploy/run/HITL | Zero rewrite of existing agents; preserve HITL scripts |
 | **LLM gateway** | Provider interface (Grok/xAI first; pluggable) | Metering, failover, no hard lock-in |
 | **Tools / integrations** | MCP adapters + existing IMAP/ShipStation/etc. clients | Gradual connector unification without big-bang |
-| **SEO intelligence** | First-party SEO service package + SERP/data vendor | Keywords, content jobs, rank snapshots for ContentForge etc. |
+| **SEO intelligence** | First-party SEO service package + SERP/data vendor | Keywords, content jobs, rank snapshots for SEOForge / SEO-Bespoke / ContentForge |
 | **Payments** | Stripe (Checkout, Portal, webhooks) | Matches Explore/Grow/Scale style packaging |
 | **Email** | Resend or Postmark | Transactional only |
 | **Observability** | pino logs + OpenTelemetry + Sentry (errors) + uptime checks | Agent run cost/latency visibility |
@@ -62,7 +63,7 @@ flowchart TB
     Blob[Object storage]
   end
 
-  subgraph Agents["Existing Python agents - preserved"]
+  subgraph Agents["Existing Python agents - preserved (18 packages)"]
     LQ[Lead Qualifier]
     EA[Email Assistant]
     CRM[CRM Assistant]
@@ -70,8 +71,17 @@ flowchart TB
     SF[SupportForge]
     BW[BookWise]
     IF[InvoiceForge]
+    IP[Invoice Processor]
     CF[ContentForge]
-    Others[MeetWise SocialForge PipelineForge DocForge ETF StarterPack ...]
+    SEO[SEOForge]
+    BESPOKE[SEO-Bespoke]
+    MW[MeetWise]
+    SOC[SocialForge]
+    PIPE[PipelineForge]
+    DOC[DocForge]
+    ETF[ETF Analyzer]
+    SP[Starter Pack]
+    VR[Voice Receptionist]
   end
 
   subgraph External

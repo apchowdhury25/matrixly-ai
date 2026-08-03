@@ -139,9 +139,11 @@ Many Matrixly pilots run **without** an LLM key (heuristics / FAQ), but quality 
 
 | Agent | Typical key / env |
 |-------|-------------------|
-| SupportForge, BookWise, InvoiceForge | `XAI_API_KEY` (Grok) |
+| SupportForge, BookWise, InvoiceForge, ContentForge, MeetWise, SocialForge, PipelineForge, DocForge, SEOForge, SEO-Bespoke, ETF Analyzer, Invoice Processor | `XAI_API_KEY` (Grok) — optional for offline/rule demos where noted |
 | Email Assistant, Lead Qualifier, CRM | `XAI_API_KEY` optional; mailbox / CRM credentials required for live paths |
 | Shipping Assistant | ShipStation API key/secret for live mode |
+| Voice Receptionist | `XAI_API_KEY` required for Grok Voice Realtime smoke test |
+| Starter Pack | Sibling agent ports + optional pack API keys |
 
 **Checks**
 
@@ -236,6 +238,55 @@ See `agents/email-assistant/README.md`.
 | Empty scores / exports | Provide sample JSON under `data/`; run CLI with demo files |
 | Grok not used | Set `XAI_API_KEY` |
 
+### SEOForge
+
+| Issue | Fix |
+|-------|-----|
+| Dashboard not loading | Serve on default port **8798**: `python -m src.cli serve` |
+| Content stuck pending | Approve/reject in HITL queue (`python -m src.cli pending`) |
+| Need a custom client agent | Use **SEO-Bespoke** (port **8801**), not SEOForge |
+
+### SEO-Bespoke
+
+| Issue | Fix |
+|-------|-----|
+| `UnicodeEncodeError` on serve (Windows) | Update to latest CLI (ASCII messages); or set `$env:PYTHONIOENCODING='utf-8'` |
+| Port conflict with Invoice Processor | SEO-Bespoke uses **8801**; Invoice Processor uses **8799** |
+| Not on Agents page | Marketing card is `/seo-bespoke`; live quiz still needs `python -m src.cli serve` |
+| Smoke / package fails | Run `python scripts/smoke_test.py`; packages under `data/packages/` |
+
+### Invoice Processor
+
+| Issue | Fix |
+|-------|-----|
+| Port in use | Default **8799** — stop conflicting process or change `config.yaml` |
+| No XAI key | Offline rule extraction still works for samples; set `XAI_API_KEY` for LLM path |
+
+### Voice Receptionist
+
+| Issue | Fix |
+|-------|-----|
+| Smoke fails immediately | Set `XAI_API_KEY` in `.env`; confirm network to xAI Realtime API |
+| No audio file | Transcript-only success is OK; PCM written when the session returns audio |
+
+### Default local ports (FastAPI agents)
+
+| Port | Agent |
+|------|--------|
+| 8787 | SupportForge |
+| 8790 | BookWise |
+| 8791 | InvoiceForge |
+| 8792 | ContentForge |
+| 8793 | MeetWise |
+| 8794 | SocialForge |
+| 8795 | PipelineForge |
+| 8796 | DocForge |
+| 8797 | ETF Analyzer |
+| 8798 | SEOForge |
+| 8799 | Invoice Processor |
+| 8800 | Starter Pack |
+| 8801 | SEO-Bespoke |
+
 ---
 
 ## 5. Deploy, Hostinger, and CI/CD
@@ -319,9 +370,23 @@ If you’ve worked through the relevant section and the issue remains, contact M
 | SupportForge | [agents/support-forge/README.md](../agents/support-forge/README.md) |
 | BookWise | [agents/book-wise/README.md](../agents/book-wise/README.md) |
 | InvoiceForge | [agents/invoice-forge/README.md](../agents/invoice-forge/README.md) |
+| Invoice Processor | [agents/invoice-processor/README.md](../agents/invoice-processor/README.md) |
+| ContentForge | [agents/content-forge/README.md](../agents/content-forge/README.md) |
+| SEOForge | [agents/seo-forge/README.md](../agents/seo-forge/README.md) |
+| SEO-Bespoke | [agents/seo-bespoke/README.md](../agents/seo-bespoke/README.md) |
+| MeetWise | [agents/meet-wise/README.md](../agents/meet-wise/README.md) |
+| SocialForge | [agents/social-forge/README.md](../agents/social-forge/README.md) |
+| PipelineForge | [agents/pipeline-forge/README.md](../agents/pipeline-forge/README.md) |
+| DocForge | [agents/doc-forge/README.md](../agents/doc-forge/README.md) |
+| Starter Pack | [agents/starter-pack/README.md](../agents/starter-pack/README.md) |
+| ETF Analyzer | [agents/etf-analyzer/README.md](../agents/etf-analyzer/README.md) |
+| Voice Receptionist | [agents/voice-receptionist/README.md](../agents/voice-receptionist/README.md) |
 | Email Assistant | [agents/email-assistant/README.md](../agents/email-assistant/README.md) |
 | Shipping Assistant | [agents/shipping-assistant/README.md](../agents/shipping-assistant/README.md) |
+| Lead Qualifier | [agents/lead-qualifier/README.md](../agents/lead-qualifier/README.md) |
+| CRM Assistant | [agents/crm-assistant/README.md](../agents/crm-assistant/README.md) |
+| Root catalog | [README.md](../README.md) |
 
 ---
 
-*Last updated: 2026-07-24 · Matrixly troubleshooting guide.*
+*Last updated: 2026-08-03 · Matrixly troubleshooting guide.*

@@ -165,10 +165,12 @@ npm start       # preview dist/ on :8080
 
 ## What is intentionally not on the live site
 
-- `agents/**` Python runtimes and data
+- `agents/**` Python runtimes and data (all 18 pilot packages: SupportForge, BookWise, InvoiceForge/Processor, ContentForge, SEOForge, SEO-Bespoke, MeetWise, SocialForge, PipelineForge, DocForge, ETF Analyzer, Starter Pack, Voice Receptionist, Lead Qualifier, Email, CRM, Shipping, etc.)
 - `.env` / credentials
 - `docs/`, `.github/`, `scripts/`, `package.json`
 - Virtualenvs, `__pycache__`, local agent outputs
+
+**Product marketing pages** for agents (e.g. `/seo-forge`, `/seo-bespoke`) *are* in `dist/`; the **Python servers** behind them are not.
 
 Agents run on an operator machine or a secured VPS — **not** inside Hostinger static hosting.
 

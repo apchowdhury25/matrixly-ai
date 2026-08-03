@@ -187,6 +187,12 @@ agents/content-forge/
 
 Product page: **`/content-forge`** (`content-forge/index.html`).
 
+### Related marketing agents
+
+- **[SEOForge](../seo-forge/)** — local/organic SEO plans, brand-voice pages, HITL (port **8798**)
+- **[SEO-Bespoke](../seo-bespoke/)** — custom SEO agent factory from a business quiz (port **8801**)
+- **[SocialForge](../social-forge/)** — social compose/schedule/inbox (port **8794**)
+
 ---
 
 ## License

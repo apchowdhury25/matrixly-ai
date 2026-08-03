@@ -150,3 +150,7 @@ agents/seo-forge/
 ```
 
 Product page: **`/seo-forge`** (`seo-forge/index.html`).
+
+### Related agent
+
+- **[SEO-Bespoke](../seo-bespoke/)** (port **8801**) — higher-tier factory: multi-step business quiz → Business SEO Profile → **custom specialized agent code**. Use SEOForge for day-to-day SEO work; use SEO-Bespoke when a client needs a bespoke agent package.

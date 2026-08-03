@@ -10,7 +10,7 @@ Sits **alongside** [SEOForge](../seo-forge) — do not confuse the two:
 | Role | Ready-to-run SEO crew | Builds a *new* agent for one business |
 | Input | Brief / chat | Multi-step quiz |
 | Output | Content, plans, local packs | Profile + **custom agent source code** |
-| Port | 8798 | **8799** |
+| Port | 8798 | **8801** |
 
 Designed for non-technical owners who want something that feels built *for their HVAC / dental / legal / retail business* — not a thin generic wrapper.
 
@@ -68,11 +68,11 @@ python -m src.cli serve
 
 | URL | Purpose |
 |-----|---------|
-| http://localhost:8799/v1/health | Health |
-| http://localhost:8799/static/dashboard/index.html | Interactive dashboard |
-| http://localhost:8799/docs | OpenAPI |
+| http://localhost:8801/v1/health | Health |
+| http://localhost:8801/static/dashboard/index.html | Interactive dashboard |
+| http://localhost:8801/docs | OpenAPI |
 
-Default port: **8799**.
+Default port: **8801** (Invoice Processor uses **8799**; SEOForge uses **8798**).
 
 Product page (marketing site): **`/seo-bespoke`** (`seo-bespoke/index.html`).  
 Marketplace card: **`/agents`** — the static Agents page only *links* here; you still run the Python server below for the live quiz.
@@ -118,7 +118,7 @@ python -m src.cli approve --id hitl_...
 python -m src.cli keywords
 python -m src.cli roi
 python -m src.cli chat --text "show profile"
-python -m src.cli serve --port 8799
+python -m src.cli serve --port 8801
 ```
 
 ---
@@ -168,7 +168,7 @@ The package includes specialized modules:
 ```powershell
 cd agents/seo-bespoke
 docker build -t seo-bespoke .
-docker run -d -p 8799:8799 --env-file .env -v ${PWD}/data:/app/data -v ${PWD}/brand:/app/brand seo-bespoke
+docker run -d -p 8801:8801 --env-file .env -v ${PWD}/data:/app/data -v ${PWD}/brand:/app/brand seo-bespoke
 ```
 
 ---
@@ -211,3 +211,11 @@ agents/seo-bespoke/
   async>
 </script>
 ```
+
+---
+
+## Related
+
+- **[SEOForge](../seo-forge/)** — ready-to-run SEO crew (port **8798**)
+- Product page: **`/seo-bespoke`** · Marketplace: **`/agents`**
+- Root catalog: [README.md](../../README.md)

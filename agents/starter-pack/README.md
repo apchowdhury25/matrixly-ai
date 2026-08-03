@@ -15,6 +15,10 @@ Each agent remains a modular FastAPI service (Crew/LangGraph-style crews inside)
 
 Default dashboard port: **8800**.
 
+### Full Matrixly catalog (beyond this pack)
+
+This pack orchestrates three day-one agents. The monorepo also includes Lead Qualifier, Email Assistant, CRM Assistant, Shipping Assistant, ContentForge, SEOForge, **SEO-Bespoke**, MeetWise, SocialForge, PipelineForge, DocForge, Invoice Processor, ETF Analyzer, and Voice Receptionist — see the root [README.md](../../README.md).
+
 ---
 
 ## Value for SMBs

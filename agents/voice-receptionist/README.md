@@ -5,6 +5,8 @@
 
 This package starts as a **local smoke test** that proves your xAI key + Builder agent respond with transcript (and optional PCM audio). Telephony (Twilio / SIP inbound) comes next.
 
+**Catalog:** Listed in the root [README.md](../../README.md) agent table and [docs/troubleshooting.md](../../docs/troubleshooting.md). Not yet a full FastAPI product page on `/agents` (smoke-first pilot).
+
 ---
 
 ## Prerequisites

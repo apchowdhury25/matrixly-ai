@@ -259,7 +259,7 @@ def main(argv: list[str] | None = None) -> int:
         import uvicorn
 
         host = args.host or (cfg.get("server") or {}).get("host") or "0.0.0.0"
-        port = args.port or int((cfg.get("server") or {}).get("port") or 8799)
+        port = args.port or int((cfg.get("server") or {}).get("port") or 8801)
         console.print(f"[green]SEO-Bespoke dashboard -> http://127.0.0.1:{port}/[/green]")
         uvicorn.run("src.main:app", host=host, port=port, reload=False)
         return 0

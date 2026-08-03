@@ -10,4 +10,13 @@ Email support@example.com or use the chat widget on our website. Typical first r
 Yes. Most marketplace agents include a free exploration mode. Paid pilots and production deploys are available after a short onboarding call.
 
 ## Where can I see available agents?
-Visit the Agents catalog at /agents.html on the Matrixly site. Featured agents include Lead Qualifier, Email Assistant, CRM Assistant, Shipping Assistant, and SupportForge.
+Visit the Agents catalog at [/agents](/agents) on the Matrixly site (clean URL — no `.html` required).
+
+Featured agents include:
+
+- **Sales & ops:** Lead Qualifier, Email Assistant, CRM Assistant, Shipping Assistant, PipelineForge, MeetWise  
+- **Support & booking:** SupportForge, BookWise, Starter Pack  
+- **Finance:** InvoiceForge, Invoice Processor  
+- **Marketing & content:** ContentForge, SocialForge, SEOForge, SEO-Bespoke  
+- **Documents & analysis:** DocForge, ETF Analyzer  
+- **Voice (pilot):** Voice Receptionist (Grok Voice smoke test)
