@@ -206,6 +206,54 @@
     img, svg, video, canvas { max-width: 100%; height: auto; }
     section, header, footer, main { min-width: 0; }
 
+    /*
+     * Superhuman-style centered content column.
+     * Backgrounds stay full-bleed; text/cards sit in a max-width shell
+     * with balanced side whitespace on desktop and comfortable padding on mobile.
+     */
+    :root {
+      --shell-max: 1200px;
+      --shell-pad-x: 1.25rem; /* 20px — mobile */
+    }
+    @media (min-width: 640px) {
+      :root { --shell-pad-x: 1.5rem; } /* 24px */
+    }
+    @media (min-width: 1024px) {
+      :root { --shell-pad-x: 2rem; } /* 32px */
+    }
+    @media (min-width: 1280px) {
+      :root { --shell-pad-x: 2.5rem; } /* 40px */
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--shell-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--shell-pad-x);
+      padding-right: var(--shell-pad-x);
+      box-sizing: border-box;
+    }
+    /* Narrower centered columns (quiz, guarantee, final CTA) — same side padding */
+    .shell-sm {
+      width: 100%;
+      max-width: 48rem; /* ~768px, was max-w-3xl */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--shell-pad-x);
+      padding-right: var(--shell-pad-x);
+      box-sizing: border-box;
+    }
+    .shell-md {
+      width: 100%;
+      max-width: 56rem; /* ~896px, was max-w-4xl */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--shell-pad-x);
+      padding-right: var(--shell-pad-x);
+      box-sizing: border-box;
+    }
+
     .text-matrix-green { color: var(--brand-blue) !important; }
     .text-matrix-forest { color: var(--brand-blue-dark) !important; }
     .text-matrix-cream { color: var(--ink) !important; }
@@ -691,10 +739,8 @@
       }
     }
 
-    /* Match Tailwind nav horizontal padding so the mobile panel can full-bleed */
-    #navbar .nav-inner { --nav-pad-x: 1rem; }
-    @media (min-width: 640px) { #navbar .nav-inner { --nav-pad-x: 1.5rem; } }
-    @media (min-width: 1024px) { #navbar .nav-inner { --nav-pad-x: 2rem; } }
+    /* Match shell horizontal padding so the mobile panel can full-bleed correctly */
+    #navbar .nav-inner { --nav-pad-x: var(--shell-pad-x); }
 
     /*
      * Mobile menu: opaque panel so links never ghost over page content.
@@ -1177,7 +1223,7 @@
 <body class="bg-matrix-black antialiased">
   <!-- ========== NAVIGATION (aligned with agents / products / integrations) ========== -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 nav-inner">
+    <nav class="shell nav-inner">
       <div class="nav-row">
         <a href="/" class="nav-brand group" aria-label="Matrixly Home">
           <img src="/assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
@@ -1238,7 +1284,7 @@
   <main class="relative z-10">
     <!-- ========== 1. HERO ========== -->
     <section id="hero" class="relative min-h-[100svh] flex items-center grid-bg pt-20 sm:pt-24 pb-12 sm:pb-16 overflow-x-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
+      <div class="shell w-full min-w-0">
         <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <!-- Copy -->
           <div class="text-center lg:text-left min-w-0 max-w-full">
@@ -1545,7 +1591,7 @@
 
     <!-- ========== 2. TRUST SIGNALS ========== -->
     <section id="trust" class="relative py-16 border-y border-matrix-border/50 bg-matrix-void" aria-label="Trust signals">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <p class="text-center text-xs tracking-widest text-matrix-soft uppercase font-semibold mb-10">
           Connects to the tools US small businesses already use
         </p>
@@ -1582,7 +1628,7 @@
 
     <!-- ========== 3. HOW IT WORKS ========== -->
     <section id="how-it-works" class="relative py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
           <p class="section-eyebrow">How it works</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -1622,7 +1668,7 @@
 
     <!-- ========== LIVE AGENT DEMO ========== -->
     <section id="live-demo" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="See an agent in action">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
           <div class="reveal">
             <p class="section-eyebrow">See it work</p>
@@ -1665,7 +1711,7 @@
 
     <!-- ========== 3b. USE CASES BY VERTICAL ========== -->
     <section id="use-cases" class="relative py-20 sm:py-28" aria-label="Built for your industry">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <p class="section-eyebrow">Built for real US businesses</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -1754,7 +1800,7 @@
 
     <!-- ========== AGENT QUIZ ========== -->
     <section id="agent-quiz" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="Which agents for my business quiz">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell-sm">
         <div class="text-center mb-10 reveal">
           <p class="section-eyebrow">Guided setup</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -1838,7 +1884,7 @@
 
     <!-- ========== ROI CALCULATOR ========== -->
     <section id="roi-calculator" class="relative py-20 sm:py-28" aria-label="Time and money savings calculator">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <p class="section-eyebrow">Your numbers</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -1915,7 +1961,7 @@
 
     <!-- ========== IMPACT: ROI & PRODUCTIVITY GRAPHS ========== -->
     <section id="impact" class="relative py-20 sm:py-28 bg-matrix-muted" aria-label="SMB ROI and productivity impact">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-14 reveal">
           <p class="section-eyebrow">Results that matter</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -2099,7 +2145,7 @@
 
     <!-- ========== 4. AGENTS TEASER → full catalog on agents.html ========== -->
     <section id="agents-teaser" class="relative py-20 sm:py-28 grid-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
           <div class="max-w-xl">
             <p class="section-eyebrow">Ready agents</p>
@@ -2151,7 +2197,7 @@
 
     <!-- ========== PRODUCTS TEASER (business-friendly framing) ========== -->
     <section id="products" class="relative py-16 sm:py-24 bg-matrix-muted border-y border-matrix-border/40">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <p class="section-eyebrow">Why Matrixly works</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-3">
@@ -2189,7 +2235,7 @@
 
     <!-- ========== SHIPPING LOGISTICS AUTOMATION FLOW ========== -->
     <section id="logistics" class="relative py-20 sm:py-28 bg-matrix-void" aria-label="Shipping logistics automation business flow">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-3xl mx-auto mb-14 reveal">
           <p class="section-eyebrow">Example flow · shipping</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -2347,7 +2393,7 @@
 
     <!-- ========== 5. KEY BENEFITS / FEATURES ========== -->
     <section id="features" class="relative py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
           <p class="section-eyebrow">Why owners choose Matrixly</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -2428,7 +2474,7 @@
 
     <!-- ========== COMPARE VS ALTERNATIVES ========== -->
     <section id="compare" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40" aria-label="Matrixly versus alternatives">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <p class="section-eyebrow">Why Matrixly</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -2494,7 +2540,7 @@
 
     <!-- ========== 6. OWNER STORIES ========== -->
     <section id="testimonials" class="relative py-20 sm:py-28" aria-label="Owner stories">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
           <p class="section-eyebrow">Owner stories</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -2615,7 +2661,7 @@
 
     <!-- ========== GUARANTEE ========== -->
     <section id="guarantee" class="relative py-16 sm:py-20 bg-matrix-muted border-y border-matrix-border/40" aria-label="Risk reversal guarantee">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell-md">
         <div class="card-matrix rounded-2xl p-8 sm:p-10 reveal border-matrix-green/30 text-center">
           <div class="w-14 h-14 rounded-2xl bg-matrix-green/15 text-matrix-green mx-auto mb-5 flex items-center justify-center" aria-hidden="true">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
@@ -2638,7 +2684,7 @@
 
     <!-- ========== 7. PRICING ========== -->
     <section id="pricing" class="relative py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <p class="section-eyebrow">Pricing</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
@@ -2719,7 +2765,7 @@
 
     <!-- ========== RESOURCES TEASER ========== -->
     <section id="resources-teaser" class="relative py-16 sm:py-20" aria-label="Owner resources">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 reveal">
           <div class="max-w-2xl">
             <p class="section-eyebrow">Owner resources</p>
@@ -2750,7 +2796,7 @@
 
     <!-- ========== 8. INTEGRATIONS & SECURITY ========== -->
     <section id="integrations" class="relative py-20 sm:py-28 bg-matrix-muted border-y border-matrix-border/40">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="shell">
         <div class="grid lg:grid-cols-2 gap-14 items-center">
           <div class="reveal">
             <p class="section-eyebrow">Integrations &amp; security</p>
@@ -2849,7 +2895,7 @@
     <!-- ========== 9. FINAL CTA ========== -->
     <section id="final-cta" class="relative py-24 sm:py-32 grid-bg overflow-hidden">
 
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative reveal">
+      <div class="shell-sm text-center relative reveal">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6">
           <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse"></span>
           <span class="text-xs font-semibold text-matrix-green">Free to explore · No credit card</span>
@@ -2988,7 +3034,7 @@
 
   <!-- ========== 10. FOOTER ========== -->
   <footer class="relative z-10 border-t border-matrix-border/50 bg-matrix-void pt-16 pb-8 grid-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="shell">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-14">
         <!-- Brand -->
         <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
