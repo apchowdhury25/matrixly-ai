@@ -1,4 +1,4 @@
-﻿# Shipping Assistant â€” User Guide
+# Shipping Assistant — User Guide
 
 **For operators using the Matrixly.AI marketplace SHIP agent.**
 
@@ -9,11 +9,11 @@ Deploy page: [`shipping-assistant.html`](../../shipping-assistant.html)
 
 ## From the landing page
 
-1. Open **Agents** â†’ `agents.html`
-2. Find **Shipping Assistant** (SHIP Â· Live)
-3. **Deploy Now** â†’ deploy page  
-4. **User Guide** â†’ this guide (HTML)  
-5. **See full logistics flow** â†’ `#logistics`
+1. Open **Agents** → `agents.html`
+2. Find **Shipping Assistant** (SHIP · Live)
+3. **Deploy Now** → deploy page  
+4. **User Guide** → this guide (HTML)  
+5. **See full logistics flow** → `#logistics`
 
 ## Install (demo)
 
