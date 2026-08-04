@@ -109,6 +109,7 @@ Agent CLIs and FastAPI dashboards run on an operator machine or secured VPS — 
 ├── products/index.html        # /products
 ├── integrations/index.html    # /integrations
 ├── pricing/index.html         # /pricing
+├── white-glove/index.html     # /white-glove (White Glove Executive $499)
 ├── lead-qualifier/index.html
 ├── email-assistant/index.html
 ├── crm-assistant/index.html

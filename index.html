@@ -1358,7 +1358,7 @@
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "0",
-      "highPrice": "149",
+      "highPrice": "499",
       "priceCurrency": "USD"
     },
     "publisher": {
@@ -2661,7 +2661,7 @@
             <tbody>
               <tr>
                 <th scope="row">Monthly cost</th>
-                <td class="hl"><strong>$0–$149+</strong><br /><span class="text-matrix-soft text-xs">Plans that scale with you</span></td>
+                <td class="hl"><strong>$0–$499+</strong><br /><span class="text-matrix-soft text-xs">Plans that scale with you</span></td>
                 <td>$800–$2,000+</td>
                 <td>$50–$200 + your time</td>
                 <td>$2,000–$10,000+</td>
@@ -2858,7 +2858,7 @@
           <p class="text-matrix-soft text-lg">Built for owners, contractors, and small teams. Start free. Upgrade when the ROI is obvious.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6 max-w-7xl mx-auto">
           <div class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
             <p class="text-xs font-semibold text-matrix-soft uppercase tracking-wider mb-2">Free</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-1">Explore</h3>
@@ -2896,7 +2896,7 @@
             <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start Grow</button>
           </div>
 
-          <div class="card-matrix pricing-featured rounded-2xl p-6 flex flex-col reveal relative sm:col-span-2 lg:col-span-1">
+          <div class="card-matrix pricing-featured rounded-2xl p-6 flex flex-col reveal relative">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full badge-popular text-xs font-bold whitespace-nowrap">MOST POPULAR</div>
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wider mb-2">Pro</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-1">Scale</h3>
@@ -2916,7 +2916,49 @@
             </ul>
             <button type="button" class="btn-primary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start Scale</button>
           </div>
+
+          <div class="card-matrix rounded-2xl p-6 flex flex-col reveal border-matrix-green/40 relative">
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wider mb-2">Executive</p>
+            <h3 class="text-xl font-bold text-matrix-cream mb-1">White Glove</h3>
+            <div class="mb-1">
+              <span class="text-4xl font-extrabold text-matrix-cream">$499</span>
+              <span class="text-matrix-soft text-sm">/mo</span>
+            </div>
+            <p class="text-xs text-matrix-soft mb-4">Founding · managed digital employee</p>
+            <p class="text-sm text-matrix-soft mb-6">The real product is coaching + ongoing management — not just the agent.</p>
+            <p class="text-xs font-semibold text-matrix-cream mb-3">What you get</p>
+            <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 1 custom digital employee installed</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> On-site founder training visit</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Shared-channel coaching</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Weekly value ledger / ROI report</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Ongoing management &amp; reliability</li>
+            </ul>
+            <a href="/white-glove" class="btn-secondary w-full text-center py-3 rounded-lg text-sm">Explore Digital Employee →</a>
+          </div>
         </div>
+
+        <!-- Custom / White Glove pricing band -->
+        <div id="white-glove" class="mt-10 max-w-5xl mx-auto reveal">
+          <div class="card-matrix rounded-2xl p-6 sm:p-8 border-matrix-green/30 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="max-w-2xl">
+              <p class="text-xs font-semibold text-matrix-green uppercase tracking-wider mb-2">Custom · White Glove Digital Employee</p>
+              <h3 class="text-xl font-bold text-matrix-cream mb-2">Install one AI employee. We coach you and manage it every week.</h3>
+              <p class="text-sm text-matrix-soft leading-relaxed">
+                Setup + monthly retainer. On-site training with the founder. Shared channel so you learn by watching.
+                Monday value reports (hours saved × your rate) re-sell the service every seven days.
+                Founding seats $499/mo; Growth and multi-agent suites scale from there.
+              </p>
+            </div>
+            <div class="flex flex-col items-stretch sm:items-end gap-2 shrink-0">
+              <p class="text-2xl font-extrabold text-matrix-cream">$499<span class="text-sm font-semibold text-matrix-soft">/mo</span></p>
+              <p class="text-xs text-matrix-soft text-right">+ setup · founding seats</p>
+              <a href="/white-glove" class="btn-primary px-6 py-3 rounded-xl text-sm text-center whitespace-nowrap">Full offer + sample ROI →</a>
+              <a href="mailto:anwar@matrixly.world?subject=White%20Glove%20Digital%20Employee%20inquiry" class="text-xs font-semibold text-matrix-green hover:underline text-center">Or email the founder</a>
+            </div>
+          </div>
+        </div>
+
         <p class="text-center text-sm text-matrix-soft mt-8 reveal">
           Need a walkthrough? <a href="#final-cta" class="text-matrix-green font-semibold hover:underline">Start free</a> or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse agents first</a>.
           Cancel anytime · No long-term contract.
@@ -2924,6 +2966,7 @@
         <p class="text-center text-sm text-matrix-soft mt-3 reveal">
           <a href="#guarantee" class="text-matrix-green font-semibold hover:underline">10-hour month guarantee</a>
           · <a href="#compare" class="text-matrix-green font-semibold hover:underline">Compare vs VA / Zapier / agencies</a>
+          · <a href="/white-glove" class="text-matrix-green font-semibold hover:underline">White Glove details</a>
         </p>
       </div>
     </section>
@@ -3221,6 +3264,7 @@
             <li><a href="/products" class="hover:text-matrix-green transition-colors">Products</a></li>
             <li><a href="/integrations" class="hover:text-matrix-green transition-colors">Integrations</a></li>
             <li><a href="#pricing" class="hover:text-matrix-green transition-colors">Pricing</a></li>
+            <li><a href="/white-glove" class="hover:text-matrix-green transition-colors">White Glove</a></li>
           </ul>
         </div>
 
