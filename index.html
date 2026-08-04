@@ -18,24 +18,24 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Matrixly helps US small businesses reclaim 20+ hours a week. Ready-to-run AI agents handle leads, email, support, shipping, and local SEO — no tech team required." />
+  <meta name="description" content="Matrixly helps US small businesses reclaim 20+ hours a week. Ready-to-run AI agents handle leads, email, support, shipping, and local SEO â€” no tech team required." />
   <meta name="keywords" content="AI agents for small business, SMB automation, AI email assistant, lead generation AI, shipping automation, local SEO AI, no-code AI agents" />
   <meta name="author" content="Matrixly" />
   <meta name="theme-color" content="#117ACA" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Matrixly — AI Agents That Run Your Small Business Busywork" />
+  <meta property="og:title" content="Matrixly â€” AI Agents That Run Your Small Business Busywork" />
   <meta property="og:description" content="Reclaim 20+ hours a week. Deploy ready AI agents for leads, email, support, shipping & SEO. Built for US SMBs. Free to explore." />
   <meta property="og:site_name" content="Matrixly" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Matrixly — AI Agents for Small Business" />
-  <meta name="twitter:description" content="Reclaim 20+ hours a week. Ready AI agents for marketing, sales, and ops — no engineers required." />
+  <meta name="twitter:title" content="Matrixly â€” AI Agents for Small Business" />
+  <meta name="twitter:description" content="Reclaim 20+ hours a week. Ready AI agents for marketing, sales, and ops â€” no engineers required." />
 
-  <title>Matrixly — AI Agents That Work While You Run Your Business</title>
+  <title>Matrixly â€” AI Agents That Work While You Run Your Business</title>
 
   <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
   <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
@@ -166,7 +166,7 @@
     /*
      * Dark theme: full-width section / page dividers must not read as a
      * bright white hairline (Tailwind /40 on CSS vars often fails opacity).
-     * Match the soft blend above Pricing — not a chalky rule.
+     * Match the soft blend above Pricing â€” not a chalky rule.
      */
     html.dark section.border-y,
     html.dark section.border-t,
@@ -213,7 +213,7 @@
      */
     :root {
       --shell-max: 1200px;
-      --shell-pad-x: 1.25rem; /* 20px — mobile */
+      --shell-pad-x: 1.25rem; /* 20px â€” mobile */
     }
     @media (min-width: 640px) {
       :root { --shell-pad-x: 1.5rem; } /* 24px */
@@ -234,7 +234,7 @@
       padding-right: var(--shell-pad-x);
       box-sizing: border-box;
     }
-    /* Narrower centered columns (quiz, guarantee, final CTA) — same side padding */
+    /* Narrower centered columns (quiz, guarantee, final CTA) â€” same side padding */
     .shell-sm {
       width: 100%;
       max-width: 48rem; /* ~768px, was max-w-3xl */
@@ -475,28 +475,40 @@
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
 
-    /* Hero agent carousel — glass / tech panel (Superhuman-inspired, Matrixly tokens) */
+    /*
+     * Living Digital Teammates â€” horizontal agent profile cards
+     * Left: abstract photoreal AI figure (pure CSS). Right: existing copy/CTA.
+     * Content & carousel JS unchanged.
+     */
+    .agent-command-stage {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 0;
+      border-radius: 0;
+    }
+    .agent-command-particles { display: none; }
+
     .agent-carousel {
       position: relative;
       background:
         linear-gradient(
-          155deg,
-          color-mix(in srgb, var(--card) 82%, transparent) 0%,
-          color-mix(in srgb, var(--card) 68%, transparent) 48%,
-          color-mix(in srgb, var(--brand-blue) 6%, var(--card)) 100%
+          165deg,
+          #0e1726 0%,
+          #0b1220 48%,
+          #0c1524 100%
         );
-      border: 1px solid color-mix(in srgb, var(--brand-blue) 28%, var(--border));
+      border: 1px solid color-mix(in srgb, var(--brand-blue) 22%, #1e2a3a);
       border-radius: 20px;
       overflow: hidden;
       width: 100%;
       max-width: 100%;
       min-width: 0;
-      backdrop-filter: blur(18px) saturate(1.25);
-      -webkit-backdrop-filter: blur(18px) saturate(1.25);
       box-shadow:
-        var(--shadow-md),
-        0 0 0 1px color-mix(in srgb, #fff 6%, transparent) inset,
-        0 12px 40px color-mix(in srgb, var(--brand-blue) 12%, transparent);
+        0 0 0 1px color-mix(in srgb, #fff 5%, transparent) inset,
+        0 18px 48px rgba(0, 0, 0, 0.32),
+        0 8px 24px color-mix(in srgb, var(--brand-blue) 12%, transparent);
     }
     .agent-carousel::before {
       content: '';
@@ -505,8 +517,8 @@
       inset: 0;
       border-radius: inherit;
       background:
-        radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--brand-blue) 14%, transparent), transparent 55%),
-        linear-gradient(180deg, color-mix(in srgb, #fff 7%, transparent), transparent 42%);
+        radial-gradient(80% 60% at 18% 40%, color-mix(in srgb, var(--brand-blue) 10%, transparent), transparent 55%),
+        linear-gradient(180deg, color-mix(in srgb, #fff 4%, transparent), transparent 28%);
       z-index: 0;
     }
     .agent-carousel > * {
@@ -514,27 +526,23 @@
       z-index: 1;
     }
     .agent-carousel-header {
-      background:
-        linear-gradient(
-          135deg,
-          color-mix(in srgb, var(--brand-blue) 12%, transparent) 0%,
-          color-mix(in srgb, var(--brand-blue-soft) 55%, transparent) 55%,
-          color-mix(in srgb, var(--card) 40%, transparent) 100%
-        );
-      border-bottom: 1px solid color-mix(in srgb, var(--brand-blue) 18%, var(--border));
+      background: color-mix(in srgb, #111a28 88%, var(--brand-blue));
+      border-bottom: 1px solid color-mix(in srgb, var(--brand-blue) 16%, #1e2a3a);
       padding: 14px 16px 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
       min-width: 0;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    }
+    .agent-carousel-header .inline-flex.items-center.gap-1\.5 {
+      background: color-mix(in srgb, var(--brand-blue) 14%, transparent) !important;
+      border: 1px solid color-mix(in srgb, var(--brand-blue) 30%, transparent);
     }
     .agent-carousel-viewport {
       position: relative;
       overflow: hidden;
-      min-height: 320px;
+      min-height: 300px;
       width: 100%;
       max-width: 100%;
       min-width: 0;
@@ -545,14 +553,22 @@
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform;
     }
+
+    /* Horizontal profile card layout */
     .agent-slide {
       flex: 0 0 100%;
       width: 100%;
       max-width: 100%;
-      /* use basis (not min-width %) so intrinsic min-content cannot blow out the hero */
       min-width: 0;
-      padding: 1.25rem 1.35rem 1rem;
       box-sizing: border-box;
+      display: grid;
+      grid-template-columns: minmax(118px, 36%) minmax(0, 1fr);
+      grid-template-rows: auto auto auto auto 1fr auto;
+      column-gap: 0;
+      align-items: start;
+      padding: 0;
+      min-height: 300px;
+      background: transparent;
     }
     /* Prevent CSS grid/flex min-content from expanding past the phone width */
     #hero .grid > *,
@@ -560,79 +576,132 @@
       min-width: 0;
       max-width: 100%;
     }
-    .agent-slide-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+
+    /*
+     * Left column: photoreal AI teammate portrait
+     */
+    .agent-slide-visual {
+      grid-column: 1;
+      grid-row: 1 / -1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      margin: 0;
+      border-right: 1px solid color-mix(in srgb, var(--brand-blue) 14%, #1e2a3a);
+      overflow: hidden;
+      background: #0a1422;
+    }
+    .agent-slide-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      animation: teammateFloat 6s ease-in-out infinite;
+    }
+    .agent-slide-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
       background:
-        linear-gradient(
-          145deg,
-          color-mix(in srgb, var(--brand-blue) 18%, transparent),
-          color-mix(in srgb, var(--brand-blue) 8%, transparent)
-        );
-      border: 1px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
-      box-shadow:
-        0 0 0 1px color-mix(in srgb, #fff 8%, transparent) inset,
-        0 6px 16px color-mix(in srgb, var(--brand-blue) 12%, transparent);
-      color: var(--brand-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 800;
+        linear-gradient(90deg, transparent 55%, color-mix(in srgb, #0b1220 55%, transparent) 100%),
+        linear-gradient(180deg, transparent 60%, color-mix(in srgb, #0b1220 45%, transparent) 100%),
+        radial-gradient(ellipse 80% 40% at 50% 100%, color-mix(in srgb, var(--brand-blue) 12%, transparent), transparent 70%);
+      z-index: 1;
+    }
+    .agent-slide {
+      position: relative;
+    }
+    @keyframes teammateFloat {
+      0%, 100% { transform: translateY(0) scale(1.02); }
+      50% { transform: translateY(-4px) scale(1.03); }
+    }
+
+    /* Right column: info layout â€” all non-visual children */
+    .agent-slide > :not(.agent-slide-visual) {
+      grid-column: 2;
+      min-width: 0;
+    }
+    .agent-slide > p:first-of-type {
+      padding: 1.15rem 1.15rem 0 1.1rem;
+      margin-bottom: 0.15rem;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      font-size: 0.7rem;
+    }
+    .agent-slide > h3 {
+      padding: 0 1.15rem 0 1.1rem;
+      margin: 0 0 0.45rem;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      color: #f0f4f8 !important;
+    }
+    .agent-slide > p.text-sm {
+      padding: 0 1.15rem 0 1.1rem;
+      margin: 0 0 0.75rem;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: #9aa4b2 !important;
+    }
+    .agent-slide > .space-y-2 {
+      padding: 0 1.15rem 0 1.1rem;
+      margin: 0 0 0.85rem;
+    }
+    .agent-slide > a.btn-primary {
+      margin: 0 1.15rem 1.15rem 1.1rem;
+      width: calc(100% - 2.25rem);
+      max-width: none;
+      align-self: end;
+      box-shadow: 0 6px 18px color-mix(in srgb, var(--brand-blue) 28%, transparent);
     }
     .agent-slide-benefit {
       display: flex;
       align-items: flex-start;
       gap: 0.5rem;
-      font-size: 0.8125rem;
-      color: var(--soft);
+      font-size: 0.78rem;
+      color: #9aa4b2 !important;
       line-height: 1.4;
       font-weight: 500;
     }
     .agent-slide-benefit::before {
-      content: '✓';
-      color: var(--brand-blue);
+      content: 'âœ“';
+      color: #3b9fe0;
       font-weight: 700;
       flex-shrink: 0;
     }
+    .agent-slide .text-matrix-green {
+      color: #3b9fe0 !important;
+    }
+
     .agent-carousel-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
       padding: 12px 14px 16px;
-      border-top: 1px solid color-mix(in srgb, var(--brand-blue) 14%, var(--border));
-      background: color-mix(in srgb, var(--bg-alt) 40%, color-mix(in srgb, var(--card) 55%, transparent));
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid color-mix(in srgb, var(--brand-blue) 14%, #1e2a3a);
+      background: color-mix(in srgb, #0a1220 90%, var(--brand-blue));
     }
     .agent-carousel-btn {
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      border: 1px solid color-mix(in srgb, var(--brand-blue) 20%, var(--border));
-      background: color-mix(in srgb, var(--card) 70%, transparent);
-      color: var(--ink);
+      border: 1px solid color-mix(in srgb, var(--brand-blue) 28%, #1e2a3a);
+      background: color-mix(in srgb, #151c28 80%, transparent);
+      color: #f0f4f8;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
       flex-shrink: 0;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
     }
     .agent-carousel-btn:hover {
-      border-color: color-mix(in srgb, var(--brand-blue) 50%, transparent);
-      color: var(--brand-blue);
-      background: color-mix(in srgb, var(--brand-blue) 12%, var(--card));
-      box-shadow: 0 4px 14px color-mix(in srgb, var(--brand-blue) 18%, transparent);
+      border-color: color-mix(in srgb, var(--brand-blue) 55%, transparent);
+      color: #7dd3fc;
+      background: color-mix(in srgb, var(--brand-blue) 14%, #151c28);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--brand-blue) 22%, transparent);
     }
     .agent-carousel-btn:focus-visible {
       outline: 2px solid var(--brand-blue);
@@ -652,13 +721,14 @@
       border-radius: 999px;
       border: none;
       padding: 0;
-      background: color-mix(in srgb, var(--soft) 35%, transparent);
+      background: color-mix(in srgb, #9aa4b2 40%, transparent);
       cursor: pointer;
-      transition: width 0.25s ease, background 0.25s ease;
+      transition: width 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
     .agent-carousel-dot[aria-current="true"] {
       width: 18px;
-      background: linear-gradient(90deg, var(--brand-blue), color-mix(in srgb, var(--brand-blue) 70%, #fff));
+      background: linear-gradient(90deg, var(--brand-blue), #7dd3fc);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--brand-blue) 35%, transparent);
     }
     .agent-carousel-dot:hover {
       background: color-mix(in srgb, var(--brand-blue) 55%, transparent);
@@ -669,7 +739,7 @@
       bottom: 0;
       height: 3px;
       width: 100%;
-      background: color-mix(in srgb, var(--border) 55%, transparent);
+      background: color-mix(in srgb, #1e2a3a 80%, transparent);
       overflow: hidden;
       z-index: 2;
     }
@@ -677,9 +747,9 @@
       display: block;
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--brand-blue), color-mix(in srgb, var(--brand-blue) 55%, #7dd3fc));
+      background: linear-gradient(90deg, var(--brand-blue), #7dd3fc);
       transform-origin: left center;
-      box-shadow: 0 0 10px color-mix(in srgb, var(--brand-blue) 45%, transparent);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--brand-blue) 40%, transparent);
     }
     .agent-carousel.is-playing .agent-carousel-progress > span {
       animation: carouselProgress var(--carousel-ms, 4500ms) linear forwards;
@@ -691,16 +761,34 @@
     @media (prefers-reduced-motion: reduce) {
       .agent-carousel-track { transition: none; }
       .agent-carousel.is-playing .agent-carousel-progress > span { animation: none; width: 100%; }
+      .agent-slide-visual img { animation: none; }
     }
-    /* Slightly denser glass fill in light mode so soft text stays readable */
-    html:not(.dark) .agent-carousel {
-      background:
-        linear-gradient(
-          155deg,
-          color-mix(in srgb, var(--card) 92%, transparent) 0%,
-          color-mix(in srgb, var(--card) 88%, transparent) 100%
-        );
+    /* Mobile: figure stacks above text */
+    @media (max-width: 639px) {
+      .agent-slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        min-height: 0;
+      }
+      .agent-slide-visual {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: 180px;
+        height: 180px;
+        border-right: none;
+        border-bottom: 1px solid color-mix(in srgb, var(--brand-blue) 14%, #1e2a3a);
+      }
+      .agent-slide > :not(.agent-slide-visual) {
+        grid-column: 1;
+      }
+      .agent-slide-visual img {
+        object-position: center 20%;
+      }
     }
+    /* Always force readable palette inside carousel (native dark product UI) */
+    .agent-carousel .text-matrix-cream { color: #f0f4f8 !important; }
+    .agent-carousel .text-matrix-soft { color: #9aa4b2 !important; }
+    .agent-carousel .text-matrix-green { color: #3b9fe0 !important; }
     /* Shared panel styles used elsewhere on page */
     .demo-panel {
       background: var(--card);
@@ -1266,7 +1354,7 @@
     "name": "Matrixly",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "AI agent marketplace for US small businesses. Ready-to-run agents for leads, email, support, shipping, and SEO — deploy in minutes without a tech team.",
+    "description": "AI agent marketplace for US small businesses. Ready-to-run agents for leads, email, support, shipping, and SEO â€” deploy in minutes without a tech team.",
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "0",
@@ -1346,47 +1434,61 @@
     <!-- ========== 1. HERO ========== -->
     <section id="hero" class="relative min-h-[100svh] flex items-center grid-bg pt-20 sm:pt-24 pb-12 sm:pb-16 overflow-x-hidden">
       <div class="shell w-full min-w-0">
-        <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          <!-- Copy (order-last on mobile so carousel stacks above; left on desktop) -->
-          <div class="text-center lg:text-left min-w-0 max-w-full order-last lg:order-first">
+        <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 items-center">
+          <!-- Copy â€” left on desktop, stacked above on mobile -->
+          <div class="text-center lg:text-left min-w-0 max-w-full">
             <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6 max-w-full">
               <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse flex-shrink-0"></span>
-              <span class="text-xs font-semibold text-matrix-green tracking-wide text-left">Built for US small businesses · No tech team needed</span>
+              <span class="text-xs font-semibold text-matrix-green tracking-wide text-left">Built for US small businesses Â· No tech team needed</span>
             </div>
 
-            <h1 class="h1-fluid font-extrabold leading-[1.15] tracking-tight mb-6">
-              <span class="text-matrix-cream">Reclaim </span>
-              <span class="text-matrix-green">20+ hours a week</span>
-              <span class="text-matrix-cream"> — without hiring more staff</span>
+            <!-- Rewrite 1 â€” PAS (Problem â†’ Agitate â†’ Solution) -->
+            <h1 class="h1-fluid font-extrabold leading-[1.15] tracking-tight mb-5">
+              <span class="text-matrix-cream">You're the owner, the salesperson, the support desk, and the shipping department â€” </span>
+              <span class="text-matrix-green">all before lunch.</span>
             </h1>
-
-            <p class="text-base sm:text-lg md:text-xl text-matrix-soft max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed break-words">
-              Matrixly is the marketplace of ready-to-run AI agents that handle leads, email, support, shipping, and local SEO for you.
-              <span class="text-matrix-cream font-medium"> Pick an agent. Connect your tools. Get time and revenue back.</span>
+            <p class="text-base sm:text-lg text-matrix-soft max-w-xl mx-auto lg:mx-0 mb-4 leading-relaxed break-words">
+              Every hour spent chasing leads, answering â€œwhere's my order?â€, and drafting emails is an hour you're not spending on the business itself. Most owners lose
+              <span class="text-matrix-cream font-medium"> 20+ hours a week</span> to this â€” and it compounds every quarter you don't fix it.
+            </p>
+            <p class="text-base sm:text-lg text-matrix-soft max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed break-words">
+              <span class="text-matrix-cream font-medium">Matrixly deploys ready-to-run AI agents</span> that take the busywork off your plate â€” leads, email, support, shipping, local SEO â€” live in minutes, no tech team needed.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 w-full sm:w-auto">
+            <!-- Rewrite 2 â€” BAB (Before â†’ After â†’ Bridge) -->
+            <div class="card-matrix rounded-2xl p-4 sm:p-5 mb-8 text-left max-w-xl mx-auto lg:mx-0 border border-matrix-border/60" aria-label="Before and after with Matrixly">
+              <p class="text-sm text-matrix-soft mb-3 leading-relaxed">
+                <span class="text-xs font-bold uppercase tracking-wide text-matrix-green">Before</span><br />
+                Buried in email, chasing leads, answering the same shipping question for the fifth time today.
+              </p>
+              <p class="text-sm text-matrix-soft mb-3 leading-relaxed">
+                <span class="text-xs font-bold uppercase tracking-wide text-matrix-green">After</span><br />
+                An AI team quietly handling all of it â€” while you focus on customers and growth.
+              </p>
+              <p class="text-sm text-matrix-cream leading-relaxed">
+                <span class="text-xs font-bold uppercase tracking-wide text-matrix-green">Matrixly</span><br />
+                The bridge: pick an agent, connect your tools, and reclaim
+                <span class="text-matrix-green font-semibold"> 20+ hours a week</span> â€” without hiring more staff.
+              </p>
+            </div>
+
+            <!-- Single CTA -->
+            <div class="flex justify-center lg:justify-start mb-6 w-full sm:w-auto">
               <button type="button" class="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto" data-open-auth="signup">
-                Start free — no card needed
+                Start free â€” no card needed
                 <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
               </button>
-              <a href="#agent-quiz" class="btn-secondary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                See it for my business
-              </a>
             </div>
-            <p class="text-sm text-matrix-soft mb-6 text-center lg:text-left">
-              Or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse ready agents</a> · <a href="#live-demo" class="text-matrix-green font-semibold hover:underline">watch an agent work</a>
-            </p>
 
             <!-- Social proof counters -->
             <div class="card-matrix rounded-2xl p-4 sm:p-5 mb-6 text-left max-w-xl mx-auto lg:mx-0" aria-label="Recent peer activity">
               <div class="grid grid-cols-2 gap-4 mb-3">
                 <div>
-                  <p class="stat-number text-2xl sm:text-3xl font-extrabold text-matrix-green tabular-nums" id="sp-agents-week">—</p>
+                  <p class="stat-number text-2xl sm:text-3xl font-extrabold text-matrix-green tabular-nums" id="sp-agents-week">â€”</p>
                   <p class="text-xs text-matrix-soft mt-0.5">Agents deployed this week by US SMBs</p>
                 </div>
                 <div>
-                  <p class="stat-number text-2xl sm:text-3xl font-extrabold text-matrix-green tabular-nums" id="sp-hours-month">—</p>
+                  <p class="stat-number text-2xl sm:text-3xl font-extrabold text-matrix-green tabular-nums" id="sp-hours-month">â€”</p>
                   <p class="text-xs text-matrix-soft mt-0.5">Hours reclaimed last month</p>
                 </div>
               </div>
@@ -1400,7 +1502,7 @@
             <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-sm text-matrix-soft">
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Free to explore · Cancel anytime
+                Free to explore Â· Cancel anytime
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 text-matrix-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -1413,11 +1515,12 @@
             </div>
           </div>
 
-          <!-- Visual: auto agent carousel (above headline on mobile; right column on desktop) -->
-          <div class="relative w-full max-w-xl mx-auto lg:max-w-none mt-0 lg:mt-0 order-first lg:order-last">
+          <!-- Visual: Living Digital Teammates carousel â€” right on desktop -->
+          <div class="relative w-full max-w-xl mx-auto lg:max-w-none min-w-0">
+            <div class="agent-command-stage">
             <div
               id="agent-carousel"
-              class="agent-carousel animate-float is-playing"
+              class="agent-carousel is-playing"
               role="region"
               aria-roledescription="carousel"
               aria-label="Matrixly AI agents"
@@ -1440,7 +1543,7 @@
               <div class="agent-carousel-viewport">
                 <div id="agent-carousel-track" class="agent-carousel-track">
                   <article class="agent-slide" data-agent-slide aria-hidden="false">
-                    <div class="agent-slide-icon" aria-hidden="true">LEAD</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/lead-qualifier.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Lead Qualifier</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Scores inbound leads, fills missing contact details, and suggests the next best outreach so you only talk to buyers ready to buy.</p>
@@ -1452,10 +1555,10 @@
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">MAIL</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/email-assistant.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Email</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Email Assistant</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Sorts your inbox, drafts replies in your voice, and flags what actually needs you — so you stop living in email.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Sorts your inbox, drafts replies in your voice, and flags what actually needs you â€” so you stop living in email.</p>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Gmail &amp; Outlook workflows</p>
                       <p class="agent-slide-benefit">Learns your voice &amp; priorities</p>
@@ -1464,10 +1567,10 @@
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">CRM</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/crm-assistant.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">CRM Assistant</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Updates contacts, logs activities, and keeps pipeline hygiene automated across your sales stack — with approval when it matters.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Updates contacts, logs activities, and keeps pipeline hygiene automated across your sales stack â€” with approval when it matters.</p>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Contact &amp; activity sync</p>
                       <p class="agent-slide-benefit">Approve before CRM writes</p>
@@ -1476,157 +1579,157 @@
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">SHIP</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/shipping-assistant.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Logistics</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Shipping Assistant</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Picks smarter rates, tracks packages, and messages customers before they open a “where’s my order?” ticket.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Picks smarter rates, tracks packages, and messages customers before they open a â€œwhereâ€™s my order?â€ ticket.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">ShipStation · UPS · FedEx · USPS</p>
+                      <p class="agent-slide-benefit">ShipStation Â· UPS Â· FedEx Â· USPS</p>
                       <p class="agent-slide-benefit">Proactive delay notifications</p>
                     </div>
                     <a href="/shipping-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Shipping Assistant</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">PACK</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/starter-pack.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Bundle</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Starter Pack</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Support, booking, and invoices in one dashboard — the fastest way for a small shop to get three agents working together.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Support, booking, and invoices in one dashboard â€” the fastest way for a small shop to get three agents working together.</p>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">SupportForge + BookWise + InvoiceForge</p>
-                      <p class="agent-slide-benefit">One control plane · embed widgets</p>
+                      <p class="agent-slide-benefit">One control plane Â· embed widgets</p>
                     </div>
                     <a href="/starter-pack" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Starter Pack</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">SUPP</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/support-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Support</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">SupportForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Answers customers from your knowledge base, triages chat and email, and escalates only when a human should step in.</p>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Embeddable chat widget</p>
-                      <p class="agent-slide-benefit">Tickets · knowledge base · escalation</p>
+                      <p class="agent-slide-benefit">Tickets Â· knowledge base Â· escalation</p>
                     </div>
                     <a href="/support-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SupportForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">BOOK</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/book-wise.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Scheduling</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">BookWise</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Books appointments with real-time availability, confirmations, reminders, and calendar sync — less back-and-forth for you.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Books appointments with real-time availability, confirmations, reminders, and calendar sync â€” less back-and-forth for you.</p>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Google Calendar ready</p>
-                      <p class="agent-slide-benefit">Reminders · reschedule · time zones</p>
+                      <p class="agent-slide-benefit">Reminders Â· reschedule Â· time zones</p>
                     </div>
                     <a href="/book-wise" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try BookWise</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">INVC</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/invoice-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">InvoiceForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Extracts invoice data, validates it, posts to QuickBooks or Xero, and helps chase payments so AP/AR stop eating your week.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">OCR extract · QuickBooks / Xero</p>
+                      <p class="agent-slide-benefit">OCR extract Â· QuickBooks / Xero</p>
                       <p class="agent-slide-benefit">Exceptions &amp; AR reminders</p>
                     </div>
                     <a href="/invoice-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try InvoiceForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">CONT</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/content-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Marketing</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">ContentForge</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Creates SEO blogs, social posts, newsletters, and ads in your brand voice — with a human review step before anything publishes.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Creates SEO blogs, social posts, newsletters, and ads in your brand voice â€” with a human review step before anything publishes.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">SEO blogs · social · newsletters</p>
+                      <p class="agent-slide-benefit">SEO blogs Â· social Â· newsletters</p>
                       <p class="agent-slide-benefit">Brand voice + review before publish</p>
                     </div>
                     <a href="/content-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try ContentForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">SEO</div>
-                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">SEO · Local</p>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/seo-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">SEO Â· Local</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">SEOForge</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Grows organic and “near me” rankings for US SMBs — brand-voice pages, Google Business Profile, keyword tracking, and ROI — always with your approval before publish.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Grows organic and â€œnear meâ€ rankings for US SMBs â€” brand-voice pages, Google Business Profile, keyword tracking, and ROI â€” always with your approval before publish.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">30-day plans · local SEO · content packs</p>
-                      <p class="agent-slide-benefit">Approval queue · keywords · ROI cards</p>
+                      <p class="agent-slide-benefit">30-day plans Â· local SEO Â· content packs</p>
+                      <p class="agent-slide-benefit">Approval queue Â· keywords Â· ROI cards</p>
                     </div>
                     <a href="/seo-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SEOForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">MEET</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/meet-wise.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Meetings</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">MeetWise</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Turns meeting transcripts into summaries, action items, CRM notes, and recap emails so nothing falls through the cracks.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">Zoom · Teams · Meet transcripts</p>
-                      <p class="agent-slide-benefit">Actions · CRM notes · recaps</p>
+                      <p class="agent-slide-benefit">Zoom Â· Teams Â· Meet transcripts</p>
+                      <p class="agent-slide-benefit">Actions Â· CRM notes Â· recaps</p>
                     </div>
                     <a href="/meet-wise" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try MeetWise</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">SOCIAL</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/social-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Social</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">SocialForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Plans multi-platform posts, suggests the best times to publish, and helps reply in your brand voice so social stays consistent.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">Compose · schedule · inbox</p>
-                      <p class="agent-slide-benefit">Meta · LinkedIn · Buffer-ready</p>
+                      <p class="agent-slide-benefit">Compose Â· schedule Â· inbox</p>
+                      <p class="agent-slide-benefit">Meta Â· LinkedIn Â· Buffer-ready</p>
                     </div>
                     <a href="/social-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SocialForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">PIPE</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/pipeline-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">PipelineForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Scores deals by fit and engagement, builds daily focus lists, and flags at-risk opportunities before they stall.</p>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">HubSpot &amp; Salesforce friendly</p>
-                      <p class="agent-slide-benefit">At-risk flags · rep priority lists</p>
+                      <p class="agent-slide-benefit">At-risk flags Â· rep priority lists</p>
                     </div>
                     <a href="/pipeline-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try PipelineForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">DOC</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/doc-forge.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Documents</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">DocForge</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Drafts proposals, quotes, contracts, and reports from your templates — brand rules and approval before anything goes out.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Drafts proposals, quotes, contracts, and reports from your templates â€” brand rules and approval before anything goes out.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">Proposals · quotes · contracts</p>
-                      <p class="agent-slide-benefit">HITL approval · PDF export</p>
+                      <p class="agent-slide-benefit">Proposals Â· quotes Â· contracts</p>
+                      <p class="agent-slide-benefit">HITL approval Â· PDF export</p>
                     </div>
                     <a href="/doc-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try DocForge</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">INV</div>
-                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance · AP</p>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/invoice-processor.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
+                    <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance Â· AP</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Invoice Processor</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Pydantic AI multi-agent AP: extract PDFs/email, match purchase orders, flag discrepancies, and recommend approve or human review before payment.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">Extractor · Matcher · Reviewer</p>
-                      <p class="agent-slide-benefit">HITL · PO match · Grok-ready</p>
+                      <p class="agent-slide-benefit">Extractor Â· Matcher Â· Reviewer</p>
+                      <p class="agent-slide-benefit">HITL Â· PO match Â· Grok-ready</p>
                     </div>
                     <a href="/invoice-processor" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Invoice Processor</a>
                   </article>
 
                   <article class="agent-slide" data-agent-slide aria-hidden="true">
-                    <div class="agent-slide-icon" aria-hidden="true">ETF</div>
+                    <div class="agent-slide-visual" aria-hidden="true"><img src="/assets/agents/etf-analyzer.jpg" alt="" width="400" height="600" loading="lazy" decoding="async" /></div>
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">ETF Portfolio Analyzer</h3>
-                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Live market snapshots, yield projections, NAV risk, and tax-aware notes — free data, ready to explore without paid API keys.</p>
+                    <p class="text-sm text-matrix-soft leading-relaxed mb-4">Live market snapshots, yield projections, NAV risk, and tax-aware notes â€” free data, ready to explore without paid API keys.</p>
                     <div class="space-y-2 mb-5">
-                      <p class="agent-slide-benefit">Yield · NAV risk · tax notes</p>
-                      <p class="agent-slide-benefit">Free market data · optional Notion save</p>
+                      <p class="agent-slide-benefit">Yield Â· NAV risk Â· tax notes</p>
+                      <p class="agent-slide-benefit">Free market data Â· optional Notion save</p>
                     </div>
                     <a href="/etf-analyzer" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try ETF Analyzer</a>
                   </article>
@@ -1644,6 +1747,7 @@
                 </button>
               </div>
             </div>
+            </div><!-- /.agent-command-stage -->
 
           </div>
         </div>
@@ -1676,7 +1780,7 @@
           <div class="card-matrix rounded-2xl p-6 sm:p-8 text-center">
             <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green mb-2">&lt;30d</div>
             <p class="text-matrix-cream font-semibold mb-1">Typical payback</p>
-            <p class="text-sm text-matrix-soft">Cheaper than a part-time hire — works 24/7</p>
+            <p class="text-sm text-matrix-soft">Cheaper than a part-time hire â€” works 24/7</p>
           </div>
           <div class="card-matrix rounded-2xl p-6 sm:p-8 text-center">
             <div class="stat-number text-4xl sm:text-5xl font-extrabold text-matrix-green mb-2">Minutes</div>
@@ -1703,7 +1807,7 @@
             <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>PICK</span></div>
             <span class="text-xs font-semibold text-matrix-green mb-2 block">Step 1</span>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Choose an agent</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Browse ready agents for email, leads, support, shipping, or SEO — or describe what you need and we match you.</p>
+            <p class="text-sm text-matrix-soft leading-relaxed">Browse ready agents for email, leads, support, shipping, or SEO â€” or describe what you need and we match you.</p>
           </div>
           <div class="card-matrix rounded-2xl p-5 sm:p-6 reveal relative">
             <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>CONNECT</span></div>
@@ -1715,7 +1819,7 @@
             <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>RUN</span></div>
             <span class="text-xs font-semibold text-matrix-green mb-2 block">Step 3</span>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Let agents work</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">They draft replies, qualify leads, ship smarter, and grow local search — you review only what needs a human.</p>
+            <p class="text-sm text-matrix-soft leading-relaxed">They draft replies, qualify leads, ship smarter, and grow local search â€” you review only what needs a human.</p>
           </div>
           <div class="card-matrix rounded-2xl p-5 sm:p-6 reveal relative">
             <div class="neon-tile neon-tile--wide mb-5" aria-hidden="true"><span>GROW</span></div>
@@ -1737,7 +1841,7 @@
               Watch an agent <span class="text-matrix-green">handle real work</span>
             </h2>
             <p class="text-matrix-soft text-lg mb-6 leading-relaxed">
-              Type a request or tap a preset. This is a lightweight simulation — no signup required — so you can feel the product in seconds.
+              Type a request or tap a preset. This is a lightweight simulation â€” no signup required â€” so you can feel the product in seconds.
             </p>
             <div class="flex flex-wrap gap-2 mb-6">
               <button type="button" class="demo-chip" data-demo-script="qualify">Qualify this lead</button>
@@ -1746,17 +1850,17 @@
             </div>
             <form id="live-demo-form" class="flex flex-col sm:flex-row gap-2 mb-4">
               <label class="sr-only" for="live-demo-input">Ask the demo agent</label>
-              <input id="live-demo-input" type="text" class="auth-input flex-grow rounded-xl px-4 py-3 border border-matrix-border bg-matrix-card text-matrix-cream" placeholder="e.g. Qualify this lead or draft a delay reply…" autocomplete="off" />
+              <input id="live-demo-input" type="text" class="auth-input flex-grow rounded-xl px-4 py-3 border border-matrix-border bg-matrix-card text-matrix-cream" placeholder="e.g. Qualify this lead or draft a delay replyâ€¦" autocomplete="off" />
               <button type="submit" class="btn-primary px-5 py-3 rounded-xl text-sm whitespace-nowrap">Run demo</button>
             </form>
-            <p class="text-xs text-matrix-soft mb-6">Simulation only · nothing is sent to customers or connected tools</p>
+            <p class="text-xs text-matrix-soft mb-6">Simulation only Â· nothing is sent to customers or connected tools</p>
             <a id="live-demo-cta" href="/lead-qualifier" class="btn-secondary inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm">Start free with this agent</a>
           </div>
           <div class="reveal live-demo-panel">
             <div class="flex items-center justify-between gap-3 px-4 py-3 border-b border-matrix-border/60 bg-matrix-card">
               <div>
                 <p class="text-sm font-bold text-matrix-cream">Agent preview</p>
-                <p class="text-xs text-matrix-soft"><span id="live-demo-agent">Lead Qualifier</span> · live simulation</p>
+                <p class="text-xs text-matrix-soft"><span id="live-demo-agent">Lead Qualifier</span> Â· live simulation</p>
               </div>
               <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-matrix-green animate-pulse"></span>
@@ -1778,7 +1882,7 @@
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
             See how owners like you <span class="text-matrix-green">get time back</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Home services, e-commerce, professional firms, contractors, and retail — agents handle the busywork so you can run the business.</p>
+          <p class="text-matrix-soft text-lg">Home services, e-commerce, professional firms, contractors, and retail â€” agents handle the busywork so you can run the business.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
@@ -1792,17 +1896,17 @@
                 <p class="text-xs font-semibold text-matrix-cream px-4">Watch how an HVAC owner gets more booked jobs</p>
               </div>
             </div>
-            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">Home services · HVAC</p>
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">Home services Â· HVAC</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-3">More booked jobs from local search</h3>
             <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
-              Agents answer after-hours inquiries, qualify web leads, and publish service pages that rank for “near me” searches — so your phone rings with the right jobs.
+              Agents answer after-hours inquiries, qualify web leads, and publish service pages that rank for â€œnear meâ€ searches â€” so your phone rings with the right jobs.
             </p>
             <ul class="space-y-2 text-sm text-matrix-soft mb-6">
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Lead Qualifier + Email Assistant</li>
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Local SEO &amp; Google Business support</li>
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: +40% organic leads in 90 days</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Lead Qualifier + Email Assistant</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Local SEO &amp; Google Business support</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Example: +40% organic leads in 90 days</li>
             </ul>
-            <a href="/for/hvac" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore HVAC stack →</a>
+            <a href="/for/hvac" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore HVAC stack â†’</a>
           </article>
 
           <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col border-matrix-green/30">
@@ -1815,17 +1919,17 @@
                 <p class="text-xs font-semibold text-matrix-cream px-4">See a Shopify store cut WISMO tickets</p>
               </div>
             </div>
-            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">E-commerce · Shopify</p>
+            <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-3">E-commerce Â· Shopify</p>
             <h3 class="text-xl font-bold text-matrix-cream mb-3">Ship faster, sell more, answer less</h3>
             <p class="text-sm text-matrix-soft leading-relaxed mb-5 flex-grow">
-              Rate-shop carriers, update customers before they ask “where’s my order?”, and optimize product copy — without adding warehouse staff.
+              Rate-shop carriers, update customers before they ask â€œwhereâ€™s my order?â€, and optimize product copy â€” without adding warehouse staff.
             </p>
             <ul class="space-y-2 text-sm text-matrix-soft mb-6">
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Shipping Assistant + Support</li>
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Shopify, ShipStation, Stripe, Klaviyo</li>
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: −60% “where’s my order?” tickets</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Shipping Assistant + Support</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Shopify, ShipStation, Stripe, Klaviyo</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Example: âˆ’60% â€œwhereâ€™s my order?â€ tickets</li>
             </ul>
-            <a href="/for/shopify" class="btn-primary text-center py-2.5 rounded-lg text-sm">Explore e-com stack →</a>
+            <a href="/for/shopify" class="btn-primary text-center py-2.5 rounded-lg text-sm">Explore e-com stack â†’</a>
           </article>
 
           <article class="card-matrix rounded-2xl p-6 sm:p-7 reveal flex flex-col">
@@ -1844,16 +1948,16 @@
               Legal, dental, consulting, and local agencies use agents to triage email, prep meetings, keep CRM clean, and follow up leads before they go cold.
             </p>
             <ul class="space-y-2 text-sm text-matrix-soft mb-6">
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Email + CRM + Meeting agents</li>
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> HubSpot, Gmail, Slack, calendar</li>
-              <li class="flex gap-2"><span class="text-matrix-green font-bold">✓</span> Example: reply time from hours → minutes</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Email + CRM + Meeting agents</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> HubSpot, Gmail, Slack, calendar</li>
+              <li class="flex gap-2"><span class="text-matrix-green font-bold">âœ“</span> Example: reply time from hours â†’ minutes</li>
             </ul>
-            <a href="/for/professional-services" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore services stack →</a>
+            <a href="/for/professional-services" class="btn-secondary text-center py-2.5 rounded-lg text-sm">Explore services stack â†’</a>
           </article>
         </div>
         <div class="mt-8 flex flex-wrap justify-center gap-3 reveal">
-          <a href="/for/contractors" class="btn-secondary px-4 py-2 rounded-lg text-sm">Contractors →</a>
-          <a href="/for/local-retail" class="btn-secondary px-4 py-2 rounded-lg text-sm">Local retail →</a>
+          <a href="/for/contractors" class="btn-secondary px-4 py-2 rounded-lg text-sm">Contractors â†’</a>
+          <a href="/for/local-retail" class="btn-secondary px-4 py-2 rounded-lg text-sm">Local retail â†’</a>
           <a href="#agent-quiz" class="btn-primary px-4 py-2 rounded-lg text-sm">Not sure? Take the 60-second quiz</a>
         </div>
       </div>
@@ -1867,7 +1971,7 @@
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
             Which agents for <span class="text-matrix-green">my business?</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Four quick questions. Get a starter stack of 2–3 agents — no catalog browsing required.</p>
+          <p class="text-matrix-soft text-lg">Four quick questions. Get a starter stack of 2â€“3 agents â€” no catalog browsing required.</p>
         </div>
         <div class="card-matrix rounded-2xl p-6 sm:p-8 reveal">
           <div class="quiz-progress-track mb-6" aria-hidden="true">
@@ -1876,7 +1980,7 @@
 
           <div data-quiz-step="1">
             <h3 class="text-lg font-bold text-matrix-cream mb-1">What kind of business do you run?</h3>
-            <p class="text-sm text-matrix-soft mb-5">We’ll match agents to your industry.</p>
+            <p class="text-sm text-matrix-soft mb-5">Weâ€™ll match agents to your industry.</p>
             <div class="grid sm:grid-cols-2 gap-3">
               <button type="button" class="quiz-choice" data-quiz-field="industry" data-quiz-choice="hvac">Home services / HVAC</button>
               <button type="button" class="quiz-choice" data-quiz-field="industry" data-quiz-choice="shopify">E-commerce / Shopify</button>
@@ -1887,7 +1991,7 @@
           </div>
 
           <div data-quiz-step="2" class="hidden">
-            <h3 class="text-lg font-bold text-matrix-cream mb-1">What’s your biggest time drain?</h3>
+            <h3 class="text-lg font-bold text-matrix-cream mb-1">Whatâ€™s your biggest time drain?</h3>
             <p class="text-sm text-matrix-soft mb-5">Pick the one that eats the most hours each week.</p>
             <div class="grid sm:grid-cols-2 gap-3">
               <button type="button" class="quiz-choice" data-quiz-field="drain" data-quiz-choice="email">Email overload</button>
@@ -1896,7 +2000,7 @@
               <button type="button" class="quiz-choice" data-quiz-field="drain" data-quiz-choice="support">Customer support</button>
               <button type="button" class="quiz-choice sm:col-span-2" data-quiz-field="drain" data-quiz-choice="content">Content &amp; marketing</button>
             </div>
-            <button type="button" class="text-sm font-semibold text-matrix-green mt-5" data-quiz-back="1">← Back</button>
+            <button type="button" class="text-sm font-semibold text-matrix-green mt-5" data-quiz-back="1">â† Back</button>
           </div>
 
           <div data-quiz-step="3" class="hidden">
@@ -1913,7 +2017,7 @@
               <button type="button" class="quiz-tool-chip" data-quiz-tool="Google Business">Google Business</button>
             </div>
             <div class="flex flex-wrap gap-3">
-              <button type="button" class="text-sm font-semibold text-matrix-green" data-quiz-back="2">← Back</button>
+              <button type="button" class="text-sm font-semibold text-matrix-green" data-quiz-back="2">â† Back</button>
               <button type="button" id="quiz-tools-next" class="btn-primary px-5 py-2.5 rounded-xl text-sm">Continue</button>
             </div>
           </div>
@@ -1923,11 +2027,11 @@
             <p class="text-sm text-matrix-soft mb-5">Helps us size the starter pack (you can change agents anytime).</p>
             <div class="grid sm:grid-cols-2 gap-3">
               <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="solo">Just me</button>
-              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="2-5">2–5 people</button>
-              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="6-20">6–20 people</button>
+              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="2-5">2â€“5 people</button>
+              <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="6-20">6â€“20 people</button>
               <button type="button" class="quiz-choice" data-quiz-field="team" data-quiz-choice="20+">20+ people</button>
             </div>
-            <button type="button" class="text-sm font-semibold text-matrix-green mt-5" data-quiz-back="3">← Back</button>
+            <button type="button" class="text-sm font-semibold text-matrix-green mt-5" data-quiz-back="3">â† Back</button>
           </div>
 
           <div data-quiz-step="5" id="quiz-result" class="hidden">
@@ -1951,7 +2055,7 @@
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
             Time &amp; money <span class="text-matrix-green">savings calculator</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Estimate hours reclaimed and dollar value using average US small-business labor rates. Adjust anything — results update live.</p>
+          <p class="text-matrix-soft text-lg">Estimate hours reclaimed and dollar value using average US small-business labor rates. Adjust anything â€” results update live.</p>
         </div>
         <div class="grid lg:grid-cols-2 gap-8 reveal">
           <div class="card-matrix rounded-2xl p-6 sm:p-8 space-y-6">
@@ -2014,7 +2118,7 @@
             </div>
             <div id="roi-breakdown" class="border-t border-matrix-border/50 pt-4 mb-6 flex-grow"></div>
             <button type="button" id="roi-cta" class="btn-primary w-full py-3 rounded-xl text-sm" data-open-auth="signup">See my projected ROI in 30 days</button>
-            <p class="text-xs text-matrix-soft mt-3 text-center">Illustrative model · results vary by niche and execution</p>
+            <p class="text-xs text-matrix-soft mt-3 text-center">Illustrative model Â· results vary by niche and execution</p>
           </div>
         </div>
       </div>
@@ -2028,7 +2132,7 @@
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
             Real <span class="text-matrix-green">ROI &amp; time back</span> for small teams
           </h2>
-          <p class="text-matrix-soft text-lg">Illustrative trends from Matrixly workspaces — marketing, sales, support, and shipping over six months. Results vary by niche and execution.</p>
+          <p class="text-matrix-soft text-lg">Illustrative trends from Matrixly workspaces â€” marketing, sales, support, and shipping over six months. Results vary by niche and execution.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6 mb-6">
@@ -2083,7 +2187,7 @@
                 </defs>
               </svg>
             </div>
-            <p class="text-xs text-matrix-soft mt-2">Illustrative composite · payback typically &lt; 30 days</p>
+            <p class="text-xs text-matrix-soft mt-2">Illustrative composite Â· payback typically &lt; 30 days</p>
           </div>
 
           <!-- Productivity bar chart -->
@@ -2161,7 +2265,7 @@
                 <div class="h-2 bg-matrix-cream/5 rounded-full overflow-hidden"><div class="h-full rounded-full bg-matrix-green/70" style="width: 44%"></div></div>
               </div>
             </div>
-            <p class="text-xs text-matrix-soft mt-4">90-day window · mid-market SMB sample</p>
+            <p class="text-xs text-matrix-soft mt-4">90-day window Â· mid-market SMB sample</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-6 reveal flex flex-col">
@@ -2176,11 +2280,11 @@
                 <text x="60" y="72" text-anchor="middle" fill="#5C6670" font-size="9" font-family="Open Sans, sans-serif">automated</text>
               </svg>
             </div>
-            <p class="text-xs text-matrix-soft text-center">Routine tasks offloaded — humans keep judgment, deals, and exceptions.</p>
+            <p class="text-xs text-matrix-soft text-center">Routine tasks offloaded â€” humans keep judgment, deals, and exceptions.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-6 reveal">
-            <h3 class="text-sm font-semibold text-matrix-cream mb-4">Before → after snapshot</h3>
+            <h3 class="text-sm font-semibold text-matrix-cream mb-4">Before â†’ after snapshot</h3>
             <ul class="space-y-4 text-sm">
               <li class="flex justify-between items-center border-b border-matrix-border/40 pb-3">
                 <span class="text-matrix-soft">Content output / mo</span>
@@ -2204,7 +2308,7 @@
       </div>
     </section>
 
-    <!-- ========== 4. AGENTS TEASER → full catalog on agents.html ========== -->
+    <!-- ========== 4. AGENTS TEASER â†’ full catalog on agents.html ========== -->
     <section id="agents-teaser" class="relative py-20 sm:py-28 grid-bg">
       <div class="shell">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
@@ -2213,9 +2317,9 @@
             <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
               Hire digital teammates in <span class="text-matrix-green">minutes</span>
             </h2>
-            <p class="text-matrix-soft text-lg">Proven agents for sales, ops, and logistics — start with one, stack more as you grow.</p>
+            <p class="text-matrix-soft text-lg">Proven agents for sales, ops, and logistics â€” start with one, stack more as you grow.</p>
           </div>
-          <a href="/agents" class="btn-primary px-6 py-3 rounded-lg text-sm self-start md:self-auto inline-flex items-center justify-center">Browse all agents →</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-lg text-sm self-start md:self-auto inline-flex items-center justify-center">Browse all agents â†’</a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10">
@@ -2225,7 +2329,7 @@
               <span class="text-xs font-semibold px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Lead Qualifier</h3>
-            <p class="text-sm text-matrix-soft mb-4 flex-grow">Scores every inbound lead, fills in missing contact details, and suggests the next best outreach — so you only talk to buyers ready to buy.</p>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Scores every inbound lead, fills in missing contact details, and suggests the next best outreach â€” so you only talk to buyers ready to buy.</p>
             <a href="/lead-qualifier" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Try Lead Qualifier</a>
           </article>
           <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
@@ -2234,7 +2338,7 @@
               <span class="text-xs font-semibold px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Email Assistant</h3>
-            <p class="text-sm text-matrix-soft mb-4 flex-grow">Sorts your inbox, drafts replies in your voice, and flags what actually needs you — so you stop living in email.</p>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Sorts your inbox, drafts replies in your voice, and flags what actually needs you â€” so you stop living in email.</p>
             <a href="/email-assistant" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Try Email Assistant</a>
           </article>
           <article class="card-matrix rounded-2xl p-5 sm:p-6 flex flex-col reveal">
@@ -2243,15 +2347,15 @@
               <span class="text-xs font-semibold px-2 py-1 rounded bg-matrix-green/10 text-matrix-green">Live</span>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Shipping Assistant</h3>
-            <p class="text-sm text-matrix-soft mb-4 flex-grow">Picks smarter rates, tracks packages, and messages customers before they open a “where’s my order?” ticket.</p>
+            <p class="text-sm text-matrix-soft mb-4 flex-grow">Picks smarter rates, tracks packages, and messages customers before they open a â€œwhereâ€™s my order?â€ ticket.</p>
             <a href="/shipping-assistant" class="btn-primary text-xs px-4 py-2.5 rounded-lg w-full inline-flex items-center justify-center">Try Shipping Assistant</a>
           </article>
         </div>
 
         <p class="text-center text-sm text-matrix-soft reveal">
           Also live: <a href="/crm-assistant" class="text-matrix-green font-semibold hover:underline">CRM Assistant</a>
-          · Support, content, meetings &amp; more
-          · <a href="/agents" class="text-matrix-green font-semibold hover:underline">See full catalog →</a>
+          Â· Support, content, meetings &amp; more
+          Â· <a href="/agents" class="text-matrix-green font-semibold hover:underline">See full catalog â†’</a>
         </p>
       </div>
     </section>
@@ -2275,7 +2379,7 @@
           <a href="/products#notion" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
             <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>KNOW</span></div>
             <h3 class="font-bold text-matrix-cream mb-1">Your playbooks &amp; SOPs</h3>
-            <p class="text-xs text-matrix-soft">Teach agents how your business works — pricing, policies, brand voice — once.</p>
+            <p class="text-xs text-matrix-soft">Teach agents how your business works â€” pricing, policies, brand voice â€” once.</p>
           </a>
           <a href="/products#grok" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
             <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>THINK</span></div>
@@ -2285,7 +2389,7 @@
           <a href="/products#mcp" class="card-matrix rounded-2xl p-5 block hover:border-matrix-green/50">
             <div class="neon-tile neon-tile--wide mb-4" aria-hidden="true"><span>LINK</span></div>
             <h3 class="font-bold text-matrix-cream mb-1">100+ app connections</h3>
-            <p class="text-xs text-matrix-soft">Gmail, Shopify, QuickBooks, carriers, CRM, Slack — agents take action, not just chat.</p>
+            <p class="text-xs text-matrix-soft">Gmail, Shopify, QuickBooks, carriers, CRM, Slack â€” agents take action, not just chat.</p>
           </a>
         </div>
         <div class="text-center mt-10 reveal">
@@ -2298,12 +2402,12 @@
     <section id="logistics" class="relative py-20 sm:py-28 bg-matrix-void" aria-label="Shipping logistics automation business flow">
       <div class="shell">
         <div class="text-center max-w-3xl mx-auto mb-14 reveal">
-          <p class="section-eyebrow">Example flow · shipping</p>
+          <p class="section-eyebrow">Example flow Â· shipping</p>
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
-            From order to doorstep — <span class="text-matrix-green">without the chaos</span>
+            From order to doorstep â€” <span class="text-matrix-green">without the chaos</span>
           </h2>
           <p class="text-matrix-soft text-lg">
-            Matrixly agents run fulfillment end to end so you ship faster, spend less on carriers, and answer fewer “where’s my order?” messages.
+            Matrixly agents run fulfillment end to end so you ship faster, spend less on carriers, and answer fewer â€œwhereâ€™s my order?â€ messages.
           </p>
         </div>
 
@@ -2333,7 +2437,7 @@
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
               <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">5</div>
               <h3 class="text-sm font-bold text-matrix-cream mb-1">Keep customers informed</h3>
-              <p class="text-xs text-matrix-soft leading-relaxed">SMS and email on ship, delay, and out-for-delivery — before they ask.</p>
+              <p class="text-xs text-matrix-soft leading-relaxed">SMS and email on ship, delay, and out-for-delivery â€” before they ask.</p>
             </li>
             <li class="card-matrix rounded-xl p-4 text-center relative z-10">
               <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-matrix-green/10 border border-matrix-green/40 flex items-center justify-center text-sm font-bold text-matrix-green">6</div>
@@ -2373,7 +2477,7 @@
                 <div class="text-tile" aria-hidden="true"><div class="text-tile-base"><span>FIX</span></div></div>
                 <div class="min-w-0">
                   <p class="text-sm font-semibold text-matrix-cream">Exception recovery</p>
-                  <p class="text-xs text-matrix-soft mt-1">Handles address fixes, re-ships, and claims — with a clean handoff when you need to step in.</p>
+                  <p class="text-xs text-matrix-soft mt-1">Handles address fixes, re-ships, and claims â€” with a clean handoff when you need to step in.</p>
                 </div>
               </div>
             </div>
@@ -2386,34 +2490,34 @@
               <div class="demo-panel-header">
                 <div>
                   <p class="text-sm font-bold text-matrix-cream">Order #48291</p>
-                  <p class="text-xs text-matrix-soft">Shopify · UrbanThread Co.</p>
+                  <p class="text-xs text-matrix-soft">Shopify Â· UrbanThread Co.</p>
                 </div>
                 <span class="text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full">Delivered</span>
               </div>
               <div class="p-4 sm:p-5 space-y-3 text-sm">
                 <div class="flex gap-3 items-start">
-                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
-                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Stock confirmed</span> — East warehouse, 2 units ready</p>
+                  <span class="text-matrix-green font-bold mt-0.5">âœ“</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Stock confirmed</span> â€” East warehouse, 2 units ready</p>
                 </div>
                 <div class="flex gap-3 items-start">
-                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
-                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Best rate chosen</span> — USPS Priority, saved $1.15 vs. next option</p>
+                  <span class="text-matrix-green font-bold mt-0.5">âœ“</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Best rate chosen</span> â€” USPS Priority, saved $1.15 vs. next option</p>
                 </div>
                 <div class="flex gap-3 items-start">
-                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
-                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Label printed</span> — pack slip sent to pick wave</p>
+                  <span class="text-matrix-green font-bold mt-0.5">âœ“</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Label printed</span> â€” pack slip sent to pick wave</p>
                 </div>
                 <div class="flex gap-3 items-start">
-                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
-                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Customer texted</span> — “Your order is on its way”</p>
+                  <span class="text-matrix-green font-bold mt-0.5">âœ“</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Customer texted</span> â€” â€œYour order is on its wayâ€</p>
                 </div>
                 <div class="flex gap-3 items-start">
                   <span class="text-amber-500 font-bold mt-0.5">!</span>
-                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Hub delay spotted</span> — proactive delay email sent; no ticket opened</p>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Hub delay spotted</span> â€” proactive delay email sent; no ticket opened</p>
                 </div>
                 <div class="flex gap-3 items-start">
-                  <span class="text-matrix-green font-bold mt-0.5">✓</span>
-                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Delivered on time</span> — loop closed automatically</p>
+                  <span class="text-matrix-green font-bold mt-0.5">âœ“</span>
+                  <p class="text-matrix-soft"><span class="text-matrix-cream font-medium">Delivered on time</span> â€” loop closed automatically</p>
                 </div>
               </div>
             </div>
@@ -2422,13 +2526,13 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
           <div class="card-matrix rounded-xl p-5 text-center">
-            <p class="text-2xl font-bold text-matrix-green mb-1">−35%</p>
+            <p class="text-2xl font-bold text-matrix-green mb-1">âˆ’35%</p>
             <p class="text-sm text-matrix-cream font-medium">Shipping cost per order</p>
             <p class="text-xs text-matrix-soft mt-1">Smarter rate shopping</p>
           </div>
           <div class="card-matrix rounded-xl p-5 text-center">
-            <p class="text-2xl font-bold text-matrix-green mb-1">−60%</p>
-            <p class="text-sm text-matrix-cream font-medium">“Where’s my order?” tickets</p>
+            <p class="text-2xl font-bold text-matrix-green mb-1">âˆ’60%</p>
+            <p class="text-sm text-matrix-cream font-medium">â€œWhereâ€™s my order?â€ tickets</p>
             <p class="text-xs text-matrix-soft mt-1">Proactive tracking updates</p>
           </div>
           <div class="card-matrix rounded-xl p-5 text-center">
@@ -2469,7 +2573,7 @@
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Local SEO that drives jobs</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Agents understand search intent and “near me” demand — so content and pages attract real customers, not empty traffic.</p>
+            <p class="text-sm text-matrix-soft leading-relaxed">Agents understand search intent and â€œnear meâ€ demand â€” so content and pages attract real customers, not empty traffic.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
@@ -2485,7 +2589,7 @@
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Works with your stack</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Square, Slack, Meta ads — connect once; agents do the rest.</p>
+            <p class="text-sm text-matrix-soft leading-relaxed">Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Square, Slack, Meta ads â€” connect once; agents do the rest.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
@@ -2493,7 +2597,7 @@
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">Security you can explain</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">SOC 2–ready controls, encrypted credentials, role-based access, audit trails. Your data is never used to train models.</p>
+            <p class="text-sm text-matrix-soft leading-relaxed">SOC 2â€“ready controls, encrypted credentials, role-based access, audit trails. Your data is never used to train models.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
@@ -2501,7 +2605,7 @@
               <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
             </div>
             <h3 class="text-lg font-bold text-matrix-cream mb-2">No developers required</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">Launch proven agents from the marketplace or customize with a simple builder — set up in minutes, not months.</p>
+            <p class="text-sm text-matrix-soft leading-relaxed">Launch proven agents from the marketplace or customize with a simple builder â€” set up in minutes, not months.</p>
           </div>
 
           <div class="card-matrix rounded-2xl p-7 reveal">
@@ -2518,7 +2622,7 @@
             <div class="md:col-span-2">
               <h3 class="text-2xl font-bold text-matrix-cream mb-3">What owners actually unlock</h3>
               <p class="text-matrix-soft mb-4">A Texas HVAC company deployed SEO + Lead Qualifier agents and reclaimed 25 hours/week while booking 40% more jobs from organic search in 90 days.</p>
-              <p class="text-sm text-matrix-green font-semibold">Example outcome · results vary by niche &amp; execution</p>
+              <p class="text-sm text-matrix-green font-semibold">Example outcome Â· results vary by niche &amp; execution</p>
             </div>
             <div class="flex flex-col gap-3">
               <div class="flex justify-between text-sm"><span class="text-matrix-soft">Time saved</span><span class="text-matrix-green font-semibold">25 hrs/wk</span></div>
@@ -2557,28 +2661,28 @@
             <tbody>
               <tr>
                 <th scope="row">Monthly cost</th>
-                <td class="hl"><strong>$0–$149+</strong><br /><span class="text-matrix-soft text-xs">Plans that scale with you</span></td>
-                <td>$800–$2,000+</td>
-                <td>$50–$200 + your time</td>
-                <td>$2,000–$10,000+</td>
+                <td class="hl"><strong>$0â€“$149+</strong><br /><span class="text-matrix-soft text-xs">Plans that scale with you</span></td>
+                <td>$800â€“$2,000+</td>
+                <td>$50â€“$200 + your time</td>
+                <td>$2,000â€“$10,000+</td>
               </tr>
               <tr>
                 <th scope="row">Setup time</th>
                 <td class="hl"><strong>Minutes</strong></td>
                 <td>Days to weeks (hire + train)</td>
-                <td>Hours–days of DIY wiring</td>
+                <td>Hoursâ€“days of DIY wiring</td>
                 <td>Weeks of onboarding</td>
               </tr>
               <tr>
                 <th scope="row">Ongoing maintenance</th>
-                <td class="hl">Low — managed agents + HITL</td>
+                <td class="hl">Low â€” managed agents + HITL</td>
                 <td>You manage the person</td>
                 <td>You fix broken zaps &amp; prompts</td>
                 <td>Included (expensive)</td>
               </tr>
               <tr>
                 <th scope="row">What gets done</th>
-                <td class="hl">Leads, email, shipping, support, SEO — done work with review gates</td>
+                <td class="hl">Leads, email, shipping, support, SEO â€” done work with review gates</td>
                 <td>Variable quality &amp; coverage</td>
                 <td>Drafts + glue scripts</td>
                 <td>Campaigns &amp; retainers</td>
@@ -2594,7 +2698,7 @@
           </table>
         </div>
         <p class="text-center mt-8 reveal">
-          <button type="button" class="btn-primary px-6 py-3 rounded-xl text-sm" data-open-auth="signup">Start free — compare for yourself</button>
+          <button type="button" class="btn-primary px-6 py-3 rounded-xl text-sm" data-open-auth="signup">Start free â€” compare for yourself</button>
         </p>
       </div>
     </section>
@@ -2607,7 +2711,7 @@
           <h2 class="h2-fluid font-bold text-matrix-cream mb-4">
             Named operators. <span class="text-matrix-green">Clear before / after.</span>
           </h2>
-          <p class="text-matrix-soft text-lg">Illustrative composite profiles based on early operator feedback — structured for real customer swap-in with permissioned photos and clips.</p>
+          <p class="text-matrix-soft text-lg">Illustrative composite profiles based on early operator feedback â€” structured for real customer swap-in with permissioned photos and clips.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -2627,7 +2731,7 @@
               <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">MR</div>
               <div>
                 <p class="text-sm font-semibold text-matrix-cream">Marcus Rivera</p>
-                <p class="text-xs text-matrix-soft">HVAC owner · Austin, TX · CoolAir HVAC</p>
+                <p class="text-xs text-matrix-soft">HVAC owner Â· Austin, TX Â· CoolAir HVAC</p>
               </div>
             </footer>
           </article>
@@ -2640,15 +2744,15 @@
               </div>
             </div>
             <div class="flex flex-wrap gap-2 mb-3">
-              <span class="owner-metric">−60% WISMO</span>
+              <span class="owner-metric">âˆ’60% WISMO</span>
               <span class="owner-metric">Paid back &lt;30d</span>
             </div>
-            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Shipping Assistant + SupportForge cut ‘where’s my order?’ tickets dramatically. Conversion and recovery emails improved overnight. Matrixly paid for itself in the first invoice cycle."</p>
+            <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Shipping Assistant + SupportForge cut â€˜whereâ€™s my order?â€™ tickets dramatically. Conversion and recovery emails improved overnight. Matrixly paid for itself in the first invoice cycle."</p>
             <footer class="flex items-center gap-3 mt-auto">
               <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">JL</div>
               <div>
                 <p class="text-sm font-semibold text-matrix-cream">Jordan Lee</p>
-                <p class="text-xs text-matrix-soft">Shopify CEO · Portland, OR · UrbanThread</p>
+                <p class="text-xs text-matrix-soft">Shopify CEO Â· Portland, OR Â· UrbanThread</p>
               </div>
             </footer>
           </article>
@@ -2661,15 +2765,15 @@
               </div>
             </div>
             <div class="flex flex-wrap gap-2 mb-3">
-              <span class="owner-metric">Reply: hours → minutes</span>
-              <span class="owner-metric">2× consults</span>
+              <span class="owner-metric">Reply: hours â†’ minutes</span>
+              <span class="owner-metric">2Ã— consults</span>
             </div>
             <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Lead Qualifier booked more qualified consults in two weeks than our part-time SDR did in two months. Email Assistant keeps the inbox calm so we focus on clients."</p>
             <footer class="flex items-center gap-3 mt-auto">
               <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">AK</div>
               <div>
                 <p class="text-sm font-semibold text-matrix-cream">Aisha Khan</p>
-                <p class="text-xs text-matrix-soft">Founder · Chicago, IL · Peak Legal</p>
+                <p class="text-xs text-matrix-soft">Founder Â· Chicago, IL Â· Peak Legal</p>
               </div>
             </footer>
           </article>
@@ -2677,14 +2781,14 @@
           <article class="card-matrix rounded-2xl p-6 reveal flex flex-col sm:col-span-2 lg:col-span-1">
             <div class="flex flex-wrap gap-2 mb-3">
               <span class="owner-metric">Overnight coverage</span>
-              <span class="owner-metric">Team focus↑</span>
+              <span class="owner-metric">Team focusâ†‘</span>
             </div>
             <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5 flex-grow">"Support handles most overnight tickets. Patients get answers at 2am; my team focuses on complex work. Game changer for a small practice."</p>
             <footer class="flex items-center gap-3 mt-auto">
               <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">SP</div>
               <div>
                 <p class="text-sm font-semibold text-matrix-cream">Sofia Patel</p>
-                <p class="text-xs text-matrix-soft">Ops Lead · Denver, CO · BrightPath Dental</p>
+                <p class="text-xs text-matrix-soft">Ops Lead Â· Denver, CO Â· BrightPath Dental</p>
               </div>
             </footer>
           </article>
@@ -2696,12 +2800,12 @@
                   <span class="owner-metric">18 hrs/wk saved</span>
                   <span class="owner-metric">Local SEO lift</span>
                 </div>
-                <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5">"Finally an AI product that gets small businesses. Practical agents, clear ROI. Our local search visibility is a different game now — and I didn’t need an engineer."</p>
+                <p class="text-sm text-matrix-cream/90 leading-relaxed mb-5">"Finally an AI product that gets small businesses. Practical agents, clear ROI. Our local search visibility is a different game now â€” and I didnâ€™t need an engineer."</p>
                 <footer class="flex items-center gap-3">
                   <div class="w-12 h-12 rounded-full bg-matrix-green/20 border border-matrix-green/40 flex items-center justify-center text-matrix-green text-sm font-bold" aria-hidden="true">NW</div>
                   <div>
                     <p class="text-sm font-semibold text-matrix-cream">Nina Walsh</p>
-                    <p class="text-xs text-matrix-soft">Marketing · Phoenix, AZ · Metro Home Pros</p>
+                    <p class="text-xs text-matrix-soft">Marketing Â· Phoenix, AZ Â· Metro Home Pros</p>
                   </div>
                 </footer>
               </div>
@@ -2729,15 +2833,15 @@
           </div>
           <p class="section-eyebrow justify-center">Risk reversal</p>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-matrix-cream mb-4">
-            Try free for 14 days. Save 10 hours — or get a refund.
+            Try free for 14 days. Save 10 hours â€” or get a refund.
           </h2>
           <p class="text-matrix-soft text-base sm:text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-            If you don’t save at least <strong class="text-matrix-cream">10 hours in the first month</strong> on a paid plan, we’ll refund that plan — <strong class="text-matrix-cream">no questions asked</strong>.
+            If you donâ€™t save at least <strong class="text-matrix-cream">10 hours in the first month</strong> on a paid plan, weâ€™ll refund that plan â€” <strong class="text-matrix-cream">no questions asked</strong>.
           </p>
-          <p class="text-sm font-semibold text-matrix-green mb-2">Cancel anytime · No long-term contract · No card to explore free</p>
-          <p class="text-xs text-matrix-soft">Terms apply · US paid plans</p>
+          <p class="text-sm font-semibold text-matrix-green mb-2">Cancel anytime Â· No long-term contract Â· No card to explore free</p>
+          <p class="text-xs text-matrix-soft">Terms apply Â· US paid plans</p>
           <div class="mt-6">
-            <button type="button" class="btn-primary px-8 py-3 rounded-xl text-sm" data-open-auth="signup">Start free — zero risk</button>
+            <button type="button" class="btn-primary px-8 py-3 rounded-xl text-sm" data-open-auth="signup">Start free â€” zero risk</button>
           </div>
         </div>
       </div>
@@ -2765,12 +2869,12 @@
             <p class="text-sm text-matrix-soft mb-6">Browse agents and try the workflow risk-free.</p>
             <p class="text-xs font-semibold text-matrix-cream mb-3">What you get</p>
             <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Full marketplace access</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 1 agent sandbox</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Community support</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Basic activity view</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Full marketplace access</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> 1 agent sandbox</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Community support</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Basic activity view</li>
             </ul>
-            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start free — no card</button>
+            <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start free â€” no card</button>
           </div>
 
           <div class="card-matrix rounded-2xl p-6 flex flex-col reveal">
@@ -2780,14 +2884,14 @@
               <span class="text-4xl font-extrabold text-matrix-cream">$49</span>
               <span class="text-matrix-soft text-sm">/mo</span>
             </div>
-            <p class="text-xs text-matrix-soft mb-4">About $1.60/day · less than a coffee</p>
+            <p class="text-xs text-matrix-soft mb-4">About $1.60/day Â· less than a coffee</p>
             <p class="text-sm text-matrix-soft mb-6">Ideal for solo operators and small teams ready to automate core work.</p>
             <p class="text-xs font-semibold text-matrix-cream mb-3">What you can achieve</p>
             <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 3 active agents (e.g. email + leads + SEO)</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Core tools: Gmail, Shopify, CRM basics</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Local SEO intelligence</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Email support</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> 3 active agents (e.g. email + leads + SEO)</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Core tools: Gmail, Shopify, CRM basics</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Local SEO intelligence</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Email support</li>
             </ul>
             <button type="button" class="btn-secondary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start Grow</button>
           </div>
@@ -2800,26 +2904,26 @@
               <span class="text-4xl font-extrabold text-matrix-green">$149</span>
               <span class="text-matrix-soft text-sm">/mo</span>
             </div>
-            <p class="text-xs text-matrix-soft mb-4">A fraction of one VA · multi-agent coverage</p>
+            <p class="text-xs text-matrix-soft mb-4">A fraction of one VA Â· multi-agent coverage</p>
             <p class="text-sm text-matrix-soft mb-6">Full agent stacks for growing shops and multi-step workflows.</p>
             <p class="text-xs font-semibold text-matrix-cream mb-3">What you can achieve</p>
             <ul class="space-y-2.5 text-sm text-matrix-soft mb-8 flex-grow">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 15 active agents across sales &amp; ops</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> All integrations (carriers, ads, finance)</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Simple agent builder</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Priority support</li>
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Full ROI dashboard</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> 15 active agents across sales &amp; ops</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> All integrations (carriers, ads, finance)</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Simple agent builder</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Priority support</li>
+              <li class="flex gap-2"><span class="text-matrix-green">âœ“</span> Full ROI dashboard</li>
             </ul>
             <button type="button" class="btn-primary w-full text-center py-3 rounded-lg text-sm" data-open-auth="signup">Start Scale</button>
           </div>
         </div>
         <p class="text-center text-sm text-matrix-soft mt-8 reveal">
           Need a walkthrough? <a href="#final-cta" class="text-matrix-green font-semibold hover:underline">Start free</a> or <a href="/agents" class="text-matrix-green font-semibold hover:underline">browse agents first</a>.
-          Cancel anytime · No long-term contract.
+          Cancel anytime Â· No long-term contract.
         </p>
         <p class="text-center text-sm text-matrix-soft mt-3 reveal">
           <a href="#guarantee" class="text-matrix-green font-semibold hover:underline">10-hour month guarantee</a>
-          · <a href="#compare" class="text-matrix-green font-semibold hover:underline">Compare vs VA / Zapier / agencies</a>
+          Â· <a href="#compare" class="text-matrix-green font-semibold hover:underline">Compare vs VA / Zapier / agencies</a>
         </p>
       </div>
     </section>
@@ -2831,20 +2935,20 @@
           <div class="max-w-2xl">
             <p class="section-eyebrow">Owner resources</p>
             <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Playbooks for busy owners</h2>
-            <p class="text-matrix-soft text-lg">Short guides and checklists — setup your first agent, teach your voice, run local SEO, and more.</p>
+            <p class="text-matrix-soft text-lg">Short guides and checklists â€” setup your first agent, teach your voice, run local SEO, and more.</p>
           </div>
-          <a href="/resources" class="btn-secondary inline-flex self-start px-5 py-3 rounded-xl text-sm">Browse all resources →</a>
+          <a href="/resources" class="btn-secondary inline-flex self-start px-5 py-3 rounded-xl text-sm">Browse all resources â†’</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <a href="/resources/7-day-setup" class="card-matrix rounded-2xl p-6 reveal hover:border-matrix-green/40 transition-colors block">
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-2">Checklist</p>
             <h3 class="font-bold text-matrix-cream mb-2">7-day setup for your first agent</h3>
-            <p class="text-sm text-matrix-soft">Day-by-day plan from account → first live workflow.</p>
+            <p class="text-sm text-matrix-soft">Day-by-day plan from account â†’ first live workflow.</p>
           </a>
           <a href="/resources/email-voice" class="card-matrix rounded-2xl p-6 reveal hover:border-matrix-green/40 transition-colors block">
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-2">Email</p>
             <h3 class="font-bold text-matrix-cream mb-2">Teach Email Assistant your voice</h3>
-            <p class="text-sm text-matrix-soft">Tone samples, do/don’t rules, and review habits.</p>
+            <p class="text-sm text-matrix-soft">Tone samples, do/donâ€™t rules, and review habits.</p>
           </a>
           <a href="/resources/local-seo-playbook" class="card-matrix rounded-2xl p-6 reveal hover:border-matrix-green/40 transition-colors block">
             <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-2">Local SEO</p>
@@ -2899,7 +3003,7 @@
                 </span>
                 <div>
                   <p class="text-matrix-cream font-semibold text-sm">Your data stays yours</p>
-                  <p class="text-xs text-matrix-soft">US privacy–friendly controls · optional data residency</p>
+                  <p class="text-xs text-matrix-soft">US privacyâ€“friendly controls Â· optional data residency</p>
                 </div>
               </li>
             </ul>
@@ -2940,7 +3044,7 @@
               <p class="text-xs sm:text-sm font-semibold text-matrix-cream">Google Biz</p>
             </div>
             <a href="/integrations" class="card-matrix rounded-xl p-4 text-center flex items-center justify-center border-matrix-green/30 hover:border-matrix-green/50 transition-colors">
-              <p class="text-xs font-semibold text-matrix-green">Browse all →</p>
+              <p class="text-xs font-semibold text-matrix-green">Browse all â†’</p>
             </a>
           </div>
           <div class="mt-8 text-center lg:text-left reveal lg:col-span-2">
@@ -2959,7 +3063,7 @@
       <div class="shell-sm text-center relative reveal">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-matrix-border bg-matrix-green/5 mb-6">
           <span class="w-2 h-2 rounded-full bg-matrix-green animate-pulse"></span>
-          <span class="text-xs font-semibold text-matrix-green">Free to explore · No credit card</span>
+          <span class="text-xs font-semibold text-matrix-green">Free to explore Â· No credit card</span>
         </div>
         <h2 class="h2-fluid font-extrabold text-matrix-cream mb-5 leading-tight">
           Wake up tomorrow<br />
@@ -2968,18 +3072,18 @@
         <p class="text-lg text-matrix-soft mb-6 max-w-xl mx-auto">
           Join US small businesses reclaiming 20+ hours a week with ready AI agents for marketing, sales, and ops. Set up in minutes. Cancel anytime.
         </p>
-        <p class="text-sm text-matrix-green font-semibold mb-10">14-day free trial · 10-hour month guarantee on paid plans · No long-term contract</p>
+        <p class="text-sm text-matrix-green font-semibold mb-10">14-day free trial Â· 10-hour month guarantee on paid plans Â· No long-term contract</p>
 
         <div class="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center mb-6 w-full max-w-lg mx-auto">
           <button type="button" class="btn-primary px-6 sm:px-10 py-3.5 rounded-xl text-sm w-full sm:w-auto" data-open-auth="signup">
-            Start free — no card needed
+            Start free â€” no card needed
           </button>
           <a href="#agent-quiz" class="btn-secondary px-6 sm:px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto">
             Get my agent pack
           </a>
         </div>
         <p class="text-xs text-matrix-soft">
-          Or <a href="/agents" class="text-matrix-green hover:underline font-semibold">browse agents</a> · <a href="#roi-calculator" class="text-matrix-green hover:underline font-semibold">calculate your ROI</a>
+          Or <a href="/agents" class="text-matrix-green hover:underline font-semibold">browse agents</a> Â· <a href="#roi-calculator" class="text-matrix-green hover:underline font-semibold">calculate your ROI</a>
         </p>
       </div>
     </section>
@@ -3012,11 +3116,11 @@
             Continue with Microsoft
           </button>
           <button type="button" class="auth-provider" data-auth-provider="sso">
-            <span class="auth-provider-icon" aria-hidden="true">🔗</span>
+            <span class="auth-provider-icon" aria-hidden="true">ðŸ”—</span>
             Continue with SSO
           </button>
           <button type="button" class="auth-provider" data-auth-provider="email">
-            <span class="auth-provider-icon" aria-hidden="true">✉</span>
+            <span class="auth-provider-icon" aria-hidden="true">âœ‰</span>
             Continue with email
           </button>
         </div>
@@ -3030,7 +3134,7 @@
       <div class="auth-view hidden" data-auth-view="email" id="auth-view-email">
         <button type="button" class="auth-back" data-auth-back>&larr; Back</button>
         <h2 class="auth-title">Continue with email</h2>
-        <p class="auth-sub">We’ll create your free Matrixly workspace.</p>
+        <p class="auth-sub">Weâ€™ll create your free Matrixly workspace.</p>
         <form id="auth-email-form" class="auth-form">
           <label class="auth-label" for="auth-email">Work email</label>
           <input class="auth-input" type="email" id="auth-email" name="email" required placeholder="you@company.com" autocomplete="email" />
@@ -3062,7 +3166,7 @@
       <div class="auth-view hidden" data-auth-view="sso" id="auth-view-sso">
         <button type="button" class="auth-back" data-auth-back>&larr; Back</button>
         <h2 class="auth-title">Continue with SSO</h2>
-        <p class="auth-sub">Enter your work email to use your company’s single sign-on.</p>
+        <p class="auth-sub">Enter your work email to use your companyâ€™s single sign-on.</p>
         <form id="auth-sso-form" class="auth-form">
           <label class="auth-label" for="sso-email">Work email</label>
           <input class="auth-input" type="email" id="sso-email" name="email" required placeholder="you@company.com" autocomplete="email" />
@@ -3077,15 +3181,15 @@
           <img src="/assets/matrixly-logo.png" alt="" width="48" height="48" />
         </div>
         <h2 class="auth-title" id="oauth-title">Continue with Google</h2>
-        <p class="auth-sub" id="oauth-sub">You’ll be redirected to complete secure sign-in, then return to your Matrixly workspace.</p>
+        <p class="auth-sub" id="oauth-sub">Youâ€™ll be redirected to complete secure sign-in, then return to your Matrixly workspace.</p>
         <button type="button" class="btn-primary w-full py-3 rounded-xl text-sm" id="oauth-continue">Continue</button>
         <p class="auth-tip" id="oauth-tip">Demo mode: OAuth providers will be connected on your Matrixly backend.</p>
       </div>
 
       <!-- Panel: success -->
       <div class="auth-view hidden" data-auth-view="success" id="auth-view-success">
-        <div class="auth-logo" aria-hidden="true">✓</div>
-        <h2 class="auth-title">You’re in</h2>
+        <div class="auth-logo" aria-hidden="true">âœ“</div>
+        <h2 class="auth-title">Youâ€™re in</h2>
         <p class="auth-sub" id="auth-success-msg">Welcome to Matrixly. Explore agents and deploy your first workflow.</p>
         <a href="/agents" class="btn-primary w-full py-3 rounded-xl text-sm inline-flex items-center justify-center">Browse agents</a>
         <button type="button" class="auth-link mt-4" data-auth-close>Close</button>
@@ -3106,7 +3210,7 @@
             </span>
           </a>
           <p class="text-sm text-matrix-soft leading-relaxed max-w-xs">
-            AI agents that reclaim time for US small businesses — leads, email, shipping, support, and local SEO.
+            AI agents that reclaim time for US small businesses â€” leads, email, shipping, support, and local SEO.
           </p>
         </div>
 
@@ -3153,10 +3257,10 @@
 
       <div class="pt-8 border-t border-matrix-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-xs text-matrix-soft">
-          © <span id="year"></span> Matrixly · All rights reserved
+          Â© <span id="year"></span> Matrixly Â· All rights reserved
         </p>
         <p class="text-xs text-matrix-soft">
-          AI agents for US small businesses · Built for owners, not engineers
+          AI agents for US small businesses Â· Built for owners, not engineers
         </p>
       </div>
     </div>
@@ -3371,7 +3475,7 @@
       els.forEach(el => io.observe(el));
     })();
 
-    // ---- Auth modal (Get Started Free — Matrixly chooser) ----
+    // ---- Auth modal (Get Started Free â€” Matrixly chooser) ----
     (function initAuthModal() {
       var modal = document.getElementById('auth-modal');
       if (!modal) return;
@@ -3454,7 +3558,7 @@
       var oauthBtn = document.getElementById('oauth-continue');
       if (oauthBtn) {
         oauthBtn.addEventListener('click', function () {
-          // Demo: no live OAuth yet — show success and store intent
+          // Demo: no live OAuth yet â€” show success and store intent
           try {
             localStorage.setItem('matrixly-auth-intent', JSON.stringify({
               provider: oauthProvider,
@@ -3530,7 +3634,7 @@
         if (h === '#login') openModal('login');
       }
       window.addEventListener('hashchange', maybeOpenFromHash);
-      // If user lands on final-cta, don't auto-open — only explicit auth buttons.
+      // If user lands on final-cta, don't auto-open â€” only explicit auth buttons.
     })();
 
     // ---- Theme toggle (light / dark) ----
