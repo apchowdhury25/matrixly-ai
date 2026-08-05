@@ -1,0 +1,160 @@
+# =============================================================================
+# Matrixly — Self-Hosted Observability & Crawl Stack (production-oriented)
+# =============================================================================
+# Services: Crawl4AI · Playwright (via Crawl4AI) · Prometheus · Grafana · Loki · Promtail
+#
+# From repo root (or this directory):
+#   cd infra/observability
+#   docker compose up -d
+#
+# Default ports (bind to localhost for privacy; reverse-proxy in front for prod):
+#   Crawl4AI:    http://127.0.0.1:11235
+#   Prometheus:  http://127.0.0.1:9090
+#   Grafana:     http://127.0.0.1:3000
+#   Loki:        http://127.0.0.1:3100
+#
+# Used by Matrixly agentic platform agents that crawl/scrape:
+#   SEOForge · ContentForge · Lead Qualifier · SEO-Bespoke · PipelineForge
+#
+# Philosophy: "own it" — cost control, data privacy, reliability over SaaS lock-in.
+# =============================================================================
+
+name: matrixly-observability
+
+services:
+  # ---------------------------------------------------------------------------
+  # Crawl4AI — self-hosted LLM-friendly web crawler (Playwright browsers inside)
+  # Docs: https://docs.crawl4ai.com/
+  # ---------------------------------------------------------------------------
+  crawl4ai:
+    image: unclecode/crawl4ai:latest
+    container_name: matrixly-crawl4ai
+    ports:
+      - "11235:11235"
+    environment:
+      - CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN:-}
+      # Limit concurrent browsers for resource control on agent hosts
+      - MAX_CONCURRENT_BROWSERS=${MAX_CONCURRENT_BROWSERS:-4}
+    volumes:
+      - crawl4ai_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11235/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - matrixly-obs
+    # Optional: resource caps for multi-tenant agent hosts
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 1G
+
+  # ---------------------------------------------------------------------------
+  # Prometheus — metrics scrape & store
+  # ---------------------------------------------------------------------------
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: matrixly-prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=15d
+      - --web.enable-lifecycle
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - matrixly-obs
+
+  # ---------------------------------------------------------------------------
+  # Grafana — dashboards (Matrixly Crawl4AI Monitoring)
+  # ---------------------------------------------------------------------------
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: matrixly-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-matrixly-change-me}
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SERVER_ROOT_URL=${GRAFANA_ROOT_URL:-http://127.0.0.1:3000}
+      - GF_AUTH_ANONYMOUS_ENABLED=false
+      - GF_INSTALL_PLUGINS=
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus
+      - loki
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - matrixly-obs
+
+  # ---------------------------------------------------------------------------
+  # Loki — log aggregation
+  # ---------------------------------------------------------------------------
+  loki:
+    image: grafana/loki:3.1.1
+    container_name: matrixly-loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/loki-config.yml
+    volumes:
+      - ./loki-config.yml:/etc/loki/loki-config.yml:ro
+      - loki_data:/loki
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3100/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - matrixly-obs
+
+  # ---------------------------------------------------------------------------
+  # Promtail — ships container / host logs into Loki
+  # ---------------------------------------------------------------------------
+  promtail:
+    image: grafana/promtail:3.1.1
+    container_name: matrixly-promtail
+    volumes:
+      - ./promtail-config.yml:/etc/promtail/config.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+    restart: unless-stopped
+    networks:
+      - matrixly-obs
+
+networks:
+  matrixly-obs:
+    driver: bridge
+    name: matrixly-observability
+
+volumes:
+  crawl4ai_data:
+  prometheus_data:
+  grafana_data:
+  loki_data:

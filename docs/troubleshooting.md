@@ -345,8 +345,13 @@ Never put production passwords or API keys in HTML, commits, or public issues. U
 | Can’t unlock | Use the authorization passphrase (default for local: see `qa/README.md`); hash is in `admin/index.html` |
 | Tools empty after login | Sign-in only unlocks the console; run automated suites from your machine or CI |
 | Link probe fails cross-origin | Run against same-origin `dist/` via `npm start` |
+| Observability cards all red | Start stack: `cd infra/observability && docker compose up -d`; see full table in `qa/README.md` |
+| Grafana iframe blank | Expected when Grafana blocks framing; use **Open Dashboard** |
+| Need stack compose / LogQL | `infra/observability/` and **Observability Stack** section in `qa/README.md` |
 
 Rotate the production passphrase by replacing `PASS_HASH` (SHA-256 hex of the new phrase).
+
+**Observability & infrastructure (self-hosted):** Crawl4AI, Prometheus, Grafana, Loki — documented end-to-end under [qa/README.md — Observability Stack](../qa/README.md#observability-stack-self-hosted).
 
 ---
 

@@ -1,0 +1,40 @@
+# Matrixly Observability — Prometheus scrape config
+# Scrapes Crawl4AI (when metrics endpoint is exposed), Prometheus self, and
+# optional agent exporters. Adjust targets for your host / reverse-proxy layout.
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    platform: matrixly
+    stack: observability
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["prometheus:9090"]
+        labels:
+          service: prometheus
+
+  - job_name: crawl4ai
+    metrics_path: /metrics
+    scrape_interval: 30s
+    static_configs:
+      - targets: ["crawl4ai:11235"]
+        labels:
+          service: crawl4ai
+          component: crawler
+    # Crawl4AI images may not always expose /metrics; mark scrape failures as expected until enabled
+    honor_labels: true
+
+  - job_name: loki
+    static_configs:
+      - targets: ["loki:3100"]
+        labels:
+          service: loki
+
+  # Optional: blackbox-style HTTP probes against agent health endpoints
+  # - job_name: matrixly-agents
+  #   metrics_path: /health
+  #   static_configs:
+  #     - targets: ["host.docker.internal:8787"]  # SupportForge example
