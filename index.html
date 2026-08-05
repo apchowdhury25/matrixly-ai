@@ -212,17 +212,23 @@
      * with balanced side whitespace on desktop and comfortable padding on mobile.
      */
     :root {
-      --shell-max: 1200px;
-      --shell-pad-x: 1.25rem; /* 20px — mobile side gutter */
+      --shell-max: 1120px; /* slightly narrower column so side gutters feel larger */
+      --shell-pad-x: 1.5rem; /* 24px — mobile side gutter */
     }
     @media (min-width: 640px) {
-      :root { --shell-pad-x: 1.75rem; } /* 28px */
+      :root { --shell-pad-x: 2rem; } /* 32px */
+    }
+    @media (min-width: 768px) {
+      :root { --shell-pad-x: 2.5rem; } /* 40px */
     }
     @media (min-width: 1024px) {
-      :root { --shell-pad-x: 2.25rem; } /* 36px */
+      :root { --shell-pad-x: 3rem; } /* 48px */
     }
     @media (min-width: 1280px) {
-      :root { --shell-pad-x: 2.75rem; } /* 44px — balanced desktop whitespace */
+      :root { --shell-pad-x: 3.5rem; } /* 56px — roomy desktop whitespace */
+    }
+    @media (min-width: 1536px) {
+      :root { --shell-pad-x: 4rem; } /* 64px */
     }
 
     .shell {
@@ -671,7 +677,8 @@
       line-height: 1.5;
       color: #9aa4b2 !important;
     }
-    .agent-slide > .space-y-2 {
+    .agent-slide > .space-y-2,
+    .agent-slide > .agent-slide-features {
       padding: 0 1.15rem 0 1.1rem;
       margin: 0 0 0.85rem;
     }
@@ -699,6 +706,56 @@
     }
     .agent-slide .text-matrix-green {
       color: #3b9fe0 !important;
+    }
+
+    /*
+     * Dynamically synced feature cards (from agent product pages /agents catalog).
+     * Mirrors the red-boxed Article grids on e.g. BookWise & ConnectForge.
+     */
+    .agent-slide-features {
+      grid-column: 2;
+      min-width: 0;
+      padding: 0 1.15rem 0 1.1rem;
+      margin: 0 0 0.85rem;
+    }
+    .agent-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+    }
+    @media (min-width: 480px) {
+      .agent-feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    .agent-feature-card {
+      background: color-mix(in srgb, #111a28 88%, var(--brand-blue));
+      border: 1px solid color-mix(in srgb, var(--brand-blue) 18%, #1e2a3a);
+      border-radius: 12px;
+      padding: 0.55rem 0.65rem;
+      min-width: 0;
+    }
+    .agent-feature-title {
+      margin: 0 0 0.2rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #f0f4f8 !important;
+      line-height: 1.3;
+    }
+    .agent-feature-body {
+      margin: 0;
+      font-size: 0.68rem;
+      line-height: 1.4;
+      color: #9aa4b2 !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    @media (max-width: 639px) {
+      .agent-slide-features {
+        grid-column: 1;
+      }
     }
 
     .agent-carousel-nav {
@@ -1495,9 +1552,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Lead Qualifier</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Scores inbound leads, fills missing contact details, and suggests the next best outreach so you only talk to buyers ready to buy.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Works with Salesforce &amp; Gmail</p>
                       <p class="agent-slide-benefit">Hot / Warm / Cold scoring</p>
+                    </div>
                     </div>
                     <a href="/lead-qualifier" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Lead Qualifier</a>
                   </article>
@@ -1507,9 +1566,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Email</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Email Assistant</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Sorts your inbox, drafts replies in your voice, and flags what actually needs you — so you stop living in email.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Gmail &amp; Outlook workflows</p>
                       <p class="agent-slide-benefit">Learns your voice &amp; priorities</p>
+                    </div>
                     </div>
                     <a href="/email-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Email Assistant</a>
                   </article>
@@ -1519,9 +1580,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">CRM Assistant</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Updates contacts, logs activities, and keeps pipeline hygiene automated across your sales stack — with approval when it matters.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Contact &amp; activity sync</p>
                       <p class="agent-slide-benefit">Approve before CRM writes</p>
+                    </div>
                     </div>
                     <a href="/crm-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try CRM Assistant</a>
                   </article>
@@ -1531,9 +1594,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Logistics</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Shipping Assistant</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Picks smarter rates, tracks packages, and messages customers before they open a “where’s my order?” ticket.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">ShipStation · UPS · FedEx · USPS</p>
                       <p class="agent-slide-benefit">Proactive delay notifications</p>
+                    </div>
                     </div>
                     <a href="/shipping-assistant" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Shipping Assistant</a>
                   </article>
@@ -1543,9 +1608,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Bundle</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Starter Pack</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Support, booking, and invoices in one dashboard — the fastest way for a small shop to get three agents working together.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">SupportForge + BookWise + InvoiceForge</p>
                       <p class="agent-slide-benefit">One control plane · embed widgets</p>
+                    </div>
                     </div>
                     <a href="/starter-pack" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Starter Pack</a>
                   </article>
@@ -1555,9 +1622,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Support</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">SupportForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Answers customers from your knowledge base, triages chat and email, and escalates only when a human should step in.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Embeddable chat widget</p>
                       <p class="agent-slide-benefit">Tickets · knowledge base · escalation</p>
+                    </div>
                     </div>
                     <a href="/support-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SupportForge</a>
                   </article>
@@ -1567,9 +1636,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Scheduling</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">BookWise</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Books appointments with real-time availability, confirmations, reminders, and calendar sync — less back-and-forth for you.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Google Calendar ready</p>
                       <p class="agent-slide-benefit">Reminders · reschedule · time zones</p>
+                    </div>
                     </div>
                     <a href="/book-wise" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try BookWise</a>
                   </article>
@@ -1579,9 +1650,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">InvoiceForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Extracts invoice data, validates it, posts to QuickBooks or Xero, and helps chase payments so AP/AR stop eating your week.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">OCR extract · QuickBooks / Xero</p>
                       <p class="agent-slide-benefit">Exceptions &amp; AR reminders</p>
+                    </div>
                     </div>
                     <a href="/invoice-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try InvoiceForge</a>
                   </article>
@@ -1591,9 +1664,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Marketing</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">ContentForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Creates SEO blogs, social posts, newsletters, and ads in your brand voice — with a human review step before anything publishes.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">SEO blogs · social · newsletters</p>
                       <p class="agent-slide-benefit">Brand voice + review before publish</p>
+                    </div>
                     </div>
                     <a href="/content-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try ContentForge</a>
                   </article>
@@ -1603,9 +1678,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">SEO · Local</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">SEOForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Grows organic and “near me” rankings for US SMBs — brand-voice pages, Google Business Profile, keyword tracking, and ROI — always with your approval before publish.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">30-day plans · local SEO · content packs</p>
                       <p class="agent-slide-benefit">Approval queue · keywords · ROI cards</p>
+                    </div>
                     </div>
                     <a href="/seo-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SEOForge</a>
                   </article>
@@ -1615,9 +1692,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Meetings</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">MeetWise</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Turns meeting transcripts into summaries, action items, CRM notes, and recap emails so nothing falls through the cracks.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Zoom · Teams · Meet transcripts</p>
                       <p class="agent-slide-benefit">Actions · CRM notes · recaps</p>
+                    </div>
                     </div>
                     <a href="/meet-wise" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try MeetWise</a>
                   </article>
@@ -1627,9 +1706,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Social</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">SocialForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Plans multi-platform posts, suggests the best times to publish, and helps reply in your brand voice so social stays consistent.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Compose · schedule · inbox</p>
                       <p class="agent-slide-benefit">Meta · LinkedIn · Buffer-ready</p>
+                    </div>
                     </div>
                     <a href="/social-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try SocialForge</a>
                   </article>
@@ -1639,9 +1720,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Sales</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">PipelineForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Scores deals by fit and engagement, builds daily focus lists, and flags at-risk opportunities before they stall.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">HubSpot &amp; Salesforce friendly</p>
                       <p class="agent-slide-benefit">At-risk flags · rep priority lists</p>
+                    </div>
                     </div>
                     <a href="/pipeline-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try PipelineForge</a>
                   </article>
@@ -1651,9 +1734,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Documents</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">DocForge</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Drafts proposals, quotes, contracts, and reports from your templates — brand rules and approval before anything goes out.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Proposals · quotes · contracts</p>
                       <p class="agent-slide-benefit">HITL approval · PDF export</p>
+                    </div>
                     </div>
                     <a href="/doc-forge" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try DocForge</a>
                   </article>
@@ -1663,9 +1748,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance · AP</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">Invoice Processor</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Pydantic AI multi-agent AP: extract PDFs/email, match purchase orders, flag discrepancies, and recommend approve or human review before payment.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Extractor · Matcher · Reviewer</p>
                       <p class="agent-slide-benefit">HITL · PO match · Grok-ready</p>
+                    </div>
                     </div>
                     <a href="/invoice-processor" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try Invoice Processor</a>
                   </article>
@@ -1675,9 +1762,11 @@
                     <p class="text-xs font-semibold text-matrix-green uppercase tracking-wide mb-1">Finance</p>
                     <h3 class="text-xl font-bold text-matrix-cream mb-2">ETF Portfolio Analyzer</h3>
                     <p class="text-sm text-matrix-soft leading-relaxed mb-4">Live market snapshots, yield projections, NAV risk, and tax-aware notes — free data, ready to explore without paid API keys.</p>
+                    <div class="agent-slide-features mb-5" data-agent-features>
                     <div class="space-y-2 mb-5">
                       <p class="agent-slide-benefit">Yield · NAV risk · tax notes</p>
                       <p class="agent-slide-benefit">Free market data · optional Notion save</p>
+                    </div>
                     </div>
                     <a href="/etf-analyzer" class="btn-primary text-sm px-4 py-2.5 rounded-xl inline-flex items-center justify-center w-full">Try ETF Analyzer</a>
                   </article>
@@ -3742,5 +3831,7 @@
   <script src="/js/smb-quiz.js" defer></script>
   <script src="/js/roi-calculator.js" defer></script>
   <script src="/js/live-agent-demo.js" defer></script>
+  <!-- Hero carousel: pull feature Articles from each agent page (fallback: /agents catalog) -->
+  <script src="/js/sync-agent-slide-features.js" defer></script>
 </body>
 </html>
