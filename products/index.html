@@ -923,7 +923,7 @@
               smart reasoning, secure app connections, and human approval when money or customers are on the line.
             </p>
             <ul class="space-y-3 text-sm text-matrix-soft mb-8">
-              <li class="flex gap-2"><span class="text-matrix-green">✓</span> 14+ live agents + Starter Pack for support, booking &amp; invoices</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> <span data-live-agent-count>14</span> live agents + Starter Pack for support, booking &amp; invoices</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> You approve before high-impact actions go out</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Shipping, support, billing, and marketing covered</li>
               <li class="flex gap-2"><span class="text-matrix-green">✓</span> Start free — live in minutes, not months</li>
@@ -1073,5 +1073,7 @@
     })();
 
   </script>
+  <!-- Live agent count from /agents catalog (data-agent-status="live") -->
+  <script src="/js/live-agent-count.js" defer></script>
 </body>
 </html>
