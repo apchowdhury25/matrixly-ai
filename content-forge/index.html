@@ -102,32 +102,31 @@
         <a href="/integrations" class="nav-link">Integrations</a>
         <a href="#embed" class="nav-link">Embed</a>
       </nav>
-      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
+      <a href="#start" class="btn-primary text-sm px-4 py-2 rounded-lg">Start for my business</a>
     </div>
   </header>
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">Content · Ready to use</p>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">Content desk · Built for small businesses</p>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">ContentForge</h1>
       <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
-        Create and repurpose marketing content for SMBs — turn blogs, transcripts, and product notes into SEO posts,
-        social copy, newsletters, and ads while keeping brand voice and human review.
+        Your content desk for small business: turn one blog, transcript, or product note into SEO posts,
+        social copy, newsletters, and ads — in your voice, with human review before anything goes public.
       </p>
       <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Crew: Researcher · Writer · Editor · Repurposer</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Brand voice memory + HITL before publish</li>
-        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Export / schedule · Buffer · Hootsuite · WordPress</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Research → write → edit → repurpose in one flow</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> You always approve before publish</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Save locally, or send drafts to WordPress / Buffer</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">SEO</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Multi-channel</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Usage tracking</span>
+        <a href="#start" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Start for my business</a>
+        <a href="#how" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">How it works</a>
       </div>
+      <p class="text-xs text-matrix-soft mt-3">About 5 minutes · No coding · Nothing publishes without your OK</p>
     </section>
 
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+    <section id="how" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-agent-feature-grid>
         <article class="card-matrix rounded-2xl p-5">
           <h2 class="font-bold text-matrix-cream mb-2">1. Research</h2>
@@ -148,24 +147,82 @@
       </div>
     </section>
 
-    <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+    <section id="start" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
-        <p class="text-sm text-matrix-soft mb-6">
-          Code: <code class="text-xs">agents/content-forge</code> ·
-          Guide: <code class="text-xs">agents/content-forge/README.md</code>
+        <p class="font-mono text-xs text-[#117ACA] uppercase tracking-wider mb-2">Start Content desk</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-matrix-cream mb-2">Start this for my business</h2>
+        <p class="text-sm sm:text-base text-matrix-soft mb-5 max-w-2xl">
+          One guided setup prepares everything on your computer. You’ll only answer simple questions about your business
+          and optional keys — no coding, no terminal recipes.
         </p>
-        <pre class="cmd mb-6">cd agents/content-forge
+
+        <div class="rounded-xl border border-[#117ACA]/25 bg-[#117ACA]/5 p-4 sm:p-5 mb-6">
+          <p class="text-sm font-semibold text-matrix-cream mb-3">What happens when you start</p>
+          <ol class="space-y-2 text-sm text-matrix-soft list-decimal list-inside">
+            <li>We install the Content desk privately on this computer</li>
+            <li>You name your business and (optional) describe how you write</li>
+            <li>Optional: connect WordPress drafts or add an xAI key for smarter writing</li>
+            <li>We open your content workspace in the browser</li>
+          </ol>
+          <p class="text-xs text-matrix-soft mt-3">
+            <strong class="text-matrix-cream">Safety:</strong> Nothing is published to customers until you approve it.
+            Your content stays on this computer unless you connect WordPress or Buffer.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-sm font-semibold text-matrix-cream mb-2">Easiest on Windows</p>
+          <p class="text-sm text-matrix-soft mb-3">
+            Need Python once from
+            <a class="text-[#117ACA] font-semibold hover:underline" href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a>
+            (check “Add python.exe to PATH”). Then double-click:
+          </p>
+          <pre class="cmd mb-2">agents\content-forge\scripts\Start Content Desk.cmd</pre>
+          <p class="text-xs text-matrix-soft">Or in PowerShell from the ContentForge folder:</p>
+          <pre class="cmd mt-2">python scripts\bootstrap.py</pre>
+        </div>
+
+        <div class="rounded-xl border border-matrix-border bg-matrix-muted/40 p-4 mb-6 text-sm text-matrix-soft">
+          <p class="font-semibold text-matrix-cream mb-1">You’ll only be asked for</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Business name</li>
+            <li>Optional: website, how you write, xAI API key</li>
+            <li>Optional: WordPress site + application password (if you want drafts there)</li>
+          </ul>
+          <p class="mt-2 text-xs">Internal API keys are created for you automatically. We never need your terminal skills.</p>
+        </div>
+
+        <details class="group mb-6 rounded-xl border border-matrix-border overflow-hidden">
+          <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-matrix-cream bg-matrix-muted/30 hover:bg-matrix-muted/50 flex items-center justify-between gap-2">
+            <span>For your IT person / advanced install</span>
+            <span class="text-[#117ACA] text-xs font-mono group-open:hidden">Show</span>
+            <span class="text-[#117ACA] text-xs font-mono hidden group-open:inline">Hide</span>
+          </summary>
+          <div class="px-4 py-4 border-t border-matrix-border">
+            <p class="text-xs text-matrix-soft mb-3">
+              Manifest: <code class="text-xs">agents/content-forge/setup.manifest.yaml</code> ·
+              Full guide: <code class="text-xs">agents/content-forge/README.md</code>
+            </p>
+            <pre class="cmd mb-3">cd agents/content-forge
+python scripts/bootstrap.py --yes --no-serve
+.\.venv\Scripts\python.exe -m src.cli serve</pre>
+            <pre class="cmd"># Manual (not recommended for owners)
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env
 python scripts/smoke_test.py
 python -m src.cli serve</pre>
-        <p class="text-sm text-matrix-soft mb-2">Brand voice: edit <code class="text-xs">brand/voice.md</code> then restart.</p>
-        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
-          <strong class="text-matrix-cream">Safety:</strong> Publishing requires human approval by default (HITL queue in the workspace).
+          </div>
+        </details>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#start" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" onclick="document.getElementById('copy-hint')?.classList.remove('hidden'); return false;">I’ve got Python — show start path again</a>
+          <a href="/agents" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to agents</a>
         </div>
+        <p id="copy-hint" class="hidden text-xs text-matrix-soft mt-3">
+          Path to double-click: <code class="text-[#117ACA]">agents\content-forge\scripts\Start Content Desk.cmd</code>
+        </p>
       </div>
     </section>
 

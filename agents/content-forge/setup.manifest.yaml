@@ -1,0 +1,104 @@
+# ContentForge setup manifest — owner-facing install contract
+# Used by scripts/bootstrap.py (and future shared matrixly_setup wizard)
+
+id: content-forge
+owner_name: "Content desk"
+tagline: "Turn one article into posts, email, and ads — you approve before publish."
+version: "1.0"
+
+install:
+  python: ">=3.10"
+  requirements: requirements.txt
+  env_example: .env.example
+  post_install:
+    - ["python", "scripts/smoke_test.py"]
+  start:
+    - ["python", "-m", "src.cli", "serve"]
+  healthcheck: "http://127.0.0.1:8792/v1/health"
+  workspace: "http://127.0.0.1:8792/static/workspace/index.html"
+  default_port: 8792
+
+# Questions shown to non-technical owners (plain language only)
+prompts:
+  - id: business_name
+    type: text
+    label: "What's your business called?"
+    env: BUSINESS_NAME
+    required: true
+    default: "My Business"
+
+  - id: website
+    type: url
+    label: "Your website (optional)"
+    required: false
+
+  - id: support_email
+    type: email
+    label: "Best email for content questions (optional)"
+    env: SUPPORT_EMAIL
+    required: false
+
+  - id: brand_voice
+    type: long_text
+    label: "How do you usually write? (tone, words you use, words to avoid)"
+    help: "Skip to use a professional default — you can change this later."
+    required: false
+    writes_to: brand/voice.md
+
+credentials:
+  - id: xai_api_key
+    type: secret
+    label: "xAI API key (optional — smarter writing with Grok)"
+    help: "Leave blank to use free rule-based drafts. Get a key at https://console.x.ai/"
+    env: XAI_API_KEY
+    required: false
+
+  - id: publish
+    type: choice
+    label: "Where should finished drafts go?"
+    env: PUBLISH_BACKEND
+    options:
+      - id: local
+        label: "Save on this computer only (safest start)"
+      - id: wordpress
+        label: "WordPress as drafts (you still approve before public)"
+      - id: buffer
+        label: "Buffer (set token later in .env)"
+    default: local
+
+  - id: wordpress
+    when: publish == wordpress
+    fields:
+      - env: WORDPRESS_SITE_URL
+        label: "Your WordPress site URL"
+        type: url
+        required: true
+      - env: WORDPRESS_USERNAME
+        label: "WordPress username"
+        type: text
+        required: true
+      - env: WORDPRESS_APP_PASSWORD
+        label: "Application password (not your login password)"
+        type: secret
+        required: true
+        help: "WordPress → Users → Profile → Application Passwords"
+
+# Auto-generated — never ask the owner
+generated_secrets:
+  - env: CONTENTFORGE_API_KEY
+    prefix: cf_admin_
+  - env: CONTENTFORGE_WIDGET_KEY
+    prefix: pk_live_
+
+oauth: []
+
+safety:
+  hitl_default: true
+  owner_message: "Nothing is published to customers until you approve it in the workspace."
+
+owner_steps:
+  - "Preparing your Content desk (this can take a minute)…"
+  - "Checking that everything works…"
+  - "A few details about your business"
+  - "Optional: connect publishing"
+  - "Open your content workspace"
