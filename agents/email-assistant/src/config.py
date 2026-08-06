@@ -92,7 +92,7 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
         if d not in account["domains"]:
             account["domains"].append(d)
 
-    # Gmail API OAuth files (optional path)
+    # Gmail API OAuth files (never commit — see .gitignore)
     gmail = cfg.setdefault("gmail", {})
     for key, envk, default in (
         ("credentials_file", "GMAIL_CREDENTIALS_FILE", "data/credentials.json"),
@@ -102,6 +102,27 @@ def load_config(path: Path | None = None) -> dict[str, Any]:
         if not p.is_absolute():
             p = ROOT / p
         gmail[key] = str(p)
+
+    # Official scopes (readonly + send + modify + labels). Overridable via env comma-list.
+    default_scopes = [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/gmail.labels",
+    ]
+    env_scopes = os.getenv("GMAIL_SCOPES", "").strip()
+    if env_scopes:
+        gmail["scopes"] = [s.strip() for s in env_scopes.split(",") if s.strip()]
+    else:
+        gmail["scopes"] = list(gmail.get("scopes") or default_scopes)
+
+    # Safety: drafts never auto-send customer mail
+    draft_cfg = cfg.setdefault("draft", {})
+    if os.getenv("EMAIL_DRAFT_AUTO_SEND", "").lower() in {"1", "true", "yes"}:
+        # Still default false unless explicitly overridden — keep HITL for pilots
+        draft_cfg["auto_send"] = False
+    else:
+        draft_cfg["auto_send"] = False
 
     # IMAP / SMTP for active profile
     imap = cfg.setdefault("imap", {})

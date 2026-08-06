@@ -4,12 +4,14 @@
 agent:
   name: Email Assistant
   id: email-assistant
-  version: "1.2.0"
+  version: "1.3.0"
   marketplace_tile: MAIL
-  # Default profile when EMAIL_PROFILE is unset — gmail for this session
+  # Default profile when EMAIL_PROFILE is unset
   profile: gmail
-  # imap = IMAP/SMTP (Hostinger or Gmail App Password) | gmail = Gmail API OAuth
-  backend: imap
+  # gmail = Gmail API OAuth (recommended for most SMBs)
+  # imap  = Hostinger / Outlook / App Password IMAP
+  # test  = sample inbox (no real mail) — also: python -m src.cli test-mode
+  backend: gmail
 
 account:
   # Overridden by active profile / .env
@@ -26,13 +28,15 @@ imap:
 
 smtp: {}
 
-# Optional pure Gmail API OAuth backend (EMAIL_BACKEND=gmail + credentials.json)
+# Gmail API OAuth (EMAIL_BACKEND=gmail + data/credentials.json)
+# Tokens live only in data/token.json (gitignored). Never commit secrets.
 gmail:
   credentials_file: data/credentials.json
   token_file: data/token.json
   scopes:
+    - https://www.googleapis.com/auth/gmail.readonly
+    - https://www.googleapis.com/auth/gmail.send
     - https://www.googleapis.com/auth/gmail.modify
-    - https://www.googleapis.com/auth/gmail.compose
     - https://www.googleapis.com/auth/gmail.labels
   user_id: me
   max_results: 40
@@ -79,6 +83,7 @@ urgency:
   urgent_threshold: 0.55
 
 draft:
+  # HARD RULE for SMBs: never auto-send customer replies (drafts only)
   auto_send: false
   tone: professional
   signature: |
