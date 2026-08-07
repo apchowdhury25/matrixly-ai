@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "lang": "en",
+    "dir": "ltr",
+    "name": "English",
+    "nativeName": "English"
+  },
+  "nav": {
+    "howItWorks": "How it Works",
+    "agents": "Agents",
+    "resources": "Resources",
+    "integrations": "Integrations",
+    "pricing": "Pricing",
+    "getStarted": "Get Started",
+    "toggleMenu": "Toggle menu",
+    "switchTheme": "Toggle light / dark theme"
+  },
+  "hero": {
+    "badge": "Built for US small businesses · No tech team needed",
+    "headline1": "You're the owner, the salesperson, the support desk, and the shipping department — ",
+    "headline2": "all before lunch.",
+    "sub1": "Every hour spent chasing leads, answering “where's my order?”, and drafting emails is an hour you're not spending on the business itself. Most owners lose",
+    "sub1Highlight": " 20+ hours a week",
+    "sub1End": " to this — and it compounds every quarter you don't fix it.",
+    "sub2Start": "Matrixly deploys ready-to-run AI agents",
+    "sub2": " that take the busywork off your plate — leads, email, support, shipping, local SEO — live in minutes, no tech team needed.",
+    "beforeLabel": "Before",
+    "beforeText": "Buried in email, chasing leads, answering the same shipping question for the fifth time today.",
+    "afterLabel": "After",
+    "afterText": "An AI team quietly handling all of it — while you focus on customers and growth.",
+    "bridgeLabel": "Matrixly",
+    "bridgeText": "The bridge: pick an agent, connect your tools, and reclaim",
+    "bridgeHighlight": " 20+ hours a week",
+    "bridgeEnd": " — without hiring more staff.",
+    "cta": "Start free — no card needed",
+    "spAgentsLabel": "Agents deployed this week by US SMBs",
+    "spHoursLabel": "Hours reclaimed last month",
+    "spFeed": "US small businesses are deploying Matrixly agents right now",
+    "trust1": "Free to explore · Cancel anytime",
+    "trust2": "Works with Shopify, Gmail & more",
+    "trust3": "Your data never trains our models",
+    "carouselTitle": "Meet your AI team",
+    "carouselSub": "Pick an agent. Connect your tools. Get time and revenue back.",
+    "live": "Live"
+  },
+  "trust": {
+    "title": "Connects to the tools US small businesses already use",
+    "hoursBack": "Hours back every week",
+    "hoursBackSub": "Less busywork. More time for customers and growth.",
+    "payback": "Typical payback",
+    "paybackSub": "Cheaper than a part-time hire — works 24/7",
+    "minutes": "To first agent live",
+    "minutesSub": "No developers. No long setup project."
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "From busywork to ",
+    "titleHighlight": "done",
+    "sub": "Four clear steps. No consultants. No six-month project.",
+    "step1Label": "Step 1",
+    "step1Title": "Pick your agents",
+    "step1Text": "Choose the agents that match the work that drains your week — leads, email, support, shipping, SEO, and more.",
+    "step2Label": "Step 2",
+    "step2Title": "Connect your tools",
+    "step2Text": "Link Gmail, Shopify, QuickBooks, CRM, or carriers in a few clicks. Your keys stay encrypted and private.",
+    "step3Label": "Step 3",
+    "step3Title": "Let agents work",
+    "step3Text": "They draft replies, qualify leads, ship smarter, and grow local search — you review only what needs a human.",
+    "step4Label": "Step 4",
+    "step4Title": "See the impact",
+    "step4Text": "Clear dashboard: hours saved, leads booked, tickets closed, and revenue tied to each agent."
+  },
+  "liveDemo": {
+    "eyebrow": "See it work",
+    "title": "Watch an agent ",
+    "titleHighlight": "handle real work",
+    "sub": "Type a request or tap a preset. This is a lightweight simulation — no signup required — so you can feel the product in seconds.",
+    "chipQualify": "Qualify this lead",
+    "chipShipping": "Draft a shipping delay reply",
+    "chipInbox": "Triage my inbox",
+    "placeholder": "e.g. Qualify this lead or draft a delay reply…",
+    "run": "Run demo",
+    "note": "Simulation only · nothing is sent to customers or connected tools",
+    "cta": "Start free with this agent",
+    "preview": "Agent preview",
+    "sim": "live simulation",
+    "demo": "Demo"
+  },
+  "useCases": {
+    "eyebrow": "Built for Global Small and Medium Businesses",
+    "title": "See how owners like you ",
+    "titleHighlight": "get time back",
+    "sub": "Home services, e-commerce, professional firms, contractors, and retail — agents handle the busywork so you can run the business.",
+    "hvacTitle": "More booked jobs from local search",
+    "hvacText": "Agents answer after-hours inquiries, qualify web leads, and publish service pages that rank for “near me” searches — so your phone rings with the right jobs.",
+    "shopifyTitle": "Ship faster, sell more, answer less",
+    "shopifyText": "Rate-shop carriers, update customers before they ask “where’s my order?”, and optimize product copy — without adding warehouse staff.",
+    "proTitle": "Inbox calm. Pipeline full.",
+    "proText": "Legal, dental, consulting, and local agencies use agents to triage email, prep meetings, keep CRM clean, and follow up leads before they go cold.",
+    "quizCta": "Not sure? Take the 60-second quiz"
+  },
+  "quiz": {
+    "eyebrow": "60-second fit check",
+    "title": "Which agents fit ",
+    "titleHighlight": "your week?",
+    "sub": "Answer a few questions. We’ll recommend the agents that reclaim the most time for your business.",
+    "start": "Start the quiz",
+    "next": "Next",
+    "back": "Back",
+    "seeResults": "See my agents",
+    "retake": "Retake quiz"
+  },
+  "roi": {
+    "eyebrow": "Simple math",
+    "title": "What is 20 hours a week ",
+    "titleHighlight": "worth to you?",
+    "sub": "Owners often underestimate the cost of busywork. Plug in your numbers — the payback is usually clear in under a minute.",
+    "hoursLabel": "Hours lost to busywork / week",
+    "rateLabel": "Your time value ($/hour)",
+    "resultLabel": "Estimated value of time reclaimed / month",
+    "cta": "Start free and reclaim those hours"
+  },
+  "impact": {
+    "title": "Real impact for owners",
+    "sub": "Hours back. Leads answered. Tickets closed. Revenue tied to agents — not more headcount."
+  },
+  "agentsTeaser": {
+    "eyebrow": "Your AI team",
+    "title": "Agents that do the work",
+    "sub": "Each agent is ready to connect and run. Start with one. Add more as you see the hours come back.",
+    "viewAll": "View all agents"
+  },
+  "products": {
+    "eyebrow": "Product suite",
+    "title": "Everything you need to ",
+    "titleHighlight": "run lean",
+    "sub": "From lead qualification to shipping exceptions — one place to deploy and manage your AI workforce."
+  },
+  "logistics": {
+    "title": "Shipping & logistics agents",
+    "sub": "Rate shop, track, and keep customers updated without living in the carrier portal."
+  },
+  "features": {
+    "title": "Built for owners, not IT departments",
+    "sub": "Security, privacy, and simple controls — so you stay in charge."
+  },
+  "compare": {
+    "title": "How Matrixly compares",
+    "sub": "No six-figure implementation. No waiting for a developer. Just agents that work."
+  },
+  "testimonials": {
+    "title": "What owners say",
+    "sub": "Real feedback from small business owners who reclaimed their week."
+  },
+  "guarantee": {
+    "title": "Try it risk-free",
+    "sub": "Explore free. Cancel anytime. Your data stays yours."
+  },
+  "pricing": {
+    "eyebrow": "Simple pricing",
+    "title": "Plans that scale with ",
+    "titleHighlight": "your business",
+    "sub": "Start free. Upgrade when the agents are saving you time and money.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save",
+    "popular": "Most popular",
+    "cta": "Get started",
+    "contact": "Talk to us"
+  },
+  "resources": {
+    "eyebrow": "Guides & playbooks",
+    "title": "Practical resources for ",
+    "titleHighlight": "owners",
+    "sub": "Short, actionable guides — setup, email voice, local SEO, shipping exceptions, and more."
+  },
+  "integrations": {
+    "eyebrow": "Integrations",
+    "title": "Works with the tools you ",
+    "titleHighlight": "already use",
+    "sub": "Gmail, Shopify, QuickBooks, CRMs, carriers, and more — connect in minutes."
+  },
+  "finalCta": {
+    "title": "Ready to get your time back?",
+    "sub": "Deploy your first agent in minutes. No card required to explore.",
+    "cta": "Start free — no card needed"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "forgot": "Forgot password?",
+    "noAccount": "Don’t have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "tagline": "AI agents for small and medium businesses — live in minutes, no tech team needed."
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "tryFree": "Try free",
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again.",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "language": "Language",
+    "selectLanguage": "Select language"
+  }
+}
