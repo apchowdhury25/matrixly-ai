@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "lang": "es",
+    "dir": "ltr",
+    "name": "Spanish",
+    "nativeName": "Español"
+  },
+  "nav": {
+    "howItWorks": "Cómo funciona",
+    "agents": "Agentes",
+    "resources": "Recursos",
+    "integrations": "Integraciones",
+    "pricing": "Precios",
+    "getStarted": "Empezar",
+    "toggleMenu": "Abrir o cerrar menú",
+    "switchTheme": "Cambiar tema claro / oscuro"
+  },
+  "hero": {
+    "badge": "Hecho para pymes · Sin equipo técnico",
+    "headline1": "Capacidades y sistemas de nivel empresa — ",
+    "headline2": "diseñados para cómo operan de verdad las pymes.",
+    "sub1": "Las empresas grandes tienen equipos especializados, playbooks probados y herramientas potentes. La mayoría de dueños de pymes llevan todos los sombreros y aun así se quedan atrás en el trabajo que no para: leads, correo, soporte, envíos, facturación y SEO local.",
+    "sub1Highlight": " más de 20 horas a la semana",
+    "sub1End": " en esto — y se acumula cada trimestre que no lo resuelves.",
+    "sub2Start": "Matrixly cierra esa brecha.",
+    "sub2": " Tomamos la experiencia, los procesos y las capacidades que antes solo tenían las grandes organizaciones y los empaquetamos como agentes de IA listos para usar, adaptados a cómo operan las pymes día a día. Sin desarrolladores. Sin proyectos largos. Sin precio de enterprise.",
+    "beforeLabel": "Lo que realmente obtienes",
+    "beforeText": "Capacidad de nivel empresarial — la misma calidad de sistemas y know-how en la que confían las grandes compañías",
+    "afterLabel": "Entrega simple para pymes",
+    "afterText": " — elige un agente, conecta las herramientas que ya usas y ponlo en marcha en minutos",
+    "bridgeLabel": "El resultado",
+    "bridgeText": "Dejas de ahogarte en tareas rutinarias y empiezas a dirigir el negocio que solo tú puedes dirigir.",
+    "bridgeHighlight": " más de 20 horas a la semana",
+    "bridgeEnd": " — sin contratar más personal.",
+    "cta": "Empieza gratis — sin tarjeta",
+    "spAgentsLabel": "Tiempo real de vuelta — la mayoría de dueños recuperan más de 20 horas cada semana sin contratar más personal",
+    "spHoursLabel": "Horas recuperadas el mes pasado",
+    "spFeed": "Tú mantienes el control — aprobación humana donde importa; tus datos nunca entrenan nuestros modelos",
+    "trust1": "Explora gratis · Cancela cuando quieras",
+    "trust2": "Funciona con Shopify, Gmail y más",
+    "trust3": "Tus datos nunca entrenan nuestros modelos",
+    "carouselTitle": "Conoce tu equipo de IA",
+    "carouselSub": "Elige un agente. Conecta tus herramientas. Recupera tiempo e ingresos.",
+    "live": "En vivo"
+  },
+  "trust": {
+    "title": "Se conecta a las herramientas que las pymes ya usan",
+    "hoursBack": "Horas de vuelta cada semana",
+    "hoursBackSub": "Menos trabajo rutinario. Más tiempo para clientes y crecimiento.",
+    "payback": "Retorno típico",
+    "paybackSub": "Más barato que un medio tiempo — trabaja 24/7",
+    "minutes": "Hasta el primer agente en vivo",
+    "minutesSub": "Sin desarrolladores. Sin un proyecto de meses."
+  },
+  "howItWorks": {
+    "eyebrow": "Cómo funciona",
+    "title": "Del trabajo rutinario a ",
+    "titleHighlight": "hecho",
+    "sub": "Cuatro pasos claros. Sin consultores. Sin proyecto de seis meses.",
+    "step1Label": "Paso 1",
+    "step1Title": "Elige tus agentes",
+    "step1Text": "Escoge los agentes que cubren el trabajo que se come tu semana: leads, correo, soporte, envíos, SEO y más.",
+    "step2Label": "Paso 2",
+    "step2Title": "Conecta tus herramientas",
+    "step2Text": "Vincula Gmail, Shopify, QuickBooks, CRM o transportistas en pocos clics. Tus claves quedan cifradas y privadas.",
+    "step3Label": "Paso 3",
+    "step3Title": "Deja que los agentes trabajen",
+    "step3Text": "Redactan respuestas, califican leads, envían mejor y mejoran el SEO local — tú solo revisas lo que necesita un humano.",
+    "step4Label": "Paso 4",
+    "step4Title": "Mira el impacto",
+    "step4Text": "Panel claro: horas ahorradas, leads captados, tickets cerrados e ingresos ligados a cada agente."
+  },
+  "liveDemo": {
+    "eyebrow": "Míralo en acción",
+    "title": "Mira cómo un agente ",
+    "titleHighlight": "hace trabajo real",
+    "sub": "Escribe una petición o elige una plantilla. Es una simulación ligera — sin registro — para que sientas el producto en segundos.",
+    "chipQualify": "Calificar este lead",
+    "chipShipping": "Redactar respuesta por retraso de envío",
+    "chipInbox": "Triaje de mi bandeja",
+    "placeholder": "p. ej. Calificar este lead o redactar una respuesta por retraso…",
+    "run": "Ejecutar demo",
+    "note": "Solo simulación · no se envía nada a clientes ni herramientas conectadas",
+    "cta": "Empieza gratis con este agente",
+    "preview": "Vista previa del agente",
+    "sim": "simulación en vivo",
+    "demo": "Demo"
+  },
+  "useCases": {
+    "eyebrow": "Hecho para pymes de todo el mundo",
+    "title": "Así recuperan tiempo ",
+    "titleHighlight": "dueños como tú",
+    "sub": "Servicios del hogar, e-commerce, despachos profesionales, contratistas y retail — los agentes hacen la rutina para que tú dirijas el negocio.",
+    "hvacTitle": "Más trabajos reservados desde la búsqueda local",
+    "hvacText": "Los agentes responden fuera de horario, califican leads web y publican páginas de servicio que rankean en búsquedas “cerca de mí” — para que el teléfono suene con los trabajos correctos.",
+    "shopifyTitle": "Envía más rápido, vende más, responde menos",
+    "shopifyText": "Compara tarifas de transportistas, actualiza a clientes antes de que pregunten “¿dónde está mi pedido?” y optimiza copys de producto — sin sumar personal de almacén.",
+    "proTitle": "Bandeja en calma. Pipeline lleno.",
+    "proText": "Despachos, clínicas, consultorías y agencias locales usan agentes para triaje de correo, prep de reuniones, CRM limpio y seguimiento de leads antes de que se enfríen.",
+    "quizCta": "¿No estás seguro? Haz el quiz de 60 segundos"
+  },
+  "quiz": {
+    "eyebrow": "Chequeo de encaje en 60 segundos",
+    "title": "¿Qué agentes encajan con ",
+    "titleHighlight": "tu semana?",
+    "sub": "Responde unas preguntas. Te recomendaremos los agentes que más tiempo te devuelven.",
+    "start": "Empezar el quiz",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "seeResults": "Ver mis agentes",
+    "retake": "Repetir quiz"
+  },
+  "roi": {
+    "eyebrow": "Cuentas claras",
+    "title": "¿Cuánto valen 20 horas a la semana ",
+    "titleHighlight": "para ti?",
+    "sub": "Los dueños suelen subestimar el coste de la rutina. Introduce tus números — el retorno suele verse en menos de un minuto.",
+    "hoursLabel": "Horas perdidas en rutina / semana",
+    "rateLabel": "Valor de tu tiempo ($/hora)",
+    "resultLabel": "Valor estimado del tiempo recuperado / mes",
+    "cta": "Empieza gratis y recupera esas horas"
+  },
+  "impact": {
+    "title": "Impacto real para dueños",
+    "sub": "Horas de vuelta. Leads respondidos. Tickets cerrados. Ingresos ligados a agentes — no a más personal."
+  },
+  "agentsTeaser": {
+    "eyebrow": "Tu equipo de IA",
+    "title": "Agentes que hacen el trabajo",
+    "sub": "Cada agente está listo para conectar y operar. Empieza con uno. Añade más cuando veas las horas volver.",
+    "viewAll": "Ver todos los agentes"
+  },
+  "products": {
+    "eyebrow": "Suite de productos",
+    "title": "Todo lo que necesitas para ",
+    "titleHighlight": "operar en ligero",
+    "sub": "Desde calificación de leads hasta excepciones de envío — un solo lugar para desplegar y gestionar tu fuerza de trabajo de IA."
+  },
+  "logistics": {
+    "title": "Agentes de envío y logística",
+    "sub": "Compara tarifas, rastrea y mantén informados a los clientes sin vivir en el portal del transportista."
+  },
+  "features": {
+    "title": "Hecho para dueños, no para departamentos de TI",
+    "sub": "Seguridad, privacidad y controles simples — para que sigas al mando."
+  },
+  "compare": {
+    "title": "Cómo se compara Matrixly",
+    "sub": "Sin implantaciones de seis cifras. Sin esperar a un desarrollador. Solo agentes que funcionan."
+  },
+  "testimonials": {
+    "title": "Lo que dicen los dueños",
+    "sub": "Opiniones reales de emprendedores que recuperaron su semana."
+  },
+  "guarantee": {
+    "title": "Pruébalo sin riesgo",
+    "sub": "Explora gratis. Cancela cuando quieras. Tus datos son tuyos."
+  },
+  "pricing": {
+    "eyebrow": "Precios simples",
+    "title": "Planes que crecen con ",
+    "titleHighlight": "tu negocio",
+    "sub": "Empieza gratis. Mejora de plan cuando los agentes te ahorren tiempo y dinero.",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "save": "Ahorra",
+    "popular": "Más popular",
+    "cta": "Empezar",
+    "contact": "Habla con nosotros"
+  },
+  "resources": {
+    "eyebrow": "Guías y playbooks",
+    "title": "Recursos prácticos para ",
+    "titleHighlight": "dueños",
+    "sub": "Guías cortas y accionables — setup, tono de correo, SEO local, excepciones de envío y más."
+  },
+  "integrations": {
+    "eyebrow": "Integraciones",
+    "title": "Funciona con las herramientas que ",
+    "titleHighlight": "ya usas",
+    "sub": "Gmail, Shopify, QuickBooks, CRMs, transportistas y más — conéctalos en minutos."
+  },
+  "finalCta": {
+    "title": "¿Listo para recuperar tu tiempo?",
+    "sub": "Despliega tu primer agente en minutos. Sin tarjeta para explorar.",
+    "cta": "Empieza gratis — sin tarjeta"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "email": "Correo",
+    "password": "Contraseña",
+    "forgot": "¿Olvidaste la contraseña?",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?"
+  },
+  "footer": {
+    "product": "Producto",
+    "company": "Empresa",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "contact": "Contacto",
+    "tagline": "Agentes de IA para pymes — en vivo en minutos, sin equipo técnico."
+  },
+  "common": {
+    "learnMore": "Saber más",
+    "getStarted": "Empezar",
+    "tryFree": "Probar gratis",
+    "loading": "Cargando…",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "language": "Idioma",
+    "selectLanguage": "Seleccionar idioma"
+  }
+}

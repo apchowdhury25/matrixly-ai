@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "lang": "fr",
+    "dir": "ltr",
+    "name": "French",
+    "nativeName": "Français"
+  },
+  "nav": {
+    "howItWorks": "Comment ça marche",
+    "agents": "Agents",
+    "resources": "Ressources",
+    "integrations": "Intégrations",
+    "pricing": "Tarifs",
+    "getStarted": "Commencer",
+    "toggleMenu": "Ouvrir ou fermer le menu",
+    "switchTheme": "Basculer thème clair / sombre"
+  },
+  "hero": {
+    "badge": "Conçu pour les PME · Sans équipe technique",
+    "headline1": "Compétences et systèmes d’entreprise — ",
+    "headline2": "pensés pour le quotidien des petites entreprises.",
+    "sub1": "Les grandes entreprises ont des équipes spécialisées, des playbooks éprouvés et des outils puissants. La plupart des dirigeants de PME portent toutes les casquettes et prennent du retard sur le travail qui ne s’arrête jamais — leads, e-mails, support, expéditions, facturation et SEO local.",
+    "sub1Highlight": " plus de 20 heures par semaine",
+    "sub1End": " à cela — et cela s’accumule chaque trimestre sans solution.",
+    "sub2Start": "Matrixly comble cet écart.",
+    "sub2": " Nous prenons l’expertise, les processus et les capacités autrefois réservés aux grandes organisations et les packagons en agents IA prêts à l’emploi, adaptés au rythme des PME. Sans développeurs. Sans longs projets. Sans prix enterprise.",
+    "beforeLabel": "Ce que vous obtenez vraiment",
+    "beforeText": "Capacité de niveau entreprise — la même qualité de systèmes et de savoir-faire sur laquelle s’appuient les grandes sociétés",
+    "afterLabel": "Livraison simple pour les PME",
+    "afterText": " — choisissez un agent, connectez les outils que vous utilisez déjà, et soyez en ligne en quelques minutes",
+    "bridgeLabel": "Le résultat",
+    "bridgeText": "Vous arrêtez de vous noyer dans les tâches répétitives et vous diriger le business que vous seul pouvez diriger.",
+    "bridgeHighlight": " plus de 20 heures par semaine",
+    "bridgeEnd": " — sans embaucher plus de personnel.",
+    "cta": "Commencer gratuitement — sans carte",
+    "spAgentsLabel": "Du temps réellement récupéré — la plupart des dirigeants récupèrent plus de 20 heures par semaine sans embaucher",
+    "spHoursLabel": "Heures récupérées le mois dernier",
+    "spFeed": "Vous gardez le contrôle — validation humaine là où c’est important ; vos données n’entraînent jamais nos modèles",
+    "trust1": "Exploration gratuite · Annulation à tout moment",
+    "trust2": "Fonctionne avec Shopify, Gmail et plus",
+    "trust3": "Vos données n’entraînent jamais nos modèles",
+    "carouselTitle": "Découvrez votre équipe IA",
+    "carouselSub": "Choisissez un agent. Connectez vos outils. Récupérez du temps et du chiffre d’affaires.",
+    "live": "En direct"
+  },
+  "trust": {
+    "title": "Se connecte aux outils que les PME utilisent déjà",
+    "hoursBack": "Heures récupérées chaque semaine",
+    "hoursBackSub": "Moins de tâches répétitives. Plus de temps pour les clients et la croissance.",
+    "payback": "Retour sur investissement typique",
+    "paybackSub": "Moins cher qu’un temps partiel — disponible 24h/24",
+    "minutes": "Jusqu’au premier agent en ligne",
+    "minutesSub": "Sans développeurs. Sans long projet de mise en place."
+  },
+  "howItWorks": {
+    "eyebrow": "Comment ça marche",
+    "title": "Du travail répétitif au ",
+    "titleHighlight": "terminé",
+    "sub": "Quatre étapes claires. Pas de consultants. Pas de projet de six mois.",
+    "step1Label": "Étape 1",
+    "step1Title": "Choisissez vos agents",
+    "step1Text": "Sélectionnez les agents qui correspondent au travail qui mange votre semaine — leads, e-mail, support, expéditions, SEO, et plus.",
+    "step2Label": "Étape 2",
+    "step2Title": "Connectez vos outils",
+    "step2Text": "Liez Gmail, Shopify, QuickBooks, CRM ou transporteurs en quelques clics. Vos clés restent chiffrées et privées.",
+    "step3Label": "Étape 3",
+    "step3Title": "Laissez les agents travailler",
+    "step3Text": "Ils rédigent des réponses, qualifient les leads, expédient plus intelligemment et renforcent le SEO local — vous ne validez que ce qui nécessite un humain.",
+    "step4Label": "Étape 4",
+    "step4Title": "Voyez l’impact",
+    "step4Text": "Tableau de bord clair : heures économisées, leads réservés, tickets clos et revenus liés à chaque agent."
+  },
+  "liveDemo": {
+    "eyebrow": "Voyez-le en action",
+    "title": "Regardez un agent ",
+    "titleHighlight": "traiter un vrai travail",
+    "sub": "Tapez une demande ou choisissez un modèle. Simulation légère — sans inscription — pour sentir le produit en quelques secondes.",
+    "chipQualify": "Qualifier ce lead",
+    "chipShipping": "Rédiger une réponse de retard d’expédition",
+    "chipInbox": "Trier ma boîte mail",
+    "placeholder": "ex. Qualifier ce lead ou rédiger une réponse de retard…",
+    "run": "Lancer la démo",
+    "note": "Simulation uniquement · rien n’est envoyé aux clients ni aux outils connectés",
+    "cta": "Commencer gratuitement avec cet agent",
+    "preview": "Aperçu de l’agent",
+    "sim": "simulation en direct",
+    "demo": "Démo"
+  },
+  "useCases": {
+    "eyebrow": "Conçu pour les PME du monde entier",
+    "title": "Comment des dirigeants comme vous ",
+    "titleHighlight": "récupèrent du temps",
+    "sub": "Services à domicile, e-commerce, cabinets, artisans et retail — les agents gèrent la routine pour que vous dirigiez l’entreprise.",
+    "hvacTitle": "Plus de jobs réservés via la recherche locale",
+    "hvacText": "Les agents répondent hors horaires, qualifient les leads web et publient des pages services qui se classent sur les recherches « près de moi » — pour que le téléphone sonne avec les bons jobs.",
+    "shopifyTitle": "Expédiez plus vite, vendez plus, répondez moins",
+    "shopifyText": "Comparez les tarifs transporteurs, informez les clients avant le « où est ma commande ? » et optimisez les fiches produit — sans recruter en entrepôt.",
+    "proTitle": "Boîte mail calme. Pipeline plein.",
+    "proText": "Cabinets juridiques, dentaires, consulting et agences locales utilisent des agents pour trier les e-mails, préparer les réunions, garder le CRM propre et relancer les leads avant qu’ils ne refroidissent.",
+    "quizCta": "Pas sûr ? Faites le quiz de 60 secondes"
+  },
+  "quiz": {
+    "eyebrow": "Contrôle d’adéquation en 60 secondes",
+    "title": "Quels agents correspondent à ",
+    "titleHighlight": "votre semaine ?",
+    "sub": "Répondez à quelques questions. Nous recommanderons les agents qui vous rendent le plus de temps.",
+    "start": "Lancer le quiz",
+    "next": "Suivant",
+    "back": "Retour",
+    "seeResults": "Voir mes agents",
+    "retake": "Refaire le quiz"
+  },
+  "roi": {
+    "eyebrow": "Calcul simple",
+    "title": "Que valent 20 heures par semaine ",
+    "titleHighlight": "pour vous ?",
+    "sub": "Les dirigeants sous-estiment souvent le coût de la routine. Entrez vos chiffres — le retour est souvent clair en moins d’une minute.",
+    "hoursLabel": "Heures perdues en routine / semaine",
+    "rateLabel": "Valeur de votre temps ($/heure)",
+    "resultLabel": "Valeur estimée du temps récupéré / mois",
+    "cta": "Commencer gratuitement et récupérer ces heures"
+  },
+  "impact": {
+    "title": "Un impact réel pour les dirigeants",
+    "sub": "Heures récupérées. Leads traités. Tickets clos. Revenus liés aux agents — pas à plus d’effectifs."
+  },
+  "agentsTeaser": {
+    "eyebrow": "Votre équipe IA",
+    "title": "Des agents qui font le travail",
+    "sub": "Chaque agent est prêt à se connecter et à tourner. Commencez par un. Ajoutez-en d’autres quand les heures reviennent.",
+    "viewAll": "Voir tous les agents"
+  },
+  "products": {
+    "eyebrow": "Suite produit",
+    "title": "Tout ce qu’il faut pour ",
+    "titleHighlight": "rester lean",
+    "sub": "De la qualification de leads aux exceptions d’expédition — un seul endroit pour déployer et gérer votre main-d’œuvre IA."
+  },
+  "logistics": {
+    "title": "Agents d’expédition et de logistique",
+    "sub": "Comparez les tarifs, suivez les colis et tenez les clients informés sans vivre dans le portail transporteur."
+  },
+  "features": {
+    "title": "Conçu pour les dirigeants, pas pour les DSI",
+    "sub": "Sécurité, confidentialité et contrôles simples — pour que vous restiez aux commandes."
+  },
+  "compare": {
+    "title": "Comment Matrixly se compare",
+    "sub": "Pas d’implémentation à six chiffres. Pas d’attente d’un développeur. Juste des agents qui marchent."
+  },
+  "testimonials": {
+    "title": "Ce que disent les dirigeants",
+    "sub": "Retours réels de chefs d’entreprise qui ont récupéré leur semaine."
+  },
+  "guarantee": {
+    "title": "Essayez sans risque",
+    "sub": "Explorez gratuitement. Annulez à tout moment. Vos données restent les vôtres."
+  },
+  "pricing": {
+    "eyebrow": "Tarifs simples",
+    "title": "Des offres qui grandissent avec ",
+    "titleHighlight": "votre entreprise",
+    "sub": "Commencez gratuitement. Passez à l’offre supérieure quand les agents vous font gagner du temps et de l’argent.",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "Économisez",
+    "popular": "Le plus populaire",
+    "cta": "Commencer",
+    "contact": "Nous contacter"
+  },
+  "resources": {
+    "eyebrow": "Guides et playbooks",
+    "title": "Ressources pratiques pour ",
+    "titleHighlight": "dirigeants",
+    "sub": "Guides courts et actionnables — setup, ton d’e-mail, SEO local, exceptions d’expédition, et plus."
+  },
+  "integrations": {
+    "eyebrow": "Intégrations",
+    "title": "Fonctionne avec les outils que vous ",
+    "titleHighlight": "utilisez déjà",
+    "sub": "Gmail, Shopify, QuickBooks, CRM, transporteurs, et plus — connectez en quelques minutes."
+  },
+  "finalCta": {
+    "title": "Prêt à récupérer votre temps ?",
+    "sub": "Déployez votre premier agent en quelques minutes. Aucune carte requise pour explorer.",
+    "cta": "Commencer gratuitement — sans carte"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "S’inscrire",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgot": "Mot de passe oublié ?",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Déjà un compte ?"
+  },
+  "footer": {
+    "product": "Produit",
+    "company": "Entreprise",
+    "resources": "Ressources",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "contact": "Contact",
+    "tagline": "Agents IA pour PME — en ligne en quelques minutes, sans équipe technique."
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "getStarted": "Commencer",
+    "tryFree": "Essayer gratuitement",
+    "loading": "Chargement…",
+    "error": "Une erreur s’est produite. Réessayez.",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "continue": "Continuer",
+    "back": "Retour",
+    "next": "Suivant",
+    "submit": "Envoyer",
+    "language": "Langue",
+    "selectLanguage": "Choisir la langue"
+  }
+}
