@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "lang": "ms",
+    "dir": "ltr",
+    "name": "Malay",
+    "nativeName": "Bahasa Melayu"
+  },
+  "nav": {
+    "howItWorks": "Cara Ia Berfungsi",
+    "agents": "Ejen",
+    "resources": "Sumber",
+    "integrations": "Integrasi",
+    "pricing": "Harga",
+    "getStarted": "Mula Sekarang",
+    "toggleMenu": "Togol menu",
+    "switchTheme": "Togol tema terang / gelap"
+  },
+  "hero": {
+    "badge": "Dibina untuk perniagaan kecil AS · Tidak perlu pasukan tech",
+    "headline1": "Anda pemilik, jurujual, meja sokongan, dan jabatan penghantaran — ",
+    "headline2": "semuanya sebelum makan tengah hari.",
+    "sub1": "Setiap jam dihabiskan mengejar lead, menjawab “di mana pesanan saya?”, dan menulis draf e-mel ialah jam yang anda tidak luangkan untuk perniagaan sebenar. Kebanyakan pemilik kehilangan",
+    "sub1Highlight": " 20+ jam seminggu",
+    "sub1End": " untuk ini — dan ia bertambah setiap suku tahun anda tidak betulkan.",
+    "sub2Start": "Matrixly menghantar ejen AI sedia diguna",
+    "sub2": " yang mengambil kerja remeh dari bahu anda — lead, e-mel, sokongan, penghantaran, SEO tempatan — hidup dalam minit, tanpa pasukan tech.",
+    "beforeLabel": "Sebelum",
+    "beforeText": "Tenggelam dalam e-mel, mengejar lead, menjawab soalan penghantaran yang sama buat kali kelima hari ini.",
+    "afterLabel": "Selepas",
+    "afterText": "Pasukan AI mengurus semuanya secara senyap — sementara anda fokus pada pelanggan dan pertumbuhan.",
+    "bridgeLabel": "Matrixly",
+    "bridgeText": "Jambatan: pilih ejen, sambungkan alatan anda, dan dapatkan kembali",
+    "bridgeHighlight": " 20+ jam seminggu",
+    "bridgeEnd": " — tanpa mengupah lebih kakitangan.",
+    "cta": "Mula percuma — tiada kad diperlukan",
+    "spAgentsLabel": "Ejen dilancarkan minggu ini oleh SMB AS",
+    "spHoursLabel": "Jam dikembalikan bulan lepas",
+    "spFeed": "Perniagaan kecil AS sedang melancarkan ejen Matrixly sekarang",
+    "trust1": "Percuma untuk diterokai · Batal bila-bila masa",
+    "trust2": "Berfungsi dengan Shopify, Gmail & lagi",
+    "trust3": "Data anda tidak pernah melatih model kami",
+    "carouselTitle": "Kenali pasukan AI anda",
+    "carouselSub": "Pilih ejen. Sambungkan alatan. Dapatkan masa dan hasil semula.",
+    "live": "Langsung"
+  },
+  "trust": {
+    "title": "Bersambung dengan alatan yang sudah digunakan perniagaan kecil AS",
+    "hoursBack": "Jam kembali setiap minggu",
+    "hoursBackSub": "Kurang kerja remeh. Lebih masa untuk pelanggan dan pertumbuhan.",
+    "payback": "Bayaran balik tipikal",
+    "paybackSub": "Lebih murah daripada pekerja separuh masa — bekerja 24/7",
+    "minutes": "Sehingga ejen pertama hidup",
+    "minutesSub": "Tiada pembangun. Tiada projek setup panjang."
+  },
+  "howItWorks": {
+    "eyebrow": "Cara ia berfungsi",
+    "title": "Dari kerja remeh kepada ",
+    "titleHighlight": "siap",
+    "sub": "Empat langkah jelas. Tiada perunding. Tiada projek enam bulan.",
+    "step1Label": "Langkah 1",
+    "step1Title": "Pilih ejen anda",
+    "step1Text": "Pilih ejen yang sepadan dengan kerja yang menghabiskan minggu anda — lead, e-mel, sokongan, penghantaran, SEO, dan lagi.",
+    "step2Label": "Langkah 2",
+    "step2Title": "Sambungkan alatan anda",
+    "step2Text": "Pautkan Gmail, Shopify, QuickBooks, CRM, atau syarikat penghantaran dalam beberapa klik. Kunci anda kekal disulitkan dan peribadi.",
+    "step3Label": "Langkah 3",
+    "step3Title": "Biarkan ejen bekerja",
+    "step3Text": "Mereka draf balasan, layakkan lead, hantar dengan bijak, dan tingkatkan carian tempatan — anda semak hanya yang perlukan manusia.",
+    "step4Label": "Langkah 4",
+    "step4Title": "Lihat impak",
+    "step4Text": "Papan pemuka jelas: jam dijimatkan, lead ditempah, tiket ditutup, dan hasil diikat kepada setiap ejen."
+  },
+  "liveDemo": {
+    "eyebrow": "Lihat ia berfungsi",
+    "title": "Tonton ejen ",
+    "titleHighlight": "mengendalikan kerja sebenar",
+    "sub": "Taip permintaan atau ketik pratetap. Ini simulasi ringan — tiada daftar masuk diperlukan — supaya anda boleh rasai produk dalam saat.",
+    "chipQualify": "Layakkan lead ini",
+    "chipShipping": "Draf balasan kelewatan penghantaran",
+    "chipInbox": "Susun peti masuk saya",
+    "placeholder": "cth. Layakkan lead ini atau draf balasan kelewatan…",
+    "run": "Jalankan demo",
+    "note": "Simulasi sahaja · tiada apa dihantar kepada pelanggan atau alatan bersambung",
+    "cta": "Mula percuma dengan ejen ini",
+    "preview": "Pratonton ejen",
+    "sim": "simulasi langsung",
+    "demo": "Demo"
+  },
+  "useCases": {
+    "eyebrow": "Dibina untuk Perniagaan Kecil dan Sederhana Global",
+    "title": "Lihat bagaimana pemilik seperti anda ",
+    "titleHighlight": "mendapat masa kembali",
+    "sub": "Perkhidmatan rumah, e-dagang, firma profesional, kontraktor, dan runcit — ejen mengurus kerja remeh supaya anda boleh jalankan perniagaan.",
+    "hvacTitle": "Lebih banyak kerja ditempah dari carian tempatan",
+    "hvacText": "Ejen menjawab pertanyaan selepas waktu, layakkan lead web, dan terbitkan halaman perkhidmatan yang ranking untuk carian “dekat saya” — supaya telefon anda berdering dengan kerja yang betul.",
+    "shopifyTitle": "Hantar lebih cepat, jual lebih, jawab kurang",
+    "shopifyText": "Banding kadar syarikat penghantaran, kemas kini pelanggan sebelum mereka tanya “di mana pesanan saya?”, dan optimumkan salinan produk — tanpa menambah kakitangan gudang.",
+    "proTitle": "Peti masuk tenang. Pipeline penuh.",
+    "proText": "Undang-undang, pergigian, perundingan, dan agensi tempatan guna ejen untuk susun e-mel, sediakan mesyuarat, jaga CRM bersih, dan susuli lead sebelum mereka sejuk.",
+    "quizCta": "Tidak pasti? Ambil kuiz 60 saat"
+  },
+  "quiz": {
+    "eyebrow": "Semakan kesesuaian 60 saat",
+    "title": "Ejen mana sesuai dengan ",
+    "titleHighlight": "minggu anda?",
+    "sub": "Jawab beberapa soalan. Kami akan cadangkan ejen yang mengembalikan masa paling banyak untuk perniagaan anda.",
+    "start": "Mula kuiz",
+    "next": "Seterusnya",
+    "back": "Kembali",
+    "seeResults": "Lihat ejen saya",
+    "retake": "Ulang kuiz"
+  },
+  "roi": {
+    "eyebrow": "Matematik mudah",
+    "title": "Apa nilai 20 jam seminggu ",
+    "titleHighlight": "kepada anda?",
+    "sub": "Pemilik sering meremehkan kos kerja remeh. Masukkan nombor anda — bayaran balik biasanya jelas dalam kurang dari satu minit.",
+    "hoursLabel": "Jam hilang kepada kerja remeh / minggu",
+    "rateLabel": "Nilai masa anda ($/jam)",
+    "resultLabel": "Anggaran nilai masa dikembalikan / bulan",
+    "cta": "Mula percuma dan kembalikan jam-jam itu"
+  },
+  "impact": {
+    "title": "Impak sebenar untuk pemilik",
+    "sub": "Jam kembali. Lead dijawab. Tiket ditutup. Hasil diikat kepada ejen — bukan lebih kakitangan."
+  },
+  "agentsTeaser": {
+    "eyebrow": "Pasukan AI anda",
+    "title": "Ejen yang buat kerja",
+    "sub": "Setiap ejen sedia disambungkan dan dijalankan. Mulakan dengan satu. Tambah lagi apabila anda nampak jam kembali.",
+    "viewAll": "Lihat semua ejen"
+  },
+  "products": {
+    "eyebrow": "Suite produk",
+    "title": "Semua yang anda perlukan untuk ",
+    "titleHighlight": "beroperasi dengan cekap",
+    "sub": "Dari kelayakan lead hingga pengecualian penghantaran — satu tempat untuk lancarkan dan urus tenaga kerja AI anda."
+  },
+  "logistics": {
+    "title": "Ejen penghantaran & logistik",
+    "sub": "Banding kadar, jejak, dan pastikan pelanggan dikemas kini tanpa hidup dalam portal syarikat penghantaran."
+  },
+  "features": {
+    "title": "Dibina untuk pemilik, bukan jabatan IT",
+    "sub": "Keselamatan, privasi, dan kawalan mudah — supaya anda kekal berkuasa."
+  },
+  "compare": {
+    "title": "Bagaimana Matrixly dibandingkan",
+    "sub": "Tiada pelaksanaan enam angka. Tiada menunggu pembangun. Hanya ejen yang berfungsi."
+  },
+  "testimonials": {
+    "title": "Apa kata pemilik",
+    "sub": "Maklum balas sebenar dari pemilik perniagaan kecil yang mendapat minggu mereka kembali."
+  },
+  "guarantee": {
+    "title": "Cuba tanpa risiko",
+    "sub": "Terokai percuma. Batal bila-bila masa. Data anda kekal milik anda."
+  },
+  "pricing": {
+    "eyebrow": "Harga mudah",
+    "title": "Pelan yang berkembang dengan ",
+    "titleHighlight": "perniagaan anda",
+    "sub": "Mula percuma. Naik taraf apabila ejen menjimatkan masa dan wang anda.",
+    "monthly": "Bulanan",
+    "yearly": "Tahunan",
+    "save": "Jimat",
+    "popular": "Paling popular",
+    "cta": "Mula sekarang",
+    "contact": "Bercakap dengan kami"
+  },
+  "resources": {
+    "eyebrow": "Panduan & playbook",
+    "title": "Sumber praktikal untuk ",
+    "titleHighlight": "pemilik",
+    "sub": "Panduan pendek dan boleh dilaksanakan — setup, nada e-mel, SEO tempatan, pengecualian penghantaran, dan lagi."
+  },
+  "integrations": {
+    "eyebrow": "Integrasi",
+    "title": "Berfungsi dengan alatan yang anda ",
+    "titleHighlight": "sudah guna",
+    "sub": "Gmail, Shopify, QuickBooks, CRM, syarikat penghantaran, dan lagi — sambung dalam minit."
+  },
+  "finalCta": {
+    "title": "Bersedia untuk dapatkan masa anda kembali?",
+    "sub": "Lancarkan ejen pertama anda dalam minit. Tiada kad diperlukan untuk diterokai.",
+    "cta": "Mula percuma — tiada kad diperlukan"
+  },
+  "auth": {
+    "signIn": "Log masuk",
+    "signUp": "Daftar",
+    "email": "E-mel",
+    "password": "Kata laluan",
+    "forgot": "Lupa kata laluan?",
+    "noAccount": "Belum ada akaun?",
+    "hasAccount": "Sudah ada akaun?"
+  },
+  "footer": {
+    "product": "Produk",
+    "company": "Syarikat",
+    "resources": "Sumber",
+    "legal": "Undang-undang",
+    "privacy": "Privasi",
+    "terms": "Terma",
+    "contact": "Hubungi",
+    "tagline": "Ejen AI untuk perniagaan kecil dan sederhana — hidup dalam minit, tanpa pasukan tech."
+  },
+  "common": {
+    "learnMore": "Ketahui lebih lanjut",
+    "getStarted": "Mula sekarang",
+    "tryFree": "Cuba percuma",
+    "loading": "Memuatkan…",
+    "error": "Sesuatu tidak kena. Sila cuba lagi.",
+    "close": "Tutup",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "continue": "Teruskan",
+    "back": "Kembali",
+    "next": "Seterusnya",
+    "submit": "Hantar",
+    "language": "Bahasa",
+    "selectLanguage": "Pilih bahasa"
+  }
+}

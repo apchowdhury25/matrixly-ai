@@ -1,12 +1,12 @@
 /**
  * Matrixly client-side i18n
- * Supports: en (default), es, fr, ar (RTL), bn, de
+ * Supports: en (default), es, fr, ar (RTL), bn, de, ms
  * Persists language in localStorage under "matrixly-lang"
  * Expects elements with data-i18n="key.path" or data-i18n-html="key.path"
  * Also supports data-i18n-attr="attr:key.path" for attributes (e.g. placeholder, aria-label, title)
  */
 (function () {
-  const SUPPORTED = ["en", "es", "fr", "ar", "bn", "de"];
+  const SUPPORTED = ["en", "es", "fr", "ar", "bn", "de", "ms"];
   const DEFAULT_LANG = "en";
   const STORAGE_KEY = "matrixly-lang";
   const BASE = "/i18n/";
