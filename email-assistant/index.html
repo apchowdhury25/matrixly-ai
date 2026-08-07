@@ -135,9 +135,9 @@
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
-        <a href="/agents" class="nav-link">Agents</a>
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
         <a href="/products" class="nav-link">Products</a>
-        <a href="/integrations" class="nav-link">Integrations</a>
+        <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
       </nav>
       <a href="/agents" class="btn-secondary text-sm px-4 py-2 rounded-lg">← Marketplace</a>
     </div>
@@ -186,7 +186,7 @@
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">How it works</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="nav.howItWorks">How it works</h2>
         <p class="text-sm text-matrix-soft mb-6">
           Connect the agent to your business mailbox. It reviews unread messages, highlights what needs attention,
           drafts replies you can edit, and delivers a daily brief — without sending mail on its own.
@@ -208,7 +208,7 @@
 
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/agents" class="btn-primary text-sm px-6 py-3 rounded-lg text-center">Back to marketplace</a>
-          <a href="/#final-cta" class="btn-secondary text-sm px-6 py-3 rounded-lg text-center">Get started</a>
+          <a href="/#final-cta" class="btn-secondary text-sm px-6 py-3 rounded-lg text-center" data-i18n="nav.getStarted">Get started</a>
         </div>
       </div>
     </section>
@@ -220,5 +220,7 @@
       <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
     </div>
   </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
 </body>
 </html>

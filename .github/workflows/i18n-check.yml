@@ -1,0 +1,110 @@
+name: i18n check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "i18n/**"
+      - "js/i18n.js"
+      - "js/lang-selector.js"
+      - "scripts/i18n-translate.mjs"
+      - ".github/workflows/i18n-check.yml"
+  pull_request:
+    paths:
+      - "i18n/**"
+      - "js/i18n.js"
+      - "js/lang-selector.js"
+      - "scripts/i18n-translate.mjs"
+
+jobs:
+  locale-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check locale key parity
+        id: parity
+        run: |
+          node <<'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const dir = 'i18n';
+          const langs = ['en','es','fr','ar','bn','de','ms'];
+
+          function flatten(obj, prefix = '', out = {}) {
+            if (obj && typeof obj === 'object' && !Array.isArray(obj)) {
+              for (const [k, v] of Object.entries(obj)) {
+                flatten(v, prefix ? `${prefix}.${k}` : k, out);
+              }
+            } else {
+              out[prefix] = obj;
+            }
+            return out;
+          }
+
+          function load(code) {
+            const f = path.join(dir, `${code}.json`);
+            if (!fs.existsSync(f) || fs.statSync(f).size === 0) {
+              return { empty: true, flat: {} };
+            }
+            return { empty: false, flat: flatten(JSON.parse(fs.readFileSync(f, 'utf8'))) };
+          }
+
+          const en = load('en');
+          if (en.empty) {
+            console.error('en.json is empty or missing');
+            process.exit(1);
+          }
+          const enKeys = Object.keys(en.flat);
+          let failed = false;
+          const report = [];
+          for (const code of langs) {
+            const loc = load(code);
+            if (loc.empty) {
+              failed = true;
+              report.push(`❌ ${code}.json is empty or missing`);
+              continue;
+            }
+            const missing = enKeys.filter((k) => loc.flat[k] == null || loc.flat[k] === '');
+            const extra = Object.keys(loc.flat).filter((k) => !enKeys.includes(k));
+            if (missing.length || extra.length) {
+              failed = true;
+              report.push(`❌ ${code}: missing ${missing.length}, extra ${extra.length}`);
+              if (missing.length) report.push(`   missing: ${missing.slice(0, 40).join(', ')}${missing.length > 40 ? '…' : ''}`);
+            } else {
+              report.push(`✅ ${code}: ${enKeys.length} keys OK (dir=${loc.flat['meta.dir'] || 'ltr'})`);
+            }
+          }
+          console.log(report.join('\n'));
+          fs.writeFileSync('i18n-parity-report.txt', report.join('\n') + '\n');
+          if (failed) process.exit(1);
+          EOF
+
+      - name: Dry-run translate script
+        run: node scripts/i18n-translate.mjs --dry-run
+        continue-on-error: true
+
+      - name: PR comment on failure
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '## i18n locale parity check failed\n\n';
+            try {
+              body += '```\n' + fs.readFileSync('i18n-parity-report.txt', 'utf8') + '\n```\n';
+            } catch {
+              body += 'See workflow logs for missing keys.\n';
+            }
+            body += '\nRun `node scripts/i18n-translate.mjs` (with optional `DEEPL_API_KEY` / `OPENAI_API_KEY` / `ANTHROPIC_API_KEY`) and commit updated `i18n/*.json` files. See `docs/i18n.md`.';
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });

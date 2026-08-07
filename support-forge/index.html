@@ -103,8 +103,8 @@
         Matrixly
       </a>
       <nav class="hidden sm:flex items-center gap-6">
-        <a href="/agents" class="nav-link">Agents</a>
-        <a href="/integrations" class="nav-link">Integrations</a>
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+        <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
         <a href="#embed" class="nav-link">Embed</a>
       </nav>
       <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
@@ -249,7 +249,7 @@ CORS_ORIGINS=https://your-site.example</pre>
 
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="/integrations" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Integrations</a>
+          <a href="/integrations" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="nav.integrations">Integrations</a>
         </div>
       </div>
     </section>
@@ -261,5 +261,7 @@ CORS_ORIGINS=https://your-site.example</pre>
       <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
     </div>
   </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
 </body>
 </html>

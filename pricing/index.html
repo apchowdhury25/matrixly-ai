@@ -551,11 +551,11 @@
           </span>
         </a>
         <div class="nav-links">
-          <a href="/#how-it-works" class="nav-link">How it Works</a>
-          <a href="/agents" class="nav-link">Agents</a>
-          <a href="/resources" class="nav-link">Resources</a>
-          <a href="/integrations" class="nav-link">Integrations</a>
-          <a href="/pricing" class="nav-link" aria-current="page">Pricing</a>
+          <a href="/#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How it Works</a>
+          <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+          <a href="/resources" class="nav-link" data-i18n="nav.resources">Resources</a>
+          <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
+          <a href="/pricing" class="nav-link" aria-current="page" data-i18n="nav.pricing">Pricing</a>
         </div>
         <div class="nav-end">
           <div class="nav-actions">
@@ -568,7 +568,7 @@
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
               </svg>
             </button>
-            <a href="/#final-cta" class="btn-primary rounded-lg">Get Started</a>
+            <a href="/#final-cta" class="btn-primary rounded-lg" data-i18n="nav.getStarted">Get Started</a>
           </div>
           <div class="nav-mobile">
             <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
@@ -589,11 +589,11 @@
       </div>
       <div id="mobile-menu" class="mobile-menu md:hidden">
         <div class="py-4 space-y-1 border-t border-matrix-border">
-          <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Agents</a>
+          <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.agents">Agents</a>
           <a href="/products" class="block px-3 py-3 font-bold text-matrix-green" >Products</a>
-          <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Integrations</a>
-          <a href="/pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Pricing</a>
-          <a href="/#final-cta" class="btn-primary block text-center mt-3 px-5 py-3">Get Started</a>
+          <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.integrations">Integrations</a>
+          <a href="/pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a>
+          <a href="/#final-cta" class="btn-primary block text-center mt-3 px-5 py-3" data-i18n="nav.getStarted">Get Started</a>
         </div>
       </div>
     </nav>
@@ -602,7 +602,7 @@
   <main class="relative z-10 pt-20 md:pt-24">
     <section class="pt-28 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase">Pricing</p>
+        <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase" data-i18n="nav.pricing">Pricing</p>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight">Plans for owners &amp; small teams</h1>
         <p class="text-matrix-soft mt-3 max-w-xl mx-auto">Less than a part-time hire. Works around the clock. Start free.</p>
       </div>
@@ -799,11 +799,11 @@
           <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Product</h4>
           <ul class="space-y-2 text-sm text-matrix-soft">
             <li><a href="/products" class="hover:text-matrix-green">Products</a></li>
-            <li><a href="/agents" class="hover:text-matrix-green">Agents</a></li>
-            <li><a href="/integrations" class="hover:text-matrix-green">Integrations</a></li>
-            <li><a href="/pricing" class="hover:text-matrix-green">Pricing</a></li>
+            <li><a href="/agents" class="hover:text-matrix-green" data-i18n="nav.agents">Agents</a></li>
+            <li><a href="/integrations" class="hover:text-matrix-green" data-i18n="nav.integrations">Integrations</a></li>
+            <li><a href="/pricing" class="hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a></li>
             <li><a href="/white-glove" class="hover:text-matrix-green">White Glove</a></li>
-            <li><a href="/resources" class="hover:text-matrix-green">Resources</a></li>
+            <li><a href="/resources" class="hover:text-matrix-green" data-i18n="nav.resources">Resources</a></li>
           </ul>
         </div>
         <div>
@@ -816,9 +816,9 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Contact</h4>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.contact">Contact</h4>
           <ul class="space-y-2 text-sm text-matrix-soft">
-            <li><a href="/#final-cta" class="hover:text-matrix-green">Get started</a></li>
+            <li><a href="/#final-cta" class="hover:text-matrix-green" data-i18n="nav.getStarted">Get started</a></li>
             <li><a href="/#final-cta" class="hover:text-matrix-green">Talk to sales</a></li>
             <li><a href="/admin" class="hover:text-matrix-green">QA Admin</a></li>
           </ul>
@@ -892,5 +892,7 @@
     })();
 
   </script>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
 </body>
 </html>

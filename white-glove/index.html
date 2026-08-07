@@ -137,7 +137,7 @@
         <a href="#offer" class="nav-link">Offer</a>
         <a href="#workflows" class="nav-link">Workflows</a>
         <a href="#roi" class="nav-link">Weekly ROI</a>
-        <a href="/pricing" class="nav-link">Pricing</a>
+        <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
           <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="theme-icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -156,7 +156,7 @@
       <a href="#offer" class="block py-2 font-semibold text-matrix-soft">Offer</a>
       <a href="#workflows" class="block py-2 font-semibold text-matrix-soft">Workflows</a>
       <a href="#roi" class="block py-2 font-semibold text-matrix-soft">Weekly ROI</a>
-      <a href="/pricing" class="block py-2 font-semibold text-matrix-soft">Pricing</a>
+      <a href="/pricing" class="block py-2 font-semibold text-matrix-soft" data-i18n="nav.pricing">Pricing</a>
       <a href="#apply" class="btn-primary block text-center mt-2 py-2 rounded-lg">Request a seat</a>
     </div>
   </nav>
@@ -578,10 +578,10 @@
       <div>
         <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Product</h4>
         <ul class="space-y-2 text-sm text-matrix-soft">
-          <li><a href="/agents" class="hover:text-matrix-green">Agents</a></li>
-          <li><a href="/pricing" class="hover:text-matrix-green">Pricing</a></li>
+          <li><a href="/agents" class="hover:text-matrix-green" data-i18n="nav.agents">Agents</a></li>
+          <li><a href="/pricing" class="hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a></li>
           <li><a href="/white-glove" class="hover:text-matrix-green">White Glove</a></li>
-          <li><a href="/resources" class="hover:text-matrix-green">Resources</a></li>
+          <li><a href="/resources" class="hover:text-matrix-green" data-i18n="nav.resources">Resources</a></li>
         </ul>
       </div>
       <div>
@@ -594,7 +594,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Get started</h4>
+        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4" data-i18n="nav.getStarted">Get started</h4>
         <ul class="space-y-2 text-sm text-matrix-soft">
           <li><a href="/#final-cta" class="hover:text-matrix-green">Start free</a></li>
           <li><a href="mailto:anwar@matrixly.world?subject=White%20Glove%20Digital%20Employee%20inquiry" class="hover:text-matrix-green">White Glove inquiry</a></li>
@@ -649,5 +649,7 @@
     });
   })();
 </script>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
 </body>
 </html>

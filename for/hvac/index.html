@@ -129,15 +129,15 @@
         <span class="font-bold text-lg tracking-tight text-matrix-cream">Matrixly</span>
       </a>
       <div class="hidden md:flex items-center gap-6">
-        <a href="/#how-it-works" class="nav-link">How it Works</a>
-        <a href="/agents" class="nav-link">Agents</a>
-        <a href="/resources" class="nav-link">Resources</a>
-        <a href="/pricing" class="nav-link">Pricing</a>
+        <a href="/#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How it Works</a>
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+        <a href="/resources" class="nav-link" data-i18n="nav.resources">Resources</a>
+        <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
           <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="theme-icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="/#final-cta" class="btn-primary px-4 py-2 rounded-lg text-sm">Get Started</a>
+        <a href="/#final-cta" class="btn-primary px-4 py-2 rounded-lg text-sm" data-i18n="nav.getStarted">Get Started</a>
       </div>
       <div class="md:hidden flex items-center gap-2">
         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
@@ -148,10 +148,10 @@
       </div>
     </div>
     <div id="mobile-menu" class="mobile-menu border-t border-matrix-border py-3">
-      <a href="/agents" class="block py-2 font-semibold text-matrix-soft">Agents</a>
-      <a href="/resources" class="block py-2 font-semibold text-matrix-soft">Resources</a>
-      <a href="/pricing" class="block py-2 font-semibold text-matrix-soft">Pricing</a>
-      <a href="/#final-cta" class="btn-primary block text-center mt-2 py-2 rounded-lg">Get Started</a>
+      <a href="/agents" class="block py-2 font-semibold text-matrix-soft" data-i18n="nav.agents">Agents</a>
+      <a href="/resources" class="block py-2 font-semibold text-matrix-soft" data-i18n="nav.resources">Resources</a>
+      <a href="/pricing" class="block py-2 font-semibold text-matrix-soft" data-i18n="nav.pricing">Pricing</a>
+      <a href="/#final-cta" class="btn-primary block text-center mt-2 py-2 rounded-lg" data-i18n="nav.getStarted">Get Started</a>
     </div>
   </nav>
 </header>
@@ -241,9 +241,9 @@
       <div>
         <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Product</h4>
         <ul class="space-y-2 text-sm text-matrix-soft">
-          <li><a href="/agents" class="hover:text-matrix-green">Agents</a></li>
-          <li><a href="/pricing" class="hover:text-matrix-green">Pricing</a></li>
-          <li><a href="/resources" class="hover:text-matrix-green">Resources</a></li>
+          <li><a href="/agents" class="hover:text-matrix-green" data-i18n="nav.agents">Agents</a></li>
+          <li><a href="/pricing" class="hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="/resources" class="hover:text-matrix-green" data-i18n="nav.resources">Resources</a></li>
         </ul>
       </div>
       <div>
@@ -256,7 +256,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4">Get started</h4>
+        <h4 class="text-xs font-bold text-matrix-green uppercase tracking-wider mb-4" data-i18n="nav.getStarted">Get started</h4>
         <ul class="space-y-2 text-sm text-matrix-soft">
           <li><a href="/#agent-quiz" class="hover:text-matrix-green">Agent quiz</a></li>
           <li><a href="/#roi-calculator" class="hover:text-matrix-green">ROI calculator</a></li>
@@ -313,5 +313,7 @@
     });
   })();
 </script>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
 </body>
 </html>
