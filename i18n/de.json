@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "lang": "de",
+    "dir": "ltr",
+    "name": "German",
+    "nativeName": "Deutsch"
+  },
+  "nav": {
+    "howItWorks": "So funktioniert's",
+    "agents": "Agenten",
+    "resources": "Ressourcen",
+    "integrations": "Integrationen",
+    "pricing": "Preise",
+    "getStarted": "Loslegen",
+    "toggleMenu": "Menü umschalten",
+    "switchTheme": "Hell-/Dunkelmodus umschalten"
+  },
+  "hero": {
+    "badge": "Für kleine und mittlere Unternehmen · Kein Tech-Team nötig",
+    "headline1": "Sie sind Inhaber, Verkäufer, Support und Versandabteilung — ",
+    "headline2": "alles vor dem Mittagessen.",
+    "sub1": "Jede Stunde, die Sie mit Lead-Nachverfolgung, „Wo ist meine Bestellung?“-Antworten und E-Mail-Entwürfen verbringen, fehlt Ihrem eigentlichen Geschäft. Die meisten Inhaber verlieren",
+    "sub1Highlight": " über 20 Stunden pro Woche",
+    "sub1End": " damit — und das summiert sich jedes Quartal, in dem Sie nichts ändern.",
+    "sub2Start": "Matrixly stellt einsatzbereite KI-Agenten bereit",
+    "sub2": ", die Ihnen die Routinearbeit abnehmen — Leads, E-Mail, Support, Versand, lokales SEO — in Minuten live, ohne Tech-Team.",
+    "beforeLabel": "Vorher",
+    "beforeText": "Versunken in E-Mails, Lead-Jagd und zum fünften Mal dieselbe Versandfrage beantworten.",
+    "afterLabel": "Nachher",
+    "afterText": "Ein KI-Team erledigt das still im Hintergrund — Sie konzentrieren sich auf Kunden und Wachstum.",
+    "bridgeLabel": "Matrixly",
+    "bridgeText": "Die Brücke: Agenten auswählen, Tools verbinden und",
+    "bridgeHighlight": " über 20 Stunden pro Woche",
+    "bridgeEnd": " zurückgewinnen — ohne zusätzliche Mitarbeiter.",
+    "cta": "Kostenlos starten — keine Karte nötig",
+    "spAgentsLabel": "Diese Woche von KMUs eingesetzte Agenten",
+    "spHoursLabel": "Im letzten Monat zurückgewonnene Stunden",
+    "spFeed": "Kleine und mittlere Unternehmen setzen gerade Matrixly-Agenten ein",
+    "trust1": "Kostenlos testen · Jederzeit kündbar",
+    "trust2": "Funktioniert mit Shopify, Gmail & mehr",
+    "trust3": "Ihre Daten trainieren nie unsere Modelle",
+    "carouselTitle": "Lernen Sie Ihr KI-Team kennen",
+    "carouselSub": "Agenten auswählen. Tools verbinden. Zeit und Umsatz zurückgewinnen.",
+    "live": "Live"
+  },
+  "trust": {
+    "title": "Verbindet sich mit den Tools, die KMUs bereits nutzen",
+    "hoursBack": "Stunden zurück jede Woche",
+    "hoursBackSub": "Weniger Routine. Mehr Zeit für Kunden und Wachstum.",
+    "payback": "Typische Amortisation",
+    "paybackSub": "Günstiger als eine Teilzeitkraft — arbeitet 24/7",
+    "minutes": "Bis zum ersten Agenten live",
+    "minutesSub": "Keine Entwickler. Kein monatelanges Projekt."
+  },
+  "howItWorks": {
+    "eyebrow": "So funktioniert's",
+    "title": "Von Routinearbeit zu ",
+    "titleHighlight": "erledigt",
+    "sub": "Vier klare Schritte. Keine Berater. Kein Sechs-Monats-Projekt.",
+    "step1Label": "Schritt 1",
+    "step1Title": "Agenten auswählen",
+    "step1Text": "Wählen Sie die Agenten, die zu der Arbeit passen, die Ihre Woche frisst — Leads, E-Mail, Support, Versand, SEO und mehr.",
+    "step2Label": "Schritt 2",
+    "step2Title": "Tools verbinden",
+    "step2Text": "Verknüpfen Sie Gmail, Shopify, QuickBooks, CRM oder Versanddienstleister mit wenigen Klicks. Ihre Schlüssel bleiben verschlüsselt und privat.",
+    "step3Label": "Schritt 3",
+    "step3Title": "Agenten arbeiten lassen",
+    "step3Text": "Sie entwerfen Antworten, qualifizieren Leads, optimieren den Versand und stärken lokales SEO — Sie prüfen nur, was einen Menschen braucht.",
+    "step4Label": "Schritt 4",
+    "step4Title": "Wirkung sehen",
+    "step4Text": "Klares Dashboard: eingesparte Stunden, gebuchte Leads, geschlossene Tickets und Umsatz pro Agent."
+  },
+  "liveDemo": {
+    "eyebrow": "In Aktion sehen",
+    "title": "Sehen Sie zu, wie ein Agent ",
+    "titleHighlight": "echte Arbeit erledigt",
+    "sub": "Tippen Sie eine Anfrage oder wählen Sie eine Vorlage. Das ist eine leichte Simulation — keine Anmeldung nötig — damit Sie das Produkt in Sekunden spüren.",
+    "chipQualify": "Diesen Lead qualifizieren",
+    "chipShipping": "Antwort bei Versandverzögerung entwerfen",
+    "chipInbox": "Mein Posteingang sortieren",
+    "placeholder": "z. B. Lead qualifizieren oder Verzögerungsantwort entwerfen…",
+    "run": "Demo starten",
+    "note": "Nur Simulation · nichts wird an Kunden oder verbundene Tools gesendet",
+    "cta": "Kostenlos mit diesem Agenten starten",
+    "preview": "Agentenvorschau",
+    "sim": "Live-Simulation",
+    "demo": "Demo"
+  },
+  "useCases": {
+    "eyebrow": "Für globale kleine und mittlere Unternehmen gebaut",
+    "title": "So gewinnen Inhaber wie Sie ",
+    "titleHighlight": "Zeit zurück",
+    "sub": "Handwerksbetriebe, E-Commerce, professionelle Dienstleister, Bauunternehmer und Einzelhandel — Agenten übernehmen die Routine, damit Sie das Geschäft führen können.",
+    "hvacTitle": "Mehr gebuchte Aufträge durch lokale Suche",
+    "hvacText": "Agenten beantworten Anfragen außerhalb der Geschäftszeiten, qualifizieren Web-Leads und veröffentlichen Service-Seiten, die bei „in meiner Nähe“-Suchen ranken — damit das Telefon mit den richtigen Aufträgen klingelt.",
+    "shopifyTitle": "Schneller versenden, mehr verkaufen, weniger antworten",
+    "shopifyText": "Tarife vergleichen, Kunden aktualisieren, bevor sie fragen „Wo ist meine Bestellung?“, und Produkttexte optimieren — ohne zusätzliches Lagerpersonal.",
+    "proTitle": "Ruhiger Posteingang. Volle Pipeline.",
+    "proText": "Kanzleien, Praxen, Beratungen und lokale Agenturen nutzen Agenten, um E-Mails zu sortieren, Meetings vorzubereiten, das CRM sauber zu halten und Leads nachzuverfolgen, bevor sie abkühlen.",
+    "quizCta": "Unsicher? Machen Sie den 60-Sekunden-Quiz"
+  },
+  "quiz": {
+    "eyebrow": "60-Sekunden-Passungscheck",
+    "title": "Welche Agenten passen zu ",
+    "titleHighlight": "Ihrer Woche?",
+    "sub": "Beantworten Sie ein paar Fragen. Wir empfehlen die Agenten, die Ihnen am meisten Zeit zurückgeben.",
+    "start": "Quiz starten",
+    "next": "Weiter",
+    "back": "Zurück",
+    "seeResults": "Meine Agenten anzeigen",
+    "retake": "Quiz wiederholen"
+  },
+  "roi": {
+    "eyebrow": "Einfache Rechnung",
+    "title": "Was sind 20 Stunden pro Woche ",
+    "titleHighlight": "für Sie wert?",
+    "sub": "Inhaber unterschätzen oft die Kosten von Routinearbeit. Geben Sie Ihre Zahlen ein — die Amortisation ist meist in unter einer Minute klar.",
+    "hoursLabel": "Stunden Verlust durch Routine / Woche",
+    "rateLabel": "Ihr Zeitwert (€/Stunde)",
+    "resultLabel": "Geschätzter Wert zurückgewonnener Zeit / Monat",
+    "cta": "Kostenlos starten und diese Stunden zurückgewinnen"
+  },
+  "impact": {
+    "title": "Echte Wirkung für Inhaber",
+    "sub": "Stunden zurück. Beantwortete Leads. Geschlossene Tickets. Umsatz durch Agenten — nicht durch mehr Personal."
+  },
+  "agentsTeaser": {
+    "eyebrow": "Ihr KI-Team",
+    "title": "Agenten, die die Arbeit erledigen",
+    "sub": "Jeder Agent ist bereit zum Verbinden und Laufen. Beginnen Sie mit einem. Fügen Sie weitere hinzu, sobald die Stunden zurückkommen.",
+    "viewAll": "Alle Agenten anzeigen"
+  },
+  "products": {
+    "eyebrow": "Produktpalette",
+    "title": "Alles, was Sie brauchen, um ",
+    "titleHighlight": "schlank zu arbeiten",
+    "sub": "Von Lead-Qualifizierung bis Versandausnahmen — ein Ort, um Ihre KI-Belegschaft einzusetzen und zu verwalten."
+  },
+  "logistics": {
+    "title": "Versand- & Logistik-Agenten",
+    "sub": "Tarife vergleichen, Sendungen verfolgen und Kunden auf dem Laufenden halten, ohne im Carrier-Portal zu leben."
+  },
+  "features": {
+    "title": "Für Inhaber gebaut, nicht für IT-Abteilungen",
+    "sub": "Sicherheit, Datenschutz und einfache Steuerung — damit Sie die Kontrolle behalten."
+  },
+  "compare": {
+    "title": "Wie Matrixly im Vergleich abschneidet",
+    "sub": "Keine sechsstellige Einführung. Kein Warten auf Entwickler. Einfach Agenten, die funktionieren."
+  },
+  "testimonials": {
+    "title": "Was Inhaber sagen",
+    "sub": "Echtes Feedback von Unternehmern, die ihre Woche zurückgewonnen haben."
+  },
+  "guarantee": {
+    "title": "Risikofrei testen",
+    "sub": "Kostenlos erkunden. Jederzeit kündbar. Ihre Daten bleiben Ihre."
+  },
+  "pricing": {
+    "eyebrow": "Einfache Preise",
+    "title": "Pläne, die mit ",
+    "titleHighlight": "Ihrem Unternehmen wachsen",
+    "sub": "Kostenlos starten. Upgraden, wenn die Agenten Ihnen Zeit und Geld sparen.",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "save": "Sparen",
+    "popular": "Beliebteste",
+    "cta": "Loslegen",
+    "contact": "Sprechen Sie mit uns"
+  },
+  "resources": {
+    "eyebrow": "Leitfäden & Playbooks",
+    "title": "Praktische Ressourcen für ",
+    "titleHighlight": "Inhaber",
+    "sub": "Kurze, umsetzbare Guides — Einrichtung, E-Mail-Ton, lokales SEO, Versandausnahmen und mehr."
+  },
+  "integrations": {
+    "eyebrow": "Integrationen",
+    "title": "Funktioniert mit den Tools, die Sie ",
+    "titleHighlight": "bereits nutzen",
+    "sub": "Gmail, Shopify, QuickBooks, CRMs, Versanddienstleister und mehr — in Minuten verbunden."
+  },
+  "finalCta": {
+    "title": "Bereit, Ihre Zeit zurückzugewinnen?",
+    "sub": "Setzen Sie Ihren ersten Agenten in Minuten ein. Keine Karte nötig zum Erkunden.",
+    "cta": "Kostenlos starten — keine Karte nötig"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgot": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?"
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "resources": "Ressourcen",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "contact": "Kontakt",
+    "tagline": "KI-Agenten für kleine und mittlere Unternehmen — in Minuten live, ohne Tech-Team."
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "getStarted": "Loslegen",
+    "tryFree": "Kostenlos testen",
+    "loading": "Lädt…",
+    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "continue": "Weiter",
+    "back": "Zurück",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "language": "Sprache",
+    "selectLanguage": "Sprache wählen"
+  }
+}
