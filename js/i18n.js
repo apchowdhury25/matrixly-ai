@@ -11,7 +11,7 @@
   const DEFAULT_LANG = "en";
   const STORAGE_KEY = "matrixly-lang";
   const CACHE_PREFIX = "matrixly-i18n-catalog:";
-  const CACHE_VERSION = "v2";
+  const CACHE_VERSION = "v3";
   const BASE = "/i18n/";
 
   let currentLang = DEFAULT_LANG;
