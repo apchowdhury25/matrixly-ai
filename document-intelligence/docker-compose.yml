@@ -1,0 +1,50 @@
+# Matrixly Document Intelligence — local stack
+# Postgres 16 + pgvector, Redis for ARQ, optional API/worker services.
+#
+# Usage:
+#   docker compose up -d postgres redis
+#   psql ... -f migrations/001_document_intelligence.sql
+#   uvicorn app.main:app --reload --port 8080
+#   arq app.workers.worker.WorkerSettings
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: matrixly-docs-pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: matrixly
+    ports:
+      - "5432:5432"
+    volumes:
+      - matrixly_pg_data:/var/lib/postgresql/data
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d matrixly"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: matrixly-docs-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # Optional: run API in Docker after building
+  # api:
+  #   build: .
+  #   env_file: .env
+  #   ports: ["8080:8080"]
+  #   depends_on:
+  #     postgres: { condition: service_healthy }
+  #     redis: { condition: service_healthy }
+
+volumes:
+  matrixly_pg_data:

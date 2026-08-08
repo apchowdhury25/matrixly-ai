@@ -1,0 +1,19 @@
+Matrixly Returns SOP (sample)
+
+Purpose
+Handle customer return requests within 30 days of delivery for US SMB storefronts.
+
+Steps
+1. Verify order number and delivery date in Shopify or the POS.
+2. Confirm the item is unused and in original packaging unless defective.
+3. Issue an RMA code and email the customer prepaid label when eligible.
+4. Restock inventory within 48 hours of warehouse receipt.
+5. Refund via original payment method within 5 business days after restock.
+
+Exceptions
+- Final sale items are not eligible unless defective.
+- International returns require manager approval.
+- Chargebacks: escalate to the Email Assistant / support queue immediately.
+
+Payment terms context
+Wholesale invoices are Net 30 unless otherwise stated on the contract.
