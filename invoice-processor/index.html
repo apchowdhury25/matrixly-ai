@@ -100,15 +100,15 @@
       <nav class="hidden sm:flex items-center gap-6">
         <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
         <a href="/invoice-forge" class="nav-link">InvoiceForge</a>
-        <a href="#deploy" class="nav-link">Deploy</a>
+        <a href="#deploy" class="nav-link" data-i18n="site.book_wise.page.deploy">Deploy</a>
       </nav>
-      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.book_wise.page.deploy">Deploy</a>
     </div>
   </header>
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">Finance · AP · Ready to use</p>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.invoice_processor.s4297.finance_ap_ready_to_use">Finance · AP · Ready to use</p>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">Invoice Processor</h1>
       <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
         Production multi-agent AP built with <strong class="text-matrix-cream">Pydantic AI</strong> —
@@ -121,37 +121,37 @@
         <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Prefer model <code class="text-xs">xai:grok-4.5</code> · works offline with rule fallbacks</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Pydantic AI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">PO match</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.invoice_processor.s4297.pydantic_ai">Pydantic AI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.invoice_processor.s4297.po_match">PO match</span>
         <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.fastapi">FastAPI</span>
       </div>
     </section>
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-agent-feature-grid>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">1. Extract</h2>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.crm_assistant.s4318.t_1_extract">1. Extract</h2>
           <p class="text-sm text-matrix-soft">PDF / email / text → structured <code class="text-xs">InvoiceData</code>.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">2. Match</h2>
-          <p class="text-sm text-matrix-soft">PO lookup + amount/vendor/qty discrepancy rules.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_processor.s5975.t_2_match">2. Match</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_processor.s5975.po_lookup_amount_vendor_qty_discrepancy_">PO lookup + amount/vendor/qty discrepancy rules.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">3. Review</h2>
-          <p class="text-sm text-matrix-soft">Approve, needs review, or reject — with HITL flags.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_processor.s5975.t_3_review">3. Review</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_processor.s5975.approve_needs_review_or_reject_with_hitl">Approve, needs review, or reject — with HITL flags.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">4. Prepare</h2>
-          <p class="text-sm text-matrix-soft">Accounting stub ready for QuickBooks / NetSuite.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_processor.s5975.t_4_prepare">4. Prepare</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_processor.s5975.accounting_stub_ready_for_quickbooks_net">Accounting stub ready for QuickBooks / NetSuite.</p>
         </article>
       </div>
     </section>
 
     <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.deploy.deploy_on_this_machine">Deploy on this machine</h2>
         <p class="text-sm text-matrix-soft mb-6">
           Code: <code class="text-xs">agents/invoice-processor</code> ·
           Guide: <code class="text-xs">agents/invoice-processor/README.md</code>
@@ -173,11 +173,11 @@ python -m src.cli serve</pre>
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Related agents</h2>
-        <p class="text-sm text-matrix-soft mb-6">Pair with InvoiceForge for inbox watch, AR aging, and the visual review dashboard.</p>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.invoice_processor.s8315.related_agents">Related agents</h2>
+        <p class="text-sm text-matrix-soft mb-6" data-i18n="site.invoice_processor.s8315.pair_with_invoiceforge_for_inbox_watch_a">Pair with InvoiceForge for inbox watch, AR aging, and the visual review dashboard.</p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="/invoice-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See InvoiceForge</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/invoice-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.content_forge.embed.see_invoiceforge">See InvoiceForge</a>
         </div>
       </div>
     </section>
@@ -185,8 +185,8 @@ python -m src.cli serve</pre>
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · Invoice Processor v1.0 · Pydantic AI multi-agent AP</span>
-      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span data-i18n="site.invoice_processor.footer.matrixly_invoice_processor_v1_0_pydantic">Matrixly · Invoice Processor v1.0 · Pydantic AI multi-agent AP</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
     </div>
   </footer>
   <script src="/js/i18n.js" defer></script>

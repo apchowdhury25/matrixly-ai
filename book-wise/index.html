@@ -100,17 +100,17 @@
       <nav class="hidden sm:flex items-center gap-6">
         <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
         <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
-        <a href="#embed" class="nav-link">Embed</a>
+        <a href="#embed" class="nav-link" data-i18n="site.book_wise.page.embed">Embed</a>
       </nav>
-      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.book_wise.page.deploy">Deploy</a>
     </div>
   </header>
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">Scheduling · Ready to use</p>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.book_wise.s4299.scheduling_ready_to_use">Scheduling · Ready to use</p>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">BookWise</h1>
-      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl" data-i18n="site.book_wise.s4299.fully_manage_appointments_for_smbs_check">
         Fully manage appointments for SMBs — check real-time availability, propose optimal slots with buffers and timezones,
         book with confirmations, send smart reminders, and handle reschedules/cancellations with human-in-the-loop for edge cases.
       </p>
@@ -120,10 +120,10 @@
         <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Reminders · intake · CRM-lite · audit · usage billing</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Buffers + TZ</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.fastapi">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.buffers_tz">Buffers + TZ</span>
         <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">No-show reduction</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.no_show_reduction">No-show reduction</span>
       </div>
     </section>
 
@@ -131,27 +131,27 @@
       <!-- data-agent-feature-grid: mirrored into home hero carousel agent-slide -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-agent-feature-grid>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">1. Intent</h2>
-          <p class="text-sm text-matrix-soft">Classify book, availability, reschedule, cancel, or status from natural language.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.s5876.t_1_intent">1. Intent</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.book_wise.s5876.classify_book_availability_reschedule_ca">Classify book, availability, reschedule, cancel, or status from natural language.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">2. Availability</h2>
-          <p class="text-sm text-matrix-soft">Business hours, buffers, min notice, and timezone-aware optimal slots.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.s5876.t_2_availability">2. Availability</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.book_wise.s5876.business_hours_buffers_min_notice_and_ti">Business hours, buffers, min notice, and timezone-aware optimal slots.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">3. Book</h2>
-          <p class="text-sm text-matrix-soft">Intake form fields, confirmations, calendar write, CRM contact upsert.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.s5876.t_3_book">3. Book</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.book_wise.s5876.intake_form_fields_confirmations_calenda">Intake form fields, confirmations, calendar write, CRM contact upsert.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">4. Remind</h2>
-          <p class="text-sm text-matrix-soft">24h + 2h reminders; admin view of upcoming bookings and HITL queue.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.s5876.t_4_remind">4. Remind</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.book_wise.s5876.t_24h_2h_reminders_admin_view_of_upcomin">24h + 2h reminders; admin view of upcoming bookings and HITL queue.</p>
         </article>
       </div>
     </section>
 
     <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.deploy.deploy_on_this_machine">Deploy on this machine</h2>
         <p class="text-sm text-matrix-soft mb-6">
           Code: <code class="text-xs">agents/book-wise</code> ·
           Guide: <code class="text-xs">agents/book-wise/README.md</code>
@@ -163,7 +163,7 @@ pip install -r requirements.txt
 copy .env.example .env
 python scripts/smoke_test.py
 python -m src.cli serve</pre>
-        <h3 class="font-bold text-matrix-cream mb-2">Business hours (config.yaml)</h3>
+        <h3 class="font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.deploy.business_hours_config_yaml">Business hours (config.yaml)</h3>
         <pre class="cmd mb-4">business_hours:
   monday: { start: "09:00", end: "17:00" }
 booking:
@@ -178,7 +178,7 @@ booking:
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed code</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.embed.embed_code">Embed code</h2>
         <p class="text-sm text-matrix-soft mb-4">Place before <code class="text-xs">&lt;/body&gt;</code>. Replace the host with your BookWise VPS URL.</p>
         <pre class="cmd mb-6">&lt;!-- Matrixly BookWise widget --&gt;
 &lt;script
@@ -189,8 +189,8 @@ booking:
   async&gt;
 &lt;/script&gt;</pre>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="/support-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See SupportForge</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/support-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.see_supportforge">See SupportForge</a>
         </div>
       </div>
     </section>
@@ -198,8 +198,8 @@ booking:
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · BookWise v1.0 · Embeddable booking</span>
-      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span data-i18n="site.book_wise.footer.matrixly_bookwise_v1_0_embeddable_bookin">Matrixly · BookWise v1.0 · Embeddable booking</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
     </div>
   </footer>
   <script src="/js/i18n.js" defer></script>

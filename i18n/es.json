@@ -699,5 +699,1246 @@
       "security": "Seguridad",
       "cookies": "Galletas"
     }
+  },
+  "site": {
+    "agents": {
+      "s23091": {
+        "agent_marketplace": "Mercado de agentes",
+        "your_small_business": "tu pequeña empresa",
+        "pick_a_proven_agent_for_leads_email_ship": "Elija un agente probado para clientes potenciales, correo electrónico, envíos, soporte o contenido: conecte sus herramientas y recupere tiempo en minutos. No se requieren ingenieros."
+      },
+      "catalog": {
+        "catalog": "Catalogar",
+        "get_to_work": "Empezar a trabajar.",
+        "live_agents_ready_to_try_each_card_opens": "Agentes en vivo listos para probar. Cada tarjeta abre una descripción general simple: impleméntela cuando esté listo.",
+        "view_product_suite": "Ver conjunto de productos →",
+        "scores_inbound_leads_enriches_contact_da": "Califica los clientes potenciales entrantes, enriquece los datos de los contactos y sugiere secuencias de contacto personalizadas.",
+        "triage_inbox_draft_replies_and_flag_urge": "Clasifica la bandeja de entrada, redacta borradores de respuestas y marca elementos urgentes para que los operadores dejen de vivir del correo electrónico.",
+        "update_contacts_log_activities_and_keep_": "Actualice contactos, registre actividades y mantenga automatizada la higiene del canal en toda su pila de ventas.",
+        "try_this_agent": "Prueba este agente",
+        "track_shipments_notify_stakeholders_and_": "Realice un seguimiento de los envíos, notifique a las partes interesadas y maneje las excepciones para las PYME de logística y distribución.",
+        "user_guide": "guía de usuario",
+        "see_full_logistics_flow": "Ver flujo logístico completo →",
+        "pack": "EMBALAR",
+        "supportforge_bookwise_invoiceforge_with_": "SupportForge + BookWise + InvoiceForge con un panel unificado, registro de actividad, análisis y widgets integrados.",
+        "supp": "APOYO",
+        "embeddable_ai_support_triage_chat_email_": "Soporte de IA integrable: chat de clasificación/correo electrónico/formularios, respuesta desde su base de conocimientos, escalamiento con HITL y tickets.",
+        "book": "LIBRO",
+        "ai_appointment_booking_real_time_availab": "Reserva de citas con IA: disponibilidad en tiempo real, confirmaciones, recordatorios, reprogramación/cancelación, sincronización de calendario.",
+        "invc": "INVC",
+        "invoice_processing_ar_vision_extract_val": "Procesamiento de facturas y AR: extracción de visión, validación, publicación en QuickBooks/Xero/CSV, excepciones, recordatorios, informes.",
+        "cont": "CONTINUAR",
+        "create_and_repurpose_marketing_content_s": "Cree y reutilice contenido de marketing: blogs SEO, redes sociales, boletines informativos, anuncios: voz de marca + revisión de HITL.",
+        "agentic_seo_brand_marketing_for_us_smbs_": "Agentic SEO y marketing de marca para pymes de EE. UU.: crecimiento local/orgánico, contenido de voz de marca, GBP, rastreador de palabras clave, ROI, con HITL antes de la publicación.",
+        "bespoke": "HECHO A LA MEDIDA",
+        "higher_tier": "Nivel superior",
+        "seo_bespoke": "SEO-A medida",
+        "twil": "crepusculo",
+        "twilio_sms_simple_voice_for_houston_smbs": "Twilio SMS y voz simple para PYMES de Houston: respuesta principal, mensajes de texto de citas, recuperación de llamadas perdidas, modo de prueba + HITL saliente.",
+        "meet": "ENCONTRARSE",
+        "meeting_outcomes_summaries_action_items_": "Resultados de la reunión: resúmenes, elementos de acción, actualizaciones de CRM, correos electrónicos de resumen e indicadores de seguimiento de transcripciones de Zoom/Teams/Meet.",
+        "social": "SOCIAL",
+        "social_content_engagement_multi_platform": "Contenido social y participación: publicaciones multiplataforma, programación óptima, respuestas a la bandeja de entrada, información valiosa: voz de marca + HITL.",
+        "pipe": "TUBO",
+        "score_and_prioritize_sales_pipelines_fit": "Califique y priorice los canales de ventas: puntuación de idoneidad/compromiso, listas diarias de representantes, indicadores de riesgo, actualizaciones de CRM, información sobre la salud.",
+        "doc": "DOC",
+        "draft_proposals_quotes_contracts_and_rep": "Redacte propuestas, cotizaciones, contratos e informes a partir de plantillas: reglas de marca, precios, aprobación HITL, exportación PDF.",
+        "inv": "INV",
+        "pydantic_ai_multi_agent_ap_extract_pdfs_": "AP multiagente de Pydantic AI: extraiga PDF/correo electrónico, haga coincidir PO, marque discrepancias, HITL antes del pago.",
+        "etf": "ETF",
+        "live_market_data_yield_projections_nav_r": "Datos de mercado en vivo, proyecciones de rendimiento, riesgo NAV y estrategias con conocimiento de impuestos: datos gratuitos de Yahoo, QQQI predeterminado, ahorro Notion opcional."
+      },
+      "s50223": {
+        "ready_to_deploy": "¿Listo para implementar?",
+        "start_with_the_starter_pack_support_book": "Comience con Starter Pack (Soporte + Libro + Factura) o explore Lead Qualifier, ContentForge, SEOForge, MeetWise, SocialForge, PipelineForge, DocForge y más: exploración gratuita.",
+        "get_started_free": "Comience gratis",
+        "see_logistics_flow": "Ver flujo logístico"
+      },
+      "footer": {
+        "ai_agents_that_work_while_you_run_your_b": "Agentes de IA que trabajan mientras usted administra su negocio.",
+        "talk_to_sales": "hablar con ventas",
+        "qa_admin": "Administrador de control de calidad"
+      }
+    },
+    "book_wise": {
+      "page": {
+        "embed": "Empotrar",
+        "deploy": "Desplegar"
+      },
+      "s4299": {
+        "scheduling_ready_to_use": "Programación · Listo para usar",
+        "fully_manage_appointments_for_smbs_check": "Administre completamente las citas para PYMES: verifique la disponibilidad en tiempo real, proponga espacios óptimos con buffers y zonas horarias, reserve con confirmaciones, envíe recordatorios inteligentes y maneje reprogramaciones/cancelaciones con un humano informado para casos extremos.",
+        "fastapi": "RápidoAPI",
+        "buffers_tz": "Buffers + TZ",
+        "no_show_reduction": "Reducción de no presentación"
+      },
+      "s5876": {
+        "t_1_intent": "1. Intención",
+        "classify_book_availability_reschedule_ca": "Clasifica reserva, disponibilidad, reprogramación, cancelación o estado desde el lenguaje natural.",
+        "t_2_availability": "2. Disponibilidad",
+        "business_hours_buffers_min_notice_and_ti": "Horarios comerciales, zonas de influencia, avisos mínimos y franjas horarias óptimas que tienen en cuenta la zona horaria.",
+        "t_3_book": "3. Reservar",
+        "intake_form_fields_confirmations_calenda": "Campos del formulario de admisión, confirmaciones, escritura del calendario, notificación de contacto CRM.",
+        "t_4_remind": "4. Recordar",
+        "t_24h_2h_reminders_admin_view_of_upcomin": "recordatorios 24h + 2h; Vista de administrador de las próximas reservas y cola HITL."
+      },
+      "deploy": {
+        "deploy_on_this_machine": "Implementar en esta máquina",
+        "business_hours_config_yaml": "Horario comercial (config.yaml)"
+      },
+      "embed": {
+        "embed_code": "código para insertar",
+        "back_to_marketplace": "Volver al mercado",
+        "see_supportforge": "Ver SupportForge"
+      },
+      "footer": {
+        "matrixly_bookwise_v1_0_embeddable_bookin": "Matrixly · BookWise v1.0 · Reserva integrable",
+        "back_to_agents": "Volver a agentes"
+      }
+    },
+    "connect_forge": {
+      "page": {
+        "houston_use_cases": "Casos de uso de Houston",
+        "run_locally": "Ejecutar localmente"
+      },
+      "s4320": {
+        "twil_sms_voice_houston_smbs": "TWIL · SMS y voz · Pymes de Houston",
+        "the_first_twilio_powered_agent_on_matrix": "El primer agente con tecnología Twilio en Matrixly. Envíe y reciba SMS, mantenga hilos de conversación, realice llamadas de prueba simples y mantenga a los humanos en control con el Modo de prueba + aprobación saliente, diseñado para servicios domésticos, HVAC, contratistas, bienes raíces y comercio minorista local de Houston.",
+        "twilio": "Twilio",
+        "port_8802": "Puerto 8802"
+      },
+      "houston": {
+        "instant_lead_response": "Respuesta instantánea al cliente potencial",
+        "text_back_hvac_and_home_service_leads_in": "Envíe mensajes de texto a clientes potenciales de HVAC y servicios a domicilio en Katy/Energy Corridor en cuestión de segundos, bilingüe cuando sea necesario.",
+        "appointments": "Equipo",
+        "confirmation_and_reminder_sms_your_custo": "SMS de confirmación y recordatorio que tus clientes realmente leyeron (HITL antes de que salga algo, si así lo deseas).",
+        "missed_call_recovery": "Recuperación de llamadas perdidas",
+        "turn_a_missed_ring_into_a_text_thread_so": "Convierta un anillo perdido en un hilo de texto: \"Lamento haberte extrañado, ¿cómo podemos ayudarte?\""
+      },
+      "s7265": {
+        "tools_it_connects_to": "Herramientas a las que se conecta"
+      },
+      "deploy": {
+        "deploy_on_this_machine_port_8802": "Implementar en esta máquina (puerto 8802)",
+        "test_panel_actions": "Acciones del panel de prueba"
+      },
+      "s10115": {
+        "inbound_webhook": "Webhook entrante",
+        "see_bookwise": "Ver BookWise"
+      },
+      "footer": {
+        "matrixly_connectforge_v1_0_twilio_connec": "Matrixly · ConnectForge v1.0 · Agente Twilio Connect para PYMES de Houston"
+      }
+    },
+    "content_forge": {
+      "page": {
+        "start_for_my_business": "Empezar para mi negocio"
+      },
+      "s4311": {
+        "content_desk_built_for_small_businesses": "Escritorio de contenido · Creado para pequeñas empresas",
+        "your_content_desk_for_small_business_tur": "Su escritorio de contenido para pequeñas empresas: convierta un blog, una transcripción o una nota de producto en publicaciones SEO, textos sociales, boletines informativos y anuncios, con su voz y con revisión humana antes de que algo se haga público.",
+        "about_5_minutes_no_coding_nothing_publis": "Aproximadamente 5 minutos · Sin codificación · No se publica nada sin tu autorización"
+      },
+      "how": {
+        "t_1_research": "1. Investigación",
+        "angles_keywords_audience_and_ctas_from_y": "Ángulos, palabras clave, audiencia y CTA de su material fuente.",
+        "t_2_write": "2. Escribe",
+        "seo_blog_with_title_meta_description_slu": "Blog SEO con título, meta descripción, slug y cuerpo estructurado.",
+        "t_3_edit": "3. Editar",
+        "brand_voice_pass_and_quality_score_befor": "Pase de voz de marca y nivel de calidad antes de que algo se publique.",
+        "t_4_repurpose": "4. Reutilizar",
+        "linkedin_x_instagram_newsletter_ads_and_": "LinkedIn, X, Instagram, boletín informativo, anuncios e ideas para el próximo tema."
+      },
+      "start": {
+        "start_content_desk": "Iniciar mesa de contenido",
+        "start_this_for_my_business": "Iniciar esto para mi negocio.",
+        "one_guided_setup_prepares_everything_on_": "Una configuración guiada prepara todo en su computadora. Solo responderá preguntas sencillas sobre su negocio y claves opcionales: sin codificación ni recetas de terminal.",
+        "what_happens_when_you_start": "¿Qué pasa cuando empiezas?",
+        "we_install_the_content_desk_privately_on": "Instalamos la mesa de Contenidos de forma privada en este ordenador",
+        "you_name_your_business_and_optional_desc": "Nombra tu empresa y (opcional) describe cómo escribes.",
+        "optional_connect_wordpress_drafts_or_add": "Opcional: conecte borradores de WordPress o agregue una clave xAI para una escritura más inteligente",
+        "we_open_your_content_workspace_in_the_br": "Abrimos tu espacio de trabajo de contenidos en el navegador",
+        "easiest_on_windows": "Más fácil en Windows",
+        "python_org": "python.org",
+        "or_in_powershell_from_the_contentforge_f": "O en PowerShell desde la carpeta ContentForge:",
+        "you_ll_only_be_asked_for": "Sólo te pedirán",
+        "business_name": "Nombre comercial",
+        "optional_website_how_you_write_xai_api_k": "Opcional: sitio web, cómo se escribe, clave xAI API",
+        "optional_wordpress_site_application_pass": "Opcional: sitio de WordPress + contraseña de la aplicación (si desea borradores allí)",
+        "internal_api_keys_are_created_for_you_au": "Las claves internas API se crean automáticamente. Nunca necesitamos sus habilidades terminales.",
+        "for_your_it_person_advanced_install": "Para su persona de TI/instalación avanzada",
+        "show": "Espectáculo",
+        "hide": "Esconder",
+        "i_ve_got_python_show_start_path_again": "Tengo Python: muestra la ruta de inicio nuevamente"
+      },
+      "embed": {
+        "see_invoiceforge": "Ver InvoiceForge"
+      },
+      "footer": {
+        "matrixly_contentforge_v1_0_content_creat": "Matrixly · ContentForge v1.0 · Creación y reutilización de contenido"
+      }
+    },
+    "crm_assistant": {
+      "s3268": {
+        "crm_ready_to_use": "CRM · Listo para usar",
+        "contacts": "Contactos",
+        "activities": "Actividades",
+        "hygiene": "Higiene",
+        "salesforce_export": "Exportación Salesforce"
+      },
+      "s4318": {
+        "t_1_extract": "1. extraer",
+        "meeting_email_notes_contact_company_deal": "Notas de reunión/correo electrónico → contacto, empresa, trato, propuestas de actividad.",
+        "t_2_approve": "2. Aprobar",
+        "hitl_queue_review_diffs_before_applying_": "Cola HITL: revise las diferencias antes de aplicar a la tienda CRM.",
+        "t_3_hygiene": "3. Higiene",
+        "stale_deals_missing_owners_missing_next_": "Acuerdos obsoletos, propietarios desaparecidos, faltan próximos pasos.",
+        "t_4_export": "4. Exportar",
+        "salesforce_shaped_contact_task_opportuni": "Contacto / Tarea / Oportunidad en forma de Salesforce JSON + CSV."
+      },
+      "footer": {
+        "matrixly_crm_assistant_v1_0": "Matrixly · CRM Assistant v1.0"
+      }
+    },
+    "doc_forge": {
+      "s4288": {
+        "documents_ready_to_use": "Documentos · Listo para usar",
+        "draft_professional_proposals_quotes_cont": "Redacte propuestas, cotizaciones, contratos e informes profesionales para PYMES: obtenga datos de clientes, aplique plantillas aprobadas, mantenga consistentes las reglas de marca y precios, encamine la aprobación interna con seguimiento de versiones y exporte PDF o formatos editables.",
+        "templates": "Plantillas",
+        "pdf_export": "Exportación PDF"
+      },
+      "s5861": {
+        "t_1_intake": "1. ingesta",
+        "crm_forms_or_manual_brief_with_line_item": "CRM, formularios o resumen manual con líneas de pedido.",
+        "t_2_draft": "2. Borrador",
+        "template_driven_proposals_quotes_contrac": "Propuestas, cotizaciones, contratos e informes basados ​​en plantillas.",
+        "t_3_brand_check": "3. Verificación de marca",
+        "pricing_rules_placeholders_quality_score": "Reglas de precios, marcadores de posición, nivel de calidad.",
+        "t_4_approve": "4. Aprobar",
+        "hitl_queue_with_version_snapshots": "Cola HITL con instantáneas de la versión.",
+        "t_5_export": "5. Exportar",
+        "pdf_html_markdown_send_status_log": "PDF, HTML, Markdown, enviar registro de estado."
+      },
+      "embed": {
+        "see_contentforge": "Ver ContentForge"
+      },
+      "footer": {
+        "matrixly_docforge_v1_0_business_document": "Matrixly · DocForge v1.0 · Documentos comerciales"
+      }
+    },
+    "email_assistant": {
+      "s5428": {
+        "email_ready_to_use": "Correo electrónico · Listo para usar",
+        "triage_your_business_inbox_draft_replies": "Clasifique la bandeja de entrada de su empresa, redacte respuestas para su revisión, marque elementos urgentes y obtenga un resumen ejecutivo diario, para que no se le escape nada importante mientras mantiene el control de cada envío.",
+        "demo_video_placeholder_embed_when_ready": "Marcador de posición del vídeo de demostración · insertar cuando esté listo"
+      },
+      "s6817": {
+        "t_1_triage": "1. Triaje",
+        "score_unread_mail_and_sort_it_into_clear": "Califique el correo no leído y clasifíquelo en grupos claros: urgente, necesita respuesta, para su información y más.",
+        "t_2_flag_urgent": "2. Marcar urgente",
+        "surface_payments_deadlines_legal_issues_": "Surface payments, deadlines, legal issues, VIP senders, and operational exceptions first.",
+        "t_3_draft_replies": "3. Borradores de respuestas",
+        "prepare_reply_drafts_for_your_review_not": "Prepare borradores de respuesta para su revisión. No se envía nada hasta que usted lo apruebe.",
+        "t_4_daily_brief": "4. Resumen diario",
+        "get_a_short_executive_summary_of_the_las": "Obtenga un breve resumen ejecutivo de las últimas 24 horas para que pueda comenzar el día concentrado."
+      },
+      "s8116": {
+        "connect_the_agent_to_your_business_mailb": "Conecte el agente a su buzón comercial. Revisa los mensajes no leídos, resalta lo que necesita atención, redacta borradores de respuestas que puedes editar y entrega un resumen diario, sin enviar correo por sí solo.",
+        "best_for": "Lo mejor para",
+        "owners_and_ops_leads_who_live_in_a_busy_": "Propietarios y líderes de operaciones que viven en una bandeja de entrada comercial personal o compartida ocupada",
+        "teams_that_want_faster_responses_without": "Equipos que desean respuestas más rápidas sin envío automático de correo electrónico al cliente",
+        "anyone_who_wants_a_morning_summary_inste": "Cualquiera que quiera un resumen matutino en lugar de buscar en el correo no leído.",
+        "built_in_guardrails": "Barandillas incorporadas",
+        "draft_only_by_default_you_approve_before": "Draft-only by default — you approve before anything leaves the mailbox",
+        "daily_briefs_go_only_to_addresses_you_co": "Los resúmenes diarios van solo a las direcciones que usted configure",
+        "mailbox_credentials_stay_in_your_environ": "Las credenciales del buzón permanecen en su entorno; nunca son parte del sitio público"
+      },
+      "footer": {
+        "matrixly_email_assistant_v1_0": "Matrixly · Email Assistant v1.0"
+      }
+    },
+    "etf_analyzer": {
+      "page": {
+        "pipeline": "Tubería"
+      },
+      "s4290": {
+        "finance_ready_to_use": "Finanzas · Listo para usar",
+        "port_8797": "Puerto 8797",
+        "default_qqqi": "QQQI predeterminado"
+      },
+      "s5739": {
+        "t_1_snapshot": "1. Instantánea",
+        "price_volume_52w_range_aum_expense_ratio": "Precio, volumen, rango de 52w, AUM, relación de gastos.",
+        "t_2_yield": "2. Rendimiento",
+        "ttm_yield_distributions_annualized_conte": "Rendimiento TTM, distribuciones, contexto anualizado.",
+        "t_3_nav_risk": "3. Riesgo NAV",
+        "premium_discount_and_structural_notes": "Prima/descuento y notas estructurales.",
+        "t_4_tax_aware": "4. Consciente de los impuestos",
+        "distribution_character_account_framing": "Carácter de distribución y estructura de cuentas.",
+        "t_5_notion": "5. XXMARCA35XX",
+        "optional_knowledge_layer_save": "Guardado opcional de la capa de conocimiento."
+      },
+      "footer": {
+        "matrixly_etf_portfolio_analyzer_v1_0": "Matrixly · ETF Portfolio Analyzer v1.0"
+      }
+    },
+    "for_contractors": {
+      "s9259": {
+        "contractors_trades": "Contratistas · Oficios",
+        "win_the_job_skip_the_admin_spiral": "Gana el trabajo. Evite la espiral administrativa.",
+        "qualify_leads_book_site_visits_keep_invo": "Califique clientes potenciales, reserve visitas al sitio, mantenga las facturas en movimiento y permanezca visible localmente, mientras utiliza las herramientas.",
+        "start_free_with_contractor_stack": "Comience gratis con la pila de contratistas",
+        "take_the_agent_quiz": "Responda el cuestionario del agente",
+        "t_10_hour_guarantee": "garantía de 10 horas",
+        "how_contractors_reclaim_admin_hours_with": "Cómo los contratistas recuperan horas de administración con los agentes",
+        "video_placeholder_embed_when_ready": "Marcador de posición de vídeo · insertar cuando esté listo"
+      },
+      "s10852": {
+        "starter_agent_stack": "Pila de agentes iniciales",
+        "deploy_2_3_agents_first_expand_when_roi_": "Primero, implemente 2 o 3 agentes. Expandir cuando ROI sea obvio.",
+        "hot_job_requests_don_t_sit_until_sunday_": "Las solicitudes de empleo candentes no se quedan hasta el domingo por la noche.",
+        "estimates_and_site_visits_on_the_calenda": "Estimaciones y visitas al sitio en el calendario automáticamente.",
+        "customer_and_supplier_threads_triaged_da": "Hilos de clientes y proveedores clasificados diariamente.",
+        "extract_and_chase_paperwork_without_drow": "Extraiga y busque documentos sin ahogarse en PDF."
+      },
+      "s12441": {
+        "industry_roi_examples": "Ejemplos de industria ROI",
+        "faster_quote_response": "Respuesta de cotización más rápida",
+        "fewer_missed_appointments": "Menos citas perdidas",
+        "admin_hours_back_to_billable_work": "Horas de administración de regreso al trabajo facturable",
+        "illustrative_results_vary_by_niche_and_e": "Los resultados ilustrativos varían según el nicho y la ejecución.",
+        "integrations_that_matter": "Integraciones que importan",
+        "calendar": "Calendario",
+        "browse_all_integrations": "Explorar todas las integraciones →"
+      },
+      "s14023": {
+        "ready_when_you_are": "Listo cuando lo estés",
+        "start_free_connect_tools_in_minutes_canc": "Empieza gratis. Conecte herramientas en minutos. Cancele en cualquier momento, sin contrato."
+      },
+      "footer": {
+        "industries": "Industrias",
+        "hvac": "climatización",
+        "pro_services": "servicios profesionales",
+        "contractors": "Contratistas",
+        "roi_calculator": "Calculadora ROI"
+      }
+    },
+    "for_hvac": {
+      "s9325": {
+        "more_booked_jobs_fewer_after_hours_fires": "Más trabajos reservados. Menos incendios fuera de horario.",
+        "matrixly_agents_qualify_web_leads_answer": "Los agentes de Matrixly califican clientes potenciales web, responden consultas y aumentan la visibilidad de búsqueda local, para que su camión esté lleno del trabajo adecuado.",
+        "start_free_with_hvac_stack": "Comience gratis con la pila HVAC"
+      },
+      "s10930": {
+        "score_inbound_quote_requests_and_draft_s": "Califique las solicitudes de cotización entrantes y redacte el alcance el mismo día.",
+        "triage_after_hours_inbox_noise_surface_j": "Clasificar el ruido de la bandeja de entrada fuera de horario; Trabajos de superficie que te necesitan.",
+        "service_pages_that_rank_for_near_me_and_": "Páginas de servicios que se clasifican según \"cerca de mí\" y demanda estacional.",
+        "confirm_installs_and_reduce_scheduling_p": "Confirme las instalaciones y reduzca la programación de ping-pong."
+      },
+      "s12543": {
+        "t_40_organic_leads_in_90_days_example": "+40% de leads orgánicos en 90 días (ejemplo)",
+        "t_25_hrs_week_reclaimed_example": "25 horas/semana reclamadas (ejemplo)",
+        "payback_often_under_30_days": "Recuperación de la inversión a menudo en menos de 30 días",
+        "hubspot_crm": "XXMARCA29XX / XXMARCA53XX"
+      }
+    },
+    "for_local_retail": {
+      "s9223": {
+        "stay_open_online_without_living_in_the_i": "Manténgase abierto en línea sin vivir en la bandeja de entrada.",
+        "answer_customers_keep_social_consistent_": "Responda a los clientes, mantenga la coherencia social y gestione las excepciones de envío, para que el piso y el almacén sigan siendo su foco de atención.",
+        "start_free_with_retail_stack": "Comience gratis con la pila minorista",
+        "local_retail_agents_in_action": "Agentes minoristas locales en acción"
+      },
+      "s10805": {
+        "hours_stock_returns_answered_from_your_k": "Horarios, existencias, devoluciones: respuestas desde su base de conocimientos.",
+        "posts_and_replies_in_brand_voice_for_met": "Publicaciones y respuestas con voz de marca para Meta y más.",
+        "vendor_and_customer_email_without_consta": "Correo electrónico de proveedores y clientes sin cambios constantes de contexto.",
+        "if_you_ship_online_orders_cut_wismo_tick": "Si envía pedidos en línea, corte los boletos WISMO."
+      },
+      "s12424": {
+        "fewer_after_hours_dms_unanswered": "Menos mensajes directos fuera de horario sin respuesta",
+        "consistent_social_without_a_full_time_ma": "Redes sociales consistentes sin un especialista en marketing a tiempo completo",
+        "clearer_ops_when_online_orders_spike": "Operaciones más claras cuando aumentan los pedidos en línea",
+        "shopify_square": "XXMARCA28XX / XXMARCA32XX",
+        "meta": "Meta"
+      }
+    },
+    "for_professional_services": {
+      "s9285": {
+        "triage_email_prep_meetings_keep_crm_clea": "Clasifique el correo electrónico, prepare reuniones, mantenga limpio CRM y realice un seguimiento de los clientes potenciales antes de que se acaben, sin contratar a otro coordinador.",
+        "start_free_with_services_stack": "Comience gratis con la pila de servicios"
+      },
+      "s10872": {
+        "daily_brief_drafts_and_urgent_flags": "Resumen diario, borradores y banderas urgentes.",
+        "contact_hygiene_with_approve_to_write_co": "Higiene de contactos con controles de aprobación para escritura.",
+        "summaries_actions_and_recap_emails_from_": "Resúmenes, acciones y correos electrónicos de resumen de transcripciones.",
+        "score_consults_and_draft_outreach_sequen": "Calificar consultas y redactar secuencias de divulgación."
+      },
+      "s12446": {
+        "reply_time_hours_minutes_example": "Tiempo de respuesta: horas → minutos (ejemplo)",
+        "more_qualified_consults_booked": "Más consultas calificadas reservadas",
+        "less_crm_admin_for_owners": "Menos administrador CRM para propietarios",
+        "zoom_meet": "Zoom / Conoce"
+      }
+    },
+    "for_shopify": {
+      "s9241": {
+        "ship_smarter_answer_less_sell_more": "Realice envíos más inteligentes. Responde menos. Vender más.",
+        "rate_shop_carriers_update_customers_befo": "Califique a los transportistas, informe a los clientes antes de que pregunten \"¿dónde está mi pedido?\" y mantenga cubierto el soporte sin agregar personal de almacén.",
+        "start_free_with_e_com_stack": "Comience gratis con la pila de e-com"
+      },
+      "s10839": {
+        "track_exceptions_draft_wismo_replies_rat": "Seguimiento de excepciones, borradores de respuestas WISMO, precios de compra de operadores.",
+        "kb_answers_for_shipping_returns_and_prod": "KB responde preguntas frecuentes sobre envíos, devoluciones y productos.",
+        "recovery_and_order_emails_without_living": "Recuperación y pedidos de correos electrónicos sin vivir en Gmail.",
+        "product_copy_and_seo_posts_that_convert": "Copia del producto y publicaciones SEO que convierten."
+      },
+      "s12444": {
+        "t_60_wismo_tickets_example": "−60% entradas WISMO (ejemplo)",
+        "faster_exception_handling": "Manejo de excepciones más rápido",
+        "clear_roi_within_first_invoice_cycle": "Borre ROI dentro del primer ciclo de facturación"
+      }
+    },
+    "home": {
+      "logistics": {
+        "order_48291": "Orden #48291",
+        "shopify_urbanthread_co": "Shopify · UrbanThread Co."
+      }
+    },
+    "integrations": {
+      "s29619": {
+        "connect_gmail_shopify_quickbooks_shipsta": "Conecte Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Slack, transportistas y más, para que los agentes puedan comercializar, vender, enviar y brindar soporte sin que usted cambie de pestaña.",
+        "search_integrations": "Integraciones de búsqueda",
+        "all": "Todo",
+        "most_popular": "Más Popular",
+        "operations": "Operaciones",
+        "e_commerce": "Comercio electrónico",
+        "productivity": "Productividad",
+        "personal_assistant": "asistente personal"
+      },
+      "s32271": {
+        "all_integrations": "Todas las integraciones",
+        "try_matrixly_free": "Pruebe Matrixly gratis",
+        "no_integrations_match_your_search_try_an": "No hay integraciones que coincidan con tu búsqueda. Pruebe con otra palabra clave o borre los filtros."
+      },
+      "s33386": {
+        "easy_as_one_two_three": "Tan fácil como uno, dos, tres",
+        "something_happens_in_your_tools_agents_s": "Algo sucede en sus herramientas → los agentes intervienen → el trabajo se realiza. Lenguaje sencillo, acciones reales.",
+        "when_this_happens": "Cuando esto sucede…",
+        "select_a_trigger": "Seleccione un disparador",
+        "a_trigger_is_an_event_that_kicks_off_you": "Un desencadenante es un evento que activa su agente de IA, como un nuevo correo electrónico en Gmail, un pedido Shopify o un mensaje Slack.",
+        "do_this": "haz esto",
+        "connect_your_apps": "Conecta tus aplicaciones",
+        "hundreds_of_integrations_available_plug_": "Cientos de integraciones disponibles. Conecte Matrixly a CRM, correo electrónico, comercio electrónico, logística, anuncios y herramientas de productividad.",
+        "autonomous": "Autónomo",
+        "let_ai_do_the_work": "Deja que la IA haga el trabajo",
+        "give_custom_instructions_to_your_agent_i": "Dé instrucciones personalizadas a su agente en un lenguaje sencillo. Los agentes planifican, actúan e informan, para que usted se concentre en el crecimiento."
+      },
+      "s35622": {
+        "trusted_by_forward_thinking_smbs": "CON LA CONFIANZA DE LAS PYMES CON VISIÓN DE FUTURO",
+        "connects": "conecta",
+        "matrixly_agents_save_hours_every_week_by": "Los agentes de Matrixly ahorran horas cada semana al ejecutar SEO, ventas, soporte y logística en todo el conjunto que ya paga.",
+        "view_pricing": "Ver precios",
+        "no_credit_card_required_cancel_anytime": "No se requiere tarjeta de crédito · Cancelar en cualquier momento",
+        "times": "&veces;",
+        "connect_your_gmail": "Conecte su Gmail",
+        "connect_your_gmail_so_your_ai_assistant_": "Conecte su Gmail para que su asistente de IA pueda mantener su bandeja de entrada bajo control mientras usted maneja el negocio.",
+        "what_your_email_assistant_will_do": "Qué hará tu Email Assistant",
+        "sort_and_label_mail_urgent_needs_reply_f": "Clasificar y etiquetar el correo (urgente, necesita respuesta, para su información y más)",
+        "flag_time_sensitive_items_so_nothing_sli": "Marque los elementos urgentes para que nada se escape",
+        "email_you_a_short_daily_brief_of_what_ma": "Enviarle por correo electrónico un breve resumen diario de lo que importa",
+        "google_permissions_plain_english": "Permisos de Google (inglés sencillo)",
+        "try_test_mode_first_sample_emails": "Pruebe primero el modo de prueba (correos electrónicos de muestra)",
+        "i_use_hostinger_outlook_other_imap": "Yo uso Hostinger/Outlook/otro IMAP",
+        "almost_there_2_minutes": "Ya casi llegamos - 2 minutos",
+        "gmail_connects_securely_on_your_computer": "Gmail se conecta de forma segura a su computadora a través de Email Assistant. Pegue estos comandos en una terminal (o pregúntele a su socio de configuración). No se requiere codificación más allá de copiar y pegar.",
+        "t_1_one_time_google_setup": "1. Configuración única de Google",
+        "t_2_connect": "2. Conectar",
+        "your_browser_opens_sign_in_allow_you_sho": "Su navegador se abre → iniciar sesión → Permitir. Debería ver \"Éxito: Gmail conectado\".",
+        "i_ve_connected_gmail_show_success": "He conectado Gmail: muestra éxito",
+        "open_email_assistant_page": "Abrir la página Email Assistant",
+        "hostinger_outlook_imap": "Hostinger/Outlook/IMAP",
+        "not_on_gmail_you_can_still_use_email_ass": "¿No estás en Gmail? Aún puedes usar Email Assistant con la misma bandeja de entrada que usas en Thunderbird o Outlook.",
+        "full_steps_are_in_the_email_assistant_re": "Los pasos completos se encuentran en el archivo LÉAME Email Assistant en \"Hostinger / IMAP\".",
+        "open_email_assistant": "Abrir Email Assistant",
+        "back_to_gmail_connect": "Volver a Gmail conectar",
+        "test_mode_sample_inbox": "Modo de prueba: bandeja de entrada de muestra",
+        "see_the_agent_work_before_connecting_rea": "Vea el trabajo del agente antes de conectarse al correo electrónico real. No es necesario iniciar sesión en Google.",
+        "looks_good_connect_gmail": "Se ve bien: conecte Gmail",
+        "gmail_connected": "Gmail conectado",
+        "your_email_assistant_is_ready_open_it_to": "Tu Email Assistant está listo. Ábralo para clasificar, redactar respuestas y obtener su primer informe de impacto de 24 horas.",
+        "reset_connection_status_on_this_browser": "Restablecer el estado de la conexión en este navegador"
+      },
+      "footer": {
+        "docs": "Documentos",
+        "cta": "${cta}",
+        "initials_item_name_item_abbr": "${iniciales(nombre.artículo, artículo.abbr)}",
+        "item_name": "${artículo.nombre}",
+        "catlabel": "${catLabel}",
+        "blurb": "${publicidad}"
+      }
+    },
+    "invoice_forge": {
+      "page": {
+        "workflow": "Flujo de trabajo"
+      },
+      "s4372": {
+        "invoicing_ready_to_use": "Facturación · Listo para usar",
+        "invoice_processing_accounts_receivable_f": "Procesamiento de facturas y cuentas por cobrar para PYMES: controle la bandeja de entrada y las cargas, extraiga con modelos compatibles con visión, valide, publique en QuickBooks/Xero o CSV, marque excepciones, envíe recordatorios de pago y genere informes AR.",
+        "grok_vision": "Grok visión",
+        "qbo_xero_csv": "QBO/Xero/CSV",
+        "ar_aging": "envejecimiento de la RA"
+      },
+      "workflow": {
+        "t_1_watch": "1. Mirar",
+        "inbox_folder_uploads_api_paste_or_email_": "La bandeja de entrada, las cargas de carpetas, el pegado de API o los webhooks de correo electrónico alimentan el proceso.",
+        "t_2_extract": "2. Extraer",
+        "vision_model_or_text_parser_pulls_vendor": "El modelo de visión o el analizador de texto extrae proveedores, números, fechas, líneas y totales.",
+        "t_3_validate": "3. Validar",
+        "confidence_duplicates_missing_po_high_am": "Confianza, duplicados, PO faltante, monto elevado, palabras clave fraudulentas.",
+        "t_4_post": "4. Publicar",
+        "quickbooks_xero_or_reliable_csv_export_f": "QuickBooks, Xero o exportación CSV confiable para los libros.",
+        "t_5_remind": "5. Recordar",
+        "ar_follow_ups_after_due_date_to_reduce_l": "Seguimiento de AR después de la fecha de vencimiento para reducir la morosidad.",
+        "t_6_report": "6. Informe",
+        "status_breakdown_and_aging_buckets_on_th": "Desglose del estado y categorías de antigüedad en el panel de revisión."
+      },
+      "embed": {
+        "embed_review_dashboard": "Insertar panel de revisión"
+      },
+      "footer": {
+        "matrixly_invoiceforge_v1_0_invoice_proce": "Matrixly · InvoiceForge v1.0 · Procesamiento de facturas y AR"
+      }
+    },
+    "invoice_processor": {
+      "s4297": {
+        "finance_ap_ready_to_use": "Finanzas · AP · Listo para usar",
+        "pydantic_ai": "IA pidántica",
+        "po_match": "coincidencia de orden de compra"
+      },
+      "s5975": {
+        "t_2_match": "2. Partido",
+        "po_lookup_amount_vendor_qty_discrepancy_": "Búsqueda de orden de compra + reglas de discrepancia de cantidad/proveedor/cantidad.",
+        "t_3_review": "3. Revisión",
+        "approve_needs_review_or_reject_with_hitl": "Aprobar, necesita revisión o rechazar, con indicadores HITL.",
+        "t_4_prepare": "4. Prepárate",
+        "accounting_stub_ready_for_quickbooks_net": "Talón de contabilidad listo para QuickBooks / NetSuite."
+      },
+      "s8315": {
+        "related_agents": "Agentes relacionados",
+        "pair_with_invoiceforge_for_inbox_watch_a": "Combínelo con InvoiceForge para monitorear la bandeja de entrada, el envejecimiento de AR y el panel de revisión visual."
+      },
+      "footer": {
+        "matrixly_invoice_processor_v1_0_pydantic": "Matrixly · Invoice Processor v1.0 · AP multiagente Pydantic AI"
+      }
+    },
+    "lead_qualifier": {
+      "s4900": {
+        "lead_generation_ready_to_use": "Generación de leads · Listo para usar",
+        "gmail_ingest": "Gmail ingesta",
+        "hot_warm_cold": "Caliente / Tibia / Fría",
+        "see_lead_qualifier_score_a_real_inbound_": "Vea a Lead Qualifier obtener un cliente potencial entrante real"
+      },
+      "s6727": {
+        "t_1_score": "1. Puntuación",
+        "fit_intent_seniority_data_quality_hot_wa": "Ajuste · intención · antigüedad · calidad de los datos → caliente / tibio / frío / DQ.",
+        "t_2_enrich": "2. Enriquecer",
+        "company_industry_website_location_signal": "Señales de empresa, industria, sitio web, ubicación desde dominio de correo electrónico + opcional Grok.",
+        "t_3_outreach": "3. Divulgación",
+        "t_4_touch_personalized_email_sequence_dr": "Secuencia de correo electrónico personalizada de 4 toques (solo borradores: envíos humanos).",
+        "t_4_salesforce": "4. XXMARCA20XX",
+        "lead_json_csv_for_data_loader_api_import": "Liderar JSON + CSV para importación de Data Loader / API."
+      },
+      "s7934": {
+        "install_demo": "Instalar y demostrar",
+        "qualify_your_file_gmail_single_lead": "Califique su archivo · Gmail · cliente potencial único"
+      },
+      "footer": {
+        "matrixly_lead_qualifier_v1_0_sales_mvp": "Matrixly · Lead Qualifier v1.0 · MVP de ventas"
+      }
+    },
+    "meet_wise": {
+      "s4290": {
+        "meetings_ready_to_use": "Reuniones · Listo para usar",
+        "capture_and_action_meeting_outcomes_for_": "Capture y ponga en acción los resultados de las reuniones para PYMES: procese transcripciones de Zoom, Teams o Google Meet, genere resúmenes y elementos de acción, actualice CRM y envíe resúmenes profesionales con revisión humana.",
+        "crm_map": "Mapa CRM",
+        "transcript_upload": "Carga de transcripción"
+      },
+      "s5806": {
+        "t_1_ingest": "1. Ingerir",
+        "upload_transcript_or_paste_zoom_teams_me": "Cargue la transcripción o pegue Zoom/Teams/Meet exportar texto.",
+        "summary_decisions_action_items_owners_de": "Resumen, decisiones, elementos de acción, propietarios, plazos, seguimientos.",
+        "t_3_action": "3. Acción",
+        "crm_shaped_updates_recap_email_after_hum": "Actualizaciones en forma CRM + correo electrónico de resumen después de la aprobación humana."
+      },
+      "footer": {
+        "matrixly_meetwise_v1_0_meeting_outcomes": "Matrixly · MeetWise v1.0 · Resultados de la reunión"
+      }
+    },
+    "pipeline_forge": {
+      "s4288": {
+        "sales_pipeline_ready_to_use": "Canal de ventas · Listo para usar",
+        "score_and_prioritize_sales_pipelines_for": "Califique y priorice los canales de ventas para PYMES: análisis continuo de clientes potenciales y oportunidades, listas de trabajo clasificadas para representantes, indicadores de acuerdos en riesgo, sugerencias de etapas CRM e información sobre el estado del canal con supervisión humana.",
+        "scoring": "Tanteo",
+        "usage_tracking": "Seguimiento de uso"
+      },
+      "s5866": {
+        "fit_engagement_behavior_and_urgency_sign": "Señales de ajuste, compromiso, comportamiento y urgencia.",
+        "t_2_prioritize": "2. Priorizar",
+        "daily_or_weekly_ranked_lists_for_each_re": "Listas clasificadas diarias o semanales para cada representante.",
+        "t_3_flag_risk": "3. Riesgo de bandera",
+        "stale_and_at_risk_deals_with_recovery_ac": "Ofertas obsoletas y en riesgo con acciones de recuperación.",
+        "t_4_crm": "4. XXMARCA53XX",
+        "stage_task_and_note_updates_with_hitl": "Actualizaciones de etapas, tareas y notas con HITL.",
+        "t_5_health": "5. Salud",
+        "pipeline_health_score_and_coaching_notes": "Puntuación de estado de la tubería y notas de entrenamiento."
+      },
+      "embed": {
+        "see_crm_assistant": "Ver CRM Assistant"
+      },
+      "footer": {
+        "matrixly_pipelineforge_v1_0_pipeline_sco": "Matrixly · PipelineForge v1.0 · Puntuación y priorización de canalizaciones"
+      }
+    },
+    "pricing": {
+      "s22980": {
+        "plans_for_owners_small_teams": "Planes para propietarios y equipos pequeños.",
+        "less_than_a_part_time_hire_works_around_": "Menos que una contratación a tiempo parcial. Funciona las 24 horas. Empieza gratis."
+      },
+      "pricing": {
+        "clear_roi": "Borrar ROI.",
+        "built_for_smbs_small_teams_and_contracto": "Creado para PYMES, equipos pequeños y contratistas. Empieza gratis. Actualice cuando el valor sea obvio.",
+        "browse_agents_and_try_a_workflow_risk_fr": "Busque agentes y pruebe un flujo de trabajo sin riesgos.",
+        "about_1_60_day": "Alrededor de $1.60/día",
+        "solo_operators_and_small_teams_ready_to_": "Operadores individuales y equipos pequeños listos para automatizar el trabajo principal.",
+        "a_fraction_of_one_va": "Una fracción de un VA",
+        "cancel_anytime_no_long_term_contract_on_": "Cancele en cualquier momento · Sin contrato a largo plazo en planes de autoservicio",
+        "try_free_14_days_10_hour_month_refund_gu": "Pruébalo gratis 14 días · Garantía de reembolso de 10 horas al mes"
+      },
+      "compare": {
+        "matrixly_vs_the_alternatives": "Matrixly frente a las alternativas",
+        "cheaper_than_a_va_more_autonomous_than_z": "Más barato que un VA. Más autónomo que Zapier + ChatGPT. Más rápido que una agencia.",
+        "agency": "Agencia",
+        "setup": "Configuración",
+        "days_weeks": "Días-semanas",
+        "hours_days_diy": "Horas-días bricolaje",
+        "weeks": "Semanas",
+        "done_work_hitl": "Trabajo hecho + HITL",
+        "variable_quality": "calidad variable",
+        "drafts_glue": "Borradores + pegamento",
+        "campaigns_retainers": "Campañas / anticipos"
+      },
+      "s35082": {
+        "try_free_for_14_days_if_you_don_t_save_a": "Pruébalo gratis durante 14 días. Si no ahorra al menos 10 horas durante el primer mes en un plan pago, le reembolsaremos ese plan, sin hacer preguntas.",
+        "cancel_anytime_no_contract_terms_apply_u": "Cancele en cualquier momento · Sin contrato · Se aplican términos · Planes pagos de EE. UU."
+      },
+      "s35735": {
+        "owner_playbooks_checklists": "Guías y listas de verificación para propietarios →"
+      },
+      "footer": {
+        "platform": "Plataforma",
+        "agent_engine": "Motor de agente",
+        "business_knowledge": "Conocimiento empresarial",
+        "smart_reasoning": "razonamiento inteligente",
+        "app_connections": "Conexiones de aplicaciones"
+      }
+    },
+    "products": {
+      "s23003": {
+        "reliable": "confiable",
+        "agents_that_remember_your_business_reaso": "Agentes que recuerdan su negocio, razonan cuidadosamente y toman medidas en las aplicaciones que ya usa, para que los propietarios obtengan resultados, no otra herramienta para cuidar.",
+        "view_integrations": "Ver integraciones"
+      },
+      "suite": {
+        "how_the_platform_works": "Cómo funciona la plataforma",
+        "built_so_busy_owners_can_trust_the_outco": "Construido para que los propietarios ocupados puedan confiar en el resultado",
+        "from_always_on_agents_to_your_business_p": "Desde agentes siempre disponibles hasta sus guías empresariales: cada capa está diseñada para flujos de trabajo reales de PYMES, no para proyectos científicos.",
+        "the_engine_that_keeps_agents_working_aft": "El motor que mantiene a los agentes trabajando después de que usted cierra la computadora portátil, con memoria de sus preferencias, habilidades para tareas comunes y acceso seguro a sus herramientas.",
+        "runtime_cloud_ready": "Tiempo de ejecución · listo para la nube",
+        "your_playbooks_knowledge": "Tus manuales y conocimientos",
+        "teach_agents_how_your_business_works_pri": "Enseñe a los agentes cómo funciona su negocio (reglas de precios, voz de la marca, procedimientos operativos estándar y preguntas frecuentes) para que cada respuesta y decisión se mantengan dentro de la marca.",
+        "knowledge_always_in_sync": "Conocimiento · siempre sincronizado",
+        "advanced_ai_reasoning_powers_multi_step_": "El razonamiento avanzado de IA potencia el trabajo de varios pasos en ventas, envíos, finanzas y soporte, con una estructura que puede auditar, sin conjeturas restringidas.",
+        "intelligence_powered_by_grok_xai": "Inteligencia · impulsado por Grok (xAI)",
+        "secure_connectors_wire_agents_into_gmail": "Los conectores seguros conectan a los agentes con Gmail, Shopify, QuickBooks, ShipStation, HubSpot, transportistas, Slack y más, para que hagan un trabajo real, no solo chateen.",
+        "browse_integrations": "Explorar integraciones →",
+        "mobile": "MÓVIL",
+        "coming_soon": "Muy pronto",
+        "matrixly_mobile": "Matrixly Móvil",
+        "owner_dashboard_on_your_phone_check_agen": "Panel de control del propietario en su teléfono: verifique la actividad de los agentes, apruebe excepciones y reciba alertas de envío o clientes potenciales sobre la marcha.",
+        "flow": "FLUIR",
+        "coordinated_agent_workflows": "Flujos de trabajo de agentes coordinados",
+        "specialists_work_together_with_human_che": "Los especialistas trabajan en conjunto con puntos de control humanos, registros de auditoría completos y seguimiento de uso, además de un panel Starter Pack para soporte, reservas y facturas.",
+        "open_starter_pack": "Abrir Starter Pack →"
+      },
+      "marketplace": {
+        "live_agents_you_can_start_today": "Agentes en vivo que puedes comenzar hoy",
+        "ready_agents_with_simple_dashboards_and_": "Agentes preparados con paneles simples y aprobación humana donde más importa: ventas, soporte, envío, finanzas, contenido, reuniones, redes sociales y más.",
+        "browse_full_catalog": "Explorar el catálogo completo →",
+        "supportforge_bookwise_invoiceforge_with_": "SupportForge + BookWise + InvoiceForge con un panel unificado, análisis e incrustaciones.",
+        "score_inbound_leads_enrich_contacts_draf": "Califique los clientes potenciales entrantes, enriquezca los contactos y redacte el alcance. Salesforce · Gmail.",
+        "triage_inbox_draft_replies_flag_urgent_i": "Bandeja de entrada de clasificación, borradores de respuestas, marcar elementos urgentes, resumen diario.",
+        "update_contacts_log_activities_pipeline_": "Actualice contactos, registre actividades, higiene de canalizaciones con aprobación para escritura.",
+        "shipstation_hub_track_exceptions_wismo_d": "Centro ShipStation: pista, excepciones, borradores WISMO. UPS · FedEx · USPS.",
+        "embeddable_support_triage_kb_answers_tic": "Soporte integrable: clasificación, respuestas de KB, tickets, escalamiento HITL, widget de chat.",
+        "ai_booking_availability_confirmations_re": "Reserva AI: disponibilidad, confirmaciones, recordatorios, reprogramación, sincronización de calendario.",
+        "invoice_ocr_extract_validate_post_to_qb_": "Factura OCR/extraer, validar, publicar en QB/Xero/CSV, excepciones, recordatorios AR.",
+        "pydantic_ai_ap_extract_pdf_email_match_p": "Pydantic AI AP: extraiga PDF/correo electrónico, haga coincidir las órdenes de compra, las discrepancias, HITL antes del pago.",
+        "seo_blogs_social_newsletters_ads_brand_v": "SEO blogs, redes sociales, boletines informativos, anuncios: voz de marca + HITL antes de la publicación.",
+        "local_organic_seo_for_us_smbs_plans_bran": "SEO local y orgánico para pymes de EE. UU.: planes, contenido de voz de marca, GBP, palabras clave, ROI + HITL.",
+        "meeting_outcomes_summaries_actions_crm_n": "Resultados de la reunión: resúmenes, acciones, notas CRM, correos electrónicos resumidos de las transcripciones.",
+        "multi_platform_posts_schedule_inbox_repl": "Publicaciones multiplataforma, programación, respuestas a la bandeja de entrada, información valiosa: voz de marca + HITL.",
+        "score_prioritize_deals_fit_engagement_at": "Califique y priorice acuerdos: ajuste/compromiso, indicadores de riesgo, sugerencias de etapa CRM.",
+        "proposals_quotes_contracts_reports_from_": "Propuestas, cotizaciones, contratos, informes a partir de plantillas: exportación HITL, PDF/MD/HTML.",
+        "free_yahoo_data_yield_nav_risk_tax_aware": "Datos gratuitos de Yahoo: rendimiento, riesgo NAV, notas fiscales. QQQI predeterminado · opcional Notion.",
+        "mob": "MULTITUD",
+        "soon": "Pronto",
+        "owner_app_for_run_history_hitl_approvals": "Aplicación de propietario para historial de ejecución, aprobaciones HITL y alertas: hoja de ruta."
+      },
+      "s45135": {
+        "built_for_small_businesses_not_enterpris": "Creado para pequeñas empresas, no para teatro empresarial",
+        "a_practical_platform_for_owners_always_o": "Una plataforma práctica para propietarios: agentes siempre disponibles, sus guías como contexto, razonamiento inteligente, conexiones seguras a aplicaciones y aprobación humana cuando hay dinero o clientes en juego.",
+        "your_workspace_status": "Estado de tu espacio de trabajo",
+        "healthy": "Saludable",
+        "live": "Vivir:",
+        "soon": "Pronto:"
+      },
+      "s48425": {
+        "start_with_one_agent_or_the_full_pack": "Comience con un agente o con el paquete completo",
+        "try_starter_pack_for_support_booking_and": "Pruebe Starter Pack para obtener asistencia, reservas y facturas, o elija un solo agente. Gratis para explorar."
+      }
+    },
+    "resources_7_day_setup": {
+      "page": {
+        "owner_resources": "← Recursos del propietario",
+        "t_7_day_setup_checklist_for_your_first_a": "Lista de verificación de configuración de 7 días para su primer agente",
+        "practical_one_pager_for_us_small_busines": "Práctico folleto de una página para propietarios de pequeñas empresas estadounidenses. Gratis para leer después de un rápido desbloqueo del correo electrónico (almacenado solo en su navegador para este sitio de demostración).",
+        "unlock_this_playbook": "Desbloquea este libro de jugadas",
+        "enter_your_email_to_reveal_the_full_chec": "Ingrese su correo electrónico para revelar la lista de verificación completa. Sin spam: la demostración estática almacena el correo electrónico en localStorage solo hasta que se conecta un ESP.",
+        "unlock_free": "Desbloquear gratis",
+        "unlocked_save_or_print_this_page": "Desbloqueado · guardar o imprimir esta página",
+        "start_free_with_matrixly": "Comience gratis con Matrixly"
+      }
+    },
+    "resources_email_voice": {
+      "page": {
+        "how_to_teach_email_assistant_your_voice": "Cómo enseñarle a Email Assistant tu voz"
+      }
+    },
+    "resources": {
+      "s9233": {
+        "owner_resources": "Recursos del propietario",
+        "short_practical_guides_setup_checklists_": "Guías breves y prácticas: listas de verificación de configuración, capacitación de voz, SEO local, envío y seguimiento de clientes potenciales. Los mejores con acceso suave para desbloqueo gratuito de correo electrónico.",
+        "day_by_day_checklist_to_deploy_your_firs": "Lista de verificación diaria para implementar su primer agente Matrixly sin un equipo técnico.",
+        "open_playbook": "Abrir libro de jugadas →",
+        "playbook_for_teaching_matrixly_email_ass": "Libro de jugadas para enseñar a Matrixly Email Assistant su tono, reglas de hacer y no hacer y revisar hábitos.",
+        "local_seo_agent_playbook_for_service_bus": "Manual de estrategias para agentes locales SEO para empresas de servicios",
+        "playbook_for_service_businesses_using_ma": "Guía para empresas de servicios que utilizan agentes Matrixly para SEO y Google Business locales.",
+        "shipping_exception_playbook": "Guía de excepciones de envío",
+        "how_us_shopify_and_e_com_teams_use_shipp": "Cómo los equipos de comercio electrónico y Shopify de EE. UU. utilizan Shipping Assistant para retrasos, WISMO y problemas con el operador.",
+        "lead_follow_up_sop": "PNT de seguimiento de clientes potenciales",
+        "sop_for_us_smbs_using_lead_qualifier_for": "POE para PYMES de EE. UU. que utilizan Lead Qualifier para un seguimiento de clientes potenciales rápido y consistente.",
+        "not_sure_where_to_start": "¿No estás seguro de por dónde empezar?",
+        "take_the_60_second_quiz_or_calculate_you": "Responda el cuestionario de 60 segundos o calcule sus horas atrás."
+      }
+    },
+    "seo_bespoke": {
+      "s4279": {
+        "seo_higher_tier_custom_agent_factory": "SEO · Nivel superior · Fábrica de agentes personalizados",
+        "parallel_graph": "Gráfico paralelo",
+        "port_8801": "Puerto 8801"
+      },
+      "s6007": {
+        "t_1_business_quiz": "1. Prueba de negocios",
+        "interactive_web_wizard_or_cli_six_indepe": "Asistente web interactivo o CLI. Seis coleccionistas independientes se despliegan en paralelo.",
+        "t_2_seo_profile": "2. Perfil SEO",
+        "professional_markdown_json_summary_with_": "Resumen profesional de Markdown + JSON con instrucciones de palabras clave iniciales (clasificaciones nunca inventadas).",
+        "t_3_custom_agent_code": "3. Código de agente personalizado",
+        "research_brand_voice_local_seo_content_t": "Investigación, voz de marca, SEO local, contenido, seguimiento y módulos ROI especializados para tu negocio.",
+        "t_4_safety_hitl": "4. Seguridad + HITL",
+        "isolated_verifiers_and_an_approval_queue": "Verificadores aislados y una cola de aprobación antes de que un paquete se considere listo para implementar.",
+        "t_5_keywords_roi": "5. Palabras clave y ROI",
+        "owner_supplied_ranks_only_hours_leads_re": "Solo filas proporcionadas por el propietario. Horas/clientes potenciales/tarjetas de ingresos que usted reporta, sin reclamos de tráfico falsos.",
+        "t_6_re_run_anytime": "6. Vuelva a ejecutar en cualquier momento",
+        "update_the_quiz_or_regenerate_from_a_sav": "Actualice el cuestionario o regenere desde un perfil guardado cuando su negocio cambie."
+      },
+      "deploy": {
+        "run_locally_dashboard_on_port_8801": "Ejecutar localmente (panel en el puerto 8801)",
+        "then_open": "Luego abre:",
+        "optional_demo_without_the_ui": "Demostración opcional sin la interfaz de usuario:"
+      },
+      "vs": {
+        "seo_bespoke_vs_seoforge": "SEO-Bespoke y SEOForge",
+        "role": "Role",
+        "ready_to_run_seo_crew": "Tripulación SEO lista para funcionar",
+        "builds_a_custom_agent_for_one_business": "Crea un agente personalizado para una empresa",
+        "input": "Aporte",
+        "brief_chat": "Breve / charla",
+        "multi_step_quiz": "Prueba de varios pasos",
+        "output": "Producción",
+        "plans_content_local_packs": "Planes, contenidos, packs locales.",
+        "profile_specialized_agent_source": "Perfil + fuente de agente especializado",
+        "port": "Puerto"
+      },
+      "embed": {
+        "see_seoforge": "Ver SEOForge"
+      },
+      "footer": {
+        "matrixly_seo_bespoke_v1_0_custom_seo_age": "Matrixly · SEO-Bespoke v1.0 · Fábrica de agentes SEO personalizada"
+      }
+    },
+    "seo_forge": {
+      "s4306": {
+        "seo_local_ready_to_use": "SEO · Local · Listo para usar",
+        "matrixly_s_specialized_seo_brand_marketi": "El SEO especializado y el agente de marketing de marca de Matrixly para pequeñas y medianas empresas de EE. UU.: aumente la visibilidad orgánica, las clasificaciones locales \"cercas de mí\" y la coherencia de la marca sin contratar una agencia.",
+        "hitl_queue": "Cola HITL",
+        "roi_dashboard": "Panel de control ROI"
+      },
+      "s5932": {
+        "t_1_research_plan": "1. Investigación y plan",
+        "local_intent_competitor_gaps_and_a_prior": "Intención local, brechas de competencia y un calendario priorizado de 30 días que usted aprueba antes de que comience el trabajo.",
+        "t_2_brand_voice_content": "2. Contenido de voz de marca",
+        "service_pages_blogs_location_pages_faqs_": "Páginas de servicio, blogs, páginas de ubicación, preguntas frecuentes con título, meta, notas de esquema y variantes sociales.",
+        "t_3_local_seo": "3. Local SEO",
+        "google_business_profile_posts_q_a_citati": "Google Business Publicaciones de perfil, preguntas y respuestas, lista de verificación de citas y plantillas de respuesta a reseñas.",
+        "t_4_approval_queue": "4. Cola de aprobación",
+        "human_in_the_loop_before_any_public_publ": "Humano informado antes de cualquier publicación pública en WordPress, Buffer o GBP.",
+        "t_5_keyword_tracker": "5. Rastreador de palabras clave",
+        "track_service_city_and_near_me_keywords_": "Realice un seguimiento de las palabras clave servicio + ciudad y \"cerca de mí\" con un simple movimiento de clasificación.",
+        "t_6_roi_cards": "6. Tarjetas ROI",
+        "hours_saved_leads_attributed_and_revenue": "Horas ahorradas, clientes potenciales atribuidos e ingresos vinculados: alimenta el panel Matrixly ROI."
+      },
+      "embed": {
+        "see_socialforge": "Ver SocialForge"
+      },
+      "footer": {
+        "matrixly_seoforge_v1_0_seo_brand_marketi": "Matrixly · SEOForge v1.0 · SEO y marketing de marca para PYMES de EE. UU."
+      }
+    },
+    "shipping_assistant": {
+      "page": {
+        "logistics_flow": "Flujo logístico"
+      },
+      "s4692": {
+        "shipping_ready_to_use": "Envío · Listo para usar",
+        "shipstation_hub": "Buje ShipStation",
+        "exception_scan": "Escaneo de excepciones",
+        "wismo_drafts": "WISMO borradores",
+        "hitl_cancel_label": "HITL cancelar/etiquetar"
+      },
+      "s6815": {
+        "t_1_track": "1. Seguimiento",
+        "orders_and_shipments_via_shipstation_car": "Pedidos y envíos a través de ShipStation: transportistas UPS, FedEx, USPS a través de un centro.",
+        "t_2_exceptions": "2. Excepciones",
+        "late_undeliverable_address_issues_priori": "Problemas de dirección tardíos, que no se pueden entregar: cola priorizada para las operaciones.",
+        "t_3_notify": "3. Notificar",
+        "stakeholder_customer_wismo_drafts_human_": "Borradores WISMO de partes interesadas y clientes (envíos humanos: menos tickets de soporte).",
+        "t_4_order_delivery": "4. Pedido → entrega",
+        "awaiting_shipped_delivered_with_hitl_on_": "Esperando → enviado → entregado, con HITL en cancelación/dirección/etiquetas."
+      },
+      "s8067": {
+        "full_order_to_delivery_flow": "Flujo completo desde el pedido hasta la entrega",
+        "aligned_with_the_marketplace_logistics_s": "Alineado con los carriles logísticos del mercado: cumplimiento orquestado por agentes para PYMES.",
+        "order_capture": "Captura de pedidos",
+        "import_multi_channel_orders_into_shipsta": "Importe pedidos multicanal a ShipStation.",
+        "rate_label": "Calificar y etiquetar",
+        "carrier_selection_ups_fedex_usps_label_a": "Selección de operador (UPS / FedEx / USPS): las acciones de etiqueta necesitan aprobación.",
+        "in_transit_monitor": "Monitor en tránsito",
+        "track_status_eta_exception_flags": "Estado de seguimiento, ETA, indicadores de excepción.",
+        "delivery_wismo": "Entrega y WISMO",
+        "confirm_delivery_draft_customer_updates_": "Confirmar la entrega; redactar actualizaciones de los clientes cuando algo sale mal.",
+        "view_multi_agent_logistics_flow_on_homep": "Ver el flujo logístico de múltiples agentes en la página de inicio →"
+      },
+      "s10052": {
+        "demo_no_api_keys": "Demostración (sin claves API)",
+        "live_shipstation": "En vivo ShipStation",
+        "shipstation_settings_account_api_setting": "ShipStation → Configuración → Cuenta → Configuración API",
+        "open_full_user_guide": "Abrir guía de usuario completa →"
+      },
+      "footer": {
+        "matrixly_shipping_assistant_v1_0_shipsta": "Matrixly · Shipping Assistant v1.0 · concentrador ShipStation"
+      }
+    },
+    "shipping_assistant_guide": {
+      "page": {
+        "deploy_shipping_agent": "Implementar agente de envío",
+        "user_guide_shipping": "Guía de usuario · Envío",
+        "how_to_use_the_matrixly_shipping_assista": "Cómo utilizar Matrixly Shipping Assistant del mercado: realice un seguimiento de los envíos, maneje excepciones, redacte respuestas de WISMO y ejecute un flujo de trabajo completo desde el pedido hasta la entrega con ShipStation.",
+        "featured_ai_agents": "Agentes de IA destacados",
+        "shipping_assistant": "/asistente-de-envio",
+        "on_this_page": "En esta pagina",
+        "t_1_what_it_does": "1. Qué hace",
+        "t_2_from_the_landing_page": "2. Desde la página de destino",
+        "t_3_install_demo": "3. Instalación y demostración",
+        "t_4_connect_shipstation": "4. Conecte ShipStation",
+        "t_5_daily_ops_workflow": "5. Flujo de trabajo de operaciones diario",
+        "t_6_command_reference": "6. Referencia de comando",
+        "t_7_wismo_notifications": "7. WISMO y notificaciones",
+        "t_8_approvals_hitl": "8. Aprobaciones (HITL)",
+        "t_9_hermes_skill": "9. Habilidad Hermes",
+        "t_10_order_to_delivery": "10. Pedido hasta la entrega",
+        "t_11_troubleshooting": "11. Solución de problemas",
+        "t_12_faq": "12. Preguntas frecuentes"
+      },
+      "what_it_does": {
+        "t_1_what_the_shipping_assistant_does": "1. Qué hace Shipping Assistant",
+        "capability": "Capacidad",
+        "track": "Pista",
+        "list_orders_shipments_look_up_by_order_o": "Listar pedidos/envíos; buscar por número de pedido o número de seguimiento",
+        "exceptions": "Excepciones",
+        "scan_for_late_undeliverable_address_and_": "Busque estados de excepción de retraso, no entregable, dirección y transportista",
+        "notify": "Notificar",
+        "draft_internal_customer_messages_you_rev": "Borradores de mensajes internos + de clientes (tú revisas y envías)",
+        "ready_to_send_customer_update_draft_for_": "Borrador de actualización del cliente listo para enviar para un pedido",
+        "cancel_label_address_changes_require_you": "Cancelar/cambiar etiqueta/dirección requiere su aprobación"
+      },
+      "from_landing": {
+        "t_2_starting_from_the_matrixly_landing_p": "2. A partir de la página de inicio de Matrixly",
+        "open_the_marketplace": "abrir el mercado",
+        "agents": "/agentes",
+        "find_the_ship_card": "Encuentra la tarjeta SHIP",
+        "choose_an_action": "Elige una acción",
+        "optional_integrations": "Opcional: Integraciones",
+        "integrations": "/integraciones"
+      },
+      "install": {
+        "t_3_install_and_run_the_demo_no_api_keys": "3. Instale y ejecute la demostración (sin claves API)",
+        "you_can_try_the_full_agent_flow_immediat": "Puede probar el flujo completo del agente inmediatamente con datos de muestra. No se requiere una cuenta ShipStation.",
+        "windows_powershell": "WindowsPowerShell",
+        "sample_shipments_ups_fedex_usps": "Envíos de muestra (UPS, FedEx, USPS)",
+        "exception_scan_e_g_delivery_exception_de": "Exploración de excepciones (por ejemplo, excepción de entrega, retraso en tránsito)"
+      },
+      "shipstation": {
+        "t_4_connect_live_shipstation": "4. Conéctese en vivo ShipStation",
+        "create_api_credentials": "Crear credenciales API",
+        "shipstation_com": "estación de barco.com",
+        "create_local_env_file": "Crear archivo env local",
+        "add_secrets_never_commit_or_paste_into_c": "Agregar secretos (nunca confirmar ni pegar en el chat)",
+        "verify_live_mode": "Verificar el modo en vivo"
+      },
+      "daily": {
+        "t_5_recommended_daily_ops_workflow": "5. Flujo de trabajo de operaciones diario recomendado",
+        "morning_exception_scan": "Exploración de excepción matutina",
+        "review_high_severity_items_first_excepti": "Revise primero los elementos de alta gravedad (excepciones, ETA pasada).",
+        "draft_stakeholder_customer_updates": "Borrador de actualizaciones de partes interesadas y clientes",
+        "internal_draft_your_ops_email_customer_d": "Borrador interno → su correo electrónico de operaciones. Borrador del cliente → revisar, luego enviar desde Gmail/Thunderbird (o Email Assistant).",
+        "answer_a_specific_wismo": "Responder a un WISMO específico",
+        "track_one_package": "Seguimiento de un paquete",
+        "export_a_snapshot_for_audit_sharing": "Exportar una instantánea para auditar/compartir"
+      },
+      "commands": {
+        "command": "Dominio",
+        "purpose": "Objetivo",
+        "demo_vs_live_mode_pending_hitl_count": "Modo demostración versus modo en vivo; pendiente de recuento HITL",
+        "list_shipments_demo_also_prints_exceptio": "Listar envíos; la demostración también imprime excepciones",
+        "lookup_by_order_number": "Búsqueda por número de pedido",
+        "lookup_by_tracking_number": "Búsqueda por número de seguimiento",
+        "exception_late_scan_report": "Informe de excepción/análisis tardío",
+        "customer_wismo_reply_draft": "Borrador de respuesta del cliente WISMO",
+        "internal_customer_drafts_for_all_excepti": "Borradores internos + de clientes para todas las excepciones",
+        "queue_a_cancel_action_hitl": "Poner en cola una acción de cancelación (HITL)",
+        "list_actions_waiting_for_approval": "Listar acciones pendientes de aprobación",
+        "approve_a_pending_action": "Aprobar una acción pendiente",
+        "reject_a_pending_action": "Rechazar una acción pendiente",
+        "write_shipping_snapshot_json": "Escribe envío-snapshot.json"
+      },
+      "wismo": {
+        "t_7_wismo_and_stakeholder_notifications": "7. WISMO y notificaciones a las partes interesadas"
+      },
+      "hitl": {
+        "t_8_human_in_the_loop_hitl_approvals": "8. Aprobaciones de Human-in-the-loop (HITL)",
+        "safe_by_default_tracking_and_drafts_neve": "Seguro por defecto: el seguimiento y los borradores nunca necesitan aprobación. Las operaciones marítimas destructivas sí lo hacen.",
+        "auto_allowed": "Auto-allowed",
+        "requires_approve": "Requiere aprobación",
+        "list_track_exceptions_wismo_drafts_notif": "listar, rastrear, excepciones, borradores WISMO, notificar borradores",
+        "cancel_order_update_address_create_void_": "cancelar pedido, actualizar dirección, crear/anular etiqueta",
+        "live_shipstation_mutations_run_only_afte": "Las mutaciones ShipStation activas se ejecutan solo después de la aprobación y cuando las credenciales API + los controladores de acción están habilitados."
+      },
+      "hermes": {
+        "t_9_using_hermes": "9. Usando Hermes"
+      },
+      "flow": {
+        "t_10_full_order_to_delivery_flow": "10. Flujo completo desde el pedido hasta la entrega",
+        "how_the_ship_agent_maps_to_matrixly_s_lo": "Cómo se relaciona el agente de SHIP con la historia de logística de Matrixly en la página de inicio:",
+        "open_multi_agent_logistics_flow_on_the_h": "Abrir flujo logístico multiagente en la página de inicio →"
+      },
+      "troubleshoot": {
+        "symptom": "Síntoma",
+        "what_to_try": "que probar",
+        "always_demo_mode": "Modo siempre “demo”",
+        "api_auth_error": "Error de autenticación API",
+        "order_not_found": "Order not found",
+        "module_not_found": "Módulo no encontrado",
+        "deploy_now_404": "Implementar ahora 404"
+      },
+      "faq": {
+        "does_the_agent_send_email_to_customers_b": "¿El agente envía correos electrónicos a los clientes por sí solo?",
+        "why_shipstation_instead_of_only_ups_fede": "¿Por qué ShipStation en lugar de solo UPS/FedEx APIs?",
+        "shipstation_is_the_smb_multi_channel_hub": "ShipStation es el centro multicanal para PYMES. Los portadores se utilizan hasta ShipStation para una superficie de integración.",
+        "can_i_use_it_without_a_live_shipstation_": "Can I use it without a live ShipStation account?",
+        "yes_demo_mode_ships_sample_data_for_demo": "Sí, el modo de demostración incluye datos de muestra para demostraciones y capacitación.",
+        "where_is_the_agent_code": "¿Dónde está el código del agente?",
+        "deploy_page": "Implementar página",
+        "logistics_integrations": "Integraciones logísticas"
+      },
+      "footer": {
+        "matrixly_shipping_assistant_user_guide_v": "Matrixly · Shipping Assistant Guía del usuario v1.0",
+        "featured_agents": "Agentes destacados"
+      }
+    },
+    "social_forge": {
+      "s4279": {
+        "social_ready_to_use": "Social · Listo para usar",
+        "manage_social_media_for_smbs_generate_pl": "Administre las redes sociales para PYMES: genere publicaciones nativas de la plataforma, programe horarios óptimos, supervise las menciones, redacte respuestas de voz de marca y muestre información sobre el rendimiento con aprobación humana antes de publicar cualquier cosa.",
+        "calendar_inbox": "Calendario + Bandeja de entrada",
+        "multi_platform": "Multiplataforma"
+      },
+      "s5847": {
+        "t_1_compose": "1. Redactar",
+        "linkedin_x_instagram_facebook_threads_fr": "LinkedIn, X, Instagram, Facebook, Hilos de un resumen.",
+        "t_2_schedule": "2. Horario",
+        "optimal_smb_windows_in_your_timezone": "Ventanas SMB óptimas en su zona horaria.",
+        "t_3_approve": "3. Aprobar",
+        "hitl_gate_before_publish_or_public_repli": "Puerta HITL antes de la publicación o de las respuestas públicas.",
+        "t_4_inbox": "4. Bandeja de entrada",
+        "mentions_comments_dms_with_drafted_repli": "Menciones, comentarios, DM con respuestas redactadas.",
+        "t_5_insights": "5. Insights",
+        "what_worked_next_content_ideas": "Qué funcionó + próximas ideas de contenido."
+      },
+      "footer": {
+        "matrixly_socialforge_v1_0_social_content": "Matrixly · SocialForge v1.0 · Contenido social y participación"
+      }
+    },
+    "starter_pack": {
+      "page": {
+        "invoice": "Factura",
+        "deploy_pack": "Paquete de implementación"
+      },
+      "s4308": {
+        "starter_bundle_ready_to_use": "Starter bundle · Ready to use",
+        "matrixly_starter_pack": "XXMARCA22XX XXMARCA13XX",
+        "three_production_agents_for_support_appo": "Tres agentes de producción para soporte, citas y facturas, además de un panel unificado para monitorearlos, configurarlos e integrarlos. Creado para PYMES que desean operaciones con agentes sin tener que ensamblar una cadena de herramientas desde cero.",
+        "t_3_agents": "3 agentes",
+        "t_1_dashboard": "1 tablero",
+        "port_8800": "Port 8800"
+      },
+      "s5862": {
+        "sup": "SORBER",
+        "triage_kb_answers_escalation_chat_widget": "Triaje, respuestas de KB, escalamiento, widget de chat, auditoría.",
+        "agent_page": "Página del agente →",
+        "availability_bookings_reminders_calendar": "Disponibilidad, reservas, recordatorios, sincronización de calendario.",
+        "extract_validate_post_exceptions_ar_remi": "Extraer, validar, publicar, excepciones, recordatorios AR."
+      },
+      "deploy": {
+        "deploy_the_pack": "Implementar el paquete"
+      },
+      "embed": {
+        "embed_widgets": "Insertar widgets"
+      },
+      "footer": {
+        "matrixly_starter_pack_v1_0_support_book_": "Matrixly · Starter Pack v1.0 · Soporte + Libro + Factura"
+      }
+    },
+    "support_forge": {
+      "s4525": {
+        "customer_support_ready_to_use": "Atención al cliente · Listo para usar",
+        "end_to_end_ai_customer_support_for_smbs_": "Atención al cliente de IA de extremo a extremo para PYMES: supervise el chat, el correo electrónico y los formularios; responda desde su base de conocimientos; escalar con contexto completo; Aprobar acciones externas con un ser humano informado.",
+        "grok_optional": "Grok opcional",
+        "tickets_crm_lite": "Entradas + CRM-lite"
+      },
+      "s6098": {
+        "urgency_sentiment_topic_and_sensitive_is": "Urgency, sentiment, topic, and sensitive-issue flags on every inbound message.",
+        "t_2_knowledge": "2. Conocimiento",
+        "retrieve_answers_from_your_faqs_policies": "Recupere respuestas de sus preguntas frecuentes, políticas, exportación Notion o documentos cargados.",
+        "t_3_respond": "3. Responder",
+        "auto_resolve_high_confidence_faqs_or_dra": "Resuelva automáticamente preguntas frecuentes de alta confianza o borradores de respuestas para aprobación humana.",
+        "t_4_escalate": "4. Escalar",
+        "open_tickets_with_full_context_admin_das": "Abrir tickets con contexto completo; Panel de administración para HITL y seguimientos."
+      },
+      "s7348": {
+        "architecture": "Arquitectura",
+        "channels_fastapi_multi_agent_orchestrato": "Canales → FastAPI → orquestador multiagente → tickets / HITL / auditoría / uso.",
+        "ingest": "Ingerir",
+        "widget_chat_website_form_webhook_email_w": "Chat de widgets, webhook de formulario de sitio web, webhook de correo electrónico o IMAP.",
+        "classify_retrieve": "Clasificar y recuperar",
+        "triage_local_knowledge_index_with_confid": "Triaje + índice de conocimiento local con puntuaciones de confianza.",
+        "act_safely": "Actuar con seguridad",
+        "auto_reply_draft_for_approval_or_escalat": "Respuesta automática, borrador para aprobación o escalado: las escrituras externas necesitan HITL.",
+        "operate": "Funcionar",
+        "admin_ui_audit_trail_usage_cost_for_saas": "Interfaz de usuario de administración, seguimiento de auditoría, uso/costo para la preparación de facturación de SaaS."
+      },
+      "deploy": {
+        "demo_no_api_keys_required": "Demo (no API keys required)",
+        "production_keys": "Claves de producción"
+      },
+      "embed": {
+        "iframe_option": "opción de marco flotante",
+        "connect_knowledge_non_technical": "Conectar conocimientos (no técnicos)"
+      },
+      "footer": {
+        "matrixly_supportforge_v1_0_embeddable_ai": "Matrixly · SupportForge v1.0 · Compatibilidad con IA integrable"
+      }
+    },
+    "white_glove": {
+      "page": {
+        "offer": "Oferta",
+        "workflows": "Workflows",
+        "weekly_roi": "Semanal ROI",
+        "request_a_seat": "Solicitar un asiento"
+      },
+      "s9541": {
+        "white_glove_executive_digital_employee": "White Glove Ejecutivo · Empleado Digital",
+        "we_install_a_digital_employee_then_we_ma": "Instalamos un empleado digital. Luego lo gestionamos y le asesoramos.",
+        "request_a_founding_seat": "Solicitar un asiento fundador",
+        "see_sample_weekly_roi": "Ver muestra semanal ROI →",
+        "founding_package_at_a_glance": "Paquete fundacional de un vistazo",
+        "month": "/mes",
+        "managed_retainer_setup_scoped_per_engage": "Anticipo administrado · configuración con alcance por compromiso · Plataforma de escala incluida",
+        "email_the_founder": "Envíe un correo electrónico al fundador →"
+      },
+      "offer": {
+        "the_model": "el modelo",
+        "software_is_the_hire_coaching_is_the_pro": "El software es el alquiler. El coaching es el producto.",
+        "operators_who_succeed_with_managed_ai_em": "Los operadores que tienen éxito con empleados de IA gestionados no venden \"acceso a un bot\". Instala a un empleado digital, permanece en un canal compartido con el propietario, administra el tiempo de actividad y revende el anticipo todos los lunes con un informe claro de \"ahorró X dólares esta semana\".",
+        "install_one_digital_employee": "Instalar un empleado digital",
+        "a_named_agent_for_a_single_high_pain_wor": "Un agente designado para un único flujo de trabajo complicado (facturas, seguimiento de clientes potenciales o contenido local/SEO) que realiza un trabajo de varios pasos en correos electrónicos, hojas, archivos y herramientas de la misma manera que lo haría un empleado junior.",
+        "coach_manage_ongoing": "Entrenar + gestionar en curso",
+        "you_never_have_to_figure_out_prompting_w": "Nunca es necesario \"descifrar las indicaciones\". Nos sentamos en un grupo compartido contigo y el agente. Se aprende mirando. Solucionamos problemas de confiabilidad antes de que usted se dé cuenta: esa confianza es lo que mantiene el anticipo.",
+        "weekly_roi_re_sells_itself": "ROI semanal se revende",
+        "every_agent_keeps_a_value_ledger_hours_s": "Cada agente lleva un libro de valores: horas ahorradas × su tarifa por hora aceptada, tareas completadas, resultados comerciales y tiempo de actividad. Visible ROI es la razón por la que los clientes se quedan mes tras mes."
+      },
+      "packages": {
+        "packaging": "Embalaje",
+        "setup_fee_monthly_retainer": "Tarifa de instalación + anticipo mensual",
+        "founding_white_glove_seats_are_priced_to": "Los asientos fundadores de White Glove tienen un precio para ganar referencias. A medida que las instalaciones tienen éxito, la configuración y los anticipos aumentan: el mismo manual que los operadores de agentes administrados probados.",
+        "founding": "FOUNDING",
+        "white_glove_executive": "White Glove Ejecutivo",
+        "founding_seat": "asiento fundador",
+        "solo_owners_small_teams_1_agent": "Propietarios individuales y equipos pequeños · 1 agente",
+        "setup_quoted_per_workflow_typically_499_": "Configuración cotizada por flujo de trabajo · normalmente entre $499 y $1500 para clientes fundadores",
+        "request_founding_seat": "Solicitar asiento fundador",
+        "growth_digital_employee": "Empleado digital de crecimiento",
+        "core_offer": "Oferta principal",
+        "most_houston_smbs_1_2_agents": "La mayoría de las PYMES de Houston · 1 o 2 agentes",
+        "setup_2_500_1_000_mo_per_additional_agen": "Configuración ~$2500 · +$1000/mes por agente adicional",
+        "discuss_growth": "Discutir el crecimiento",
+        "operations_suite": "Suite de operaciones",
+        "multi_agent": "Multiagente",
+        "growing_companies_3_agents": "Empresas en crecimiento · 3+ agentes",
+        "setup_4_000_6_000_complexity_based": "Configuración entre $4000 y $6000 · basado en la complejidad",
+        "discuss_operations": "Discutir operaciones",
+        "pricing_philosophy_start_with_a_clear_fo": "Filosofía de precios: comience con un asiento fundador claro, pruebe ROI semanalmente y luego aumente la configuración a medida que se componen las referencias. Siempre combine el anticipo con un informe visible el lunes por la mañana para que el servicio se revenda solo."
+      },
+      "workflows": {
+        "first_three_workflows": "Primeros tres flujos de trabajo",
+        "high_pain_high_visibility_work_for_houst": "Trabajo doloroso y de alta visibilidad para las PYMES de Houston",
+        "energy_services_construction_professiona": "Servicios de energía, construcción, servicios profesionales, consultorios médicos y negocios de West Houston/Katy/Energy Corridor. Comience con un flujo de trabajo. Expandir cuando ROI sea obvio.",
+        "t_1_invoice_ap": "1 · Factura y AP",
+        "invoice_digital_employee": "Empleado Digital Factura",
+        "monitors_email_or_a_shared_folder_extrac": "Supervisa el correo electrónico o una carpeta compartida, extrae datos de facturas de PDF, registra en Excel/Hojas de cálculo o archivos listos para QuickBooks, marca artículos vencidos, redacta borradores de seguimiento y envía un resumen semanal del impacto en efectivo.",
+        "value_metrics": "Métricas de valor",
+        "hours_saved_of_invoices_processed_overdu": "Horas ahorradas · $ de facturas procesadas · artículos vencidos marcados · recordatorios de pagos atrasados ​​enviados",
+        "t_2_leads": "2 · Clientes potenciales",
+        "lead_follow_up_digital_employee": "Empleado digital de seguimiento líder",
+        "watches_forms_email_or_crm_researches_th": "Relojes formularios, correo electrónico o CRM; investiga el plomo; redacta una primera respuesta personalizada; califica apto; descubrimiento de libros o rutas hacia el ser humano adecuado; registra la actividad de la tubería diariamente/semanalmente.",
+        "qualified_leads_handled_calls_booked_ave": "Clientes potenciales calificados atendidos · llamadas reservadas · tiempo promedio de respuesta (minutos)",
+        "t_3_local_seo": "3 · Local SEO",
+        "content_local_seo_digital_employee": "Contenido y empleado digital local SEO",
+        "researches_local_keywords_drafts_posts_a": "Investiga palabras clave locales, redacta borradores de publicaciones y actualizaciones de GBP, optimiza páginas, realiza un seguimiento de las clasificaciones y ofrece un calendario de contenido semanal simple + una instantánea del rendimiento. Venta adicional natural a agentes Matrixly SEO más amplios.",
+        "pieces_published_ranking_inquiry_lift_ho": "Pieces published · ranking/inquiry lift · hours of content work saved"
+      },
+      "how": {
+        "operating_system": "Sistema operativo",
+        "from_discovery_to_managed_workforce": "From discovery to managed workforce",
+        "discovery_one_highest_pain_workflow": "Descubrimiento: uno de los flujos de trabajo más dolorosos",
+        "low_pressure_fit_call_we_pick_the_single": "Llamada de ajuste de baja presión. Elegimos el flujo de trabajo único en el que la automatización de varios pasos mostrará horas y dólares más rápidamente. Establecemos su tarifa por hora aceptada para el libro mayor de valores.",
+        "setup_usually_3_7_days": "Configuración (generalmente de 3 a 7 días)",
+        "build_and_connect_the_digital_employee_o": "Cree y conecte al empleado digital en la pila de Matrixly (agentes persistentes, hojas compartidas, correo electrónico/herramientas CRM). Crea el canal de coaching compartido. Escriba resultados en archivos compartidos que todo el equipo pueda ver.",
+        "on_site_visit_intensive_coaching_weeks_1": "Visita in situ y entrenamiento intensivo (semanas 1 a 2)",
+        "founder_ceo_visits_or_hybrid_live_traini": "Visitas del fundador/CEO (o híbrido). Entrenamiento en vivo con tu equipo. Nos mantenemos activos en el canal compartido para que usted aprenda observando cómo informamos, corregimos y aprobamos al agente.",
+        "ongoing_management_monday_roi": "Gestión continua + Lunes ROI",
+        "light_monitoring_fix_before_you_notice_r": "Monitoreo ligero, confiabilidad de reparación antes de que te des cuenta y un informe de valor semanal todos los lunes. Cuando el primer agente claramente está ahorrando tiempo, proponemos un segundo empleado digital especializado."
+      },
+      "roi": {
+        "retention_engine": "Motor de retención",
+        "the_weekly_roi_report": "El informe semanal ROI",
+        "this_is_the_single_strongest_reason_clie": "Ésta es la razón más importante por la que los clientes siguen pagando. Un mensaje claro “ahorraste $X esta semana” revende el anticipo cada siete días.",
+        "core_metrics_every_week": "Métricas principales cada semana",
+        "conservative_estimates_only_cumulative_t": "Sólo estimaciones conservadoras. Total acumulado desde el primer día: “187 horas / valor de $18,700”.",
+        "sample_monday_email": "Ejemplo de correo electrónico del lunes",
+        "subject_your_digital_employee_week_of_au": "Asunto: Su empleado digital: semana del 4 al 10 de agosto Informe ROI",
+        "agent": "Agente:",
+        "client": "Cliente:",
+        "period": "Período:",
+        "this_week_s_snapshot": "La instantánea de esta semana",
+        "breakdown": "Descomponer",
+        "t_31_invoices_processed_6_8_hrs": "• 31 facturas procesadas → 6,8 horas",
+        "t_9_overdue_flagged_drafts_2_1_hrs": "• 9 atrasados ​​marcados + borradores → 2,1 horas",
+        "t_7_payment_matches_1_3_hrs": "• 7 coincidencias de pago → 1,3 horas",
+        "business_impact": "Impacto empresarial",
+        "t_48_200_in_invoices_processed_3_late_pa": "$48,200 en facturas procesadas · 3 pagos atrasados ​​detectados anticipadamente",
+        "watching_next": "Viendo / siguiente",
+        "one_vendor_pdf_format_updated_this_morni": "Un formato PDF de proveedor actualizado esta mañana. Listo para agregar recordatorios de pago cuando usted lo esté.",
+        "every_hour_the_agent_handles_is_an_hour_": "Cada hora que maneja el agente es una hora que recuperas. ¿Quiere más capacidad o un segundo agente? Sólo responde."
+      },
+      "s31309": {
+        "ideal_clients": "Clientes ideales",
+        "built_for_owners_who_want_outcomes_not_e": "Creado para propietarios que desean resultados, no experimentos",
+        "houston_us_smbs_ready_to_treat_ai_as_sta": "Pymes de Houston y EE. UU. listas para tratar a la IA como personal, no como un juguete",
+        "leaders_who_value_human_coaching_and_wee": "Líderes que valoran el coaching humano y las pruebas semanales por encima del chat con agentes de bricolaje",
+        "teams_burned_by_fragile_diy_agents_that_": "Equipos quemados por frágiles agentes de bricolaje que se rompen y quedan abandonados",
+        "businesses_where_499_1_200_mo_is_a_fract": "Empresas donde entre $499 y $1200/mes es una fracción de una contratación",
+        "delivery": "Delivery",
+        "founder_led_now_team_led_as_we_grow": "Ahora liderado por el fundador. Liderados en equipo a medida que crecemos.",
+        "early_white_glove_seats_are_delivered_pe": "Los primeros asientos de White Glove los entrega personalmente el fundador/CEO de Matrixly: descubrimiento, capacitación en el sitio, capacitación en canales compartidos y administración mensual. Calidad sobre volumen. A medida que crece la demanda, los entrenadores capacitados se unen bajo el mismo manual: libro de valores, confiabilidad primero, aprender observando.",
+        "you_only_need_to_be_one_step_ahead_of_th": "Sólo necesitas estar un paso por delante del cliente. Aportamos la profundidad técnica para que los agentes de varios pasos sigan siendo confiables y la presencia humana para que los propietarios nunca se sientan abandonados con una caja negra."
+      },
+      "s33395": {
+        "white_glove_vs_self_serve": "White Glove frente al autoservicio",
+        "grow_scale": "Crecer / Escalar",
+        "white_glove_digital_employee": "White Glove Empleado digital",
+        "what_you_buy": "lo que compras",
+        "software_seats": "Asientos de software",
+        "managed_employee_coaching": "Empleado gestionado + coaching",
+        "self_serve": "Self-serve",
+        "custom_install_on_site": "Instalación personalizada + in situ",
+        "learning": "Aprendiendo",
+        "docs_community": "Docs & community",
+        "shared_channel_learn_by_watching": "Shared channel · learn by watching",
+        "proof": "Prueba",
+        "activity_roi_dashboard": "Panel de actividad/ROI",
+        "monday_value_ledger_email": "Correo electrónico del libro mayor de valores del lunes",
+        "when_things_break": "cuando las cosas se rompen",
+        "you_debug": "tu depuras",
+        "we_fix_before_you_notice": "Arreglamos antes de que te des cuenta",
+        "price": "Precio",
+        "t_49_149_mo": "$49–$149/mes",
+        "from_499_mo_setup": "Desde $499/mes + configuración"
+      },
+      "faq": {
+        "common_questions": "Preguntas comunes",
+        "is_499_setup_or_monthly": "Is $499 setup or monthly?",
+        "what_s_the_real_product_the_agent_or_the": "¿Cuál es el producto real: el agente o el coaching?",
+        "coaching_and_ongoing_management_the_agen": "Coaching y gestión continua. El agente es el empleado digital; el producto es que sigue funcionando, lo entiendes y ves semanalmente ROI sin convertirte en un ingeniero puntual.",
+        "who_visits_on_site": "¿Quién visita el sitio?",
+        "initially_the_founder_ceo_as_capacity_gr": "Inicialmente el fundador/CEO. A medida que crece la capacidad, los autocares capacitados White Glove cumplen con los mismos estándares. Siempre tendrás un socio designado.",
+        "how_is_this_different_from_diy_agents_th": "¿En qué se diferencia esto de los agentes de bricolaje que se rompen?",
+        "reliability_is_a_selling_point_we_manage": "La confiabilidad es un punto de venta. Gestionamos el tiempo de actividad, escribimos en hojas compartidas (no en notas privadas), permanecemos en su canal y solucionamos problemas antes de que se conviertan en su simulacro de incendio del lunes.",
+        "can_we_start_on_scale_and_upgrade": "¿Podemos comenzar en Scale y actualizar?",
+        "yes_many_owners_explore_self_serve_then_": "Sí. Muchos propietarios exploran el autoservicio y luego pasan a White Glove cuando desean un empleado digital administrado e informes de valor semanales. Mapearemos el crédito del uso activo de la plataforma en la conversación."
+      },
+      "apply": {
+        "low_pressure_next_step": "Siguiente paso de baja presión",
+        "want_a_founding_white_glove_seat": "¿Quiere un asiento fundador White Glove?",
+        "tell_us_your_business_city_and_the_one_w": "Cuéntanos tu negocio, ciudad y el flujo de trabajo que te roba más horas. Responderemos con notas de ajuste y un espacio de descubrimiento, sin necesidad de venderlo.",
+        "email_founder_anwar_matrixly_world": "Envíe un correo electrónico al fundador · anwar@matrixly.world",
+        "back_to_pricing": "Volver a precios",
+        "explore_free": "Explora gratis"
+      },
+      "footer": {
+        "digital_employees_that_work_while_you_ru": "Empleados digitales que trabajan mientras tú diriges el negocio.",
+        "white_glove_inquiry": "White Glove consulta"
+      }
+    }
   }
 }

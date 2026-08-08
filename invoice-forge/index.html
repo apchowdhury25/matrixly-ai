@@ -100,18 +100,18 @@
       <nav class="hidden sm:flex items-center gap-6">
         <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
         <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
-        <a href="#workflow" class="nav-link">Workflow</a>
-        <a href="#embed" class="nav-link">Embed</a>
+        <a href="#workflow" class="nav-link" data-i18n="site.invoice_forge.page.workflow">Workflow</a>
+        <a href="#embed" class="nav-link" data-i18n="site.book_wise.page.embed">Embed</a>
       </nav>
-      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.book_wise.page.deploy">Deploy</a>
     </div>
   </header>
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">Invoicing · Ready to use</p>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.invoice_forge.s4372.invoicing_ready_to_use">Invoicing · Ready to use</p>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">InvoiceForge</h1>
-      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl" data-i18n="site.invoice_forge.s4372.invoice_processing_accounts_receivable_f">
         Invoice processing &amp; accounts receivable for SMBs — watch inbox and uploads, extract with vision-capable models,
         validate, post to QuickBooks/Xero or CSV, flag exceptions, send payment reminders, and generate AR reports.
       </p>
@@ -121,45 +121,45 @@
         <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Embeddable dark dashboard · usage &amp; audit tracking</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Grok vision</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">QBO / Xero / CSV</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">AR aging</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.fastapi">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.invoice_forge.s4372.grok_vision">Grok vision</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.invoice_forge.s4372.qbo_xero_csv">QBO / Xero / CSV</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.invoice_forge.s4372.ar_aging">AR aging</span>
       </div>
     </section>
 
     <section id="workflow" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-agent-feature-grid>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">1. Watch</h2>
-          <p class="text-sm text-matrix-soft">Inbox, folder uploads, API paste, or email webhooks feed the pipeline.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.workflow.t_1_watch">1. Watch</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_forge.workflow.inbox_folder_uploads_api_paste_or_email_">Inbox, folder uploads, API paste, or email webhooks feed the pipeline.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">2. Extract</h2>
-          <p class="text-sm text-matrix-soft">Vision model or text parser pulls vendor, number, dates, lines, totals.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.workflow.t_2_extract">2. Extract</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_forge.workflow.vision_model_or_text_parser_pulls_vendor">Vision model or text parser pulls vendor, number, dates, lines, totals.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">3. Validate</h2>
-          <p class="text-sm text-matrix-soft">Confidence, duplicates, missing PO, high amount, fraud keywords.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.workflow.t_3_validate">3. Validate</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_forge.workflow.confidence_duplicates_missing_po_high_am">Confidence, duplicates, missing PO, high amount, fraud keywords.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">4. Post</h2>
-          <p class="text-sm text-matrix-soft">QuickBooks, Xero, or reliable CSV export for the books.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.workflow.t_4_post">4. Post</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_forge.workflow.quickbooks_xero_or_reliable_csv_export_f">QuickBooks, Xero, or reliable CSV export for the books.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">5. Remind</h2>
-          <p class="text-sm text-matrix-soft">AR follow-ups after due date to reduce late payments.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.workflow.t_5_remind">5. Remind</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_forge.workflow.ar_follow_ups_after_due_date_to_reduce_l">AR follow-ups after due date to reduce late payments.</p>
         </article>
         <article class="card-matrix rounded-2xl p-5">
-          <h2 class="font-bold text-matrix-cream mb-2">6. Report</h2>
-          <p class="text-sm text-matrix-soft">Status breakdown and aging buckets on the review dashboard.</p>
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.workflow.t_6_report">6. Report</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.invoice_forge.workflow.status_breakdown_and_aging_buckets_on_th">Status breakdown and aging buckets on the review dashboard.</p>
         </article>
       </div>
     </section>
 
     <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy on this machine</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.deploy.deploy_on_this_machine">Deploy on this machine</h2>
         <p class="text-sm text-matrix-soft mb-6">
           Code: <code class="text-xs">agents/invoice-forge</code> ·
           Guide: <code class="text-xs">agents/invoice-forge/README.md</code>
@@ -180,15 +180,15 @@ python -m src.cli serve</pre>
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed review dashboard</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.invoice_forge.embed.embed_review_dashboard">Embed review dashboard</h2>
         <pre class="cmd mb-6">&lt;iframe
   src="https://YOUR_INVOICEFORGE_HOST/static/dashboard/index.html"
   title="InvoiceForge"
   style="width:100%;min-height:720px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
 &lt;/iframe&gt;</pre>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
-          <a href="/book-wise" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">See BookWise</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/book-wise" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.connect_forge.s10115.see_bookwise">See BookWise</a>
         </div>
       </div>
     </section>
@@ -196,8 +196,8 @@ python -m src.cli serve</pre>
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · InvoiceForge v1.0 · Invoice processing &amp; AR</span>
-      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span data-i18n="site.invoice_forge.footer.matrixly_invoiceforge_v1_0_invoice_proce">Matrixly · InvoiceForge v1.0 · Invoice processing &amp; AR</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
     </div>
   </footer>
   <script src="/js/i18n.js" defer></script>

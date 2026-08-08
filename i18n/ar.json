@@ -699,5 +699,1246 @@
       "security": "حماية",
       "cookies": "ملفات تعريف الارتباط"
     }
+  },
+  "site": {
+    "agents": {
+      "s23091": {
+        "agent_marketplace": "سوق الوكيل",
+        "your_small_business": "عملك الصغير",
+        "pick_a_proven_agent_for_leads_email_ship": "اختر وكيلًا معتمدًا للعملاء المحتملين أو البريد الإلكتروني أو الشحن أو الدعم أو المحتوى - قم بتوصيل أدواتك واسترجع الوقت خلال دقائق. لا حاجة للمهندسين."
+      },
+      "catalog": {
+        "catalog": "كتالوج",
+        "get_to_work": "اذهب إلى العمل.",
+        "live_agents_ready_to_try_each_card_opens": "العملاء المباشرون جاهزون للمحاولة. تفتح كل بطاقة نظرة عامة بسيطة - انشرها عندما تكون جاهزًا.",
+        "view_product_suite": "عرض مجموعة المنتجات →",
+        "scores_inbound_leads_enriches_contact_da": "يسجل العملاء المتوقعين الواردين، ويثري بيانات الاتصال، ويقترح تسلسلات تواصل مخصصة.",
+        "triage_inbox_draft_replies_and_flag_urge": "فرز البريد الوارد، ومسودات الردود، ووضع علامة على العناصر العاجلة حتى يتوقف المشغلون عن العيش في البريد الإلكتروني.",
+        "update_contacts_log_activities_and_keep_": "قم بتحديث جهات الاتصال وتسجيل الأنشطة والحفاظ على نظافة خطوط الأنابيب تلقائيًا عبر مجموعة المبيعات لديك.",
+        "try_this_agent": "جرب هذا الوكيل",
+        "track_shipments_notify_stakeholders_and_": "تتبع الشحنات، وإخطار أصحاب المصلحة، والتعامل مع الاستثناءات للشركات الصغيرة والمتوسطة في مجال الخدمات اللوجستية والتوزيع.",
+        "user_guide": "دليل المستخدم",
+        "see_full_logistics_flow": "انظر التدفق اللوجستي الكامل →",
+        "pack": "علية",
+        "supportforge_bookwise_invoiceforge_with_": "SupportForge + BookWise + InvoiceForge مع لوحة تحكم موحدة وسجل أنشطة وتحليلات وعناصر واجهة مستخدم مضمنة.",
+        "supp": "SUPP",
+        "embeddable_ai_support_triage_chat_email_": "دعم الذكاء الاصطناعي القابل للتضمين: فرز الدردشة/البريد الإلكتروني/النماذج، والإجابة من قاعدة معارفك، والتصعيد باستخدام HITL والتذاكر.",
+        "book": "كتاب",
+        "ai_appointment_booking_real_time_availab": "حجز المواعيد بالذكاء الاصطناعي: التوفر في الوقت الفعلي، التأكيدات، التذكيرات، إعادة الجدولة/الإلغاء، مزامنة التقويم.",
+        "invc": "INVC",
+        "invoice_processing_ar_vision_extract_val": "معالجة الفواتير والواقع المعزز: استخراج الرؤية والتحقق من صحتها والنشر على QuickBooks/Xero/CSV والاستثناءات والتذكيرات والتقارير.",
+        "cont": "تابع",
+        "create_and_repurpose_marketing_content_s": "إنشاء محتوى تسويقي وإعادة توظيفه: مدونات SEO ووسائل التواصل الاجتماعي والنشرات الإخبارية والإعلانات — صوت العلامة التجارية + مراجعة HITL.",
+        "agentic_seo_brand_marketing_for_us_smbs_": "وكيل SEO وتسويق العلامات التجارية للشركات الصغيرة والمتوسطة في الولايات المتحدة: النمو المحلي/العضوي، محتوى صوت العلامة التجارية، GBP، متتبع الكلمات الرئيسية، ROI - مع HITL قبل النشر.",
+        "bespoke": "مفصل",
+        "higher_tier": "الطبقة العليا",
+        "seo_bespoke": "SEO-مفصل",
+        "twil": "طويل",
+        "twilio_sms_simple_voice_for_houston_smbs": "Twilio SMS وصوت بسيط للشركات الصغيرة والمتوسطة في هيوستن - الرد الرئيسي، ونصوص المواعيد، واسترداد المكالمات الفائتة، ووضع الاختبار + HITL الصادر.",
+        "meet": "يقابل",
+        "meeting_outcomes_summaries_action_items_": "نتائج الاجتماع: الملخصات وعناصر العمل وتحديثات CRM وملخص رسائل البريد الإلكتروني وعلامات المتابعة من نصوص Zoom/Teams/Meet.",
+        "social": "اجتماعي",
+        "social_content_engagement_multi_platform": "المحتوى الاجتماعي والمشاركة: منشورات متعددة المنصات، والجدول الزمني الأمثل، وردود البريد الوارد، والرؤى — صوت العلامة التجارية + HITL.",
+        "pipe": "ماسورة",
+        "score_and_prioritize_sales_pipelines_fit": "تسجيل خطوط أنابيب المبيعات وتحديد أولوياتها: تسجيل نقاط الملاءمة/التفاعل، وقوائم المندوبين اليومية، والإشارات المعرضة للخطر، وتحديثات CRM، والرؤى الصحية.",
+        "doc": "وثيقة",
+        "draft_proposals_quotes_contracts_and_rep": "مسودة المقترحات وعروض الأسعار والعقود والتقارير من القوالب - قواعد العلامة التجارية، والتسعير، والموافقة على HITL، وتصدير PDF.",
+        "inv": "INV",
+        "pydantic_ai_multi_agent_ap_extract_pdfs_": "Pydantic AI متعدد الوكلاء AP: استخراج PDFs/البريد الإلكتروني، ومطابقة أوامر الشراء، والإبلاغ عن التناقضات، HITL قبل الدفع.",
+        "etf": "مؤسسة التدريب الأوروبية",
+        "live_market_data_yield_projections_nav_r": "بيانات السوق الحية، وتوقعات العائد، ومخاطر NAV، واستراتيجيات الوعي الضريبي - بيانات Yahoo المجانية، وQQQI الافتراضي، وحفظ Notion الاختياري."
+      },
+      "s50223": {
+        "ready_to_deploy": "هل أنت مستعد للنشر؟",
+        "start_with_the_starter_pack_support_book": "ابدأ بـ Starter Pack (الدعم + الكتاب + الفاتورة)، أو استكشف Lead Qualifier، ContentForge، SEOForge، MeetWise، SocialForge، PipelineForge، DocForge، والمزيد - مجانًا للاستكشاف.",
+        "get_started_free": "ابدأ مجانًا",
+        "see_logistics_flow": "انظر التدفق اللوجستي"
+      },
+      "footer": {
+        "ai_agents_that_work_while_you_run_your_b": "وكلاء الذكاء الاصطناعي الذين يعملون أثناء إدارة عملك.",
+        "talk_to_sales": "تحدث إلى المبيعات",
+        "qa_admin": "مسؤول ضمان الجودة"
+      }
+    },
+    "book_wise": {
+      "page": {
+        "embed": "تضمين",
+        "deploy": "نشر"
+      },
+      "s4299": {
+        "scheduling_ready_to_use": "الجدولة · جاهزة للاستخدام",
+        "fully_manage_appointments_for_smbs_check": "إدارة المواعيد للشركات الصغيرة والمتوسطة بشكل كامل - التحقق من التوفر في الوقت الفعلي، واقتراح المواعيد المثالية مع المخازن المؤقتة والمناطق الزمنية، والحجز مع التأكيدات، وإرسال تذكيرات ذكية، والتعامل مع عمليات إعادة الجدولة/الإلغاء من خلال التواصل المباشر مع حالات الحافة.",
+        "fastapi": "فاست API",
+        "buffers_tz": "Buffers + TZ",
+        "no_show_reduction": "الحد من عدم الحضور"
+      },
+      "s5876": {
+        "t_1_intent": "1. النية",
+        "classify_book_availability_reschedule_ca": "تصنيف الكتاب أو التوفر أو إعادة الجدولة أو الإلغاء أو الحالة من اللغة الطبيعية.",
+        "t_2_availability": "2. التوفر",
+        "business_hours_buffers_min_notice_and_ti": "ساعات العمل، والمخازن المؤقتة، وإشعار الحد الأدنى، والفترات الزمنية المثالية المدركة للمنطقة الزمنية.",
+        "t_3_book": "3. كتاب",
+        "intake_form_fields_confirmations_calenda": "حقول نموذج الإدخال، التأكيدات، كتابة التقويم، إرسال جهة اتصال CRM.",
+        "t_4_remind": "4. تذكير",
+        "t_24h_2h_reminders_admin_view_of_upcomin": "تذكير 24 ساعة + ساعتين؛ عرض المسؤول للحجوزات القادمة وقائمة الانتظار HITL."
+      },
+      "deploy": {
+        "deploy_on_this_machine": "نشر على هذا الجهاز",
+        "business_hours_config_yaml": "ساعات العمل (config.yaml)"
+      },
+      "embed": {
+        "embed_code": "تضمين التعليمات البرمجية",
+        "back_to_marketplace": "العودة إلى السوق",
+        "see_supportforge": "انظر SupportForge"
+      },
+      "footer": {
+        "matrixly_bookwise_v1_0_embeddable_bookin": "Matrixly · BookWise v1.0 · الحجز القابل للتضمين",
+        "back_to_agents": "العودة إلى الوكلاء"
+      }
+    },
+    "connect_forge": {
+      "page": {
+        "houston_use_cases": "حالات الاستخدام في هيوستن",
+        "run_locally": "تشغيل محليا"
+      },
+      "s4320": {
+        "twil_sms_voice_houston_smbs": "TWIL · الرسائل القصيرة والصوت · الشركات الصغيرة والمتوسطة في هيوستن",
+        "the_first_twilio_powered_agent_on_matrix": "أول وكيل يعمل بنظام Twilio على Matrixly. أرسل واستقبل الرسائل القصيرة، واحتفظ بسلاسل المحادثات، وقم بإجراء مكالمات اختبارية بسيطة، وأبق البشر متحكمين من خلال وضع الاختبار + الموافقة الصادرة - المصممة للخدمات المنزلية في هيوستن، وأنظمة التدفئة والتهوية وتكييف الهواء (HVAC)، والمقاولين، والعقارات، وتجارة التجزئة المحلية.",
+        "twilio": "تويليو",
+        "port_8802": "المنفذ 8802"
+      },
+      "houston": {
+        "instant_lead_response": "استجابة الرصاص الفورية",
+        "text_back_hvac_and_home_service_leads_in": "أرسل رسالة نصية إلى عملاء التدفئة والتهوية وتكييف الهواء والخدمة المنزلية في Katy / Energy Corridor في غضون ثوانٍ - ثنائي اللغة عند الحاجة.",
+        "appointments": "المواعيد",
+        "confirmation_and_reminder_sms_your_custo": "رسالة نصية قصيرة للتأكيد والتذكير يقرأها عملاؤك بالفعل (HITL قبل مغادرة أي شيء إذا أردت ذلك).",
+        "missed_call_recovery": "استعادة المكالمات الفائتة",
+        "turn_a_missed_ring_into_a_text_thread_so": "تحويل حلقة لم يتم الرد عليها إلى سلسلة رسائل نصية - \"عذرًا لقد افتقدناك - كيف يمكننا مساعدتك؟\""
+      },
+      "s7265": {
+        "tools_it_connects_to": "الأدوات التي يتصل بها"
+      },
+      "deploy": {
+        "deploy_on_this_machine_port_8802": "النشر على هذا الجهاز (المنفذ 8802)",
+        "test_panel_actions": "إجراءات لوحة الاختبار"
+      },
+      "s10115": {
+        "inbound_webhook": "خطاف الويب الوارد",
+        "see_bookwise": "انظر BookWise"
+      },
+      "footer": {
+        "matrixly_connectforge_v1_0_twilio_connec": "Matrixly · ConnectForge v1.0 · وكيل Twilio Connect للشركات الصغيرة والمتوسطة في هيوستن"
+      }
+    },
+    "content_forge": {
+      "page": {
+        "start_for_my_business": "ابدأ بعملي"
+      },
+      "s4311": {
+        "content_desk_built_for_small_businesses": "مكتب المحتوى · مصمم للشركات الصغيرة",
+        "your_content_desk_for_small_business_tur": "مكتب المحتوى الخاص بك للشركات الصغيرة: قم بتحويل مدونة واحدة أو نص أو ملاحظة منتج إلى منشورات SEO ونسخة اجتماعية ورسائل إخبارية وإعلانات - بصوتك، مع مراجعة بشرية قبل نشر أي شيء للعامة.",
+        "about_5_minutes_no_coding_nothing_publis": "حوالي 5 دقائق · لا يوجد ترميز · لا يتم نشر أي شيء بدون موافقتك"
+      },
+      "how": {
+        "t_1_research": "1. البحث",
+        "angles_keywords_audience_and_ctas_from_y": "الزوايا والكلمات الرئيسية والجمهور وعبارات الحث على اتخاذ إجراء من المادة المصدر الخاصة بك.",
+        "t_2_write": "2. اكتب",
+        "seo_blog_with_title_meta_description_slu": "مدونة SEO تحتوي على عنوان ووصف تعريفي وحلقات صلبة ونص منظم.",
+        "t_3_edit": "3. تحرير",
+        "brand_voice_pass_and_quality_score_befor": "المرور الصوتي للعلامة التجارية ونقاط الجودة قبل نشر أي شيء.",
+        "t_4_repurpose": "4. إعادة توظيفها",
+        "linkedin_x_instagram_newsletter_ads_and_": "LinkedIn وX وInstagram والنشرة الإخبارية والإعلانات وأفكار الموضوع التالي."
+      },
+      "start": {
+        "start_content_desk": "ابدأ تشغيل مكتب المحتوى",
+        "start_this_for_my_business": "ابدأ هذا لعملي",
+        "one_guided_setup_prepares_everything_on_": "يقوم الإعداد الموجه بتحضير كل شيء على جهاز الكمبيوتر الخاص بك. لن تجيب إلا على أسئلة بسيطة حول عملك والمفاتيح الاختيارية - بدون الحاجة إلى برمجة أو وصفات طرفية.",
+        "what_happens_when_you_start": "ماذا يحدث عندما تبدأ",
+        "we_install_the_content_desk_privately_on": "نقوم بتثبيت مكتب المحتوى بشكل خاص على هذا الكمبيوتر",
+        "you_name_your_business_and_optional_desc": "قم بتسمية عملك ووصف (اختياري) كيف تكتب",
+        "optional_connect_wordpress_drafts_or_add": "اختياري: قم بتوصيل مسودات WordPress أو أضف مفتاح xAI لكتابة أكثر ذكاءً",
+        "we_open_your_content_workspace_in_the_br": "نفتح مساحة عمل المحتوى الخاص بك في المتصفح",
+        "easiest_on_windows": "الأسهل على نظام التشغيل Windows",
+        "python_org": "python.org",
+        "or_in_powershell_from_the_contentforge_f": "أو في PowerShell من المجلد ContentForge:",
+        "you_ll_only_be_asked_for": "سوف يطلب منك فقط",
+        "business_name": "اسم العمل",
+        "optional_website_how_you_write_xai_api_k": "اختياري: موقع الويب، طريقة الكتابة، مفتاح xAI API",
+        "optional_wordpress_site_application_pass": "اختياري: موقع WordPress + كلمة مرور التطبيق (إذا كنت تريد المسودات هناك)",
+        "internal_api_keys_are_created_for_you_au": "يتم إنشاء مفاتيح API الداخلية لك تلقائيًا. نحن لا نحتاج أبدًا إلى مهاراتك النهائية.",
+        "for_your_it_person_advanced_install": "لشخص تكنولوجيا المعلومات الخاص بك / التثبيت المتقدم",
+        "show": "يعرض",
+        "hide": "يخفي",
+        "i_ve_got_python_show_start_path_again": "لقد حصلت على بايثون - أظهر مسار البداية مرة أخرى"
+      },
+      "embed": {
+        "see_invoiceforge": "انظر InvoiceForge"
+      },
+      "footer": {
+        "matrixly_contentforge_v1_0_content_creat": "Matrixly · ContentForge v1.0 · إنشاء المحتوى وإعادة استخدامه"
+      }
+    },
+    "crm_assistant": {
+      "s3268": {
+        "crm_ready_to_use": "CRM · جاهز للاستخدام",
+        "contacts": "اتصالات",
+        "activities": "أنشطة",
+        "hygiene": "صحة",
+        "salesforce_export": "تصدير Salesforce"
+      },
+      "s4318": {
+        "t_1_extract": "1. استخراج",
+        "meeting_email_notes_contact_company_deal": "ملاحظات الاجتماع/البريد الإلكتروني → جهة الاتصال، الشركة، الصفقة، مقترحات النشاط.",
+        "t_2_approve": "2. الموافقة",
+        "hitl_queue_review_diffs_before_applying_": "قائمة انتظار HITL - قم بمراجعة الاختلافات قبل التقدم إلى متجر CRM.",
+        "t_3_hygiene": "3. النظافة",
+        "stale_deals_missing_owners_missing_next_": "الصفقات التي لا معنى لها، المالكون المفقودون، الخطوات التالية المفقودة.",
+        "t_4_export": "4. التصدير",
+        "salesforce_shaped_contact_task_opportuni": "جهة اتصال/مهمة/فرصة على شكل Salesforce بتنسيق JSON + CSV."
+      },
+      "footer": {
+        "matrixly_crm_assistant_v1_0": "Matrixly · CRM Assistant الإصدار 1.0"
+      }
+    },
+    "doc_forge": {
+      "s4288": {
+        "documents_ready_to_use": "المستندات · جاهزة للاستخدام",
+        "draft_professional_proposals_quotes_cont": "قم بصياغة المقترحات وعروض الأسعار والعقود والتقارير الاحترافية للشركات الصغيرة والمتوسطة - اسحب بيانات العميل، وقم بتطبيق القوالب المعتمدة، وحافظ على اتساق قواعد العلامة التجارية والتسعير، وتوجيه الموافقة الداخلية من خلال تتبع الإصدار، وتصدير PDF أو التنسيقات القابلة للتحرير.",
+        "templates": "قوالب",
+        "pdf_export": "تصدير PDF"
+      },
+      "s5861": {
+        "t_1_intake": "1. المدخول",
+        "crm_forms_or_manual_brief_with_line_item": "CRM، النماذج، أو ملخص يدوي يحتوي على عناصر.",
+        "t_2_draft": "2. مسودة",
+        "template_driven_proposals_quotes_contrac": "المقترحات وعروض الأسعار والعقود والتقارير المبنية على القوالب.",
+        "t_3_brand_check": "3. فحص العلامة التجارية",
+        "pricing_rules_placeholders_quality_score": "قواعد التسعير، والعناصر النائبة، ونقاط الجودة.",
+        "t_4_approve": "4. الموافقة",
+        "hitl_queue_with_version_snapshots": "قائمة انتظار HITL مع لقطات الإصدار.",
+        "t_5_export": "5. التصدير",
+        "pdf_html_markdown_send_status_log": "PDF، HTML، تخفيض السعر، إرسال سجل الحالة."
+      },
+      "embed": {
+        "see_contentforge": "انظر ContentForge"
+      },
+      "footer": {
+        "matrixly_docforge_v1_0_business_document": "Matrixly · DocForge v1.0 · مستندات الأعمال"
+      }
+    },
+    "email_assistant": {
+      "s5428": {
+        "email_ready_to_use": "البريد الإلكتروني · جاهز للاستخدام",
+        "triage_your_business_inbox_draft_replies": "قم بفرز البريد الوارد لشركتك، وقم بصياغة الردود للمراجعة، ووضع علامة على العناصر العاجلة، واحصل على ملخص تنفيذي يومي - حتى لا يفلت أي شيء مهم بينما تظل متحكمًا في كل عملية إرسال.",
+        "demo_video_placeholder_embed_when_ready": "العنصر النائب للفيديو التجريبي · تضمينه عندما يكون جاهزًا"
+      },
+      "s6817": {
+        "t_1_triage": "1. الفرز",
+        "score_unread_mail_and_sort_it_into_clear": "قم بتسجيل البريد غير المقروء وفرزه في مجموعات واضحة — عاجل، يحتاج إلى رد، لمعلوماتك، والمزيد.",
+        "t_2_flag_urgent": "2. ضع علامة عاجلة",
+        "surface_payments_deadlines_legal_issues_": "المدفوعات السطحية والمواعيد النهائية والمسائل القانونية والمرسلين المهمين والاستثناءات التشغيلية أولاً.",
+        "t_3_draft_replies": "3. مسودة الردود",
+        "prepare_reply_drafts_for_your_review_not": "قم بإعداد مسودات الرد للمراجعة الخاصة بك. لن يتم إرسال أي شيء حتى تتم الموافقة.",
+        "t_4_daily_brief": "4. الموجز اليومي",
+        "get_a_short_executive_summary_of_the_las": "احصل على ملخص تنفيذي قصير لآخر 24 ساعة حتى تتمكن من بدء يومك بتركيز."
+      },
+      "s8116": {
+        "connect_the_agent_to_your_business_mailb": "قم بتوصيل الوكيل بصندوق بريد عملك. فهو يقوم بمراجعة الرسائل غير المقروءة، ويسلط الضوء على ما يحتاج إلى الاهتمام، ويقوم بصياغة الردود التي يمكنك تحريرها، ويقدم ملخصًا يوميًا - دون إرسال بريد من تلقاء نفسه.",
+        "best_for": "الأفضل ل",
+        "owners_and_ops_leads_who_live_in_a_busy_": "المالكون والعملاء المتوقعون الذين يعيشون في صندوق بريد وارد تجاري مشترك أو شخصي مزدحم",
+        "teams_that_want_faster_responses_without": "الفرق التي تريد استجابات أسرع دون إرسال البريد الإلكتروني للعميل تلقائيًا",
+        "anyone_who_wants_a_morning_summary_inste": "أي شخص يريد ملخصًا صباحيًا بدلاً من البحث في البريد غير المقروء",
+        "built_in_guardrails": "حواجز حماية مدمجة",
+        "draft_only_by_default_you_approve_before": "المسودة فقط افتراضيًا — تتم الموافقة عليها قبل أن يغادر أي شيء صندوق البريد",
+        "daily_briefs_go_only_to_addresses_you_co": "تذهب الملخصات اليومية فقط إلى العناوين التي تقوم بتكوينها",
+        "mailbox_credentials_stay_in_your_environ": "تظل بيانات اعتماد صندوق البريد في بيئتك؛ فهي ليست أبدًا جزءًا من الموقع العام"
+      },
+      "footer": {
+        "matrixly_email_assistant_v1_0": "Matrixly · Email Assistant الإصدار 1.0"
+      }
+    },
+    "etf_analyzer": {
+      "page": {
+        "pipeline": "خط أنابيب"
+      },
+      "s4290": {
+        "finance_ready_to_use": "التمويل · جاهز للاستخدام",
+        "port_8797": "المنفذ 8797",
+        "default_qqqi": "QQQI الافتراضي"
+      },
+      "s5739": {
+        "t_1_snapshot": "1. لقطة",
+        "price_volume_52w_range_aum_expense_ratio": "السعر، الحجم، نطاق 52 واط، الأصول المُدارة، نسبة النفقات.",
+        "t_2_yield": "2. العائد",
+        "ttm_yield_distributions_annualized_conte": "العائد TTM والتوزيعات والسياق السنوي.",
+        "t_3_nav_risk": "3. خطر NAV",
+        "premium_discount_and_structural_notes": "قسط/خصم والملاحظات الهيكلية.",
+        "t_4_tax_aware": "4. علم الضرائب",
+        "distribution_character_account_framing": "شخصية التوزيع وتأطير الحساب.",
+        "t_5_notion": "5. Notion",
+        "optional_knowledge_layer_save": "حفظ طبقة المعرفة الاختيارية."
+      },
+      "footer": {
+        "matrixly_etf_portfolio_analyzer_v1_0": "Matrixly · ETF Portfolio Analyzer الإصدار 1.0"
+      }
+    },
+    "for_contractors": {
+      "s9259": {
+        "contractors_trades": "المقاولون · الحرف",
+        "win_the_job_skip_the_admin_spiral": "الفوز بالوظيفة. تخطي دوامة المشرف.",
+        "qualify_leads_book_site_visits_keep_invo": "قم بتأهيل العملاء المتوقعين، وحجز زيارات للموقع، ومتابعة نقل الفواتير، والبقاء مرئيًا محليًا - أثناء استخدامك للأدوات.",
+        "start_free_with_contractor_stack": "ابدأ مجانًا مع مكدس المقاول",
+        "take_the_agent_quiz": "خذ اختبار الوكيل",
+        "t_10_hour_guarantee": "ضمان لمدة 10 ساعات",
+        "how_contractors_reclaim_admin_hours_with": "كيف يستعيد المقاولون ساعات العمل الإدارية مع الوكلاء",
+        "video_placeholder_embed_when_ready": "العنصر النائب للفيديو · تضمينه عندما يكون جاهزًا"
+      },
+      "s10852": {
+        "starter_agent_stack": "مكدس وكيل البداية",
+        "deploy_2_3_agents_first_expand_when_roi_": "قم بنشر 2-3 وكلاء أولاً. قم بالتوسيع عندما يكون ROI واضحًا.",
+        "hot_job_requests_don_t_sit_until_sunday_": "طلبات العمل الساخنة لا تجلس حتى ليلة الأحد.",
+        "estimates_and_site_visits_on_the_calenda": "التقديرات وزيارات الموقع على التقويم تلقائيا.",
+        "customer_and_supplier_threads_triaged_da": "يتم فرز سلاسل العملاء والموردين يوميًا.",
+        "extract_and_chase_paperwork_without_drow": "قم باستخراج الأوراق ومتابعتها دون الغرق في PDFs."
+      },
+      "s12441": {
+        "industry_roi_examples": "أمثلة الصناعة ROI",
+        "faster_quote_response": "استجابة أسرع للاقتباس",
+        "fewer_missed_appointments": "عدد أقل من المواعيد المفقودة",
+        "admin_hours_back_to_billable_work": "تعود ساعات العمل الإدارية إلى العمل القابل للفوترة",
+        "illustrative_results_vary_by_niche_and_e": "توضيحية · تختلف النتائج حسب التخصص والتنفيذ",
+        "integrations_that_matter": "التكامل الذي يهم",
+        "calendar": "تقويم",
+        "browse_all_integrations": "تصفح كافة عمليات التكامل →"
+      },
+      "s14023": {
+        "ready_when_you_are": "جاهز عندما تكون",
+        "start_free_connect_tools_in_minutes_canc": "ابدأ مجانًا. قم بتوصيل الأدوات في دقائق. قم بالإلغاء في أي وقت — لا يوجد عقد."
+      },
+      "footer": {
+        "industries": "الصناعات",
+        "hvac": "التدفئة والتهوية وتكييف الهواء",
+        "pro_services": "خدمات احترافية",
+        "contractors": "المقاولون",
+        "roi_calculator": "آلة حاسبة ROI"
+      }
+    },
+    "for_hvac": {
+      "s9325": {
+        "more_booked_jobs_fewer_after_hours_fires": "المزيد من الوظائف المحجوزة. حرائق أقل بعد ساعات العمل.",
+        "matrixly_agents_qualify_web_leads_answer": "يقوم وكلاء Matrixly بتأهيل العملاء المتوقعين على الويب، والإجابة على الاستفسارات، وزيادة إمكانية رؤية البحث المحلي - بحيث تكون شاحنتك مليئة بالعمل المناسب.",
+        "start_free_with_hvac_stack": "ابدأ مجانًا مع مكدس HVAC"
+      },
+      "s10930": {
+        "score_inbound_quote_requests_and_draft_s": "تسجيل طلبات عروض الأسعار الواردة وصياغة التواصل في نفس اليوم.",
+        "triage_after_hours_inbox_noise_surface_j": "فرز ضوضاء البريد الوارد بعد ساعات العمل؛ الوظائف السطحية التي تحتاج إليك.",
+        "service_pages_that_rank_for_near_me_and_": "صفحات الخدمة التي يتم تصنيفها حسب \"بالقرب مني\" والطلب الموسمي.",
+        "confirm_installs_and_reduce_scheduling_p": "تأكيد عمليات التثبيت وتقليل جدولة بينج بونج."
+      },
+      "s12543": {
+        "t_40_organic_leads_in_90_days_example": "+40% عملاء محتملين عضويين خلال 90 يومًا (مثال)",
+        "t_25_hrs_week_reclaimed_example": "25 ساعة / أسبوع مستصلحة (مثال)",
+        "payback_often_under_30_days": "الاسترداد في كثير من الأحيان أقل من 30 يوما",
+        "hubspot_crm": "HubSpot / CRM"
+      }
+    },
+    "for_local_retail": {
+      "s9223": {
+        "stay_open_online_without_living_in_the_i": "ابق مفتوحًا على الإنترنت دون العيش في البريد الوارد.",
+        "answer_customers_keep_social_consistent_": "قم بالرد على العملاء، وحافظ على الاتساق الاجتماعي، وتعامل مع استثناءات الشحن - بحيث تظل الأرضية وغرفة المخزون موضع اهتمامك.",
+        "start_free_with_retail_stack": "ابدأ مجانًا مع مكدس البيع بالتجزئة",
+        "local_retail_agents_in_action": "وكلاء التجزئة المحليين في العمل"
+      },
+      "s10805": {
+        "hours_stock_returns_answered_from_your_k": "الساعات، المخزون، العوائد - الإجابة من قاعدة المعرفة الخاصة بك.",
+        "posts_and_replies_in_brand_voice_for_met": "المنشورات والردود بصوت العلامة التجارية لـ Meta والمزيد.",
+        "vendor_and_customer_email_without_consta": "البريد الإلكتروني للمورد والعميل دون التبديل المستمر للسياق.",
+        "if_you_ship_online_orders_cut_wismo_tick": "إذا قمت بشحن الطلبات عبر الإنترنت، فاقطع تذاكر WISMO."
+      },
+      "s12424": {
+        "fewer_after_hours_dms_unanswered": "عدد أقل من الرسائل المباشرة التي لم يتم الرد عليها بعد ساعات العمل",
+        "consistent_social_without_a_full_time_ma": "اجتماعية متسقة دون المسوق بدوام كامل",
+        "clearer_ops_when_online_orders_spike": "عمليات أكثر وضوحًا عندما ترتفع الطلبات عبر الإنترنت",
+        "shopify_square": "Shopify / Square",
+        "meta": "ميتا"
+      }
+    },
+    "for_professional_services": {
+      "s9285": {
+        "triage_email_prep_meetings_keep_crm_clea": "فرز البريد الإلكتروني، والاجتماعات التحضيرية، والحفاظ على نظافة CRM، ومتابعة العملاء المحتملين قبل أن يصبحوا باردين - دون تعيين منسق آخر.",
+        "start_free_with_services_stack": "ابدأ مجانًا مع مكدس الخدمات"
+      },
+      "s10872": {
+        "daily_brief_drafts_and_urgent_flags": "الموجز اليومي والمسودات والأعلام العاجلة.",
+        "contact_hygiene_with_approve_to_write_co": "اتصل بالنظافة مع ضوابط الموافقة على الكتابة.",
+        "summaries_actions_and_recap_emails_from_": "الملخصات والإجراءات وملخص رسائل البريد الإلكتروني من النصوص.",
+        "score_consults_and_draft_outreach_sequen": "نقاط الاستشارات وصياغة تسلسلات التوعية."
+      },
+      "s12446": {
+        "reply_time_hours_minutes_example": "وقت الرد: ساعات → دقائق (مثال)",
+        "more_qualified_consults_booked": "تم حجز المزيد من الاستشارات المؤهلة",
+        "less_crm_admin_for_owners": "أقل CRM المشرف لأصحابها",
+        "zoom_meet": "Zoom / لقاء"
+      }
+    },
+    "for_shopify": {
+      "s9241": {
+        "ship_smarter_answer_less_sell_more": "السفينة أكثر ذكاءً. أجب أقل. بيع المزيد.",
+        "rate_shop_carriers_update_customers_befo": "تقوم شركات نقل الأسعار بتحديث العملاء قبل أن يسألوا \"أين طلبي؟\"، وتحافظ على الدعم دون إضافة موظفي المستودعات.",
+        "start_free_with_e_com_stack": "ابدأ مجانًا مع e-com Stack"
+      },
+      "s10839": {
+        "track_exceptions_draft_wismo_replies_rat": "تتبع الاستثناءات، ومسودات ردود WISMO، وشركات النقل التي تبيع الأسعار.",
+        "kb_answers_for_shipping_returns_and_prod": "إجابات KB للشحن والإرجاع والأسئلة الشائعة حول المنتج.",
+        "recovery_and_order_emails_without_living": "استرداد رسائل البريد الإلكتروني وطلبها دون العيش في Gmail.",
+        "product_copy_and_seo_posts_that_convert": "نسخة المنتج ومشاركات SEO التي يتم تحويلها."
+      },
+      "s12444": {
+        "t_60_wismo_tickets_example": "−60% تذاكر WISMO (مثال)",
+        "faster_exception_handling": "معالجة الاستثناءات بشكل أسرع",
+        "clear_roi_within_first_invoice_cycle": "قم بمسح ROI خلال دورة الفاتورة الأولى"
+      }
+    },
+    "home": {
+      "logistics": {
+        "order_48291": "الطلب رقم 48291",
+        "shopify_urbanthread_co": "Shopify · شركة UrbanThread"
+      }
+    },
+    "integrations": {
+      "s29619": {
+        "connect_gmail_shopify_quickbooks_shipsta": "قم بتوصيل Gmail، وShopify، وQuickBooks، وShipStation، وHubSpot، وSlack، وشركات النقل، والمزيد - حتى يتمكن الوكلاء من التسويق والبيع والشحن والدعم دون الحاجة إلى تبديل علامات التبويب.",
+        "search_integrations": "تكاملات البحث",
+        "all": "الجميع",
+        "most_popular": "الأكثر شعبية",
+        "operations": "العمليات",
+        "e_commerce": "التجارة الإلكترونية",
+        "productivity": "إنتاجية",
+        "personal_assistant": "مساعد شخصي"
+      },
+      "s32271": {
+        "all_integrations": "جميع عمليات التكامل",
+        "try_matrixly_free": "جرب Matrixly مجانًا",
+        "no_integrations_match_your_search_try_an": "لا توجد عمليات تكامل تطابق بحثك. جرّب كلمة رئيسية أخرى أو امسح عوامل التصفية."
+      },
+      "s33386": {
+        "easy_as_one_two_three": "سهلة مثل واحد، اثنان، ثلاثة",
+        "something_happens_in_your_tools_agents_s": "يحدث شيء ما في أدواتك ← يتدخل الوكلاء ← يتم إنجاز العمل. لغة واضحة، وأفعال حقيقية.",
+        "when_this_happens": "عندما يحدث هذا…",
+        "select_a_trigger": "حدد المشغل",
+        "a_trigger_is_an_event_that_kicks_off_you": "المشغل هو حدث يبدأ وكيل الذكاء الاصطناعي الخاص بك - مثل بريد إلكتروني جديد في Gmail، أو طلب Shopify، أو رسالة Slack.",
+        "do_this": "Do this",
+        "connect_your_apps": "قم بتوصيل تطبيقاتك",
+        "hundreds_of_integrations_available_plug_": "مئات من عمليات التكامل المتاحة. قم بتوصيل Matrixly بـ CRM والبريد الإلكتروني والتجارة الإلكترونية والخدمات اللوجستية والإعلانات وأدوات الإنتاجية.",
+        "autonomous": "الحكم الذاتي",
+        "let_ai_do_the_work": "دع الذكاء الاصطناعي يقوم بالعمل",
+        "give_custom_instructions_to_your_agent_i": "قم بإعطاء تعليمات مخصصة لوكيلك بلغة واضحة. يخطط الوكلاء ويتصرفون ويعدون التقارير - لذا عليك التركيز على النمو."
+      },
+      "s35622": {
+        "trusted_by_forward_thinking_smbs": "موثوق به من قبل الشركات الصغيرة والمتوسطة ذات التفكير المستقبلي",
+        "connects": "يربط",
+        "matrixly_agents_save_hours_every_week_by": "يوفر وكلاء Matrixly ساعات كل أسبوع من خلال تشغيل SEO والمبيعات والدعم والخدمات اللوجستية عبر المجموعة التي تدفع مقابلها بالفعل.",
+        "view_pricing": "عرض التسعير",
+        "no_credit_card_required_cancel_anytime": "No credit card required · Cancel anytime",
+        "times": "& مرات؛",
+        "connect_your_gmail": "قم بتوصيل Gmail الخاص بك",
+        "connect_your_gmail_so_your_ai_assistant_": "Connect your Gmail so your AI assistant can keep your inbox under control while you run the business.",
+        "what_your_email_assistant_will_do": "ماذا سيفعل Email Assistant الخاص بك",
+        "sort_and_label_mail_urgent_needs_reply_f": "فرز البريد وتسميته (عاجل، يحتاج إلى الرد، لمعلوماتك، والمزيد)",
+        "flag_time_sensitive_items_so_nothing_sli": "Flag time-sensitive items so nothing slips",
+        "email_you_a_short_daily_brief_of_what_ma": "Email you a short daily brief of what matters",
+        "google_permissions_plain_english": "أذونات Google (الإنجليزية البسيطة)",
+        "try_test_mode_first_sample_emails": "جرب وضع الاختبار أولاً (نماذج رسائل البريد الإلكتروني)",
+        "i_use_hostinger_outlook_other_imap": "أستخدم Hostinger / Outlook / IMAP آخر",
+        "almost_there_2_minutes": "تقريبا هناك - 2 دقيقة",
+        "gmail_connects_securely_on_your_computer": "يتصل Gmail بشكل آمن على جهاز الكمبيوتر الخاص بك من خلال Email Assistant. الصق هذه الأوامر في الوحدة الطرفية (أو اطلب من شريك الإعداد الخاص بك). لا حاجة لأي ترميز يتجاوز النسخ واللصق.",
+        "t_1_one_time_google_setup": "1. إعداد Google لمرة واحدة",
+        "t_2_connect": "2. الاتصال",
+        "your_browser_opens_sign_in_allow_you_sho": "يفتح متصفحك → تسجيل الدخول → السماح. يجب أن تشاهد \"النجاح - تم توصيل Gmail\".",
+        "i_ve_connected_gmail_show_success": "لقد قمت بتوصيل Gmail - أظهر النجاح",
+        "open_email_assistant_page": "افتح صفحة Email Assistant",
+        "hostinger_outlook_imap": "هوستنجر / أوتلوك / IMAP",
+        "not_on_gmail_you_can_still_use_email_ass": "ليس على Gmail؟ لا يزال بإمكانك استخدام Email Assistant مع نفس البريد الوارد الذي تستخدمه في Thunderbird أو Outlook.",
+        "full_steps_are_in_the_email_assistant_re": "الخطوات الكاملة موجودة في الملف التمهيدي Email Assistant ضمن \"Hostinger / IMAP\".",
+        "open_email_assistant": "افتح Email Assistant",
+        "back_to_gmail_connect": "العودة إلى اتصال Gmail",
+        "test_mode_sample_inbox": "وضع الاختبار - نموذج البريد الوارد",
+        "see_the_agent_work_before_connecting_rea": "شاهد عمل الوكيل قبل توصيل البريد الإلكتروني الحقيقي. لا حاجة لتسجيل الدخول إلى جوجل.",
+        "looks_good_connect_gmail": "تبدو جيدة - قم بتوصيل Gmail",
+        "gmail_connected": "متصل Gmail",
+        "your_email_assistant_is_ready_open_it_to": "Email Assistant الخاص بك جاهز. افتحه للفرز، وصياغة الردود، واحصل على تقرير التأثير الأول على مدار 24 ساعة.",
+        "reset_connection_status_on_this_browser": "إعادة ضبط حالة الاتصال على هذا المتصفح"
+      },
+      "footer": {
+        "docs": "المستندات",
+        "cta": "${كتا}",
+        "initials_item_name_item_abbr": "${الأحرف الأولى(item.name, item.abbr)}",
+        "item_name": "${item.name}",
+        "catlabel": "${كاتلابيل}",
+        "blurb": "${دعاية مغالى فيها}"
+      }
+    },
+    "invoice_forge": {
+      "page": {
+        "workflow": "سير العمل"
+      },
+      "s4372": {
+        "invoicing_ready_to_use": "الفواتير · جاهز للاستخدام",
+        "invoice_processing_accounts_receivable_f": "معالجة الفواتير والحسابات المستحقة القبض للشركات الصغيرة والمتوسطة - شاهد البريد الوارد والتحميلات، واستخرجها باستخدام نماذج قادرة على الرؤية، وتحقق من صحتها، ونشرها على QuickBooks/Xero أو CSV، ووضع علامة على الاستثناءات، وإرسال تذكيرات بالدفع، وإنشاء تقارير AR.",
+        "grok_vision": "رؤية Grok",
+        "qbo_xero_csv": "كيو بي أو / Xero / CSV",
+        "ar_aging": "الشيخوخة AR"
+      },
+      "workflow": {
+        "t_1_watch": "1. شاهد",
+        "inbox_folder_uploads_api_paste_or_email_": "يقوم البريد الوارد، أو تحميلات المجلدات، أو لصق API، أو خطافات الويب عبر البريد الإلكتروني بتغذية المسار.",
+        "t_2_extract": "2. استخراج",
+        "vision_model_or_text_parser_pulls_vendor": "يقوم نموذج الرؤية أو محلل النص بسحب البائع والرقم والتواريخ والأسطر والإجماليات.",
+        "t_3_validate": "3. التحقق من الصحة",
+        "confidence_duplicates_missing_po_high_am": "الثقة، التكرارات، أمر الشراء المفقود، المبلغ الكبير، الكلمات الرئيسية الاحتيالية.",
+        "t_4_post": "4. انشر",
+        "quickbooks_xero_or_reliable_csv_export_f": "QuickBooks أو Xero أو تصدير CSV موثوق للكتب.",
+        "t_5_remind": "5. تذكير",
+        "ar_follow_ups_after_due_date_to_reduce_l": "متابعة AR بعد تاريخ الاستحقاق لتقليل الدفعات المتأخرة.",
+        "t_6_report": "6. التقرير",
+        "status_breakdown_and_aging_buckets_on_th": "تفاصيل الحالة ومجموعات التقادم في لوحة معلومات المراجعة."
+      },
+      "embed": {
+        "embed_review_dashboard": "تضمين لوحة المراجعة"
+      },
+      "footer": {
+        "matrixly_invoiceforge_v1_0_invoice_proce": "Matrixly · InvoiceForge v1.0 · معالجة الفواتير والواقع المعزز"
+      }
+    },
+    "invoice_processor": {
+      "s4297": {
+        "finance_ap_ready_to_use": "المالية · AP · جاهز للاستخدام",
+        "pydantic_ai": "الذكاء الاصطناعي Pydantic",
+        "po_match": "مباراة بو"
+      },
+      "s5975": {
+        "t_2_match": "2. تطابق",
+        "po_lookup_amount_vendor_qty_discrepancy_": "بحث أمر الشراء + قواعد التناقض بين المبلغ/المورد/الكمية.",
+        "t_3_review": "3. المراجعة",
+        "approve_needs_review_or_reject_with_hitl": "الموافقة، أو تحتاج إلى مراجعة، أو الرفض - مع إشارات HITL.",
+        "t_4_prepare": "4. الاستعداد",
+        "accounting_stub_ready_for_quickbooks_net": "كعب المحاسبة جاهز لـ QuickBooks / NetSuite."
+      },
+      "s8315": {
+        "related_agents": "الوكلاء ذوو الصلة",
+        "pair_with_invoiceforge_for_inbox_watch_a": "يمكنك إقرانه مع InvoiceForge لمشاهدة البريد الوارد وتقادم الواقع المعزز ولوحة معلومات المراجعة المرئية."
+      },
+      "footer": {
+        "matrixly_invoice_processor_v1_0_pydantic": "Matrixly · Invoice Processor v1.0 · Pydantic AI متعدد الوكلاء AP"
+      }
+    },
+    "lead_qualifier": {
+      "s4900": {
+        "lead_generation_ready_to_use": "توليد العملاء المحتملين · جاهز للاستخدام",
+        "gmail_ingest": "استيعاب Gmail",
+        "hot_warm_cold": "حار / دافئ / بارد",
+        "see_lead_qualifier_score_a_real_inbound_": "شاهد Lead Qualifier يسجل تقدمًا حقيقيًا للداخل"
+      },
+      "s6727": {
+        "t_1_score": "1. النتيجة",
+        "fit_intent_seniority_data_quality_hot_wa": "الملاءمة · النية · الأقدمية · جودة البيانات → ساخن / دافئ / بارد / DQ.",
+        "t_2_enrich": "2. إثراء",
+        "company_industry_website_location_signal": "الشركة، الصناعة، موقع الويب، إشارات الموقع من نطاق البريد الإلكتروني + Grok الاختياري.",
+        "t_3_outreach": "3. التوعية",
+        "t_4_touch_personalized_email_sequence_dr": "4-لمس تسلسل البريد الإلكتروني المخصص (المسودات فقط - الإرسال البشري).",
+        "t_4_salesforce": "4. Salesforce",
+        "lead_json_csv_for_data_loader_api_import": "يؤدي JSON + CSV لاستيراد محمل البيانات / API."
+      },
+      "s7934": {
+        "install_demo": "التثبيت والعرض التوضيحي",
+        "qualify_your_file_gmail_single_lead": "تأهيل ملفك · Gmail · عميل محتمل"
+      },
+      "footer": {
+        "matrixly_lead_qualifier_v1_0_sales_mvp": "Matrixly · Lead Qualifier v1.0 · أفضل لاعب في المبيعات"
+      }
+    },
+    "meet_wise": {
+      "s4290": {
+        "meetings_ready_to_use": "الاجتماعات · جاهز للاستخدام",
+        "capture_and_action_meeting_outcomes_for_": "التقاط نتائج الاجتماعات وتنفيذها للشركات الصغيرة والمتوسطة - معالجة Zoom أو Teams أو نصوص Google Meet، وإنشاء ملخصات وعناصر عمل، وتحديث CRM، وإرسال ملخصات احترافية مع مراجعة بشرية.",
+        "crm_map": "خريطة CRM",
+        "transcript_upload": "تحميل النص"
+      },
+      "s5806": {
+        "t_1_ingest": "1. استوعب",
+        "upload_transcript_or_paste_zoom_teams_me": "قم بتحميل النص أو لصق نص تصدير Zoom / Teams / Meet.",
+        "summary_decisions_action_items_owners_de": "ملخص، قرارات، بنود العمل، المالكين، المواعيد النهائية، المتابعات.",
+        "t_3_action": "3. العمل",
+        "crm_shaped_updates_recap_email_after_hum": "تحديثات على شكل CRM + ملخص للبريد الإلكتروني بعد موافقة الإنسان."
+      },
+      "footer": {
+        "matrixly_meetwise_v1_0_meeting_outcomes": "Matrixly · MeetWise v1.0 · نتائج الاجتماع"
+      }
+    },
+    "pipeline_forge": {
+      "s4288": {
+        "sales_pipeline_ready_to_use": "خط أنابيب المبيعات · جاهز للاستخدام",
+        "score_and_prioritize_sales_pipelines_for": "سجل خطوط المبيعات وحدد أولوياتها للشركات الصغيرة والمتوسطة - التحليل المستمر للعملاء المتوقعين والفرص، وقوائم العمل المصنفة للممثلين، وعلامات الصفقات المعرضة للخطر، واقتراحات مرحلة CRM، ورؤى صحة خطوط الأنابيب مع الإشراف البشري.",
+        "scoring": "التهديف",
+        "usage_tracking": "تتبع الاستخدام"
+      },
+      "s5866": {
+        "fit_engagement_behavior_and_urgency_sign": "إشارات الملاءمة والمشاركة والسلوك والإلحاح.",
+        "t_2_prioritize": "2. تحديد الأولويات",
+        "daily_or_weekly_ranked_lists_for_each_re": "قوائم مرتبة يومية أو أسبوعية لكل مندوب.",
+        "t_3_flag_risk": "3. الإبلاغ عن المخاطر",
+        "stale_and_at_risk_deals_with_recovery_ac": "التعاملات القديمة والمعرضة للخطر مع إجراءات الاسترداد.",
+        "t_4_crm": "4. CRM",
+        "stage_task_and_note_updates_with_hitl": "تحديثات المرحلة والمهام والملاحظات باستخدام HITL.",
+        "t_5_health": "5. الصحة",
+        "pipeline_health_score_and_coaching_notes": "النتيجة الصحية لخط الأنابيب وملاحظات التدريب."
+      },
+      "embed": {
+        "see_crm_assistant": "انظر CRM Assistant"
+      },
+      "footer": {
+        "matrixly_pipelineforge_v1_0_pipeline_sco": "Matrixly · PipelineForge v1.0 · تسجيل خطوط الأنابيب وتحديد الأولويات"
+      }
+    },
+    "pricing": {
+      "s22980": {
+        "plans_for_owners_small_teams": "خطط للمالكين والفرق الصغيرة",
+        "less_than_a_part_time_hire_works_around_": "أقل من استئجار بدوام جزئي. يعمل على مدار الساعة. ابدأ مجانًا."
+      },
+      "pricing": {
+        "clear_roi": "مسح ROI.",
+        "built_for_smbs_small_teams_and_contracto": "مصمم للشركات الصغيرة والمتوسطة والفرق الصغيرة والمقاولين. ابدأ مجانًا. قم بالترقية عندما تكون القيمة واضحة.",
+        "browse_agents_and_try_a_workflow_risk_fr": "تصفح الوكلاء وجرب سير العمل الخالي من المخاطر.",
+        "about_1_60_day": "حوالي 1.60 دولارًا في اليوم",
+        "solo_operators_and_small_teams_ready_to_": "المشغلون المنفردون والفرق الصغيرة على استعداد لأتمتة العمل الأساسي.",
+        "a_fraction_of_one_va": "جزء من واحد VA",
+        "cancel_anytime_no_long_term_contract_on_": "يمكنك الإلغاء في أي وقت · لا يوجد عقد طويل الأجل بشأن خطط الخدمة الذاتية",
+        "try_free_14_days_10_hour_month_refund_gu": "جرب مجانًا لمدة 14 يومًا · ضمان استرداد الأموال لمدة 10 ساعات في الشهر"
+      },
+      "compare": {
+        "matrixly_vs_the_alternatives": "Matrixly مقابل البدائل",
+        "cheaper_than_a_va_more_autonomous_than_z": "أرخص من VA. أكثر استقلالية من Zapier + ChatGPT. أسرع من الوكالة.",
+        "agency": "وكالة",
+        "setup": "يثبت",
+        "days_weeks": "أيام - أسابيع",
+        "hours_days_diy": "ساعات – أيام DIY",
+        "weeks": "أسابيع",
+        "done_work_hitl": "تم الانتهاء من العمل + HITL",
+        "variable_quality": "جودة متغيرة",
+        "drafts_glue": "المسودات + الغراء",
+        "campaigns_retainers": "الحملات / الخدم"
+      },
+      "s35082": {
+        "try_free_for_14_days_if_you_don_t_save_a": "جرب مجانًا لمدة 14 يومًا. إذا لم تقم بتوفير ما لا يقل عن 10 ساعات في الشهر الأول على خطة مدفوعة، فسنقوم برد هذه الخطة - دون طرح أي أسئلة.",
+        "cancel_anytime_no_contract_terms_apply_u": "قم بالإلغاء في أي وقت · لا يوجد عقد · تطبق الشروط · الخطط المدفوعة في الولايات المتحدة"
+      },
+      "s35735": {
+        "owner_playbooks_checklists": "كتيبات اللعب وقوائم المراجعة الخاصة بالمالك →"
+      },
+      "footer": {
+        "platform": "منصة",
+        "agent_engine": "محرك الوكيل",
+        "business_knowledge": "المعرفة التجارية",
+        "smart_reasoning": "المنطق الذكي",
+        "app_connections": "اتصالات التطبيق"
+      }
+    },
+    "products": {
+      "s23003": {
+        "reliable": "موثوق",
+        "agents_that_remember_your_business_reaso": "الوكلاء الذين يتذكرون أعمالك، ويفكرون بعناية، ويتخذون الإجراءات في التطبيقات التي تستخدمها بالفعل - بحيث يحصل المالكون على النتائج، وليس أداة أخرى للعناية بهم.",
+        "view_integrations": "عرض عمليات التكامل"
+      },
+      "suite": {
+        "how_the_platform_works": "كيف تعمل المنصة",
+        "built_so_busy_owners_can_trust_the_outco": "تم تصميمه بحيث يمكن للمالكين المشغولين الوثوق بالنتيجة",
+        "from_always_on_agents_to_your_business_p": "بدءًا من الوكلاء الدائمين وحتى أدلة التشغيل الخاصة بشركتك، تم تصميم كل طبقة لسير عمل الشركات الصغيرة والمتوسطة الحقيقية، وليس المشروعات العلمية.",
+        "the_engine_that_keeps_agents_working_aft": "المحرك الذي يحافظ على عمل الوكلاء بعد إغلاق الكمبيوتر المحمول - مع ذاكرة تفضيلاتك، ومهارات المهام الشائعة، والوصول الآمن إلى أدواتك.",
+        "runtime_cloud_ready": "وقت التشغيل · جاهز للسحابة",
+        "your_playbooks_knowledge": "كتب اللعب الخاصة بك والمعرفة",
+        "teach_agents_how_your_business_works_pri": "قم بتعليم الوكلاء كيفية عمل عملك - قواعد التسعير، وصوت العلامة التجارية، وإجراءات التشغيل القياسية، والأسئلة الشائعة - بحيث يظل كل رد وقرار متعلقًا بالعلامة التجارية.",
+        "knowledge_always_in_sync": "المعرفة · متزامنة دائمًا",
+        "advanced_ai_reasoning_powers_multi_step_": "يعمل تفكير الذكاء الاصطناعي المتقدم على تعزيز العمل متعدد الخطوات عبر المبيعات والشحن والتمويل والدعم - من خلال هيكل يمكنك تدقيقه، وليس التخمين الأسود.",
+        "intelligence_powered_by_grok_xai": "الذكاء · مدعوم من Grok (xAI)",
+        "secure_connectors_wire_agents_into_gmail": "قم بتأمين وكلاء توصيل الموصلات في Gmail، وShopify، وQuickBooks، وShipStation، وHubSpot، وشركات النقل، وSlack، والمزيد - حتى يتمكنوا من القيام بعمل حقيقي، وليس مجرد الدردشة.",
+        "browse_integrations": "تصفح عمليات التكامل →",
+        "mobile": "متحرك",
+        "coming_soon": "قريباً",
+        "matrixly_mobile": "موبايل Matrixly",
+        "owner_dashboard_on_your_phone_check_agen": "لوحة تحكم المالك على هاتفك - تحقق من نشاط الوكيل، ووافق على الاستثناءات، واحصل على تنبيهات العملاء المحتملين أو الشحن أثناء التنقل.",
+        "flow": "تدفق",
+        "coordinated_agent_workflows": "سير عمل الوكيل المنسق",
+        "specialists_work_together_with_human_che": "يعمل المتخصصون جنبًا إلى جنب مع نقاط التفتيش البشرية وسجلات التدقيق الكاملة وتتبع الاستخدام — بالإضافة إلى لوحة معلومات Starter Pack للدعم والحجز والفواتير.",
+        "open_starter_pack": "افتح Starter Pack →"
+      },
+      "marketplace": {
+        "live_agents_you_can_start_today": "العملاء المباشرون يمكنك البدء بهم اليوم",
+        "ready_agents_with_simple_dashboards_and_": "وكلاء جاهزون مزودون بلوحات معلومات بسيطة وموافقة بشرية حيثما كان ذلك مهمًا - المبيعات والدعم والشحن والتمويل والمحتوى والاجتماعات والتواصل الاجتماعي والمزيد.",
+        "browse_full_catalog": "تصفح الكتالوج الكامل →",
+        "supportforge_bookwise_invoiceforge_with_": "SupportForge + BookWise + InvoiceForge مع لوحة تحكم واحدة موحدة وتحليلات ومضمنات.",
+        "score_inbound_leads_enrich_contacts_draf": "قم بتسجيل العملاء المتوقعين الواردين، وإثراء جهات الاتصال، وصياغة التواصل. Salesforce · Gmail.",
+        "triage_inbox_draft_replies_flag_urgent_i": "فرز البريد الوارد، ومسودات الردود، ووضع علامة على العناصر العاجلة، والموجز اليومي.",
+        "update_contacts_log_activities_pipeline_": "قم بتحديث جهات الاتصال وأنشطة السجل ونظافة خطوط الأنابيب من خلال الموافقة على الكتابة.",
+        "shipstation_hub_track_exceptions_wismo_d": "محور ShipStation - المسار والاستثناءات ومسودات WISMO. UPS · FedEx · USPS.",
+        "embeddable_support_triage_kb_answers_tic": "الدعم القابل للتضمين: الفرز، إجابات قاعدة المعارف، التذاكر، تصعيد HITL، أداة الدردشة.",
+        "ai_booking_availability_confirmations_re": "الحجز بالذكاء الاصطناعي: التوفر، التأكيدات، التذكيرات، إعادة الجدولة، مزامنة التقويم.",
+        "invoice_ocr_extract_validate_post_to_qb_": "الفاتورة OCR/استخراج، التحقق من الصحة، الإرسال إلى QB/Xero/CSV، الاستثناءات، تذكيرات AR.",
+        "pydantic_ai_ap_extract_pdf_email_match_p": "Pydantic AI AP: استخراج PDF/البريد الإلكتروني، ومطابقة أوامر الشراء، والتناقضات، HITL قبل الدفع.",
+        "seo_blogs_social_newsletters_ads_brand_v": "مدونات SEO، ووسائل التواصل الاجتماعي، والنشرات الإخبارية، والإعلانات - صوت العلامة التجارية + HITL قبل النشر.",
+        "local_organic_seo_for_us_smbs_plans_bran": "SEO المحلي والعضوي للشركات الصغيرة والمتوسطة في الولايات المتحدة - الخطط، محتوى صوت العلامة التجارية، الجنيه الاسترليني، الكلمات الرئيسية، ROI + HITL.",
+        "meeting_outcomes_summaries_actions_crm_n": "نتائج الاجتماع: الملخصات والإجراءات وملاحظات CRM وملخص رسائل البريد الإلكتروني من النصوص.",
+        "multi_platform_posts_schedule_inbox_repl": "منشورات متعددة المنصات، والجدول الزمني، وردود البريد الوارد، والرؤى - صوت العلامة التجارية + HITL.",
+        "score_prioritize_deals_fit_engagement_at": "تسجيل الصفقات وتحديد أولوياتها: الملاءمة/المشاركة، والأعلام المعرضة للخطر، واقتراحات مرحلة CRM.",
+        "proposals_quotes_contracts_reports_from_": "المقترحات وعروض الأسعار والعقود والتقارير من القوالب - تصدير HITL وPDF/MD/HTML.",
+        "free_yahoo_data_yield_nav_risk_tax_aware": "بيانات Yahoo المجانية: العائد، ومخاطر NAV، وملاحظات حول الضرائب. QQQI الافتراضي · Notion اختياري.",
+        "mob": "الغوغاء",
+        "soon": "قريباً",
+        "owner_app_for_run_history_hitl_approvals": "تطبيق المالك لسجل التشغيل وموافقات HITL والتنبيهات - خريطة الطريق."
+      },
+      "s45135": {
+        "built_for_small_businesses_not_enterpris": "مصمم للشركات الصغيرة - وليس لمسرح المؤسسات",
+        "a_practical_platform_for_owners_always_o": "منصة عملية للمالكين: الوكلاء الدائمون، وأدلة اللعب الخاصة بك كسياق، والتفكير الذكي، واتصالات التطبيقات الآمنة، والموافقة البشرية عندما يكون المال أو العملاء على المحك.",
+        "your_workspace_status": "حالة مساحة العمل الخاصة بك",
+        "healthy": "صحيح",
+        "live": "يعيش:",
+        "soon": "قريباً:"
+      },
+      "s48425": {
+        "start_with_one_agent_or_the_full_pack": "ابدأ بوكيل واحد – أو الحزمة الكاملة",
+        "try_starter_pack_for_support_booking_and": "جرب Starter Pack للحصول على الدعم والحجز والفواتير، أو اختر وكيلًا واحدًا. حرية الاستكشاف."
+      }
+    },
+    "resources_7_day_setup": {
+      "page": {
+        "owner_resources": "← موارد المالك",
+        "t_7_day_setup_checklist_for_your_first_a": "قائمة مرجعية للإعداد لمدة 7 أيام لوكيلك الأول",
+        "practical_one_pager_for_us_small_busines": "صفحة واحدة عملية لأصحاب الأعمال الصغيرة في الولايات المتحدة. يمكنك القراءة مجانًا بعد إلغاء القفل السريع للبريد الإلكتروني (يتم تخزينه فقط في متصفحك لهذا الموقع التجريبي).",
+        "unlock_this_playbook": "فتح كتاب اللعب هذا",
+        "enter_your_email_to_reveal_the_full_chec": "أدخل بريدك الإلكتروني للكشف عن قائمة المراجعة الكاملة. لا توجد رسائل غير مرغوب فيها - يقوم العرض التوضيحي الثابت بتخزين البريد الإلكتروني في وحدة التخزين المحلية فقط حتى يتم توصيل ESP.",
+        "unlock_free": "فتح مجانا",
+        "unlocked_save_or_print_this_page": "مفتوح · احفظ هذه الصفحة أو اطبعها",
+        "start_free_with_matrixly": "ابدأ مجانًا مع Matrixly"
+      }
+    },
+    "resources_email_voice": {
+      "page": {
+        "how_to_teach_email_assistant_your_voice": "كيفية تعليم Email Assistant صوتك"
+      }
+    },
+    "resources": {
+      "s9233": {
+        "owner_resources": "موارد المالك",
+        "short_practical_guides_setup_checklists_": "أدلة قصيرة وعملية - قوائم مراجعة الإعداد، والتدريب الصوتي، وSEO المحلي، والشحن، ومتابعة العملاء المتوقعين. أفضلها ذات بوابات ناعمة لفتح البريد الإلكتروني مجانًا.",
+        "day_by_day_checklist_to_deploy_your_firs": "قائمة مرجعية يومية لنشر وكيل Matrixly الأول بدون فريق تقني.",
+        "open_playbook": "افتح كتاب اللعب →",
+        "playbook_for_teaching_matrixly_email_ass": "كتاب قواعد اللعبة لتعليم Matrixly Email Assistant نغمتك، وقواعد \"افعل/لا تفعل\"، وعادات المراجعة.",
+        "local_seo_agent_playbook_for_service_bus": "دليل قواعد اللعبة الخاص بوكيل SEO المحلي لشركات الخدمات",
+        "playbook_for_service_businesses_using_ma": "دليل التشغيل للشركات الخدمية التي تستخدم وكلاء Matrixly لـ SEO وGoogle Business المحليين.",
+        "shipping_exception_playbook": "دليل استثناء الشحن",
+        "how_us_shopify_and_e_com_teams_use_shipp": "كيف تستخدم فرق Shopify وe-com الأمريكية Shipping Assistant للتأخيرات وWISMO ومشكلات شركات الاتصالات.",
+        "lead_follow_up_sop": "يؤدي SOP للمتابعة",
+        "sop_for_us_smbs_using_lead_qualifier_for": "إجراءات التشغيل القياسية (SOP) للشركات الصغيرة والمتوسطة في الولايات المتحدة التي تستخدم Lead Qualifier لمتابعة سريعة ومتسقة للعملاء المحتملين.",
+        "not_sure_where_to_start": "لست متأكدا من أين تبدأ؟",
+        "take_the_60_second_quiz_or_calculate_you": "قم بإجراء اختبار مدته 60 ثانية أو احسب ساعاتك السابقة."
+      }
+    },
+    "seo_bespoke": {
+      "s4279": {
+        "seo_higher_tier_custom_agent_factory": "SEO · الطبقة العليا · مصنع الوكيل المخصص",
+        "parallel_graph": "الرسم البياني الموازي",
+        "port_8801": "المنفذ 8801"
+      },
+      "s6007": {
+        "t_1_business_quiz": "1. مسابقة الأعمال",
+        "interactive_web_wizard_or_cli_six_indepe": "معالج الويب التفاعلي أو CLI. يتم نشر ستة جامعي مستقلين بالتوازي.",
+        "t_2_seo_profile": "2. الملف الشخصي SEO",
+        "professional_markdown_json_summary_with_": "ملخص Markdown احترافي + JSON مع توجيهات الكلمات الأساسية الأولية (لم يتم اختراع الرتب مطلقًا).",
+        "t_3_custom_agent_code": "3. رمز الوكيل المخصص",
+        "research_brand_voice_local_seo_content_t": "البحث، وصوت العلامة التجارية، وSEO المحلي، والمحتوى، والتتبع، ووحدات ROI المخصصة لعملك.",
+        "t_4_safety_hitl": "4. السلامة + HITL",
+        "isolated_verifiers_and_an_approval_queue": "وحدات التحقق المعزولة وقائمة انتظار الموافقة قبل التعامل مع الحزمة على أنها جاهزة للنشر.",
+        "t_5_keywords_roi": "5. الكلمات الرئيسية وROI",
+        "owner_supplied_ranks_only_hours_leads_re": "الرتب المقدمة من المالك فقط. الساعات/العملاء المحتملين/بطاقات الإيرادات التي تبلغ عنها - لا توجد مطالبات مرورية مزيفة.",
+        "t_6_re_run_anytime": "6. أعد التشغيل في أي وقت",
+        "update_the_quiz_or_regenerate_from_a_sav": "قم بتحديث الاختبار أو أعد إنشاؤه من ملف تعريف محفوظ عندما يتغير عملك."
+      },
+      "deploy": {
+        "run_locally_dashboard_on_port_8801": "التشغيل محليًا (لوحة المعلومات على المنفذ 8801)",
+        "then_open": "ثم افتح:",
+        "optional_demo_without_the_ui": "عرض توضيحي اختياري بدون واجهة المستخدم:"
+      },
+      "vs": {
+        "seo_bespoke_vs_seoforge": "SEO-مفصل مقابل SEOForge",
+        "role": "دور",
+        "ready_to_run_seo_crew": "طاقم SEO جاهز للتشغيل",
+        "builds_a_custom_agent_for_one_business": "يبني وكيل مخصص لشركة واحدة",
+        "input": "مدخل",
+        "brief_chat": "موجز / دردشة",
+        "multi_step_quiz": "اختبار متعدد الخطوات",
+        "output": "الإخراج",
+        "plans_content_local_packs": "الخطط والمحتوى والحزم المحلية",
+        "profile_specialized_agent_source": "الملف الشخصي + مصدر الوكيل المتخصص",
+        "port": "ميناء"
+      },
+      "embed": {
+        "see_seoforge": "انظر SEOForge"
+      },
+      "footer": {
+        "matrixly_seo_bespoke_v1_0_custom_seo_age": "Matrixly · SEO-Bespoke v1.0 · مصنع وكيل SEO المخصص"
+      }
+    },
+    "seo_forge": {
+      "s4306": {
+        "seo_local_ready_to_use": "SEO · محلي · جاهز للاستخدام",
+        "matrixly_s_specialized_seo_brand_marketi": "Matrixly وكيل SEO المتخصص ووكيل تسويق العلامة التجارية للشركات الصغيرة والمتوسطة في الولايات المتحدة - يعمل على تنمية الرؤية العضوية والتصنيفات المحلية \"بالقرب مني\" واتساق العلامة التجارية دون الاستعانة بوكالة.",
+        "hitl_queue": "قائمة الانتظار HITL",
+        "roi_dashboard": "لوحة القيادة ROI"
+      },
+      "s5932": {
+        "t_1_research_plan": "1. البحث والخطة",
+        "local_intent_competitor_gaps_and_a_prior": "النية المحلية، والفجوات في المنافسين، والتقويم ذو الأولوية لمدة 30 يومًا الذي توافق عليه قبل بدء العمل.",
+        "t_2_brand_voice_content": "2. محتوى صوت العلامة التجارية",
+        "service_pages_blogs_location_pages_faqs_": "صفحات الخدمة والمدونات وصفحات الموقع والأسئلة الشائعة مع العنوان والوصف التعريفي وملاحظات المخطط والمتغيرات الاجتماعية.",
+        "t_3_local_seo": "3. SEO المحلي",
+        "google_business_profile_posts_q_a_citati": "Google Business منشورات الملف الشخصي والأسئلة والأجوبة وقائمة مراجعة الاستشهادات وقوالب الاستجابة للمراجعة.",
+        "t_4_approval_queue": "4. قائمة انتظار الموافقة",
+        "human_in_the_loop_before_any_public_publ": "تواجد الإنسان في الحلقة قبل أي نشر عام على WordPress أو Buffer أو GBP.",
+        "t_5_keyword_tracker": "5. تعقب الكلمات الرئيسية",
+        "track_service_city_and_near_me_keywords_": "تتبع الخدمة + المدينة والكلمات الرئيسية \"بالقرب مني\" من خلال حركة ترتيب بسيطة.",
+        "t_6_roi_cards": "6. بطاقات ROI",
+        "hours_saved_leads_attributed_and_revenue": "الساعات المحفوظة، وإحالة العملاء المحتملين، وربط الإيرادات - تغذي لوحة المعلومات Matrixly ROI."
+      },
+      "embed": {
+        "see_socialforge": "انظر SocialForge"
+      },
+      "footer": {
+        "matrixly_seoforge_v1_0_seo_brand_marketi": "Matrixly · SEOForge v1.0 · SEO وتسويق العلامات التجارية للشركات الصغيرة والمتوسطة في الولايات المتحدة"
+      }
+    },
+    "shipping_assistant": {
+      "page": {
+        "logistics_flow": "التدفق اللوجستي"
+      },
+      "s4692": {
+        "shipping_ready_to_use": "الشحن · جاهز للاستخدام",
+        "shipstation_hub": "محور ShipStation",
+        "exception_scan": "مسح الاستثناء",
+        "wismo_drafts": "مسودات WISMO",
+        "hitl_cancel_label": "HITL إلغاء/تسمية"
+      },
+      "s6815": {
+        "t_1_track": "1. المسار",
+        "orders_and_shipments_via_shipstation_car": "الطلبات والشحنات عبر ShipStation — شركات النقل UPS، FedEx، USPS من خلال مركز واحد.",
+        "t_2_exceptions": "2. الاستثناءات",
+        "late_undeliverable_address_issues_priori": "معالجة المشكلات المتأخرة وغير القابلة للتسليم - قائمة الانتظار ذات الأولوية للعمليات.",
+        "t_3_notify": "3. إخطار",
+        "stakeholder_customer_wismo_drafts_human_": "مسودات أصحاب المصلحة + العملاء WISMO (الإرسال البشري - عدد أقل من تذاكر الدعم).",
+        "t_4_order_delivery": "4. الطلب → التسليم",
+        "awaiting_shipped_delivered_with_hitl_on_": "في انتظار → تم الشحن → تم التسليم، مع HITL عند الإلغاء / العنوان / الملصقات."
+      },
+      "s8067": {
+        "full_order_to_delivery_flow": "تدفق الطلب الكامل إلى التسليم",
+        "aligned_with_the_marketplace_logistics_s": "يتماشى مع مسارات السباحة اللوجستية في السوق - تحقيق منسق من قبل الوكيل للشركات الصغيرة والمتوسطة.",
+        "order_capture": "أمر القبض",
+        "import_multi_channel_orders_into_shipsta": "استيراد الطلبات متعددة القنوات إلى ShipStation.",
+        "rate_label": "معدل والتسمية",
+        "carrier_selection_ups_fedex_usps_label_a": "اختيار شركة النقل (UPS / FedEx / USPS) - تحتاج إجراءات التسمية إلى موافقة.",
+        "in_transit_monitor": "في مراقبة العبور",
+        "track_status_eta_exception_flags": "حالة المسار، الوقت المتوقع للوصول، أعلام الاستثناء.",
+        "delivery_wismo": "التسليم و WISMO",
+        "confirm_delivery_draft_customer_updates_": "تأكيد التسليم؛ قم بصياغة تحديثات العملاء عندما تسوء الأمور.",
+        "view_multi_agent_logistics_flow_on_homep": "عرض التدفق اللوجستي متعدد الوكلاء على الصفحة الرئيسية →"
+      },
+      "s10052": {
+        "demo_no_api_keys": "العرض التوضيحي (لا توجد مفاتيح API)",
+        "live_shipstation": "لايف ShipStation",
+        "shipstation_settings_account_api_setting": "ShipStation → الإعدادات → الحساب → إعدادات API",
+        "open_full_user_guide": "افتح دليل المستخدم الكامل ←"
+      },
+      "footer": {
+        "matrixly_shipping_assistant_v1_0_shipsta": "Matrixly · Shipping Assistant v1.0 · مركز ShipStation"
+      }
+    },
+    "shipping_assistant_guide": {
+      "page": {
+        "deploy_shipping_agent": "نشر وكيل الشحن",
+        "user_guide_shipping": "دليل المستخدم · الشحن",
+        "how_to_use_the_matrixly_shipping_assista": "كيفية استخدام Matrixly Shipping Assistant من السوق - تتبع الشحنات والتعامل مع الاستثناءات وصياغة ردود WISMO وتشغيل سير عمل كامل من الطلب إلى التسليم باستخدام ShipStation.",
+        "featured_ai_agents": "وكلاء الذكاء الاصطناعي المميزون",
+        "shipping_assistant": "/مساعد الشحن",
+        "on_this_page": "في هذه الصفحة",
+        "t_1_what_it_does": "1. ماذا يفعل",
+        "t_2_from_the_landing_page": "2. من الصفحة المقصودة",
+        "t_3_install_demo": "3. التثبيت والعرض التوضيحي",
+        "t_4_connect_shipstation": "4. قم بتوصيل ShipStation",
+        "t_5_daily_ops_workflow": "5. سير عمل العمليات اليومية",
+        "t_6_command_reference": "6. مرجع الأمر",
+        "t_7_wismo_notifications": "7. WISMO والإشعارات",
+        "t_8_approvals_hitl": "8. الموافقات (HITL)",
+        "t_9_hermes_skill": "9. مهارة Hermes",
+        "t_10_order_to_delivery": "10. الطلب حتى التسليم",
+        "t_11_troubleshooting": "11. استكشاف الأخطاء وإصلاحها",
+        "t_12_faq": "12. الأسئلة الشائعة"
+      },
+      "what_it_does": {
+        "t_1_what_the_shipping_assistant_does": "1. ما يفعله Shipping Assistant",
+        "capability": "القدرة",
+        "track": "مسار",
+        "list_orders_shipments_look_up_by_order_o": "قائمة الطلبات/الشحنات؛ البحث عن طريق الطلب # أو التتبع #",
+        "exceptions": "الاستثناءات",
+        "scan_for_late_undeliverable_address_and_": "البحث عن الحالات المتأخرة وغير القابلة للتسليم والعنوان واستثناءات شركة الاتصالات",
+        "notify": "يخطر",
+        "draft_internal_customer_messages_you_rev": "مسودة رسائل داخلية + العملاء (تقوم بمراجعتها وإرسالها)",
+        "ready_to_send_customer_update_draft_for_": "مسودة تحديث جاهزة للعملاء لطلب واحد",
+        "cancel_label_address_changes_require_you": "يتطلب الإلغاء / التسمية / تغييرات العنوان موافقتك"
+      },
+      "from_landing": {
+        "t_2_starting_from_the_matrixly_landing_p": "2. بدءًا من الصفحة المقصودة Matrixly",
+        "open_the_marketplace": "افتح السوق",
+        "agents": "/agents",
+        "find_the_ship_card": "ابحث عن بطاقة الشحن",
+        "choose_an_action": "اختر إجراءً",
+        "optional_integrations": "اختياري: التكامل",
+        "integrations": "/تكاملات"
+      },
+      "install": {
+        "t_3_install_and_run_the_demo_no_api_keys": "3. قم بتثبيت الإصدار التجريبي وتشغيله (بدون مفاتيح API)",
+        "you_can_try_the_full_agent_flow_immediat": "يمكنك تجربة تدفق الوكيل الكامل على الفور باستخدام بيانات العينة. لا يوجد حساب ShipStation مطلوب.",
+        "windows_powershell": "ويندوز باورشيل",
+        "sample_shipments_ups_fedex_usps": "عينات الشحنات (UPS، FedEx، USPS)",
+        "exception_scan_e_g_delivery_exception_de": "فحص الاستثناءات (مثل استثناء التسليم، تأخر النقل)"
+      },
+      "shipstation": {
+        "t_4_connect_live_shipstation": "4. قم بتوصيل ShipStation المباشر",
+        "create_api_credentials": "إنشاء بيانات اعتماد API",
+        "shipstation_com": "shipstation.com",
+        "create_local_env_file": "إنشاء ملف env المحلي",
+        "add_secrets_never_commit_or_paste_into_c": "أضف أسرارًا (لا تلتزم أبدًا أو تلصق في الدردشة)",
+        "verify_live_mode": "التحقق من الوضع المباشر"
+      },
+      "daily": {
+        "t_5_recommended_daily_ops_workflow": "5. سير عمل العمليات اليومية الموصى به",
+        "morning_exception_scan": "مسح استثناء الصباح",
+        "review_high_severity_items_first_excepti": "قم بمراجعة العناصر عالية الأهمية أولاً (الاستثناءات، الوقت المتوقع للوصول الماضي).",
+        "draft_stakeholder_customer_updates": "مسودة أصحاب المصلحة + تحديثات العملاء",
+        "internal_draft_your_ops_email_customer_d": "المسودة الداخلية ← البريد الإلكتروني الخاص بالعمليات. مسودة العميل → قم بمراجعتها، ثم أرسلها من Gmail/Thunderbird (أو Email Assistant).",
+        "answer_a_specific_wismo": "الإجابة على WISMO محدد",
+        "track_one_package": "تتبع حزمة واحدة",
+        "export_a_snapshot_for_audit_sharing": "تصدير لقطة للتدقيق / المشاركة"
+      },
+      "commands": {
+        "command": "يأمر",
+        "purpose": "غاية",
+        "demo_vs_live_mode_pending_hitl_count": "العرض التجريبي مقابل الوضع المباشر؛ عدد HITL معلق",
+        "list_shipments_demo_also_prints_exceptio": "قائمة الشحنات؛ يطبع العرض التوضيحي أيضًا الاستثناءات",
+        "lookup_by_order_number": "البحث حسب رقم الطلب",
+        "lookup_by_tracking_number": "البحث عن طريق رقم التتبع",
+        "exception_late_scan_report": "تقرير الاستثناء/الفحص المتأخر",
+        "customer_wismo_reply_draft": "مسودة رد العميل WISMO",
+        "internal_customer_drafts_for_all_excepti": "الداخلية + مسودات العملاء لجميع الاستثناءات",
+        "queue_a_cancel_action_hitl": "وضع إجراء الإلغاء في قائمة الانتظار (HITL)",
+        "list_actions_waiting_for_approval": "قائمة الإجراءات في انتظار الموافقة",
+        "approve_a_pending_action": "الموافقة على إجراء معلق",
+        "reject_a_pending_action": "رفض الإجراء المعلق",
+        "write_shipping_snapshot_json": "اكتب Shipping-snapshot.json"
+      },
+      "wismo": {
+        "t_7_wismo_and_stakeholder_notifications": "7. WISMO وإخطارات أصحاب المصلحة"
+      },
+      "hitl": {
+        "t_8_human_in_the_loop_hitl_approvals": "8. موافقات الإنسان في الحلقة (HITL).",
+        "safe_by_default_tracking_and_drafts_neve": "آمن افتراضيًا: التتبع والمسودات لا يحتاجان أبدًا إلى الموافقة. عمليات الشحن المدمرة تفعل ذلك.",
+        "auto_allowed": "مسموح به تلقائيًا",
+        "requires_approve": "يتطلب الموافقة",
+        "list_track_exceptions_wismo_drafts_notif": "القائمة، المسار، الاستثناءات، مسودات WISMO، إخطار المسودات",
+        "cancel_order_update_address_create_void_": "إلغاء الطلب، تحديث العنوان، إنشاء/إلغاء التسمية",
+        "live_shipstation_mutations_run_only_afte": "يتم تشغيل طفرات ShipStation المباشرة فقط بعد الموافقة وعند تمكين بيانات اعتماد API + معالجات الإجراءات."
+      },
+      "hermes": {
+        "t_9_using_hermes": "9. استخدام Hermes"
+      },
+      "flow": {
+        "t_10_full_order_to_delivery_flow": "10. التدفق الكامل للطلب حتى التسليم",
+        "how_the_ship_agent_maps_to_matrixly_s_lo": "كيف يقوم وكيل SHIP بالتخطيط للقصة اللوجستية لـ Matrixly على الصفحة الرئيسية:",
+        "open_multi_agent_logistics_flow_on_the_h": "افتح التدفق اللوجستي متعدد الوكلاء على الصفحة الرئيسية →"
+      },
+      "troubleshoot": {
+        "symptom": "أعراض",
+        "what_to_try": "ما يجب تجربته",
+        "always_demo_mode": "وضع \"التجريبي\" دائمًا",
+        "api_auth_error": "خطأ في مصادقة API",
+        "order_not_found": "لم يتم العثور على الطلب",
+        "module_not_found": "لم يتم العثور على الوحدة النمطية",
+        "deploy_now_404": "انشر الآن 404"
+      },
+      "faq": {
+        "does_the_agent_send_email_to_customers_b": "هل يرسل الوكيل بريدًا إلكترونيًا إلى العملاء بنفسه؟",
+        "why_shipstation_instead_of_only_ups_fede": "لماذا ShipStation بدلاً من UPS/FedEx APIs فقط؟",
+        "shipstation_is_the_smb_multi_channel_hub": "ShipStation هو مركز متعدد القنوات للشركات الصغيرة والمتوسطة. يتم استخدام الحاملات من خلال ShipStation لسطح تكامل واحد.",
+        "can_i_use_it_without_a_live_shipstation_": "هل يمكنني استخدامه بدون حساب ShipStation حي؟",
+        "yes_demo_mode_ships_sample_data_for_demo": "نعم - يوفر الوضع التجريبي بيانات نموذجية للعروض التوضيحية والتدريب.",
+        "where_is_the_agent_code": "أين هو رمز الوكيل؟",
+        "deploy_page": "نشر الصفحة",
+        "logistics_integrations": "التكامل اللوجستي"
+      },
+      "footer": {
+        "matrixly_shipping_assistant_user_guide_v": "Matrixly · دليل المستخدم Shipping Assistant الإصدار 1.0",
+        "featured_agents": "الوكلاء المميزون"
+      }
+    },
+    "social_forge": {
+      "s4279": {
+        "social_ready_to_use": "اجتماعي · جاهز للاستخدام",
+        "manage_social_media_for_smbs_generate_pl": "إدارة وسائل التواصل الاجتماعي للشركات الصغيرة والمتوسطة - إنشاء منشورات أصلية على النظام الأساسي، وجدولة الأوقات المثالية، ومراقبة الإشارات، وصياغة الردود الصوتية للعلامة التجارية، ورؤى الأداء السطحية بموافقة الإنسان قبل نشر أي شيء.",
+        "calendar_inbox": "التقويم + البريد الوارد",
+        "multi_platform": "منصة متعددة"
+      },
+      "s5847": {
+        "t_1_compose": "1. يؤلف",
+        "linkedin_x_instagram_facebook_threads_fr": "LinkedIn، X، Instagram، Facebook، مواضيع من موجز واحد.",
+        "t_2_schedule": "2. الجدول الزمني",
+        "optimal_smb_windows_in_your_timezone": "نوافذ مثالية للشركات الصغيرة والمتوسطة الحجم في منطقتك الزمنية.",
+        "t_3_approve": "3. الموافقة",
+        "hitl_gate_before_publish_or_public_repli": "بوابة HITL قبل النشر أو الردود العامة.",
+        "t_4_inbox": "4. البريد الوارد",
+        "mentions_comments_dms_with_drafted_repli": "الإشارات والتعليقات والرسائل المباشرة مع الردود المصاغة.",
+        "t_5_insights": "5. الرؤى",
+        "what_worked_next_content_ideas": "ما نجح + أفكار المحتوى التالي."
+      },
+      "footer": {
+        "matrixly_socialforge_v1_0_social_content": "Matrixly · SocialForge v1.0 · المحتوى الاجتماعي والمشاركة"
+      }
+    },
+    "starter_pack": {
+      "page": {
+        "invoice": "فاتورة",
+        "deploy_pack": "نشر الحزمة"
+      },
+      "s4308": {
+        "starter_bundle_ready_to_use": "حزمة البداية · جاهزة للاستخدام",
+        "matrixly_starter_pack": "Matrixly Starter Pack",
+        "three_production_agents_for_support_appo": "ثلاثة وكلاء إنتاج للدعم والمواعيد والفواتير - بالإضافة إلى لوحة تحكم واحدة موحدة لمراقبتهم وتكوينهم وتضمينهم. تم تصميمه خصيصًا للشركات الصغيرة والمتوسطة التي تريد عمليات وكيلة دون تجميع سلسلة أدوات من البداية.",
+        "t_3_agents": "3 وكلاء",
+        "t_1_dashboard": "1 لوحة القيادة",
+        "port_8800": "المنفذ 8800"
+      },
+      "s5862": {
+        "sup": "رشفة",
+        "triage_kb_answers_escalation_chat_widget": "الفرز، إجابات قاعدة المعارف، التصعيد، أداة الدردشة، التدقيق.",
+        "agent_page": "صفحة الوكيل →",
+        "availability_bookings_reminders_calendar": "التوفر والحجوزات والتذكيرات ومزامنة التقويم.",
+        "extract_validate_post_exceptions_ar_remi": "استخراج والتحقق من صحة ونشر والاستثناءات وتذكيرات AR."
+      },
+      "deploy": {
+        "deploy_the_pack": "نشر الحزمة"
+      },
+      "embed": {
+        "embed_widgets": "تضمين الحاجيات"
+      },
+      "footer": {
+        "matrixly_starter_pack_v1_0_support_book_": "Matrixly · Starter Pack v1.0 · Support + Book + Invoice"
+      }
+    },
+    "support_forge": {
+      "s4525": {
+        "customer_support_ready_to_use": "دعم العملاء · جاهز للاستخدام",
+        "end_to_end_ai_customer_support_for_smbs_": "دعم عملاء الذكاء الاصطناعي الشامل للشركات الصغيرة والمتوسطة - مراقبة الدردشة والبريد الإلكتروني والنماذج؛ الإجابة من قاعدة المعرفة الخاصة بك؛ التصعيد مع السياق الكامل؛ الموافقة على الإجراءات الخارجية مع وجود الإنسان في الحلقة.",
+        "grok_optional": "Grok اختياري",
+        "tickets_crm_lite": "التذاكر + CRM-lite"
+      },
+      "s6098": {
+        "urgency_sentiment_topic_and_sensitive_is": "علامات الإلحاح والمشاعر والموضوع والقضايا الحساسة في كل رسالة واردة.",
+        "t_2_knowledge": "2. المعرفة",
+        "retrieve_answers_from_your_faqs_policies": "يمكنك استرداد الإجابات من الأسئلة الشائعة أو السياسات أو تصدير Notion أو المستندات التي تم تحميلها.",
+        "t_3_respond": "3. الرد",
+        "auto_resolve_high_confidence_faqs_or_dra": "حل تلقائي للأسئلة الشائعة عالية الثقة أو مسودة الردود للحصول على موافقة الإنسان.",
+        "t_4_escalate": "4. التصعيد",
+        "open_tickets_with_full_context_admin_das": "التذاكر المفتوحة مع السياق الكامل. لوحة تحكم المشرف لـ HITL والمتابعات."
+      },
+      "s7348": {
+        "architecture": "بنيان",
+        "channels_fastapi_multi_agent_orchestrato": "القنوات → FastAPI → منسق متعدد الوكلاء → التذاكر / HITL / التدقيق / الاستخدام.",
+        "ingest": "استيعاب",
+        "widget_chat_website_form_webhook_email_w": "دردشة القطعة، أو webhook لنموذج موقع الويب، أو webhook للبريد الإلكتروني أو IMAP.",
+        "classify_retrieve": "تصنيف واسترجاع",
+        "triage_local_knowledge_index_with_confid": "الفرز + مؤشر المعرفة المحلية مع درجات الثقة.",
+        "act_safely": "التصرف بأمان",
+        "auto_reply_draft_for_approval_or_escalat": "الرد التلقائي، أو المسودة للموافقة، أو التصعيد - تحتاج عمليات الكتابة الخارجية إلى HITL.",
+        "operate": "تشغيل",
+        "admin_ui_audit_trail_usage_cost_for_saas": "واجهة مستخدم المسؤول، ومسار التدقيق، والاستخدام/التكلفة لإعداد فوترة SaaS."
+      },
+      "deploy": {
+        "demo_no_api_keys_required": "العرض التوضيحي (لا يلزم وجود مفاتيح API)",
+        "production_keys": "مفاتيح الإنتاج"
+      },
+      "embed": {
+        "iframe_option": "خيار إيفريم",
+        "connect_knowledge_non_technical": "ربط المعرفة (غير التقنية)"
+      },
+      "footer": {
+        "matrixly_supportforge_v1_0_embeddable_ai": "Matrixly · SupportForge v1.0 · دعم الذكاء الاصطناعي القابل للتضمين"
+      }
+    },
+    "white_glove": {
+      "page": {
+        "offer": "يعرض",
+        "workflows": "سير العمل",
+        "weekly_roi": "أسبوعي ROI",
+        "request_a_seat": "طلب مقعد"
+      },
+      "s9541": {
+        "white_glove_executive_digital_employee": "White Glove تنفيذي · موظف رقمي",
+        "we_install_a_digital_employee_then_we_ma": "نقوم بتثبيت موظف رقمي. ثم نقوم بإدارتها – وندربك.",
+        "request_a_founding_seat": "طلب مقعد مؤسسي",
+        "see_sample_weekly_roi": "راجع العينة الأسبوعية ROI →",
+        "founding_package_at_a_glance": "الحزمة التأسيسية في لمحة",
+        "month": "/شهر",
+        "managed_retainer_setup_scoped_per_engage": "التجنيب المُدار · الإعداد المحدد لكل مشاركة · تم تضمين منصة النطاق",
+        "email_the_founder": "أرسل بريدًا إلكترونيًا إلى المؤسس →"
+      },
+      "offer": {
+        "the_model": "النموذج",
+        "software_is_the_hire_coaching_is_the_pro": "البرمجيات هي الاستئجار. التدريب هو المنتج.",
+        "operators_who_succeed_with_managed_ai_em": "لا يبيع المشغلون الذين ينجحون مع موظفي الذكاء الاصطناعي المُدارين \"إمكانية الوصول إلى الروبوت\". يقومون بتثبيت موظف رقمي واحد، والبقاء في قناة مشتركة مع المالك، وإدارة وقت التشغيل، وإعادة بيع التوكيل كل يوم اثنين بتقرير واضح \"لقد وفرت X دولارًا هذا الأسبوع\".",
+        "install_one_digital_employee": "تثبيت موظف رقمي واحد",
+        "a_named_agent_for_a_single_high_pain_wor": "وكيل مسمى لسير عمل واحد عالي الجهد - الفواتير، أو متابعة العملاء المحتملين، أو المحتوى المحلي/SEO - الذي ينفذ عملًا متعدد الخطوات عبر البريد الإلكتروني، والأوراق، والملفات، والأدوات بنفس الطريقة التي يفعلها الموظف المبتدئ.",
+        "coach_manage_ongoing": "مدرب + إدارة مستمرة",
+        "you_never_have_to_figure_out_prompting_w": "لن تضطر أبدًا إلى \"معرفة التحفيز\". نجلس في مجموعة مشتركة معك ومع الوكيل. تتعلم من خلال المشاهدة. نحن نصلح مشكلات الموثوقية قبل أن تلاحظ - تلك الثقة هي ما يحافظ على المثبات.",
+        "weekly_roi_re_sells_itself": "يعيد ROI بيع نفسه أسبوعيًا",
+        "every_agent_keeps_a_value_ledger_hours_s": "يحتفظ كل وكيل بسجل للقيمة: الساعات المحفوظة × الأجر المقبول للساعة، والمهام المكتملة، ونتائج الأعمال، ووقت التشغيل. إن ROI المرئي هو سبب بقاء العملاء شهرًا بعد شهر."
+      },
+      "packages": {
+        "packaging": "التعبئة والتغليف",
+        "setup_fee_monthly_retainer": "رسوم الإعداد + التجنيب الشهري",
+        "founding_white_glove_seats_are_priced_to": "يتم تسعير مقاعد تأسيس White Glove للفوز بالإحالات. مع نجاح عمليات التثبيت، يتم تكثيف عملية الإعداد والاحتجاز - نفس دليل التشغيل الذي يستخدمه مشغلو الوكلاء المُدارون الذين أثبتوا كفاءتهم.",
+        "founding": "التأسيس",
+        "white_glove_executive": "White Glove التنفيذي",
+        "founding_seat": "مقعد التأسيس",
+        "solo_owners_small_teams_1_agent": "الملاك المنفردون والفرق الصغيرة · وكيل واحد",
+        "setup_quoted_per_workflow_typically_499_": "الإعداد المقتبس لكل سير عمل · عادةً ما يتراوح بين 499 دولارًا و1500 دولارًا للعملاء المؤسسين",
+        "request_founding_seat": "طلب المقعد التأسيسي",
+        "growth_digital_employee": "نمو الموظف الرقمي",
+        "core_offer": "العرض الأساسي",
+        "most_houston_smbs_1_2_agents": "معظم الشركات الصغيرة والمتوسطة في هيوستن · 1-2 وكلاء",
+        "setup_2_500_1_000_mo_per_additional_agen": "الإعداد ~ 2500 دولار · + 1000 دولار شهريًا لكل وكيل إضافي",
+        "discuss_growth": "ناقش النمو",
+        "operations_suite": "جناح العمليات",
+        "multi_agent": "متعدد الوكيل",
+        "growing_companies_3_agents": "الشركات المتنامية · 3+ وكلاء",
+        "setup_4_000_6_000_complexity_based": "الإعداد 4000 دولار - 6000 دولار · على أساس التعقيد",
+        "discuss_operations": "مناقشة العمليات",
+        "pricing_philosophy_start_with_a_clear_fo": "فلسفة التسعير: ابدأ بمقعد تأسيسي واضح، واثبت أسبوعيًا ROI، ثم ارفع الإعداد كمركب للإحالات. قم دائمًا بإقران التوكيل بتقرير مرئي صباح يوم الاثنين حتى تعيد الخدمة بيع نفسها."
+      },
+      "workflows": {
+        "first_three_workflows": "سير العمل الثلاثة الأولى",
+        "high_pain_high_visibility_work_for_houst": "عمل شديد الألم وعالي الوضوح للشركات الصغيرة والمتوسطة في هيوستن",
+        "energy_services_construction_professiona": "خدمات الطاقة، والبناء، والخدمات المهنية، والممارسات الطبية، وشركات غرب هيوستن / كاتي / ممر الطاقة. ابدأ بسير عمل واحد. قم بالتوسيع عندما يكون ROI واضحًا.",
+        "t_1_invoice_ap": "1 · الفاتورة وAP",
+        "invoice_digital_employee": "فاتورة الموظف الرقمي",
+        "monitors_email_or_a_shared_folder_extrac": "مراقبة البريد الإلكتروني أو المجلد المشترك، واستخراج بيانات الفاتورة من PDF، والسجلات إلى ملفات Excel/Sheets أو الملفات الجاهزة لـ QuickBooks، ووضع علامات على العناصر المتأخرة، ومسودات المتابعة، وإرسال ملخص أسبوعي للأثر النقدي.",
+        "value_metrics": "مقاييس القيمة",
+        "hours_saved_of_invoices_processed_overdu": "الساعات المحفوظة · تمت معالجة $ من الفواتير · تم وضع علامة على العناصر المتأخرة · تم إرسال تذكيرات بالدفع المتأخر",
+        "t_2_leads": "2 · العروض",
+        "lead_follow_up_digital_employee": "قيادة الموظف الرقمي للمتابعة",
+        "watches_forms_email_or_crm_researches_th": "نماذج الساعات أو البريد الإلكتروني أو CRM؛ يبحث في الرصاص؛ صياغة الرد الأول المخصص؛ مؤهل لائقا؛ اكتشاف الكتب أو الطرق المؤدية إلى الإنسان الصحيح؛ يسجل نشاط خط الأنابيب يوميًا / أسبوعيًا.",
+        "qualified_leads_handled_calls_booked_ave": "تم التعامل مع العملاء المحتملين المؤهلين · المكالمات المحجوزة · متوسط ​​وقت الاستجابة (بالدقائق)",
+        "t_3_local_seo": "3 · SEO المحلي",
+        "content_local_seo_digital_employee": "المحتوى والموظف الرقمي SEO المحلي",
+        "researches_local_keywords_drafts_posts_a": "يقوم بالبحث عن الكلمات الرئيسية المحلية، ومسودات المنشورات وتحديثات GBP، وتحسين الصفحات، وتتبع التصنيفات، وتقديم تقويم أسبوعي بسيط للمحتوى + لقطة للأداء. زيادة المبيعات بشكل طبيعي إلى وكلاء Matrixly SEO الأوسع.",
+        "pieces_published_ranking_inquiry_lift_ho": "القطع المنشورة · رفع التصنيف/الاستفسار · حفظ ساعات من عمل المحتوى"
+      },
+      "how": {
+        "operating_system": "نظام التشغيل",
+        "from_discovery_to_managed_workforce": "من الاكتشاف إلى القوى العاملة المُدارة",
+        "discovery_one_highest_pain_workflow": "الاكتشاف — سير العمل الأكثر صعوبة",
+        "low_pressure_fit_call_we_pick_the_single": "مكالمة مناسبة للضغط المنخفض. نحن نختار سير العمل الفردي حيث ستعرض الأتمتة متعددة الخطوات الساعات والدولار بشكل أسرع. لقد قمنا بتحديد السعر المقبول بالساعة لدفتر القيمة.",
+        "setup_usually_3_7_days": "الإعداد (عادة 3-7 أيام)",
+        "build_and_connect_the_digital_employee_o": "قم ببناء الموظف الرقمي وربطه على مكدس Matrixly (الوكلاء الدائمون، والأوراق المشتركة، وأدوات البريد الإلكتروني/CRM). إنشاء قناة التدريب المشتركة. اكتب المخرجات إلى الملفات المشتركة التي يمكن للفريق بأكمله رؤيتها.",
+        "on_site_visit_intensive_coaching_weeks_1": "زيارة في الموقع وتدريب مكثف (الأسابيع 1-2)",
+        "founder_ceo_visits_or_hybrid_live_traini": "زيارات المؤسس/الرئيس التنفيذي (أو الهجينة). التدريب المباشر مع فريقك. نبقى ثقيلين في القناة المشتركة حتى تتعلم من خلال مشاهدة كيفية إيجاز الوكيل وتصحيحه والموافقة عليه.",
+        "ongoing_management_monday_roi": "الإدارة المستمرة + الاثنين ROI",
+        "light_monitoring_fix_before_you_notice_r": "مراقبة خفيفة، وموثوقية الإصلاح قبل أن تلاحظ، وتقرير القيمة الأسبوعي كل يوم اثنين. عندما يقوم الوكيل الأول بتوفير الوقت بشكل واضح، فإننا نقترح موظفًا رقميًا متخصصًا ثانيًا."
+      },
+      "roi": {
+        "retention_engine": "محرك الاحتفاظ",
+        "the_weekly_roi_report": "التقرير الأسبوعي ROI",
+        "this_is_the_single_strongest_reason_clie": "وهذا هو السبب الأقوى وراء استمرار العملاء في الدفع. تؤدي الرسالة الواضحة \"لقد وفرت X دولارًا هذا الأسبوع\" إلى إعادة بيع التوكيل كل سبعة أيام.",
+        "core_metrics_every_week": "المقاييس الأساسية كل أسبوع",
+        "conservative_estimates_only_cumulative_t": "تقديرات متحفظة فقط الإجمالي التراكمي منذ اليوم الأول: \"187 ساعة / قيمة 18,700 دولار.\"",
+        "sample_monday_email": "عينة البريد الإلكتروني يوم الاثنين",
+        "subject_your_digital_employee_week_of_au": "الموضوع: موظفك الرقمي - تقرير الأسبوع من 4 إلى 10 أغسطس ROI",
+        "agent": "عامل:",
+        "client": "عميل:",
+        "period": "فترة:",
+        "this_week_s_snapshot": "لقطة هذا الأسبوع",
+        "breakdown": "انفصال",
+        "t_31_invoices_processed_6_8_hrs": "• تمت معالجة 31 فاتورة ← 6.8 ساعة",
+        "t_9_overdue_flagged_drafts_2_1_hrs": "• تم وضع علامة على 9 متأخرات + مسودات → 2.1 ساعة",
+        "t_7_payment_matches_1_3_hrs": "• 7 مطابقات للدفع → 1.3 ساعة",
+        "business_impact": "تأثير الأعمال",
+        "t_48_200_in_invoices_processed_3_late_pa": "تمت معالجة 48.200 دولار أمريكي من الفواتير. · تم القبض على 3 دفعات متأخرة مبكرًا",
+        "watching_next": "شاهد / التالي",
+        "one_vendor_pdf_format_updated_this_morni": "تم تحديث تنسيق بائع واحد PDF هذا الصباح. جاهز لإضافة تذكيرات بالدفع عندما تكون كذلك.",
+        "every_hour_the_agent_handles_is_an_hour_": "كل ساعة يتعامل معها الوكيل هي ساعة تعود بها. هل تريد المزيد من السعة أم وكيلًا ثانيًا؟ مجرد الرد."
+      },
+      "s31309": {
+        "ideal_clients": "العملاء المثاليون",
+        "built_for_owners_who_want_outcomes_not_e": "مصمم للمالكين الذين يريدون النتائج، وليس التجارب",
+        "houston_us_smbs_ready_to_treat_ai_as_sta": "الشركات الصغيرة والمتوسطة في هيوستن والولايات المتحدة على استعداد للتعامل مع الذكاء الاصطناعي كموظفين - وليس لعبة",
+        "leaders_who_value_human_coaching_and_wee": "القادة الذين يقدرون التدريب البشري والإثبات الأسبوعي من خلال دردشة وكيل DIY",
+        "teams_burned_by_fragile_diy_agents_that_": "يتم حرق الفرق من قبل عملاء DIY الهشين الذين ينكسرون ويتم التخلي عنهم",
+        "businesses_where_499_1_200_mo_is_a_fract": "الشركات التي يتراوح سعرها بين 499 دولارًا و1200 دولارًا شهريًا تمثل جزءًا صغيرًا من استئجار واحد",
+        "delivery": "توصيل",
+        "founder_led_now_team_led_as_we_grow": "بقيادة المؤسس الآن. بقيادة الفريق ونحن ننمو.",
+        "early_white_glove_seats_are_delivered_pe": "يتم تسليم مقاعد White Glove المبكرة شخصيًا بواسطة المؤسس/الرئيس التنفيذي لشركة Matrixly - الاكتشاف والتدريب في الموقع والتدريب على القناة المشتركة والإدارة الشهرية. الجودة على الحجم. ومع تزايد الطلب، ينضم المدربون المدربون تحت نفس قواعد اللعبة: دفتر الأستاذ للقيمة، والموثوقية أولاً، والتعلم عن طريق المشاهدة.",
+        "you_only_need_to_be_one_step_ahead_of_th": "ما عليك سوى أن تكون متقدمًا بخطوة واحدة على العميل. نحن نقدم العمق الفني حتى يظل الوكلاء متعددو الخطوات موثوقين - ونجلب الوجود البشري حتى لا يشعر المالكون مطلقًا بأنهم وحيدون مع صندوق أسود."
+      },
+      "s33395": {
+        "white_glove_vs_self_serve": "White Glove مقابل الخدمة الذاتية",
+        "grow_scale": "النمو / النطاق",
+        "white_glove_digital_employee": "الموظف الرقمي White Glove",
+        "what_you_buy": "ما تشتريه",
+        "software_seats": "مقاعد البرمجيات",
+        "managed_employee_coaching": "موظف إداري + تدريب",
+        "self_serve": "Self-serve",
+        "custom_install_on_site": "تثبيت مخصص + في الموقع",
+        "learning": "تعلُّم",
+        "docs_community": "المستندات والمجتمع",
+        "shared_channel_learn_by_watching": "قناة مشتركة · تعلم من خلال المشاهدة",
+        "proof": "دليل",
+        "activity_roi_dashboard": "لوحة النشاط / ROI",
+        "monday_value_ledger_email": "Monday value ledger email",
+        "when_things_break": "عندما تنكسر الأشياء",
+        "you_debug": "أنت تصحيح",
+        "we_fix_before_you_notice": "We fix before you notice",
+        "price": "سعر",
+        "t_49_149_mo": "49 دولارًا - 149 دولارًا شهريًا",
+        "from_499_mo_setup": "بدءًا من 499 دولارًا شهريًا + الإعداد"
+      },
+      "faq": {
+        "common_questions": "Common questions",
+        "is_499_setup_or_monthly": "هل 499 دولارًا إعداديًا أم شهريًا؟",
+        "what_s_the_real_product_the_agent_or_the": "ما هو المنتج الحقيقي – الوكيل أم التدريب؟",
+        "coaching_and_ongoing_management_the_agen": "التدريب والإدارة المستمرة. الوكيل هو الموظف الرقمي؛ المنتج هو أنه يستمر في العمل، وأنت تفهمه، وترى ROI أسبوعيًا دون أن تصبح مهندسًا سريعًا.",
+        "who_visits_on_site": "من يزور الموقع؟",
+        "initially_the_founder_ceo_as_capacity_gr": "في البداية المؤسس/الرئيس التنفيذي. مع نمو القدرات، يقوم مدربو White Glove بأداء المهام وفقًا لنفس المعايير. سيكون لديك دائمًا شريك مسمى.",
+        "how_is_this_different_from_diy_agents_th": "كيف يختلف هذا عن عوامل DIY التي تنكسر؟",
+        "reliability_is_a_selling_point_we_manage": "الموثوقية هي نقطة بيع. نحن ندير وقت التشغيل، ونكتب في الأوراق المشتركة (وليس الملاحظات الخاصة)، ونبقى في قناتك، ونصلح المشكلات قبل أن تصبح تدريبًا على مكافحة الحرائق يوم الاثنين.",
+        "can_we_start_on_scale_and_upgrade": "هل يمكننا البدء على نطاق واسع والترقية؟",
+        "yes_many_owners_explore_self_serve_then_": "نعم. يستكشف العديد من المالكين الخدمة الذاتية، ثم ينتقلون إلى White Glove عندما يريدون موظفًا رقميًا مُدارًا وتقارير أسبوعية عن القيمة. سنقوم بتعيين رصيد من الاستخدام النشط للنظام الأساسي في المحادثة."
+      },
+      "apply": {
+        "low_pressure_next_step": "الخطوة التالية الضغط المنخفض",
+        "want_a_founding_white_glove_seat": "هل تريد مقعدًا مؤسسًا White Glove؟",
+        "tell_us_your_business_city_and_the_one_w": "أخبرنا عن عملك، ومدينتك، وسير العمل الذي يسرق أكبر عدد من الساعات. سنرد بملاحظات ملائمة وفتحة للاستكشاف - لا يوجد بيع صعب.",
+        "email_founder_anwar_matrixly_world": "مؤسس البريد الإلكتروني · anwar@matrixly.world",
+        "back_to_pricing": "العودة إلى التسعير",
+        "explore_free": "استكشاف مجانا"
+      },
+      "footer": {
+        "digital_employees_that_work_while_you_ru": "الموظفون الرقميون الذين يعملون أثناء إدارة عملك.",
+        "white_glove_inquiry": "استفسار عن White Glove"
+      }
+    }
   }
 }

@@ -822,7 +822,7 @@
         <div class="nav-links">
           <a href="/#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How it Works</a>
           <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
-          <a href="/products" class="nav-link">Products</a>
+          <a href="/products" class="nav-link" data-i18n="full.final_cta.products">Products</a>
           <a href="/integrations" class="nav-link" aria-current="page" data-i18n="nav.integrations">Integrations</a>
           <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
         </div>
@@ -866,7 +866,7 @@
         <div class="py-4 space-y-1 border-t border-matrix-border">
           <a href="/#how-it-works" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.howItWorks">How it Works</a>
           <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.agents">Agents</a>
-          <a href="/products" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green">Products</a>
+          <a href="/products" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="full.final_cta.products">Products</a>
           <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-green" aria-current="page" data-i18n="nav.integrations">Integrations</a>
           <a href="/pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a>
           <a href="/#final-cta" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg" data-i18n="nav.getStarted">Get Started</a>
@@ -881,9 +881,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase" data-i18n="nav.integrations">Integrations</p>
         <h1 class="h1-fluid font-extrabold text-matrix-cream mb-4 max-w-3xl leading-tight">
-          Works with the tools you <span class="text-matrix-green">already use</span>
+          Works with the tools you <span class="text-matrix-green" data-i18n="integrations.titleHighlight">already use</span>
         </h1>
-        <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8">
+        <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8" data-i18n="site.integrations.s29619.connect_gmail_shopify_quickbooks_shipsta">
           Connect Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Slack, carriers, and more — so agents can market, sell, ship, and support without you switching tabs.
         </p>
 
@@ -892,7 +892,7 @@
           <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-matrix-soft pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
-          <label for="integration-search" class="sr-only">Search integrations</label>
+          <label for="integration-search" class="sr-only" data-i18n="site.integrations.s29619.search_integrations">Search integrations</label>
           <input
             id="integration-search"
             type="search"
@@ -904,16 +904,16 @@
 
         <!-- Category filters -->
         <div id="category-filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Integration categories">
-          <button type="button" class="filter-chip active" data-category="all">All</button>
-          <button type="button" class="filter-chip" data-category="popular">Most Popular</button>
-          <button type="button" class="filter-chip" data-category="sales">Sales</button>
-          <button type="button" class="filter-chip" data-category="marketing">Marketing</button>
-          <button type="button" class="filter-chip" data-category="operations">Operations</button>
-          <button type="button" class="filter-chip" data-category="support">Support</button>
-          <button type="button" class="filter-chip" data-category="ecommerce">E-commerce</button>
-          <button type="button" class="filter-chip" data-category="logistics">Logistics</button>
-          <button type="button" class="filter-chip" data-category="productivity">Productivity</button>
-          <button type="button" class="filter-chip" data-category="assistant">Personal Assistant</button>
+          <button type="button" class="filter-chip active" data-category="all" data-i18n="site.integrations.s29619.all">All</button>
+          <button type="button" class="filter-chip" data-category="popular" data-i18n="site.integrations.s29619.most_popular">Most Popular</button>
+          <button type="button" class="filter-chip" data-category="sales" data-i18n="full.hero.sales">Sales</button>
+          <button type="button" class="filter-chip" data-category="marketing" data-i18n="full.hero.marketing">Marketing</button>
+          <button type="button" class="filter-chip" data-category="operations" data-i18n="site.integrations.s29619.operations">Operations</button>
+          <button type="button" class="filter-chip" data-category="support" data-i18n="full.hero.support">Support</button>
+          <button type="button" class="filter-chip" data-category="ecommerce" data-i18n="site.integrations.s29619.e_commerce">E-commerce</button>
+          <button type="button" class="filter-chip" data-category="logistics" data-i18n="full.hero.logistics">Logistics</button>
+          <button type="button" class="filter-chip" data-category="productivity" data-i18n="site.integrations.s29619.productivity">Productivity</button>
+          <button type="button" class="filter-chip" data-category="assistant" data-i18n="site.integrations.s29619.personal_assistant">Personal Assistant</button>
         </div>
       </div>
     </section>
@@ -923,19 +923,19 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
           <div>
-            <h2 class="text-xl sm:text-2xl font-bold text-matrix-cream" id="directory-heading">All integrations</h2>
+            <h2 class="text-xl sm:text-2xl font-bold text-matrix-cream" id="directory-heading" data-i18n="site.integrations.s32271.all_integrations">All integrations</h2>
             <p class="text-sm text-matrix-soft mt-1">
               <span id="result-count">0</span> apps · Connect any tool to Matrixly agent workflows
             </p>
           </div>
-          <a href="/#final-cta" class="btn-secondary text-sm px-5 py-2.5 rounded-lg self-start sm:self-auto">Try Matrixly free</a>
+          <a href="/#final-cta" class="btn-secondary text-sm px-5 py-2.5 rounded-lg self-start sm:self-auto" data-i18n="site.integrations.s32271.try_matrixly_free">Try Matrixly free</a>
         </div>
 
         <div id="integrations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <!-- Cards injected by JS for maintainability; noscript fallback below -->
         </div>
 
-        <p id="no-results" class="hidden text-center text-matrix-soft py-16 font-mono text-sm">
+        <p id="no-results" class="hidden text-center text-matrix-soft py-16 font-mono text-sm" data-i18n="site.integrations.s32271.no_integrations_match_your_search_try_an">
           No integrations match your search. Try another keyword or clear filters.
         </p>
       </div>
@@ -946,32 +946,32 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase" data-i18n="nav.howItWorks">How it works</p>
-          <h2 class="h2-fluid font-bold text-matrix-cream mb-3">Easy as one, two, three</h2>
-          <p class="text-matrix-soft">Something happens in your tools → agents step in → work gets done. Plain language, real actions.</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-3" data-i18n="site.integrations.s33386.easy_as_one_two_three">Easy as one, two, three</h2>
+          <p class="text-matrix-soft" data-i18n="site.integrations.s33386.something_happens_in_your_tools_agents_s">Something happens in your tools → agents step in → work gets done. Plain language, real actions.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-5">
           <div class="card-matrix rounded-2xl p-6">
             <div class="neon-tile mb-5"><span>01</span></div>
-            <p class="font-mono text-xs text-matrix-green mb-2">When this happens…</p>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Select a trigger</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">
+            <p class="font-mono text-xs text-matrix-green mb-2" data-i18n="site.integrations.s33386.when_this_happens">When this happens…</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2" data-i18n="site.integrations.s33386.select_a_trigger">Select a trigger</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed" data-i18n="site.integrations.s33386.a_trigger_is_an_event_that_kicks_off_you">
               A trigger is an event that kicks off your AI agent — like a new email in Gmail, a Shopify order, or a Slack message.
             </p>
           </div>
           <div class="card-matrix rounded-2xl p-6">
             <div class="neon-tile mb-5"><span>02</span></div>
-            <p class="font-mono text-xs text-matrix-green mb-2">Do this</p>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Connect your apps</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">
+            <p class="font-mono text-xs text-matrix-green mb-2" data-i18n="site.integrations.s33386.do_this">Do this</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2" data-i18n="site.integrations.s33386.connect_your_apps">Connect your apps</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed" data-i18n="site.integrations.s33386.hundreds_of_integrations_available_plug_">
               Hundreds of integrations available. Plug Matrixly into CRM, email, ecommerce, logistics, ads, and productivity tools.
             </p>
           </div>
           <div class="card-matrix rounded-2xl p-6">
             <div class="neon-tile mb-5"><span>03</span></div>
-            <p class="font-mono text-xs text-matrix-green mb-2">Autonomous</p>
-            <h3 class="text-lg font-bold text-matrix-cream mb-2">Let AI do the work</h3>
-            <p class="text-sm text-matrix-soft leading-relaxed">
+            <p class="font-mono text-xs text-matrix-green mb-2" data-i18n="site.integrations.s33386.autonomous">Autonomous</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2" data-i18n="site.integrations.s33386.let_ai_do_the_work">Let AI do the work</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed" data-i18n="site.integrations.s33386.give_custom_instructions_to_your_agent_i">
               Give custom instructions to your agent in plain language. Agents plan, act, and report — so you focus on growth.
             </p>
           </div>
@@ -982,18 +982,18 @@
     <!-- TRUST + CTA -->
     <section class="py-16 sm:py-24 grid-bg">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="font-mono text-xs text-matrix-green mb-4 tracking-wide">TRUSTED BY FORWARD-THINKING SMBs</p>
+        <p class="font-mono text-xs text-matrix-green mb-4 tracking-wide" data-i18n="site.integrations.s35622.trusted_by_forward_thinking_smbs">TRUSTED BY FORWARD-THINKING SMBs</p>
         <h2 class="h2-fluid font-extrabold text-matrix-cream mb-4">
-          The AI marketplace that actually <span class="text-matrix-green">connects</span>
+          The AI marketplace that actually <span class="text-matrix-green" data-i18n="site.integrations.s35622.connects">connects</span>
         </h2>
-        <p class="text-matrix-soft text-lg mb-8">
+        <p class="text-matrix-soft text-lg mb-8" data-i18n="site.integrations.s35622.matrixly_agents_save_hours_every_week_by">
           Matrixly agents save hours every week by running SEO, sales, support, and logistics across the stack you already pay for.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/#final-cta" class="btn-primary px-8 py-3.5 rounded-xl text-sm">Get started free</a>
-          <a href="/pricing" class="btn-secondary px-8 py-3.5 rounded-xl text-sm">View pricing</a>
+          <a href="/#final-cta" class="btn-primary px-8 py-3.5 rounded-xl text-sm" data-i18n="full.final_cta.get_started_free">Get started free</a>
+          <a href="/pricing" class="btn-secondary px-8 py-3.5 rounded-xl text-sm" data-i18n="site.integrations.s35622.view_pricing">View pricing</a>
         </div>
-        <p class="text-xs text-matrix-soft mt-6 font-mono">No credit card required · Cancel anytime</p>
+        <p class="text-xs text-matrix-soft mt-6 font-mono" data-i18n="site.integrations.s35622.no_credit_card_required_cancel_anytime">No credit card required · Cancel anytime</p>
       </div>
     </section>
   </main>
@@ -1008,26 +1008,26 @@
       aria-labelledby="gmail-modal-title"
       tabindex="-1"
     >
-      <button type="button" class="modal-close" id="gmail-modal-close" aria-label="Close">&times;</button>
+      <button type="button" class="modal-close" id="gmail-modal-close" aria-label="Close" data-i18n="site.integrations.s35622.times">&times;</button>
 
       <!-- Step: intro / connect -->
       <div id="gmail-panel-intro" class="modal-panel active">
-        <h2 id="gmail-modal-title">Connect your Gmail</h2>
-        <p class="modal-lead">
+        <h2 id="gmail-modal-title" data-i18n="site.integrations.s35622.connect_your_gmail">Connect your Gmail</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.connect_your_gmail_so_your_ai_assistant_">
           Connect your Gmail so your AI assistant can keep your inbox under control while you run the business.
         </p>
         <div class="privacy-box" role="note">
           <strong>Privacy:</strong> Your emails never leave your control. We do not train on them.
           You can revoke access any time in your Google account.
         </div>
-        <p class="text-sm font-semibold text-matrix-cream mb-2">What your Email Assistant will do</p>
+        <p class="text-sm font-semibold text-matrix-cream mb-2" data-i18n="site.integrations.s35622.what_your_email_assistant_will_do">What your Email Assistant will do</p>
         <ul class="scope-list">
-          <li>Sort and label mail (Urgent, Needs Reply, FYI, and more)</li>
+          <li data-i18n="site.integrations.s35622.sort_and_label_mail_urgent_needs_reply_f">Sort and label mail (Urgent, Needs Reply, FYI, and more)</li>
           <li>Draft replies for you to review — <strong>never auto-sends</strong> to customers</li>
-          <li>Flag time-sensitive items so nothing slips</li>
-          <li>Email you a short daily brief of what matters</li>
+          <li data-i18n="site.integrations.s35622.flag_time_sensitive_items_so_nothing_sli">Flag time-sensitive items so nothing slips</li>
+          <li data-i18n="site.integrations.s35622.email_you_a_short_daily_brief_of_what_ma">Email you a short daily brief of what matters</li>
         </ul>
-        <p class="text-sm font-semibold text-matrix-cream mb-2">Google permissions (plain English)</p>
+        <p class="text-sm font-semibold text-matrix-cream mb-2" data-i18n="site.integrations.s35622.google_permissions_plain_english">Google permissions (plain English)</p>
         <ul class="scope-list">
           <li><strong>Read</strong> your mail so it can triage the inbox</li>
           <li><strong>Create labels &amp; drafts</strong> so work is organized for you</li>
@@ -1038,41 +1038,41 @@
             <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.5-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.3 35.1 26.8 36 24 36c-5.3 0-9.7-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.2 5.5l.1.1 6.3 5.3C39.1 37.1 44 33 44 24c0-1.3-.1-2.5-.4-3.5z"/></svg>
             Connect with Google
           </button>
-          <button type="button" class="btn-linkish" id="gmail-test-mode-btn">Try Test Mode first (sample emails)</button>
-          <button type="button" class="btn-linkish" id="gmail-imap-btn">I use Hostinger / Outlook / other IMAP</button>
+          <button type="button" class="btn-linkish" id="gmail-test-mode-btn" data-i18n="site.integrations.s35622.try_test_mode_first_sample_emails">Try Test Mode first (sample emails)</button>
+          <button type="button" class="btn-linkish" id="gmail-imap-btn" data-i18n="site.integrations.s35622.i_use_hostinger_outlook_other_imap">I use Hostinger / Outlook / other IMAP</button>
         </div>
       </div>
 
       <!-- Step: OAuth instructions (desktop agent) -->
       <div id="gmail-panel-oauth" class="modal-panel">
-        <h2>Almost there — 2 minutes</h2>
-        <p class="modal-lead">
+        <h2 data-i18n="site.integrations.s35622.almost_there_2_minutes">Almost there — 2 minutes</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.gmail_connects_securely_on_your_computer">
           Gmail connects securely on your computer through the Email Assistant.
           Paste these commands in a terminal (or ask your setup partner). No coding required beyond copy-paste.
         </p>
         <div class="privacy-box">
           Drafts only for customer replies. Daily brief emails only go to <strong>you</strong>.
         </div>
-        <p class="text-sm font-semibold text-matrix-cream mb-1">1. One-time Google setup</p>
+        <p class="text-sm font-semibold text-matrix-cream mb-1" data-i18n="site.integrations.s35622.t_1_one_time_google_setup">1. One-time Google setup</p>
         <p class="text-sm text-matrix-soft mb-2">Follow the copy-paste guide: <code class="text-matrix-green">agents/email-assistant/scripts/setup_oauth.md</code></p>
-        <p class="text-sm font-semibold text-matrix-cream mb-1">2. Connect</p>
+        <p class="text-sm font-semibold text-matrix-cream mb-1" data-i18n="site.integrations.s35622.t_2_connect">2. Connect</p>
         <div class="cli-box">cd agents/email-assistant
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python -m src.cli connect-gmail</div>
-        <p class="text-sm text-matrix-soft mb-3">Your browser opens → sign in → Allow. You should see “Success — Gmail connected”.</p>
+        <p class="text-sm text-matrix-soft mb-3" data-i18n="site.integrations.s35622.your_browser_opens_sign_in_allow_you_sho">Your browser opens → sign in → Allow. You should see “Success — Gmail connected”.</p>
         <div class="modal-actions">
-          <button type="button" class="btn-google" id="gmail-mark-connected-btn">I’ve connected Gmail — show success</button>
-          <a class="btn-linkish" href="/email-assistant">Open Email Assistant page</a>
-          <button type="button" class="btn-linkish" id="gmail-back-from-oauth">Back</button>
+          <button type="button" class="btn-google" id="gmail-mark-connected-btn" data-i18n="site.integrations.s35622.i_ve_connected_gmail_show_success">I’ve connected Gmail — show success</button>
+          <a class="btn-linkish" href="/email-assistant" data-i18n="site.integrations.s35622.open_email_assistant_page">Open Email Assistant page</a>
+          <button type="button" class="btn-linkish" id="gmail-back-from-oauth" data-i18n="quiz.back">Back</button>
         </div>
       </div>
 
       <!-- Step: IMAP fallback -->
       <div id="gmail-panel-imap" class="modal-panel">
-        <h2>Hostinger / Outlook / IMAP</h2>
-        <p class="modal-lead">
+        <h2 data-i18n="site.integrations.s35622.hostinger_outlook_imap">Hostinger / Outlook / IMAP</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.not_on_gmail_you_can_still_use_email_ass">
           Not on Gmail? You can still use Email Assistant with the same inbox you use in Thunderbird or Outlook.
         </p>
         <div class="cli-box"># In agents/email-assistant/.env
@@ -1083,19 +1083,19 @@ EMAIL_HOSTINGER_PASSWORD=********
 
 python -m src.cli auth
 python -m src.cli triage</div>
-        <p class="text-sm text-matrix-soft mb-3">
+        <p class="text-sm text-matrix-soft mb-3" data-i18n="site.integrations.s35622.full_steps_are_in_the_email_assistant_re">
           Full steps are in the Email Assistant README under “Hostinger / IMAP”.
         </p>
         <div class="modal-actions">
-          <a class="btn-google" href="/email-assistant" style="text-decoration:none">Open Email Assistant</a>
-          <button type="button" class="btn-linkish" id="gmail-back-from-imap">Back to Gmail connect</button>
+          <a class="btn-google" href="/email-assistant" style="text-decoration:none" data-i18n="site.integrations.s35622.open_email_assistant">Open Email Assistant</a>
+          <button type="button" class="btn-linkish" id="gmail-back-from-imap" data-i18n="site.integrations.s35622.back_to_gmail_connect">Back to Gmail connect</button>
         </div>
       </div>
 
       <!-- Step: Test Mode -->
       <div id="gmail-panel-test" class="modal-panel">
-        <h2>Test Mode — sample inbox</h2>
-        <p class="modal-lead">
+        <h2 data-i18n="site.integrations.s35622.test_mode_sample_inbox">Test Mode — sample inbox</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.see_the_agent_work_before_connecting_rea">
           See the agent work before connecting real email. No Google login needed.
         </p>
         <div class="test-preview" id="gmail-test-preview" aria-live="polite">
@@ -1110,24 +1110,24 @@ python -m src.cli triage</div>
 python -m src.cli test-mode
 python -m src.cli impact --test</div>
         <div class="modal-actions">
-          <button type="button" class="btn-google" id="gmail-after-test-connect">Looks good — Connect Gmail</button>
-          <button type="button" class="btn-linkish" id="gmail-back-from-test">Back</button>
+          <button type="button" class="btn-google" id="gmail-after-test-connect" data-i18n="site.integrations.s35622.looks_good_connect_gmail">Looks good — Connect Gmail</button>
+          <button type="button" class="btn-linkish" id="gmail-back-from-test" data-i18n="quiz.back">Back</button>
         </div>
       </div>
 
       <!-- Step: success -->
       <div id="gmail-panel-success" class="modal-panel">
         <div class="success-check" aria-hidden="true">✓</div>
-        <h2 class="text-center" style="padding-right:0">Gmail connected</h2>
-        <p class="modal-lead text-center">
+        <h2 class="text-center" style="padding-right:0" data-i18n="site.integrations.s35622.gmail_connected">Gmail connected</h2>
+        <p class="modal-lead text-center" data-i18n="site.integrations.s35622.your_email_assistant_is_ready_open_it_to">
           Your Email Assistant is ready. Open it to triage, draft replies, and get your first 24-hour impact report.
         </p>
         <div class="privacy-box">
           Remember: replies stay as drafts until you send. Revoke anytime at Google Account → Security → Third-party access.
         </div>
         <div class="modal-actions">
-          <a class="btn-google" href="/email-assistant" style="text-decoration:none">Open Email Assistant</a>
-          <button type="button" class="btn-linkish" id="gmail-disconnect-demo">Reset connection status on this browser</button>
+          <a class="btn-google" href="/email-assistant" style="text-decoration:none" data-i18n="site.integrations.s35622.open_email_assistant">Open Email Assistant</a>
+          <button type="button" class="btn-linkish" id="gmail-disconnect-demo" data-i18n="site.integrations.s35622.reset_connection_status_on_this_browser">Reset connection status on this browser</button>
         </div>
       </div>
     </div>
@@ -1144,13 +1144,13 @@ python -m src.cli impact --test</div>
               <span class="text-matrix-cream">Matrixly</span>
             </span>
           </a>
-          <p class="text-sm text-matrix-soft">AI agents that work while you run your business.</p>
+          <p class="text-sm text-matrix-soft" data-i18n="site.agents.footer.ai_agents_that_work_while_you_run_your_b">AI agents that work while you run your business.</p>
         </div>
         <div>
-          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Product</h4>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.product">Product</h4>
           <ul class="space-y-2.5 text-sm text-matrix-soft">
             <li><a href="/agents" class="hover:text-matrix-green transition-colors" data-i18n="nav.agents">Agents</a></li>
-            <li><a href="/products" class="hover:text-matrix-green transition-colors">Products</a></li>
+            <li><a href="/products" class="hover:text-matrix-green transition-colors" data-i18n="full.final_cta.products">Products</a></li>
             <li><a href="/integrations" class="hover:text-matrix-green transition-colors" data-i18n="nav.integrations">Integrations</a></li>
             <li><a href="/pricing" class="hover:text-matrix-green transition-colors" data-i18n="nav.pricing">Pricing</a></li>
           </ul>
@@ -1158,17 +1158,17 @@ python -m src.cli impact --test</div>
         <div>
           <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="nav.resources">Resources</h4>
           <ul class="space-y-2.5 text-sm text-matrix-soft">
-            <li><a href="#" class="hover:text-matrix-green transition-colors">Docs</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="site.integrations.footer.docs">Docs</a></li>
             <li><a href="/integrations" class="hover:text-matrix-green transition-colors" data-i18n="nav.integrations">Integrations</a></li>
             <li><a href="#" class="hover:text-matrix-green transition-colors">API</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4">Legal</h4>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.legal">Legal</h4>
           <ul class="space-y-2.5 text-sm text-matrix-soft">
             <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="footer.privacy">Privacy</a></li>
             <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="footer.terms">Terms</a></li>
-            <li><a href="#" class="hover:text-matrix-green transition-colors">Security</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="full.final_cta.security">Security</a></li>
           </ul>
         </div>
       </div>
@@ -1389,8 +1389,8 @@ python -m src.cli impact --test</div>
       // Include aliases in search (e.g. "ship" matches ShipStation)
       const searchBlob = [item.name, catLabel, item.abbr || '', blurb].join(' ').toLowerCase();
       const ctaEl = item.action === 'connect-gmail'
-        ? `<button type="button" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center" data-action="connect-gmail">${cta}</button>`
-        : `<a href="${href}" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center">${cta}</a>`;
+        ? `<button type="button" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center" data-action="connect-gmail" data-i18n="site.integrations.footer.cta">${cta}</button>`
+        : `<a href="${href}" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center" data-i18n="site.integrations.footer.cta">${cta}</a>`;
       return `
         <article
           class="integration-card card-matrix rounded-2xl p-5 flex flex-col"
@@ -1399,13 +1399,13 @@ python -m src.cli impact --test</div>
           data-categories="${dataCats}"
         >
           <div class="flex items-start gap-3 mb-4">
-            <div class="neon-tile" aria-hidden="true"><span>${initials(item.name, item.abbr)}</span></div>
+            <div class="neon-tile" aria-hidden="true"><span data-i18n="site.integrations.footer.initials_item_name_item_abbr">${initials(item.name, item.abbr)}</span></div>
             <div class="min-w-0">
-              <h3 class="text-base font-bold text-matrix-cream truncate">${item.name}</h3>
-              <p class="font-mono text-[11px] text-matrix-green capitalize mt-0.5">${catLabel}</p>
+              <h3 class="text-base font-bold text-matrix-cream truncate" data-i18n="site.integrations.footer.item_name">${item.name}</h3>
+              <p class="font-mono text-[11px] text-matrix-green capitalize mt-0.5" data-i18n="site.integrations.footer.catlabel">${catLabel}</p>
             </div>
           </div>
-          <p class="text-sm text-matrix-soft flex-grow mb-4">
+          <p class="text-sm text-matrix-soft flex-grow mb-4" data-i18n="site.integrations.footer.blurb">
             ${blurb}
           </p>
           ${ctaEl}

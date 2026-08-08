@@ -699,5 +699,1246 @@
       "security": "নিরাপত্তা",
       "cookies": "কুকিজ"
     }
+  },
+  "site": {
+    "agents": {
+      "s23091": {
+        "agent_marketplace": "এজেন্ট মার্কেটপ্লেস",
+        "your_small_business": "আপনার ছোট ব্যবসা",
+        "pick_a_proven_agent_for_leads_email_ship": "লিড, ইমেল, শিপিং, সমর্থন, বা বিষয়বস্তুর জন্য একটি প্রমাণিত এজেন্ট চয়ন করুন — আপনার সরঞ্জামগুলিকে সংযুক্ত করুন এবং মিনিটের মধ্যে সময় ফিরে পান। কোনো প্রকৌশলীর প্রয়োজন নেই।"
+      },
+      "catalog": {
+        "catalog": "ক্যাটালগ",
+        "get_to_work": "কাজে লেগে যান।",
+        "live_agents_ready_to_try_each_card_opens": "লাইভ এজেন্ট চেষ্টা করার জন্য প্রস্তুত। প্রতিটি কার্ড একটি সাধারণ ওভারভিউ খোলে — আপনি প্রস্তুত হলে স্থাপন করুন।",
+        "view_product_suite": "পণ্য স্যুট দেখুন →",
+        "scores_inbound_leads_enriches_contact_da": "ইনবাউন্ড লিড স্কোর করে, যোগাযোগের ডেটা সমৃদ্ধ করে এবং ব্যক্তিগতকৃত আউটরিচ সিকোয়েন্সের পরামর্শ দেয়।",
+        "triage_inbox_draft_replies_and_flag_urge": "ট্রাইজ ইনবক্স, ড্রাফ্ট উত্তর, এবং জরুরী আইটেম ফ্ল্যাগ করুন যাতে অপারেটররা ইমেলে থাকা বন্ধ করে দেয়।",
+        "update_contacts_log_activities_and_keep_": "পরিচিতি আপডেট করুন, লগ অ্যাক্টিভিটি করুন এবং আপনার সেলস স্ট্যাক জুড়ে পাইপলাইন হাইজিন স্বয়ংক্রিয় রাখুন।",
+        "try_this_agent": "এই এজেন্ট চেষ্টা করুন",
+        "track_shipments_notify_stakeholders_and_": "শিপমেন্ট ট্র্যাক করুন, স্টেকহোল্ডারদের অবহিত করুন এবং লজিস্টিক এবং ডিস্ট্রিবিউশন এসএমইগুলির ব্যতিক্রমগুলি পরিচালনা করুন৷",
+        "user_guide": "ব্যবহারকারীর নির্দেশিকা",
+        "see_full_logistics_flow": "সম্পূর্ণ লজিস্টিক ফ্লো দেখুন →",
+        "pack": "প্যাক",
+        "supportforge_bookwise_invoiceforge_with_": "SupportForge + BookWise + InvoiceForge একটি ইউনিফাইড ড্যাশবোর্ড, কার্যকলাপ লগ, বিশ্লেষণ এবং এম্বেড উইজেট সহ।",
+        "supp": "SUPP",
+        "embeddable_ai_support_triage_chat_email_": "এমবেডযোগ্য AI সমর্থন: ট্রাইজ চ্যাট/ইমেল/ফর্ম, আপনার জ্ঞানের ভিত্তি থেকে উত্তর, HITL এবং টিকিটের সাথে বৃদ্ধি করুন।",
+        "book": "বই",
+        "ai_appointment_booking_real_time_availab": "এআই অ্যাপয়েন্টমেন্ট বুকিং: রিয়েল-টাইম প্রাপ্যতা, নিশ্চিতকরণ, অনুস্মারক, পুনঃনির্ধারণ/বাতিল, ক্যালেন্ডার সিঙ্ক।",
+        "invc": "INVC",
+        "invoice_processing_ar_vision_extract_val": "চালান প্রক্রিয়াকরণ এবং এআর: দৃষ্টি নির্যাস, যাচাইকরণ, QuickBooks/Xero/CSV-এ পোস্ট, ব্যতিক্রম, অনুস্মারক, প্রতিবেদন৷",
+        "cont": "CONT",
+        "create_and_repurpose_marketing_content_s": "বিপণন সামগ্রী তৈরি করুন এবং পুনঃউদ্দেশ্য করুন: SEO ব্লগ, সামাজিক, নিউজলেটার, বিজ্ঞাপন—ব্র্যান্ড ভয়েস + HITL পর্যালোচনা।",
+        "agentic_seo_brand_marketing_for_us_smbs_": "এজেন্টিক SEO এবং US SMB-এর জন্য ব্র্যান্ড মার্কেটিং: স্থানীয়/জৈব বৃদ্ধি, ব্র্যান্ড-ভয়েস সামগ্রী, GBP, কীওয়ার্ড ট্র্যাকার, ROI — প্রকাশের আগে HITL সহ।",
+        "bespoke": "বেসপোক",
+        "higher_tier": "উচ্চতর স্তর",
+        "seo_bespoke": "SEO-বেস্পোক",
+        "twil": "TWIL",
+        "twilio_sms_simple_voice_for_houston_smbs": "হিউস্টন এসএমবি-এর জন্য টুইলিও এসএমএস এবং সাধারণ ভয়েস — লিড রিপ্লাই, অ্যাপয়েন্টমেন্ট টেক্সট, মিসড-কল রিকভারি, টেস্ট মোড + HITL আউটবাউন্ড।",
+        "meet": "দেখা",
+        "meeting_outcomes_summaries_action_items_": "মিটিংয়ের ফলাফল: সারাংশ, অ্যাকশন আইটেম, CRM আপডেট, রিক্যাপ ইমেল এবং Zoom/টিম/মিট ট্রান্সক্রিপ্ট থেকে ফলো-আপ ফ্ল্যাগ।",
+        "social": "সামাজিক",
+        "social_content_engagement_multi_platform": "সামাজিক বিষয়বস্তু এবং ব্যস্ততা: বহু-প্ল্যাটফর্ম পোস্ট, সর্বোত্তম সময়সূচী, ইনবক্স উত্তর, অন্তর্দৃষ্টি—ব্র্যান্ড ভয়েস + HITL।",
+        "pipe": "পাইপ",
+        "score_and_prioritize_sales_pipelines_fit": "বিক্রয় পাইপলাইন স্কোর এবং অগ্রাধিকার দিন: ফিট/এনগেজমেন্ট স্কোরিং, দৈনিক প্রতিনিধি তালিকা, ঝুঁকিপূর্ণ পতাকা, CRM আপডেট, স্বাস্থ্য অন্তর্দৃষ্টি।",
+        "doc": "DOC",
+        "draft_proposals_quotes_contracts_and_rep": "খসড়া প্রস্তাব, উদ্ধৃতি, চুক্তি, এবং টেমপ্লেট থেকে রিপোর্ট—ব্র্যান্ডের নিয়ম, মূল্য, HITL অনুমোদন, PDF এক্সপোর্ট।",
+        "inv": "INV",
+        "pydantic_ai_multi_agent_ap_extract_pdfs_": "Pydantic AI মাল্টি-এজেন্ট AP: অর্থপ্রদানের আগে PDFs/ইমেল, ম্যাচ PO, ফ্ল্যাগ অসঙ্গতি, HITL বের করুন।",
+        "etf": "ETF",
+        "live_market_data_yield_projections_nav_r": "লাইভ মার্কেট ডেটা, ফলন অনুমান, NAV ঝুঁকি, এবং কর-সচেতন কৌশলগুলি — বিনামূল্যে Yahoo ডেটা, ডিফল্ট QQQI, ঐচ্ছিক Notion সংরক্ষণ৷"
+      },
+      "s50223": {
+        "ready_to_deploy": "স্থাপন করতে প্রস্তুত?",
+        "start_with_the_starter_pack_support_book": "Starter Pack (সহায়তা + বই + চালান) দিয়ে শুরু করুন, অথবা Lead Qualifier, ContentForge, SEOForge, MeetWise, SocialForge, PipelineForge, DocForge, এবং আরও অনেক কিছু এক্সপ্লোর করুন — বিনামূল্যে অন্বেষণ করুন৷",
+        "get_started_free": "বিনামূল্যে শুরু করুন",
+        "see_logistics_flow": "রসদ প্রবাহ দেখুন"
+      },
+      "footer": {
+        "ai_agents_that_work_while_you_run_your_b": "AI এজেন্ট যেগুলো কাজ করার সময় আপনি আপনার ব্যবসা চালান।",
+        "talk_to_sales": "বিক্রয়ের সাথে কথা বলুন",
+        "qa_admin": "QA অ্যাডমিন"
+      }
+    },
+    "book_wise": {
+      "page": {
+        "embed": "এম্বেড করুন",
+        "deploy": "স্থাপন করুন"
+      },
+      "s4299": {
+        "scheduling_ready_to_use": "সময়সূচী · ব্যবহারের জন্য প্রস্তুত",
+        "fully_manage_appointments_for_smbs_check": "SMB-এর জন্য অ্যাপয়েন্টমেন্টগুলি সম্পূর্ণরূপে পরিচালনা করুন — রিয়েল-টাইম প্রাপ্যতা পরীক্ষা করুন, বাফার এবং টাইমজোন সহ সর্বোত্তম স্লট প্রস্তাব করুন, নিশ্চিতকরণ সহ বুক করুন, স্মার্ট রিমাইন্ডার পাঠান এবং প্রান্তের ক্ষেত্রের জন্য মানব-ইন-দ্য-লুপের সাথে পুনঃনির্ধারণ/বাতিলকরণ পরিচালনা করুন।",
+        "fastapi": "FastAPI",
+        "buffers_tz": "Buffers + TZ",
+        "no_show_reduction": "নো-শো রিডাকশন"
+      },
+      "s5876": {
+        "t_1_intent": "1. অভিপ্রায়",
+        "classify_book_availability_reschedule_ca": "প্রাকৃতিক ভাষা থেকে বই, প্রাপ্যতা, পুনঃনির্ধারণ, বাতিল বা স্থিতি শ্রেণীবদ্ধ করুন।",
+        "t_2_availability": "2. প্রাপ্যতা",
+        "business_hours_buffers_min_notice_and_ti": "ব্যবসার সময়, বাফার, সর্বনিম্ন নোটিশ এবং টাইমজোন-সচেতন সর্বোত্তম স্লট।",
+        "t_3_book": "3. বই",
+        "intake_form_fields_confirmations_calenda": "ইনটেক ফর্ম ক্ষেত্র, নিশ্চিতকরণ, ক্যালেন্ডার লেখা, CRM যোগাযোগ আপসার্ট।",
+        "t_4_remind": "4. মনে করিয়ে দিন",
+        "t_24h_2h_reminders_admin_view_of_upcomin": "24 ঘন্টা + 2 ঘন্টা অনুস্মারক; আসন্ন বুকিং এবং HITL সারির অ্যাডমিন ভিউ।"
+      },
+      "deploy": {
+        "deploy_on_this_machine": "এই মেশিনে স্থাপন",
+        "business_hours_config_yaml": "ব্যবসার সময় (config.yaml)"
+      },
+      "embed": {
+        "embed_code": "এম্বেড কোড",
+        "back_to_marketplace": "মার্কেটপ্লেসে ফিরে যান",
+        "see_supportforge": "SupportForge দেখুন"
+      },
+      "footer": {
+        "matrixly_bookwise_v1_0_embeddable_bookin": "Matrixly · BookWise v1.0 · এমবেডযোগ্য বুকিং",
+        "back_to_agents": "এজেন্টদের কাছে ফিরে যান"
+      }
+    },
+    "connect_forge": {
+      "page": {
+        "houston_use_cases": "হিউস্টন ব্যবহার ক্ষেত্রে",
+        "run_locally": "স্থানীয়ভাবে চালান"
+      },
+      "s4320": {
+        "twil_sms_voice_houston_smbs": "TWIL · SMS এবং ভয়েস · হিউস্টন SMBs",
+        "the_first_twilio_powered_agent_on_matrix": "Matrixly-এ প্রথম Twilio-চালিত এজেন্ট। এসএমএস পাঠান এবং গ্রহণ করুন, কথোপকথন থ্রেড রাখুন, সাধারণ পরীক্ষা কল করুন এবং টেস্ট মোড + আউটবাউন্ড অনুমোদনের মাধ্যমে মানুষকে নিয়ন্ত্রণে রাখুন — হিউস্টন হোম পরিষেবা, HVAC, ঠিকাদার, রিয়েল এস্টেট এবং স্থানীয় খুচরা বিক্রেতার জন্য তৈরি।",
+        "twilio": "টুইলিও",
+        "port_8802": "পোর্ট 8802"
+      },
+      "houston": {
+        "instant_lead_response": "তাত্ক্ষণিক সীসা প্রতিক্রিয়া",
+        "text_back_hvac_and_home_service_leads_in": "টেক্সট ব্যাক এইচভিএসি এবং হোম-সার্ভিস লিড ক্যাটি / এনার্জি করিডোরে কয়েক সেকেন্ডের মধ্যে — প্রয়োজনে দ্বিভাষিক।",
+        "appointments": "অ্যাপয়েন্টমেন্ট",
+        "confirmation_and_reminder_sms_your_custo": "নিশ্চিতকরণ এবং অনুস্মারক SMS আপনার গ্রাহকরা আসলে পড়ে (যদি আপনি চান কিছু ছেড়ে যাওয়ার আগে HITL)।",
+        "missed_call_recovery": "মিসড-কল রিকভারি",
+        "turn_a_missed_ring_into_a_text_thread_so": "একটি মিস করা রিংকে একটি পাঠ্য থ্রেডে পরিণত করুন - \"দুঃখিত আমরা আপনাকে মিস করেছি - আমরা কীভাবে সাহায্য করতে পারি?\""
+      },
+      "s7265": {
+        "tools_it_connects_to": "এটি যে সরঞ্জামগুলির সাথে সংযোগ করে"
+      },
+      "deploy": {
+        "deploy_on_this_machine_port_8802": "এই মেশিনে স্থাপন করুন (পোর্ট 8802)",
+        "test_panel_actions": "পরীক্ষা প্যানেল কর্ম"
+      },
+      "s10115": {
+        "inbound_webhook": "অন্তর্মুখী ওয়েবহুক",
+        "see_bookwise": "BookWise দেখুন"
+      },
+      "footer": {
+        "matrixly_connectforge_v1_0_twilio_connec": "Matrixly · ConnectForge v1.0 · হিউস্টন SMB-এর জন্য Twilio কানেক্ট এজেন্ট"
+      }
+    },
+    "content_forge": {
+      "page": {
+        "start_for_my_business": "আমার ব্যবসার জন্য শুরু করুন"
+      },
+      "s4311": {
+        "content_desk_built_for_small_businesses": "কন্টেন্ট ডেস্ক · ছোট ব্যবসার জন্য নির্মিত",
+        "your_content_desk_for_small_business_tur": "ছোট ব্যবসার জন্য আপনার বিষয়বস্তু ডেস্ক: একটি ব্লগ, ট্রান্সক্রিপ্ট, বা পণ্য নোটকে SEO পোস্ট, সামাজিক অনুলিপি, নিউজলেটার এবং বিজ্ঞাপনগুলিতে পরিণত করুন — আপনার কণ্ঠে, কিছু প্রকাশের আগে মানুষের পর্যালোচনা সহ।",
+        "about_5_minutes_no_coding_nothing_publis": "প্রায় 5 মিনিট · কোন কোডিং নেই · আপনার ঠিক না থাকলে কিছুই প্রকাশ হয় না"
+      },
+      "how": {
+        "t_1_research": "1. গবেষণা",
+        "angles_keywords_audience_and_ctas_from_y": "আপনার উৎস উপাদান থেকে অ্যাঙ্গেল, কীওয়ার্ড, শ্রোতা এবং CTA।",
+        "t_2_write": "2. লিখুন",
+        "seo_blog_with_title_meta_description_slu": "SEO ব্লগ শিরোনাম, মেটা বর্ণনা, স্লাগ, এবং কাঠামোগত বডি সহ।",
+        "t_3_edit": "3. সম্পাদনা করুন",
+        "brand_voice_pass_and_quality_score_befor": "কিছু লাইভ হওয়ার আগে ব্র্যান্ড ভয়েস পাস এবং গুণমান স্কোর।",
+        "t_4_repurpose": "4. পুনরায় উদ্দেশ্য",
+        "linkedin_x_instagram_newsletter_ads_and_": "LinkedIn, X, Instagram, নিউজলেটার, বিজ্ঞাপন, এবং পরবর্তী-বিষয় ধারনা।"
+      },
+      "start": {
+        "start_content_desk": "কন্টেন্ট ডেস্ক শুরু করুন",
+        "start_this_for_my_business": "আমার ব্যবসার জন্য এটি শুরু করুন",
+        "one_guided_setup_prepares_everything_on_": "একটি নির্দেশিত সেটআপ আপনার কম্পিউটারে সবকিছু প্রস্তুত করে। আপনি শুধুমাত্র আপনার ব্যবসা এবং ঐচ্ছিক কী সম্পর্কে সহজ প্রশ্নের উত্তর দেবেন — কোন কোডিং নেই, কোন টার্মিনাল রেসিপি নেই।",
+        "what_happens_when_you_start": "শুরু করলে কি হয়",
+        "we_install_the_content_desk_privately_on": "আমরা এই কম্পিউটারে ব্যক্তিগতভাবে বিষয়বস্তু ডেস্ক ইনস্টল করি",
+        "you_name_your_business_and_optional_desc": "আপনি আপনার ব্যবসার নাম দিন এবং (ঐচ্ছিক) আপনি কীভাবে লেখেন তা বর্ণনা করুন",
+        "optional_connect_wordpress_drafts_or_add": "ঐচ্ছিক: ওয়ার্ডপ্রেস ড্রাফ্টগুলিকে সংযুক্ত করুন বা আরও স্মার্ট লেখার জন্য একটি xAI কী যোগ করুন",
+        "we_open_your_content_workspace_in_the_br": "আমরা ব্রাউজারে আপনার কন্টেন্ট ওয়ার্কস্পেস খুলি",
+        "easiest_on_windows": "উইন্ডোজে সবচেয়ে সহজ",
+        "python_org": "python.org",
+        "or_in_powershell_from_the_contentforge_f": "অথবা ContentForge ফোল্ডার থেকে PowerShell-এ:",
+        "you_ll_only_be_asked_for": "আপনি শুধুমাত্র জন্য জিজ্ঞাসা করা হবে",
+        "business_name": "ব্যবসার নাম",
+        "optional_website_how_you_write_xai_api_k": "ঐচ্ছিক: ওয়েবসাইট, আপনি কীভাবে লেখেন, xAI API কী",
+        "optional_wordpress_site_application_pass": "ঐচ্ছিক: ওয়ার্ডপ্রেস সাইট + অ্যাপ্লিকেশন পাসওয়ার্ড (যদি আপনি সেখানে ড্রাফ্ট চান)",
+        "internal_api_keys_are_created_for_you_au": "অভ্যন্তরীণ API কীগুলি আপনার জন্য স্বয়ংক্রিয়ভাবে তৈরি করা হয়েছে। আমাদের কখনই আপনার টার্মিনাল দক্ষতার প্রয়োজন নেই।",
+        "for_your_it_person_advanced_install": "আপনার আইটি ব্যক্তি/উন্নত ইনস্টলের জন্য",
+        "show": "দেখান",
+        "hide": "লুকান",
+        "i_ve_got_python_show_start_path_again": "আমি পাইথন পেয়েছি - আবার শুরুর পথ দেখান"
+      },
+      "embed": {
+        "see_invoiceforge": "InvoiceForge দেখুন"
+      },
+      "footer": {
+        "matrixly_contentforge_v1_0_content_creat": "Matrixly · ContentForge v1.0 · বিষয়বস্তু তৈরি এবং পুনর্নির্মাণ"
+      }
+    },
+    "crm_assistant": {
+      "s3268": {
+        "crm_ready_to_use": "CRM · ব্যবহারের জন্য প্রস্তুত",
+        "contacts": "পরিচিতি",
+        "activities": "কার্যক্রম",
+        "hygiene": "স্বাস্থ্যবিধি",
+        "salesforce_export": "Salesforce রপ্তানি"
+      },
+      "s4318": {
+        "t_1_extract": "1. নির্যাস",
+        "meeting_email_notes_contact_company_deal": "মিটিং/ইমেল নোট → যোগাযোগ, কোম্পানি, চুক্তি, কার্যকলাপ প্রস্তাব.",
+        "t_2_approve": "2. অনুমোদন করুন",
+        "hitl_queue_review_diffs_before_applying_": "HITL সারি — CRM স্টোরে আবেদন করার আগে পার্থক্য পর্যালোচনা করুন।",
+        "t_3_hygiene": "3. স্বাস্থ্যবিধি",
+        "stale_deals_missing_owners_missing_next_": "বাসি চুক্তি, মালিকদের অনুপস্থিত, পরবর্তী পদক্ষেপগুলি অনুপস্থিত।",
+        "t_4_export": "4. রপ্তানি",
+        "salesforce_shaped_contact_task_opportuni": "Salesforce-আকৃতির পরিচিতি / টাস্ক / সুযোগ JSON + CSV।"
+      },
+      "footer": {
+        "matrixly_crm_assistant_v1_0": "Matrixly · CRM Assistant v1.0"
+      }
+    },
+    "doc_forge": {
+      "s4288": {
+        "documents_ready_to_use": "নথি · ব্যবহারের জন্য প্রস্তুত",
+        "draft_professional_proposals_quotes_cont": "SMB-এর জন্য পেশাদার প্রস্তাবনা, উদ্ধৃতি, চুক্তি এবং প্রতিবেদনের খসড়া তৈরি করুন — ক্লায়েন্ট ডেটা টানুন, অনুমোদিত টেমপ্লেট প্রয়োগ করুন, ব্র্যান্ড এবং মূল্যের নিয়মগুলি সামঞ্জস্যপূর্ণ রাখুন, সংস্করণ ট্র্যাকিং সহ অভ্যন্তরীণ অনুমোদনের জন্য রুট করুন এবং PDF বা সম্পাদনাযোগ্য ফর্ম্যাটগুলি রপ্তানি করুন৷",
+        "templates": "টেমপ্লেট",
+        "pdf_export": "PDF রপ্তানি"
+      },
+      "s5861": {
+        "t_1_intake": "1. গ্রহণ",
+        "crm_forms_or_manual_brief_with_line_item": "CRM, ফর্ম, বা লাইন আইটেম সহ ম্যানুয়াল সংক্ষিপ্ত।",
+        "t_2_draft": "2. খসড়া",
+        "template_driven_proposals_quotes_contrac": "টেমপ্লেট-চালিত প্রস্তাব, উদ্ধৃতি, চুক্তি, প্রতিবেদন।",
+        "t_3_brand_check": "3. ব্র্যান্ড চেক",
+        "pricing_rules_placeholders_quality_score": "মূল্য নির্ধারণের নিয়ম, স্থানধারক, গুণমানের স্কোর।",
+        "t_4_approve": "4. অনুমোদন",
+        "hitl_queue_with_version_snapshots": "সংস্করণ স্ন্যাপশট সহ HITL সারি।",
+        "t_5_export": "5. রপ্তানি",
+        "pdf_html_markdown_send_status_log": "PDF, HTML, মার্কডাউন, স্ট্যাটাস লগ পাঠান।"
+      },
+      "embed": {
+        "see_contentforge": "ContentForge দেখুন"
+      },
+      "footer": {
+        "matrixly_docforge_v1_0_business_document": "Matrixly · DocForge v1.0 · ব্যবসায়িক নথি"
+      }
+    },
+    "email_assistant": {
+      "s5428": {
+        "email_ready_to_use": "ইমেল · ব্যবহারের জন্য প্রস্তুত",
+        "triage_your_business_inbox_draft_replies": "আপনার ব্যবসার ইনবক্স ট্রাইজ করুন, পর্যালোচনার জন্য উত্তর খসড়া করুন, জরুরী আইটেমগুলিকে পতাকাঙ্কিত করুন এবং একটি দৈনিক এক্সিকিউটিভ ব্রিফ পান — যাতে আপনি প্রতিটি পাঠানোর নিয়ন্ত্রণে থাকাকালীন গুরুত্বপূর্ণ কিছুই স্লিপ না হয়৷",
+        "demo_video_placeholder_embed_when_ready": "ডেমো ভিডিও প্লেসহোল্ডার · প্রস্তুত হলে এম্বেড করুন"
+      },
+      "s6817": {
+        "t_1_triage": "1. Triage",
+        "score_unread_mail_and_sort_it_into_clear": "অপঠিত মেল স্কোর করুন এবং এটিকে পরিষ্কার বালতিতে সাজান — জরুরী, একটি উত্তর প্রয়োজন, FYI এবং আরও অনেক কিছু।",
+        "t_2_flag_urgent": "2. পতাকা জরুরী",
+        "surface_payments_deadlines_legal_issues_": "সারফেস পেমেন্ট, সময়সীমা, আইনি সমস্যা, ভিআইপি প্রেরক, এবং অপারেশনাল ব্যতিক্রম প্রথমে।",
+        "t_3_draft_replies": "3. খসড়া উত্তর",
+        "prepare_reply_drafts_for_your_review_not": "আপনার পর্যালোচনার জন্য উত্তরের খসড়া প্রস্তুত করুন। আপনি অনুমোদন না করা পর্যন্ত কিছুই পাঠানো হয় না.",
+        "t_4_daily_brief": "4. দৈনিক সংক্ষিপ্ত",
+        "get_a_short_executive_summary_of_the_las": "গত 24 ঘন্টার একটি সংক্ষিপ্ত এক্সিকিউটিভ সারাংশ পান যাতে আপনি দিনটিকে কেন্দ্র করে শুরু করতে পারেন।"
+      },
+      "s8116": {
+        "connect_the_agent_to_your_business_mailb": "এজেন্টকে আপনার ব্যবসার মেইলবক্সে সংযুক্ত করুন। এটি অপঠিত বার্তাগুলি পর্যালোচনা করে, কী মনোযোগের প্রয়োজন তা হাইলাইট করে, খসড়া উত্তরগুলি আপনি সম্পাদনা করতে পারেন, এবং একটি দৈনিক সংক্ষিপ্ত বিতরণ করে — নিজে থেকে মেল না পাঠিয়ে৷",
+        "best_for": "জন্য সেরা",
+        "owners_and_ops_leads_who_live_in_a_busy_": "মালিক এবং অপস লিড যারা ব্যস্ত শেয়ার্ড বা ব্যক্তিগত ব্যবসার ইনবক্সে থাকেন",
+        "teams_that_want_faster_responses_without": "যে দলগুলি স্বয়ংক্রিয়ভাবে গ্রাহক ইমেল না পাঠিয়ে দ্রুত প্রতিক্রিয়া চায়৷",
+        "anyone_who_wants_a_morning_summary_inste": "যে কেউ অপঠিত মেইলের মাধ্যমে খনন করার পরিবর্তে একটি সকালের সারাংশ চায়",
+        "built_in_guardrails": "অন্তর্নির্মিত guardrails",
+        "draft_only_by_default_you_approve_before": "শুধুমাত্র ডিফল্টরূপে খসড়া — আপনি মেইলবক্স থেকে কিছু বের হওয়ার আগে অনুমোদন করেন",
+        "daily_briefs_go_only_to_addresses_you_co": "দৈনিক সংক্ষিপ্ত বিবরণ শুধুমাত্র আপনার কনফিগার করা ঠিকানাগুলিতে যায়",
+        "mailbox_credentials_stay_in_your_environ": "মেলবক্স শংসাপত্রগুলি আপনার পরিবেশে থাকে; তারা পাবলিক সাইটের অংশ না"
+      },
+      "footer": {
+        "matrixly_email_assistant_v1_0": "Matrixly · Email Assistant v1.0"
+      }
+    },
+    "etf_analyzer": {
+      "page": {
+        "pipeline": "পাইপলাইন"
+      },
+      "s4290": {
+        "finance_ready_to_use": "ফাইন্যান্স · ব্যবহারের জন্য প্রস্তুত",
+        "port_8797": "পোর্ট 8797",
+        "default_qqqi": "ডিফল্ট QQQI"
+      },
+      "s5739": {
+        "t_1_snapshot": "1. স্ন্যাপশট",
+        "price_volume_52w_range_aum_expense_ratio": "মূল্য, আয়তন, 52w পরিসীমা, AUM, ব্যয় অনুপাত।",
+        "t_2_yield": "2. ফলন",
+        "ttm_yield_distributions_annualized_conte": "TTM ফলন, বিতরণ, বার্ষিক প্রসঙ্গ।",
+        "t_3_nav_risk": "3. NAV ঝুঁকি",
+        "premium_discount_and_structural_notes": "প্রিমিয়াম/ছাড় এবং কাঠামোগত নোট।",
+        "t_4_tax_aware": "4. কর-সচেতন",
+        "distribution_character_account_framing": "বিতরণ চরিত্র এবং অ্যাকাউন্ট ফ্রেমিং।",
+        "t_5_notion": "5. Notion",
+        "optional_knowledge_layer_save": "ঐচ্ছিক জ্ঞান-স্তর সংরক্ষণ."
+      },
+      "footer": {
+        "matrixly_etf_portfolio_analyzer_v1_0": "Matrixly · ETF Portfolio Analyzer v1.0"
+      }
+    },
+    "for_contractors": {
+      "s9259": {
+        "contractors_trades": "ঠিকাদার · ব্যবসা",
+        "win_the_job_skip_the_admin_spiral": "কাজ জিতুন। অ্যাডমিন সর্পিল এড়িয়ে যান।",
+        "qualify_leads_book_site_visits_keep_invo": "যোগ্যতা অর্জন করুন, সাইট ভিজিট বুক করুন, ইনভয়েস চলমান রাখুন এবং স্থানীয়ভাবে দৃশ্যমান থাকুন — আপনি যখন টুলগুলিতে থাকবেন।",
+        "start_free_with_contractor_stack": "ঠিকাদার স্ট্যাক সঙ্গে বিনামূল্যে শুরু",
+        "take_the_agent_quiz": "এজেন্ট ক্যুইজ নিন",
+        "t_10_hour_guarantee": "10 ঘন্টা গ্যারান্টি",
+        "how_contractors_reclaim_admin_hours_with": "ঠিকাদাররা কীভাবে এজেন্টদের সাথে অ্যাডমিনের সময় পুনরুদ্ধার করে",
+        "video_placeholder_embed_when_ready": "ভিডিও স্থানধারক · প্রস্তুত হলে এম্বেড করুন"
+      },
+      "s10852": {
+        "starter_agent_stack": "স্টার্টার এজেন্ট স্ট্যাক",
+        "deploy_2_3_agents_first_expand_when_roi_": "প্রথমে 2-3 জন এজেন্ট নিয়োগ করুন। ROI স্পষ্ট হলে প্রসারিত করুন।",
+        "hot_job_requests_don_t_sit_until_sunday_": "হট কাজের অনুরোধ রবিবার রাত পর্যন্ত বসে না।",
+        "estimates_and_site_visits_on_the_calenda": "ক্যালেন্ডারে অনুমান এবং সাইট ভিজিট স্বয়ংক্রিয়ভাবে।",
+        "customer_and_supplier_threads_triaged_da": "গ্রাহক এবং সরবরাহকারী থ্রেড প্রতিদিন triaged.",
+        "extract_and_chase_paperwork_without_drow": "PDFs-এ ডুবে না গিয়ে কাগজপত্র বের করুন এবং তাড়া করুন।"
+      },
+      "s12441": {
+        "industry_roi_examples": "শিল্প ROI উদাহরণ",
+        "faster_quote_response": "দ্রুত উদ্ধৃতি প্রতিক্রিয়া",
+        "fewer_missed_appointments": "কম মিস অ্যাপয়েন্টমেন্ট",
+        "admin_hours_back_to_billable_work": "প্রশাসক ঘন্টা বিলযোগ্য কাজ ফিরে",
+        "illustrative_results_vary_by_niche_and_e": "দৃষ্টান্তমূলক · ফলাফল কুলুঙ্গি এবং সম্পাদন দ্বারা পরিবর্তিত হয়",
+        "integrations_that_matter": "ইন্টিগ্রেশন যে ব্যাপার",
+        "calendar": "ক্যালেন্ডার",
+        "browse_all_integrations": "সমস্ত ইন্টিগ্রেশন ব্রাউজ করুন →"
+      },
+      "s14023": {
+        "ready_when_you_are": "আপনি যখন প্রস্তুত",
+        "start_free_connect_tools_in_minutes_canc": "বিনামূল্যে শুরু করুন. মিনিটের মধ্যে সরঞ্জাম সংযোগ করুন. যেকোনো সময় বাতিল করুন - কোনো চুক্তি নেই।"
+      },
+      "footer": {
+        "industries": "শিল্প",
+        "hvac": "এইচভিএসি",
+        "pro_services": "প্রো পরিষেবা",
+        "contractors": "ঠিকাদার",
+        "roi_calculator": "ROI ক্যালকুলেটর"
+      }
+    },
+    "for_hvac": {
+      "s9325": {
+        "more_booked_jobs_fewer_after_hours_fires": "আরও বুক করা চাকরি। কয়েক ঘণ্টা পর আগুন।",
+        "matrixly_agents_qualify_web_leads_answer": "Matrixly এজেন্টরা ওয়েব লিডের যোগ্যতা অর্জন করে, অনুসন্ধানের উত্তর দেয় এবং স্থানীয় অনুসন্ধানের দৃশ্যমানতা বাড়ায় — তাই আপনার ট্রাকটি সঠিক কাজে পূর্ণ।",
+        "start_free_with_hvac_stack": "HVAC স্ট্যাক দিয়ে বিনামূল্যে শুরু করুন"
+      },
+      "s10930": {
+        "score_inbound_quote_requests_and_draft_s": "ইনবাউন্ড কোট অনুরোধ স্কোর করুন এবং একই দিনের আউটরিচ খসড়া করুন।",
+        "triage_after_hours_inbox_noise_surface_j": "ট্রাইজ আফটার আওয়ার ইনবক্সের আওয়াজ; আপনার প্রয়োজন যে পৃষ্ঠ কাজ.",
+        "service_pages_that_rank_for_near_me_and_": "পরিষেবার পৃষ্ঠাগুলি যেগুলি \"আমার কাছাকাছি\" এবং মৌসুমী চাহিদার জন্য র‌্যাঙ্ক করে৷",
+        "confirm_installs_and_reduce_scheduling_p": "ইনস্টল নিশ্চিত করুন এবং সময়সূচী পিং-পং হ্রাস করুন।"
+      },
+      "s12543": {
+        "t_40_organic_leads_in_90_days_example": "90 দিনের মধ্যে +40% জৈব লিড (উদাহরণ)",
+        "t_25_hrs_week_reclaimed_example": "25 ঘন্টা/সপ্তাহ পুনরুদ্ধার করা হয়েছে (উদাহরণ)",
+        "payback_often_under_30_days": "পেব্যাক প্রায়ই 30 দিনের নিচে",
+        "hubspot_crm": "HubSpot / CRM"
+      }
+    },
+    "for_local_retail": {
+      "s9223": {
+        "stay_open_online_without_living_in_the_i": "ইনবক্সে না থেকে অনলাইনে খোলা থাকুন।",
+        "answer_customers_keep_social_consistent_": "গ্রাহকদের উত্তর দিন, সামাজিক সামঞ্জস্য বজায় রাখুন, এবং শিপিং ব্যতিক্রমগুলি পরিচালনা করুন — যাতে মেঝে এবং স্টকরুম আপনার ফোকাস থাকে।",
+        "start_free_with_retail_stack": "খুচরো স্ট্যাক দিয়ে বিনামূল্যে শুরু করুন",
+        "local_retail_agents_in_action": "কর্মরত স্থানীয় খুচরা এজেন্ট"
+      },
+      "s10805": {
+        "hours_stock_returns_answered_from_your_k": "ঘন্টা, স্টক, রিটার্ন — আপনার জ্ঞানের ভিত্তি থেকে উত্তর দেওয়া হয়েছে।",
+        "posts_and_replies_in_brand_voice_for_met": "মেটা এবং আরও অনেক কিছুর জন্য ব্র্যান্ড ভয়েস পোস্ট এবং উত্তর।",
+        "vendor_and_customer_email_without_consta": "ক্রমাগত প্রসঙ্গ-সুইচিং ছাড়াই বিক্রেতা এবং গ্রাহকের ইমেল।",
+        "if_you_ship_online_orders_cut_wismo_tick": "আপনি যদি অনলাইনে অর্ডার পাঠান, তাহলে WISMO টিকেট কাটুন।"
+      },
+      "s12424": {
+        "fewer_after_hours_dms_unanswered": "কয়েক ঘন্টা পরে DM উত্তর দেয়নি",
+        "consistent_social_without_a_full_time_ma": "পূর্ণ-সময় বিপণনকারী ছাড়াই সামঞ্জস্যপূর্ণ সামাজিক",
+        "clearer_ops_when_online_orders_spike": "অনলাইনে অর্ডার স্পাইক হলে ক্লিয়ার অপ্স",
+        "shopify_square": "Shopify / Square",
+        "meta": "মেটা"
+      }
+    },
+    "for_professional_services": {
+      "s9285": {
+        "triage_email_prep_meetings_keep_crm_clea": "ট্রাইজ ইমেল, প্রস্তুতি মিটিং, CRM পরিষ্কার রাখুন, এবং ঠাণ্ডা হওয়ার আগে লিডগুলি অনুসরণ করুন — অন্য কোন সমন্বয়কারী নিয়োগ না করে।",
+        "start_free_with_services_stack": "পরিষেবা স্ট্যাক দিয়ে বিনামূল্যে শুরু করুন"
+      },
+      "s10872": {
+        "daily_brief_drafts_and_urgent_flags": "দৈনিক সংক্ষিপ্ত, খসড়া, এবং জরুরী পতাকা।",
+        "contact_hygiene_with_approve_to_write_co": "অনুমোদন-টু-লিখতে নিয়ন্ত্রণ সহ স্বাস্থ্যবিধির সাথে যোগাযোগ করুন।",
+        "summaries_actions_and_recap_emails_from_": "ট্রান্সক্রিপ্ট থেকে সারাংশ, অ্যাকশন এবং রিক্যাপ ইমেল।",
+        "score_consults_and_draft_outreach_sequen": "স্কোর পরামর্শ এবং খসড়া আউটরিচ ক্রম."
+      },
+      "s12446": {
+        "reply_time_hours_minutes_example": "উত্তর দেওয়ার সময়: ঘন্টা → মিনিট (উদাহরণ)",
+        "more_qualified_consults_booked": "আরো যোগ্য পরামর্শ বুক করা হয়েছে",
+        "less_crm_admin_for_owners": "মালিকদের জন্য কম CRM অ্যাডমিন",
+        "zoom_meet": "Zoom / দেখা"
+      }
+    },
+    "for_shopify": {
+      "s9241": {
+        "ship_smarter_answer_less_sell_more": "জাহাজ আরো স্মার্ট. কম উত্তর দিন। আরও বিক্রি করুন।",
+        "rate_shop_carriers_update_customers_befo": "রেট-শপ ক্যারিয়ার, গ্রাহকদের \"আমার অর্ডার কোথায়?\" জিজ্ঞাসা করার আগে আপডেট করুন এবং ওয়্যারহাউস স্টাফ যোগ না করে সমর্থন কভার করে রাখুন।",
+        "start_free_with_e_com_stack": "ই-কম স্ট্যাক দিয়ে বিনামূল্যে শুরু করুন"
+      },
+      "s10839": {
+        "track_exceptions_draft_wismo_replies_rat": "ট্র্যাক ব্যতিক্রম, খসড়া WISMO উত্তর, রেট-শপ ক্যারিয়ার।",
+        "kb_answers_for_shipping_returns_and_prod": "শিপিং, রিটার্ন, এবং পণ্যের প্রায়শই জিজ্ঞাসিত প্রশ্নগুলির জন্য KB উত্তর দেয়।",
+        "recovery_and_order_emails_without_living": "Gmail এ বসবাস না করেই ইমেল পুনরুদ্ধার এবং অর্ডার করুন।",
+        "product_copy_and_seo_posts_that_convert": "পণ্যের অনুলিপি এবং SEO পোস্ট যা রূপান্তর করে।"
+      },
+      "s12444": {
+        "t_60_wismo_tickets_example": "−60% WISMO টিকেট (উদাহরণ)",
+        "faster_exception_handling": "দ্রুত ব্যতিক্রম হ্যান্ডলিং",
+        "clear_roi_within_first_invoice_cycle": "প্রথম চালান চক্রের মধ্যে ROI সাফ করুন"
+      }
+    },
+    "home": {
+      "logistics": {
+        "order_48291": "অর্ডার #48291",
+        "shopify_urbanthread_co": "Shopify · UrbanThread Co."
+      }
+    },
+    "integrations": {
+      "s29619": {
+        "connect_gmail_shopify_quickbooks_shipsta": "Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Slack, ক্যারিয়ার, এবং আরও অনেক কিছু সংযুক্ত করুন — যাতে এজেন্টরা আপনার ট্যাব পরিবর্তন না করেই বাজারজাত, বিক্রয়, জাহাজীকরণ এবং সমর্থন করতে পারে৷",
+        "search_integrations": "সার্চ ইন্টিগ্রেশন",
+        "all": "সব",
+        "most_popular": "সর্বাধিক জনপ্রিয়",
+        "operations": "অপারেশন",
+        "e_commerce": "ই-কমার্স",
+        "productivity": "উৎপাদনশীলতা",
+        "personal_assistant": "ব্যক্তিগত সহকারী"
+      },
+      "s32271": {
+        "all_integrations": "সমস্ত ইন্টিগ্রেশন",
+        "try_matrixly_free": "Matrixly বিনামূল্যে ব্যবহার করে দেখুন",
+        "no_integrations_match_your_search_try_an": "কোনো ইন্টিগ্রেশন আপনার অনুসন্ধান মেলে না. অন্য কীওয়ার্ড বা পরিষ্কার ফিল্টার চেষ্টা করুন."
+      },
+      "s33386": {
+        "easy_as_one_two_three": "এক, দুই, তিন হিসাবে সহজ",
+        "something_happens_in_your_tools_agents_s": "আপনার সরঞ্জামগুলিতে কিছু ঘটবে → এজেন্টরা পদক্ষেপ করুন → কাজ সম্পন্ন হবে৷ সরল ভাষা, বাস্তব কর্ম।",
+        "when_this_happens": "যখন এটি ঘটে…",
+        "select_a_trigger": "একটি ট্রিগার নির্বাচন করুন",
+        "a_trigger_is_an_event_that_kicks_off_you": "একটি ট্রিগার হল এমন একটি ইভেন্ট যা আপনার AI এজেন্টকে বন্ধ করে দেয় — যেমন Gmail-এ একটি নতুন ইমেল, একটি Shopify অর্ডার, বা একটি Slack বার্তা৷",
+        "do_this": "এটা করো",
+        "connect_your_apps": "আপনার অ্যাপ্লিকেশন সংযুক্ত করুন",
+        "hundreds_of_integrations_available_plug_": "উপলব্ধ একীকরণ শত শত. Matrixly কে CRM, ইমেল, ইকমার্স, লজিস্টিকস, বিজ্ঞাপন এবং উত্পাদনশীলতার সরঞ্জামগুলিতে প্লাগ করুন৷",
+        "autonomous": "স্বায়ত্তশাসিত",
+        "let_ai_do_the_work": "এআইকে কাজটি করতে দিন",
+        "give_custom_instructions_to_your_agent_i": "আপনার এজেন্টকে সহজ ভাষায় কাস্টম নির্দেশনা দিন। এজেন্টদের পরিকল্পনা, কাজ, এবং রিপোর্ট — যাতে আপনি বৃদ্ধির উপর ফোকাস করেন।"
+      },
+      "s35622": {
+        "trusted_by_forward_thinking_smbs": "ফরওয়ার্ড-থিঙ্কিং SMB দ্বারা বিশ্বস্ত",
+        "connects": "সংযোগ করে",
+        "matrixly_agents_save_hours_every_week_by": "Matrixly এজেন্টরা প্রতি সপ্তাহে SEO, বিক্রয়, সমর্থন, এবং লজিস্টিকগুলি চালিয়ে আপনার ইতিমধ্যেই যে স্ট্যাকের জন্য অর্থ প্রদান করে তার জন্য ঘন্টা বাঁচায়।",
+        "view_pricing": "মূল্য দেখুন",
+        "no_credit_card_required_cancel_anytime": "কোনো ক্রেডিট কার্ডের প্রয়োজন নেই · যেকোনো সময় বাতিল করুন",
+        "times": "&বার;",
+        "connect_your_gmail": "আপনার Gmail কানেক্ট করুন",
+        "connect_your_gmail_so_your_ai_assistant_": "আপনার Gmail সংযুক্ত করুন যাতে আপনার এআই সহকারী আপনার ব্যবসা চালানোর সময় আপনার ইনবক্স নিয়ন্ত্রণে রাখতে পারে৷",
+        "what_your_email_assistant_will_do": "আপনার Email Assistant কি করবে",
+        "sort_and_label_mail_urgent_needs_reply_f": "মেল সাজান এবং লেবেল করুন (জরুরী, উত্তর প্রয়োজন, FYI, এবং আরও অনেক কিছু)",
+        "flag_time_sensitive_items_so_nothing_sli": "ফ্ল্যাগ সময়-সংবেদনশীল আইটেম যাতে কিছুই পিছলে না",
+        "email_you_a_short_daily_brief_of_what_ma": "কি গুরুত্বপূর্ণ তা আপনাকে একটি ছোট দৈনিক ব্রিফ ইমেল",
+        "google_permissions_plain_english": "Google অনুমতি (সরল ইংরেজি)",
+        "try_test_mode_first_sample_emails": "প্রথমে পরীক্ষা মোড চেষ্টা করুন (নমুনা ইমেল)",
+        "i_use_hostinger_outlook_other_imap": "আমি Hostinger/ Outlook/ অন্যান্য IMAP ব্যবহার করি",
+        "almost_there_2_minutes": "প্রায় আছে — 2 মিনিট",
+        "gmail_connects_securely_on_your_computer": "Gmail আপনার কম্পিউটারে Email Assistant এর মাধ্যমে নিরাপদে সংযোগ করে৷ একটি টার্মিনালে এই কমান্ডগুলি আটকান (বা আপনার সেটআপ অংশীদারকে জিজ্ঞাসা করুন)। কপি-পেস্টের বাইরে কোন কোডিং এর প্রয়োজন নেই।",
+        "t_1_one_time_google_setup": "1. এককালীন Google সেটআপ৷",
+        "t_2_connect": "2. সংযোগ করুন",
+        "your_browser_opens_sign_in_allow_you_sho": "আপনার ব্রাউজার খোলে → সাইন ইন → অনুমতি দিন। আপনি \"সফল — Gmail সংযুক্ত\" দেখতে হবে।",
+        "i_ve_connected_gmail_show_success": "আমি Gmail কানেক্ট করেছি — সাফল্য দেখান",
+        "open_email_assistant_page": "Email Assistant পৃষ্ঠা খুলুন",
+        "hostinger_outlook_imap": "হোস্টিংগার/আউটলুক/আইএমএপি",
+        "not_on_gmail_you_can_still_use_email_ass": "Gmail এ নয়? আপনি থান্ডারবার্ড বা আউটলুকে যে ইনবক্স ব্যবহার করেন সেই একই ইনবক্সের সাথে আপনি এখনও Email Assistant ব্যবহার করতে পারেন৷",
+        "full_steps_are_in_the_email_assistant_re": "\"Hostinger / IMAP\" এর অধীনে Email Assistant README-এ সম্পূর্ণ ধাপ রয়েছে।",
+        "open_email_assistant": "Email Assistant খুলুন",
+        "back_to_gmail_connect": "Gmail সংযোগে ফিরে যান",
+        "test_mode_sample_inbox": "টেস্ট মোড — নমুনা ইনবক্স",
+        "see_the_agent_work_before_connecting_rea": "বাস্তব ইমেল সংযোগ করার আগে এজেন্ট কাজ দেখুন. কোন গুগল লগইন প্রয়োজন নেই.",
+        "looks_good_connect_gmail": "ভালো লাগছে — Gmail কানেক্ট করুন",
+        "gmail_connected": "Gmail সংযুক্ত৷",
+        "your_email_assistant_is_ready_open_it_to": "আপনার Email Assistant প্রস্তুত। এটিকে ট্রাইজে খুলুন, উত্তর খসড়া করুন এবং আপনার প্রথম 24-ঘন্টা প্রভাব প্রতিবেদন পান।",
+        "reset_connection_status_on_this_browser": "এই ব্রাউজারে সংযোগ স্থিতি রিসেট করুন"
+      },
+      "footer": {
+        "docs": "ডক্স",
+        "cta": "${cta}",
+        "initials_item_name_item_abbr": "${initials(item.name, item.abbr)}",
+        "item_name": "${item.name}",
+        "catlabel": "${catLabel}",
+        "blurb": "${blurb}"
+      }
+    },
+    "invoice_forge": {
+      "page": {
+        "workflow": "কর্মপ্রবাহ"
+      },
+      "s4372": {
+        "invoicing_ready_to_use": "চালান · ব্যবহারের জন্য প্রস্তুত",
+        "invoice_processing_accounts_receivable_f": "ইনভয়েস প্রসেসিং এবং এসএমবিগুলির জন্য প্রাপ্ত অ্যাকাউন্টগুলি — ইনবক্স এবং আপলোডগুলি দেখুন, দৃষ্টি-সক্ষম মডেলগুলির সাথে এক্সট্র্যাক্ট করুন, যাচাই করুন, QuickBooks/Xero বা CSV-তে পোস্ট করুন, ব্যতিক্রমগুলি পতাকা, অর্থ প্রদানের অনুস্মারক পাঠান এবং AR রিপোর্ট তৈরি করুন৷",
+        "grok_vision": "Grok দৃষ্টি",
+        "qbo_xero_csv": "QBO / Xero / CSV",
+        "ar_aging": "এআর বার্ধক্য"
+      },
+      "workflow": {
+        "t_1_watch": "1. ঘড়ি",
+        "inbox_folder_uploads_api_paste_or_email_": "ইনবক্স, ফোল্ডার আপলোড, API পেস্ট, বা ইমেল ওয়েবহুকগুলি পাইপলাইনকে ফিড করে৷",
+        "t_2_extract": "2. নির্যাস",
+        "vision_model_or_text_parser_pulls_vendor": "ভিশন মডেল বা টেক্সট পার্সার বিক্রেতা, সংখ্যা, তারিখ, লাইন, মোট টানে।",
+        "t_3_validate": "3. যাচাই করুন",
+        "confidence_duplicates_missing_po_high_am": "আত্মবিশ্বাস, সদৃশ, অনুপস্থিত PO, উচ্চ পরিমাণ, জালিয়াতি কীওয়ার্ড।",
+        "t_4_post": "4. পোস্ট",
+        "quickbooks_xero_or_reliable_csv_export_f": "বইগুলির জন্য QuickBooks, Xero বা নির্ভরযোগ্য CSV রপ্তানি।",
+        "t_5_remind": "5. মনে করিয়ে দিন",
+        "ar_follow_ups_after_due_date_to_reduce_l": "দেরী পেমেন্ট কমাতে নির্ধারিত তারিখের পরে AR ফলো-আপ।",
+        "t_6_report": "6. রিপোর্ট",
+        "status_breakdown_and_aging_buckets_on_th": "পর্যালোচনা ড্যাশবোর্ডে স্ট্যাটাস ব্রেকডাউন এবং বার্ধক্য বালতি।"
+      },
+      "embed": {
+        "embed_review_dashboard": "পর্যালোচনা ড্যাশবোর্ড এম্বেড করুন"
+      },
+      "footer": {
+        "matrixly_invoiceforge_v1_0_invoice_proce": "Matrixly · InvoiceForge v1.0 · চালান প্রক্রিয়াকরণ এবং AR"
+      }
+    },
+    "invoice_processor": {
+      "s4297": {
+        "finance_ap_ready_to_use": "ফাইন্যান্স · AP · ব্যবহারের জন্য প্রস্তুত",
+        "pydantic_ai": "পাইডানটিক এআই",
+        "po_match": "PO ম্যাচ"
+      },
+      "s5975": {
+        "t_2_match": "2. ম্যাচ",
+        "po_lookup_amount_vendor_qty_discrepancy_": "PO লুকআপ + পরিমাণ/বিক্রেতা/পরিমাণ পার্থক্য নিয়ম।",
+        "t_3_review": "3. পর্যালোচনা",
+        "approve_needs_review_or_reject_with_hitl": "HITL পতাকা সহ অনুমোদন, পর্যালোচনা বা প্রত্যাখ্যান প্রয়োজন।",
+        "t_4_prepare": "4. প্রস্তুত করুন",
+        "accounting_stub_ready_for_quickbooks_net": "QuickBooks / NetSuite-এর জন্য অ্যাকাউন্টিং স্টাব প্রস্তুত।"
+      },
+      "s8315": {
+        "related_agents": "সংশ্লিষ্ট এজেন্ট",
+        "pair_with_invoiceforge_for_inbox_watch_a": "ইনবক্স ঘড়ি, AR বয়স বৃদ্ধি, এবং ভিজ্যুয়াল রিভিউ ড্যাশবোর্ডের জন্য InvoiceForge-এর সাথে পেয়ার করুন।"
+      },
+      "footer": {
+        "matrixly_invoice_processor_v1_0_pydantic": "Matrixly · Invoice Processor v1.0 · Pydantic AI মাল্টি-এজেন্ট AP"
+      }
+    },
+    "lead_qualifier": {
+      "s4900": {
+        "lead_generation_ready_to_use": "লিড জেনারেশন · ব্যবহারের জন্য প্রস্তুত",
+        "gmail_ingest": "Gmail খাওয়া",
+        "hot_warm_cold": "গরম / উষ্ণ / ঠান্ডা",
+        "see_lead_qualifier_score_a_real_inbound_": "Lead Qualifier স্কোর একটি বাস্তব অন্তর্মুখী লিড দেখুন"
+      },
+      "s6727": {
+        "t_1_score": "1. স্কোর",
+        "fit_intent_seniority_data_quality_hot_wa": "ফিট · উদ্দেশ্য · জ্যেষ্ঠতা · ডেটা গুণমান → গরম / উষ্ণ / ঠান্ডা / DQ।",
+        "t_2_enrich": "2. সমৃদ্ধ করুন",
+        "company_industry_website_location_signal": "কোম্পানি, শিল্প, ওয়েবসাইট, ইমেল ডোমেন + ঐচ্ছিক Grok থেকে অবস্থান সংকেত।",
+        "t_3_outreach": "3. আউটরিচ",
+        "t_4_touch_personalized_email_sequence_dr": "4-স্পর্শ ব্যক্তিগতকৃত ইমেল ক্রম (শুধুমাত্র খসড়া - মানুষ পাঠায়)।",
+        "t_4_salesforce": "4. Salesforce",
+        "lead_json_csv_for_data_loader_api_import": "ডেটা লোডার / API আমদানির জন্য JSON + CSV লিড করুন৷"
+      },
+      "s7934": {
+        "install_demo": "ইন্সটল এবং ডেমো",
+        "qualify_your_file_gmail_single_lead": "আপনার ফাইলের যোগ্যতা অর্জন করুন · Gmail · একক লিড"
+      },
+      "footer": {
+        "matrixly_lead_qualifier_v1_0_sales_mvp": "Matrixly · Lead Qualifier v1.0 · বিক্রয় MVP"
+      }
+    },
+    "meet_wise": {
+      "s4290": {
+        "meetings_ready_to_use": "মিটিং · ব্যবহারের জন্য প্রস্তুত",
+        "capture_and_action_meeting_outcomes_for_": "SMB-এর জন্য ক্যাপচার এবং অ্যাকশন মিটিংয়ের ফলাফল — Zoom, টিম বা Google Meet ট্রান্সক্রিপ্ট প্রক্রিয়া করুন, সারাংশ এবং অ্যাকশন আইটেম তৈরি করুন, CRM আপডেট করুন এবং মানুষের পর্যালোচনা সহ পেশাদার রিক্যাপ পাঠান।",
+        "crm_map": "CRM মানচিত্র",
+        "transcript_upload": "প্রতিলিপি আপলোড"
+      },
+      "s5806": {
+        "t_1_ingest": "1. খাওয়া",
+        "upload_transcript_or_paste_zoom_teams_me": "ট্রান্সক্রিপ্ট আপলোড করুন বা Zoom / টিম / মিট এক্সপোর্ট টেক্সট পেস্ট করুন।",
+        "summary_decisions_action_items_owners_de": "সারাংশ, সিদ্ধান্ত, কর্ম আইটেম, মালিক, সময়সীমা, ফলো আপ.",
+        "t_3_action": "3. কর্ম",
+        "crm_shaped_updates_recap_email_after_hum": "মানুষের অনুমোদনের পর CRM-আকৃতির আপডেট + রিক্যাপ ইমেল।"
+      },
+      "footer": {
+        "matrixly_meetwise_v1_0_meeting_outcomes": "Matrixly · MeetWise v1.0 · মিটিং ফলাফল"
+      }
+    },
+    "pipeline_forge": {
+      "s4288": {
+        "sales_pipeline_ready_to_use": "বিক্রয় পাইপলাইন · ব্যবহারের জন্য প্রস্তুত",
+        "score_and_prioritize_sales_pipelines_for": "SMB-এর জন্য বিক্রয় পাইপলাইন স্কোর করুন এবং অগ্রাধিকার দিন — লিড এবং সুযোগের ক্রমাগত বিশ্লেষণ, প্রতিনিধিদের জন্য র‌্যাঙ্ক করা কাজের তালিকা, ঝুঁকিপূর্ণ চুক্তির পতাকা, CRM পর্যায়ের পরামর্শ, এবং মানব তদারকি সহ পাইপলাইন স্বাস্থ্য অন্তর্দৃষ্টি।",
+        "scoring": "স্কোরিং",
+        "usage_tracking": "ব্যবহার ট্র্যাকিং"
+      },
+      "s5866": {
+        "fit_engagement_behavior_and_urgency_sign": "ফিট, ব্যস্ততা, আচরণ এবং জরুরী সংকেত।",
+        "t_2_prioritize": "2. অগ্রাধিকার দিন",
+        "daily_or_weekly_ranked_lists_for_each_re": "প্রতিটি প্রতিনিধির জন্য দৈনিক বা সাপ্তাহিক র‌্যাঙ্ক করা তালিকা।",
+        "t_3_flag_risk": "3. পতাকা ঝুঁকি",
+        "stale_and_at_risk_deals_with_recovery_ac": "পুনরুদ্ধারের ক্রিয়াগুলির সাথে বাসি এবং ঝুঁকিপূর্ণ চুক্তি।",
+        "t_4_crm": "4. CRM",
+        "stage_task_and_note_updates_with_hitl": "HITL এর সাথে স্টেজ, টাস্ক এবং নোট আপডেট।",
+        "t_5_health": "5. স্বাস্থ্য",
+        "pipeline_health_score_and_coaching_notes": "পাইপলাইন স্বাস্থ্য স্কোর এবং কোচিং নোট।"
+      },
+      "embed": {
+        "see_crm_assistant": "See CRM Assistant"
+      },
+      "footer": {
+        "matrixly_pipelineforge_v1_0_pipeline_sco": "Matrixly · PipelineForge v1.0 · Pipeline scoring & prioritization"
+      }
+    },
+    "pricing": {
+      "s22980": {
+        "plans_for_owners_small_teams": "মালিক এবং ছোট দলের জন্য পরিকল্পনা",
+        "less_than_a_part_time_hire_works_around_": "খণ্ডকালীন ভাড়ার চেয়েও কম। চব্বিশ ঘন্টা কাজ করে। বিনামূল্যে শুরু করুন."
+      },
+      "pricing": {
+        "clear_roi": "ROI সাফ করুন।",
+        "built_for_smbs_small_teams_and_contracto": "SMB, ছোট দল এবং ঠিকাদারদের জন্য নির্মিত। বিনামূল্যে শুরু করুন. মান স্পষ্ট হলে আপগ্রেড করুন।",
+        "browse_agents_and_try_a_workflow_risk_fr": "এজেন্ট ব্রাউজ করুন এবং একটি কর্মপ্রবাহ ঝুঁকিমুক্ত চেষ্টা করুন.",
+        "about_1_60_day": "প্রায় $1.60/দিন",
+        "solo_operators_and_small_teams_ready_to_": "একক অপারেটর এবং ছোট দলগুলি মূল কাজ স্বয়ংক্রিয় করতে প্রস্তুত।",
+        "a_fraction_of_one_va": "এক VA এর ভগ্নাংশ",
+        "cancel_anytime_no_long_term_contract_on_": "যেকোনো সময় বাতিল করুন · স্ব-পরিষেবা পরিকল্পনায় দীর্ঘমেয়াদী চুক্তি নেই",
+        "try_free_14_days_10_hour_month_refund_gu": "বিনামূল্যে 14 দিন চেষ্টা করুন · 10-ঘন্টা মাসের ফেরত গ্যারান্টি"
+      },
+      "compare": {
+        "matrixly_vs_the_alternatives": "Matrixly বনাম বিকল্প",
+        "cheaper_than_a_va_more_autonomous_than_z": "VA এর চেয়ে সস্তা। Zapier + ChatGPT এর চেয়ে বেশি স্বায়ত্তশাসিত। একটি এজেন্সির চেয়ে দ্রুত।",
+        "agency": "এজেন্সি",
+        "setup": "সেটআপ",
+        "days_weeks": "দিন-সপ্তাহ",
+        "hours_days_diy": "ঘন্টা-দিন DIY",
+        "weeks": "সপ্তাহ",
+        "done_work_hitl": "কাজ শেষ + HITL",
+        "variable_quality": "পরিবর্তনশীল গুণমান",
+        "drafts_glue": "খসড়া + আঠালো",
+        "campaigns_retainers": "প্রচারাভিযান / ধারক"
+      },
+      "s35082": {
+        "try_free_for_14_days_if_you_don_t_save_a": "14 দিনের জন্য বিনামূল্যে চেষ্টা করুন. আপনি যদি একটি অর্থপ্রদত্ত প্ল্যানে প্রথম মাসে কমপক্ষে 10 ঘন্টা সঞ্চয় না করেন তবে আমরা সেই প্ল্যানটি ফেরত দেব — কোন প্রশ্ন জিজ্ঞাসা করা হয়নি।",
+        "cancel_anytime_no_contract_terms_apply_u": "যেকোনো সময় বাতিল করুন · কোনো চুক্তি নেই · শর্তাবলী প্রযোজ্য · US অর্থপ্রদানের পরিকল্পনা"
+      },
+      "s35735": {
+        "owner_playbooks_checklists": "মালিক প্লেবুক এবং চেকলিস্ট →"
+      },
+      "footer": {
+        "platform": "প্ল্যাটফর্ম",
+        "agent_engine": "এজেন্ট ইঞ্জিন",
+        "business_knowledge": "ব্যবসায়িক জ্ঞান",
+        "smart_reasoning": "স্মার্ট যুক্তি",
+        "app_connections": "অ্যাপ সংযোগ"
+      }
+    },
+    "products": {
+      "s23003": {
+        "reliable": "নির্ভরযোগ্য",
+        "agents_that_remember_your_business_reaso": "যে এজেন্টরা আপনার ব্যবসার কথা মনে রাখে, সতর্কতার সাথে যুক্তি দেয় এবং আপনি ইতিমধ্যেই যে অ্যাপগুলি ব্যবহার করেন সেগুলিতে পদক্ষেপ নেন — যাতে মালিকরা ফলাফল পান, বেবিসিট করার জন্য অন্য কোনও সরঞ্জাম নয়।",
+        "view_integrations": "ইন্টিগ্রেশন দেখুন"
+      },
+      "suite": {
+        "how_the_platform_works": "কিভাবে প্ল্যাটফর্ম কাজ করে",
+        "built_so_busy_owners_can_trust_the_outco": "এত ব্যস্ত মালিকরা ফলাফল বিশ্বাস করতে পারেন নির্মিত",
+        "from_always_on_agents_to_your_business_p": "সর্বদা-অন এজেন্ট থেকে শুরু করে আপনার ব্যবসার প্লেবুক পর্যন্ত — প্রতিটি স্তর বাস্তব SMB কর্মপ্রবাহের জন্য ডিজাইন করা হয়েছে, বিজ্ঞান প্রকল্প নয়।",
+        "the_engine_that_keeps_agents_working_aft": "যে ইঞ্জিনটি আপনি ল্যাপটপ বন্ধ করার পরে এজেন্টদের কাজ করে রাখে — আপনার পছন্দের স্মৃতি, সাধারণ কাজের দক্ষতা এবং আপনার সরঞ্জামগুলিতে নিরাপদ অ্যাক্সেস সহ।",
+        "runtime_cloud_ready": "রানটাইম · ক্লাউড-রেডি",
+        "your_playbooks_knowledge": "আপনার প্লেবুক এবং জ্ঞান",
+        "teach_agents_how_your_business_works_pri": "এজেন্টদের শেখান কিভাবে আপনার ব্যবসা কাজ করে — মূল্য নির্ধারণের নিয়ম, ব্র্যান্ড ভয়েস, SOPs এবং প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী — যাতে প্রতিটি উত্তর এবং সিদ্ধান্ত অন-ব্র্যান্ড থাকে।",
+        "knowledge_always_in_sync": "জ্ঞান · সর্বদা সিঙ্কে",
+        "advanced_ai_reasoning_powers_multi_step_": "উন্নত AI যুক্তি বিক্রয়, শিপিং, ফিনান্স এবং সহায়তা জুড়ে বহু-পদক্ষেপের কাজকে ক্ষমতা দেয় — কাঠামোর সাহায্যে আপনি অডিট করতে পারেন, ব্ল্যাক-বক্স অনুমান নয়।",
+        "intelligence_powered_by_grok_xai": "বুদ্ধিমত্তা · Grok (xAI) দ্বারা চালিত",
+        "secure_connectors_wire_agents_into_gmail": "Gmail, Shopify, QuickBooks, ShipStation, HubSpot, ক্যারিয়ার, Slack, এবং আরও অনেক কিছুতে সুরক্ষিত সংযোগকারী ওয়্যার এজেন্ট - তাই তারা কেবল চ্যাট নয়, আসল কাজ করে।",
+        "browse_integrations": "ইন্টিগ্রেশন ব্রাউজ করুন →",
+        "mobile": "মোবাইল",
+        "coming_soon": "শীঘ্রই আসছে",
+        "matrixly_mobile": "Matrixly মোবাইল",
+        "owner_dashboard_on_your_phone_check_agen": "আপনার ফোনে মালিকের ড্যাশবোর্ড — এজেন্ট কার্যকলাপ পরীক্ষা করুন, ব্যতিক্রম অনুমোদন করুন, এবং যেতে যেতে নেতৃত্ব বা শিপিং সতর্কতা পান।",
+        "flow": "ফ্লো",
+        "coordinated_agent_workflows": "সমন্বিত এজেন্ট কর্মপ্রবাহ",
+        "specialists_work_together_with_human_che": "বিশেষজ্ঞরা মানব চেকপয়েন্ট, সম্পূর্ণ অডিট লগ এবং ব্যবহার ট্র্যাকিং-এর সাথে সহায়তা, বুকিং এবং চালানের জন্য একটি Starter Pack ড্যাশবোর্ডের সাথে একসাথে কাজ করে।",
+        "open_starter_pack": "Starter Pack খুলুন →"
+      },
+      "marketplace": {
+        "live_agents_you_can_start_today": "লাইভ এজেন্ট আপনি আজ শুরু করতে পারেন",
+        "ready_agents_with_simple_dashboards_and_": "সাধারণ ড্যাশবোর্ড এবং মানুষের অনুমোদন সহ প্রস্তুত এজেন্ট যেখানে এটি গুরুত্বপূর্ণ — বিক্রয়, সহায়তা, শিপিং, অর্থ, বিষয়বস্তু, মিটিং, সামাজিক এবং আরও অনেক কিছু।",
+        "browse_full_catalog": "সম্পূর্ণ ক্যাটালগ ব্রাউজ করুন →",
+        "supportforge_bookwise_invoiceforge_with_": "একটি ইউনিফাইড ড্যাশবোর্ড, বিশ্লেষণ এবং এম্বেড সহ SupportForge + BookWise + InvoiceForge।",
+        "score_inbound_leads_enrich_contacts_draf": "ইনবাউন্ড লিড স্কোর করুন, পরিচিতি সমৃদ্ধ করুন, ড্রাফ্ট আউটরিচ করুন। Salesforce · Gmail।",
+        "triage_inbox_draft_replies_flag_urgent_i": "Triage ইনবক্স, খসড়া উত্তর, ফ্ল্যাগ জরুরী আইটেম, দৈনিক সংক্ষিপ্ত.",
+        "update_contacts_log_activities_pipeline_": "পরিচিতি আপডেট করুন, লগ অ্যাক্টিভিটি, পাইপলাইন হাইজিন অনুমোদন করে লিখুন।",
+        "shipstation_hub_track_exceptions_wismo_d": "ShipStation হাব — ট্র্যাক, ব্যতিক্রম, WISMO খসড়া৷ UPS · FedEx · USPS।",
+        "embeddable_support_triage_kb_answers_tic": "এমবেডযোগ্য সমর্থন: ট্রাইজ, কেবি উত্তর, টিকিট, HITL বৃদ্ধি, চ্যাট উইজেট।",
+        "ai_booking_availability_confirmations_re": "এআই বুকিং: প্রাপ্যতা, নিশ্চিতকরণ, অনুস্মারক, পুনঃনির্ধারণ, ক্যালেন্ডার সিঙ্ক।",
+        "invoice_ocr_extract_validate_post_to_qb_": "চালান OCR/এক্সট্রাক্ট করুন, যাচাই করুন, QB/Xero/CSV-এ পোস্ট করুন, ব্যতিক্রম, AR অনুস্মারক৷",
+        "pydantic_ai_ap_extract_pdf_email_match_p": "Pydantic AI AP: অর্থ প্রদানের আগে PDF/ইমেল, ম্যাচ PO, অসঙ্গতি, HITL বের করুন।",
+        "seo_blogs_social_newsletters_ads_brand_v": "SEO ব্লগ, সামাজিক, নিউজলেটার, বিজ্ঞাপন — ব্র্যান্ড ভয়েস + HITL প্রকাশের আগে।",
+        "local_organic_seo_for_us_smbs_plans_bran": "US SMB-এর জন্য স্থানীয় ও জৈব SEO — পরিকল্পনা, ব্র্যান্ড-ভয়েস কন্টেন্ট, GBP, কীওয়ার্ড, ROI + HITL।",
+        "meeting_outcomes_summaries_actions_crm_n": "মিটিংয়ের ফলাফল: সারাংশ, অ্যাকশন, CRM নোট, ট্রান্সক্রিপ্ট থেকে রিক্যাপ ইমেল।",
+        "multi_platform_posts_schedule_inbox_repl": "মাল্টি-প্ল্যাটফর্ম পোস্ট, সময়সূচী, ইনবক্স উত্তর, অন্তর্দৃষ্টি — ব্র্যান্ড ভয়েস + HITL।",
+        "score_prioritize_deals_fit_engagement_at": "স্কোর এবং অগ্রাধিকার ডিল: ফিট/এনগেজমেন্ট, অ্যাট-রিস্ক ফ্ল্যাগ, CRM স্টেজ সাজেশন।",
+        "proposals_quotes_contracts_reports_from_": "প্রস্তাবনা, উদ্ধৃতি, চুক্তি, টেমপ্লেট থেকে রিপোর্ট — HITL, PDF/MD/HTML এক্সপোর্ট।",
+        "free_yahoo_data_yield_nav_risk_tax_aware": "বিনামূল্যে Yahoo ডেটা: ফলন, NAV ঝুঁকি, ট্যাক্স-সচেতন নোট। ডিফল্ট QQQI · ঐচ্ছিক Notion।",
+        "mob": "MOB",
+        "soon": "শীঘ্রই",
+        "owner_app_for_run_history_hitl_approvals": "রানের ইতিহাস, HITL অনুমোদন, এবং সতর্কতার জন্য মালিক অ্যাপ — রোডম্যাপ।"
+      },
+      "s45135": {
+        "built_for_small_businesses_not_enterpris": "ছোট ব্যবসার জন্য নির্মিত — এন্টারপ্রাইজ থিয়েটার নয়",
+        "a_practical_platform_for_owners_always_o": "মালিকদের জন্য একটি ব্যবহারিক প্ল্যাটফর্ম: সর্বদা-অন এজেন্ট, প্রসঙ্গ হিসাবে আপনার প্লেবুক, স্মার্ট যুক্তি, সুরক্ষিত অ্যাপ সংযোগ এবং অর্থ বা গ্রাহকরা লাইনে থাকলে মানুষের অনুমোদন।",
+        "your_workspace_status": "আপনার কর্মক্ষেত্রের অবস্থা",
+        "healthy": "স্বাস্থ্যকর",
+        "live": "লাইভ:",
+        "soon": "শীঘ্রই:"
+      },
+      "s48425": {
+        "start_with_one_agent_or_the_full_pack": "একটি এজেন্ট দিয়ে শুরু করুন - বা সম্পূর্ণ প্যাক",
+        "try_starter_pack_for_support_booking_and": "সমর্থন, বুকিং এবং চালানের জন্য Starter Pack ব্যবহার করে দেখুন বা একটি একক এজেন্ট বেছে নিন। অন্বেষণ বিনামূল্যে."
+      }
+    },
+    "resources_7_day_setup": {
+      "page": {
+        "owner_resources": "← মালিক সম্পদ",
+        "t_7_day_setup_checklist_for_your_first_a": "আপনার প্রথম এজেন্টের জন্য 7-দিনের সেটআপ চেকলিস্ট",
+        "practical_one_pager_for_us_small_busines": "মার্কিন ছোট-ব্যবসার মালিকদের জন্য ব্যবহারিক এক-পেজার। একটি দ্রুত ইমেল আনলক করার পরে পড়তে বিনামূল্যে (এই ডেমো সাইটের জন্য শুধুমাত্র আপনার ব্রাউজারে সঞ্চিত)।",
+        "unlock_this_playbook": "এই প্লেবুক আনলক করুন",
+        "enter_your_email_to_reveal_the_full_chec": "সম্পূর্ণ চেকলিস্ট প্রকাশ করতে আপনার ইমেল লিখুন. কোনও স্প্যাম নেই — একটি ESP সংযুক্ত না হওয়া পর্যন্ত স্ট্যাটিক ডেমো স্থানীয় স্টোরেজ-এ ইমেল সঞ্চয় করে।",
+        "unlock_free": "বিনামূল্যে আনলক",
+        "unlocked_save_or_print_this_page": "আনলক করা হয়েছে · এই পৃষ্ঠাটি সংরক্ষণ বা মুদ্রণ করুন",
+        "start_free_with_matrixly": "Matrixly দিয়ে বিনামূল্যে শুরু করুন"
+      }
+    },
+    "resources_email_voice": {
+      "page": {
+        "how_to_teach_email_assistant_your_voice": "কিভাবে Email Assistant কে আপনার ভয়েস শেখাবেন"
+      }
+    },
+    "resources": {
+      "s9233": {
+        "owner_resources": "মালিক সম্পদ",
+        "short_practical_guides_setup_checklists_": "সংক্ষিপ্ত, ব্যবহারিক গাইড — সেটআপ চেকলিস্ট, ভয়েস ট্রেনিং, স্থানীয় SEO, শিপিং এবং লিড ফলো-আপ। বিনামূল্যের ইমেল আনলকের জন্য সবচেয়ে ভালো সফট-গেটেড।",
+        "day_by_day_checklist_to_deploy_your_firs": "কারিগরি দল ছাড়াই আপনার প্রথম Matrixly এজেন্টকে মোতায়েন করার জন্য প্রতিদিনের চেকলিস্ট।",
+        "open_playbook": "প্লেবুক খুলুন →",
+        "playbook_for_teaching_matrixly_email_ass": "Matrixly Email Assistant আপনার টোন, নিয়ম করবেন না/করবেন না এবং অভ্যাস পর্যালোচনা করার জন্য প্লেবুক।",
+        "local_seo_agent_playbook_for_service_bus": "পরিষেবা ব্যবসার জন্য স্থানীয় SEO এজেন্ট প্লেবুক",
+        "playbook_for_service_businesses_using_ma": "স্থানীয় SEO এবং Google Business-এর জন্য Matrixly এজেন্ট ব্যবহার করে পরিষেবা ব্যবসার জন্য প্লেবুক।",
+        "shipping_exception_playbook": "শিপিং ব্যতিক্রম প্লেবুক",
+        "how_us_shopify_and_e_com_teams_use_shipp": "US Shopify এবং ই-কম দলগুলি বিলম্ব, WISMO, এবং ক্যারিয়ার সংক্রান্ত সমস্যার জন্য Shipping Assistant ব্যবহার করে৷",
+        "lead_follow_up_sop": "সীসা ফলো-আপ SOP",
+        "sop_for_us_smbs_using_lead_qualifier_for": "দ্রুত, ধারাবাহিক লিড ফলো-আপের জন্য Lead Qualifier ব্যবহার করে US SMB-এর জন্য SOP।",
+        "not_sure_where_to_start": "কোথায় শুরু করবেন তা নিশ্চিত নন?",
+        "take_the_60_second_quiz_or_calculate_you": "60-সেকেন্ডের ক্যুইজ নিন বা আপনার ঘন্টার হিসাব করুন।"
+      }
+    },
+    "seo_bespoke": {
+      "s4279": {
+        "seo_higher_tier_custom_agent_factory": "SEO · উচ্চ স্তর · কাস্টম এজেন্ট কারখানা",
+        "parallel_graph": "সমান্তরাল গ্রাফ",
+        "port_8801": "পোর্ট 8801"
+      },
+      "s6007": {
+        "t_1_business_quiz": "1. ব্যবসায়িক ক্যুইজ",
+        "interactive_web_wizard_or_cli_six_indepe": "ইন্টারেক্টিভ ওয়েব উইজার্ড বা CLI। ছয় স্বাধীন সংগ্রাহক সমান্তরালভাবে ফ্যান আউট.",
+        "t_2_seo_profile": "2. SEO প্রোফাইল",
+        "professional_markdown_json_summary_with_": "পেশাদার মার্কডাউন + বীজ কীওয়ার্ড নির্দেশাবলী সহ JSON সারাংশ (কখনও র‌্যাঙ্ক আবিষ্কার করা হয়নি)।",
+        "t_3_custom_agent_code": "3. কাস্টম এজেন্ট কোড",
+        "research_brand_voice_local_seo_content_t": "গবেষণা, ব্র্যান্ড ভয়েস, স্থানীয় SEO, বিষয়বস্তু, ট্র্যাকিং এবং ROI মডিউলগুলি আপনার ব্যবসার জন্য বিশেষ।",
+        "t_4_safety_hitl": "4. নিরাপত্তা + HITL",
+        "isolated_verifiers_and_an_approval_queue": "একটি প্যাকেজের আগে বিচ্ছিন্ন যাচাইকারী এবং একটি অনুমোদনের সারি ডিপ্লয়-রেডি হিসাবে বিবেচিত হয়।",
+        "t_5_keywords_roi": "5. কীওয়ার্ড এবং ROI",
+        "owner_supplied_ranks_only_hours_leads_re": "শুধুমাত্র মালিকের সরবরাহকৃত পদ। আপনার রিপোর্ট করা ঘন্টা / লিড / রাজস্ব কার্ড - কোনও জাল ট্রাফিক দাবি নেই।",
+        "t_6_re_run_anytime": "6. যে কোন সময় পুনরায় চালান",
+        "update_the_quiz_or_regenerate_from_a_sav": "ক্যুইজ আপডেট করুন বা আপনার ব্যবসার পরিবর্তন হলে একটি সংরক্ষিত প্রোফাইল থেকে পুনরায় তৈরি করুন।"
+      },
+      "deploy": {
+        "run_locally_dashboard_on_port_8801": "স্থানীয়ভাবে চালান (8801 পোর্টে ড্যাশবোর্ড)",
+        "then_open": "তারপর খুলুন:",
+        "optional_demo_without_the_ui": "UI ছাড়া ঐচ্ছিক ডেমো:"
+      },
+      "vs": {
+        "seo_bespoke_vs_seoforge": "SEO-বেস্পোক বনাম SEOForge",
+        "role": "ভূমিকা",
+        "ready_to_run_seo_crew": "চালানোর জন্য প্রস্তুত SEO ক্রু",
+        "builds_a_custom_agent_for_one_business": "একটি ব্যবসার জন্য একটি কাস্টম এজেন্ট তৈরি করে",
+        "input": "ইনপুট",
+        "brief_chat": "সংক্ষিপ্ত/আড্ডা",
+        "multi_step_quiz": "বহু-পদক্ষেপ কুইজ",
+        "output": "আউটপুট",
+        "plans_content_local_packs": "পরিকল্পনা, বিষয়বস্তু, স্থানীয় প্যাক",
+        "profile_specialized_agent_source": "প্রোফাইল + বিশেষ এজেন্ট উৎস",
+        "port": "Port"
+      },
+      "embed": {
+        "see_seoforge": "SEOForge দেখুন"
+      },
+      "footer": {
+        "matrixly_seo_bespoke_v1_0_custom_seo_age": "Matrixly · SEO-Bespoke v1.0 · কাস্টম SEO এজেন্ট কারখানা"
+      }
+    },
+    "seo_forge": {
+      "s4306": {
+        "seo_local_ready_to_use": "SEO · স্থানীয় · ব্যবহারের জন্য প্রস্তুত",
+        "matrixly_s_specialized_seo_brand_marketi": "মার্কিন ক্ষুদ্র ও মাঝারি ব্যবসার জন্য Matrixly-এর বিশেষায়িত SEO এবং ব্র্যান্ড বিপণন এজেন্ট — অর্গানিক দৃশ্যমানতা, স্থানীয় \"আমার কাছাকাছি\" র‌্যাঙ্কিং, এবং কোনও এজেন্সি নিয়োগ না করেই ব্র্যান্ডের সামঞ্জস্য বাড়ান৷",
+        "hitl_queue": "HITL সারি",
+        "roi_dashboard": "ROI ড্যাশবোর্ড"
+      },
+      "s5932": {
+        "t_1_research_plan": "1. গবেষণা ও পরিকল্পনা",
+        "local_intent_competitor_gaps_and_a_prior": "Local intent, competitor gaps, and a prioritized 30-day calendar you approve before work starts.",
+        "t_2_brand_voice_content": "2. ব্র্যান্ড-ভয়েস সামগ্রী",
+        "service_pages_blogs_location_pages_faqs_": "পরিষেবা পৃষ্ঠা, ব্লগ, অবস্থান পৃষ্ঠা, শিরোনাম সহ প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী, মেটা, স্কিমা নোট এবং সামাজিক বৈকল্পিক।",
+        "t_3_local_seo": "3. স্থানীয় SEO",
+        "google_business_profile_posts_q_a_citati": "Google Business প্রোফাইল পোস্ট, প্রশ্নোত্তর, উদ্ধৃতি চেকলিস্ট, এবং প্রতিক্রিয়া টেমপ্লেট পর্যালোচনা করুন।",
+        "t_4_approval_queue": "4. অনুমোদন সারি",
+        "human_in_the_loop_before_any_public_publ": "ওয়ার্ডপ্রেস, Buffer, বা GBP-এ যেকোনো পাবলিক প্রকাশের আগে হিউম্যান-ইন-দ্য-লুপ।",
+        "t_5_keyword_tracker": "5. কীওয়ার্ড ট্র্যাকার",
+        "track_service_city_and_near_me_keywords_": "সরল র‌্যাঙ্ক মুভমেন্ট সহ পরিষেবা + শহর এবং \"আমার কাছাকাছি\" কীওয়ার্ডগুলি ট্র্যাক করুন।",
+        "t_6_roi_cards": "6. ROI কার্ড",
+        "hours_saved_leads_attributed_and_revenue": "ঘন্টা সংরক্ষিত, লিড অ্যাট্রিবিউট করা, এবং আয় বাঁধা — Matrixly ROI ড্যাশবোর্ড ফিড করে৷"
+      },
+      "embed": {
+        "see_socialforge": "SocialForge দেখুন"
+      },
+      "footer": {
+        "matrixly_seoforge_v1_0_seo_brand_marketi": "Matrixly · SEOForge v1.0 · SEO এবং US SMB-এর জন্য ব্র্যান্ড মার্কেটিং"
+      }
+    },
+    "shipping_assistant": {
+      "page": {
+        "logistics_flow": "রসদ প্রবাহ"
+      },
+      "s4692": {
+        "shipping_ready_to_use": "শিপিং · ব্যবহারের জন্য প্রস্তুত",
+        "shipstation_hub": "ShipStation হাব",
+        "exception_scan": "ব্যতিক্রম স্ক্যান",
+        "wismo_drafts": "WISMO খসড়া",
+        "hitl_cancel_label": "HITL বাতিল/লেবেল"
+      },
+      "s6815": {
+        "t_1_track": "1. ট্র্যাক",
+        "orders_and_shipments_via_shipstation_car": "ShipStation-এর মাধ্যমে অর্ডার এবং শিপমেন্ট—একটি হাবের মাধ্যমে UPS, FedEx, USPS বাহক৷",
+        "t_2_exceptions": "2. ব্যতিক্রম",
+        "late_undeliverable_address_issues_priori": "দেরীতে, অযোগ্য, ঠিকানার সমস্যাগুলি — অপারেশনের জন্য অগ্রাধিকারযুক্ত সারি।",
+        "t_3_notify": "3. অবহিত করুন",
+        "stakeholder_customer_wismo_drafts_human_": "স্টেকহোল্ডার + গ্রাহক WISMO খসড়া (মানুষ পাঠায় — কম সমর্থন টিকিট)।",
+        "t_4_order_delivery": "4. অর্ডার → ডেলিভারি",
+        "awaiting_shipped_delivered_with_hitl_on_": "বাতিল / ঠিকানা / লেবেলগুলিতে HITL সহ → শিপড → বিতরণের জন্য অপেক্ষা করা হচ্ছে৷"
+      },
+      "s8067": {
+        "full_order_to_delivery_flow": "সম্পূর্ণ অর্ডার-টু-ডেলিভারি ফ্লো",
+        "aligned_with_the_marketplace_logistics_s": "মার্কেটপ্লেস লজিস্টিক সাঁতারের পথের সাথে সারিবদ্ধ — SMB-এর জন্য এজেন্ট-অর্কেস্ট্রেটেড পূর্ণতা।",
+        "order_capture": "অর্ডার ক্যাপচার",
+        "import_multi_channel_orders_into_shipsta": "ShipStation এ মাল্টি-চ্যানেল অর্ডার আমদানি করুন।",
+        "rate_label": "রেট এবং লেবেল",
+        "carrier_selection_ups_fedex_usps_label_a": "ক্যারিয়ার নির্বাচন (UPS / FedEx / USPS) — লেবেল ক্রিয়াগুলির অনুমোদন প্রয়োজন৷",
+        "in_transit_monitor": "ট্রানজিট মনিটরে",
+        "track_status_eta_exception_flags": "ট্র্যাক স্ট্যাটাস, ETA, ব্যতিক্রম পতাকা।",
+        "delivery_wismo": "ডেলিভারি এবং WISMO",
+        "confirm_delivery_draft_customer_updates_": "ডেলিভারি নিশ্চিত করুন; যখন জিনিসগুলি ভুল হয়ে যায় তখন খসড়া গ্রাহক আপডেট।",
+        "view_multi_agent_logistics_flow_on_homep": "হোমপেজে মাল্টি-এজেন্ট লজিস্টিক ফ্লো দেখুন →"
+      },
+      "s10052": {
+        "demo_no_api_keys": "ডেমো (কোনও API কী)",
+        "live_shipstation": "লাইভ ShipStation",
+        "shipstation_settings_account_api_setting": "ShipStation → সেটিংস → অ্যাকাউন্ট → API সেটিংস",
+        "open_full_user_guide": "সম্পূর্ণ ব্যবহারকারী নির্দেশিকা খুলুন →"
+      },
+      "footer": {
+        "matrixly_shipping_assistant_v1_0_shipsta": "Matrixly · Shipping Assistant v1.0 · ShipStation হাব"
+      }
+    },
+    "shipping_assistant_guide": {
+      "page": {
+        "deploy_shipping_agent": "শিপিং এজেন্ট স্থাপন",
+        "user_guide_shipping": "ব্যবহারকারী নির্দেশিকা · শিপিং",
+        "how_to_use_the_matrixly_shipping_assista": "মার্কেটপ্লেস থেকে Matrixly Shipping Assistant কীভাবে ব্যবহার করবেন — চালান ট্র্যাক করুন, ব্যতিক্রমগুলি পরিচালনা করুন, WISMO উত্তরের খসড়া তৈরি করুন এবং ShipStation-এর সাথে একটি সম্পূর্ণ অর্ডার-টু-ডেলিভারি ওয়ার্কফ্লো চালান।",
+        "featured_ai_agents": "বৈশিষ্ট্যযুক্ত AI এজেন্ট",
+        "shipping_assistant": "/শিপিং-সহকারী",
+        "on_this_page": "এই পৃষ্ঠায়",
+        "t_1_what_it_does": "1. এটা কি করে",
+        "t_2_from_the_landing_page": "2. ল্যান্ডিং পৃষ্ঠা থেকে",
+        "t_3_install_demo": "3. ইনস্টল এবং ডেমো",
+        "t_4_connect_shipstation": "4. ShipStation সংযুক্ত করুন",
+        "t_5_daily_ops_workflow": "5. দৈনিক অপারেশন কর্মপ্রবাহ",
+        "t_6_command_reference": "6. কমান্ড রেফারেন্স",
+        "t_7_wismo_notifications": "7. WISMO এবং বিজ্ঞপ্তি",
+        "t_8_approvals_hitl": "8. অনুমোদন (HITL)",
+        "t_9_hermes_skill": "9. Hermes দক্ষতা",
+        "t_10_order_to_delivery": "10. অর্ডার-টু-ডেলিভারি",
+        "t_11_troubleshooting": "11. সমস্যা সমাধান",
+        "t_12_faq": "12. প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী"
+      },
+      "what_it_does": {
+        "t_1_what_the_shipping_assistant_does": "1. Shipping Assistant কি করে",
+        "capability": "সামর্থ্য",
+        "track": "ট্র্যাক",
+        "list_orders_shipments_look_up_by_order_o": "অর্ডার / চালানের তালিকা করুন; অর্ডার # বা ট্র্যাকিং # দ্বারা সন্ধান করুন",
+        "exceptions": "ব্যতিক্রম",
+        "scan_for_late_undeliverable_address_and_": "দেরী, বিতরণযোগ্য, ঠিকানা, এবং ক্যারিয়ার ব্যতিক্রম অবস্থার জন্য স্ক্যান করুন",
+        "notify": "অবহিত করুন",
+        "draft_internal_customer_messages_you_rev": "খসড়া অভ্যন্তরীণ + গ্রাহক বার্তা (আপনি পর্যালোচনা করে পাঠান)",
+        "ready_to_send_customer_update_draft_for_": "একটি অর্ডারের জন্য গ্রাহক আপডেট খসড়া পাঠানোর জন্য প্রস্তুত",
+        "cancel_label_address_changes_require_you": "বাতিল / লেবেল / ঠিকানা পরিবর্তন আপনার অনুমোদন প্রয়োজন"
+      },
+      "from_landing": {
+        "t_2_starting_from_the_matrixly_landing_p": "2. Matrixly ল্যান্ডিং পৃষ্ঠা থেকে শুরু",
+        "open_the_marketplace": "বাজার খুলুন",
+        "agents": "/এজেন্ট",
+        "find_the_ship_card": "শিপ কার্ড খুঁজুন",
+        "choose_an_action": "একটি কর্ম চয়ন করুন",
+        "optional_integrations": "ঐচ্ছিক: ইন্টিগ্রেশন",
+        "integrations": "/ ইন্টিগ্রেশন"
+      },
+      "install": {
+        "t_3_install_and_run_the_demo_no_api_keys": "3. ডেমো ইনস্টল করুন এবং চালান (কোনও API কী নেই)",
+        "you_can_try_the_full_agent_flow_immediat": "আপনি নমুনা ডেটা সহ অবিলম্বে সম্পূর্ণ এজেন্ট প্রবাহ চেষ্টা করতে পারেন। কোন ShipStation অ্যাকাউন্টের প্রয়োজন নেই।",
+        "windows_powershell": "উইন্ডোজ পাওয়ারশেল",
+        "sample_shipments_ups_fedex_usps": "নমুনা চালান (UPS, FedEx, USPS)",
+        "exception_scan_e_g_delivery_exception_de": "ব্যতিক্রম স্ক্যান (যেমন ডেলিভারি ব্যতিক্রম, ট্রানজিটে বিলম্বিত)"
+      },
+      "shipstation": {
+        "t_4_connect_live_shipstation": "4. লাইভ ShipStation সংযোগ করুন৷",
+        "create_api_credentials": "API শংসাপত্র তৈরি করুন",
+        "shipstation_com": "shipstation.com",
+        "create_local_env_file": "স্থানীয় env ফাইল তৈরি করুন",
+        "add_secrets_never_commit_or_paste_into_c": "গোপনীয়তা যোগ করুন (চ্যাটে কখনই কমিট বা পেস্ট করবেন না)",
+        "verify_live_mode": "লাইভ মোড যাচাই করুন"
+      },
+      "daily": {
+        "t_5_recommended_daily_ops_workflow": "5. প্রস্তাবিত দৈনিক অপারেশন কর্মপ্রবাহ",
+        "morning_exception_scan": "সকালের ব্যতিক্রম স্ক্যান",
+        "review_high_severity_items_first_excepti": "প্রথমে উচ্চ-তীব্রতা আইটেম পর্যালোচনা করুন (ব্যতিক্রম, অতীত ETA)।",
+        "draft_stakeholder_customer_updates": "খসড়া স্টেকহোল্ডার + গ্রাহক আপডেট",
+        "internal_draft_your_ops_email_customer_d": "অভ্যন্তরীণ খসড়া → আপনার অপারেশন ইমেল। গ্রাহক খসড়া → পর্যালোচনা, তারপর Gmail/Thunderbird (বা Email Assistant) থেকে পাঠান।",
+        "answer_a_specific_wismo": "একটি নির্দিষ্ট WISMO উত্তর দিন",
+        "track_one_package": "একটি প্যাকেজ ট্র্যাক",
+        "export_a_snapshot_for_audit_sharing": "অডিট/ভাগ করার জন্য একটি স্ন্যাপশট রপ্তানি করুন"
+      },
+      "commands": {
+        "command": "আদেশ",
+        "purpose": "উদ্দেশ্য",
+        "demo_vs_live_mode_pending_hitl_count": "ডেমো বনাম লাইভ মোড; HITL গণনা মুলতুবি",
+        "list_shipments_demo_also_prints_exceptio": "তালিকা চালান; ডেমো ব্যতিক্রমগুলিও প্রিন্ট করে",
+        "lookup_by_order_number": "অর্ডার নম্বর দ্বারা সন্ধান করুন",
+        "lookup_by_tracking_number": "ট্র্যাকিং নম্বর দ্বারা সন্ধান করুন",
+        "exception_late_scan_report": "ব্যতিক্রম / দেরী স্ক্যান রিপোর্ট",
+        "customer_wismo_reply_draft": "গ্রাহক WISMO উত্তরের খসড়া৷",
+        "internal_customer_drafts_for_all_excepti": "অভ্যন্তরীণ + সমস্ত ব্যতিক্রমের জন্য গ্রাহক খসড়া",
+        "queue_a_cancel_action_hitl": "একটি বাতিল অ্যাকশন সারিবদ্ধ করুন (HITL)",
+        "list_actions_waiting_for_approval": "তালিকা কর্ম অনুমোদনের জন্য অপেক্ষা করছে",
+        "approve_a_pending_action": "একটি মুলতুবি কাজ অনুমোদন করুন",
+        "reject_a_pending_action": "একটি মুলতুবি ক্রিয়া প্রত্যাখ্যান করুন",
+        "write_shipping_snapshot_json": "shipping-snapshot.json লিখুন"
+      },
+      "wismo": {
+        "t_7_wismo_and_stakeholder_notifications": "7. WISMO এবং স্টেকহোল্ডার বিজ্ঞপ্তি"
+      },
+      "hitl": {
+        "t_8_human_in_the_loop_hitl_approvals": "8. হিউম্যান-ইন-দ্য-লুপ (HITL) অনুমোদন",
+        "safe_by_default_tracking_and_drafts_neve": "ডিফল্টরূপে নিরাপদ: ট্র্যাকিং এবং খসড়াগুলির অনুমোদনের প্রয়োজন নেই৷ ধ্বংসাত্মক শিপিং অপ্স না.",
+        "auto_allowed": "স্বয়ংক্রিয়ভাবে অনুমোদিত",
+        "requires_approve": "অনুমোদন প্রয়োজন",
+        "list_track_exceptions_wismo_drafts_notif": "তালিকা, ট্র্যাক, ব্যতিক্রম, WISMO খসড়া, খসড়াগুলিকে অবহিত করুন",
+        "cancel_order_update_address_create_void_": "অর্ডার বাতিল করুন, ঠিকানা আপডেট করুন, লেবেল তৈরি/অকার্যকর করুন",
+        "live_shipstation_mutations_run_only_afte": "লাইভ ShipStation মিউটেশনগুলি শুধুমাত্র অনুমোদনের পরে এবং যখন API শংসাপত্র + অ্যাকশন হ্যান্ডলার সক্রিয় থাকে তখনই চলে৷"
+      },
+      "hermes": {
+        "t_9_using_hermes": "9. Hermes ব্যবহার করা"
+      },
+      "flow": {
+        "t_10_full_order_to_delivery_flow": "10. সম্পূর্ণ অর্ডার-টু-ডেলিভারি প্রবাহ",
+        "how_the_ship_agent_maps_to_matrixly_s_lo": "কিভাবে শিপ এজেন্ট হোমপেজে Matrixly এর লজিস্টিক স্টোরি ম্যাপ করে:",
+        "open_multi_agent_logistics_flow_on_the_h": "হোমপেজে মাল্টি-এজেন্ট লজিস্টিক ফ্লো খুলুন →"
+      },
+      "troubleshoot": {
+        "symptom": "উপসর্গ",
+        "what_to_try": "কি চেষ্টা করতে হবে",
+        "always_demo_mode": "সর্বদা \"ডেমো\" মোড",
+        "api_auth_error": "API প্রমাণীকরণ ত্রুটি৷",
+        "order_not_found": "অর্ডার পাওয়া যায়নি",
+        "module_not_found": "মডিউল পাওয়া যায়নি",
+        "deploy_now_404": "এখনই 404 স্থাপন করুন"
+      },
+      "faq": {
+        "does_the_agent_send_email_to_customers_b": "এজেন্ট কি নিজেই গ্রাহকদের ইমেল পাঠায়?",
+        "why_shipstation_instead_of_only_ups_fede": "কেন শুধুমাত্র UPS/FedEx API এর পরিবর্তে ShipStation?",
+        "shipstation_is_the_smb_multi_channel_hub": "ShipStation হল SMB মাল্টি-চ্যানেল হাব। একটি ইন্টিগ্রেশন পৃষ্ঠের জন্য ShipStation এর মাধ্যমে ক্যারিয়ারগুলি ব্যবহার করা হয়।",
+        "can_i_use_it_without_a_live_shipstation_": "আমি একটি লাইভ ShipStation অ্যাকাউন্ট ছাড়া এটি ব্যবহার করতে পারি?",
+        "yes_demo_mode_ships_sample_data_for_demo": "হ্যাঁ — ডেমো মোড ডেমো এবং প্রশিক্ষণের জন্য নমুনা ডেটা প্রেরণ করে।",
+        "where_is_the_agent_code": "এজেন্ট কোড কোথায়?",
+        "deploy_page": "পৃষ্ঠা স্থাপন করুন",
+        "logistics_integrations": "লজিস্টিক ইন্টিগ্রেশন"
+      },
+      "footer": {
+        "matrixly_shipping_assistant_user_guide_v": "Matrixly · Shipping Assistant ব্যবহারকারীর নির্দেশিকা v1.0",
+        "featured_agents": "বৈশিষ্ট্যযুক্ত এজেন্ট"
+      }
+    },
+    "social_forge": {
+      "s4279": {
+        "social_ready_to_use": "সামাজিক · ব্যবহারের জন্য প্রস্তুত",
+        "manage_social_media_for_smbs_generate_pl": "SMB-এর জন্য সোশ্যাল মিডিয়া পরিচালনা করুন — প্ল্যাটফর্ম-নেটিভ পোস্ট তৈরি করুন, সর্বোত্তম সময় নির্ধারণ করুন, মনিটর উল্লেখ, খসড়া ব্র্যান্ড-ভয়েস উত্তর, এবং কিছু পোস্ট করার আগে মানুষের অনুমোদনের সাথে পৃষ্ঠের কর্মক্ষমতা অন্তর্দৃষ্টি।",
+        "calendar_inbox": "ক্যালেন্ডার + ইনবক্স",
+        "multi_platform": "মাল্টি-প্ল্যাটফর্ম"
+      },
+      "s5847": {
+        "t_1_compose": "1. রচনা করুন",
+        "linkedin_x_instagram_facebook_threads_fr": "LinkedIn, X, Instagram, Facebook, একটি সংক্ষিপ্ত থেকে থ্রেড।",
+        "t_2_schedule": "2. সময়সূচী",
+        "optimal_smb_windows_in_your_timezone": "আপনার টাইমজোনে সর্বোত্তম SMB উইন্ডো।",
+        "t_3_approve": "3. অনুমোদন করুন",
+        "hitl_gate_before_publish_or_public_repli": "প্রকাশ বা সর্বজনীন উত্তর দেওয়ার আগে HITL গেট।",
+        "t_4_inbox": "4. ইনবক্স",
+        "mentions_comments_dms_with_drafted_repli": "উল্লেখ, মন্তব্য, খসড়া উত্তর সহ DM.",
+        "t_5_insights": "5. অন্তর্দৃষ্টি",
+        "what_worked_next_content_ideas": "কি কাজ করেছে + পরবর্তী বিষয়বস্তুর ধারণা।"
+      },
+      "footer": {
+        "matrixly_socialforge_v1_0_social_content": "Matrixly · SocialForge v1.0 · সামাজিক বিষয়বস্তু এবং ব্যস্ততা"
+      }
+    },
+    "starter_pack": {
+      "page": {
+        "invoice": "চালান",
+        "deploy_pack": "প্যাক স্থাপন করুন"
+      },
+      "s4308": {
+        "starter_bundle_ready_to_use": "স্টার্টার বান্ডেল · ব্যবহারের জন্য প্রস্তুত",
+        "matrixly_starter_pack": "Matrixly Starter Pack",
+        "three_production_agents_for_support_appo": "সমর্থন, অ্যাপয়েন্টমেন্ট এবং ইনভয়েসের জন্য তিনটি প্রোডাকশন এজেন্ট — এছাড়াও তাদের নিরীক্ষণ, কনফিগার এবং এম্বেড করার জন্য একটি ইউনিফাইড ড্যাশবোর্ড। SMB-এর জন্য তৈরি যারা স্ক্র্যাচ থেকে টুলচেন একত্রিত না করে এজেন্টিক অপারেশন চান।",
+        "t_3_agents": "3 এজেন্ট",
+        "t_1_dashboard": "1 ড্যাশবোর্ড",
+        "port_8800": "পোর্ট 8800"
+      },
+      "s5862": {
+        "sup": "SUP",
+        "triage_kb_answers_escalation_chat_widget": "Triage, KB উত্তর, বৃদ্ধি, চ্যাট উইজেট, অডিট।",
+        "agent_page": "এজেন্ট পৃষ্ঠা →",
+        "availability_bookings_reminders_calendar": "প্রাপ্যতা, বুকিং, অনুস্মারক, ক্যালেন্ডার সিঙ্ক।",
+        "extract_validate_post_exceptions_ar_remi": "Extract, validate, post, exceptions, AR reminders."
+      },
+      "deploy": {
+        "deploy_the_pack": "প্যাকটি স্থাপন করুন"
+      },
+      "embed": {
+        "embed_widgets": "উইজেট এম্বেড করুন"
+      },
+      "footer": {
+        "matrixly_starter_pack_v1_0_support_book_": "Matrixly · Starter Pack v1.0 · সমর্থন + বই + চালান"
+      }
+    },
+    "support_forge": {
+      "s4525": {
+        "customer_support_ready_to_use": "গ্রাহক সমর্থন · ব্যবহারের জন্য প্রস্তুত",
+        "end_to_end_ai_customer_support_for_smbs_": "SMB-এর জন্য এন্ড-টু-এন্ড AI গ্রাহক সহায়তা — মনিটর চ্যাট, ইমেল এবং ফর্ম; আপনার জ্ঞানের ভিত্তি থেকে উত্তর; সম্পূর্ণ প্রসঙ্গ সহ বাড়ান; হিউম্যান-ইন-দ্য-লুপ সহ বাহ্যিক ক্রিয়াগুলি অনুমোদন করুন।",
+        "grok_optional": "Grok ঐচ্ছিক",
+        "tickets_crm_lite": "টিকিট + CRM-লাইট"
+      },
+      "s6098": {
+        "urgency_sentiment_topic_and_sensitive_is": "প্রতিটি অন্তর্মুখী বার্তায় জরুরিতা, অনুভূতি, বিষয় এবং সংবেদনশীল-ইস্যু ফ্ল্যাগ।",
+        "t_2_knowledge": "2. জ্ঞান",
+        "retrieve_answers_from_your_faqs_policies": "আপনার প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী, নীতি, Notion এক্সপোর্ট, বা আপলোড করা ডক্স থেকে উত্তরগুলি পুনরুদ্ধার করুন৷",
+        "t_3_respond": "3. প্রতিক্রিয়া",
+        "auto_resolve_high_confidence_faqs_or_dra": "মানুষের অনুমোদনের জন্য উচ্চ-আস্থা FAQ বা খসড়া উত্তরগুলি স্বয়ংক্রিয়ভাবে সমাধান করুন।",
+        "t_4_escalate": "4. বাড়ানো",
+        "open_tickets_with_full_context_admin_das": "সম্পূর্ণ প্রসঙ্গ সহ টিকিট খুলুন; HITL এবং ফলো-আপের জন্য অ্যাডমিন ড্যাশবোর্ড।"
+      },
+      "s7348": {
+        "architecture": "স্থাপত্য",
+        "channels_fastapi_multi_agent_orchestrato": "চ্যানেল → FastAPI → মাল্টি-এজেন্ট অর্কেস্ট্রেটর → টিকিট / HITL / অডিট / ব্যবহার৷",
+        "ingest": "খাওয়া",
+        "widget_chat_website_form_webhook_email_w": "উইজেট চ্যাট, ওয়েবসাইট ফর্ম ওয়েবহুক, ইমেল ওয়েবহুক বা IMAP।",
+        "classify_retrieve": "শ্রেণীবদ্ধ করুন এবং পুনরুদ্ধার করুন",
+        "triage_local_knowledge_index_with_confid": "আত্মবিশ্বাসের স্কোর সহ Triage + স্থানীয় জ্ঞান সূচক।",
+        "act_safely": "নিরাপদে কাজ করুন",
+        "auto_reply_draft_for_approval_or_escalat": "স্বতঃ-উত্তর, অনুমোদনের জন্য খসড়া, বা বৃদ্ধি — বহিরাগত লেখার প্রয়োজন HITL।",
+        "operate": "পরিচালনা করুন",
+        "admin_ui_audit_trail_usage_cost_for_saas": "অ্যাডমিন UI, অডিট ট্রেল, SaaS বিলিং প্রস্তুতির জন্য ব্যবহার/খরচ।"
+      },
+      "deploy": {
+        "demo_no_api_keys_required": "ডেমো (কোনও API কী প্রয়োজন নেই)",
+        "production_keys": "উৎপাদন কী"
+      },
+      "embed": {
+        "iframe_option": "আইফ্রেম বিকল্প",
+        "connect_knowledge_non_technical": "জ্ঞান সংযোগ করুন (নন-টেকনিক্যাল)"
+      },
+      "footer": {
+        "matrixly_supportforge_v1_0_embeddable_ai": "Matrixly · SupportForge v1.0 · এমবেডযোগ্য AI সমর্থন"
+      }
+    },
+    "white_glove": {
+      "page": {
+        "offer": "অফার",
+        "workflows": "কর্মপ্রবাহ",
+        "weekly_roi": "সাপ্তাহিক ROI",
+        "request_a_seat": "একটি আসন অনুরোধ"
+      },
+      "s9541": {
+        "white_glove_executive_digital_employee": "White Glove এক্সিকিউটিভ · ডিজিটাল কর্মচারী",
+        "we_install_a_digital_employee_then_we_ma": "আমরা একটি ডিজিটাল কর্মচারী ইনস্টল. তারপর আমরা এটি পরিচালনা করি - এবং আপনাকে কোচ করি।",
+        "request_a_founding_seat": "একটি প্রতিষ্ঠাতা আসন অনুরোধ",
+        "see_sample_weekly_roi": "সাপ্তাহিক ROI → নমুনা দেখুন",
+        "founding_package_at_a_glance": "এক নজরে প্যাকেজ প্রতিষ্ঠা করা",
+        "month": "/মাস",
+        "managed_retainer_setup_scoped_per_engage": "ম্যানেজড রিটেইনার · প্রতি এনগেজমেন্ট স্কোপড সেটআপ · স্কেল প্ল্যাটফর্ম অন্তর্ভুক্ত",
+        "email_the_founder": "প্রতিষ্ঠাতাকে ইমেল করুন →"
+      },
+      "offer": {
+        "the_model": "মডেল",
+        "software_is_the_hire_coaching_is_the_pro": "সফটওয়্যার ভাড়া করা হয়. কোচিং এর পণ্য।",
+        "operators_who_succeed_with_managed_ai_em": "পরিচালিত এআই কর্মীদের সাথে সফল হওয়া অপারেটররা \"বট অ্যাক্সেস\" বিক্রি করে না। তারা একজন ডিজিটাল কর্মচারীকে ইনস্টল করে, মালিকের সাথে একটি শেয়ার্ড চ্যানেলে থাকে, আপটাইম পরিচালনা করে এবং প্রতি সোমবার রিটেইনারকে একটি পরিষ্কার \"আপনি এই সপ্তাহে $X সংরক্ষণ করেছেন\" রিপোর্ট দিয়ে পুনরায় বিক্রি করে।",
+        "install_one_digital_employee": "একজন ডিজিটাল কর্মচারী ইনস্টল করুন",
+        "a_named_agent_for_a_single_high_pain_wor": "একটি একক উচ্চ-বেদনা কর্মপ্রবাহের জন্য একটি নামকৃত এজেন্ট — চালান, সীসা ফলো-আপ, বা স্থানীয় সামগ্রী/SEO — যেটি ইমেল, শীট, ফাইল এবং টুল জুড়ে মাল্টি-স্টেপ কাজ সম্পাদন করে যেভাবে একজন জুনিয়র ভাড়া করে।",
+        "coach_manage_ongoing": "কোচ + চলমান পরিচালনা",
+        "you_never_have_to_figure_out_prompting_w": "আপনাকে কখনই \"প্রম্পটিং বের করতে হবে না।\" আমরা আপনার এবং এজেন্টের সাথে একটি ভাগ করা গ্রুপে বসে থাকি। আপনি দেখে শিখবেন। আপনি লক্ষ্য করার আগে আমরা নির্ভরযোগ্যতার সমস্যাগুলি ঠিক করে দিই — সেই বিশ্বাসই ধারককে ধরে রাখে।",
+        "weekly_roi_re_sells_itself": "সাপ্তাহিক ROI নিজেকে পুনরায় বিক্রি করে",
+        "every_agent_keeps_a_value_ledger_hours_s": "প্রতিটি এজেন্ট একটি মান লেজার রাখে: ঘন্টা সংরক্ষিত × আপনার গৃহীত ঘন্টার হার, কাজগুলি সম্পন্ন করা, ব্যবসার ফলাফল এবং আপটাইম। দৃশ্যমান ROI কেন ক্লায়েন্টরা মাসের পর মাস থাকে।"
+      },
+      "packages": {
+        "packaging": "প্যাকেজিং",
+        "setup_fee_monthly_retainer": "সেটআপ ফি + মাসিক ধারক",
+        "founding_white_glove_seats_are_priced_to": "প্রতিষ্ঠার White Glove আসনের মূল্য রেফারেল জেতার জন্য। ইন্সটল সফল হওয়ার সাথে সাথে সেটআপ এবং রিটেইনাররা এগিয়ে যায় — প্রমাণিত পরিচালিত-এজেন্ট অপারেটরদের মতো একই প্লেবুক।",
+        "founding": "প্রতিষ্ঠা করা",
+        "white_glove_executive": "White Glove এক্সিকিউটিভ",
+        "founding_seat": "প্রতিষ্ঠা আসন",
+        "solo_owners_small_teams_1_agent": "একক মালিক এবং ছোট দল · 1 এজেন্ট",
+        "setup_quoted_per_workflow_typically_499_": "ওয়ার্কফ্লো প্রতি উদ্ধৃত সেটআপ · সাধারণত প্রতিষ্ঠাতা ক্লায়েন্টদের জন্য $499–$1,500",
+        "request_founding_seat": "প্রতিষ্ঠাতা আসন অনুরোধ",
+        "growth_digital_employee": "গ্রোথ ডিজিটাল কর্মচারী",
+        "core_offer": "মূল অফার",
+        "most_houston_smbs_1_2_agents": "বেশিরভাগ হিউস্টন SMBs · 1-2 এজেন্ট",
+        "setup_2_500_1_000_mo_per_additional_agen": "সেটআপ ~$2,500 · +$1,000/মাস প্রতি অতিরিক্ত এজেন্ট",
+        "discuss_growth": "বৃদ্ধি নিয়ে আলোচনা কর",
+        "operations_suite": "অপারেশন স্যুট",
+        "multi_agent": "মাল্টি-এজেন্ট",
+        "growing_companies_3_agents": "ক্রমবর্ধমান কোম্পানি · 3+ এজেন্ট",
+        "setup_4_000_6_000_complexity_based": "সেটআপ $4,000–$6,000 · জটিলতা-ভিত্তিক",
+        "discuss_operations": "অপারেশন আলোচনা",
+        "pricing_philosophy_start_with_a_clear_fo": "মূল্যের দর্শন: একটি পরিষ্কার প্রতিষ্ঠার আসন দিয়ে শুরু করুন, সাপ্তাহিক ROI প্রমাণ করুন, তারপর রেফারেল যৌগ হিসাবে সেটআপ বাড়ান। সর্বদা একটি দৃশ্যমান সোমবার সকালের প্রতিবেদনের সাথে ধারককে যুক্ত করুন যাতে পরিষেবাটি পুনরায় বিক্রি হয়।"
+      },
+      "workflows": {
+        "first_three_workflows": "প্রথম তিনটি কর্মপ্রবাহ",
+        "high_pain_high_visibility_work_for_houst": "হিউস্টন এসএমবিগুলির জন্য উচ্চ-বেদনা, উচ্চ-দৃশ্যমানতা কাজ",
+        "energy_services_construction_professiona": "শক্তি পরিষেবা, নির্মাণ, পেশাদার পরিষেবা, চিকিৎসা অনুশীলন, এবং ওয়েস্ট হিউস্টন / ক্যাটি / এনার্জি করিডোর ব্যবসা। একটি ওয়ার্কফ্লো দিয়ে শুরু করুন। ROI স্পষ্ট হলে প্রসারিত করুন।",
+        "t_1_invoice_ap": "1 · চালান এবং এপি",
+        "invoice_digital_employee": "চালান ডিজিটাল কর্মচারী",
+        "monitors_email_or_a_shared_folder_extrac": "ইমেল বা শেয়ার করা ফোল্ডার মনিটর করে, PDFs থেকে চালান ডেটা বের করে, Excel/Sheets বা QuickBooks-প্রস্তুত ফাইলগুলিতে লগ করে, ওভারডিউ আইটেম ফ্ল্যাগ করে, ড্রাফ্ট ফলো-আপ করে এবং একটি সাপ্তাহিক ক্যাশ-ইম্যাক্ট সারাংশ পাঠায়।",
+        "value_metrics": "মান মেট্রিক্স",
+        "hours_saved_of_invoices_processed_overdu": "সময় সংরক্ষিত · $ এর ইনভয়েস প্রক্রিয়া করা হয়েছে · ওভারডি আইটেম ফ্ল্যাগ করা হয়েছে · বিলম্বে অর্থপ্রদান অনুস্মারক পাঠানো হয়েছে",
+        "t_2_leads": "2 · লিড",
+        "lead_follow_up_digital_employee": "লিড ফলো-আপ ডিজিটাল কর্মচারী",
+        "watches_forms_email_or_crm_researches_th": "ঘড়ির ফর্ম, ইমেল বা CRM; সীসা নিয়ে গবেষণা করে; একটি ব্যক্তিগতকৃত প্রথম প্রতিক্রিয়া খসড়া; উপযুক্ত যোগ্যতা; বই আবিষ্কার বা সঠিক মানুষের রুট; দৈনিক/সাপ্তাহিক পাইপলাইন কার্যকলাপ লগ.",
+        "qualified_leads_handled_calls_booked_ave": "যোগ্য লিড পরিচালনা করা হয়েছে · কল বুক করা হয়েছে · গড় প্রতিক্রিয়া সময় (মিনিট)",
+        "t_3_local_seo": "3 · স্থানীয় SEO",
+        "content_local_seo_digital_employee": "বিষয়বস্তু এবং স্থানীয় SEO ডিজিটাল কর্মচারী",
+        "researches_local_keywords_drafts_posts_a": "স্থানীয় কীওয়ার্ড, ড্রাফ্ট পোস্ট এবং GBP আপডেটগুলি গবেষণা করে, পৃষ্ঠাগুলি অপ্টিমাইজ করে, র‌্যাঙ্কিংগুলি ট্র্যাক করে এবং একটি সাধারণ সাপ্তাহিক সামগ্রী ক্যালেন্ডার + কর্মক্ষমতা স্ন্যাপশট সরবরাহ করে৷ বৃহত্তর Matrixly SEO এজেন্টগুলিতে প্রাকৃতিক আপসেল।",
+        "pieces_published_ranking_inquiry_lift_ho": "প্রকাশিত টুকরা · র‌্যাঙ্কিং/তদন্ত লিফট · বিষয়বস্তুর কাজের ঘন্টা সংরক্ষণ করা হয়েছে"
+      },
+      "how": {
+        "operating_system": "অপারেটিং সিস্টেম",
+        "from_discovery_to_managed_workforce": "আবিষ্কার থেকে পরিচালিত কর্মশক্তিতে",
+        "discovery_one_highest_pain_workflow": "আবিষ্কার - একটি সর্বোচ্চ-বেদনা কর্মপ্রবাহ",
+        "low_pressure_fit_call_we_pick_the_single": "কম চাপ ফিট কল. আমরা একক ওয়ার্কফ্লো বেছে নিই যেখানে মাল্টি-স্টেপ অটোমেশন ঘন্টা এবং ডলার দ্রুত দেখাবে। আমরা মান লেজারের জন্য আপনার গৃহীত ঘন্টার হার সেট করি।",
+        "setup_usually_3_7_days": "সেটআপ (সাধারণত 3-7 দিন)",
+        "build_and_connect_the_digital_employee_o": "ডিজিটাল কর্মচারীকে Matrixly-এর স্ট্যাকে তৈরি করুন এবং সংযুক্ত করুন (অস্থির এজেন্ট, শেয়ার্ড শীট, ইমেল/CRM টুল)। ভাগ করা কোচিং চ্যানেল তৈরি করুন। শেয়ার করা ফাইলগুলিতে আউটপুট লিখুন পুরো দল দেখতে পারে৷",
+        "on_site_visit_intensive_coaching_weeks_1": "অন-সাইট পরিদর্শন এবং নিবিড় কোচিং (সপ্তাহ 1-2)",
+        "founder_ceo_visits_or_hybrid_live_traini": "প্রতিষ্ঠাতা/সিইও ভিজিট (বা হাইব্রিড)। আপনার দলের সাথে লাইভ প্রশিক্ষণ. আমরা শেয়ার্ড চ্যানেলে ভারী থাকি যাতে আমরা কীভাবে এজেন্টকে সংক্ষিপ্ত, সংশোধন এবং অনুমোদন করি তা দেখে আপনি শিখতে পারেন।",
+        "ongoing_management_monday_roi": "চলমান ব্যবস্থাপনা + সোমবার ROI",
+        "light_monitoring_fix_before_you_notice_r": "হালকা মনিটরিং, ফিক্স-ফোর-আপনি-নোটিস নির্ভরযোগ্যতা, এবং প্রতি সোমবার একটি সাপ্তাহিক মূল্য রিপোর্ট। যখন প্রথম এজেন্ট স্পষ্টভাবে সময় সাশ্রয় করে, তখন আমরা দ্বিতীয় বিশেষ ডিজিটাল কর্মচারীর প্রস্তাব করি।"
+      },
+      "roi": {
+        "retention_engine": "ধরে রাখার ইঞ্জিন",
+        "the_weekly_roi_report": "সাপ্তাহিক ROI রিপোর্ট",
+        "this_is_the_single_strongest_reason_clie": "এটি একক শক্তিশালী কারণ ক্লায়েন্টরা অর্থ প্রদান করে। একটি পরিষ্কার \"আপনি এই সপ্তাহে $X সংরক্ষণ করেছেন\" বার্তাটি প্রতি সাত দিনে ধারককে পুনরায় বিক্রি করে।",
+        "core_metrics_every_week": "প্রতি সপ্তাহে মূল মেট্রিক্স",
+        "conservative_estimates_only_cumulative_t": "শুধুমাত্র রক্ষণশীল অনুমান। প্রথম দিন থেকে ক্রমবর্ধমান মোট: \"187 ঘন্টা / $18,700 মূল্য।\"",
+        "sample_monday_email": "নমুনা সোমবার ইমেল",
+        "subject_your_digital_employee_week_of_au": "বিষয়: আপনার ডিজিটাল কর্মচারী — আগস্ট 4-10 ROI রিপোর্টের সপ্তাহ",
+        "agent": "এজেন্ট:",
+        "client": "ক্লায়েন্ট:",
+        "period": "সময়কাল:",
+        "this_week_s_snapshot": "এই সপ্তাহের স্ন্যাপশট",
+        "breakdown": "ভাঙ্গন",
+        "t_31_invoices_processed_6_8_hrs": "• 31টি চালান প্রক্রিয়া করা হয়েছে → 6.8 ঘন্টা",
+        "t_9_overdue_flagged_drafts_2_1_hrs": "• 9টি ওভারডিউ পতাকাযুক্ত + খসড়া → 2.1 ঘন্টা",
+        "t_7_payment_matches_1_3_hrs": "• 7 পেমেন্ট ম্যাচ → 1.3 ঘন্টা",
+        "business_impact": "ব্যবসায়িক প্রভাব",
+        "t_48_200_in_invoices_processed_3_late_pa": "$48,200 ইনভয়েস প্রক্রিয়া করা হয়েছে · 3 দেরী পেমেন্ট তাড়াতাড়ি ধরা হয়েছে",
+        "watching_next": "দেখছি/পরবর্তী",
+        "one_vendor_pdf_format_updated_this_morni": "এক বিক্রেতা PDF ফর্ম্যাট আজ সকালে আপডেট করা হয়েছে। আপনি যখন পেমেন্ট অনুস্মারক যোগ করতে প্রস্তুত.",
+        "every_hour_the_agent_handles_is_an_hour_": "প্রতি ঘন্টায় এজেন্ট হ্যান্ডেল এক ঘন্টা আপনি ফিরে পাবেন. আরো ক্ষমতা বা একটি দ্বিতীয় এজেন্ট চান? শুধু উত্তর."
+      },
+      "s31309": {
+        "ideal_clients": "আদর্শ ক্লায়েন্ট",
+        "built_for_owners_who_want_outcomes_not_e": "মালিকদের জন্য নির্মিত যারা ফলাফল চায়, পরীক্ষা নয়",
+        "houston_us_smbs_ready_to_treat_ai_as_sta": "হিউস্টন এবং ইউএস এসএমবি গুলি AI-কে কর্মী হিসাবে বিবেচনা করতে প্রস্তুত - একটি খেলনা নয়",
+        "leaders_who_value_human_coaching_and_wee": "নেতারা যারা DIY এজেন্ট চ্যাটের উপর মানব কোচিং এবং সাপ্তাহিক প্রমাণকে মূল্য দেয়",
+        "teams_burned_by_fragile_diy_agents_that_": "ভঙ্গুর DIY এজেন্টদের দ্বারা পুড়িয়ে ফেলা দলগুলি ভেঙে যায় এবং পরিত্যক্ত হয়",
+        "businesses_where_499_1_200_mo_is_a_fract": "ব্যবসা যেখানে $499–$1,200/মাস এক ভাড়ার একটি ভগ্নাংশ",
+        "delivery": "ডেলিভারি",
+        "founder_led_now_team_led_as_we_grow": "প্রতিষ্ঠাতা নেতৃত্বাধীন এখন. আমরা বড় হওয়ার সাথে সাথে দলের নেতৃত্বে।",
+        "early_white_glove_seats_are_delivered_pe": "প্রাথমিক White Glove আসনগুলি ব্যক্তিগতভাবে Matrixly-এর প্রতিষ্ঠাতা/সিইও দ্বারা বিতরণ করা হয় — আবিষ্কার, অন-সাইট প্রশিক্ষণ, শেয়ার্ড-চ্যানেল কোচিং এবং মাসিক ব্যবস্থাপনা। ভলিউমের উপরে গুণমান। চাহিদা বাড়ার সাথে সাথে প্রশিক্ষিত প্রশিক্ষকরা একই প্লেবুকের অধীনে যোগদান করেন: মান খাতা, প্রথমে নির্ভরযোগ্যতা, শেখার মাধ্যমে দেখা।",
+        "you_only_need_to_be_one_step_ahead_of_th": "আপনাকে কেবল ক্লায়েন্টের থেকে এক ধাপ এগিয়ে থাকতে হবে। আমরা প্রযুক্তিগত গভীরতা এনেছি যাতে বহু-পদক্ষেপ এজেন্ট নির্ভরযোগ্য থাকে — এবং মানুষের উপস্থিতি যাতে মালিকরা কখনই ব্ল্যাক বক্সের সাথে একা বোধ না করেন।"
+      },
+      "s33395": {
+        "white_glove_vs_self_serve": "White Glove বনাম স্ব-পরিষেবা",
+        "grow_scale": "বৃদ্ধি/স্কেল",
+        "white_glove_digital_employee": "White Glove ডিজিটাল কর্মচারী",
+        "what_you_buy": "আপনি কি কিনবেন",
+        "software_seats": "সফটওয়্যার আসন",
+        "managed_employee_coaching": "পরিচালিত কর্মচারী + কোচিং",
+        "self_serve": "স্ব-সেবা",
+        "custom_install_on_site": "কাস্টম ইনস্টল + অন-সাইট",
+        "learning": "শেখা",
+        "docs_community": "ডক্স এবং সম্প্রদায়",
+        "shared_channel_learn_by_watching": "শেয়ার করা চ্যানেল · দেখে শিখুন",
+        "proof": "প্রমাণ",
+        "activity_roi_dashboard": "কার্যকলাপ / ROI ড্যাশবোর্ড",
+        "monday_value_ledger_email": "সোমবার মান লেজার ইমেল",
+        "when_things_break": "যখন জিনিস ভেঙে যায়",
+        "you_debug": "আপনি ডিবাগ",
+        "we_fix_before_you_notice": "আপনি লক্ষ্য করার আগে আমরা ঠিক করি",
+        "price": "দাম",
+        "t_49_149_mo": "$49–$149/মাস",
+        "from_499_mo_setup": "$499/মাস + সেটআপ থেকে"
+      },
+      "faq": {
+        "common_questions": "সাধারণ প্রশ্ন",
+        "is_499_setup_or_monthly": "$499 সেটআপ নাকি মাসিক?",
+        "what_s_the_real_product_the_agent_or_the": "What’s the real product — the agent or the coaching?",
+        "coaching_and_ongoing_management_the_agen": "কোচিং এবং চলমান ব্যবস্থাপনা। এজেন্ট হল ডিজিটাল কর্মচারী; পণ্যটি হল এটি কাজ করে চলেছে, আপনি এটি বুঝতে পেরেছেন এবং আপনি প্রম্পট ইঞ্জিনিয়ার না হয়ে সাপ্তাহিক ROI দেখতে পাচ্ছেন।",
+        "who_visits_on_site": "কে সাইট ভিজিট?",
+        "initially_the_founder_ceo_as_capacity_gr": "প্রাথমিকভাবে প্রতিষ্ঠাতা/সিইও। ক্ষমতা বৃদ্ধির সাথে সাথে প্রশিক্ষিত White Glove কোচ একই মানের অধীনে সরবরাহ করে। আপনার সর্বদা একটি নামযুক্ত অংশীদার থাকবে।",
+        "how_is_this_different_from_diy_agents_th": "এটি DIY এজেন্টদের থেকে কীভাবে আলাদা যেটি ভেঙে যায়?",
+        "reliability_is_a_selling_point_we_manage": "নির্ভরযোগ্যতা একটি বিক্রয় বিন্দু. আমরা আপটাইম পরিচালনা করি, শেয়ার করা শীটে লিখি (ব্যক্তিগত নোট নয়), আপনার চ্যানেলে থাকুন এবং আপনার সোমবার ফায়ার ড্রিল হওয়ার আগে সমস্যাগুলি সমাধান করি।",
+        "can_we_start_on_scale_and_upgrade": "আমরা কি স্কেল এবং আপগ্রেড শুরু করতে পারি?",
+        "yes_many_owners_explore_self_serve_then_": "হ্যাঁ। অনেক মালিক স্ব-পরিষেবা অন্বেষণ করেন, তারপর White Glove-এ চলে যান যখন তারা একটি পরিচালিত ডিজিটাল কর্মচারী এবং সাপ্তাহিক মূল্য প্রতিবেদন চান। আমরা কথোপকথনে সক্রিয় প্ল্যাটফর্ম ব্যবহার থেকে ক্রেডিট ম্যাপ করব।"
+      },
+      "apply": {
+        "low_pressure_next_step": "নিম্নচাপ পরবর্তী ধাপ",
+        "want_a_founding_white_glove_seat": "একটি প্রতিষ্ঠাতা White Glove আসন চান?",
+        "tell_us_your_business_city_and_the_one_w": "আপনার ব্যবসা, শহর এবং সবচেয়ে বেশি সময় চুরি করে এমন একটি কর্মপ্রবাহ আমাদের বলুন। আমরা উপযুক্ত নোট এবং একটি আবিষ্কার স্লট সহ উত্তর দেব — কোন কঠিন বিক্রয় নেই।",
+        "email_founder_anwar_matrixly_world": "ইমেল প্রতিষ্ঠাতা · anwar@matrixly.world",
+        "back_to_pricing": "Back to pricing",
+        "explore_free": "বিনামূল্যে অন্বেষণ"
+      },
+      "footer": {
+        "digital_employees_that_work_while_you_ru": "আপনি ব্যবসা চালানোর সময় ডিজিটাল কর্মীরা কাজ করেন।",
+        "white_glove_inquiry": "White Glove তদন্ত"
+      }
+    }
   }
 }

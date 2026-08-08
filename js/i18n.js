@@ -11,11 +11,14 @@
   const DEFAULT_LANG = "en";
   const STORAGE_KEY = "matrixly-lang";
   const CACHE_PREFIX = "matrixly-i18n-catalog:";
-  const CACHE_VERSION = "v4";
+  const CACHE_VERSION = "v5";
   const BASE = "/i18n/";
 
   let currentLang = DEFAULT_LANG;
   let catalog = {};
+  let enCatalog = null;
+  /** English text → translated text (for unmarked nodes) */
+  let exactTextMap = {};
   /** @type {Record<string, object>} */
   const memoryCache = {};
 
@@ -23,6 +26,49 @@
     return path.split(".").reduce(function (o, k) {
       return o && o[k] != null ? o[k] : null;
     }, obj);
+  }
+
+  function flattenStrings(obj, out) {
+    if (!out) out = {};
+    if (obj && typeof obj === "object" && !Array.isArray(obj)) {
+      Object.keys(obj).forEach(function (k) {
+        flattenStrings(obj[k], out);
+      });
+    } else if (typeof obj === "string" && obj.length > 0) {
+      // first wins for reverse map source
+      if (out[obj] === undefined) out[obj] = true;
+    }
+    return out;
+  }
+
+  function flattenKeyValues(obj, prefix, out) {
+    if (!out) out = {};
+    if (!prefix) prefix = "";
+    if (obj && typeof obj === "object" && !Array.isArray(obj)) {
+      Object.keys(obj).forEach(function (k) {
+        var p = prefix ? prefix + "." + k : k;
+        flattenKeyValues(obj[k], p, out);
+      });
+    } else if (typeof obj === "string") {
+      out[prefix] = obj;
+    }
+    return out;
+  }
+
+  function buildExactTextMap() {
+    exactTextMap = {};
+    if (!enCatalog || !catalog || currentLang === "en") return;
+    var enFlat = flattenKeyValues(enCatalog, "", {});
+    var langFlat = flattenKeyValues(catalog, "", {});
+    Object.keys(enFlat).forEach(function (key) {
+      var enVal = enFlat[key];
+      var trVal = langFlat[key];
+      if (enVal && trVal && enVal !== trVal) {
+        // Prefer longer / more specific later overwrites shorter collisions carefully:
+        // only set if not already mapped, or if same key path longer
+        if (!exactTextMap[enVal]) exactTextMap[enVal] = trVal;
+      }
+    });
   }
 
   function cacheKey(lang) {
@@ -108,13 +154,43 @@
     }
   }
 
+  function applyExactTextFallback() {
+    if (currentLang === "en" || !exactTextMap || !Object.keys(exactTextMap).length) return;
+    var selectors = "h1,h2,h3,h4,h5,h6,p,button,a,label,span,li,th,td,figcaption,legend";
+    document.querySelectorAll(selectors).forEach(function (el) {
+      // Skip if already keyed, or has element children with nested text structure we shouldn't crush
+      if (el.hasAttribute("data-i18n") || el.hasAttribute("data-i18n-html")) return;
+      if (el.getAttribute("aria-hidden") === "true") return;
+      // Only pure text nodes (no element children) — safe exact replace
+      if (el.children && el.children.length > 0) return;
+      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
+      if (!text || text.length < 2) return;
+      var tr = exactTextMap[text];
+      if (tr != null) el.textContent = tr;
+    });
+  }
+
   function applyTranslations() {
     document.querySelectorAll("[data-i18n], [data-i18n-html], [data-i18n-attr]").forEach(translateElement);
+    applyExactTextFallback();
   }
 
   async function setLanguage(lang) {
     if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
+    // Always have English catalog for reverse text map
+    if (!enCatalog) {
+      try {
+        enCatalog = await fetchCatalog("en");
+      } catch (_) {
+        enCatalog = {};
+      }
+    }
     await loadCatalog(lang);
+    if (lang === "en") {
+      // keep enCatalog in sync
+      enCatalog = catalog;
+    }
+    buildExactTextMap();
     applyDirection(lang);
     applyTranslations();
     try {

@@ -99,16 +99,16 @@
       </a>
       <nav class="hidden sm:flex items-center gap-6">
         <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
-        <a href="/pipeline-forge" class="nav-link">Pipeline</a>
-        <a href="#embed" class="nav-link">Embed</a>
+        <a href="/pipeline-forge" class="nav-link" data-i18n="site.etf_analyzer.page.pipeline">Pipeline</a>
+        <a href="#embed" class="nav-link" data-i18n="site.book_wise.page.embed">Embed</a>
       </nav>
-      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg">Deploy</a>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.book_wise.page.deploy">Deploy</a>
     </div>
   </header>
 
   <main>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
-      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide">Finance · Ready to use</p>
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.etf_analyzer.s4290.finance_ready_to_use">Finance · Ready to use</p>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">ETF Portfolio Analyzer</h1>
       <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
         Live market data, yield projections, NAV risk, and tax-aware strategies — so SMB owners and individual investors
@@ -120,25 +120,25 @@
         <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Educational framing — not personal advice</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-6">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">FastAPI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Port 8797</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">Default QQQI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.fastapi">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.etf_analyzer.s4290.port_8797">Port 8797</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.etf_analyzer.s4290.default_qqqi">Default QQQI</span>
       </div>
     </section>
 
     <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" data-agent-feature-grid>
-        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">1. Snapshot</h2><p class="text-sm text-matrix-soft">Price, volume, 52w range, AUM, expense ratio.</p></article>
-        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">2. Yield</h2><p class="text-sm text-matrix-soft">TTM yield, distributions, annualized context.</p></article>
-        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">3. NAV risk</h2><p class="text-sm text-matrix-soft">Premium/discount and structural notes.</p></article>
-        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2">4. Tax-aware</h2><p class="text-sm text-matrix-soft">Distribution character &amp; account framing.</p></article>
-        <article class="card-matrix rounded-2xl p-5 sm:col-span-2 lg:col-span-1"><h2 class="font-bold mb-2">5. Notion</h2><p class="text-sm text-matrix-soft">Optional knowledge-layer save.</p></article>
+        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2" data-i18n="site.etf_analyzer.s5739.t_1_snapshot">1. Snapshot</h2><p class="text-sm text-matrix-soft" data-i18n="site.etf_analyzer.s5739.price_volume_52w_range_aum_expense_ratio">Price, volume, 52w range, AUM, expense ratio.</p></article>
+        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2" data-i18n="site.etf_analyzer.s5739.t_2_yield">2. Yield</h2><p class="text-sm text-matrix-soft" data-i18n="site.etf_analyzer.s5739.ttm_yield_distributions_annualized_conte">TTM yield, distributions, annualized context.</p></article>
+        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2" data-i18n="site.etf_analyzer.s5739.t_3_nav_risk">3. NAV risk</h2><p class="text-sm text-matrix-soft" data-i18n="site.etf_analyzer.s5739.premium_discount_and_structural_notes">Premium/discount and structural notes.</p></article>
+        <article class="card-matrix rounded-2xl p-5"><h2 class="font-bold mb-2" data-i18n="site.etf_analyzer.s5739.t_4_tax_aware">4. Tax-aware</h2><p class="text-sm text-matrix-soft" data-i18n="site.etf_analyzer.s5739.distribution_character_account_framing">Distribution character &amp; account framing.</p></article>
+        <article class="card-matrix rounded-2xl p-5 sm:col-span-2 lg:col-span-1"><h2 class="font-bold mb-2" data-i18n="site.etf_analyzer.s5739.t_5_notion">5. Notion</h2><p class="text-sm text-matrix-soft" data-i18n="site.etf_analyzer.s5739.optional_knowledge_layer_save">Optional knowledge-layer save.</p></article>
       </div>
     </section>
 
     <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Deploy</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.page.deploy">Deploy</h2>
         <p class="text-sm text-matrix-soft mb-6">Code: <code class="text-xs">agents/etf-analyzer</code></p>
         <pre class="cmd mb-6">cd agents/etf-analyzer
 python -m venv .venv
@@ -156,13 +156,13 @@ python -m src.cli serve
 
     <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div class="card-matrix rounded-2xl p-6 sm:p-8">
-        <h2 class="text-xl font-bold text-matrix-cream mb-2">Embed</h2>
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.page.embed">Embed</h2>
         <pre class="cmd mb-6">&lt;script
   src="https://YOUR_ETF_HOST/static/widget/embed.js"
   data-api="https://YOUR_ETF_HOST"
   async&gt;&lt;/script&gt;</pre>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">Back to marketplace</a>
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
           <a href="/pipeline-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">PipelineForge</a>
         </div>
       </div>
@@ -171,8 +171,8 @@ python -m src.cli serve
 
   <footer class="border-t border-matrix-border py-8">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
-      <span>Matrixly · ETF Portfolio Analyzer v1.0</span>
-      <a href="/agents" class="text-[#117ACA] hover:underline">Back to agents</a>
+      <span data-i18n="site.etf_analyzer.footer.matrixly_etf_portfolio_analyzer_v1_0">Matrixly · ETF Portfolio Analyzer v1.0</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
     </div>
   </footer>
   <script src="/js/i18n.js" defer></script>
