@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly platform for US small businesses — always-on AI agents, your playbooks and SOPs, smart reasoning, and 100+ app connections. Browse the full product suite." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Products — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    
+    /* ========== LIGHT / DARK THEME TOKENS ========== */
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --brand-blue-light: #DCEBFB;
+      --brand-blue-soft: #E8F4FC;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --shadow-sm: 0 1px 3px rgba(33, 30, 30, 0.06);
+      --shadow-md: 0 8px 24px rgba(17, 122, 202, 0.12);
+      --input-bg: #FFFFFF;
+      --toggle-bg: #F0F4F8;
+      --toggle-border: #D0D7DE;
+      --grid-line: rgba(17, 122, 202, 0.04);
+      --matrix-green: #117ACA;
+      --matrix-green-text: #117ACA;
+      --matrix-neon: #117ACA;
+      --matrix-neon-text: #117ACA;
+      --matrix-forest: #0B5CAB;
+      --matrix-forest-text: #0B5CAB;
+      color-scheme: light;
+    }
+
+    html.dark {
+      --brand-blue: #3B9FE0;
+      --brand-blue-dark: #117ACA;
+      --brand-blue-hover: #5BB0E8;
+      --brand-blue-light: #1A3A52;
+      --brand-blue-soft: #152536;
+      --ink: #F0F4F8;
+      --soft: #9AA4B2;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B1220;
+      --bg-alt: #111827;
+      --bg-muted: #151C28;
+      --card: #151C28;
+      --nav-bg: rgba(11, 18, 32, 0.94);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 28px rgba(17, 122, 202, 0.18);
+      --input-bg: #111827;
+      --toggle-bg: #1A2332;
+      --toggle-border: #1E2A3A;
+      --grid-line: rgba(59, 159, 224, 0.07);
+      --matrix-green: #3B9FE0;
+      --matrix-green-text: #3B9FE0;
+      --matrix-neon: #3B9FE0;
+      --matrix-neon-text: #3B9FE0;
+      --matrix-forest: #117ACA;
+      --matrix-forest-text: #117ACA;
+      color-scheme: dark;
+    }
+
+    html.dark section.border-y,
+    html.dark section.border-t,
+    html.dark section.border-b,
+    html.dark footer.border-t,
+    html.dark header.border-b {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-t.border-matrix-border,
+    html.dark .border-b.border-matrix-border,
+    html.dark .border-y.border-matrix-border {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .nav-scrolled {
+      border-bottom-color: var(--section-divider);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-forest { color: var(--brand-blue-dark) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .hover\:text-matrix-cream:hover { color: var(--ink) !important; }
+
+    .bg-matrix-black { background-color: var(--bg) !important; }
+    .bg-matrix-void { background-color: var(--bg-alt) !important; }
+    .bg-matrix-muted { background-color: var(--bg-muted) !important; }
+    .bg-matrix-card { background-color: var(--card) !important; }
+    .bg-black { background-color: var(--bg-alt) !important; }
+
+    .border-matrix-border { border-color: var(--border) !important; }
+
+    .grid-bg {
+      background-image: none;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-height: 40px;
+      border-radius: 0.5rem;
+      background: var(--toggle-bg);
+      border: 1.5px solid var(--toggle-border);
+      color: var(--brand-blue);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue-soft);
+      transform: translateY(-1px);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+    .theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      display: block;
+    }
+    html.dark .theme-icon-sun { display: none; }
+    html:not(.dark) .theme-icon-moon { display: none; }
+    html.dark .theme-icon-moon { display: block; }
+    html:not(.dark) .theme-icon-sun { display: block; }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: #FFFFFF !important;
+    }
+    .btn-primary:active {
+      background: var(--brand-blue-dark) !important;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--brand-blue);
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .neon-tile,
+    .text-tile {
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+    }
+    .neon-tile span,
+    .text-tile-base span,
+    .text-tile > span {
+      color: var(--brand-blue);
+    }
+
+    .badge-popular {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue);
+    }
+
+    .terminal-window {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .terminal-header {
+      background: var(--brand-blue-soft);
+      border-bottom: 1px solid var(--border);
+    }
+    .cursor-blink::after { color: var(--brand-blue); }
+
+    .chart-bar-fill {
+      background: linear-gradient(180deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    }
+    .flow-step-line {
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--brand-blue) 15%, transparent),
+        color-mix(in srgb, var(--brand-blue) 45%, transparent),
+        color-mix(in srgb, var(--brand-blue) 15%, transparent));
+    }
+
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
+
+    .section-alt { background: var(--bg-alt); }
+
+    .search-input {
+      background: var(--input-bg);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-blue) 15%, transparent);
+    }
+    .filter-chip {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--soft);
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+
+    #signup-form input {
+      background: var(--input-bg);
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+/* theme tokens defined in LIGHT / DARK THEME TOKENS */
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .grid-bg {
+      background-image: none;
+    }
+    .btn-primary {
+      background: var(--brand-blue) !important; color: #FFFFFF !important; font-weight: 700;
+      border: 1.5px solid var(--brand-blue) !important; border-radius: 0.5rem !important;
+      min-height: 44px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 2px rgba(17, 122, 202, 0.2);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important; border-color: var(--brand-blue-hover) !important; color: #FFFFFF !important;
+      transform: translateY(-1px); box-shadow: 0 4px 12px rgba(17, 122, 202, 0.28);
+    }
+    .btn-secondary {
+      background: var(--card) !important; color: var(--brand-blue) !important; font-weight: 600;
+      border: 1.5px solid var(--brand-blue) !important; border-radius: 0.5rem !important;
+      min-height: 44px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important; border-color: var(--brand-blue-hover) !important; color: var(--brand-blue-dark) !important;
+      transform: translateY(-1px);
+    }
+    .card-matrix {
+      background: var(--card); border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17, 122, 202, 0.12);
+    }
+    .nav-scrolled {
+      background: var(--nav-bg); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(33,30,30,0.06);
+    }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: var(--bg);
+    }
+    .mobile-menu.open {
+      max-height: min(80vh, 560px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    }
+    .mobile-menu a:not(.btn-primary) {
+      color: var(--ink);
+      border-radius: 0.5rem;
+    }
+    .mobile-menu a:not(.btn-primary):hover {
+      color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 8%, transparent);
+    }
+    body.menu-open { overflow: hidden; touch-action: none; }
+    @media (max-width: 767px) {
+      #navbar {
+        background: var(--nav-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+      }
+      #navbar.menu-open {
+        background: var(--bg);
+        border-bottom-color: var(--border);
+        box-shadow: 0 1px 8px rgba(33,30,30,0.06);
+      }
+    }
+    .h1-fluid { font-size: clamp(1.6rem, 4.2vw + 0.65rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; word-wrap: break-word; overflow-wrap: anywhere; max-width: 100%; }
+    .h2-fluid { font-size: clamp(1.4rem, 3.2vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; word-wrap: break-word; overflow-wrap: anywhere; max-width: 100%; }
+    .neon-tile {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 2.75rem; height: 2.75rem; padding: 0 0.5rem; border-radius: 0.5rem;
+      background: var(--brand-blue-soft); border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent); flex-shrink: 0;
+    }
+    .neon-tile span {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem; font-weight: 700; color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-beta { color: #B45309; background: rgba(180,83,9,0.1); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 4px; }
+    @media (max-width: 767px) {
+      .card-matrix:hover, .btn-primary:hover, .btn-secondary:hover { transform: none; }
+    }
+
+    /* Top nav alignment grid */
+    #navbar .nav-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 1rem;
+      min-height: 4rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-row { min-height: 5rem; }
+    }
+    #navbar .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      text-decoration: none;
+    }
+    #navbar .nav-brand img {
+      width: 2.25rem;
+      height: 2.25rem;
+      display: block;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 0.45rem;
+      background: #0B1220;
+      filter: drop-shadow(0 1px 2px rgba(17, 122, 202, 0.18));
+    }
+    html.dark #navbar .nav-brand img {
+      background: #0B1220;
+      filter: drop-shadow(0 0 8px rgba(59, 159, 224, 0.35));
+    }
+    #navbar .nav-links {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem 1.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-actions {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-links,
+      #navbar .nav-actions { display: inline-flex; }
+    }
+    #navbar .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 0.15rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--soft);
+      transition: color 0.15s ease;
+    }
+    #navbar .nav-link:hover,
+    #navbar .nav-link[aria-current="page"] {
+      color: var(--brand-blue);
+    }
+    #navbar .nav-actions .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 1.25rem;
+      line-height: 1;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    #navbar .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-mobile { display: none; }
+    }
+    #navbar .nav-mobile #mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="bg-matrix-black antialiased">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="nav-row">
+        <a href="/" class="nav-brand group" aria-label="Matrixly Home">
+          <img src="/assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
+          <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
+            <span class="text-matrix-cream">Matrixly</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="/#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How it Works</a>
+          <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+          <a href="/products" class="nav-link" aria-current="page" data-i18n="full.final_cta.products">Products</a>
+          <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
+          <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        </div>
+        <div class="nav-end">
+          <div class="nav-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <a href="/#final-cta" class="btn-primary rounded-lg" data-i18n="nav.getStarted">Get Started</a>
+          </div>
+          <div class="nav-mobile">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
+              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="py-4 space-y-1 border-t border-matrix-border">
+          <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.agents">Agents</a>
+          <a href="/products" class="block px-3 py-3 font-bold text-matrix-green" aria-current="page" data-i18n="full.final_cta.products">Products</a>
+          <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.integrations">Integrations</a>
+          <a href="/pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a>
+          <a href="/#final-cta" class="btn-primary block text-center mt-3 px-5 py-3" data-i18n="nav.getStarted">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-20 md:pt-24">
+    <!-- HERO -->
+    <section class="py-14 sm:py-20 grid-bg border-b border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase" data-i18n="site.pricing.footer.platform">Platform</p>
+        <h1 class="h1-fluid font-extrabold text-matrix-cream mb-4 max-w-3xl leading-tight">
+          Everything that makes your agents <span class="text-matrix-green" data-i18n="site.products.s23003.reliable">reliable</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8" data-i18n="site.products.s23003.agents_that_remember_your_business_reaso">
+          Agents that remember your business, reason carefully, and take action in the apps you already use — so owners get outcomes, not another tool to babysit.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/agents" class="btn-primary px-6 py-3 text-sm" data-i18n="full.final_cta.browse_agents_2">Browse agents</a>
+          <a href="/integrations" class="btn-secondary px-6 py-3 text-sm" data-i18n="site.products.s23003.view_integrations">View integrations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE PRODUCTS -->
+    <section id="suite" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="text-sm font-semibold text-matrix-green mb-3 uppercase tracking-wide" data-i18n="site.products.suite.how_the_platform_works">How the platform works</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-3" data-i18n="site.products.suite.built_so_busy_owners_can_trust_the_outco">Built so busy owners can trust the outcome</h2>
+          <p class="text-matrix-soft" data-i18n="site.products.suite.from_always_on_agents_to_your_business_p">From always-on agents to your business playbooks — every layer is designed for real SMB workflows, not science projects.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 lg:gap-6">
+          <article id="hermes" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="neon-tile"><span>RUN</span></div>
+              <span class="text-xs font-semibold px-2 py-1 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="products.card1Title">Always-on agent engine</h3>
+            <p class="text-sm text-matrix-soft mb-5 leading-relaxed" data-i18n="site.products.suite.the_engine_that_keeps_agents_working_aft">
+              The engine that keeps agents working after you close the laptop — with memory of your preferences, skills for common tasks, and safe access to your tools.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Remembers context across jobs</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Uses your tools to finish work</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Long-term business memory</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Health checks &amp; easy setup</li>
+            </ul>
+            <p class="text-xs font-semibold text-matrix-green" data-i18n="site.products.suite.runtime_cloud_ready">Runtime · cloud-ready</p>
+          </article>
+
+          <article id="notion" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="neon-tile"><span>KNOW</span></div>
+              <span class="text-xs font-semibold px-2 py-1 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.products.suite.your_playbooks_knowledge">Your playbooks &amp; knowledge</h3>
+            <p class="text-sm text-matrix-soft mb-5 leading-relaxed" data-i18n="site.products.suite.teach_agents_how_your_business_works_pri">
+              Teach agents how your business works — pricing rules, brand voice, SOPs, and FAQs — so every reply and decision stays on-brand.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Live agent marketplace catalog</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> SOPs and client docs as context</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Agents can read and update knowledge</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Single source of truth for your team</li>
+            </ul>
+            <p class="text-xs font-semibold text-matrix-green" data-i18n="site.products.suite.knowledge_always_in_sync">Knowledge · always in sync</p>
+          </article>
+
+          <article id="grok" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="neon-tile"><span>THINK</span></div>
+              <span class="text-xs font-semibold px-2 py-1 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="products.card3Title">Smart decision-making</h3>
+            <p class="text-sm text-matrix-soft mb-5 leading-relaxed" data-i18n="site.products.suite.advanced_ai_reasoning_powers_multi_step_">
+              Advanced AI reasoning powers multi-step work across sales, shipping, finance, and support — with structure you can audit, not black-box guesswork.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Plans multi-step tasks end to end</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Takes action in your connected apps</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Local SEO &amp; content intelligence</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Clear, reviewable outputs</li>
+            </ul>
+            <p class="text-xs font-semibold text-matrix-green" data-i18n="site.products.suite.intelligence_powered_by_grok_xai">Intelligence · powered by Grok (xAI)</p>
+          </article>
+
+          <article id="mcp" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="neon-tile"><span>LINK</span></div>
+              <span class="text-xs font-semibold px-2 py-1 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="products.card4Title">100+ app connections</h3>
+            <p class="text-sm text-matrix-soft mb-5 leading-relaxed" data-i18n="site.products.suite.secure_connectors_wire_agents_into_gmail">
+              Secure connectors wire agents into Gmail, Shopify, QuickBooks, ShipStation, HubSpot, carriers, Slack, and more — so they do real work, not just chat.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft mb-6">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Email, CRM, ecommerce, carriers</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> QuickBooks, calendars, Slack</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Encrypted credential vault</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Multi-app workflows in one place</li>
+            </ul>
+            <a href="/integrations" class="btn-secondary text-xs px-4 py-2.5 w-full" data-i18n="site.products.suite.browse_integrations">Browse integrations →</a>
+          </article>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 lg:gap-6 mt-5 lg:mt-6">
+          <article id="mobile" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="neon-tile"><span data-i18n="site.products.suite.mobile">MOBILE</span></div>
+              <span class="text-xs font-semibold px-2 py-1 rounded status-soon" data-i18n="site.products.suite.coming_soon">Coming soon</span>
+            </div>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.products.suite.matrixly_mobile">Matrixly Mobile</h3>
+            <p class="text-sm text-matrix-soft mb-5 leading-relaxed" data-i18n="site.products.suite.owner_dashboard_on_your_phone_check_agen">
+              Owner dashboard on your phone — check agent activity, approve exceptions, and get lead or shipping alerts on the go.
+            </p>
+            <ul class="space-y-2 text-sm text-matrix-soft">
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Activity history &amp; alerts</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Approve handoffs when needed</li>
+              <li class="flex gap-2"><span class="text-matrix-green">▸</span> Built for busy owners (roadmap)</li>
+            </ul>
+          </article>
+
+          <article id="orchestrator" class="card-matrix rounded-2xl p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="neon-tile"><span data-i18n="site.products.suite.flow">FLOW</span></div>
+              <span class="text-xs font-semibold px-2 py-1 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.products.suite.coordinated_agent_workflows">Coordinated agent workflows</h3>
+            <p class="text-sm text-matrix-soft mb-5 leading-relaxed" data-i18n="site.products.suite.specialists_work_together_with_human_che">
+              Specialists work together with human checkpoints, full audit logs, and usage tracking — plus a Starter Pack dashboard for support, booking, and invoices.
+            </p>
+            <div class="text-xs text-matrix-soft bg-matrix-cream/[0.03] border border-matrix-border/40 rounded-xl p-4 leading-relaxed space-y-1.5">
+              <p><span class="text-matrix-cream font-medium">1.</span> Customer action (form, email, order)</p>
+              <p><span class="text-matrix-cream font-medium">2.</span> Right agent picks up the job</p>
+              <p><span class="text-matrix-cream font-medium">3.</span> Human review only when needed</p>
+              <p><span class="text-matrix-cream font-medium">4.</span> CRM, calendar, accounting, email updated</p>
+            </div>
+            <a href="/starter-pack" class="btn-secondary text-xs px-4 py-2.5 w-full mt-5 inline-flex items-center justify-center" data-i18n="site.products.suite.open_starter_pack">Open Starter Pack →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENT MARKETPLACE -->
+    <section id="marketplace" class="py-16 sm:py-24 bg-matrix-void border-y border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold text-matrix-green mb-3 uppercase tracking-wide" data-i18n="site.agents.s23091.agent_marketplace">Agent marketplace</p>
+            <h2 class="h2-fluid font-bold text-matrix-cream mb-3" data-i18n="site.products.marketplace.live_agents_you_can_start_today">Live agents you can start today</h2>
+            <p class="text-matrix-soft" data-i18n="site.products.marketplace.ready_agents_with_simple_dashboards_and_">
+              Ready agents with simple dashboards and human approval where it matters —
+              sales, support, shipping, finance, content, meetings, social, and more.
+            </p>
+          </div>
+          <a href="/agents" class="btn-secondary text-sm px-5 py-2.5 self-start" data-i18n="site.products.marketplace.browse_full_catalog">Browse full catalog →</a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a href="/starter-pack" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors border-matrix-green/30">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.pack">PACK</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Starter Pack</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.supportforge_bookwise_invoiceforge_with_">SupportForge + BookWise + InvoiceForge with one unified dashboard, analytics, and embeds.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.bundle">Bundle</p>
+          </a>
+          <a href="/lead-qualifier" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>LEAD</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Lead Qualifier</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.score_inbound_leads_enrich_contacts_draf">Score inbound leads, enrich contacts, draft outreach. Salesforce · Gmail.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.sales">Sales</p>
+          </a>
+          <a href="/email-assistant" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>MAIL</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Email Assistant</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.triage_inbox_draft_replies_flag_urgent_i">Triage inbox, draft replies, flag urgent items, daily brief.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="auth.email">Email</p>
+          </a>
+          <a href="/crm-assistant" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>CRM</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">CRM Assistant</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.update_contacts_log_activities_pipeline_">Update contacts, log activities, pipeline hygiene with approve-to-write.</p>
+            <p class="font-mono text-[10px] text-matrix-green">CRM</p>
+          </a>
+          <a href="/shipping-assistant" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>SHIP</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Shipping Assistant</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.shipstation_hub_track_exceptions_wismo_d">ShipStation hub — track, exceptions, WISMO drafts. UPS · FedEx · USPS.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.logistics">Logistics</p>
+          </a>
+          <a href="/support-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.supp">SUPP</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">SupportForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.embeddable_support_triage_kb_answers_tic">Embeddable support: triage, KB answers, tickets, HITL escalation, chat widget.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.support">Support</p>
+          </a>
+          <a href="/book-wise" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.book">BOOK</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">BookWise</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.ai_booking_availability_confirmations_re">AI booking: availability, confirmations, reminders, reschedule, calendar sync.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.scheduling">Scheduling</p>
+          </a>
+          <a href="/invoice-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.invc">INVC</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">InvoiceForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.invoice_ocr_extract_validate_post_to_qb_">Invoice OCR/extract, validate, post to QB/Xero/CSV, exceptions, AR reminders.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.finance">Finance</p>
+          </a>
+          <a href="/invoice-processor" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.inv">INV</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">Invoice Processor</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.pydantic_ai_ap_extract_pdf_email_match_p">Pydantic AI AP: extract PDF/email, match POs, discrepancies, HITL before pay.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.finance">Finance</p>
+          </a>
+          <a href="/content-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.cont">CONT</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">ContentForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.seo_blogs_social_newsletters_ads_brand_v">SEO blogs, social, newsletters, ads — brand voice + HITL before publish.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.marketing">Marketing</p>
+          </a>
+          <a href="/seo-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span>SEO</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">SEOForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.local_organic_seo_for_us_smbs_plans_bran">Local &amp; organic SEO for US SMBs — plans, brand-voice content, GBP, keywords, ROI + HITL.</p>
+            <p class="font-mono text-[10px] text-matrix-green">SEO</p>
+          </a>
+          <a href="/meet-wise" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.meet">MEET</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">MeetWise</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.meeting_outcomes_summaries_actions_crm_n">Meeting outcomes: summaries, actions, CRM notes, recap emails from transcripts.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.meetings">Meetings</p>
+          </a>
+          <a href="/social-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.social">SOCIAL</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">SocialForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.multi_platform_posts_schedule_inbox_repl">Multi-platform posts, schedule, inbox replies, insights — brand voice + HITL.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.social">Social</p>
+          </a>
+          <a href="/pipeline-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.pipe">PIPE</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">PipelineForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.score_prioritize_deals_fit_engagement_at">Score &amp; prioritize deals: fit/engagement, at-risk flags, CRM stage suggestions.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.sales">Sales</p>
+          </a>
+          <a href="/doc-forge" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.doc">DOC</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">DocForge</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.proposals_quotes_contracts_reports_from_">Proposals, quotes, contracts, reports from templates — HITL, PDF/MD/HTML export.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.documents">Documents</p>
+          </a>
+          <a href="/etf-analyzer" class="card-matrix rounded-2xl p-5 flex flex-col hover:border-matrix-green/50 transition-colors">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.agents.catalog.etf">ETF</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-live" data-i18n="hero.live">Live</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1">ETF Portfolio Analyzer</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.free_yahoo_data_yield_nav_risk_tax_aware">Free Yahoo data: yield, NAV risk, tax-aware notes. Default QQQI · optional Notion.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="full.hero.finance">Finance</p>
+          </a>
+          <div class="card-matrix rounded-2xl p-5 flex flex-col opacity-90">
+            <div class="flex justify-between items-start mb-3">
+              <div class="neon-tile"><span data-i18n="site.products.marketplace.mob">MOB</span></div>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded status-soon" data-i18n="site.products.marketplace.soon">Soon</span>
+            </div>
+            <h3 class="font-bold text-matrix-cream mb-1" data-i18n="site.products.suite.matrixly_mobile">Matrixly Mobile</h3>
+            <p class="text-xs text-matrix-soft mb-3 flex-grow" data-i18n="site.products.marketplace.owner_app_for_run_history_hitl_approvals">Owner app for run history, HITL approvals, and alerts — roadmap.</p>
+            <p class="font-mono text-[10px] text-matrix-green" data-i18n="site.pricing.footer.platform">Platform</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY THIS STACK -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p class="text-sm font-semibold text-matrix-green mb-3 uppercase tracking-wide" data-i18n="compare.eyebrow">Why Matrixly</p>
+            <h2 class="h2-fluid font-bold text-matrix-cream mb-4" data-i18n="site.products.s45135.built_for_small_businesses_not_enterpris">Built for small businesses — not enterprise theater</h2>
+            <p class="text-matrix-soft mb-6 leading-relaxed" data-i18n="site.products.s45135.a_practical_platform_for_owners_always_o">
+              A practical platform for owners: always-on agents, your playbooks as context,
+              smart reasoning, secure app connections, and human approval when money or customers are on the line.
+            </p>
+            <ul class="space-y-3 text-sm text-matrix-soft mb-8">
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> <span data-live-agent-count>14</span> live agents + Starter Pack for support, booking &amp; invoices</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> You approve before high-impact actions go out</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Shipping, support, billing, and marketing covered</li>
+              <li class="flex gap-2"><span class="text-matrix-green">✓</span> Start free — live in minutes, not months</li>
+            </ul>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="/#final-cta" class="btn-primary px-6 py-3 text-sm text-center" data-i18n="common.startFree">Start free</a>
+              <a href="/agents" class="btn-secondary px-6 py-3 text-sm text-center" data-i18n="full.final_cta.browse_agents_2">Browse agents</a>
+            </div>
+          </div>
+          <div class="card-matrix rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-bold text-matrix-cream" data-i18n="site.products.s45135.your_workspace_status">Your workspace status</p>
+              <span class="text-xs font-semibold text-matrix-green bg-matrix-green/10 px-2.5 py-1 rounded-full" data-i18n="site.products.s45135.healthy">Healthy</span>
+            </div>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-center gap-2 text-matrix-soft"><span class="text-matrix-green font-bold">✓</span> Agent engine online</li>
+              <li class="flex items-center gap-2 text-matrix-soft"><span class="text-matrix-green font-bold">✓</span> Business knowledge connected</li>
+              <li class="flex items-center gap-2 text-matrix-soft"><span class="text-matrix-green font-bold">✓</span> Smart reasoning ready</li>
+              <li class="flex items-center gap-2 text-matrix-soft"><span class="text-matrix-green font-bold">✓</span> App connections secure</li>
+            </ul>
+            <div class="pt-3 border-t border-matrix-border/40 text-xs text-matrix-soft space-y-1.5">
+              <p><span class="text-matrix-cream font-medium" data-i18n="site.products.s45135.live">Live:</span> Lead · Email · CRM · Shipping</p>
+              <p><span class="text-matrix-cream font-medium" data-i18n="site.products.s45135.live">Live:</span> Support · Book · Invoice · Starter Pack</p>
+              <p><span class="text-matrix-cream font-medium" data-i18n="site.products.s45135.live">Live:</span> Content · Meet · Social · Pipeline · Docs</p>
+              <p><span class="text-matrix-cream font-medium" data-i18n="site.products.s45135.soon">Soon:</span> Mobile owner app</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 grid-bg border-t border-matrix-border/40">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="h2-fluid font-extrabold text-matrix-cream mb-4" data-i18n="site.products.s48425.start_with_one_agent_or_the_full_pack">Start with one agent — or the full pack</h2>
+        <p class="text-matrix-soft mb-8" data-i18n="site.products.s48425.try_starter_pack_for_support_booking_and">Try Starter Pack for support, booking, and invoices, or pick a single agent. Free to explore.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/starter-pack" class="btn-primary px-8 py-3.5 text-sm" data-i18n="full.hero.try_starter_pack">Try Starter Pack</a>
+          <a href="/agents" class="btn-secondary px-8 py-3.5 text-sm" data-i18n="full.final_cta.browse_agents_2">Browse agents</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border/50 bg-matrix-void pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="/" class="font-mono font-bold text-lg mb-3 inline-flex items-center gap-2">
+            <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="w-8 h-8 object-contain rounded-md flex-shrink-0" />
+            <span><span class="text-matrix-cream">Matrixly</span></span>
+          </a>
+          <p class="text-sm text-matrix-soft" data-i18n="site.agents.footer.ai_agents_that_work_while_you_run_your_b">AI agents that work while you run your business.</p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.product">Product</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="/products" class="hover:text-matrix-green" data-i18n="full.final_cta.products">Products</a></li>
+            <li><a href="/agents" class="hover:text-matrix-green" data-i18n="nav.agents">Agents</a></li>
+            <li><a href="/integrations" class="hover:text-matrix-green" data-i18n="nav.integrations">Integrations</a></li>
+            <li><a href="/pricing" class="hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="site.pricing.footer.platform">Platform</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="#hermes" class="hover:text-matrix-green" data-i18n="site.pricing.footer.agent_engine">Agent engine</a></li>
+            <li><a href="#marketplace" class="hover:text-matrix-green" data-i18n="site.agents.s23091.agent_marketplace">Agent marketplace</a></li>
+            <li><a href="/starter-pack" class="hover:text-matrix-green">Starter Pack</a></li>
+            <li><a href="#mcp" class="hover:text-matrix-green" data-i18n="site.pricing.footer.app_connections">App connections</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.contact">Contact</h4>
+          <ul class="space-y-2 text-sm text-matrix-soft">
+            <li><a href="/#final-cta" class="hover:text-matrix-green" data-i18n="nav.getStarted">Get started</a></li>
+            <li><a href="/#final-cta" class="hover:text-matrix-green" data-i18n="site.agents.footer.talk_to_sales">Talk to sales</a></li>
+            <li><a href="/admin" class="hover:text-matrix-green" data-i18n="site.agents.footer.qa_admin">QA Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-matrix-soft font-mono border-t border-matrix-border/40 pt-6">© <span id="year"></span> Matrixly · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      const nav = document.getElementById('navbar');
+      const onScroll = () => nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+        (function () {
+      const toggle = document.getElementById('mobile-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      const nav = document.getElementById('navbar');
+      if (!toggle || !menu) return;
+      function setMenuOpen(open) {
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (iconMenu) iconMenu.classList.toggle('hidden', open);
+        if (iconClose) iconClose.classList.toggle('hidden', !open);
+        if (nav) nav.classList.toggle('menu-open', open);
+        document.body.classList.toggle('menu-open', open);
+      }
+      toggle.addEventListener('click', () => setMenuOpen(!menu.classList.contains('open')));
+      menu.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => setMenuOpen(false));
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) setMenuOpen(false);
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && menu.classList.contains('open')) setMenuOpen(false);
+      }, { passive: true });
+    })();
+  
+    // ---- Theme toggle (light / dark) ----
+    (function initThemeToggle() {
+      var KEY = 'matrixly-theme';
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+      function applyTheme(theme) {
+        var dark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0B1220' : '#117ACA');
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+          btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+          btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        });
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTheme(isDark() ? 'light' : 'dark');
+        });
+      });
+      // Sync labels on load
+      applyTheme(isDark() ? 'dark' : 'light');
+    })();
+
+  </script>
+  <!-- Live agent count from /agents catalog (data-agent-status="live") -->
+  <script src="/js/live-agent-count.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
+</body>
+</html>

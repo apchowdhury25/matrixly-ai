@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matrixly QA Admin — authorized access required for UI quality assurance tools" />
+  <title>QA Admin — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #151c28;
+      --border: #1e2a3a;
+      --neon: #3b9fe0;
+      --text: #f0f4f8;
+      --muted: #9aa4b2;
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --bad: #f87171;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Open Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .gate, .app { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+    .gate {
+      max-width: 420px;
+      margin-top: 12vh;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    h1 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+    h1 span { color: var(--neon); }
+    .sub { color: var(--muted); font-size: 0.85rem; line-height: 1.45; margin-bottom: 1rem; }
+    input[type="password"], input[type="text"], select {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0b1220;
+      color: var(--text);
+      margin: 0.4rem 0 0.75rem;
+    }
+    .btn {
+      background: linear-gradient(145deg, #117aca, #3b9fe0);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.55rem 0.9rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .err { color: var(--bad); font-size: 0.85rem; min-height: 1.2em; }
+    .hidden { display: none !important; }
+    header.bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--warn);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .panel h2 {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .panel .body { padding: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; }
+    a { color: var(--neon); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .check { display: flex; gap: 0.5rem; align-items: flex-start; margin: 0.4rem 0; font-size: 0.85rem; }
+    .check input { margin-top: 0.2rem; }
+    pre.cmd {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      overflow-x: auto;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .tip {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-top: 0.75rem;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      min-width: 120px;
+    }
+    .stat .l { color: var(--muted); font-size: 0.72rem; font-weight: 600; }
+    .stat .v { color: var(--neon); font-weight: 800; font-size: 1.2rem; margin-top: 0.2rem; }
+    .status-ok { color: var(--ok); }
+    .status-fail { color: var(--bad); }
+    .status-skip { color: var(--muted); }
+    #liveResults td { font-family: ui-monospace, Consolas, monospace; font-size: 0.78rem; }
+
+    /* ---- Observability Stack (Self-Hosted) ---- */
+    .obs-section { margin-top: 1.5rem; }
+    .obs-hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      padding: 1rem 1.1rem;
+      background: linear-gradient(145deg, #151c28 0%, #0f1a2a 60%, #122033 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .obs-title { margin: 0 0 0.4rem; font-size: 1.1rem; }
+    .obs-title-accent { color: var(--neon); }
+    .obs-lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      max-width: 52rem;
+    }
+    .obs-lede strong { color: var(--text); font-weight: 600; }
+    .obs-hero-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.4rem;
+    }
+    .obs-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+    .obs-actions a.btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .btn-sm {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.75rem;
+    }
+    .obs-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .obs-badge::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .obs-badge.ok { color: var(--ok); border-color: rgba(52, 211, 153, 0.4); background: rgba(52, 211, 153, 0.08); }
+    .obs-badge.warn { color: var(--warn); border-color: rgba(251, 191, 36, 0.4); background: rgba(251, 191, 36, 0.08); }
+    .obs-badge.bad { color: var(--bad); border-color: rgba(248, 113, 113, 0.4); background: rgba(248, 113, 113, 0.08); }
+    .obs-badge.unknown { color: var(--muted); border-color: var(--border); background: rgba(154, 164, 178, 0.08); }
+    .obs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .obs-card h2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .obs-card-desc {
+      margin: 0 0 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .obs-kv {
+      list-style: none;
+      margin: 0 0 0.75rem;
+      padding: 0;
+    }
+    .obs-kv li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+    .obs-kv li span { color: var(--muted); }
+    .obs-kv li strong { font-weight: 600; text-align: right; max-width: 60%; word-break: break-word; }
+    .obs-card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .obs-card-links a.btn { text-decoration: none; }
+    .obs-muted { color: var(--muted); font-size: 0.78rem; }
+    .obs-collapse {
+      display: none;
+      margin-bottom: 0.85rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+    }
+    .obs-collapse.open { display: block; }
+    .obs-collapse-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .obs-mini-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; margin-bottom: 0.65rem; }
+    .obs-mini-table th, .obs-mini-table td {
+      text-align: left;
+      padding: 0.35rem 0.3rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .obs-mini-table th { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; }
+    .obs-targets-wrap { max-height: 8rem; overflow: auto; margin-bottom: 0.5rem; }
+    .obs-grafana-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1.1rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    .obs-grafana-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.85rem;
+    }
+    .obs-grafana-head h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+    .obs-view-toggle {
+      display: inline-flex;
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .obs-view-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .obs-view-btn.active {
+      background: rgba(59, 159, 224, 0.18);
+      color: var(--neon);
+    }
+    .obs-metric-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 0.55rem;
+      margin-bottom: 0.9rem;
+    }
+    .obs-m {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.55rem 0.7rem;
+    }
+    .obs-m .l {
+      display: block;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .obs-m .v {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--neon);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+    .obs-iframe-wrap {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 0.85rem;
+      background: #0b1220;
+    }
+    .obs-iframe-hint {
+      margin: 0 0 0.65rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .obs-iframe {
+      width: 100%;
+      min-height: 360px;
+      margin-top: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #111827;
+    }
+    .obs-endpoints {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .obs-endpoints summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    .obs-endpoint-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.65rem 1rem;
+      margin-top: 0.85rem;
+    }
+    .obs-endpoint-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .obs-endpoint-form input {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+    .section-label {
+      margin: 1.75rem 0 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    @media (max-width: 640px) {
+      .obs-hero-meta { align-items: flex-start; }
+      .obs-iframe { min-height: 240px; }
+      .gate, .app { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- QA Admin console — authorized users only (passphrase gate). -->
+  <div id="gate" class="gate">
+    <h1 style="display:flex;align-items:center;gap:0.5rem">
+      <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" style="height:2rem;width:2rem;object-fit:contain;border-radius:0.375rem;flex-shrink:0" />
+      <span>Matrixly <span style="color:var(--neon)">QA Admin</span></span>
+    </h1>
+    <p class="sub">
+      Sign in to access the <strong>UI quality assurance</strong> console:
+      page checklists, link probes, automated test runners, and the
+      <strong>self-hosted Observability Stack</strong> (Crawl4AI · Prometheus · Grafana · Loki).
+    </p>
+    <label class="sub" for="pass">Authorization passphrase</label>
+    <input id="pass" type="password" autocomplete="current-password" placeholder="Enter passphrase" />
+    <button class="btn" id="unlockBtn" type="button">Sign in</button>
+    <p class="err" id="gateErr"></p>
+    <p class="tip">Authorized operators: see <code>qa/README.md</code> for credentials setup.</p>
+    <p class="tip" style="margin-top:0.5rem"><a href="/">← Back to Matrixly</a></p>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="bar">
+      <div style="display:flex;align-items:center;gap:0.65rem">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" style="height:2rem;width:2rem;object-fit:contain;border-radius:0.375rem;flex-shrink:0" />
+        <div>
+          <h1>UI QA Console <span class="badge">authorized</span></h1>
+          <p class="sub" style="margin:0.35rem 0 0">Manual checklist · Selenium / Playwright / BDD · Observability &amp; infrastructure</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+        <a class="btn ghost" href="#observability" style="display:inline-flex;align-items:center;text-decoration:none">Observability</a>
+        <a class="btn ghost" href="/agents" style="display:inline-flex;align-items:center;text-decoration:none">Agents</a>
+        <button class="btn ghost" id="lockBtn" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat"><div class="l">Pages under test</div><div class="v" id="pageCount">—</div></div>
+      <div class="stat"><div class="l">Checklist done</div><div class="v" id="checkDone">0/0</div></div>
+      <div class="stat"><div class="l">Base URL</div><div class="v" id="baseUrl" style="font-size:0.85rem">—</div></div>
+    </div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>1. Page smoke (open in new tab)</h2>
+        <div class="body">
+          <table>
+            <thead><tr><th>Page</th><th>Open</th><th>Manual OK</th></tr></thead>
+            <tbody id="pageTable"></tbody>
+          </table>
+          <p class="tip">Confirm logo, nav, theme toggle, and primary CTAs on each page.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2. UI checklist</h2>
+        <div class="body" id="checklist"></div>
+      </section>
+
+      <section class="panel" style="grid-column: 1 / -1">
+        <h2>3. Automated runners (local / CI)</h2>
+        <div class="body">
+          <p class="sub">Python framework under <code>qa/</code> — Selenium (WebDriver), Playwright, and Cucumber-style BDD via pytest-bdd. TestNG-style class suites map to pytest classes/markers.</p>
+          <pre class="cmd"># from repo root
+cd qa
+python -m venv .venv
+# Windows: .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+playwright install chromium
+
+# Selenium UI suite
+pytest tests/selenium -v --site-url=http://127.0.0.1:8080
+
+# Playwright UI suite
+pytest tests/playwright -v --site-url=http://127.0.0.1:8080
+
+# BDD / Cucumber-style features
+pytest tests/bdd -v --site-url=http://127.0.0.1:8080
+
+# All + HTML report
+pytest -v --site-url=http://127.0.0.1:8080 --html=reports/report.html --self-contained-html</pre>
+          <p class="tip">Start the site first: <code>npm run build &amp;&amp; npm start</code> (serves <code>dist/</code> on port 8080). CI job: <code>.github/workflows/ui-qa.yml</code>.</p>
+        </div>
+      </section>
+
+      <section class="panel" style="grid-column: 1 / -1">
+        <h2>4. In-browser link probe (no Selenium)</h2>
+        <div class="body">
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem">
+            <button class="btn" id="probeBtn" type="button">Probe all catalog links</button>
+            <button class="btn ghost" id="clearProbeBtn" type="button">Clear</button>
+          </div>
+          <table>
+            <thead><tr><th>URL</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody id="liveResults"></tbody>
+          </table>
+          <p class="tip">Uses <code>fetch</code> from this origin. Cross-origin production hosts may block; prefer local <code>dist/</code> or same-origin deploys.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================
+         Observability Stack (Self-Hosted) — Crawl4AI + metrics/logs
+         See qa/README.md and infra/observability/
+         ============================================================ -->
+    <p class="section-label" id="observability">Infrastructure</p>
+    <div id="obsRoot" aria-live="polite"></div>
+    <p class="tip" style="margin-top:0.5rem">
+      Implementation guide, troubleshooting, and reference links:
+      <code>qa/README.md</code> · stack configs: <code>infra/observability/</code>
+    </p>
+  </div>
+
+  <script src="/js/admin-observability.js"></script>
+  <script>
+    (function () {
+      // SHA-256 of developer passphrase (see qa/README.md). Not military-grade — static sites cannot hide secrets.
+      var PASS_HASH = "b9a34b92a34bbb002752da5165821e3da9d0058719037b7c2cb31d259b66a3a2";
+      var SESSION_KEY = "matrixly-qa-admin-ok";
+
+      var PAGES = [
+        { name: "Home", href: "index.html" },
+        { name: "Agents catalog", href: "agents.html" },
+        { name: "Products", href: "products.html" },
+        { name: "Integrations", href: "integrations.html" },
+        { name: "Lead Qualifier", href: "lead-qualifier.html" },
+        { name: "Email Assistant", href: "email-assistant.html" },
+        { name: "CRM Assistant", href: "crm-assistant.html" },
+        { name: "Shipping Assistant", href: "shipping-assistant.html" },
+        { name: "Shipping guide", href: "shipping-assistant-guide.html" },
+        { name: "SupportForge", href: "support-forge.html" },
+        { name: "BookWise", href: "book-wise.html" },
+        { name: "InvoiceForge", href: "invoice-forge.html" }
+      ];
+
+      var CHECKS = [
+        "Navbar brand logo visible and links home",
+        "Theme toggle switches light/dark without broken contrast",
+        "Agents catalog: Deploy Now buttons align on same row",
+        "Shipping card: User guide / logistics links above Deploy Now",
+        "Footer year is current year",
+        "Mobile width (~375px): no horizontal overflow on home + agents",
+        "Primary CTAs reachable without console errors",
+        "Admin page requires passphrase before showing QA tools"
+      ];
+
+      function $(id) { return document.getElementById(id); }
+
+      async function sha256Hex(text) {
+        var data = new TextEncoder().encode(text);
+        var buf = await crypto.subtle.digest("SHA-256", data);
+        return Array.from(new Uint8Array(buf)).map(function (b) {
+          return b.toString(16).padStart(2, "0");
+        }).join("");
+      }
+
+      var obsController = null;
+
+      function showApp(ok) {
+        $("gate").classList.toggle("hidden", ok);
+        $("app").classList.toggle("hidden", !ok);
+        if (ok) {
+          render();
+          mountObservability();
+        } else if (obsController && typeof obsController.unmount === "function") {
+          obsController.unmount();
+          obsController = null;
+        }
+      }
+
+      function mountObservability() {
+        var root = $("obsRoot");
+        if (!root || !window.MatrixlyObs) return;
+        if (obsController && typeof obsController.unmount === "function") {
+          obsController.unmount();
+        }
+        // Optional: override endpoints via window.MATRIXLY_OBS_ENDPOINTS before load
+        obsController = window.MatrixlyObs.mount(root, { autoRefreshMs: 0 });
+      }
+
+      function render() {
+        $("pageCount").textContent = String(PAGES.length);
+        $("baseUrl").textContent = location.origin + location.pathname.replace(/[^/]+$/, "");
+
+        var tbody = $("pageTable");
+        tbody.innerHTML = "";
+        PAGES.forEach(function (p, i) {
+          var tr = document.createElement("tr");
+          tr.innerHTML =
+            "<td>" + p.name + "</td>" +
+            "<td><a href=\"" + p.href + "\" target=\"_blank\" rel=\"noopener\">Open</a></td>" +
+            "<td><input type=\"checkbox\" data-page=\"" + i + "\" /></td>";
+          tbody.appendChild(tr);
+        });
+
+        var box = $("checklist");
+        box.innerHTML = "";
+        CHECKS.forEach(function (label, i) {
+          var row = document.createElement("label");
+          row.className = "check";
+          row.innerHTML = "<input type=\"checkbox\" data-check=\"" + i + "\" /> <span>" + label + "</span>";
+          box.appendChild(row);
+        });
+
+        function updateProgress() {
+          var pageDone = tbody.querySelectorAll("input:checked").length;
+          var checkDone = box.querySelectorAll("input:checked").length;
+          $("checkDone").textContent = (pageDone + checkDone) + "/" + (PAGES.length + CHECKS.length);
+          try {
+            var state = {
+              pages: Array.from(tbody.querySelectorAll("input")).map(function (el) { return el.checked; }),
+              checks: Array.from(box.querySelectorAll("input")).map(function (el) { return el.checked; })
+            };
+            localStorage.setItem("matrixly-qa-checklist", JSON.stringify(state));
+          } catch (e) {}
+        }
+
+        try {
+          var saved = JSON.parse(localStorage.getItem("matrixly-qa-checklist") || "{}");
+          (saved.pages || []).forEach(function (v, i) {
+            var el = tbody.querySelector('input[data-page="' + i + '"]');
+            if (el) el.checked = !!v;
+          });
+          (saved.checks || []).forEach(function (v, i) {
+            var el = box.querySelector('input[data-check="' + i + '"]');
+            if (el) el.checked = !!v;
+          });
+        } catch (e) {}
+
+        tbody.addEventListener("change", updateProgress);
+        box.addEventListener("change", updateProgress);
+        updateProgress();
+      }
+
+      $("unlockBtn").onclick = async function () {
+        $("gateErr").textContent = "";
+        var h = await sha256Hex($("pass").value.trim());
+        if (h === PASS_HASH) {
+          sessionStorage.setItem(SESSION_KEY, "1");
+          showApp(true);
+        } else {
+          $("gateErr").textContent = "Invalid passphrase.";
+        }
+      };
+      $("pass").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") $("unlockBtn").click();
+      });
+      $("lockBtn").onclick = function () {
+        sessionStorage.removeItem(SESSION_KEY);
+        $("pass").value = "";
+        showApp(false);
+      };
+
+      $("probeBtn").onclick = async function () {
+        var tbody = $("liveResults");
+        tbody.innerHTML = "";
+        $("probeBtn").disabled = true;
+        for (var i = 0; i < PAGES.length; i++) {
+          var p = PAGES[i];
+          var tr = document.createElement("tr");
+          var url = new URL(p.href, location.href).href;
+          tr.innerHTML = "<td>" + url + "</td><td class=\"status-skip\">…</td><td></td>";
+          tbody.appendChild(tr);
+          try {
+            var res = await fetch(url, { method: "GET", cache: "no-store" });
+            var ok = res.ok;
+            tr.cells[1].textContent = String(res.status);
+            tr.cells[1].className = ok ? "status-ok" : "status-fail";
+            tr.cells[2].textContent = ok ? p.name : "HTTP error";
+          } catch (err) {
+            tr.cells[1].textContent = "ERR";
+            tr.cells[1].className = "status-fail";
+            tr.cells[2].textContent = String(err.message || err);
+          }
+        }
+        $("probeBtn").disabled = false;
+      };
+      $("clearProbeBtn").onclick = function () {
+        $("liveResults").innerHTML = "";
+      };
+
+      if (sessionStorage.getItem(SESSION_KEY) === "1") showApp(true);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly ConnectForge — Twilio SMS and simple voice for Houston SMBs. Lead response, appointment texts, missed-call recovery, HITL, Test Mode." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>ConnectForge — Twilio Connect Agent · Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              green: 'var(--brand-blue)',
+              border: 'var(--border)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+              card: 'var(--card)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --bg-muted: #F0F4F8;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --card: #151C26;
+      --bg-muted: #1A222D;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); color: var(--ink); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+        <a href="#deploy" class="nav-link" data-i18n="site.book_wise.page.deploy">Deploy</a>
+        <a href="#houston" class="nav-link" data-i18n="site.connect_forge.page.houston_use_cases">Houston use cases</a>
+      </nav>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.connect_forge.page.run_locally">Run locally</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.connect_forge.s4320.twil_sms_voice_houston_smbs">TWIL · SMS &amp; Voice · Houston SMBs</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">ConnectForge</h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl" data-i18n="site.connect_forge.s4320.the_first_twilio_powered_agent_on_matrix">
+        The first Twilio-powered agent on Matrixly. Send and receive SMS, keep conversation threads,
+        place simple test calls, and keep humans in control with Test Mode + outbound approval —
+        built for Houston home services, HVAC, contractors, real estate, and local retail.
+      </p>
+      <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Twilio SMS (outbound + inbound webhook)</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Conversations API threads + local message history</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Basic voice call (TwiML Say) · Conversation Relay ready later</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Test Mode for trial numbers · HITL for outbound · Grok replies optional</li>
+      </ul>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.connect_forge.s4320.twilio">Twilio</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.fastapi">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.connect_forge.s4320.port_8802">Port 8802</span>
+      </div>
+    </section>
+
+    <section id="houston" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <!-- data-agent-feature-grid: mirrored into home hero carousel agent-slide -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-agent-feature-grid>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.connect_forge.houston.instant_lead_response">Instant lead response</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.connect_forge.houston.text_back_hvac_and_home_service_leads_in">Text back HVAC and home-service leads in Katy / Energy Corridor within seconds — bilingual when needed.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.connect_forge.houston.appointments">Appointments</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.connect_forge.houston.confirmation_and_reminder_sms_your_custo">Confirmation and reminder SMS your customers actually read (HITL before anything leaves if you want).</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.connect_forge.houston.missed_call_recovery">Missed-call recovery</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.connect_forge.houston.turn_a_missed_ring_into_a_text_thread_so">Turn a missed ring into a text thread — “Sorry we missed you — how can we help?”</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.connect_forge.s7265.tools_it_connects_to">Tools it connects to</h2>
+        <ul class="text-sm text-matrix-soft space-y-2">
+          <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> <strong class="text-matrix-cream">Twilio</strong> — SMS, Conversations, basic Voice</li>
+          <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> <strong class="text-matrix-cream">Grok (xAI)</strong> — optional inbound reply intelligence (rules fallback)</li>
+          <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> <strong class="text-matrix-cream">Google Calendar</strong> — planned (appointment sync)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.connect_forge.deploy.deploy_on_this_machine_port_8802">Deploy on this machine (port 8802)</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Code: <code class="text-xs">agents/connect-forge</code> ·
+          Guide: <code class="text-xs">agents/connect-forge/README.md</code>
+        </p>
+        <pre class="cmd mb-6">cd agents/connect-forge
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+# Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER
+# Set TWILIO_VERIFIED_NUMBERS=+1yourVerifiedMobile
+python scripts/smoke_test.py
+python -m src.cli serve</pre>
+        <p class="text-sm text-matrix-soft mb-4">
+          Dashboard: <code class="text-xs">http://localhost:8802/</code>
+        </p>
+        <h3 class="font-bold text-matrix-cream mb-2 text-base" data-i18n="site.connect_forge.deploy.test_panel_actions">Test panel actions</h3>
+        <ul class="text-sm text-matrix-soft space-y-1.5 mb-6 list-disc pl-5">
+          <li><strong class="text-matrix-cream">Send test SMS</strong> — outbound to a verified number</li>
+          <li><strong class="text-matrix-cream">Start conversation</strong> — Conversations API + first message</li>
+          <li><strong class="text-matrix-cream">View recent messages</strong> — SIDs, status, direction</li>
+          <li><strong class="text-matrix-cream">HITL toggle</strong> — approve outbound before send</li>
+          <li><strong class="text-matrix-cream">Status</strong> — Mock / Trial / Live indicators</li>
+        </ul>
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+          <strong class="text-matrix-cream">Trial tip:</strong> Twilio trial accounts can only message verified numbers.
+          Keep <code class="text-xs">CONNECTFORGE_TEST_MODE=true</code> until you upgrade. Never commit Auth Tokens.
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.connect_forge.s10115.inbound_webhook">Inbound webhook</h2>
+        <pre class="cmd mb-6">https://YOUR_PUBLIC_HOST/v1/webhooks/sms</pre>
+        <p class="text-sm text-matrix-soft mb-6">Point your Twilio number’s Messaging webhook (HTTP POST) here. Use ngrok for local tests. Set <code class="text-xs">PUBLIC_BASE_URL</code> in <code class="text-xs">.env</code>.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/book-wise" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.connect_forge.s10115.see_bookwise">See BookWise</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span data-i18n="site.connect_forge.footer.matrixly_connectforge_v1_0_twilio_connec">Matrixly · ConnectForge v1.0 · Twilio Connect Agent for Houston SMBs</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
+    </div>
+  </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Matrixly marketing site
+User-agent: *
+Allow: /

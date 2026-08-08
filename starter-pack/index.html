@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly Starter Pack — SupportForge, BookWise, InvoiceForge + unified dashboard for SMBs." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>Starter Pack — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              green: 'var(--brand-blue)',
+              border: 'var(--border)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+              card: 'var(--card)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --bg-muted: #F0F4F8;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --card: #151C26;
+      --bg-muted: #1A222D;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); color: var(--ink); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+        <a href="/support-forge" class="nav-link" data-i18n="full.hero.support">Support</a>
+        <a href="/book-wise" class="nav-link">BookWise</a>
+        <a href="/invoice-forge" class="nav-link" data-i18n="site.starter_pack.page.invoice">Invoice</a>
+      </nav>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.starter_pack.page.deploy_pack">Deploy pack</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.starter_pack.s4308.starter_bundle_ready_to_use">Starter bundle · Ready to use</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4" data-i18n="site.starter_pack.s4308.matrixly_starter_pack">Matrixly Starter Pack</h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl" data-i18n="site.starter_pack.s4308.three_production_agents_for_support_appo">
+        Three production agents for support, appointments, and invoices — plus one unified dashboard to monitor, configure,
+        and embed them. Built for SMBs who want agentic ops without assembling a toolchain from scratch.
+      </p>
+      <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> SupportForge · BookWise · InvoiceForge</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Unified activity, analytics, HITL visibility</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Docker Compose · modular FastAPI · embed widgets</li>
+      </ul>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.starter_pack.s4308.t_3_agents">3 agents</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.starter_pack.s4308.t_1_dashboard">1 dashboard</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]">HITL</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.starter_pack.s4308.port_8800">Port 8800</span>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-3 gap-4" data-agent-feature-grid>
+        <article class="card-matrix rounded-2xl p-5">
+          <p class="font-mono text-xs text-[#117ACA] mb-2" data-i18n="site.starter_pack.s5862.sup">SUP</p>
+          <h2 class="font-bold text-matrix-cream mb-2">SupportForge</h2>
+          <p class="text-sm text-matrix-soft mb-3" data-i18n="site.starter_pack.s5862.triage_kb_answers_escalation_chat_widget">Triage, KB answers, escalation, chat widget, audit.</p>
+          <a href="/support-forge" class="text-sm font-semibold text-[#117ACA] hover:underline" data-i18n="site.starter_pack.s5862.agent_page">Agent page →</a>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <p class="font-mono text-xs text-[#117ACA] mb-2" data-i18n="site.agents.catalog.book">BOOK</p>
+          <h2 class="font-bold text-matrix-cream mb-2">BookWise</h2>
+          <p class="text-sm text-matrix-soft mb-3" data-i18n="site.starter_pack.s5862.availability_bookings_reminders_calendar">Availability, bookings, reminders, calendar sync.</p>
+          <a href="/book-wise" class="text-sm font-semibold text-[#117ACA] hover:underline" data-i18n="site.starter_pack.s5862.agent_page">Agent page →</a>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <p class="font-mono text-xs text-[#117ACA] mb-2" data-i18n="site.agents.catalog.inv">INV</p>
+          <h2 class="font-bold text-matrix-cream mb-2">InvoiceForge</h2>
+          <p class="text-sm text-matrix-soft mb-3" data-i18n="site.starter_pack.s5862.extract_validate_post_exceptions_ar_remi">Extract, validate, post, exceptions, AR reminders.</p>
+          <a href="/invoice-forge" class="text-sm font-semibold text-[#117ACA] hover:underline" data-i18n="site.starter_pack.s5862.agent_page">Agent page →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.starter_pack.deploy.deploy_the_pack">Deploy the pack</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Code: <code class="text-xs">agents/starter-pack</code> ·
+          Guide: <code class="text-xs">agents/starter-pack/README.md</code>
+        </p>
+        <pre class="cmd mb-6">cd agents/starter-pack
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+# Start support-forge :8787, book-wise :8790, invoice-forge :8791 first
+python scripts/smoke_test.py
+python -m src.cli serve
+# Dashboard → http://localhost:8800
+
+# Or full stack:
+# docker compose up --build</pre>
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+          <strong class="text-matrix-cream">Safety:</strong> Each agent keeps HITL on sensitive actions. The pack dashboard uses a separate admin API key.
+        </div>
+      </div>
+    </section>
+
+    <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.starter_pack.embed.embed_widgets">Embed widgets</h2>
+        <pre class="cmd mb-4">&lt;!-- SupportForge --&gt;
+&lt;script src="https://YOUR_SUPPORT_HOST/static/widget/embed.js"
+  data-api="https://YOUR_SUPPORT_HOST" data-key="pk_live_..." async&gt;&lt;/script&gt;
+
+&lt;!-- BookWise --&gt;
+&lt;script src="https://YOUR_BOOK_HOST/static/widget/embed.js"
+  data-api="https://YOUR_BOOK_HOST" data-key="pk_live_..." async&gt;&lt;/script&gt;
+
+&lt;!-- Starter Pack dashboard launcher --&gt;
+&lt;script src="https://YOUR_PACK_HOST/static/widget/embed-pack.js"
+  data-api="https://YOUR_PACK_HOST" async&gt;&lt;/script&gt;</pre>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/support-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center">SupportForge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span data-i18n="site.starter_pack.footer.matrixly_starter_pack_v1_0_support_book_">Matrixly · Starter Pack v1.0 · Support + Book + Invoice</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
+    </div>
+  </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
+</body>
+</html>

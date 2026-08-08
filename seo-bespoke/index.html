@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly SEO-Bespoke — custom SEO agent factory. Business quiz → SEO profile summary → specialized Python agent code for your niche." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>SEO-Bespoke — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              green: 'var(--brand-blue)',
+              border: 'var(--border)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+              card: 'var(--card)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --bg-muted: #F0F4F8;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --card: #151C26;
+      --bg-muted: #1A222D;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); color: var(--ink); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+        <a href="/seo-forge" class="nav-link">SEOForge</a>
+        <a href="#deploy" class="nav-link" data-i18n="site.book_wise.page.deploy">Deploy</a>
+      </nav>
+      <a href="#deploy" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.connect_forge.page.run_locally">Run locally</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.seo_bespoke.s4279.seo_higher_tier_custom_agent_factory">SEO · Higher tier · Custom agent factory</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4" data-i18n="site.agents.catalog.seo_bespoke">SEO-Bespoke</h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl">
+        A higher-tier companion to SEOForge. Take a short business quiz, get a clean
+        <strong class="text-matrix-cream">Business SEO Profile Summary</strong>, then receive a
+        <strong class="text-matrix-cream">specialized Python SEO agent</strong> built for your niche —
+        not a generic template.
+      </p>
+      <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> 6-step quiz: domain, industry, business, customers, location, goals</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Parallel 20-node graph with isolated verifiers (no self-confirmation bias)</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Generates custom FastAPI agent code + brand voice + HITL package</li>
+      </ul>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.book_wise.s4299.fastapi">FastAPI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.seo_bespoke.s4279.parallel_graph">Parallel graph</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-purple-500/15 text-purple-500" data-i18n="site.agents.catalog.higher_tier">Higher tier</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#117ACA]/10 text-[#117ACA]" data-i18n="site.seo_bespoke.s4279.port_8801">Port 8801</span>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-agent-feature-grid>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.s6007.t_1_business_quiz">1. Business quiz</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.seo_bespoke.s6007.interactive_web_wizard_or_cli_six_indepe">Interactive web wizard or CLI. Six independent collectors fan out in parallel.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.s6007.t_2_seo_profile">2. SEO profile</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.seo_bespoke.s6007.professional_markdown_json_summary_with_">Professional Markdown + JSON summary with seed keyword directions (never invented ranks).</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.s6007.t_3_custom_agent_code">3. Custom agent code</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.seo_bespoke.s6007.research_brand_voice_local_seo_content_t">Research, brand voice, local SEO, content, tracking, and ROI modules specialized to your business.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.s6007.t_4_safety_hitl">4. Safety + HITL</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.seo_bespoke.s6007.isolated_verifiers_and_an_approval_queue">Isolated verifiers and an approval queue before a package is treated as deploy-ready.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.s6007.t_5_keywords_roi">5. Keywords &amp; ROI</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.seo_bespoke.s6007.owner_supplied_ranks_only_hours_leads_re">Owner-supplied ranks only. Hours / leads / revenue cards you report — no fake traffic claims.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.s6007.t_6_re_run_anytime">6. Re-run anytime</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.seo_bespoke.s6007.update_the_quiz_or_regenerate_from_a_sav">Update the quiz or regenerate from a saved profile when your business changes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="deploy" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.seo_bespoke.deploy.run_locally_dashboard_on_port_8801">Run locally (dashboard on port 8801)</h2>
+        <p class="text-sm text-matrix-soft mb-6">
+          Code: <code class="text-xs">agents/seo-bespoke</code> ·
+          Guide: <code class="text-xs">agents/seo-bespoke/README.md</code>
+        </p>
+        <pre class="cmd mb-6">cd agents/seo-bespoke
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve</pre>
+        <p class="text-sm text-matrix-soft mb-4" data-i18n="site.seo_bespoke.deploy.then_open">
+          Then open:
+        </p>
+        <ul class="text-sm text-matrix-soft space-y-1.5 mb-6 list-disc pl-5">
+          <li><strong class="text-matrix-cream">Dashboard / quiz:</strong> <code class="text-xs">http://localhost:8801/</code></li>
+          <li><strong class="text-matrix-cream">Health:</strong> <code class="text-xs">http://localhost:8801/v1/health</code></li>
+          <li><strong class="text-matrix-cream">API docs:</strong> <code class="text-xs">http://localhost:8801/docs</code></li>
+        </ul>
+        <p class="text-sm text-matrix-soft mb-4" data-i18n="site.seo_bespoke.deploy.optional_demo_without_the_ui">
+          Optional demo without the UI:
+        </p>
+        <pre class="cmd mb-6">python -m src.cli demo
+python -m src.cli quiz</pre>
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-matrix-soft">
+          <strong class="text-matrix-cream">Note:</strong> The marketing Agents page only links here — it does not start the Python app.
+          You must run <code class="text-xs">python -m src.cli serve</code> for the live quiz dashboard.
+          Packages land under <code class="text-xs">data/packages/</code>. HITL approval is required before deploy by default.
+        </div>
+      </div>
+    </section>
+
+    <section id="vs" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-4" data-i18n="site.seo_bespoke.vs.seo_bespoke_vs_seoforge">SEO-Bespoke vs SEOForge</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead>
+              <tr class="text-matrix-soft border-b border-matrix-border">
+                <th class="py-2 pr-4 font-semibold"> </th>
+                <th class="py-2 pr-4 font-semibold">SEOForge</th>
+                <th class="py-2 font-semibold" data-i18n="site.agents.catalog.seo_bespoke">SEO-Bespoke</th>
+              </tr>
+            </thead>
+            <tbody class="text-matrix-soft">
+              <tr class="border-b border-matrix-border/60">
+                <td class="py-2 pr-4 text-matrix-cream font-medium" data-i18n="site.seo_bespoke.vs.role">Role</td>
+                <td class="py-2 pr-4" data-i18n="site.seo_bespoke.vs.ready_to_run_seo_crew">Ready-to-run SEO crew</td>
+                <td class="py-2" data-i18n="site.seo_bespoke.vs.builds_a_custom_agent_for_one_business">Builds a custom agent for one business</td>
+              </tr>
+              <tr class="border-b border-matrix-border/60">
+                <td class="py-2 pr-4 text-matrix-cream font-medium" data-i18n="site.seo_bespoke.vs.input">Input</td>
+                <td class="py-2 pr-4" data-i18n="site.seo_bespoke.vs.brief_chat">Brief / chat</td>
+                <td class="py-2" data-i18n="site.seo_bespoke.vs.multi_step_quiz">Multi-step quiz</td>
+              </tr>
+              <tr class="border-b border-matrix-border/60">
+                <td class="py-2 pr-4 text-matrix-cream font-medium" data-i18n="site.seo_bespoke.vs.output">Output</td>
+                <td class="py-2 pr-4" data-i18n="site.seo_bespoke.vs.plans_content_local_packs">Plans, content, local packs</td>
+                <td class="py-2" data-i18n="site.seo_bespoke.vs.profile_specialized_agent_source">Profile + specialized agent source</td>
+              </tr>
+              <tr>
+                <td class="py-2 pr-4 text-matrix-cream font-medium" data-i18n="site.seo_bespoke.vs.port">Port</td>
+                <td class="py-2 pr-4">8798</td>
+                <td class="py-2">8801</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.embed.embed_code">Embed code</h2>
+        <pre class="cmd mb-6">&lt;iframe
+  src="https://YOUR_SEOBESPOKE_HOST/static/dashboard/index.html"
+  title="SEO-Bespoke"
+  style="width:100%;min-height:900px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
+&lt;/iframe&gt;
+
+&lt;script
+  src="https://YOUR_SEOBESPOKE_HOST/static/widget/embed.js"
+  data-api="https://YOUR_SEOBESPOKE_HOST"
+  data-key="pk_live_your-site-key"
+  async&gt;
+&lt;/script&gt;</pre>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/seo-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.seo_bespoke.embed.see_seoforge">See SEOForge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span data-i18n="site.seo_bespoke.footer.matrixly_seo_bespoke_v1_0_custom_seo_age">Matrixly · SEO-Bespoke v1.0 · Custom SEO agent factory</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
+    </div>
+  </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
+</body>
+</html>

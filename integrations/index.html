@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Explore Matrixly integrations. Connect hundreds of apps — Gmail, Slack, Shopify, HubSpot, Salesforce, and more — to your AI agents." />
+  <meta name="theme-color" content="#117ACA" />
+  <meta property="og:title" content="Integrations — Matrixly" />
+  <meta property="og:description" content="With hundreds of integrations, Matrixly connects to all your favorite apps." />
+  <title>Integrations — Matrixly</title>
+
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              black: 'var(--bg)',
+              void: 'var(--bg-alt)',
+              green: 'var(--brand-blue)',
+              neon: 'var(--brand-blue)',
+              forest: 'var(--brand-blue-dark)',
+              dim: 'var(--brand-blue-hover)',
+              glow: 'color-mix(in srgb, var(--brand-blue) 12%, transparent)',
+              border: 'var(--border)',
+              muted: 'var(--bg-muted)',
+              card: 'var(--card)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    
+    /* ========== LIGHT / DARK THEME TOKENS ========== */
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --brand-blue-hover: #0D6BB0;
+      --brand-blue-light: #DCEBFB;
+      --brand-blue-soft: #E8F4FC;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F7FA;
+      --bg-muted: #F0F4F8;
+      --card: #FFFFFF;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --shadow-sm: 0 1px 3px rgba(33, 30, 30, 0.06);
+      --shadow-md: 0 8px 24px rgba(17, 122, 202, 0.12);
+      --input-bg: #FFFFFF;
+      --toggle-bg: #F0F4F8;
+      --toggle-border: #D0D7DE;
+      --grid-line: rgba(17, 122, 202, 0.04);
+      --matrix-green: #117ACA;
+      --matrix-green-text: #117ACA;
+      --matrix-neon: #117ACA;
+      --matrix-neon-text: #117ACA;
+      --matrix-forest: #0B5CAB;
+      --matrix-forest-text: #0B5CAB;
+      color-scheme: light;
+    }
+
+    html.dark {
+      --brand-blue: #3B9FE0;
+      --brand-blue-dark: #117ACA;
+      --brand-blue-hover: #5BB0E8;
+      --brand-blue-light: #1A3A52;
+      --brand-blue-soft: #152536;
+      --ink: #F0F4F8;
+      --soft: #9AA4B2;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B1220;
+      --bg-alt: #111827;
+      --bg-muted: #151C28;
+      --card: #151C28;
+      --nav-bg: rgba(11, 18, 32, 0.94);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 28px rgba(17, 122, 202, 0.18);
+      --input-bg: #111827;
+      --toggle-bg: #1A2332;
+      --toggle-border: #1E2A3A;
+      --grid-line: rgba(59, 159, 224, 0.07);
+      --matrix-green: #3B9FE0;
+      --matrix-green-text: #3B9FE0;
+      --matrix-neon: #3B9FE0;
+      --matrix-neon-text: #3B9FE0;
+      --matrix-forest: #117ACA;
+      --matrix-forest-text: #117ACA;
+      color-scheme: dark;
+    }
+
+    html.dark section.border-y,
+    html.dark section.border-t,
+    html.dark section.border-b,
+    html.dark footer.border-t,
+    html.dark header.border-b {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .border-matrix-border\/40,
+    html.dark .border-matrix-border\/50,
+    html.dark .border-t.border-matrix-border,
+    html.dark .border-b.border-matrix-border,
+    html.dark .border-y.border-matrix-border {
+      border-color: var(--section-divider) !important;
+    }
+    html.dark .nav-scrolled {
+      border-bottom-color: var(--section-divider);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-forest { color: var(--brand-blue-dark) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+    .hover\:text-matrix-cream:hover { color: var(--ink) !important; }
+
+    .bg-matrix-black { background-color: var(--bg) !important; }
+    .bg-matrix-void { background-color: var(--bg-alt) !important; }
+    .bg-matrix-muted { background-color: var(--bg-muted) !important; }
+    .bg-matrix-card { background-color: var(--card) !important; }
+    .bg-black { background-color: var(--bg-alt) !important; }
+
+    .border-matrix-border { border-color: var(--border) !important; }
+
+    .grid-bg {
+      background-image: none;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-height: 40px;
+      border-radius: 0.5rem;
+      background: var(--toggle-bg);
+      border: 1.5px solid var(--toggle-border);
+      color: var(--brand-blue);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue-soft);
+      transform: translateY(-1px);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+    .theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      display: block;
+    }
+    html.dark .theme-icon-sun { display: none; }
+    html:not(.dark) .theme-icon-moon { display: none; }
+    html.dark .theme-icon-moon { display: block; }
+    html:not(.dark) .theme-icon-sun { display: block; }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: #FFFFFF !important;
+    }
+    .btn-primary:active {
+      background: var(--brand-blue-dark) !important;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--brand-blue);
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .neon-tile,
+    .text-tile {
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+    }
+    .neon-tile span,
+    .text-tile-base span,
+    .text-tile > span {
+      color: var(--brand-blue);
+    }
+
+    .badge-popular {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      border: 1.5px solid var(--brand-blue);
+    }
+
+    .terminal-window {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .terminal-header {
+      background: var(--brand-blue-soft);
+      border-bottom: 1px solid var(--border);
+    }
+    .cursor-blink::after { color: var(--brand-blue); }
+
+    .chart-bar-fill {
+      background: linear-gradient(180deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    }
+    .flow-step-line {
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--brand-blue) 15%, transparent),
+        color-mix(in srgb, var(--brand-blue) 45%, transparent),
+        color-mix(in srgb, var(--brand-blue) 15%, transparent));
+    }
+
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
+
+    .section-alt { background: var(--bg-alt); }
+
+    .search-input {
+      background: var(--input-bg);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-blue) 15%, transparent);
+    }
+    .filter-chip {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--soft);
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .status-live { color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 12%, transparent); }
+    .status-soon { color: var(--soft); background: color-mix(in srgb, var(--soft) 12%, transparent); }
+
+    #signup-form input {
+      background: var(--input-bg);
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+/* theme tokens defined in LIGHT / DARK THEME TOKENS */
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    .text-matrix-green { color: var(--brand-blue) !important; }
+    .text-matrix-cream { color: var(--ink) !important; }
+    .text-matrix-soft { color: var(--soft) !important; }
+    .hover\:text-matrix-green:hover { color: var(--brand-blue-hover) !important; }
+
+    .grid-bg {
+      background-image: none;
+    }
+
+    .btn-primary {
+      background: var(--brand-blue) !important;
+      color: #FFFFFF !important;
+      font-weight: 700;
+      border: 1.5px solid var(--brand-blue) !important;
+      border-radius: 0.5rem !important;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 1px 2px rgba(17, 122, 202, 0.2) !important;
+      text-shadow: none !important;
+      min-height: 44px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-hover) !important;
+      border-color: var(--brand-blue-hover) !important;
+      transform: translateY(-1px);
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(17, 122, 202, 0.28) !important;
+    }
+    .btn-secondary {
+      background: var(--card) !important;
+      color: var(--brand-blue) !important;
+      border: 1.5px solid var(--brand-blue) !important;
+      border-radius: 0.5rem !important;
+      font-weight: 600;
+      min-height: 44px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-secondary:hover {
+      background: var(--brand-blue-soft) !important;
+      border-color: var(--brand-blue-hover) !important;
+      transform: translateY(-1px);
+      color: var(--brand-blue-dark) !important;
+    }
+
+    .card-matrix {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06);
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-matrix:hover {
+      border-color: var(--brand-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17, 122, 202, 0.12);
+    }
+
+    .nav-scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(33, 30, 30, 0.06);
+    }
+
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: var(--bg);
+    }
+    .mobile-menu.open {
+      max-height: min(80vh, 560px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    }
+    .mobile-menu a:not(.btn-primary) {
+      color: var(--ink);
+      border-radius: 0.5rem;
+    }
+    .mobile-menu a:not(.btn-primary):hover {
+      color: var(--brand-blue);
+      background: color-mix(in srgb, var(--brand-blue) 8%, transparent);
+    }
+    body.menu-open { overflow: hidden; touch-action: none; }
+    @media (max-width: 767px) {
+      #navbar {
+        background: var(--nav-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+      }
+      #navbar.menu-open {
+        background: var(--bg);
+        border-bottom-color: var(--border);
+        box-shadow: 0 1px 8px rgba(33,30,30,0.06);
+      }
+    }
+
+    .h1-fluid { font-size: clamp(1.6rem, 4.2vw + 0.65rem, 3.25rem); letter-spacing: -0.02em; font-weight: 700; word-wrap: break-word; overflow-wrap: anywhere; max-width: 100%; }
+    .h2-fluid { font-size: clamp(1.4rem, 3.2vw + 0.4rem, 2.5rem); letter-spacing: -0.015em; font-weight: 700; word-wrap: break-word; overflow-wrap: anywhere; max-width: 100%; }
+
+    .filter-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--soft);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8125rem;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .filter-chip:hover {
+      border-color: var(--brand-blue);
+      color: var(--ink);
+    }
+    .filter-chip.active {
+      background: var(--brand-blue-soft);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+
+    .integration-card.hidden-card { display: none; }
+
+    .search-input {
+      background: var(--card);
+      border: 1.5px solid #D0D7DE;
+      border-radius: 0.5rem;
+      color: var(--ink);
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.75rem;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .search-input::placeholder { color: var(--soft); }
+    .search-input:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px rgba(17, 122, 202, 0.15);
+    }
+
+    .neon-tile {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.5rem;
+      background: var(--brand-blue-soft);
+      border: 1.5px solid color-mix(in srgb, var(--brand-blue) 35%, transparent);
+      flex-shrink: 0;
+    }
+    .neon-tile span {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      letter-spacing: 0.02em;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-alt); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 4px; }
+
+    @media (max-width: 767px) {
+      .card-matrix:hover { transform: none; }
+      .btn-primary:hover, .btn-secondary:hover { transform: none; }
+    }
+
+    /* Gmail connect modal */
+    .gmail-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      background: rgba(11, 18, 32, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .gmail-modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .gmail-modal {
+      width: min(100%, 34rem);
+      max-height: min(92vh, 40rem);
+      overflow-y: auto;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 1rem;
+      box-shadow: var(--shadow-md);
+      padding: 1.5rem 1.35rem 1.35rem;
+      position: relative;
+    }
+    .gmail-modal h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      padding-right: 2rem;
+    }
+    .gmail-modal .modal-lead {
+      color: var(--soft);
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .gmail-modal .privacy-box {
+      background: var(--brand-blue-soft);
+      border: 1px solid color-mix(in srgb, var(--brand-blue) 30%, transparent);
+      border-radius: 0.65rem;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.8125rem;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .gmail-modal .scope-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.1rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+    .gmail-modal .scope-list li {
+      display: flex;
+      gap: 0.55rem;
+      align-items: flex-start;
+      font-size: 0.875rem;
+      color: var(--soft);
+      line-height: 1.4;
+    }
+    .gmail-modal .scope-list li::before {
+      content: "✓";
+      color: var(--brand-blue);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .gmail-modal .modal-close {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background: var(--bg-muted);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 1.15rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gmail-modal .modal-close:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .gmail-modal .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .gmail-modal .btn-google {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 0.65rem;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      background: var(--brand-blue);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .gmail-modal .btn-google:hover {
+      background: var(--brand-blue-hover);
+      transform: translateY(-1px);
+    }
+    .gmail-modal .btn-linkish {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 0.65rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      background: transparent;
+      color: var(--soft);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+    .gmail-modal .btn-linkish:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+    .gmail-modal .modal-panel { display: none; }
+    .gmail-modal .modal-panel.active { display: block; }
+    .gmail-modal .cli-box {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.75rem;
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem 0.85rem;
+      color: var(--ink);
+      overflow-x: auto;
+      margin: 0.75rem 0 1rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .gmail-modal .success-check {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      background: var(--brand-blue-soft);
+      color: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 auto 0.85rem;
+    }
+    .gmail-modal .test-preview {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.65rem;
+      padding: 0.75rem;
+      margin: 0.75rem 0 1rem;
+      max-height: 11rem;
+      overflow-y: auto;
+      font-size: 0.8125rem;
+      color: var(--soft);
+    }
+    .gmail-modal .test-preview strong { color: var(--ink); }
+    body.gmail-modal-open { overflow: hidden; }
+
+    /* Top nav alignment grid */
+    #navbar .nav-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 1rem;
+      min-height: 4rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-row { min-height: 5rem; }
+    }
+    #navbar .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      text-decoration: none;
+    }
+    #navbar .nav-brand img {
+      width: 2.25rem;
+      height: 2.25rem;
+      display: block;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 0.45rem;
+      background: #0B1220;
+      filter: drop-shadow(0 1px 2px rgba(17, 122, 202, 0.18));
+    }
+    html.dark #navbar .nav-brand img {
+      background: #0B1220;
+      filter: drop-shadow(0 0 8px rgba(59, 159, 224, 0.35));
+    }
+    #navbar .nav-links {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem 1.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-actions {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-links,
+      #navbar .nav-actions { display: inline-flex; }
+    }
+    #navbar .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 0.15rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--soft);
+      transition: color 0.15s ease;
+    }
+    #navbar .nav-link:hover,
+    #navbar .nav-link[aria-current="page"] {
+      color: var(--brand-blue);
+    }
+    #navbar .nav-actions .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 1.25rem;
+      line-height: 1;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    #navbar .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+    }
+    #navbar .nav-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      #navbar .nav-mobile { display: none; }
+    }
+    #navbar .nav-mobile #mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="bg-matrix-black antialiased">
+  <!-- NAV -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="nav-row">
+        <a href="/" class="nav-brand group" aria-label="Matrixly Home">
+          <img src="/assets/matrixly-logo.png" alt="Matrixly" width="36" height="36" class="w-9 h-9 object-contain rounded-md flex-shrink-0" />
+          <span class="font-mono font-bold text-lg sm:text-xl tracking-tight">
+            <span class="text-matrix-cream">Matrixly</span>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="/#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How it Works</a>
+          <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+          <a href="/products" class="nav-link" data-i18n="full.final_cta.products">Products</a>
+          <a href="/integrations" class="nav-link" aria-current="page" data-i18n="nav.integrations">Integrations</a>
+          <a href="/pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        </div>
+
+        <div class="nav-end">
+          <div class="nav-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <a href="/#final-cta" class="btn-primary rounded-lg" data-i18n="nav.getStarted">Get Started</a>
+          </div>
+          <div class="nav-mobile">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark theme" title="Toggle light / dark theme">
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
+            <button id="mobile-toggle" class="text-matrix-green" aria-label="Toggle menu" aria-expanded="false">
+              <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="py-4 space-y-1 border-t border-matrix-border">
+          <a href="/#how-it-works" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.howItWorks">How it Works</a>
+          <a href="/agents" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.agents">Agents</a>
+          <a href="/products" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="full.final_cta.products">Products</a>
+          <a href="/integrations" class="block px-3 py-3 font-bold text-matrix-green" aria-current="page" data-i18n="nav.integrations">Integrations</a>
+          <a href="/pricing" class="block px-3 py-3 font-bold text-matrix-soft hover:text-matrix-green" data-i18n="nav.pricing">Pricing</a>
+          <a href="/#final-cta" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg" data-i18n="nav.getStarted">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-20 md:pt-24">
+    <!-- HERO -->
+    <section class="relative py-14 sm:py-20 grid-bg border-b border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase" data-i18n="nav.integrations">Integrations</p>
+        <h1 class="h1-fluid font-extrabold text-matrix-cream mb-4 max-w-3xl leading-tight">
+          Works with the tools you <span class="text-matrix-green" data-i18n="integrations.titleHighlight">already use</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-matrix-soft max-w-2xl mb-8" data-i18n="site.integrations.s29619.connect_gmail_shopify_quickbooks_shipsta">
+          Connect Gmail, Shopify, QuickBooks, ShipStation, HubSpot, Slack, carriers, and more — so agents can market, sell, ship, and support without you switching tabs.
+        </p>
+
+        <!-- Search -->
+        <div class="relative max-w-xl mb-6">
+          <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-matrix-soft pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <label for="integration-search" class="sr-only" data-i18n="site.integrations.s29619.search_integrations">Search integrations</label>
+          <input
+            id="integration-search"
+            type="search"
+            class="search-input"
+            placeholder="Search integrations (ShipStation, Gmail, Slack…)"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Category filters -->
+        <div id="category-filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Integration categories">
+          <button type="button" class="filter-chip active" data-category="all" data-i18n="site.integrations.s29619.all">All</button>
+          <button type="button" class="filter-chip" data-category="popular" data-i18n="site.integrations.s29619.most_popular">Most Popular</button>
+          <button type="button" class="filter-chip" data-category="sales" data-i18n="full.hero.sales">Sales</button>
+          <button type="button" class="filter-chip" data-category="marketing" data-i18n="full.hero.marketing">Marketing</button>
+          <button type="button" class="filter-chip" data-category="operations" data-i18n="site.integrations.s29619.operations">Operations</button>
+          <button type="button" class="filter-chip" data-category="support" data-i18n="full.hero.support">Support</button>
+          <button type="button" class="filter-chip" data-category="ecommerce" data-i18n="site.integrations.s29619.e_commerce">E-commerce</button>
+          <button type="button" class="filter-chip" data-category="logistics" data-i18n="full.hero.logistics">Logistics</button>
+          <button type="button" class="filter-chip" data-category="productivity" data-i18n="site.integrations.s29619.productivity">Productivity</button>
+          <button type="button" class="filter-chip" data-category="assistant" data-i18n="site.integrations.s29619.personal_assistant">Personal Assistant</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIRECTORY -->
+    <section class="py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-matrix-cream" id="directory-heading" data-i18n="site.integrations.s32271.all_integrations">All integrations</h2>
+            <p class="text-sm text-matrix-soft mt-1">
+              <span id="result-count">0</span> apps · Connect any tool to Matrixly agent workflows
+            </p>
+          </div>
+          <a href="/#final-cta" class="btn-secondary text-sm px-5 py-2.5 rounded-lg self-start sm:self-auto" data-i18n="site.integrations.s32271.try_matrixly_free">Try Matrixly free</a>
+        </div>
+
+        <div id="integrations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <!-- Cards injected by JS for maintainability; noscript fallback below -->
+        </div>
+
+        <p id="no-results" class="hidden text-center text-matrix-soft py-16 font-mono text-sm" data-i18n="site.integrations.s32271.no_integrations_match_your_search_try_an">
+          No integrations match your search. Try another keyword or clear filters.
+        </p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-16 sm:py-24 bg-matrix-void border-y border-matrix-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="text-sm font-semibold text-matrix-green mb-3 tracking-wide uppercase" data-i18n="nav.howItWorks">How it works</p>
+          <h2 class="h2-fluid font-bold text-matrix-cream mb-3" data-i18n="site.integrations.s33386.easy_as_one_two_three">Easy as one, two, three</h2>
+          <p class="text-matrix-soft" data-i18n="site.integrations.s33386.something_happens_in_your_tools_agents_s">Something happens in your tools → agents step in → work gets done. Plain language, real actions.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="card-matrix rounded-2xl p-6">
+            <div class="neon-tile mb-5"><span>01</span></div>
+            <p class="font-mono text-xs text-matrix-green mb-2" data-i18n="site.integrations.s33386.when_this_happens">When this happens…</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2" data-i18n="site.integrations.s33386.select_a_trigger">Select a trigger</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed" data-i18n="site.integrations.s33386.a_trigger_is_an_event_that_kicks_off_you">
+              A trigger is an event that kicks off your AI agent — like a new email in Gmail, a Shopify order, or a Slack message.
+            </p>
+          </div>
+          <div class="card-matrix rounded-2xl p-6">
+            <div class="neon-tile mb-5"><span>02</span></div>
+            <p class="font-mono text-xs text-matrix-green mb-2" data-i18n="site.integrations.s33386.do_this">Do this</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2" data-i18n="site.integrations.s33386.connect_your_apps">Connect your apps</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed" data-i18n="site.integrations.s33386.hundreds_of_integrations_available_plug_">
+              Hundreds of integrations available. Plug Matrixly into CRM, email, ecommerce, logistics, ads, and productivity tools.
+            </p>
+          </div>
+          <div class="card-matrix rounded-2xl p-6">
+            <div class="neon-tile mb-5"><span>03</span></div>
+            <p class="font-mono text-xs text-matrix-green mb-2" data-i18n="site.integrations.s33386.autonomous">Autonomous</p>
+            <h3 class="text-lg font-bold text-matrix-cream mb-2" data-i18n="site.integrations.s33386.let_ai_do_the_work">Let AI do the work</h3>
+            <p class="text-sm text-matrix-soft leading-relaxed" data-i18n="site.integrations.s33386.give_custom_instructions_to_your_agent_i">
+              Give custom instructions to your agent in plain language. Agents plan, act, and report — so you focus on growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST + CTA -->
+    <section class="py-16 sm:py-24 grid-bg">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono text-xs text-matrix-green mb-4 tracking-wide" data-i18n="site.integrations.s35622.trusted_by_forward_thinking_smbs">TRUSTED BY FORWARD-THINKING SMBs</p>
+        <h2 class="h2-fluid font-extrabold text-matrix-cream mb-4">
+          The AI marketplace that actually <span class="text-matrix-green" data-i18n="site.integrations.s35622.connects">connects</span>
+        </h2>
+        <p class="text-matrix-soft text-lg mb-8" data-i18n="site.integrations.s35622.matrixly_agents_save_hours_every_week_by">
+          Matrixly agents save hours every week by running SEO, sales, support, and logistics across the stack you already pay for.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/#final-cta" class="btn-primary px-8 py-3.5 rounded-xl text-sm" data-i18n="full.final_cta.get_started_free">Get started free</a>
+          <a href="/pricing" class="btn-secondary px-8 py-3.5 rounded-xl text-sm" data-i18n="site.integrations.s35622.view_pricing">View pricing</a>
+        </div>
+        <p class="text-xs text-matrix-soft mt-6 font-mono" data-i18n="site.integrations.s35622.no_credit_card_required_cancel_anytime">No credit card required · Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Gmail connect modal -->
+  <div id="gmail-modal-overlay" class="gmail-modal-overlay" role="presentation" aria-hidden="true">
+    <div
+      id="gmail-modal"
+      class="gmail-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="gmail-modal-title"
+      tabindex="-1"
+    >
+      <button type="button" class="modal-close" id="gmail-modal-close" aria-label="Close" data-i18n="site.integrations.s35622.times">&times;</button>
+
+      <!-- Step: intro / connect -->
+      <div id="gmail-panel-intro" class="modal-panel active">
+        <h2 id="gmail-modal-title" data-i18n="site.integrations.s35622.connect_your_gmail">Connect your Gmail</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.connect_your_gmail_so_your_ai_assistant_">
+          Connect your Gmail so your AI assistant can keep your inbox under control while you run the business.
+        </p>
+        <div class="privacy-box" role="note">
+          <strong>Privacy:</strong> Your emails never leave your control. We do not train on them.
+          You can revoke access any time in your Google account.
+        </div>
+        <p class="text-sm font-semibold text-matrix-cream mb-2" data-i18n="site.integrations.s35622.what_your_email_assistant_will_do">What your Email Assistant will do</p>
+        <ul class="scope-list">
+          <li data-i18n="site.integrations.s35622.sort_and_label_mail_urgent_needs_reply_f">Sort and label mail (Urgent, Needs Reply, FYI, and more)</li>
+          <li>Draft replies for you to review — <strong>never auto-sends</strong> to customers</li>
+          <li data-i18n="site.integrations.s35622.flag_time_sensitive_items_so_nothing_sli">Flag time-sensitive items so nothing slips</li>
+          <li data-i18n="site.integrations.s35622.email_you_a_short_daily_brief_of_what_ma">Email you a short daily brief of what matters</li>
+        </ul>
+        <p class="text-sm font-semibold text-matrix-cream mb-2" data-i18n="site.integrations.s35622.google_permissions_plain_english">Google permissions (plain English)</p>
+        <ul class="scope-list">
+          <li><strong>Read</strong> your mail so it can triage the inbox</li>
+          <li><strong>Create labels &amp; drafts</strong> so work is organized for you</li>
+          <li><strong>Send</strong> only the daily brief to <em>you</em> (not customers)</li>
+        </ul>
+        <div class="modal-actions">
+          <button type="button" class="btn-google" id="gmail-connect-btn">
+            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.5-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.3 35.1 26.8 36 24 36c-5.3 0-9.7-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.2 5.5l.1.1 6.3 5.3C39.1 37.1 44 33 44 24c0-1.3-.1-2.5-.4-3.5z"/></svg>
+            Connect with Google
+          </button>
+          <button type="button" class="btn-linkish" id="gmail-test-mode-btn" data-i18n="site.integrations.s35622.try_test_mode_first_sample_emails">Try Test Mode first (sample emails)</button>
+          <button type="button" class="btn-linkish" id="gmail-imap-btn" data-i18n="site.integrations.s35622.i_use_hostinger_outlook_other_imap">I use Hostinger / Outlook / other IMAP</button>
+        </div>
+      </div>
+
+      <!-- Step: OAuth instructions (desktop agent) -->
+      <div id="gmail-panel-oauth" class="modal-panel">
+        <h2 data-i18n="site.integrations.s35622.almost_there_2_minutes">Almost there — 2 minutes</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.gmail_connects_securely_on_your_computer">
+          Gmail connects securely on your computer through the Email Assistant.
+          Paste these commands in a terminal (or ask your setup partner). No coding required beyond copy-paste.
+        </p>
+        <div class="privacy-box">
+          Drafts only for customer replies. Daily brief emails only go to <strong>you</strong>.
+        </div>
+        <p class="text-sm font-semibold text-matrix-cream mb-1" data-i18n="site.integrations.s35622.t_1_one_time_google_setup">1. One-time Google setup</p>
+        <p class="text-sm text-matrix-soft mb-2">Follow the copy-paste guide: <code class="text-matrix-green">agents/email-assistant/scripts/setup_oauth.md</code></p>
+        <p class="text-sm font-semibold text-matrix-cream mb-1" data-i18n="site.integrations.s35622.t_2_connect">2. Connect</p>
+        <div class="cli-box">cd agents/email-assistant
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m src.cli connect-gmail</div>
+        <p class="text-sm text-matrix-soft mb-3" data-i18n="site.integrations.s35622.your_browser_opens_sign_in_allow_you_sho">Your browser opens → sign in → Allow. You should see “Success — Gmail connected”.</p>
+        <div class="modal-actions">
+          <button type="button" class="btn-google" id="gmail-mark-connected-btn" data-i18n="site.integrations.s35622.i_ve_connected_gmail_show_success">I’ve connected Gmail — show success</button>
+          <a class="btn-linkish" href="/email-assistant" data-i18n="site.integrations.s35622.open_email_assistant_page">Open Email Assistant page</a>
+          <button type="button" class="btn-linkish" id="gmail-back-from-oauth" data-i18n="quiz.back">Back</button>
+        </div>
+      </div>
+
+      <!-- Step: IMAP fallback -->
+      <div id="gmail-panel-imap" class="modal-panel">
+        <h2 data-i18n="site.integrations.s35622.hostinger_outlook_imap">Hostinger / Outlook / IMAP</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.not_on_gmail_you_can_still_use_email_ass">
+          Not on Gmail? You can still use Email Assistant with the same inbox you use in Thunderbird or Outlook.
+        </p>
+        <div class="cli-box"># In agents/email-assistant/.env
+EMAIL_BACKEND=imap
+EMAIL_PROFILE=hostinger
+EMAIL_HOSTINGER_USER=you@yourdomain.com
+EMAIL_HOSTINGER_PASSWORD=********
+
+python -m src.cli auth
+python -m src.cli triage</div>
+        <p class="text-sm text-matrix-soft mb-3" data-i18n="site.integrations.s35622.full_steps_are_in_the_email_assistant_re">
+          Full steps are in the Email Assistant README under “Hostinger / IMAP”.
+        </p>
+        <div class="modal-actions">
+          <a class="btn-google" href="/email-assistant" style="text-decoration:none" data-i18n="site.integrations.s35622.open_email_assistant">Open Email Assistant</a>
+          <button type="button" class="btn-linkish" id="gmail-back-from-imap" data-i18n="site.integrations.s35622.back_to_gmail_connect">Back to Gmail connect</button>
+        </div>
+      </div>
+
+      <!-- Step: Test Mode -->
+      <div id="gmail-panel-test" class="modal-panel">
+        <h2 data-i18n="site.integrations.s35622.test_mode_sample_inbox">Test Mode — sample inbox</h2>
+        <p class="modal-lead" data-i18n="site.integrations.s35622.see_the_agent_work_before_connecting_rea">
+          See the agent work before connecting real email. No Google login needed.
+        </p>
+        <div class="test-preview" id="gmail-test-preview" aria-live="polite">
+          <strong>Sample triage preview</strong><br/>
+          • URGENT — AC unit not cooling (customer waiting)<br/>
+          • REPLY — Quote request for kitchen remodel<br/>
+          • URGENT — Invoice past due<br/>
+          • FYI — Shipment delayed<br/>
+          • Newsletter / automated — skipped for your focus
+        </div>
+        <div class="cli-box">cd agents/email-assistant
+python -m src.cli test-mode
+python -m src.cli impact --test</div>
+        <div class="modal-actions">
+          <button type="button" class="btn-google" id="gmail-after-test-connect" data-i18n="site.integrations.s35622.looks_good_connect_gmail">Looks good — Connect Gmail</button>
+          <button type="button" class="btn-linkish" id="gmail-back-from-test" data-i18n="quiz.back">Back</button>
+        </div>
+      </div>
+
+      <!-- Step: success -->
+      <div id="gmail-panel-success" class="modal-panel">
+        <div class="success-check" aria-hidden="true">✓</div>
+        <h2 class="text-center" style="padding-right:0" data-i18n="site.integrations.s35622.gmail_connected">Gmail connected</h2>
+        <p class="modal-lead text-center" data-i18n="site.integrations.s35622.your_email_assistant_is_ready_open_it_to">
+          Your Email Assistant is ready. Open it to triage, draft replies, and get your first 24-hour impact report.
+        </p>
+        <div class="privacy-box">
+          Remember: replies stay as drafts until you send. Revoke anytime at Google Account → Security → Third-party access.
+        </div>
+        <div class="modal-actions">
+          <a class="btn-google" href="/email-assistant" style="text-decoration:none" data-i18n="site.integrations.s35622.open_email_assistant">Open Email Assistant</a>
+          <button type="button" class="btn-linkish" id="gmail-disconnect-demo" data-i18n="site.integrations.s35622.reset_connection_status_on_this_browser">Reset connection status on this browser</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-matrix-border/50 bg-matrix-void pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="w-8 h-8 object-contain rounded-md flex-shrink-0" />
+            <span class="font-mono font-bold text-lg">
+              <span class="text-matrix-cream">Matrixly</span>
+            </span>
+          </a>
+          <p class="text-sm text-matrix-soft" data-i18n="site.agents.footer.ai_agents_that_work_while_you_run_your_b">AI agents that work while you run your business.</p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.product">Product</h4>
+          <ul class="space-y-2.5 text-sm text-matrix-soft">
+            <li><a href="/agents" class="hover:text-matrix-green transition-colors" data-i18n="nav.agents">Agents</a></li>
+            <li><a href="/products" class="hover:text-matrix-green transition-colors" data-i18n="full.final_cta.products">Products</a></li>
+            <li><a href="/integrations" class="hover:text-matrix-green transition-colors" data-i18n="nav.integrations">Integrations</a></li>
+            <li><a href="/pricing" class="hover:text-matrix-green transition-colors" data-i18n="nav.pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="nav.resources">Resources</h4>
+          <ul class="space-y-2.5 text-sm text-matrix-soft">
+            <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="site.integrations.footer.docs">Docs</a></li>
+            <li><a href="/integrations" class="hover:text-matrix-green transition-colors" data-i18n="nav.integrations">Integrations</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors">API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-matrix-green uppercase tracking-wider mb-4" data-i18n="footer.legal">Legal</h4>
+          <ul class="space-y-2.5 text-sm text-matrix-soft">
+            <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="footer.privacy">Privacy</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="footer.terms">Terms</a></li>
+            <li><a href="#" class="hover:text-matrix-green transition-colors" data-i18n="full.final_cta.security">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-matrix-border/40 flex flex-col sm:flex-row justify-between gap-3">
+        <p class="text-xs text-matrix-soft font-mono">© <span id="year"></span> Matrixly · All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav scroll
+    (function () {
+      const nav = document.getElementById('navbar');
+      const onScroll = () => {
+        if (window.scrollY > 40) nav.classList.add('nav-scrolled');
+        else nav.classList.remove('nav-scrolled');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Mobile menu
+        (function () {
+      const toggle = document.getElementById('mobile-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      const nav = document.getElementById('navbar');
+      if (!toggle || !menu) return;
+      function setMenuOpen(open) {
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (iconMenu) iconMenu.classList.toggle('hidden', open);
+        if (iconClose) iconClose.classList.toggle('hidden', !open);
+        if (nav) nav.classList.toggle('menu-open', open);
+        document.body.classList.toggle('menu-open', open);
+      }
+      toggle.addEventListener('click', () => setMenuOpen(!menu.classList.contains('open')));
+      menu.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => setMenuOpen(false));
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) setMenuOpen(false);
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && menu.classList.contains('open')) setMenuOpen(false);
+      }, { passive: true });
+    })();
+
+    /**
+     * Integration directory for Matrixly agent workflows.
+     * Categories: popular, sales, marketing, operations, support,
+     * ecommerce, logistics, productivity, assistant
+     */
+    const INTEGRATIONS = [
+      // Most popular
+      { name: 'Google Sheets', category: 'productivity', popular: true, abbr: 'SHEET' },
+      {
+        name: 'Gmail',
+        category: 'marketing',
+        categories: ['marketing', 'productivity'],
+        popular: true,
+        abbr: 'GMAIL',
+        blurb: 'Connect your Gmail so your AI assistant can triage the inbox, draft replies (never auto-send), and email you a daily brief — while you run the business.',
+        cta: 'Connect Gmail',
+        action: 'connect-gmail',
+      },
+      { name: 'Slack', category: 'assistant', popular: true, abbr: 'SLACK' },
+      { name: 'Google Drive', category: 'productivity', popular: true, abbr: 'DRIVE' },
+      { name: 'HubSpot', category: 'sales', popular: true, abbr: 'HUB' },
+      { name: 'Calendly', category: 'sales', popular: true, abbr: 'CAL' },
+      { name: 'Airtable', category: 'productivity', popular: true, abbr: 'AIR' },
+      { name: 'Salesforce', category: 'sales', popular: true, abbr: 'SFDC' },
+      { name: 'Shopify', category: 'ecommerce', popular: true, abbr: 'SHOP' },
+      { name: 'WordPress', category: 'marketing', popular: true, abbr: 'WP' },
+      { name: 'Stripe', category: 'sales', popular: true, abbr: 'STRP' },
+      { name: 'QuickBooks', category: 'operations', popular: true, abbr: 'QB' },
+      { name: 'Zapier', category: 'operations', popular: true, abbr: 'ZAP' },
+
+      // Sales
+      { name: 'Apollo.io', category: 'sales', abbr: 'APOL' },
+      { name: 'Pipedrive', category: 'sales', abbr: 'PIPE' },
+      { name: 'Close', category: 'sales', abbr: 'CLOS' },
+      { name: 'LinkedIn', category: 'sales', abbr: 'LI' },
+      { name: 'Outreach', category: 'sales', abbr: 'OUT' },
+      { name: 'Copper', category: 'sales', abbr: 'COP' },
+      { name: 'Intercom', category: 'sales', abbr: 'INT' },
+      { name: 'Acuity Scheduling', category: 'sales', abbr: 'ACU' },
+      { name: 'Typeform', category: 'sales', abbr: 'TYPE' },
+      { name: 'Zoom', category: 'sales', abbr: 'ZOOM' },
+      { name: 'Microsoft Teams', category: 'sales', abbr: 'TEAMS' },
+
+      // Marketing
+      { name: 'Google Search Console', category: 'marketing', abbr: 'GSC' },
+      { name: 'Google Analytics', category: 'marketing', abbr: 'GA4' },
+      { name: 'Mailchimp', category: 'marketing', abbr: 'MAIL' },
+      { name: 'Klaviyo', category: 'marketing', abbr: 'KLAV' },
+      { name: 'Meta Ads', category: 'marketing', abbr: 'META' },
+      { name: 'Google Ads', category: 'marketing', abbr: 'GADS' },
+      { name: 'Buffer', category: 'marketing', abbr: 'BUFF' },
+      { name: 'Hootsuite', category: 'marketing', abbr: 'HOOT' },
+      { name: 'Beehiiv', category: 'marketing', abbr: 'BEE' },
+      { name: 'AWeber', category: 'marketing', abbr: 'AWEB' },
+      { name: 'Webflow', category: 'marketing', abbr: 'WEB' },
+      { name: 'Notion', category: 'productivity', popular: true, abbr: 'NOTN' },
+      { name: 'Google Business Profile', category: 'marketing', popular: true, abbr: 'GBP' },
+      { name: 'Grok (xAI)', category: 'assistant', popular: true, abbr: 'GROK' },
+      { name: 'GitHub', category: 'operations', popular: true, abbr: 'GH' },
+      { name: 'YouTube', category: 'marketing', abbr: 'YT' },
+      { name: 'Instagram', category: 'marketing', abbr: 'IG' },
+      { name: 'X (Twitter)', category: 'marketing', abbr: 'X' },
+
+      // Operations
+      { name: 'Xero', category: 'operations', abbr: 'XERO' },
+      { name: 'Asana', category: 'operations', abbr: 'ASA' },
+      { name: 'ClickUp', category: 'operations', abbr: 'CLK' },
+      { name: 'Monday.com', category: 'operations', abbr: 'MON' },
+      { name: 'Jira', category: 'operations', abbr: 'JIRA' },
+      { name: 'Trello', category: 'operations', abbr: 'TREL' },
+      { name: 'Basecamp', category: 'operations', abbr: 'BASE' },
+      { name: 'AWS', category: 'operations', abbr: 'AWS' },
+      { name: 'Azure DevOps', category: 'operations', abbr: 'AZDO' },
+      { name: 'Make', category: 'operations', abbr: 'MAKE' },
+      { name: 'n8n', category: 'operations', abbr: 'N8N' },
+
+      // Support
+      { name: 'Zendesk', category: 'support', abbr: 'ZEN' },
+      { name: 'Freshdesk', category: 'support', abbr: 'FRSH' },
+      { name: 'Help Scout', category: 'support', abbr: 'HELP' },
+      { name: 'Front', category: 'support', abbr: 'FRNT' },
+      { name: 'Twilio', category: 'support', abbr: 'TWIL' },
+      { name: 'Crisp', category: 'support', abbr: 'CRSP' },
+      { name: 'Discord', category: 'support', abbr: 'DISC' },
+
+      // E-commerce
+      { name: 'WooCommerce', category: 'ecommerce', abbr: 'WOO' },
+      { name: 'BigCommerce', category: 'ecommerce', abbr: 'BIG' },
+      { name: 'Amazon', category: 'ecommerce', abbr: 'AMZ' },
+      { name: 'Etsy', category: 'ecommerce', abbr: 'ETSY' },
+      { name: 'Square', category: 'ecommerce', abbr: 'SQR' },
+      { name: 'PayPal', category: 'ecommerce', abbr: 'PP' },
+      { name: 'ReCharge', category: 'ecommerce', abbr: 'RECH' },
+
+      // Logistics — Shipping Assistant hub + multi-carrier / fulfillment stack for SMBs
+      { name: 'ShipStation', category: 'logistics', popular: true, abbr: 'SS', blurb: 'Primary hub for Matrixly Shipping Assistant — multi-carrier labels, tracking, and exceptions (UPS · FedEx · USPS).', href: '/shipping-assistant', cta: 'Try Shipping Assistant' },
+      { name: 'ShipEngine', category: 'logistics', abbr: 'SENG', blurb: 'Label rates and multi-carrier shipping API — pairs with ShipStation-class fulfillment agents.' },
+      { name: 'ShipHero', category: 'logistics', abbr: 'SHRO', blurb: 'Warehouse & 3PL fulfillment — integrate inventory and outbound with logistics agents.' },
+      { name: 'Shipday', category: 'logistics', abbr: 'SDAY', blurb: 'Local delivery dispatch — route last-mile jobs from your Matrixly shipping workflows.' },
+      { name: 'Shipcloud', category: 'logistics', abbr: 'SCLD', blurb: 'Multi-carrier shipping platform — connect labels and tracking to agent orchestration.' },
+      { name: 'ShipBob', category: 'logistics', abbr: 'SBOB', blurb: 'Fulfillment network for ecommerce SMBs — sync orders and tracking status.' },
+      { name: 'AfterShip', category: 'logistics', abbr: 'AFTR', blurb: 'Post-purchase tracking & WISMO notifications — reduce “where is my order?” tickets.' },
+      { name: 'Starshipit', category: 'logistics', abbr: 'STAR', blurb: 'Multi-carrier shipping for APAC & global merchants — labels, rates, tracking.' },
+      { name: 'Deftship', category: 'logistics', abbr: 'DEFT', blurb: 'Discounted multi-carrier shipping — connect rates and labels to agent workflows.' },
+      { name: 'EasyPost', category: 'logistics', abbr: 'EASY', blurb: 'Developer shipping API — rates, labels, and tracking across major carriers.' },
+      { name: 'Shippo', category: 'logistics', abbr: 'SHPO', blurb: 'Multi-carrier shipping for growing stores — labels and tracking webhooks.' },
+      { name: 'UPS', category: 'logistics', abbr: 'UPS', blurb: 'Carrier network via ShipStation or direct API — track, exceptions, delivery events.' },
+      { name: 'FedEx', category: 'logistics', abbr: 'FDX', blurb: 'Carrier network via ShipStation or direct API — express and ground tracking.' },
+      { name: 'USPS', category: 'logistics', abbr: 'USPS', blurb: 'Domestic parcel network via ShipStation — Priority, Ground Advantage, tracking.' },
+      { name: 'DHL Express', category: 'logistics', abbr: 'DHL', blurb: 'International express — connect through multi-carrier hubs for global SMBs.' },
+
+      // Productivity
+      { name: 'Google Calendar', category: 'productivity', abbr: 'GCAL' },
+      { name: 'Microsoft Outlook', category: 'productivity', abbr: 'OUTL' },
+      { name: 'Dropbox', category: 'productivity', abbr: 'DROP' },
+      { name: 'Todoist', category: 'productivity', abbr: 'TODO' },
+      { name: 'Evernote', category: 'productivity', abbr: 'EVER' },
+      { name: 'Coda', category: 'productivity', abbr: 'CODA' },
+      { name: 'Microsoft 365', category: 'productivity', abbr: 'M365' },
+
+      // Personal Assistant
+      { name: 'Slack Bot', category: 'assistant', abbr: 'SBOT' },
+      { name: 'Google Meet', category: 'assistant', abbr: 'MEET' },
+      { name: 'Otter.ai', category: 'assistant', abbr: 'OTTR' },
+      { name: 'Fireflies', category: 'assistant', abbr: 'FIRE' },
+      { name: 'Amazon Alexa', category: 'assistant', abbr: 'ALEX' },
+    ];
+
+    const categoryLabels = {
+      all: 'All integrations',
+      popular: 'Most popular',
+      sales: 'Sales',
+      marketing: 'Marketing',
+      operations: 'Operations',
+      support: 'Support',
+      ecommerce: 'E-commerce',
+      logistics: 'Logistics',
+      productivity: 'Productivity',
+      assistant: 'Personal Assistant',
+    };
+
+    const grid = document.getElementById('integrations-grid');
+    const searchInput = document.getElementById('integration-search');
+    const resultCount = document.getElementById('result-count');
+    const noResults = document.getElementById('no-results');
+    const directoryHeading = document.getElementById('directory-heading');
+    let activeCategory = 'all';
+
+    function initials(name, abbr) {
+      if (abbr) return abbr.slice(0, 4);
+      return name.replace(/[^A-Za-z0-9]/g, '').slice(0, 4).toUpperCase() || 'APP';
+    }
+
+    function cardHTML(item) {
+      const catList = Array.isArray(item.categories) && item.categories.length
+        ? item.categories.slice()
+        : [item.category];
+      if (item.popular) catList.push('popular');
+      const dataCats = [...new Set(catList)].join(' ');
+      const blurb = item.blurb || `Integrate ${item.name} with your Matrixly agent workflows.`;
+      const href = item.href || 'index.html#final-cta';
+      const cta = item.cta || `Connect ${item.name}`;
+      const catLabel = (Array.isArray(item.categories) ? item.categories : [item.category])
+        .map((c) => c.replace('ecommerce', 'e-commerce'))
+        .join(' · ');
+      // Include aliases in search (e.g. "ship" matches ShipStation)
+      const searchBlob = [item.name, catLabel, item.abbr || '', blurb].join(' ').toLowerCase();
+      const ctaEl = item.action === 'connect-gmail'
+        ? `<button type="button" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center" data-action="connect-gmail" data-i18n="site.integrations.footer.cta">${cta}</button>`
+        : `<a href="${href}" class="btn-secondary text-xs py-2.5 px-3 rounded-lg w-full inline-flex items-center justify-center" data-i18n="site.integrations.footer.cta">${cta}</a>`;
+      return `
+        <article
+          class="integration-card card-matrix rounded-2xl p-5 flex flex-col"
+          data-name="${item.name.toLowerCase()}"
+          data-search="${searchBlob.replace(/"/g, '&quot;')}"
+          data-categories="${dataCats}"
+        >
+          <div class="flex items-start gap-3 mb-4">
+            <div class="neon-tile" aria-hidden="true"><span data-i18n="site.integrations.footer.initials_item_name_item_abbr">${initials(item.name, item.abbr)}</span></div>
+            <div class="min-w-0">
+              <h3 class="text-base font-bold text-matrix-cream truncate" data-i18n="site.integrations.footer.item_name">${item.name}</h3>
+              <p class="font-mono text-[11px] text-matrix-green capitalize mt-0.5" data-i18n="site.integrations.footer.catlabel">${catLabel}</p>
+            </div>
+          </div>
+          <p class="text-sm text-matrix-soft flex-grow mb-4" data-i18n="site.integrations.footer.blurb">
+            ${blurb}
+          </p>
+          ${ctaEl}
+        </article>
+      `;
+    }
+
+    function render() {
+      // Sort: popular first within full list, then alpha
+      const sorted = [...INTEGRATIONS].sort((a, b) => {
+        if (a.popular && !b.popular) return -1;
+        if (!a.popular && b.popular) return 1;
+        return a.name.localeCompare(b.name);
+      });
+      grid.innerHTML = sorted.map(cardHTML).join('');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const q = (searchInput.value || '').trim().toLowerCase();
+      const cards = grid.querySelectorAll('.integration-card');
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const name = card.getAttribute('data-name') || '';
+        const search = card.getAttribute('data-search') || name;
+        const cats = (card.getAttribute('data-categories') || '').split(/\s+/);
+        const matchCat = activeCategory === 'all' || cats.includes(activeCategory);
+        const matchSearch = !q || name.includes(q) || search.includes(q);
+        const show = matchCat && matchSearch;
+        card.classList.toggle('hidden-card', !show);
+        if (show) visible++;
+      });
+
+      resultCount.textContent = String(visible);
+      noResults.classList.toggle('hidden', visible > 0);
+      directoryHeading.textContent = categoryLabels[activeCategory] || 'All integrations';
+    }
+
+    // Category chips
+    document.querySelectorAll('.filter-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCategory = chip.getAttribute('data-category') || 'all';
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+
+    render();
+
+    // ---- Gmail connect modal (SMB-friendly guided flow) ----
+    (function initGmailModal() {
+      var KEY = 'matrixly-gmail-connected';
+      var overlay = document.getElementById('gmail-modal-overlay');
+      var modal = document.getElementById('gmail-modal');
+      if (!overlay || !modal) return;
+
+      var panels = {
+        intro: document.getElementById('gmail-panel-intro'),
+        oauth: document.getElementById('gmail-panel-oauth'),
+        imap: document.getElementById('gmail-panel-imap'),
+        test: document.getElementById('gmail-panel-test'),
+        success: document.getElementById('gmail-panel-success'),
+      };
+
+      function showPanel(name) {
+        Object.keys(panels).forEach(function (k) {
+          if (panels[k]) panels[k].classList.toggle('active', k === name);
+        });
+      }
+
+      function isConnected() {
+        try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; }
+      }
+
+      function setConnected(on) {
+        try {
+          if (on) localStorage.setItem(KEY, '1');
+          else localStorage.removeItem(KEY);
+        } catch (e) {}
+      }
+
+      function openModal() {
+        showPanel(isConnected() ? 'success' : 'intro');
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('gmail-modal-open');
+        modal.focus();
+      }
+
+      function closeModal() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('gmail-modal-open');
+      }
+
+      document.getElementById('gmail-modal-close')?.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+      });
+
+      // Event delegation for Connect Gmail buttons on cards
+      document.getElementById('integrations-grid')?.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-action="connect-gmail"]');
+        if (btn) {
+          e.preventDefault();
+          openModal();
+        }
+      });
+
+      document.getElementById('gmail-connect-btn')?.addEventListener('click', function () {
+        showPanel('oauth');
+      });
+      document.getElementById('gmail-test-mode-btn')?.addEventListener('click', function () {
+        showPanel('test');
+      });
+      document.getElementById('gmail-imap-btn')?.addEventListener('click', function () {
+        showPanel('imap');
+      });
+      document.getElementById('gmail-back-from-oauth')?.addEventListener('click', function () {
+        showPanel('intro');
+      });
+      document.getElementById('gmail-back-from-imap')?.addEventListener('click', function () {
+        showPanel('intro');
+      });
+      document.getElementById('gmail-back-from-test')?.addEventListener('click', function () {
+        showPanel('intro');
+      });
+      document.getElementById('gmail-after-test-connect')?.addEventListener('click', function () {
+        showPanel('oauth');
+      });
+      document.getElementById('gmail-mark-connected-btn')?.addEventListener('click', function () {
+        setConnected(true);
+        showPanel('success');
+      });
+      document.getElementById('gmail-disconnect-demo')?.addEventListener('click', function () {
+        setConnected(false);
+        showPanel('intro');
+      });
+
+      // Deep link: /integrations#connect-gmail
+      if (location.hash === '#connect-gmail' || location.hash === '#gmail') {
+        openModal();
+      }
+    })();
+
+    // ---- Theme toggle (light / dark) ----
+    (function initThemeToggle() {
+      var KEY = 'matrixly-theme';
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+      function applyTheme(theme) {
+        var dark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0B1220' : '#117ACA');
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+          btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+          btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        });
+      }
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTheme(isDark() ? 'light' : 'dark');
+        });
+      });
+      // Sync labels on load
+      applyTheme(isDark() ? 'dark' : 'light');
+    })();
+
+  </script>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
+</body>
+</html>

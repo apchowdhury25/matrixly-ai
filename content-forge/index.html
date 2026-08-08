@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('matrixly-theme');
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Matrixly ContentForge — create and repurpose marketing content. SEO blogs, social, newsletters, ads. Brand voice + HITL." />
+  <meta name="theme-color" content="#117ACA" />
+  <title>ContentForge — Matrixly</title>
+  <link rel="icon" type="image/png" href="/assets/matrixly-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/matrixly-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              green: 'var(--brand-blue)',
+              border: 'var(--border)',
+              soft: 'var(--soft)',
+              cream: 'var(--ink)',
+              card: 'var(--card)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --brand-blue: #117ACA;
+      --brand-blue-dark: #0B5CAB;
+      --ink: #211E1E;
+      --soft: #5C6670;
+      --border: #D0D7DE;
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --bg-muted: #F0F4F8;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+    }
+    html.dark {
+      --ink: #F0F2F5;
+      --soft: #A8B0B8;
+      --border: #1E2A3A;
+      --section-divider: rgba(148, 163, 184, 0.08);
+      --bg: #0B0F14;
+      --card: #151C26;
+      --bg-muted: #1A222D;
+      --nav-bg: rgba(11, 15, 20, 0.92);
+    }
+    html.dark header.border-b,
+    html.dark footer.border-t,
+    html.dark .border-matrix-border,
+    html.dark .border-matrix-border\/80 {
+      border-color: var(--section-divider) !important;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    .btn-primary { background: var(--brand-blue); color: #fff; font-weight: 700; }
+    .btn-primary:hover { background: var(--brand-blue-dark); }
+    .btn-secondary { border: 1px solid var(--border); font-weight: 600; background: var(--card); color: var(--ink); }
+    .card-matrix { background: var(--card); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(33, 30, 30, 0.06); }
+    .nav-link { color: var(--soft); font-weight: 600; font-size: 0.9rem; }
+    .nav-link:hover { color: var(--brand-blue); }
+    pre.cmd {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+  <header class="sticky top-0 z-40 border-b border-matrix-border/80" style="background: var(--nav-bg); backdrop-filter: blur(10px);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-2 font-bold text-matrix-cream">
+        <img src="/assets/matrixly-logo.png" alt="Matrixly" width="32" height="32" class="h-8 w-8 object-contain rounded-md flex-shrink-0" />
+        Matrixly
+      </a>
+      <nav class="hidden sm:flex items-center gap-6">
+        <a href="/agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+        <a href="/integrations" class="nav-link" data-i18n="nav.integrations">Integrations</a>
+        <a href="#embed" class="nav-link" data-i18n="site.book_wise.page.embed">Embed</a>
+      </nav>
+      <a href="#start" class="btn-primary text-sm px-4 py-2 rounded-lg" data-i18n="site.content_forge.page.start_for_my_business">Start for my business</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-14 pb-8">
+      <p class="font-mono text-sm text-[#117ACA] mb-3 tracking-wide" data-i18n="site.content_forge.s4311.content_desk_built_for_small_businesses">Content desk · Built for small businesses</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-matrix-cream tracking-tight mb-4">ContentForge</h1>
+      <p class="text-matrix-soft text-lg leading-relaxed max-w-2xl" data-i18n="site.content_forge.s4311.your_content_desk_for_small_business_tur">
+        Your content desk for small business: turn one blog, transcript, or product note into SEO posts,
+        social copy, newsletters, and ads — in your voice, with human review before anything goes public.
+      </p>
+      <ul class="mt-5 space-y-2 text-sm text-matrix-soft">
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Research → write → edit → repurpose in one flow</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> You always approve before publish</li>
+        <li class="flex gap-2"><span class="text-[#117ACA] font-bold">▸</span> Save locally, or send drafts to WordPress / Buffer</li>
+      </ul>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="#start" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.content_forge.page.start_for_my_business">Start for my business</a>
+        <a href="#how" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="nav.howItWorks">How it works</a>
+      </div>
+      <p class="text-xs text-matrix-soft mt-3" data-i18n="site.content_forge.s4311.about_5_minutes_no_coding_nothing_publis">About 5 minutes · No coding · Nothing publishes without your OK</p>
+    </section>
+
+    <section id="how" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-agent-feature-grid>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.content_forge.how.t_1_research">1. Research</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.content_forge.how.angles_keywords_audience_and_ctas_from_y">Angles, keywords, audience, and CTAs from your source material.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.content_forge.how.t_2_write">2. Write</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.content_forge.how.seo_blog_with_title_meta_description_slu">SEO blog with title, meta description, slug, and structured body.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.content_forge.how.t_3_edit">3. Edit</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.content_forge.how.brand_voice_pass_and_quality_score_befor">Brand voice pass and quality score before anything goes live.</p>
+        </article>
+        <article class="card-matrix rounded-2xl p-5">
+          <h2 class="font-bold text-matrix-cream mb-2" data-i18n="site.content_forge.how.t_4_repurpose">4. Repurpose</h2>
+          <p class="text-sm text-matrix-soft" data-i18n="site.content_forge.how.linkedin_x_instagram_newsletter_ads_and_">LinkedIn, X, Instagram, newsletter, ads, and next-topic ideas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="start" class="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <p class="font-mono text-xs text-[#117ACA] uppercase tracking-wider mb-2" data-i18n="site.content_forge.start.start_content_desk">Start Content desk</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-matrix-cream mb-2" data-i18n="site.content_forge.start.start_this_for_my_business">Start this for my business</h2>
+        <p class="text-sm sm:text-base text-matrix-soft mb-5 max-w-2xl" data-i18n="site.content_forge.start.one_guided_setup_prepares_everything_on_">
+          One guided setup prepares everything on your computer. You’ll only answer simple questions about your business
+          and optional keys — no coding, no terminal recipes.
+        </p>
+
+        <div class="rounded-xl border border-[#117ACA]/25 bg-[#117ACA]/5 p-4 sm:p-5 mb-6">
+          <p class="text-sm font-semibold text-matrix-cream mb-3" data-i18n="site.content_forge.start.what_happens_when_you_start">What happens when you start</p>
+          <ol class="space-y-2 text-sm text-matrix-soft list-decimal list-inside">
+            <li data-i18n="site.content_forge.start.we_install_the_content_desk_privately_on">We install the Content desk privately on this computer</li>
+            <li data-i18n="site.content_forge.start.you_name_your_business_and_optional_desc">You name your business and (optional) describe how you write</li>
+            <li data-i18n="site.content_forge.start.optional_connect_wordpress_drafts_or_add">Optional: connect WordPress drafts or add an xAI key for smarter writing</li>
+            <li data-i18n="site.content_forge.start.we_open_your_content_workspace_in_the_br">We open your content workspace in the browser</li>
+          </ol>
+          <p class="text-xs text-matrix-soft mt-3">
+            <strong class="text-matrix-cream">Safety:</strong> Nothing is published to customers until you approve it.
+            Your content stays on this computer unless you connect WordPress or Buffer.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-sm font-semibold text-matrix-cream mb-2" data-i18n="site.content_forge.start.easiest_on_windows">Easiest on Windows</p>
+          <p class="text-sm text-matrix-soft mb-3">
+            Need Python once from
+            <a class="text-[#117ACA] font-semibold hover:underline" href="https://www.python.org/downloads/" target="_blank" rel="noopener" data-i18n="site.content_forge.start.python_org">python.org</a>
+            (check “Add python.exe to PATH”). Then double-click:
+          </p>
+          <pre class="cmd mb-2">agents\content-forge\scripts\Start Content Desk.cmd</pre>
+          <p class="text-xs text-matrix-soft" data-i18n="site.content_forge.start.or_in_powershell_from_the_contentforge_f">Or in PowerShell from the ContentForge folder:</p>
+          <pre class="cmd mt-2">python scripts\bootstrap.py</pre>
+        </div>
+
+        <div class="rounded-xl border border-matrix-border bg-matrix-muted/40 p-4 mb-6 text-sm text-matrix-soft">
+          <p class="font-semibold text-matrix-cream mb-1" data-i18n="site.content_forge.start.you_ll_only_be_asked_for">You’ll only be asked for</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li data-i18n="site.content_forge.start.business_name">Business name</li>
+            <li data-i18n="site.content_forge.start.optional_website_how_you_write_xai_api_k">Optional: website, how you write, xAI API key</li>
+            <li data-i18n="site.content_forge.start.optional_wordpress_site_application_pass">Optional: WordPress site + application password (if you want drafts there)</li>
+          </ul>
+          <p class="mt-2 text-xs" data-i18n="site.content_forge.start.internal_api_keys_are_created_for_you_au">Internal API keys are created for you automatically. We never need your terminal skills.</p>
+        </div>
+
+        <details class="group mb-6 rounded-xl border border-matrix-border overflow-hidden">
+          <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-matrix-cream bg-matrix-muted/30 hover:bg-matrix-muted/50 flex items-center justify-between gap-2">
+            <span data-i18n="site.content_forge.start.for_your_it_person_advanced_install">For your IT person / advanced install</span>
+            <span class="text-[#117ACA] text-xs font-mono group-open:hidden" data-i18n="site.content_forge.start.show">Show</span>
+            <span class="text-[#117ACA] text-xs font-mono hidden group-open:inline" data-i18n="site.content_forge.start.hide">Hide</span>
+          </summary>
+          <div class="px-4 py-4 border-t border-matrix-border">
+            <p class="text-xs text-matrix-soft mb-3">
+              Manifest: <code class="text-xs">agents/content-forge/setup.manifest.yaml</code> ·
+              Full guide: <code class="text-xs">agents/content-forge/README.md</code>
+            </p>
+            <pre class="cmd mb-3">cd agents/content-forge
+python scripts/bootstrap.py --yes --no-serve
+.\.venv\Scripts\python.exe -m src.cli serve</pre>
+            <pre class="cmd"># Manual (not recommended for owners)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+python scripts/smoke_test.py
+python -m src.cli serve</pre>
+          </div>
+        </details>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#start" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" onclick="document.getElementById('copy-hint')?.classList.remove('hidden'); return false;" data-i18n="site.content_forge.start.i_ve_got_python_show_start_path_again">I’ve got Python — show start path again</a>
+          <a href="/agents" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
+        </div>
+        <p id="copy-hint" class="hidden text-xs text-matrix-soft mt-3">
+          Path to double-click: <code class="text-[#117ACA]">agents\content-forge\scripts\Start Content Desk.cmd</code>
+        </p>
+      </div>
+    </section>
+
+    <section id="embed" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="card-matrix rounded-2xl p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-matrix-cream mb-2" data-i18n="site.book_wise.embed.embed_code">Embed code</h2>
+        <pre class="cmd mb-6">&lt;iframe
+  src="https://YOUR_CONTENTFORGE_HOST/static/workspace/index.html"
+  title="ContentForge"
+  style="width:100%;min-height:800px;border:1px solid #1e2a3a;border-radius:12px;"&gt;
+&lt;/iframe&gt;
+
+&lt;script
+  src="https://YOUR_CONTENTFORGE_HOST/static/widget/embed.js"
+  data-api="https://YOUR_CONTENTFORGE_HOST"
+  async&gt;
+&lt;/script&gt;</pre>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/agents" class="btn-primary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.book_wise.embed.back_to_marketplace">Back to marketplace</a>
+          <a href="/invoice-forge" class="btn-secondary px-6 py-3 rounded-xl text-sm inline-flex items-center justify-center" data-i18n="site.content_forge.embed.see_invoiceforge">See InvoiceForge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-matrix-border py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-sm text-matrix-soft">
+      <span data-i18n="site.content_forge.footer.matrixly_contentforge_v1_0_content_creat">Matrixly · ContentForge v1.0 · Content creation &amp; repurposing</span>
+      <a href="/agents" class="text-[#117ACA] hover:underline" data-i18n="site.book_wise.footer.back_to_agents">Back to agents</a>
+    </div>
+  </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/lang-selector.js" defer></script>
+</body>
+</html>
